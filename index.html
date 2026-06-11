@@ -12,10 +12,10 @@
             theme: {
                 extend: {
                     colors: {
-                        forestGreen: '#1a6b52',
-                        mossGreen: '#23876a',
+                        forestGreen: '#1b4d3e',
+                        mossGreen: '#256b54',
                         creamLight: '#f2f7f4',
-                        woodCharcoal: '#1e2d28'
+                        woodCharcoal: '#1a2820'
                     },
                     fontFamily: {
                         serif: ['Georgia', 'Times New Roman', 'serif'],
@@ -34,7 +34,7 @@
         .sn-select-trigger {
             width: 100%;
             background: rgba(242,247,244,0.3);
-            border: 1px solid rgba(26,107,82,0.1);
+            border: 1px solid rgba(27,77,62,0.1);
             padding: 10px 36px 10px 10px;
             font-family: Georgia, 'Times New Roman', serif;
             font-size: 0.875rem;
@@ -47,14 +47,14 @@
             transition: border-color 0.15s;
         }
         .sn-select-trigger:hover,
-        .sn-select-wrapper.open .sn-select-trigger { border-color: rgba(26,107,82,0.5); }
+        .sn-select-wrapper.open .sn-select-trigger { border-color: rgba(27,77,62,0.5); }
         .sn-arrow {
             position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
-            pointer-events: none; color: #1a6b52; transition: transform 0.2s;
+            pointer-events: none; color: #1b4d3e; transition: transform 0.2s;
         }
         .sn-select-wrapper.open .sn-arrow { transform: translateY(-50%) rotate(180deg); }
         .sn-placeholder { color: #a8a29e; font-style: italic; }
-        .sn-value { color: #1a6b52; font-weight: 600; }
+        .sn-value { color: #1b4d3e; font-weight: 600; }
 
         .sn-dropdown {
             display: none;
@@ -62,12 +62,12 @@
             top: calc(100% + 2px);
             left: 0; right: 0;
             background: #fff;
-            border: 1px solid rgba(26,107,82,0.25);
+            border: 1px solid rgba(27,77,62,0.25);
             border-top: none;
             z-index: 20;
             max-height: 230px;
             overflow-y: auto;
-            box-shadow: 0 4px 12px rgba(26,107,82,0.08);
+            box-shadow: 0 4px 12px rgba(27,77,62,0.08);
         }
         .sn-select-wrapper.open .sn-dropdown { display: block; }
         .sn-option {
@@ -77,18 +77,18 @@
             font-size: 0.8125rem;
             color: #44403c;
             cursor: pointer;
-            border-bottom: 1px solid rgba(26,107,82,0.06);
+            border-bottom: 1px solid rgba(27,77,62,0.06);
             transition: background 0.12s;
         }
         .sn-option:last-child { border-bottom: none; }
         .sn-option:hover { background: #f2f7f4; }
-        .sn-option.selected { background: rgba(26,107,82,0.05); color: #1a6b52; font-weight: 600; }
+        .sn-option.selected { background: rgba(27,77,62,0.05); color: #1b4d3e; font-weight: 600; }
         .sn-option .sn-tick {
             width: 14px; height: 14px; flex-shrink: 0;
-            border: 1px solid rgba(26,107,82,0.3);
+            border: 1px solid rgba(27,77,62,0.3);
             display: flex; align-items: center; justify-content: center;
         }
-        .sn-option.selected .sn-tick { background: #1a6b52; border-color: #1a6b52; }
+        .sn-option.selected .sn-tick { background: #1b4d3e; border-color: #1b4d3e; }
         .sn-option.selected .sn-tick::after {
             content: '';
             display: block; width: 8px; height: 5px;
@@ -128,12 +128,12 @@
             }
             #hero .hero-mobile-img {
                 display: block !important;
-                border-bottom: 4px solid #1a6b52;
             }
             #hero .hero-card {
                 max-width: 100% !important;
                 padding: 24px 20px !important;
                 border: none !important;
+                border-top: 4px solid #1b4d3e !important;
                 box-shadow: none !important;
                 backdrop-filter: none !important;
                 background: white !important;
@@ -200,8 +200,8 @@
     <main id="hero" class="mt-[80px] min-h-[70vh] w-full flex items-start sm:items-center px-[6%] relative bg-cover bg-top sm:bg-center py-16" style="background-image: url('img/hero/velvet_sofa.jpg');">
 
         <!-- Mobile-only: full sofa image stacked above card -->
-        <div class="hero-mobile-img hidden w-full bg-stone-100" style="height: 420px;">
-            <img src="img/hero/velvet_sofa.jpg" alt="Velvet sofa — SoftNest upholstery cleaning" class="w-full h-full object-cover object-center">
+        <div class="hero-mobile-img hidden w-full">
+            <img src="img/hero/velvet_sofa.jpg" alt="Velvet sofa — SoftNest upholstery cleaning" class="w-full h-auto block">
         </div>
 
         <div class="hero-card w-full max-w-[480px] bg-white/75 backdrop-blur-sm p-8 md:p-10 border-t-4 border-b-4 border-forestGreen shadow-lg relative z-10 my-auto">
