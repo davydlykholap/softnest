@@ -1,5 +1,27 @@
+﻿# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.slnx
+
+# Database and build caches (Visual Studio internal)
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+
+# Environment configurations (Contains credentials/keys)
 .env
-vendor/
-*.log
-.DS_Store
+.env.local
+
+# Operating System files
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Script file exclusions
+deploy.ps1
+push.bat
