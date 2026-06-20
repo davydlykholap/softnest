@@ -294,20 +294,20 @@
                 <a href="#quote-form" class="inline-flex items-center px-4 h-9 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wide hover:bg-mossGreen transition-colors no-underline whitespace-nowrap">
                     Get Quote
                 </a>
-            <!-- Hamburger button -->
-            <button id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false"
-                    class="hamburger-btn hidden items-center justify-center w-9 h-9 border border-forestGreen/30 text-forestGreen hover:bg-forestGreen hover:text-white transition-colors">
-                <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-                <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-            </button>
-        </div>
+                <!-- Hamburger button -->
+                <button id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false"
+                        class="hamburger-btn hidden items-center justify-center w-9 h-9 border border-forestGreen/30 text-forestGreen hover:bg-forestGreen hover:text-white transition-colors">
+                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
 
         </div>
     </header>
@@ -697,6 +697,13 @@
                         </div>
                     </div>
 
+                    <!-- 1b. Email -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-forestGreen mb-1">Email Address <span class="text-red-400">*</span></label>
+                        <input type="email" name="email" required placeholder="you@example.com"
+                               class="w-full bg-creamLight/30 border border-forestGreen/10 p-2.5 text-sm focus:outline-none focus:border-forestGreen placeholder-stone-300">
+                    </div>
+
                     <!-- 2. What needs cleaning — custom multi-select dropdown -->
                     <div>
                         <label class="block text-xs font-bold uppercase text-forestGreen mb-1">What Needs Cleaning? <span class="text-red-400">*</span></label>
@@ -730,6 +737,7 @@
                             </div>
                         </div>
                         <p id="err-items" class="text-red-400 text-[11px] mt-1 hidden">Please select at least one item.</p>
+                        <input type="hidden" name="items" id="itemsHiddenField">
                     </div>
 
                     <!-- 3. Message -->
@@ -739,7 +747,9 @@
                                   class="w-full bg-creamLight/30 border border-forestGreen/10 p-2.5 text-sm focus:outline-none focus:border-forestGreen placeholder-stone-300"></textarea>
                     </div>
 
-                    <button type="submit" class="w-full bg-forestGreen/80 text-white font-serif font-bold text-xs uppercase tracking-widest py-3 hover:bg-forestGreen transition-colors mt-1">
+                    <p id="err-submit" class="text-red-400 text-[11px] mt-1 hidden">Something went wrong sending your request. Please call us or try again.</p>
+
+                    <button type="submit" id="submitBtn" class="w-full bg-forestGreen/80 text-white font-serif font-bold text-xs uppercase tracking-widest py-3 hover:bg-forestGreen transition-colors mt-1">
                         Submit
                     </button>
                 </form>
@@ -859,6 +869,16 @@
                 display.className = 'sn-value';
                 display.textContent = labels.join(', ');
             }
+            // Keep the hidden form field in sync so selections are actually submitted
+            if (wrapperId === 'itemsWrapper') {
+                const hiddenField = document.getElementById('itemsHiddenField');
+                if (hiddenField) {
+                    const labels = selected && selected.size
+                        ? [...document.querySelectorAll(`#${wrapperId} .sn-option.selected span:last-child`)].map(s => s.textContent)
+                        : [];
+                    hiddenField.value = labels.join(', ');
+                }
+            }
         }
 
         // Close dropdowns when clicking outside
@@ -871,21 +891,49 @@
         /* ── Form submission ── */
         function handleFormSubmit(event) {
             event.preventDefault();
+            const form = document.getElementById('quoteForm');
             const items = dropdownSelections['itemsWrapper'];
             let valid = true;
 
             const errItems = document.getElementById('err-items');
+            const errSubmit = document.getElementById('err-submit');
+            errSubmit.classList.add('hidden');
 
             if (!items || items.size === 0) { errItems.classList.remove('hidden'); valid = false; }
             else { errItems.classList.add('hidden'); }
 
             if (!valid) return;
 
-            document.getElementById('quoteForm').classList.add('hidden');
-            const success = document.getElementById('formSuccess');
-            success.classList.remove('hidden');
-            success.classList.add('flex');
-            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(form);
+            formData.append('access_key', '4441f3fd-b3f1-4203-be13-fb517b98ceb1');
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json().then(data => ({ ok: response.ok, data })))
+                .then(({ ok, data }) => {
+                    if (!ok || !data.success) {
+                        throw new Error(data.message || 'Submission failed');
+                    }
+                    form.classList.add('hidden');
+                    const success = document.getElementById('formSuccess');
+                    success.classList.remove('hidden');
+                    success.classList.add('flex');
+                    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                })
+                .catch((err) => {
+                    errSubmit.textContent = err.message || 'Something went wrong sending your request. Please call us or try again.';
+                    errSubmit.classList.remove('hidden');
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit';
+                });
         }
 
         function toggleFaq(button) {
