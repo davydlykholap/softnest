@@ -15,7 +15,9 @@
                         forestGreen: '#1b4d3e',
                         mossGreen: '#256b54',
                         creamLight: '#f2f7f4',
-                        woodCharcoal: '#1a2820'
+                        woodCharcoal: '#1a2820',
+                        clay: '#bf6849',
+                        clayDark: '#a3543a'
                     },
                     fontFamily: {
                         serif: ['Georgia', 'Times New Roman', 'serif'],
@@ -251,6 +253,70 @@
             }
         }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Do you guarantee that every stain will be removed?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Unfortunately not — most everyday stains come out beautifully, but heat-set or deeply penetrated ones may only partially lift. We always take a look first and let you know what to expect before we do anything."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How long does sofa cleaning take?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Most sofas are done in 1–2 hours, and with our low-moisture method they're usually dry and ready to use the same day — typically within 2–4 hours. Larger or heavily soiled pieces may take a bit longer, and we'll give you a clear estimate before we get started."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are your cleaning products safe for pets and children?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Absolutely — everything we use is non-toxic and pH-balanced, so once the furniture dries your family and pets can pile right back on. That's usually within about 4 hours."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you clean leather sofas?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Not yet — right now we specialise in fabric, velvet, microfibre, and woven upholstery. Leather is a different world and we want to get it right before we offer it, but if you have one we're happy to point you somewhere that can help."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do I pay before or after the cleaning service?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "You pay only after the service is complete and you are fully satisfied. There are no upfront deposits, no hidden fees, and no payment collected before you've seen the finished result."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How should I prepare my furniture before your visit?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Just clear off any cushions, throws, or personal items and leave a path to the furniture — that's really all we need. No vacuuming or pre-treating necessary, and if there are any spots you're especially worried about, just show us when we arrive."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What areas in the GTA do you serve?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We serve Mississauga (including Port Credit, Streetsville, Erin Mills, and Meadowvale), Oakville, Brampton, Etobicoke, and surrounding GTA communities. Travel is free within most of our service area."
+                    }
+                }
+            ]
+        }
+    </script>
 </head>
 <body class="bg-creamLight text-woodCharcoal font-sans antialiased m-0 flex flex-col min-h-screen">
 
@@ -265,6 +331,7 @@
                     <li><a href="#services" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">Services</a></li>
                     <li><a href="#trust" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">Why Trust Us</a></li>
                     <li><a href="#reviews" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">Reviews</a></li>
+                    <li><a href="#faq" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">FAQ</a></li>
                 </ul>
             </nav>
 
@@ -274,10 +341,10 @@
                     <span class="font-serif font-bold text-lg text-forestGreen hover:text-mossGreen">(416) 727-0287</span>
                     <span class="font-serif font-bold text-lg text-forestGreen hover:text-mossGreen">(416) 726-4907</span>
                 </a>
-                <a href="mailto:andrey.gta.services@gmail.com" class="font-serif font-bold text-lg text-forestGreen hover:text-mossGreen no-underline">
-                    andrey.gta.services@gmail.com
+                <a href="mailto:softnest.upholstery@outlook.com" class="font-serif font-bold text-lg text-forestGreen hover:text-mossGreen no-underline">
+                    softnest.upholstery@outlook.com
                 </a>
-                <a href="#quote-form" class="inline-flex items-center px-6 h-9 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-widest shadow-sm hover:bg-mossGreen transition-colors no-underline">
+                <a href="#quote-form" class="inline-flex items-center px-6 h-9 bg-clay text-white font-serif font-bold text-xs uppercase tracking-widest shadow-sm hover:bg-clayDark transition-colors no-underline">
                     Get Quote
                 </a>
             </div>
@@ -291,7 +358,7 @@
                     </svg>
                 </a>
                 <!-- CTA button -->
-                <a href="#quote-form" class="inline-flex items-center px-4 h-9 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wide hover:bg-mossGreen transition-colors no-underline whitespace-nowrap">
+                <a href="#quote-form" class="inline-flex items-center px-4 h-9 bg-clay text-white font-serif font-bold text-xs uppercase tracking-wide hover:bg-clayDark transition-colors no-underline whitespace-nowrap">
                     Get Quote
                 </a>
                 <!-- Hamburger button -->
@@ -339,7 +406,7 @@
                     <div class="font-serif font-bold text-sm">(416) 726-4907</div>
                 </div>
             </a>
-            <a href="#quote-form" onclick="closeMobileMenu()" class="block text-center py-3 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-widest hover:bg-mossGreen transition-colors no-underline">
+            <a href="#quote-form" onclick="closeMobileMenu()" class="block text-center py-3 bg-clay text-white font-serif font-bold text-xs uppercase tracking-widest hover:bg-clayDark transition-colors no-underline">
                 Get a Free Quote
             </a>
         </div>
@@ -354,14 +421,14 @@
         </div>
 
         <div class="hero-card w-full max-w-[480px] bg-white/75 backdrop-blur-sm p-8 md:p-10 border-t-4 border-b-4 border-forestGreen shadow-lg relative z-10 my-auto">
-            <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">Fabric Restoration</span>
+            <span class="block font-serif text-xs font-bold uppercase tracking-wide text-forestGreen mb-2">Upholstery Cleaning, Done Right</span>
             <h1 class="font-serif font-bold text-forestGreen text-3xl md:text-4xl leading-tight mb-4 uppercase tracking-tight">Upholstery & Sofa Cleaning in Mississauga</h1>
             <div class="w-12 h-0.5 bg-forestGreen mb-4"></div>
             <p class="font-serif italic text-base text-stone-700 leading-relaxed mb-6">
-                Premium care for fine sofas, sectionals, and delicate fabrics across Mississauga and the GTA. Safe for family and pets.
+                Premium care for fine sofas, sectionals, and delicate fabrics across Mississauga and the GTA. Safe for family and pets..
             </p>
             <div class="hero-buttons flex flex-col sm:flex-row gap-3">
-                <a href="#quote-form" class="inline-block text-center px-5 py-3 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors">Get Quote</a>
+                <a href="#quote-form" class="inline-block text-center px-5 py-3 bg-clay text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-clayDark transition-colors">Get Quote</a>
                 <a href="#services" class="inline-block text-center px-5 py-3 border border-forestGreen text-forestGreen font-serif font-bold text-xs uppercase tracking-wider hover:bg-forestGreen hover:text-white transition-colors">Our Services</a>
             </div>
         </div>
@@ -370,9 +437,9 @@
     <!-- SECTION 1: SERVICES -->
     <section id="services" class="py-20 px-[6%] bg-white border-b border-forestGreen/5">
         <div class="max-w-5xl mx-auto">
-            <span class="block text-center font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">Our Specializations — Mississauga &amp; GTA</span>
+            <span class="block text-center font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">What We Clean</span>
             <h2 class="font-serif font-bold text-forestGreen text-3xl text-center uppercase tracking-tight mb-12">Our Upholstery Cleaning Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-creamLight p-6 border border-forestGreen/10 shadow-sm">
                     <h3 class="font-serif font-bold text-forestGreen text-lg uppercase mb-2">Sofa & Couch Cleaning</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">Remove dirt, body oils, stains, and everyday buildup from sofas, couches, and upholstered furniture.</p>
@@ -384,6 +451,10 @@
                 <div class="bg-creamLight p-6 border border-forestGreen/10 shadow-sm">
                     <h3 class="font-serif font-bold text-forestGreen text-lg uppercase mb-2">Sectional & Furniture Cleaning</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">Professional cleaning for sectionals, armchairs, recliners, ottomans, and other upholstered furniture.</p>
+                </div>
+                <div class="bg-creamLight p-6 border border-forestGreen/10 shadow-sm">
+                    <h3 class="font-serif font-bold text-forestGreen text-lg uppercase mb-2">Carpet & Area Rug Cleaning</h3>
+                    <p class="text-sm text-stone-600 leading-relaxed">Deep clean wall-to-wall carpets and area rugs — removing embedded dirt, allergens, and stains without harsh soaking.</p>
                 </div>
             </div>
         </div>
@@ -397,20 +468,20 @@
             <div class="reviews-testimonials lg:col-span-5 flex flex-col justify-center space-y-6 lg:pr-4">
                 <div>
                     <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">Client Testimonials</span>
-                    <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight">Entrusted With Fine Homes</h2>
+                    <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight">What Your Neighbours Are Saying</h2>
                 </div>
                 <div class="w-full flex flex-col gap-4">
                     <blockquote class="border-l-4 border-forestGreen pl-6 font-serif italic text-stone-700 bg-white p-6 shadow-sm text-left">
                         "Our dog had an accident on the sectional and I honestly thought it was ruined. SoftNest came the next morning and the stain and smell were completely gone. You'd never know it happened. So relieved."
-                        <span class="block not-italic font-sans text-xs font-bold uppercase tracking-wider text-forestGreen mt-3">Elena V. — <span class="font-normal text-stone-500">Mississauga</span></span>
+                        <span class="block not-italic font-serif text-xs font-bold uppercase tracking-wider text-forestGreen mt-3">Elena V. — <span class="font-normal text-stone-500">Mississauga</span></span>
                     </blockquote>
                     <blockquote class="border-l-4 border-forestGreen pl-6 font-serif italic text-stone-700 bg-white p-6 shadow-sm text-left">
                         "Really happy with the results on our sofa. They were on time, explained what they were doing, and the couch dried way faster than I expected — we were using it again the same evening. Would definitely book again."
-                        <span class="block not-italic font-sans text-xs font-bold uppercase tracking-wider text-forestGreen mt-3">Julian K. — <span class="font-normal text-stone-500">Oakville</span></span>
+                        <span class="block not-italic font-serif text-xs font-bold uppercase tracking-wider text-forestGreen mt-3">Julian K. — <span class="font-normal text-stone-500">Oakville</span></span>
                     </blockquote>
                     <blockquote class="border-l-4 border-forestGreen pl-6 font-serif italic text-stone-700 bg-white p-6 shadow-sm text-left">
                         "I was nervous about getting my light-coloured couch cleaned — terrified it would watermark. It came out perfect and they were done in under two hours. Honestly the best money I've spent on the house this year."
-                        <span class="block not-italic font-sans text-xs font-bold uppercase tracking-wider text-forestGreen mt-3">Marcus T. — <span class="font-normal text-stone-500">Port Credit, Mississauga</span></span>
+                        <span class="block not-italic font-serif text-xs font-bold uppercase tracking-wider text-forestGreen mt-3">Marcus T. — <span class="font-normal text-stone-500">Port Credit, Mississauga</span></span>
                     </blockquote>
                 </div>
             </div>
@@ -418,30 +489,38 @@
             <!-- Gallery -->
             <div class="reviews-gallery lg:col-span-7 w-full">
                 <div class="w-full border border-forestGreen/10 bg-white p-4 shadow-md rounded-sm">
-                    <div class="gallery-frame relative w-full h-[400px] sm:h-[480px] lg:h-[520px] xl:h-[560px] bg-stone-100 border border-stone-200 overflow-hidden group">
-                        <div id="slider-track" class="flex w-full h-full transition-transform duration-500 ease-out" style="transform: translateX(0%);">
+                    <div class="gallery-frame relative w-full h-[400px] sm:h-[480px] lg:h-[520px] xl:h-[560px] bg-stone-100 border border-stone-200 overflow-hidden group cursor-grab active:cursor-grabbing">
+                        <div id="slider-track" class="flex w-full h-full transition-transform duration-500 ease-out touch-pan-y" style="transform: translateX(0%);">
                             <div class="w-full h-full flex-shrink-0">
                                 <img src="img/gray_sofa_stain.png" alt="Before and after sectional sofa cleaning — water and pet stain removal by SoftNest" class="w-full h-full object-cover">
                             </div>
                             <div class="w-full h-full flex-shrink-0">
-                                <img src="img/dining_chairs.png" alt="" class="w-full h-full object-cover">
+                                <img src="img/dining_chairs.png" alt="Upholstered dining chair cleaning by SoftNest in Mississauga" class="w-full h-full object-cover">
                             </div>
                             <div class="w-full h-full flex-shrink-0">
-                                <img src="img/matress_cleaning.png" alt="" class="w-full h-full object-cover">
+                                <img src="img/matress_cleaning.png" alt="Mattress deep cleaning and stain removal by SoftNest" class="w-full h-full object-cover">
                             </div>
                             <div class="w-full h-full flex-shrink-0">
-                                <img src="img/sectional_sofa.png" alt="" class="w-full h-full object-cover">
+                                <img src="img/sectional_sofa.png" alt="Sectional sofa cleaning result by SoftNest Mississauga" class="w-full h-full object-cover">
                             </div>
                             <div class="w-full h-full flex-shrink-0">
-                                <img src="img/half_dirty_staircase.png" alt="" class="w-full h-full object-cover">
+                                <img src="img/half_dirty_staircase.png" alt="Before and after staircase carpet cleaning by SoftNest" class="w-full h-full object-cover">
                             </div>
                         </div>
-                        <button onclick="prevSlide()" aria-label="Previous image" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-forestGreen text-forestGreen hover:text-white transition-colors duration-200 p-3 rounded-full shadow-md focus:outline-none z-10">
+                        <button onclick="prevSlide()" aria-label="Previous image" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-forestGreen text-forestGreen hover:text-white transition-colors duration-200 p-3 rounded-full shadow-md focus:outline-none z-10 items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
                         </button>
-                        <button onclick="nextSlide()" aria-label="Next image" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-forestGreen text-forestGreen hover:text-white transition-colors duration-200 p-3 rounded-full shadow-md focus:outline-none z-10">
+                        <button onclick="nextSlide()" aria-label="Next image" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-forestGreen text-forestGreen hover:text-white transition-colors duration-200 p-3 rounded-full shadow-md focus:outline-none z-10 items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
                         </button>
+                        <div id="slide-counter" class="absolute top-3 right-3 bg-woodCharcoal/70 text-creamLight text-xs font-sans font-semibold px-2.5 py-1 rounded-full z-10 tabular-nums">1 / 5</div>
+                    </div>
+                    <div id="slide-dots" class="flex items-center justify-center gap-2 pt-4" role="tablist" aria-label="Gallery slide navigation">
+                        <button onclick="goToSlide(0)" aria-label="Go to slide 1" aria-selected="true" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen transition-colors"></button>
+                        <button onclick="goToSlide(1)" aria-label="Go to slide 2" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
+                        <button onclick="goToSlide(2)" aria-label="Go to slide 3" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
+                        <button onclick="goToSlide(3)" aria-label="Go to slide 4" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
+                        <button onclick="goToSlide(4)" aria-label="Go to slide 5" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
                     </div>
                 </div>
             </div>
@@ -453,37 +532,28 @@
     <section id="trust" class="py-20 px-[6%] bg-white border-b border-forestGreen/5">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">Uncompromising Standards</span>
-                <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight">The SoftNest Care System</h2>
+                <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">How It Works</span>
+                <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight">Our 4-Step Process</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 content-start">
                 <div class="border-l-2 border-forestGreen pl-4">
-                    <h3 class="font-serif font-bold text-forestGreen text-base uppercase">1. Fiber Identification</h3>
-                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">We determine composition (natural vs. synthetic) and check colorfastness before any solution touches your piece.</p>
+                    <h3 class="font-serif font-bold text-forestGreen text-base uppercase">1. Check the Fabric</h3>
+                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">Before anything touches your furniture, we check what it's made of and do a quick spot test so we know it's safe to clean.</p>
                 </div>
                 <div class="border-l-2 border-forestGreen pl-4">
-                    <h3 class="font-serif font-bold text-forestGreen text-base uppercase">2. Dry Soil Extraction</h3>
-                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">Lifting loose grit and loose dust hiding deep in the fabric backing to prevent fiber friction during wet cycles.</p>
+                    <h3 class="font-serif font-bold text-forestGreen text-base uppercase">2. Lift the Dirt</h3>
+                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">We loosen and lift the dry dirt and grit that's worked its way deep into the fabric, before any water is used.</p>
                 </div>
                 <div class="border-l-2 border-forestGreen pl-4">
-                    <h3 class="font-serif font-bold text-forestGreen text-base uppercase">3. Low-Moisture Rinse</h3>
-                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">Applying high-precision microspray agents, followed by immediate extraction to clean without overwetting foam cores.</p>
+                    <h3 class="font-serif font-bold text-forestGreen text-base uppercase">3. Clean &amp; Rinse</h3>
+                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">A light, low-moisture clean breaks down stains and odors without soaking the cushions — so they dry fast, not days later.</p>
                 </div>
                 <div class="border-l-2 border-forestGreen pl-4">
-                    <h3 class="font-serif font-bold text-forestGreen text-base uppercase">4. Hand Pile Grooming</h3>
-                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">Using classic velvet brushes, we set the fabric grain alignment perfectly to guarantee an even, luxurious sheen as it dries.</p>
+                    <h3 class="font-serif font-bold text-forestGreen text-base uppercase">4. Finish &amp; Groom</h3>
+                    <p class="text-xs text-stone-600 mt-1 leading-relaxed">We brush the fabric back into place so it looks even and feels like new once it's dry.</p>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto pt-12">
-                <div class="border border-forestGreen/10 p-3 bg-creamLight/50 text-center shadow-sm">
-                    <div class="font-serif text-xl font-bold text-forestGreen">100%</div>
-                    <div class="text-[9px] uppercase tracking-wide font-bold text-stone-500">Non-toxic products</div>
-                </div>
-                <div class="border border-forestGreen/10 p-3 bg-creamLight/50 text-center shadow-sm">
-                    <div class="font-serif text-xl font-bold text-forestGreen">2–4 hrs</div>
-                    <div class="text-[9px] uppercase tracking-wide font-bold text-stone-500">Typical dry time</div>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -495,28 +565,28 @@
                 <h2 class="font-serif font-bold text-creamLight text-3xl uppercase tracking-tight">You Are In Safe Hands</h2>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-creamLight/10">
-                <div class="bg-forestGreen p-7 flex flex-col items-start gap-3 hover:bg-mossGreen transition-colors">
+                <div class="bg-forestGreen p-7 flex flex-col items-start gap-3">
                     <div class="text-creamLight/70"><svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 14l-3-3 1.41-1.41L11 12.17l4.59-4.58L17 9l-6 6z" /></svg></div>
                     <div>
                         <div class="font-serif font-bold text-creamLight text-sm uppercase tracking-wide mb-1">Fully Insured</div>
                         <p class="text-xs text-creamLight/65 leading-relaxed">Every visit is covered by full liability insurance. Your furniture and home are protected throughout the entire service.</p>
                     </div>
                 </div>
-                <div class="bg-forestGreen p-7 flex flex-col items-start gap-3 hover:bg-mossGreen transition-colors">
+                <div class="bg-forestGreen p-7 flex flex-col items-start gap-3">
                     <div class="text-creamLight/70"><svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /></svg></div>
                     <div>
                         <div class="font-serif font-bold text-creamLight text-sm uppercase tracking-wide mb-1">Local & Family-Run</div>
                         <p class="text-xs text-creamLight/65 leading-relaxed">We're a small local team based in Mississauga — not a franchise. When you call, you're talking to the person who shows up at your door.</p>
                     </div>
                 </div>
-                <div class="bg-forestGreen p-7 flex flex-col items-start gap-3 hover:bg-mossGreen transition-colors">
+                <div class="bg-forestGreen p-7 flex flex-col items-start gap-3">
                     <div class="text-creamLight/70"><svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S14.93 14 13 14c-1.94 0-3.5-1.57-3.5-3.5S11.06 7 13 7zm-8 12c0-2 4-3.1 8-3.1 4 0 8 1.1 8 3.1v1H5v-1z" /></svg></div>
                     <div>
                         <div class="font-serif font-bold text-creamLight text-sm uppercase tracking-wide mb-1">Vetted Technicians</div>
                         <p class="text-xs text-creamLight/65 leading-relaxed">All SoftNest specialists pass background screening and complete hands-on test cleanings before entering any client home.</p>
                     </div>
                 </div>
-                <div class="bg-forestGreen p-7 flex flex-col items-start gap-3 hover:bg-mossGreen transition-colors">
+                <div class="bg-forestGreen p-7 flex flex-col items-start gap-3">
                     <div class="text-creamLight/70"><svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" /></svg></div>
                     <div>
                         <div class="font-serif font-bold text-creamLight text-sm uppercase tracking-wide mb-1">Pay After Service</div>
@@ -526,7 +596,7 @@
             </div>
             <div class="mt-10 border-t border-creamLight/10 pt-8 text-center">
                 <p class="text-xs font-serif italic text-creamLight/50 mb-3">Proudly serving homeowners across</p>
-                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-sans text-xs font-bold uppercase tracking-widest text-creamLight/70">
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-serif text-xs font-bold uppercase tracking-widest text-creamLight/70">
                     <span>Mississauga</span><span class="text-creamLight/20">·</span>
                     <span>Port Credit</span><span class="text-creamLight/20">·</span>
                     <span>Streetsville</span><span class="text-creamLight/20">·</span>
@@ -645,9 +715,9 @@
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div class="md:col-span-5 space-y-6 py-2">
                 <div>
-                    <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-1">Direct Channels</span>
-                    <h3 class="font-serif font-bold text-forestGreen text-2xl uppercase tracking-tight">Connect With Us</h3>
-                    <p class="text-xs text-stone-500 font-serif italic mt-1">Have a quick question or specialized vintage fabric request? Reach out directly.</p>
+                    <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-1">Get In Touch</span>
+                    <h3 class="font-serif font-bold text-forestGreen text-2xl uppercase tracking-tight">Talk to Us Directly</h3>
+                    <p class="text-xs text-stone-500 font-serif italic mt-1">Have a quick question or want to check availability? Reach out anytime.</p>
                 </div>
                 <div class="space-y-4">
                     <div class="bg-white border border-forestGreen/10 p-5 shadow-sm rounded-sm flex items-start gap-4">
@@ -666,7 +736,7 @@
                         </div>
                         <div>
                             <span class="block text-[10px] font-bold uppercase tracking-wider text-stone-400">Email Address</span>
-                            <a href="mailto:andrey.gta.services@gmail.com" class="font-serif font-bold text-base text-forestGreen hover:underline">andrey.gta.services@gmail.com</a>
+                            <a href="mailto:softnest.upholstery@outlook.com" class="font-serif font-bold text-base text-forestGreen hover:underline">softnest.upholstery@outlook.com</a>
                             <p class="text-[11px] text-stone-500 mt-0.5">Inquiries monitored continuously.</p>
                         </div>
                     </div>
@@ -675,13 +745,13 @@
             <div class="md:col-span-7 bg-white p-8 border border-forestGreen/10 shadow-md w-full">
                 <!-- Form header -->
                 <div class="mb-6">
-                    <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-1">Tailored Care Brief</span>
-                    <h4 class="font-serif font-bold text-forestGreen text-xl uppercase tracking-tight">Request Service Details</h4>
-                    <p class="text-xs text-stone-500 font-serif italic mt-1">We will review your inquiry and contact you as soon as possible.</p>
+                    <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-1">Get a Free Quote</span>
+                    <h4 class="font-serif font-bold text-forestGreen text-xl uppercase tracking-tight">Tell Us About Your Furniture</h4>
+                    <p class="text-xs text-stone-500 font-serif italic mt-1">We'll review your request and get back to you shortly.</p>
                 </div>
 
                 <!-- Form (visible by default) -->
-                <form id="quoteForm" action="#" method="POST" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                <form id="quoteForm" action="#" method="POST" enctype="multipart/form-data" class="space-y-5" onsubmit="handleFormSubmit(event)">
 
                     <!-- 1. Name + Phone -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -695,13 +765,6 @@
                             <input type="tel" name="phone" required placeholder="(905) 000-0000"
                                    class="w-full bg-creamLight/30 border border-forestGreen/10 p-2.5 text-sm focus:outline-none focus:border-forestGreen placeholder-stone-300">
                         </div>
-                    </div>
-
-                    <!-- 1b. Email -->
-                    <div>
-                        <label class="block text-xs font-bold uppercase text-forestGreen mb-1">Email Address <span class="text-red-400">*</span></label>
-                        <input type="email" name="email" required placeholder="you@example.com"
-                               class="w-full bg-creamLight/30 border border-forestGreen/10 p-2.5 text-sm focus:outline-none focus:border-forestGreen placeholder-stone-300">
                     </div>
 
                     <!-- 2. What needs cleaning — custom multi-select dropdown -->
@@ -747,9 +810,25 @@
                                   class="w-full bg-creamLight/30 border border-forestGreen/10 p-2.5 text-sm focus:outline-none focus:border-forestGreen placeholder-stone-300"></textarea>
                     </div>
 
+                    <!-- 4. Photo attachment -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-forestGreen mb-1">Attach a Photo <span class="font-normal normal-case text-stone-400">(optional, 1 file, up to 5MB)</span></label>
+                        <input type="file" name="attachment" id="fileInput" accept="image/*,.pdf" class="hidden" onchange="handleFileSelect(event)">
+                        <div id="fileDropZone" onclick="document.getElementById('fileInput').click()"
+                             class="w-full bg-creamLight/30 border border-dashed border-forestGreen/30 p-4 text-sm text-center cursor-pointer hover:border-forestGreen/60 hover:bg-creamLight/50 transition-colors">
+                            <span class="text-forestGreen font-semibold">Tap to add a photo</span>
+                            <span class="block text-stone-400 text-xs mt-0.5">A picture of the stain or furniture helps us prepare</span>
+                        </div>
+                        <div id="filePreview" class="hidden mt-2 flex items-center justify-between bg-creamLight/50 border border-forestGreen/10 p-2.5 text-xs">
+                            <span id="fileName" class="text-forestGreen font-semibold truncate pr-2"></span>
+                            <button type="button" onclick="clearFileSelection()" aria-label="Remove file" class="text-stone-400 hover:text-red-400 flex-shrink-0 font-bold px-1">✕</button>
+                        </div>
+                        <p id="err-file" class="text-red-400 text-[11px] mt-1 hidden">That file is too large — please choose something under 5MB.</p>
+                    </div>
+
                     <p id="err-submit" class="text-red-400 text-[11px] mt-1 hidden">Something went wrong sending your request. Please call us or try again.</p>
 
-                    <button type="submit" id="submitBtn" class="w-full bg-forestGreen/80 text-white font-serif font-bold text-xs uppercase tracking-widest py-3 hover:bg-forestGreen transition-colors mt-1">
+                    <button type="submit" id="submitBtn" class="w-full bg-clay text-white font-serif font-bold text-xs uppercase tracking-widest py-3 hover:bg-clayDark transition-colors mt-1">
                         Submit
                     </button>
                 </form>
@@ -771,8 +850,8 @@
     <!-- FOOTER -->
     <footer class="bg-forestGreen text-creamLight/80 px-[6%] py-12 flex flex-col md:flex-row justify-between items-center text-xs gap-6 md:gap-0 border-t-2 border-forestGreen">
         <div class="space-y-2 text-center md:text-left">
-            <p class="font-serif font-bold text-sm tracking-wide text-creamLight">SoftNest Fabric Care</p>
-            <p class="font-serif text-creamLight/60">&copy; 2026 SoftNest Fabric Care. All structural rights preserved.</p>
+            <p class="font-serif font-bold text-sm tracking-wide text-creamLight">SoftNest Upholstery Cleaning</p>
+            <p class="font-serif text-creamLight/60">&copy; 2026 SoftNest Upholstery Cleaning. All rights reserved.</p>
         </div>
         <div class="flex flex-col sm:flex-row items-center gap-6 md:gap-12">
             <div class="flex gap-6 font-serif font-bold uppercase tracking-wider text-creamLight/70">
@@ -888,6 +967,41 @@
             }
         });
 
+        /* ── File attachment handling ── */
+        const MAX_FILE_BYTES = 5 * 1024 * 1024; // 5MB — Web3Forms default uploader limit
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            const errFile = document.getElementById('err-file');
+            const dropZone = document.getElementById('fileDropZone');
+            const preview = document.getElementById('filePreview');
+            const fileNameEl = document.getElementById('fileName');
+
+            if (!file) return;
+
+            if (file.size > MAX_FILE_BYTES) {
+                errFile.classList.remove('hidden');
+                clearFileSelection();
+                return;
+            }
+            errFile.classList.add('hidden');
+
+            const sizeKb = (file.size / 1024).toFixed(0);
+            const sizeLabel = file.size > 1024 * 1024 ? `${(file.size / (1024 * 1024)).toFixed(1)}MB` : `${sizeKb}KB`;
+            fileNameEl.textContent = `${file.name} (${sizeLabel})`;
+            dropZone.classList.add('hidden');
+            preview.classList.remove('hidden');
+            preview.classList.add('flex');
+        }
+
+        function clearFileSelection() {
+            const fileInput = document.getElementById('fileInput');
+            fileInput.value = '';
+            document.getElementById('filePreview').classList.add('hidden');
+            document.getElementById('filePreview').classList.remove('flex');
+            document.getElementById('fileDropZone').classList.remove('hidden');
+        }
+
         /* ── Form submission ── */
         function handleFormSubmit(event) {
             event.preventDefault();
@@ -897,10 +1011,17 @@
 
             const errItems = document.getElementById('err-items');
             const errSubmit = document.getElementById('err-submit');
+            const errFile = document.getElementById('err-file');
             errSubmit.classList.add('hidden');
 
             if (!items || items.size === 0) { errItems.classList.remove('hidden'); valid = false; }
             else { errItems.classList.add('hidden'); }
+
+            const fileInput = document.getElementById('fileInput');
+            if (fileInput.files[0] && fileInput.files[0].size > MAX_FILE_BYTES) {
+                errFile.classList.remove('hidden');
+                valid = false;
+            }
 
             if (!valid) return;
 
@@ -970,9 +1091,20 @@
         }
         const sliderTrack = document.getElementById('slider-track');
         const totalSlides = sliderTrack.children.length;
+        const slideCounter = document.getElementById('slide-counter');
+        const slideDots = document.querySelectorAll('.slide-dot');
         let currentImgIndex = 0;
         function updateSliderPosition() {
             sliderTrack.style.transform = `translateX(-${currentImgIndex * 100}%)`;
+            if (slideCounter) {
+                slideCounter.textContent = `${currentImgIndex + 1} / ${totalSlides}`;
+            }
+            slideDots.forEach((dot, i) => {
+                const isActive = i === currentImgIndex;
+                dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                dot.classList.toggle('bg-forestGreen', isActive);
+                dot.classList.toggle('bg-forestGreen/25', !isActive);
+            });
         }
         function prevSlide() {
             currentImgIndex = (currentImgIndex === 0) ? totalSlides - 1 : currentImgIndex - 1;
@@ -982,6 +1114,59 @@
             currentImgIndex = (currentImgIndex === totalSlides - 1) ? 0 : currentImgIndex + 1;
             updateSliderPosition();
         }
+        function goToSlide(index) {
+            currentImgIndex = index;
+            updateSliderPosition();
+        }
+
+        // ── Draggable / swipeable slider (touch + mouse via Pointer Events) ──
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragDeltaX = 0;
+        let frameWidth = sliderTrack.parentElement.offsetWidth || 1;
+
+        function onPointerDown(e) {
+            isDragging = true;
+            dragStartX = e.clientX;
+            dragDeltaX = 0;
+            frameWidth = sliderTrack.parentElement.offsetWidth || 1;
+            sliderTrack.classList.remove('transition-transform', 'duration-500', 'ease-out');
+            sliderTrack.setPointerCapture && e.pointerId != null && sliderTrack.setPointerCapture(e.pointerId);
+        }
+
+        function onPointerMove(e) {
+            if (!isDragging) return;
+            dragDeltaX = e.clientX - dragStartX;
+            const baseOffsetPercent = -currentImgIndex * 100;
+            const dragPercent = (dragDeltaX / frameWidth) * 100;
+            sliderTrack.style.transform = `translateX(${baseOffsetPercent + dragPercent}%)`;
+        }
+
+        function endDrag() {
+            if (!isDragging) return;
+            isDragging = false;
+            sliderTrack.classList.add('transition-transform', 'duration-500', 'ease-out');
+
+            const swipeThreshold = frameWidth * 0.15;
+            if (dragDeltaX > swipeThreshold) {
+                prevSlide();
+            } else if (dragDeltaX < -swipeThreshold) {
+                nextSlide();
+            } else {
+                updateSliderPosition();
+            }
+            dragDeltaX = 0;
+        }
+
+        sliderTrack.addEventListener('pointerdown', onPointerDown);
+        sliderTrack.addEventListener('pointermove', onPointerMove);
+        sliderTrack.addEventListener('pointerup', endDrag);
+        sliderTrack.addEventListener('pointerleave', endDrag);
+        sliderTrack.addEventListener('pointercancel', endDrag);
+        // Prevent native image drag ghosting while dragging the slider
+        sliderTrack.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', e => e.preventDefault());
+        });
     </script>
 
 </body>
