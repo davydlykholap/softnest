@@ -26,4 +26,15 @@ Desktop.ini
 deploy.ps1
 push.bat
 
+# Project-specific assets
 img/business_cards/
+
+# Node/Web dependencies (Optional but highly recommended)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor settings
+.idea/
+.vscode/
