@@ -71,6 +71,57 @@
             cursor: default;
         }
 
+        .process-steps {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .process-step {
+            position: relative;
+            text-align: center;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: calc(50% + 64px);
+            width: calc(100% - 128px);
+            border-top: 1px dashed rgba(15,81,63,0.38);
+        }
+
+        .process-step__marker {
+            position: absolute;
+            top: 24px;
+            left: calc(50% - 94px);
+            z-index: 2;
+        }
+
+        .home-benefits {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .home-benefit {
+            min-width: 0;
+        }
+
+        .about-stats {
+            align-items: stretch;
+        }
+
+        .about-stat {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+        }
+
         .sn-select-trigger {
             width: 100%;
             background: rgba(242,247,244,0.3);
@@ -428,6 +479,135 @@
                 stroke-width: 2.4;
             }
 
+        .results-showcase {
+            display: grid;
+            grid-template-columns: minmax(230px, 0.36fr) minmax(0, 1fr);
+            align-items: center;
+            gap: clamp(28px, 4vw, 56px);
+        }
+
+        .results-copy {
+            max-width: 320px;
+        }
+
+        .results-card {
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid rgba(15,81,63,0.08);
+            box-shadow: 0 14px 36px rgba(15, 81, 63, 0.12);
+        }
+
+        .results-frame {
+            position: relative;
+            height: clamp(320px, 39vw, 520px);
+            overflow: hidden;
+            background: #edece8;
+        }
+
+        .results-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+        }
+
+        .results-slide.is-active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .results-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .results-label {
+            position: absolute;
+            bottom: 12px;
+            z-index: 3;
+            padding: 5px 11px;
+            background: rgba(26, 40, 32, 0.82);
+            color: #fff;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .results-label--before {
+            left: 12px;
+        }
+
+        .results-label--after {
+            right: 12px;
+        }
+
+        .results-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 4;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.96);
+            color: #0f513f;
+            box-shadow: 0 8px 22px rgba(26,40,32,0.16);
+            transform: translateY(-50%);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .results-arrow:hover {
+            background: #0f513f;
+            color: #fff;
+        }
+
+        .results-arrow--prev {
+            left: 14px;
+        }
+
+        .results-arrow--next {
+            right: 14px;
+        }
+
+        .results-dots {
+            min-height: 54px;
+        }
+
+        @media (max-width: 1023px) {
+            .results-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .results-copy {
+                max-width: 620px;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            .results-copy a {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .results-frame {
+                height: 300px;
+            }
+
+            .results-arrow {
+                width: 34px;
+                height: 34px;
+            }
+        }
+
         @media (max-width: 639px) {
 
             /* HEADER: collapse to single row logo + CTA only */
@@ -474,12 +654,18 @@
 
             .softnest-hero__image {
                 position: relative;
-                height: 47vh;
-                min-height: 330px;
+                height: auto;
+                min-height: 0;
+                overflow: hidden;
             }
 
                 .softnest-hero__image img {
-                    object-position: 57% center;
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                    object-position: 50% center;
+                    transform: none;
+                    background: #f7f3ee;
                 }
 
             .softnest-hero__wash {
@@ -489,14 +675,20 @@
             .softnest-hero__content {
                 width: 100%;
                 margin: 0;
-                padding: 28px 20px 34px;
+                padding: 20px 18px 26px;
                 background: linear-gradient(90deg, #fff 0%, #fff 78%, rgba(255,255,255,0.82) 100%);
                 transform: none;
             }
 
+            .softnest-hero__eyebrow {
+                font-size: 13px;
+                line-height: 1.35;
+                margin-bottom: 12px;
+            }
+
             .softnest-hero__sequence {
-                gap: 17px;
-                margin-bottom: 24px;
+                gap: 12px;
+                margin-bottom: 18px;
             }
 
             .softnest-hero__sequence-row {
@@ -509,13 +701,25 @@
             }
 
             .softnest-hero h1 {
-                font-size: clamp(35px, 11vw, 47px);
-                margin-bottom: 22px;
+                font-size: clamp(27px, 8.4vw, 34px);
+                line-height: 1.08;
+                margin-bottom: 14px;
+            }
+
+            .softnest-hero__title-line {
+                white-space: normal;
+            }
+
+            .softnest-hero__tagline {
+                font-size: 14px;
+                line-height: 1.35;
+                margin: 0 0 18px;
+                padding: 0;
             }
 
             .softnest-hero__copy {
-                font-size: 16px;
-                margin-bottom: 26px;
+                font-size: 14px;
+                margin-bottom: 20px;
             }
 
             .softnest-hero__features {
@@ -526,15 +730,19 @@
             }
 
             .softnest-hero__buttons {
-                gap: 12px;
+                gap: 8px;
+                max-width: none;
             }
 
             .softnest-hero__button {
                 flex: 1;
                 min-width: 0;
-                min-height: 54px;
-                padding: 0 14px;
-                font-size: 13px;
+                min-height: 44px;
+                padding: 0 8px;
+                font-size: 10.5px;
+                line-height: 1.15;
+                text-align: center;
+                white-space: normal;
             }
 
             .softnest-hero__down {
@@ -579,6 +787,147 @@
 
             #reviews .reviews-testimonials {
                 order: 2 !important;
+            }
+
+            body {
+                font-size: 14px;
+            }
+
+            section {
+                padding-top: 40px !important;
+                padding-bottom: 40px !important;
+            }
+
+            h2,
+            .text-3xl {
+                font-size: 1.45rem !important;
+                line-height: 1.15 !important;
+            }
+
+            .text-2xl {
+                font-size: 1.25rem !important;
+                line-height: 1.2 !important;
+            }
+
+            .text-xl {
+                font-size: 1.05rem !important;
+                line-height: 1.25 !important;
+            }
+
+            .text-lg {
+                font-size: 1rem !important;
+                line-height: 1.35 !important;
+            }
+
+            .text-base {
+                font-size: 0.9rem !important;
+                line-height: 1.45 !important;
+            }
+
+            .text-sm {
+                font-size: 0.8rem !important;
+                line-height: 1.45 !important;
+            }
+
+            .text-xs {
+                font-size: 0.68rem !important;
+            }
+
+            #main-header .header-inner {
+                padding-left: 14px !important;
+                padding-right: 14px !important;
+            }
+
+            #main-header .header-cta a:not(.header-phone-icon) {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                font-size: 10px !important;
+            }
+
+            .results-copy {
+                max-width: 330px;
+            }
+
+            .results-copy h2 {
+                margin-bottom: 14px !important;
+            }
+
+            .results-copy p {
+                margin-bottom: 12px !important;
+            }
+
+            .results-frame {
+                height: 270px;
+            }
+
+            .results-dots {
+                min-height: 44px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .process-step:not(:last-child)::after {
+                display: none;
+            }
+
+            .process-step__marker {
+                position: static;
+                margin: 0 auto 16px;
+            }
+
+            .home-benefits {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 10px;
+                align-items: start;
+            }
+
+            .home-benefit {
+                text-align: center;
+            }
+
+            .home-benefit svg {
+                width: 28px !important;
+                height: 28px !important;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 8px !important;
+            }
+
+            .home-benefit h3 {
+                font-size: 0.72rem !important;
+                line-height: 1.15 !important;
+            }
+
+            .home-benefit p {
+                font-size: 0.64rem !important;
+                line-height: 1.35 !important;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 22px;
+                column-gap: 14px;
+                border-top: 1px solid rgba(15,81,63,0.10);
+                padding-top: 22px;
+            }
+
+            .about-stats > :not([hidden]) ~ :not([hidden]) {
+                border-left-width: 0 !important;
+                border-right-width: 0 !important;
+            }
+
+            .about-stat {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+
+            .about-stat svg {
+                width: 34px !important;
+                height: 34px !important;
+                margin-bottom: 8px !important;
             }
         }
     </style>
@@ -766,48 +1115,48 @@
 
     <!-- SECTION 1: BEFORE & AFTER GALLERY -->
     <section id="results" class="py-12 md:py-16 px-[5%] bg-creamLight/50 border-b border-forestGreen/5 overflow-hidden">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div class="lg:col-span-3">
+        <div class="max-w-7xl mx-auto results-showcase">
+            <div class="results-copy">
                 <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Real Results You Can See</span>
                 <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">Before &amp; After<br>That Speak for Themselves</h2>
-                <p class="text-sm text-stone-700 leading-relaxed mb-6 max-w-sm">Deep cleaning removes the dirt you can't see. The results you can.</p>
+                <p class="text-sm text-stone-700 leading-relaxed mb-4">You might be surprised how much professional cleaning can restore.</p>
+                <p class="text-sm text-stone-700 leading-relaxed mb-6">A deep clean often delivers results beyond what most people expect.</p>
                 <a href="#reviews" class="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">View More Results</a>
             </div>
 
-            <div class="lg:col-span-9 w-full">
-                <div class="relative w-full overflow-hidden rounded-sm shadow-md bg-white">
-                    <div class="gallery-frame relative w-full h-[300px] sm:h-[400px] lg:h-[460px] bg-stone-100 overflow-hidden group cursor-grab active:cursor-grabbing">
-                        <div id="slider-track" class="flex w-full h-full transition-transform duration-500 ease-out touch-pan-y" style="transform: translateX(0%);">
-                            <div class="w-full h-full flex-shrink-0 relative">
-                                <img src="img/gray_sofa_stain.png" alt="Before and after sectional sofa cleaning by SoftNest" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-full h-full flex-shrink-0">
-                                <img src="img/dining_chairs.png" alt="Upholstered dining chair cleaning by SoftNest in Mississauga" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-full h-full flex-shrink-0">
-                                <img src="img/matress_cleaning.png" alt="Mattress deep cleaning and stain removal by SoftNest" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-full h-full flex-shrink-0">
-                                <img src="img/sectional_sofa.png" alt="Sectional sofa cleaning result by SoftNest Mississauga" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-full h-full flex-shrink-0">
-                                <img src="img/before_after_carpet_cleaning.png" alt="Before and after staircase carpet cleaning by SoftNest" class="w-full h-full object-cover">
-                            </div>
+            <div class="w-full">
+                <div class="results-card">
+                    <div class="results-frame gallery-frame" aria-live="polite">
+                        <div class="results-slide is-active">
+                            <img src="img/gray_sofa_stain.png" alt="Before and after sectional sofa cleaning by SoftNest">
                         </div>
-                        <button onclick="prevSlide()" aria-label="Previous image" class="hidden md:flex absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white hover:bg-forestGreen text-forestGreen hover:text-white transition-colors duration-200 p-4 rounded-full shadow-md focus:outline-none z-10 items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                        <div class="results-slide">
+                            <img src="img/dining_chairs.png" alt="Before and after upholstered dining chair cleaning by SoftNest">
+                        </div>
+                        <div class="results-slide">
+                            <img src="img/matress_cleaning.png" alt="Before and after mattress deep cleaning by SoftNest">
+                        </div>
+                        <div class="results-slide">
+                            <img src="img/sectional_sofa.png" alt="Before and after sectional sofa cleaning by SoftNest">
+                        </div>
+                        <div class="results-slide">
+                            <img src="img/before_after_carpet_cleaning.png" alt="Before and after staircase carpet cleaning by SoftNest">
+                        </div>
+                        <span class="results-label results-label--before">Before</span>
+                        <span class="results-label results-label--after">After</span>
+                        <button type="button" onclick="prevSlide()" aria-label="Previous image" class="results-arrow results-arrow--prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.4" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
                         </button>
-                        <button onclick="nextSlide()" aria-label="Next image" class="hidden md:flex absolute left-[calc(50%+42px)] top-1/2 -translate-y-1/2 bg-white hover:bg-forestGreen text-forestGreen hover:text-white transition-colors duration-200 p-4 rounded-full shadow-md focus:outline-none z-10 items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                        <button type="button" onclick="nextSlide()" aria-label="Next image" class="results-arrow results-arrow--next">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.4" stroke="currentColor" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
                         </button>
-                        <div id="slide-counter" class="absolute bottom-3 right-3 bg-woodCharcoal/70 text-creamLight text-xs font-sans font-semibold px-2.5 py-1 rounded-full z-10 tabular-nums">1 / 5</div>
                     </div>
-                    <div id="slide-dots" class="flex items-center justify-center gap-2 py-4" role="tablist" aria-label="Gallery slide navigation">
-                        <button onclick="goToSlide(0)" aria-label="Go to slide 1" aria-selected="true" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen transition-colors"></button>
-                        <button onclick="goToSlide(1)" aria-label="Go to slide 2" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
-                        <button onclick="goToSlide(2)" aria-label="Go to slide 3" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
-                        <button onclick="goToSlide(3)" aria-label="Go to slide 4" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
-                        <button onclick="goToSlide(4)" aria-label="Go to slide 5" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
+                    <div id="slide-dots" class="results-dots flex items-center justify-center gap-2" role="tablist" aria-label="Gallery slide navigation">
+                        <button type="button" onclick="goToSlide(0)" aria-label="Go to slide 1" aria-selected="true" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen transition-colors"></button>
+                        <button type="button" onclick="goToSlide(1)" aria-label="Go to slide 2" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
+                        <button type="button" onclick="goToSlide(2)" aria-label="Go to slide 3" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
+                        <button type="button" onclick="goToSlide(3)" aria-label="Go to slide 4" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
+                        <button type="button" onclick="goToSlide(4)" aria-label="Go to slide 5" aria-selected="false" role="tab" class="slide-dot w-2.5 h-2.5 rounded-full bg-forestGreen/25 hover:bg-forestGreen/50 transition-colors"></button>
                     </div>
                 </div>
             </div>
@@ -915,28 +1264,28 @@
                 <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">How It Works</span>
                 <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight">Our 4-Step Cleaning Process</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
+            <div class="process-steps">
+                <div class="process-step">
                     <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-creamLight flex items-center justify-center text-forestGreen"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="6" /><path d="M14.5 14.5L20 20" /></svg></div>
-                    <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs mb-4">1</span>
+                    <span class="process-step__marker inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs">1</span>
                     <h3 class="font-serif font-bold text-forestGreen text-base mb-2">Inspection</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">We check the fabric, identify stains and problem areas, and choose the best cleaning approach.</p>
                 </div>
-                <div class="text-center">
+                <div class="process-step">
                     <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-creamLight flex items-center justify-center text-forestGreen"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="14" r="4" /><circle cx="15" cy="8" r="3" /><circle cx="17" cy="16" r="2" /><circle cx="8" cy="6" r="1.5" /></svg></div>
-                    <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs mb-4">2</span>
+                    <span class="process-step__marker inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs">2</span>
                     <h3 class="font-serif font-bold text-forestGreen text-base mb-2">Pre-Treat &amp; Loosen</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">We apply professional pre-treatments and agitate the fabric to break down dirt, oils, and stains.</p>
                 </div>
-                <div class="text-center">
+                <div class="process-step">
                     <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-creamLight flex items-center justify-center text-forestGreen"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 20V7a4 4 0 018 0v13" /><path d="M5 20h8" /><circle cx="17" cy="17" r="3" /></svg></div>
-                    <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs mb-4">3</span>
+                    <span class="process-step__marker inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs">3</span>
                     <h3 class="font-serif font-bold text-forestGreen text-base mb-2">Deep Clean &amp; Extract</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">Hot water extraction removes deep down dirt, allergens, and odours for a thorough clean.</p>
                 </div>
-                <div class="text-center">
+                <div class="process-step">
                     <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-creamLight flex items-center justify-center text-forestGreen"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3" /><path d="M12 2v6M12 16v6M2 12h6M16 12h6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M19.1 4.9l-4.2 4.2M9.1 14.9l-4.2 4.2" /></svg></div>
-                    <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs mb-4">4</span>
+                    <span class="process-step__marker inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs">4</span>
                     <h3 class="font-serif font-bold text-forestGreen text-base mb-2">Final Groom &amp; Dry</h3>
                     <p class="text-sm text-stone-600 leading-relaxed">We groom the fabric, set the nap, and speed up drying so your furniture looks fresh.</p>
                 </div>
@@ -954,10 +1303,10 @@
                 <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Healthier Home. Happier Family.</span>
                 <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">A Deeper Clean for the People<br>and Pets You Love</h2>
                 <p class="text-sm text-stone-700 leading-relaxed mb-8">Our cleaning process removes dirt, bacteria, allergens, and odours trapped deep in your upholstery, creating a fresher, healthier environment for your family.</p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div><svg class="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 4c-8.2.5-13.5 5-14.6 11.6" /><path d="M20 4c.5 8.2-4.1 13.1-11.7 13.8" /><path d="M4 20c3.2-5.6 7-8.9 12-11" /></svg><h3 class="font-serif font-bold text-forestGreen text-sm mb-1">Safe Products</h3><p class="text-xs text-stone-600 leading-relaxed">Non-toxic and eco-friendly. Safe for kids and pets.</p></div>
-                    <div><svg class="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4c2 3 0 5 0 8" /><path d="M12 4c2 3 0 5 0 8" /><path d="M17 4c2 3 0 5 0 8" /><path d="M5 18h14" /></svg><h3 class="font-serif font-bold text-forestGreen text-sm mb-1">Odour Removal</h3><p class="text-xs text-stone-600 leading-relaxed">Eliminates odours at the source, not just masking them.</p></div>
-                    <div><svg class="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.9-2.9 8.2-7 10-4.1-1.8-7-5.1-7-10V6l7-3z" /><path d="M12 8v8M8 12h8" /></svg><h3 class="font-serif font-bold text-forestGreen text-sm mb-1">Allergen Reduction</h3><p class="text-xs text-stone-600 leading-relaxed">Removes dust, dander, and allergens for a healthier home.</p></div>
+                <div class="home-benefits">
+                    <div class="home-benefit"><svg class="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 4c-8.2.5-13.5 5-14.6 11.6" /><path d="M20 4c.5 8.2-4.1 13.1-11.7 13.8" /><path d="M4 20c3.2-5.6 7-8.9 12-11" /></svg><h3 class="font-serif font-bold text-forestGreen text-sm mb-1">Safe Products</h3><p class="text-xs text-stone-600 leading-relaxed">Non-toxic and eco-friendly. Safe for kids and pets.</p></div>
+                    <div class="home-benefit"><svg class="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 4c2 3 0 5 0 8" /><path d="M12 4c2 3 0 5 0 8" /><path d="M17 4c2 3 0 5 0 8" /><path d="M5 18h14" /></svg><h3 class="font-serif font-bold text-forestGreen text-sm mb-1">Odour Removal</h3><p class="text-xs text-stone-600 leading-relaxed">Eliminates odours at the source, not just masking them.</p></div>
+                    <div class="home-benefit"><svg class="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.9-2.9 8.2-7 10-4.1-1.8-7-5.1-7-10V6l7-3z" /><path d="M12 8v8M8 12h8" /></svg><h3 class="font-serif font-bold text-forestGreen text-sm mb-1">Allergen Reduction</h3><p class="text-xs text-stone-600 leading-relaxed">Removes dust, dander, and allergens for a healthier home.</p></div>
                 </div>
             </div>
         </div>
@@ -1018,23 +1367,23 @@
                     <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-4">Careful Upholstery Cleaning,<br>Done with Standards</h2>
                     <p class="text-sm text-stone-700 leading-relaxed max-w-2xl mb-4">SoftNest was built around a simple belief: quality should always come first. Every sofa, sectional, chair, and rug is treated with the same care we would expect in our own homes.</p>
                     <p class="text-sm text-stone-700 leading-relaxed max-w-2xl mb-8">From fabric-safe products to professional equipment and careful technique, our goal is to deliver visible results you can trust without rushing the work.</p>
-                    <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-forestGreen/10 border-t border-forestGreen/10 pt-7">
-                        <div class="px-4 first:pl-0 text-center">
+                    <div class="about-stats grid grid-cols-2 md:grid-cols-4 divide-x divide-forestGreen/10 border-t border-forestGreen/10 pt-7">
+                        <div class="about-stat px-4 first:pl-0 text-center">
                             <svg class="w-11 h-11 mx-auto mb-3 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v5c0 4.9-2.9 8.2-7 10-4.1-1.8-7-5.1-7-10V6l7-3z" /><path d="M8.5 12.2l2.2 2.2 4.8-5" /></svg>
                             <div class="font-serif font-bold text-forestGreen text-xl">100%</div>
                             <p class="text-xs text-stone-600 leading-relaxed">Satisfaction Focused</p>
                         </div>
-                        <div class="px-4 text-center">
+                        <div class="about-stat px-4 text-center">
                             <svg class="w-11 h-11 mx-auto mb-3 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="5" /><path d="M8 13l-2 8 6-3 6 3-2-8" /><path d="M9.5 8l1.7 1.7L15 6" /></svg>
                             <div class="font-serif font-bold text-forestGreen text-xl">Pro</div>
                             <p class="text-xs text-stone-600 leading-relaxed">Equipment &amp; Technique</p>
                         </div>
-                        <div class="px-4 text-center">
+                        <div class="about-stat px-4 text-center">
                             <svg class="w-11 h-11 mx-auto mb-3 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 11l8-7 8 7" /><path d="M6 10v10h12V10" /><path d="M10 20v-5h4v5" /></svg>
                             <div class="font-serif font-bold text-forestGreen text-xl">Local</div>
                             <p class="text-xs text-stone-600 leading-relaxed">Mississauga &amp; GTA</p>
                         </div>
-                        <div class="px-4 text-center">
+                        <div class="about-stat px-4 text-center">
                             <svg class="w-11 h-11 mx-auto mb-3 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z" /></svg>
                             <div class="font-serif font-bold text-forestGreen text-xl">Care</div>
                             <p class="text-xs text-stone-600 leading-relaxed">For Your Home</p>
@@ -1188,9 +1537,11 @@
             input.value = formatted;
         }
         var phoneInput = document.getElementById('phoneInput');
-        phoneInput.addEventListener('input', function () { formatPhone(this); });
-        phoneInput.addEventListener('keyup', function () { formatPhone(this); });
-        phoneInput.addEventListener('paste', function () { setTimeout(function () { formatPhone(phoneInput); }, 0); });
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function () { formatPhone(this); });
+            phoneInput.addEventListener('keyup', function () { formatPhone(this); });
+            phoneInput.addEventListener('paste', function () { setTimeout(function () { formatPhone(phoneInput); }, 0); });
+        }
 
         /* ── Form submission ── */
         function handleFormSubmit(event) {
@@ -1272,16 +1623,14 @@
                 icon.textContent = '−';
             }
         }
-        const sliderTrack = document.getElementById('slider-track');
-        const totalSlides = sliderTrack.children.length;
-        const slideCounter = document.getElementById('slide-counter');
+        const gallerySlides = document.querySelectorAll('.results-slide');
+        const totalSlides = gallerySlides.length;
         const slideDots = document.querySelectorAll('.slide-dot');
         let currentImgIndex = 0;
         function updateSliderPosition() {
-            sliderTrack.style.transform = `translateX(-${currentImgIndex * 100}%)`;
-            if (slideCounter) {
-                slideCounter.textContent = `${currentImgIndex + 1} / ${totalSlides}`;
-            }
+            gallerySlides.forEach((slide, i) => {
+                slide.classList.toggle('is-active', i === currentImgIndex);
+            });
             slideDots.forEach((dot, i) => {
                 const isActive = i === currentImgIndex;
                 dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
@@ -1302,54 +1651,6 @@
             updateSliderPosition();
         }
 
-        // ── Draggable / swipeable slider (touch + mouse via Pointer Events) ──
-        let isDragging = false;
-        let dragStartX = 0;
-        let dragDeltaX = 0;
-        let frameWidth = sliderTrack.parentElement.offsetWidth || 1;
-
-        function onPointerDown(e) {
-            isDragging = true;
-            dragStartX = e.clientX;
-            dragDeltaX = 0;
-            frameWidth = sliderTrack.parentElement.offsetWidth || 1;
-            sliderTrack.classList.remove('transition-transform', 'duration-500', 'ease-out');
-            sliderTrack.setPointerCapture && e.pointerId != null && sliderTrack.setPointerCapture(e.pointerId);
-        }
-
-        function onPointerMove(e) {
-            if (!isDragging) return;
-            dragDeltaX = e.clientX - dragStartX;
-            const baseOffsetPercent = -currentImgIndex * 100;
-            const dragPercent = (dragDeltaX / frameWidth) * 100;
-            sliderTrack.style.transform = `translateX(${baseOffsetPercent + dragPercent}%)`;
-        }
-
-        function endDrag() {
-            if (!isDragging) return;
-            isDragging = false;
-            sliderTrack.classList.add('transition-transform', 'duration-500', 'ease-out');
-
-            const swipeThreshold = frameWidth * 0.15;
-            if (dragDeltaX > swipeThreshold) {
-                prevSlide();
-            } else if (dragDeltaX < -swipeThreshold) {
-                nextSlide();
-            } else {
-                updateSliderPosition();
-            }
-            dragDeltaX = 0;
-        }
-
-        sliderTrack.addEventListener('pointerdown', onPointerDown);
-        sliderTrack.addEventListener('pointermove', onPointerMove);
-        sliderTrack.addEventListener('pointerup', endDrag);
-        sliderTrack.addEventListener('pointerleave', endDrag);
-        sliderTrack.addEventListener('pointercancel', endDrag);
-        // Prevent native image drag ghosting while dragging the slider
-        sliderTrack.querySelectorAll('img').forEach(img => {
-            img.addEventListener('dragstart', e => e.preventDefault());
-        });
     </script>
 
 </body>
