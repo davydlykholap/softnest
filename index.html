@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SoftNest Upholstery Cleaning | Sofa & Couch Cleaning Mississauga</title>
     <meta name="description" content="Professional upholstery, sofa, couch, sectional, and furniture cleaning in Mississauga and the GTA. Pet stain removal, odor treatment, and fast-drying service.">
+    <link rel="icon" type="image/png" href="img/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon/favicon.png">
     <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -40,6 +42,44 @@
         html,
         body {
             overflow-x: hidden;
+        }
+
+        html {
+            scroll-padding-top: 112px;
+        }
+
+        section[id],
+        main[id] {
+            scroll-margin-top: 112px;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            flex: 0 0 42px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-icon-badge svg {
+            display: block;
+            margin: auto;
+        }
+
+        .service-icon-badge--pet svg {
+            width: 22px;
+            height: 22px;
+            transform: translate(0.5px, -1px);
         }
 
         /* ── CUSTOM MULTI-SELECT DROPDOWN ── */
@@ -109,6 +149,59 @@
             min-width: 0;
         }
 
+        .health-section {
+            background: rgba(242,247,244,0.4);
+            border-bottom: 1px solid rgba(15,81,63,0.05);
+            padding: 0;
+        }
+
+        .health-inner {
+            max-width: none;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .health-visual {
+            min-height: 380px;
+            height: auto;
+            overflow: hidden;
+            background: #e9e2d8;
+        }
+
+        .health-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 48% center;
+        }
+
+        .health-copy {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 58px 7%;
+            transform: translateX(22px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .health-copy h2 {
+            margin-bottom: 20px;
+        }
+
+        .health-copy > p {
+            margin-bottom: 30px;
+        }
+
+        .health-copy .home-benefit svg {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 12px;
+        }
+
         .about-stats {
             align-items: stretch;
         }
@@ -120,6 +213,68 @@
             align-items: center;
             justify-content: flex-start;
             height: 100%;
+        }
+
+        .faq-layout {
+            max-width: none;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: stretch;
+            gap: 0;
+        }
+
+        .faq-copy {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 58px 7%;
+            transform: translateX(-22px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .faq-equipment {
+            position: relative;
+            min-height: 0;
+            aspect-ratio: auto;
+            overflow: hidden;
+            background: #e8e2d8;
+        }
+
+        .faq-equipment img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 48% center;
+        }
+
+        .faq-equipment__card {
+            position: absolute;
+            right: 58px;
+            bottom: 46px;
+            width: min(330px, 42%);
+            background: rgba(255,255,255,0.92);
+            padding: 28px 32px;
+            box-shadow: 0 10px 24px rgba(26,40,32,0.08);
+        }
+
+        .about-visual {
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #fff;
+            border: 0;
+            box-shadow: none;
+        }
+
+        .about-visual img {
+            width: min(92%, 430px);
+            height: auto;
+            max-height: 350px;
+            object-fit: contain;
+            object-position: center;
         }
 
         .sn-select-trigger {
@@ -595,6 +750,32 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+
+            .health-inner {
+                grid-template-columns: 1fr;
+                max-width: none;
+                gap: 0;
+            }
+
+            .health-visual {
+                min-height: 280px;
+            }
+
+            .faq-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-copy {
+                max-width: none;
+                margin-left: 0;
+                padding: 34px 6%;
+                transform: none;
+                order: 2;
+            }
+
+            .faq-equipment {
+                order: 1;
+            }
         }
 
         @media (max-width: 639px) {
@@ -609,6 +790,15 @@
         }
 
         @media (max-width: 639px) {
+
+            html {
+                scroll-padding-top: 64px;
+            }
+
+            section[id],
+            main[id] {
+                scroll-margin-top: 64px;
+            }
 
             /* HEADER: collapse to single row logo + CTA only */
             #main-header .header-inner {
@@ -844,6 +1034,25 @@
                 font-size: 10px !important;
             }
 
+            .brand-link {
+                gap: 6px;
+            }
+
+            .brand-mark {
+                width: 32px;
+                height: 32px;
+                flex-basis: 32px;
+            }
+
+            .brand-text .text-2xl {
+                font-size: 1.05rem !important;
+            }
+
+            .brand-text span:last-child {
+                font-size: 8px !important;
+                letter-spacing: 0.12em !important;
+            }
+
             .results-copy {
                 max-width: 330px;
             }
@@ -906,6 +1115,32 @@
                 line-height: 1.35 !important;
             }
 
+            .health-section {
+                padding: 0 !important;
+            }
+
+            .health-inner {
+                gap: 0;
+            }
+
+            .health-visual {
+                min-height: 230px;
+            }
+
+            .health-copy {
+                margin-left: 0;
+                padding: 34px 6%;
+                transform: none;
+            }
+
+            .health-copy h2 {
+                margin-bottom: 12px !important;
+            }
+
+            .health-copy p {
+                margin-bottom: 18px !important;
+            }
+
             .about-stats {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 row-gap: 22px;
@@ -928,6 +1163,38 @@
                 width: 34px !important;
                 height: 34px !important;
                 margin-bottom: 8px !important;
+            }
+
+            .faq-equipment {
+                aspect-ratio: auto;
+                overflow: hidden;
+                background: #e8e2d8;
+            }
+
+            #faq {
+                padding-top: 0 !important;
+            }
+
+            .faq-equipment img {
+                display: block;
+                aspect-ratio: 1.45 / 1;
+                width: 100%;
+                height: auto;
+                object-position: 38% center;
+            }
+
+            .faq-equipment__card {
+                display: none;
+            }
+
+            .about-visual {
+                min-height: 0;
+                padding: 28px 16px;
+            }
+
+            .about-visual img {
+                width: min(88%, 320px);
+                max-height: 320px;
             }
         }
     </style>
@@ -1002,16 +1269,19 @@
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white border-b border-forestGreen/10 shadow-sm">
         <div class="header-inner flex flex-col sm:flex-row justify-between items-center px-[4%] py-5 gap-4 sm:gap-0 bg-white/95 backdrop-blur-md">
 
-            <a href="#" class="flex flex-col font-serif font-bold text-forestGreen no-underline uppercase leading-none">
-                <span class="text-2xl md:text-3xl tracking-wide">SoftNest</span>
-                <span class="mt-1 text-[10px] md:text-xs tracking-[0.18em]">Farbic Care</span>
+            <a href="#" class="brand-link font-serif font-bold text-forestGreen no-underline uppercase leading-none">
+                <img src="img/logo/header_logo.png" alt="" class="brand-mark" aria-hidden="true">
+                <span class="brand-text">
+                    <span class="text-2xl md:text-3xl tracking-wide">SoftNest</span>
+                    <span class="mt-1 text-[10px] md:text-xs tracking-[0.18em]">Farbic Care</span>
+                </span>
             </a>
 
             <nav>
                 <ul class="flex list-none gap-5 md:gap-8 py-1 text-sm md:text-base font-serif font-bold uppercase tracking-wider">
                     <li><a href="#services" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">Services</a></li>
                     <li><a href="#reviews" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">Reviews</a></li>
-                    <li><a href="#trust" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">Why Trust Us</a></li>
+                    <li><a href="#why-softnest" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">Why Trust Us</a></li>
                     <li><a href="#faq" class="no-underline text-forestGreen hover:text-mossGreen transition-colors">FAQ</a></li>
                 </ul>
             </nav>
@@ -1071,7 +1341,7 @@
             <ul class="space-y-1 list-none">
                 <li><a href="#services" onclick="closeMobileMenu()" class="block py-4 border-b border-forestGreen/10 font-serif font-bold text-sm uppercase tracking-wider text-forestGreen hover:text-mossGreen no-underline transition-colors">Services</a></li>
                 <li><a href="#reviews" onclick="closeMobileMenu()" class="block py-4 border-b border-forestGreen/10 font-serif font-bold text-sm uppercase tracking-wider text-forestGreen hover:text-mossGreen no-underline transition-colors">Reviews</a></li>
-                <li><a href="#trust" onclick="closeMobileMenu()" class="block py-4 border-b border-forestGreen/10 font-serif font-bold text-sm uppercase tracking-wider text-forestGreen hover:text-mossGreen no-underline transition-colors">Why Trust Us</a></li>
+                <li><a href="#why-softnest" onclick="closeMobileMenu()" class="block py-4 border-b border-forestGreen/10 font-serif font-bold text-sm uppercase tracking-wider text-forestGreen hover:text-mossGreen no-underline transition-colors">Why Trust Us</a></li>
                 <li><a href="#faq" onclick="closeMobileMenu()" class="block py-4 border-b border-forestGreen/10 font-serif font-bold text-sm uppercase tracking-wider text-forestGreen hover:text-mossGreen no-underline transition-colors">FAQ</a></li>
             </ul>
         </nav>
@@ -1183,7 +1453,7 @@
                 <article class="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
                     <div class="relative h-44 bg-stone-100 overflow-visible">
                         <img src="img/sofa_cleaning.png" alt="" class="w-full h-full object-cover" aria-hidden="true">
-                        <div class="absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
+                        <div class="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h16v7H4z" /><path d="M6 12V9c0-2 1.5-3 3-3h6c1.5 0 3 1 3 3v3" /><path d="M7 19v2" /><path d="M17 19v2" /></svg>
                         </div>
                     </div>
@@ -1195,7 +1465,7 @@
                 <article class="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
                     <div class="relative h-44 bg-stone-100 overflow-visible">
                         <img src="img/pet_stain.jpg" alt="Pet stain and odour removal service by SoftNest" class="w-full h-full object-cover">
-                        <div class="absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
+                        <div class="service-icon-badge service-icon-badge--pet absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-6-4.4-6-10a4 4 0 0 1 7-2.6A4 4 0 0 1 20 11c0 5.6-8 10-8 10z" /><path d="M9 14h6" /><path d="M12 11v6" /></svg>
                         </div>
                     </div>
@@ -1207,7 +1477,7 @@
                 <article class="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
                     <div class="relative h-44 bg-stone-100 overflow-visible">
                         <img src="img/sectional_furniture.png" alt="" class="w-full h-full object-cover" aria-hidden="true">
-                        <div class="absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
+                        <div class="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 10h14v8H5z" /><path d="M7 10V7h10v3" /><path d="M8 18v2" /><path d="M16 18v2" /></svg>
                         </div>
                     </div>
@@ -1219,7 +1489,7 @@
                 <article class="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
                     <div class="relative h-44 bg-stone-100 overflow-visible">
                         <img src="img/rug_2.png" alt="Carpet and area rug cleaning service by SoftNest" class="w-full h-full object-cover">
-                        <div class="absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
+                        <div class="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
                             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 7h14" /><path d="M5 12h14" /><path d="M5 17h14" /><path d="M8 5v14" /><path d="M16 5v14" /></svg>
                         </div>
                     </div>
@@ -1234,12 +1504,12 @@
 
     <!-- SECTION 3: WHY HOMEOWNERS CHOOSE SOFTNEST -->
     <section id="why-softnest" class="py-16 px-[6%] bg-creamLight/40 border-b border-forestGreen/5">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div class="lg:col-span-4">
                 <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Why Homeowners Choose SoftNest</span>
                 <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">Quality You Can See.<br>Care You Can Trust.</h2>
                 <p class="text-sm text-stone-700 leading-relaxed mb-6 max-w-sm">We go beyond surface cleaning. Every detail matters because your home and furniture deserve the best.</p>
-                <a href="#trust" class="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">Learn More About Us</a>
+                <a href="#about" class="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">Learn More About Us</a>
             </div>
             <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-forestGreen/10">
                 <div class="px-6 py-6 text-center">
@@ -1303,12 +1573,12 @@
     </section>
 
     <!-- SECTION 5: HEALTHIER HOME -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 bg-creamLight/40 border-b border-forestGreen/5">
-        <div class="min-h-[360px] bg-stone-100">
-            <img data-src="" alt="" class="hidden w-full h-full object-cover" aria-hidden="true">
-        </div>
-        <div class="px-[6%] py-16 flex items-center">
-            <div class="max-w-xl">
+    <section class="health-section">
+        <div class="health-inner">
+            <div class="health-visual">
+                <img src="img/health.png" alt="" aria-hidden="true">
+            </div>
+            <div class="health-copy">
                 <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Healthier Home. Happier Family.</span>
                 <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">A Deeper Clean for the People<br>and Pets You Love</h2>
                 <p class="text-sm text-stone-700 leading-relaxed mb-8">Our cleaning process removes dirt, bacteria, allergens, and odours trapped deep in your upholstery, creating a fresher, healthier environment for your family.</p>
@@ -1339,9 +1609,9 @@
     </section>
 
     <!-- SECTION 7: FAQ AND EQUIPMENT -->
-    <section id="faq" class="py-16 px-[6%] bg-creamLight/40 border-b border-forestGreen/5">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <div class="lg:col-span-5">
+    <section id="faq" class="bg-creamLight/40 border-b border-forestGreen/5">
+        <div class="faq-layout">
+            <div class="faq-copy">
                 <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">FAQ</span>
                 <h2 class="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight mb-6">Frequently Asked Questions</h2>
                 <div class="space-y-2">
@@ -1353,9 +1623,9 @@
                 </div>
                 <a href="#faq" class="inline-flex mt-6 items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">View All FAQs</a>
             </div>
-            <div class="lg:col-span-7 relative min-h-[340px] bg-stone-100 overflow-hidden">
-                <img data-src="" alt="" class="hidden w-full h-full object-cover" aria-hidden="true">
-                <div class="absolute right-8 top-1/2 -translate-y-1/2 bg-white/90 p-8 max-w-xs shadow-sm">
+            <div class="faq-equipment">
+                <img src="img/faq_machine.png" alt="" aria-hidden="true">
+                <div class="faq-equipment__card">
                     <h3 class="font-serif font-bold text-forestGreen text-base uppercase mb-4">Professional Equipment.<br>Superior Results.</h3>
                     <p class="text-sm text-stone-700 leading-relaxed mb-5">We use commercial-grade equipment and proven techniques to deliver a deeper, longer-lasting clean.</p>
                     <div class="flex gap-3 text-forestGreen"><svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20h16M6 20v-4h12v4M8 16v-5h8v5M10 11V7h4v4" /></svg><svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 20V7a4 4 0 018 0v13" /><circle cx="17" cy="17" r="3" /></svg></div>
@@ -1368,8 +1638,8 @@
     <section id="about" class="py-16 px-[6%] bg-white border-b border-forestGreen/5">
         <div class="max-w-6xl mx-auto space-y-12">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                <div class="lg:col-span-5 min-h-[320px] bg-stone-100 overflow-hidden">
-                    <img data-src="" alt="" class="hidden w-full h-full object-cover" aria-hidden="true">
+                <div class="about-visual lg:col-span-5">
+                    <img src="img/logo/logo1.png" alt="SoftNest Fabric Care logo">
                 </div>
                 <div class="lg:col-span-7">
                     <span class="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">About SoftNest</span>
