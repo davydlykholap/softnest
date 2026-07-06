@@ -33,7 +33,6 @@
 
         /* ── Custom multi-select dropdown ── */
         /* -- Quote modal -- */
-        let quoteModalCloseTimer = null;
         let lastQuoteTrigger = null;
 
         function openQuoteModal(event) {
@@ -44,7 +43,6 @@
             if (!modal) return;
 
             lastQuoteTrigger = event && event.currentTarget ? event.currentTarget : document.activeElement;
-            clearTimeout(quoteModalCloseTimer);
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
 
@@ -66,7 +64,6 @@
             if (!modal) return;
             const isShowingSuccess = success && !success.classList.contains('hidden');
 
-            clearTimeout(quoteModalCloseTimer);
             modal.classList.add('hidden');
             document.body.style.overflow = '';
             document.querySelectorAll('.sn-select-wrapper.open').forEach(w => {
@@ -250,10 +247,6 @@
                     const success = document.getElementById('formSuccess');
                     success.classList.remove('hidden');
                     success.classList.add('flex');
-                    quoteModalCloseTimer = window.setTimeout(() => {
-                        closeQuoteModal();
-                        resetQuoteForm();
-                    }, 1900);
                 })
                 .catch((err) => {
                     errSubmit.textContent = err.message || 'Something went wrong sending your request. Please call us or try again.';
