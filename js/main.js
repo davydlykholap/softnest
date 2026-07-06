@@ -32,19 +32,123 @@
         }
 
         /* ── Custom multi-select dropdown ── */
+        /* -- Quote modal -- */
+        let quoteModalCloseTimer = null;
+        let lastQuoteTrigger = null;
+
+        function openQuoteModal(event) {
+            if (event) event.preventDefault();
+            const modal = document.getElementById('quote-modal');
+            const form = document.getElementById('quoteForm');
+            const success = document.getElementById('formSuccess');
+            if (!modal) return;
+
+            lastQuoteTrigger = event && event.currentTarget ? event.currentTarget : document.activeElement;
+            clearTimeout(quoteModalCloseTimer);
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            if (form && success) {
+                form.classList.remove('hidden');
+                success.classList.add('hidden');
+                success.classList.remove('flex');
+            }
+
+            window.setTimeout(() => {
+                const firstField = document.getElementById('nameInput');
+                if (firstField) firstField.focus();
+            }, 0);
+        }
+
+        function closeQuoteModal() {
+            const modal = document.getElementById('quote-modal');
+            const success = document.getElementById('formSuccess');
+            if (!modal) return;
+            const isShowingSuccess = success && !success.classList.contains('hidden');
+
+            clearTimeout(quoteModalCloseTimer);
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            document.querySelectorAll('.sn-select-wrapper.open').forEach(w => {
+                w.classList.remove('open');
+                const trigger = w.querySelector('.sn-select-trigger');
+                if (trigger) trigger.setAttribute('aria-expanded', 'false');
+            });
+
+            if (lastQuoteTrigger && typeof lastQuoteTrigger.focus === 'function') {
+                lastQuoteTrigger.focus();
+            }
+
+            if (isShowingSuccess) {
+                resetQuoteForm();
+            }
+        }
+
+        function resetQuoteForm() {
+            const form = document.getElementById('quoteForm');
+            const success = document.getElementById('formSuccess');
+            const errItems = document.getElementById('err-items');
+            const errSubmit = document.getElementById('err-submit');
+
+            if (form) form.reset();
+            if (success) {
+                success.classList.add('hidden');
+                success.classList.remove('flex');
+            }
+            if (errItems) errItems.classList.add('hidden');
+            if (errSubmit) errSubmit.classList.add('hidden');
+
+            dropdownSelections['itemsWrapper'] = new Set();
+            document.querySelectorAll('#itemsWrapper .sn-option').forEach(option => {
+                option.classList.remove('selected');
+                option.setAttribute('aria-selected', 'false');
+            });
+            updateTriggerLabel('itemsWrapper');
+        }
+
+        function initQuoteModal() {
+            document.querySelectorAll('a[href="#quote-form"]').forEach(link => {
+                link.addEventListener('click', openQuoteModal);
+            });
+            document.querySelectorAll('[data-close-quote]').forEach(control => {
+                control.addEventListener('click', closeQuoteModal);
+            });
+            document.addEventListener('keydown', function (event) {
+                const modal = document.getElementById('quote-modal');
+                if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+                    closeQuoteModal();
+                }
+            });
+
+            const phoneInput = document.getElementById('phoneInput');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function () { formatPhone(this); });
+                phoneInput.addEventListener('keyup', function () { formatPhone(this); });
+                phoneInput.addEventListener('paste', function () { setTimeout(function () { formatPhone(phoneInput); }, 0); });
+            }
+        }
+
         const dropdownSelections = {};
 
         function toggleDropdown(wrapperId, event) {
             if (event) event.stopPropagation();
             const wrapper = document.getElementById(wrapperId);
+            if (!wrapper) return;
             const isOpen = wrapper.classList.contains('open');
-            document.querySelectorAll('.sn-select-wrapper.open').forEach(w => w.classList.remove('open'));
+            document.querySelectorAll('.sn-select-wrapper.open').forEach(w => {
+                w.classList.remove('open');
+                const trigger = w.querySelector('.sn-select-trigger');
+                if (trigger) trigger.setAttribute('aria-expanded', 'false');
+            });
             if (!isOpen) wrapper.classList.add('open');
+            const trigger = wrapper.querySelector('.sn-select-trigger');
+            if (trigger) trigger.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
         }
 
         function toggleOption(el, wrapperId, event) {
             if (event) event.stopPropagation();
             el.classList.toggle('selected');
+            el.setAttribute('aria-selected', el.classList.contains('selected') ? 'true' : 'false');
             if (!dropdownSelections[wrapperId]) dropdownSelections[wrapperId] = new Set();
             const val = el.dataset.value;
             if (el.classList.contains('selected')) {
@@ -69,6 +173,7 @@
         function updateTriggerLabel(wrapperId) {
             const display = document.getElementById(wrapperId.replace('Wrapper', 'Display'));
             const selected = dropdownSelections[wrapperId];
+            if (!display) return;
             if (!selected || selected.size === 0) {
                 display.className = 'sn-placeholder';
                 display.textContent = display.dataset.placeholder || 'Select an option';
@@ -92,7 +197,11 @@
         // Close dropdowns when clicking outside
         document.addEventListener('click', function (e) {
             if (!e.target.closest('.sn-select-wrapper')) {
-                document.querySelectorAll('.sn-select-wrapper.open').forEach(w => w.classList.remove('open'));
+                document.querySelectorAll('.sn-select-wrapper.open').forEach(w => {
+                    w.classList.remove('open');
+                    const trigger = w.querySelector('.sn-select-trigger');
+                    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+                });
             }
         });
 
@@ -105,13 +214,6 @@
             if (digits.length >= 7) formatted += '-' + digits.slice(6, 10);
             input.value = formatted;
         }
-        var phoneInput = document.getElementById('phoneInput');
-        if (phoneInput) {
-            phoneInput.addEventListener('input', function () { formatPhone(this); });
-            phoneInput.addEventListener('keyup', function () { formatPhone(this); });
-            phoneInput.addEventListener('paste', function () { setTimeout(function () { formatPhone(phoneInput); }, 0); });
-        }
-
         /* ── Form submission ── */
         function handleFormSubmit(event) {
             event.preventDefault();
@@ -148,7 +250,10 @@
                     const success = document.getElementById('formSuccess');
                     success.classList.remove('hidden');
                     success.classList.add('flex');
-                    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    quoteModalCloseTimer = window.setTimeout(() => {
+                        closeQuoteModal();
+                        resetQuoteForm();
+                    }, 1900);
                 })
                 .catch((err) => {
                     errSubmit.textContent = err.message || 'Something went wrong sending your request. Please call us or try again.';
@@ -240,6 +345,54 @@
             document.head.appendChild(script);
         }
 
+        const fallbackFaqItems = [
+            {
+                question: 'Do you guarantee that every stain will be removed?',
+                answer: 'Many everyday stains lift well, but heat-set stains, dye transfer, fading, or deep contamination may be permanent. We inspect first and explain what is realistic before we start.',
+                initiallyVisible: true
+            },
+            {
+                question: 'Are your cleaning products safe for kids and pets?',
+                answer: 'Yes. We use fabric-appropriate, non-toxic, pH-balanced products. Once the furniture is dry, it is ready for normal family use.',
+                initiallyVisible: true
+            },
+            {
+                question: 'How often should I have my upholstery cleaned?',
+                answer: 'Most homes benefit every 12 to 18 months. With pets, kids, allergies, or heavy use, every 6 to 12 months is often better.',
+                initiallyVisible: true
+            },
+            {
+                question: 'How long does it take for upholstery to dry?',
+                answer: 'Most sofas take 1 to 2 hours to clean and usually dry within 2 to 4 hours, depending on fabric, airflow, and soil level.',
+                initiallyVisible: true
+            },
+            {
+                question: 'What areas do you service?',
+                answer: 'We serve Mississauga, Oakville, Brampton, Etobicoke, and nearby GTA communities. If you are unsure, call or message us to confirm.',
+                initiallyVisible: true
+            },
+            {
+                question: 'Can you remove old or set-in pet urine stains and odours?',
+                answer: 'Often, yes. Older urine may reach foam or backing, which can limit results. We use enzyme treatment and give an honest assessment first.',
+                initiallyVisible: false
+            },
+            {
+                question: 'Do you clean leather sofas?',
+                answer: 'Not at this time. We specialize in fabric upholstery, carpets, and area rugs. Leather requires a different process, so we do not offer it yet.',
+                initiallyVisible: false
+            },
+            {
+                question: 'Do I pay before or after the cleaning service?',
+                answer: 'Payment is collected after the service is complete. We confirm pricing before starting, with no surprise fees.',
+                initiallyVisible: false
+            },
+            {
+                question: 'How should I prepare my furniture before your visit?',
+                answer: 'Please remove throws, small cushions, and fragile items nearby. No pre-treating needed; just point out stains, odours, or concerns when we arrive.',
+                initiallyVisible: false
+            }
+        ];
+
         function renderFaq(items) {
             const faqList = document.getElementById('faq-list');
             if (!faqList) return;
@@ -264,6 +417,8 @@
             const faqList = document.getElementById('faq-list');
             if (!faqList) return;
 
+            renderFaq(fallbackFaqItems);
+
             fetch('data/faq/faq.json')
                 .then(response => {
                     if (!response.ok) throw new Error('FAQ data could not be loaded.');
@@ -271,11 +426,14 @@
                 })
                 .then(renderFaq)
                 .catch(() => {
-                    faqList.innerHTML = '<p class="text-sm text-stone-600">Questions are unavailable right now. Please call or message us and we will help.</p>';
+                    renderFaq(fallbackFaqItems);
                 });
         }
 
-        document.addEventListener('DOMContentLoaded', loadFaq);
+        document.addEventListener('DOMContentLoaded', function () {
+            initQuoteModal();
+            loadFaq();
+        });
 
         function toggleFaq(button) {
             const item = button.parentElement;

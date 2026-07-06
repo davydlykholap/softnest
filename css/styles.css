@@ -382,6 +382,182 @@
                 }
 
         /* ── MOBILE NAV DRAWER ── */
+        .quote-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 80;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .quote-modal.hidden {
+            display: none;
+        }
+
+        .quote-modal__overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 24, 18, 0.42);
+        }
+
+        .quote-modal__panel {
+            position: relative;
+            z-index: 1;
+            width: min(100%, 560px);
+            max-height: min(88vh, 720px);
+            overflow-y: auto;
+            background: #fff;
+            border: 1px solid rgba(15,81,63,0.18);
+            box-shadow: 0 24px 80px rgba(10, 24, 18, 0.26);
+            padding: 34px;
+        }
+
+        .quote-modal__close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(15,81,63,0.18);
+            background: #fff;
+            color: #0f513f;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .quote-modal__close:hover {
+            background: #0f513f;
+            border-color: #0f513f;
+            color: #fff;
+        }
+
+        .quote-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .quote-form__grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .quote-field {
+            display: grid;
+            gap: 7px;
+            min-width: 0;
+        }
+
+        .quote-field > span {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #0f513f;
+        }
+
+        .quote-field input,
+        .quote-field textarea {
+            width: 100%;
+            border: 1px solid rgba(27,77,62,0.14);
+            background: rgba(242,247,244,0.38);
+            color: #1a2820;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            padding: 12px 13px;
+            outline: none;
+            transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .quote-field textarea {
+            resize: vertical;
+            min-height: 112px;
+        }
+
+        .quote-field input:focus,
+        .quote-field textarea:focus,
+        .quote-select .sn-select-trigger:focus {
+            background: #fff;
+            border-color: rgba(15,81,63,0.55);
+            box-shadow: 0 0 0 3px rgba(15,81,63,0.1);
+        }
+
+        .quote-select .sn-select-trigger {
+            min-height: 47px;
+            padding: 12px 38px 12px 13px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .quote-select .sn-dropdown {
+            z-index: 90;
+        }
+
+        .quote-error {
+            color: #a3543a;
+            font-size: 0.82rem;
+            line-height: 1.35;
+        }
+
+        .quote-submit {
+            min-height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            background: #0f513f;
+            color: #fff;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .quote-submit:hover {
+            background: #17624d;
+        }
+
+        .quote-submit:disabled {
+            cursor: wait;
+            opacity: 0.72;
+        }
+
+        .quote-success {
+            min-height: 340px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 14px;
+        }
+
+        .quote-success__icon {
+            width: 66px;
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            border-radius: 999px;
+            background: #f2f7f4;
+            color: #0f513f;
+        }
+
+        .quote-success__icon svg {
+            width: 34px;
+            height: 34px;
+            stroke-width: 2.4;
+        }
+
         #mobile-nav-drawer.open {
             transform: translateX(0);
         }
@@ -786,6 +962,30 @@
             section[id],
             main[id] {
                 scroll-margin-top: 64px;
+            }
+
+            .quote-modal {
+                align-items: flex-end;
+                padding: 12px;
+            }
+
+            .quote-modal__panel {
+                width: 100%;
+                max-height: calc(100vh - 24px);
+                padding: 26px 18px 22px;
+            }
+
+            .quote-form__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-modal__close {
+                top: 12px;
+                right: 12px;
+            }
+
+            .quote-success {
+                min-height: 300px;
             }
 
             /* HEADER: collapse to single row logo + CTA only */

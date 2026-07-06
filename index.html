@@ -77,8 +77,8 @@
             <div class="header-cta hidden">
                 <!-- Phone icon -->
                 <a href="tel:+14167270287" class="header-phone-icon hidden items-center justify-center w-9 h-9 border border-forestGreen/30 text-forestGreen hover:bg-forestGreen hover:text-white transition-colors" aria-label="Call us">
-                    <svg class="w-4 h-4" aria-hidden="true">
-                        <use href="svg/icons/ui.svg#phone"></use>
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
                     </svg>
                 </a>
                 <!-- CTA button -->
@@ -88,11 +88,14 @@
                 <!-- Hamburger button -->
                 <button id="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false"
                         class="hamburger-btn hidden items-center justify-center w-9 h-9 border border-forestGreen/30 text-forestGreen hover:bg-forestGreen hover:text-white transition-colors">
-                    <svg id="hamburger-icon" class="w-4 h-4" aria-hidden="true">
-                        <use href="svg/icons/ui.svg#menu"></use>
+                    <svg id="hamburger-icon" class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                        <line x1="3" y1="6" x2="21" y2="6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <line x1="3" y1="12" x2="21" y2="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <line x1="3" y1="18" x2="21" y2="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
-                    <svg id="close-icon" class="w-4 h-4 hidden" aria-hidden="true">
-                        <use href="svg/icons/ui.svg#close"></use>
+                    <svg id="close-icon" class="w-4 h-4 hidden" viewBox="0 0 24 24" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <line x1="6" y1="6" x2="18" y2="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </button>
             </div>
@@ -108,7 +111,10 @@
         <div class="flex items-center justify-between px-6 py-5 border-b border-forestGreen/10">
             <span class="font-serif font-bold text-forestGreen text-xl tracking-wide uppercase">SoftNest</span>
             <button onclick="closeMobileMenu()" aria-label="Close menu" class="w-9 h-9 flex items-center justify-center border border-forestGreen/20 text-forestGreen hover:bg-forestGreen hover:text-white transition-colors">
-                <svg class="w-4 h-4" aria-hidden="true"><use href="svg/icons/ui.svg#close"></use></svg>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <line x1="6" y1="6" x2="18" y2="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
             </button>
         </div>
         <nav class="flex-1 px-6 py-8">
@@ -121,7 +127,9 @@
         </nav>
         <div class="px-6 pb-8 space-y-3">
             <a href="tel:+14167270287" class="flex items-center gap-3 py-3 px-4 border border-forestGreen/20 text-forestGreen no-underline hover:bg-forestGreen/5 transition-colors">
-                <svg class="w-4 h-4 flex-shrink-0" aria-hidden="true"><use href="svg/icons/ui.svg#phone"></use></svg>
+                <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+                </svg>
                 <div>
                     <div class="font-serif font-bold text-sm">(416) 727-0287</div>
                 </div>
@@ -459,11 +467,85 @@
                 <div><h2 class="font-serif font-bold text-3xl mb-2">Ready for a Fresher, Cleaner Home?</h2><p class="text-creamLight/80">Get a free quote today and experience the SoftNest difference.</p></div>
             </div>
             <div class="flex flex-col items-center gap-4">
-                <a href="mailto:softnest.upholstery@outlook.com" class="inline-flex items-center justify-center px-12 h-12 bg-white text-forestGreen font-serif font-bold text-xs uppercase tracking-wider no-underline">Get Your Free Quote</a>
+                <a href="#quote-form" class="inline-flex items-center justify-center px-12 h-12 bg-white text-forestGreen font-serif font-bold text-xs uppercase tracking-wider no-underline">Get Your Free Quote</a>
                 <a href="tel:+14167270287" class="font-serif font-bold text-xl text-white no-underline">(416) 727-0287</a>
             </div>
         </div>
     </section>
+
+    <div id="quote-modal" class="quote-modal hidden" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+        <div class="quote-modal__overlay" data-close-quote></div>
+        <div class="quote-modal__panel" role="document">
+            <button type="button" class="quote-modal__close" data-close-quote aria-label="Close quote form">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    <line x1="6" y1="6" x2="18" y2="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div id="formSuccess" class="quote-success hidden" role="status" aria-live="polite">
+                <div class="quote-success__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                </div>
+                <h2 class="font-serif font-bold text-forestGreen text-2xl mb-2">Form sent</h2>
+                <p class="text-sm text-stone-600 leading-relaxed">Thank you. We received your quote request and will contact you soon.</p>
+            </div>
+
+            <form id="quoteForm" class="quote-form" onsubmit="handleFormSubmit(event)">
+                <div class="mb-6 pr-8">
+                    <p class="font-serif font-bold text-xs uppercase tracking-widest text-forestGreen mb-2">Free Quote</p>
+                    <h2 id="quote-modal-title" class="font-serif font-bold text-forestGreen text-3xl leading-tight mb-3">Tell us what needs cleaning</h2>
+                    <p class="text-sm text-stone-600 leading-relaxed">Share a few details and SoftNest will get back to you with the next steps.</p>
+                </div>
+
+                <input type="hidden" name="subject" value="New SoftNest quote request">
+                <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
+
+                <div class="quote-form__grid">
+                    <label class="quote-field">
+                        <span>Name</span>
+                        <input id="nameInput" name="name" type="text" autocomplete="name" required>
+                    </label>
+
+                    <label class="quote-field">
+                        <span>Phone number</span>
+                        <input id="phoneInput" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+                    </label>
+                </div>
+
+                <div class="quote-field">
+                    <span>What furniture?</span>
+                    <input id="itemsHiddenField" name="furniture" type="hidden">
+                    <div id="itemsWrapper" class="sn-select-wrapper quote-select">
+                        <button type="button" class="sn-select-trigger" onclick="toggleDropdown('itemsWrapper', event)" aria-haspopup="listbox" aria-expanded="false">
+                            <span id="itemsDisplay" class="sn-placeholder" data-placeholder="Select furniture">Select furniture</span>
+                            <span class="sn-arrow" aria-hidden="true">v</span>
+                        </button>
+                        <div class="sn-dropdown" role="listbox" aria-label="Furniture to clean">
+                            <div class="sn-option" role="option" data-value="Sofa" onclick="toggleOption(this, 'itemsWrapper', event)"><span class="sn-tick" aria-hidden="true"></span><span>Sofa</span></div>
+                            <div class="sn-option" role="option" data-value="Sectional" onclick="toggleOption(this, 'itemsWrapper', event)"><span class="sn-tick" aria-hidden="true"></span><span>Sectional</span></div>
+                            <div class="sn-option" role="option" data-value="Dining chairs" onclick="toggleOption(this, 'itemsWrapper', event)"><span class="sn-tick" aria-hidden="true"></span><span>Dining chairs</span></div>
+                            <div class="sn-option" role="option" data-value="Mattress" onclick="toggleOption(this, 'itemsWrapper', event)"><span class="sn-tick" aria-hidden="true"></span><span>Mattress</span></div>
+                            <div class="sn-option" role="option" data-value="Carpet or rug" onclick="toggleOption(this, 'itemsWrapper', event)"><span class="sn-tick" aria-hidden="true"></span><span>Carpet or rug</span></div>
+                            <div class="sn-option" role="option" data-value="Other furniture" onclick="toggleOption(this, 'itemsWrapper', event)"><span class="sn-tick" aria-hidden="true"></span><span>Other furniture</span></div>
+                        </div>
+                    </div>
+                    <p id="err-items" class="quote-error hidden">Please select at least one item.</p>
+                </div>
+
+                <label class="quote-field">
+                    <span>Notes</span>
+                    <textarea name="notes" rows="4" placeholder="Stains, pet odour, number of pieces, preferred timing..."></textarea>
+                </label>
+
+                <p id="err-submit" class="quote-error hidden"></p>
+
+                <button id="submitBtn" type="submit" class="quote-submit">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <!-- NEW FOOTER -->
     <footer class="bg-white px-[6%] py-12 border-b border-forestGreen/10">
