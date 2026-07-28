@@ -42,6 +42,113 @@
 </head>
 <body class="bg-creamLight text-woodCharcoal font-sans antialiased m-0 flex flex-col min-h-screen">
 
+    <!-- NEW HERO: the original page continues unchanged below -->
+    <div class="new-hero-root">
+        <header class="site-header">
+            <a href="#" class="brand" aria-label="SoftNest Fabric Care home">
+                <span class="brand__mark"><img src="img/logo/header_logo.png" alt=""></span>
+                <span class="brand__name"><strong>SoftNest</strong><small>Fabric Care</small></span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="#services">Services
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+                </a>
+                <a href="#reviews">Reviews</a>
+                <a href="#results">Before &amp; After</a>
+                <a href="#faq">FAQ</a>
+                <a href="#about">About Us</a>
+            </nav>
+
+            <div class="site-header__actions">
+                <a class="header-phone" href="tel:+14167270287">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>(416) 727-0287</span>
+                </a>
+                <a class="header-quote" href="#quote-form">Request a free quote</a>
+            </div>
+
+            <button type="button" class="menu-toggle" id="new-menu-toggle" aria-expanded="false" aria-controls="new-mobile-navigation" aria-label="Open menu">
+                <svg class="menu-icon-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="menu-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+            </button>
+
+            <nav class="mobile-nav" id="new-mobile-navigation" aria-label="Mobile navigation">
+                <a href="#services">Services</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#results">Before &amp; After</a>
+                <a href="#faq">FAQ</a>
+                <a href="#about">About Us</a>
+                <a href="tel:+14167270287">Call (416) 727-0287</a>
+                <a class="mobile-nav__quote" href="#quote-form">Request a free quote</a>
+            </nav>
+        </header>
+
+        <main class="site-shell">
+            <section class="hero" aria-labelledby="new-hero-heading">
+                <div class="hero__photo" aria-hidden="true"></div>
+                <div class="hero__wash" aria-hidden="true"></div>
+
+                <div class="hero__content">
+                    <p class="hero__eyebrow">Serving Mississauga &amp; the GTA</p>
+                    <span class="hero__eyebrow-line" aria-hidden="true"></span>
+                    <h1 id="new-hero-heading" class="hero__title">
+                        Expert Care For<br>
+                        Your Furniture<br>
+                        &amp; Carpets.
+                        <span>Results You'll Feel.</span>
+                    </h1>
+                    <p class="hero__description">Professional equipment, fabric-safe products, and meticulous techniques restore your home's comfort. From deep sofa cleaning to delicate rug care.</p>
+                    <div class="hero__actions">
+                        <a class="button button--primary" href="#quote-form">
+                            Get an instant estimate
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"></path></svg>
+                        </a>
+                        <a class="button button--secondary" href="#reviews"><span class="google-g" aria-hidden="true">G</span>See our reviews</a>
+                    </div>
+                    <ul class="hero__benefits" aria-label="Service benefits">
+                        <li>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 18 2 18 2c1 5-1 11-7 12m-1 6c0-3 1-7 5-10"></path></svg>
+                            <span>Eco-friendly products</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                            <span>Safe for kids &amp; pets</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15 8.5 17l.9-4-3-2.7 4.1-.4L12 6l1.5 3.9 4.1.4-3 2.7.9 4Z"></path><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"></path></svg>
+                            <span>Satisfaction focused</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hero__trust-badge">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>
+                    Trusted &amp; local
+                </div>
+
+                <div class="compare">
+                    <div class="compare__image compare__image--before"></div>
+                    <div class="compare__image compare__image--after"></div>
+                    <span class="compare__label compare__label--before">Before</span>
+                    <span class="compare__label compare__label--after">After</span>
+                    <span class="compare__drag-label">Drag to see</span>
+                    <span class="compare__line">
+                        <span class="compare__handle">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h.01M9 12h.01M9 19h.01M15 5h.01M15 12h.01M15 19h.01"></path></svg>
+                        </span>
+                    </span>
+                    <input class="compare__range" id="compare-range" type="range" min="12" max="88" value="50" aria-label="Reveal the cleaned sofa">
+                </div>
+
+                <a class="hero__scroll" href="#results" aria-label="See our results">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6"></path></svg>
+                </a>
+            </section>
+        </main>
+    </div>
+    <script src="js/new-hero.js" defer></script>
+
     <!-- HEADER -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-white border-b border-forestGreen/10 shadow-sm">
         <div class="header-inner flex flex-col sm:flex-row justify-between items-center px-[4%] py-5 gap-4 sm:gap-0 bg-white/95 backdrop-blur-md">
