@@ -2856,3 +2856,312 @@ input {
     grid-column: auto;
   }
 }
+
+/* Legacy fidelity pass: preserve the archived site's compact desktop rhythm. */
+@media (min-width: 1101px) {
+  .legacy-section,
+  .legacy-health,
+  .legacy-faq,
+  .legacy-quote {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .legacy-section {
+    padding-right: max(6%, calc((100% - 1152px) / 2));
+    padding-left: max(6%, calc((100% - 1152px) / 2));
+  }
+
+  .legacy-section h2,
+  .legacy-health h2,
+  .legacy-faq h2,
+  .legacy-quote h2 {
+    font-size: 30px;
+    letter-spacing: -0.025em;
+    line-height: 1.08;
+  }
+
+  .legacy-heading {
+    margin-bottom: 40px;
+  }
+
+  .legacy-results {
+    grid-template-columns: minmax(230px, 0.36fr) minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 56px);
+    padding-right: max(5%, calc((100% - 1280px) / 2));
+    padding-left: max(5%, calc((100% - 1280px) / 2));
+  }
+
+  .legacy-results__copy {
+    max-width: 320px;
+  }
+
+  .legacy-results__copy p:not(.legacy-kicker),
+  .legacy-trust__intro > p:not(.legacy-kicker),
+  .legacy-reviews__intro > p:not(.legacy-kicker),
+  .legacy-about__copy > p:not(.legacy-kicker) {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .legacy-gallery {
+    grid-template-rows: repeat(2, minmax(145px, 188px));
+    gap: 10px;
+  }
+
+  .legacy-service-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .legacy-service-card__image {
+    height: 176px;
+  }
+
+  .legacy-service-card__icon {
+    top: 151px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .legacy-service-card > div:last-child {
+    min-height: 158px;
+    padding: 36px 20px 20px;
+  }
+
+  .legacy-service-card h3 {
+    font-size: 16px;
+  }
+
+  .legacy-service-card p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .legacy-trust {
+    grid-template-columns: 0.72fr 1.65fr;
+    gap: 44px;
+  }
+
+  .legacy-trust__grid article {
+    padding: 22px 18px;
+  }
+
+  .legacy-trust__grid svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .legacy-trust__grid h3 {
+    margin: 16px 0 8px;
+    font-size: 16px;
+  }
+
+  .legacy-trust__grid p {
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .legacy-process__grid {
+    gap: 30px;
+  }
+
+  .legacy-process__grid li:not(:last-child)::after {
+    top: 40px;
+    left: calc(50% + 55px);
+    width: calc(100% - 80px);
+  }
+
+  .legacy-process__icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 22px;
+  }
+
+  .legacy-process__icon svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .legacy-process__grid li > span {
+    top: 64px;
+    width: 28px;
+    height: 28px;
+    left: calc(50% - 14px);
+  }
+
+  .legacy-process__grid h3 {
+    font-size: 16px;
+  }
+
+  .legacy-process__grid p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .legacy-health {
+    min-height: 380px;
+    padding: 0;
+  }
+
+  .legacy-health__image {
+    min-height: 380px;
+  }
+
+  .legacy-health__copy {
+    max-width: 620px;
+    padding: 58px 7%;
+  }
+
+  .legacy-health__copy > p:not(.legacy-kicker) {
+    margin: 20px 0 30px;
+    font-size: 14px;
+  }
+
+  .legacy-health__benefits {
+    gap: 24px;
+  }
+
+  .legacy-health__benefits svg {
+    width: 30px;
+  }
+
+  .legacy-health__benefits h3 {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .legacy-health__benefits p {
+    font-size: 11px;
+  }
+
+  .legacy-reviews {
+    grid-template-columns: 3fr 9fr;
+    gap: 32px;
+  }
+
+  .legacy-review-track {
+    gap: 24px;
+  }
+
+  .legacy-review-track blockquote {
+    flex-basis: calc(50% - 12px);
+    min-height: 270px;
+    padding: 28px;
+  }
+
+  .legacy-review-track blockquote > p {
+    margin: 18px 0;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .legacy-faq {
+    min-height: 580px;
+    padding: 0;
+  }
+
+  .legacy-faq__copy {
+    max-width: 620px;
+    padding: 58px 7%;
+  }
+
+  .legacy-faq__list {
+    margin-top: 24px;
+  }
+
+  .legacy-faq summary {
+    padding: 15px 18px;
+    font-size: 14px;
+  }
+
+  .legacy-faq details > p {
+    padding: 0 46px 17px 18px;
+    font-size: 12px;
+  }
+
+  .legacy-equipment {
+    min-height: 580px;
+  }
+
+  .legacy-equipment > div {
+    right: 58px;
+    bottom: 46px;
+    max-width: 330px;
+    padding: 28px 32px;
+  }
+
+  .legacy-equipment h3 {
+    font-size: 20px;
+  }
+
+  .legacy-about {
+    gap: 48px;
+  }
+
+  .legacy-about__logo img {
+    width: min(92%, 360px);
+  }
+
+  .legacy-about__stats {
+    margin-top: 28px;
+    padding-top: 22px;
+  }
+
+  .legacy-map {
+    height: 330px;
+  }
+
+  .legacy-quote {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    padding-right: max(6%, calc((100% - 1152px) / 2));
+    padding-left: max(6%, calc((100% - 1152px) / 2));
+  }
+
+  .legacy-footer {
+    gap: 40px;
+    padding: 48px max(6%, calc((100% - 1152px) / 2)) 26px;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1100px) {
+  .legacy-section,
+  .legacy-health,
+  .legacy-faq,
+  .legacy-quote {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .legacy-section h2,
+  .legacy-health h2,
+  .legacy-faq h2,
+  .legacy-quote h2 {
+    font-size: 32px;
+  }
+
+  .legacy-service-card h3,
+  .legacy-process__grid h3,
+  .legacy-trust__grid h3 {
+    font-size: 17px;
+  }
+
+  .legacy-health {
+    min-height: 440px;
+    padding: 0;
+  }
+
+  .legacy-health__image {
+    min-height: 440px;
+  }
+
+  .legacy-health__copy {
+    padding: 48px 6%;
+  }
+
+  .legacy-equipment {
+    min-height: 540px;
+  }
+}
