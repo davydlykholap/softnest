@@ -78,7 +78,7 @@
 
 .hero__wash {
     z-index: -2;
-    background: linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 23%, rgba(255,255,255,.56) 36%, rgba(255,255,255,.12) 49%, rgba(255,255,255,0) 58%);
+    background: linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 23%, rgba(255,255,255,.68) 38%, rgba(255,255,255,.3) 48%, rgba(255,255,255,.08) 57%, rgba(255,255,255,0) 64%);
 }
 
 .site-header {
@@ -513,7 +513,7 @@
     bottom: 18px;
     width: 42px;
     height: 42px;
-    display: grid;
+    display: none;
     place-items: center;
     border-radius: 50%;
     background: rgba(255,255,255,.86);
@@ -525,6 +525,197 @@
 .hero__scroll svg {
     width: 22px;
     height: 22px;
+}
+
+.journey-card {
+    position: relative;
+    z-index: 6;
+    width: 86.2%;
+    min-height: 228px;
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    margin: -104px auto 0;
+    padding: 30px 58px 42px;
+    border: 1px solid rgba(255,255,255,.92);
+    border-radius: 54px 54px 62px 62px;
+    background: rgba(255,255,255,.95);
+    box-shadow: 0 20px 45px rgba(17,42,33,.13);
+    backdrop-filter: blur(18px);
+}
+
+.journey-card::after {
+    content: "↓";
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 5px 14px rgba(17,41,32,.13);
+    color: var(--forest-dark);
+    font-size: 19px;
+    line-height: 1;
+    transform: translateX(-50%);
+}
+
+.section-kicker {
+    margin: 0 0 16px;
+    font-size: 17px;
+    font-weight: 750;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.journey-card__steps {
+    padding-right: 38px;
+    border-right: 1px solid #dcdedb;
+}
+
+.journey-card__steps ol {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 0;
+    padding: 0 18px;
+    list-style: none;
+}
+
+.journey-card__steps li {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+.step-number {
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--forest);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.step-icon {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 9px;
+    color: var(--forest);
+}
+
+.step-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1.45;
+}
+
+.step-icon--qr img {
+    width: 58px;
+    height: 58px;
+    display: block;
+    object-fit: contain;
+}
+
+.journey-card__steps strong {
+    font-size: 13px;
+}
+
+.journey-card__steps small {
+    max-width: 138px;
+    margin-top: 6px;
+    color: #505a55;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.step-arrow {
+    position: absolute;
+    top: 21px;
+    right: -25px;
+    width: 24px;
+    color: #aeb7b2;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.journey-card__reviews {
+    padding-left: 32px;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: calc(100% + 10px);
+}
+
+.review-chip {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e4e7e5;
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 7px 14px rgba(15,38,29,.08);
+    transition: transform 180ms ease;
+}
+
+.review-chip:hover {
+    transform: translateY(-3px);
+}
+
+.review-chip__google {
+    display: flex;
+    color: #4285f4;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -.07em;
+}
+
+.review-chip__google i {
+    font-style: normal;
+}
+
+.review-chip__google i:nth-child(1),
+.review-chip__google i:nth-child(4) { color: #4285f4; }
+.review-chip__google i:nth-child(2),
+.review-chip__google i:nth-child(6) { color: #ea4335; }
+.review-chip__google i:nth-child(3) { color: #fbbc05; }
+.review-chip__google i:nth-child(5) { color: #34a853; }
+
+.review-chip__rating {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.review-chip__rating b {
+    color: #f3a400;
+    letter-spacing: 1px;
+}
+
+.review-chip small {
+    margin-top: 8px;
+    color: #57615c;
+    font-size: 12px;
 }
 
 @media (max-width: 1260px) {
@@ -623,6 +814,18 @@
         height: 292px;
     }
     .hero__scroll { display: none; }
+    .journey-card {
+        width: calc(100% - 34px);
+        grid-template-columns: 1fr;
+        margin-top: -68px;
+        padding: 38px 32px;
+    }
+    .journey-card__steps {
+        padding: 0 0 32px;
+        border-right: 0;
+        border-bottom: 1px solid #dcdedb;
+    }
+    .journey-card__reviews { padding: 32px 0 0; }
 }
 
 @media (max-width: 640px) {
@@ -681,6 +884,19 @@
         text-align: center;
     }
     .compare { display: none; }
+    .journey-card {
+        width: calc(100% - 22px);
+        margin-top: -18px;
+        padding: 32px 20px;
+        border-radius: 34px;
+    }
+    .journey-card__steps ol {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 18px;
+    }
+    .step-arrow { display: none; }
+    .review-grid { grid-template-columns: 1fr; }
+    .review-chip { min-height: 88px; }
 }
 
 .no-scrollbar {
