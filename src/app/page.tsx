@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import HomeHero from "@/components/HomeHero";
 import HomeInteractions from "@/components/HomeInteractions";
 import HomeSections from "@/components/HomeSections";
-import QuoteModal from "@/components/QuoteModal";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
@@ -43,6 +42,7 @@ const localBusinessSchema = {
     "Burlington",
     "Vaughan",
     "Milton",
+    "Hamilton",
   ],
 };
 
@@ -55,7 +55,6 @@ export default function HomePage() {
       </div>
       <HomeSections />
       <SiteFooter />
-      <QuoteModal />
       <HomeInteractions />
       <script
         type="application/ld+json"

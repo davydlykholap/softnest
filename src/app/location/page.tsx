@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Explore SoftNest upholstery, sofa, sectional, carpet and rug cleaning service areas across Mississauga, the Greater Toronto Area and Hamilton.",
   alternates: { canonical: "/location/" },
   openGraph: {
-    title: "SoftNest Cleaning Services Across the GTHA",
+    title: "SoftNest Cleaning Services Across the GTA",
     description:
       "Find professional upholstery and carpet cleaning in your community.",
     url: "/location/",
@@ -60,7 +60,7 @@ export default function LocationsPage() {
         <section className="locations-hero" aria-labelledby="locations-heading">
           <div className="locations-hero__copy">
             <p className="locations-kicker">
-              Serving the Greater Toronto &amp; Hamilton Area
+              Serving the Greater Toronto Area
             </p>
             <span className="locations-kicker-line" aria-hidden="true" />
             <h1 id="locations-heading">
@@ -80,7 +80,7 @@ export default function LocationsPage() {
               </a>
               <Link
                 className="locations-pill locations-pill--outline"
-                href="/#quote-form"
+                href="/quote/"
               >
                 Request a quote
               </Link>
@@ -102,7 +102,7 @@ export default function LocationsPage() {
         <section className="locations-cities" id="cities">
           <header className="locations-section-heading">
             <p className="locations-kicker">Areas we serve</p>
-            <h2>Cleaning Services Across the GTHA</h2>
+            <h2>Cleaning Services Across the GTA</h2>
           </header>
 
           <div className="locations-bento">
@@ -155,7 +155,7 @@ export default function LocationsPage() {
             <div className="locations-missing__actions">
               <Link
                 className="locations-pill locations-pill--solid"
-                href="/#quote-form"
+                href="/quote/"
               >
                 Ask about your city
                 <span aria-hidden="true">→</span>
@@ -180,7 +180,7 @@ export default function LocationsPage() {
                 Show us what needs cleaning and we&apos;ll recommend the right
                 solution.
               </p>
-              <Link href="/#quote-form">No commitment. Just clarity.</Link>
+              <Link href="/quote/">No commitment. Just clarity.</Link>
             </div>
             <div className="locations-estimate-card__image">
               <img
@@ -204,10 +204,10 @@ export default function LocationsPage() {
             <h2>A fresher home is closer than you think.</h2>
             <span className="locations-kicker-line" aria-hidden="true" />
             <p>
-              Trusted by homeowners across the GTHA for professional, careful
+              Trusted by homeowners across the GTA for professional, careful
               cleaning that makes a real difference.
             </p>
-            <Link className="locations-pill locations-pill--light" href="/#quote-form">
+            <Link className="locations-pill locations-pill--light" href="/quote/">
               Request a free quote
               <span aria-hidden="true">→</span>
             </Link>

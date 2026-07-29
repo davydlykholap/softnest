@@ -413,14 +413,14 @@ export default function HomeSections() {
     </div>
   </section>
   {/* SECTION 9: FINAL CTA */}
-  <section id="quote-form" className="px-[6%] py-12 bg-forestGreen text-white">
+  <section id="quote-cta" className="px-[6%] py-12 bg-forestGreen text-white">
     <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
       <div className="flex items-center gap-6 text-center lg:text-left">
         <div className="hidden sm:flex w-20 h-20 rounded-full border border-white/40 items-center justify-center"><svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l7 3v5c0 4.9-2.9 8.2-7 10-4.1-1.8-7-5.1-7-10V6l7-3z" /><path d="M8.5 12.2l2.2 2.2 4.8-5" /></svg></div>
         <div><h2 className="font-serif font-bold text-3xl mb-2">Ready for a Fresher, Cleaner Home?</h2><p className="text-creamLight/80">Get a free quote today and experience the SoftNest difference.</p></div>
       </div>
       <div className="flex flex-col items-center gap-4">
-        <a href="#quote-form" className="inline-flex items-center justify-center px-12 h-12 bg-white text-forestGreen font-serif font-bold text-xs uppercase tracking-wider no-underline">Get Your Free Quote</a>
+        <a href="/quote/" className="inline-flex items-center justify-center px-12 h-12 bg-white text-forestGreen font-serif font-bold text-xs uppercase tracking-wider no-underline">Get Your Free Quote</a>
         <a href="tel:+14167270287" className="font-serif font-bold text-xl text-white no-underline">(416) 727-0287</a>
       </div>
     </div>

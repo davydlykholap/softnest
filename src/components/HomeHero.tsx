@@ -28,7 +28,7 @@ export default function HomeHero() {
             cleaning to delicate rug restoration.
           </p>
           <div className="hero__actions">
-            <a className="button button--primary" href="#quote-form">
+            <a className="button button--primary" href="/quote/">
               Get an instant estimate
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14m-6-6 6 6-6 6" />
@@ -152,7 +152,7 @@ export default function HomeHero() {
             a clear, no-obligation quote.
           </p>
           <div className="journey-card__quote-action">
-            <a href="#quote-form">
+            <a href="/quote/">
               Request an estimate <span aria-hidden="true">→</span>
             </a>
             <small>Fast replies · No hidden fees</small>

@@ -22,7 +22,7 @@ export default function SiteHeader({
 }: SiteHeaderProps) {
   const [open, setOpen] = useState(false);
   const homeHref = (hash: string) => (home ? `#${hash}` : `/#${hash}`);
-  const quoteHref = home ? "#quote-form" : "/#quote-form";
+  const quoteHref = "/quote/";
 
   return (
     <header className="site-header">

@@ -131,7 +131,7 @@ export default function LocationPage({ location }: LocationPageProps) {
             </h1>
             <p>{location.shortDescription}</p>
             <div className="location-actions">
-              <Link className="location-button location-button--primary" href="/#quote-form">
+              <Link className="location-button location-button--primary" href="/quote/">
                 Request a free quote
               </Link>
               <a
@@ -297,7 +297,7 @@ export default function LocationPage({ location }: LocationPageProps) {
             </p>
           </div>
           <div className="location-actions">
-            <Link className="location-button location-button--light" href="/#quote-form">
+            <Link className="location-button location-button--light" href="/quote/">
               Request a free quote
             </Link>
             <a
