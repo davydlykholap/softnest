@@ -1,0 +1,431 @@
+import type { CSSProperties } from "react";
+
+export default function HomeSections() {
+  return (
+<div className="home-sections">
+  <section id="results" className="gallery-section-v2" aria-labelledby="gallery-heading">
+    <img className="gallery-leaves" src="/img/gallery-leaves.png" alt="" aria-hidden="true" />
+    <div className="gallery-intro">
+      <div className="gallery-intro__copy">
+        <p className="gallery-eyebrow">Real Results. Real Homes.</p>
+        <h2 id="gallery-heading">Before &amp; After Results<br /><span>You Can See and Feel.</span></h2>
+        <p className="gallery-description">From everyday messes to tough stains and odours,<br />see how we bring furniture and carpets back to life.</p>
+      </div>
+      <ul className="gallery-proofs" aria-label="SoftNest service assurances">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z" /><path d="m9 12 2 2 4-4" /></svg>
+          <span>100% Satisfaction<br />Guaranteed</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 18 2 18 2c1 5-1 11-7 12m-1 6c0-3 1-7 5-10" /></svg>
+          <span>Safe for Kids<br />&amp; Pets</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m9 12 2 2 4-4" /></svg>
+          <span>Professional<br />Equipment</span>
+        </li>
+      </ul>
+    </div>
+    <div className="gallery-stage">
+      <span className="gallery-stage__down" aria-hidden="true">⌄</span>
+      <button className="gallery-carousel-arrow gallery-carousel-arrow--prev" type="button" aria-label="Previous results">←</button>
+      <button className="gallery-carousel-arrow gallery-carousel-arrow--next" type="button" aria-label="Next results">→</button>
+      <div className="gallery-grid-v2">
+        <article className="gallery-result">
+          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/sectional_3.png")' } as CSSProperties}>
+            <div className="gallery-layer gallery-layer--before" />
+            <div className="gallery-layer gallery-layer--after" />
+            <span className="gallery-category">Sofa</span>
+            <span className="gallery-state gallery-state--before">Before</span>
+            <span className="gallery-state gallery-state--after">After</span>
+            <span className="gallery-divider"><b>‹›</b></span>
+            <input type="range" min={15} max={85} defaultValue={50} aria-label="Compare sofa before and after" />
+          </div>
+          <p className="gallery-location">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
+            Mississauga, ON
+          </p>
+          <p className="gallery-service">Pet stains &amp; odour removal</p>
+        </article>
+        <article className="gallery-result">
+          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/sectional_1.png")' } as CSSProperties}>
+            <div className="gallery-layer gallery-layer--before" />
+            <div className="gallery-layer gallery-layer--after" />
+            <span className="gallery-category">Sectional Sofa</span>
+            <span className="gallery-state gallery-state--before">Before</span>
+            <span className="gallery-state gallery-state--after">After</span>
+            <span className="gallery-divider"><b>‹›</b></span>
+            <input type="range" min={15} max={85} defaultValue={50} aria-label="Compare sectional sofa before and after" />
+          </div>
+          <p className="gallery-location">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
+            Oakville, ON
+          </p>
+          <p className="gallery-service">Deep cleaning</p>
+        </article>
+        <article className="gallery-result">
+          <div className="gallery-compare-card gallery-compare-card--single" style={{ "--gallery-image": 'url("/img/matress_cleaning.png")' } as CSSProperties}>
+            <div className="gallery-layer gallery-layer--before" />
+            <div className="gallery-layer gallery-layer--after" />
+            <span className="gallery-category">Mattress</span>
+            <span className="gallery-state gallery-state--before">Before</span>
+            <span className="gallery-state gallery-state--after">After</span>
+            <span className="gallery-divider"><b>‹›</b></span>
+            <input type="range" min={15} max={85} defaultValue={50} aria-label="Compare mattress before and after" />
+          </div>
+          <p className="gallery-location">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
+            Toronto, ON
+          </p>
+          <p className="gallery-service">Stain &amp; odour removal</p>
+        </article>
+        <article className="gallery-result">
+          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/before_after_carpet_cleaning.png")' } as CSSProperties}>
+            <div className="gallery-layer gallery-layer--before" />
+            <div className="gallery-layer gallery-layer--after" />
+            <span className="gallery-category">Area Rug</span>
+            <span className="gallery-state gallery-state--before">Before</span>
+            <span className="gallery-state gallery-state--after">After</span>
+            <span className="gallery-divider"><b>‹›</b></span>
+            <input type="range" min={15} max={85} defaultValue={50} aria-label="Compare area rug before and after" />
+          </div>
+          <p className="gallery-location">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
+            Brampton, ON
+          </p>
+          <p className="gallery-service">Deep rug cleaning</p>
+        </article>
+      </div>
+      <div className="gallery-pagination" aria-label="Results pages">
+        <button type="button" className="is-active" aria-label="Page 1" />
+        <button type="button" aria-label="Page 2" />
+        <button type="button" aria-label="Page 3" />
+        <button type="button" aria-label="Page 4" />
+        <button type="button" aria-label="Page 5" />
+      </div>
+      <a className="gallery-more" href="#reviews">View More Results <span>→</span></a>
+      <span className="gallery-sparkle" aria-hidden="true">✧</span>
+    </div>
+  </section>
+  {/* SECTION 2: SERVICES */}
+  <section id="services" className="py-16 px-[6%] bg-white border-b border-forestGreen/5">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-10">
+        <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">What We Clean</span>
+        <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight">Our Upholstery Cleaning Services</h2>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article className="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
+          <div className="relative h-44 bg-stone-100 overflow-visible">
+            <img src="/img/sofa_cleaning.png" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+            <div className="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 12h16v7H4z" /><path d="M6 12V9c0-2 1.5-3 3-3h6c1.5 0 3 1 3 3v3" /><path d="M7 19v2" /><path d="M17 19v2" /></svg>
+            </div>
+          </div>
+          <div className="pt-9 p-5">
+            <h3 className="font-serif font-bold text-forestGreen text-base mb-2">Sofa &amp; Couch Cleaning</h3>
+            <p className="text-sm text-stone-600 leading-relaxed">Remove dirt, body oils, stains, and everyday buildup from sofas, couches, and upholstered furniture.</p>
+          </div>
+        </article>
+        <article className="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
+          <div className="relative h-44 bg-stone-100 overflow-visible">
+            <img src="/img/pet_stain.jpg" alt="Pet stain and odour removal service by SoftNest" className="w-full h-full object-cover" />
+            <div className="service-icon-badge service-icon-badge--pet absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 21s-6-4.4-6-10a4 4 0 0 1 7-2.6A4 4 0 0 1 20 11c0 5.6-8 10-8 10z" /><path d="M9 14h6" /><path d="M12 11v6" /></svg>
+            </div>
+          </div>
+          <div className="pt-9 p-5">
+            <h3 className="font-serif font-bold text-forestGreen text-base mb-2">Pet Stain &amp; Odour Removal</h3>
+            <p className="text-sm text-stone-600 leading-relaxed">Treat pet accidents, odours, and stubborn stains safely and effectively.</p>
+          </div>
+        </article>
+        <article className="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
+          <div className="relative h-44 bg-stone-100 overflow-visible">
+            <img src="/img/sectional_furniture.png" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+            <div className="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 10h14v8H5z" /><path d="M7 10V7h10v3" /><path d="M8 18v2" /><path d="M16 18v2" /></svg>
+            </div>
+          </div>
+          <div className="pt-9 p-5">
+            <h3 className="font-serif font-bold text-forestGreen text-base mb-2">Sectional &amp; Furniture Cleaning</h3>
+            <p className="text-sm text-stone-600 leading-relaxed">Professional cleaning for sectionals, armchairs, recliners, ottomans, and other upholstered furniture.</p>
+          </div>
+        </article>
+        <article className="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
+          <div className="relative h-44 bg-stone-100 overflow-visible">
+            <img src="/img/rug_2.png" alt="Carpet and area rug cleaning service by SoftNest" className="w-full h-full object-cover" />
+            <div className="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 7h14" /><path d="M5 12h14" /><path d="M5 17h14" /><path d="M8 5v14" /><path d="M16 5v14" /></svg>
+            </div>
+          </div>
+          <div className="pt-9 p-5">
+            <h3 className="font-serif font-bold text-forestGreen text-base mb-2">Carpet &amp; Area Rug Cleaning</h3>
+            <p className="text-sm text-stone-600 leading-relaxed">Deep clean wall-to-wall carpets and area rugs — removing embedded dirt, allergens, and stains without harsh soaking.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  {/* SECTION 3: WHY HOMEOWNERS CHOOSE SOFTNEST */}
+  <section id="why-softnest" className="py-16 px-[6%] bg-creamLight/40 border-b border-forestGreen/5">
+    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div className="lg:col-span-4">
+        <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Why Homeowners Choose SoftNest</span>
+        <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">Quality You Can See.<br />Care You Can Trust.</h2>
+        <p className="text-sm text-stone-700 leading-relaxed mb-6 max-w-sm">We go beyond surface cleaning. Every detail matters because your home and furniture deserve the best.</p>
+        <a href="#about" className="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">Learn More About Us</a>
+      </div>
+      <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-forestGreen/10">
+        <div className="px-6 py-6 text-center">
+          <svg className="w-14 h-14 mx-auto mb-5 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3l7 3v5c0 4.9-2.9 8.2-7 10-4.1-1.8-7-5.1-7-10V6l7-3z" /><path d="M8.5 12.2l2.2 2.2 4.8-5" /></svg>
+          <h3 className="font-serif font-bold text-forestGreen text-base mb-3">Fully Insured</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">Your furniture and home are protected with full liability insurance.</p>
+        </div>
+        <div className="px-6 py-6 text-center">
+          <svg className="w-14 h-14 mx-auto mb-5 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 11l8-7 8 7" /><path d="M6 10v10h12V10" /><path d="M10 20v-5h4v5" /></svg>
+          <h3 className="font-serif font-bold text-forestGreen text-base mb-3">Local &amp; Family-Run</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">We&apos;re a small local team serving Mississauga and the GTA with care.</p>
+        </div>
+        <div className="px-6 py-6 text-center">
+          <svg className="w-14 h-14 mx-auto mb-5 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx={12} cy={8} r={5} /><path d="M8 13l-2 8 6-3 6 3-2-8" /><path d="M9.5 8l1.7 1.7L15 6" /></svg>
+          <h3 className="font-serif font-bold text-forestGreen text-base mb-3">Vetted Technicians</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">Background-checked, trained, and experienced upholstery specialists.</p>
+        </div>
+        <div className="px-6 py-6 text-center">
+          <svg className="w-14 h-14 mx-auto mb-5 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx={12} cy={12} r={9} /><path d="M12 7v10" /><path d="M15 9.5c-.5-1-1.5-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.8 3 2 3 .8 3 2-1.3 2-3 2c-1.5 0-2.5-.5-3-1.5" /></svg>
+          <h3 className="font-serif font-bold text-forestGreen text-base mb-3">Pay After Service</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">No upfront charges. You only pay when you&apos;re 100% satisfied.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* SECTION 4: CLEANING PROCESS */}
+  <section id="trust" className="py-16 px-[6%] bg-white border-b border-forestGreen/5">
+    <div className="max-w-6xl mx-auto">
+      <div className="text-center mb-12">
+        <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-2">How It Works</span>
+        <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight">Our 4-Step Cleaning Process</h2>
+      </div>
+      <div className="process-steps">
+        <div className="process-step">
+          <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-creamLight flex items-center justify-center text-forestGreen"><svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx={10} cy={10} r={6} /><path d="M14.5 14.5L20 20" /></svg></div>
+          <span className="process-step__marker inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs">1</span>
+          <h3 className="font-serif font-bold text-forestGreen text-base mb-2">Inspection</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">We check the fabric, identify stains and problem areas, and choose the best cleaning approach.</p>
+        </div>
+        <div className="process-step">
+          <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-creamLight flex items-center justify-center text-forestGreen"><svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx={7} cy={14} r={4} /><circle cx={15} cy={8} r={3} /><circle cx={17} cy={16} r={2} /><circle cx={8} cy={6} r="1.5" /></svg></div>
+          <span className="process-step__marker inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs">2</span>
+          <h3 className="font-serif font-bold text-forestGreen text-base mb-2">Pre-Treat &amp; Loosen</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">We apply professional pre-treatments and agitate the fabric to break down dirt, oils, and stains.</p>
+        </div>
+        <div className="process-step">
+          <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-creamLight flex items-center justify-center text-forestGreen"><svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M8 20V7a4 4 0 018 0v13" /><path d="M5 20h8" /><circle cx={17} cy={17} r={3} /></svg></div>
+          <span className="process-step__marker inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs">3</span>
+          <h3 className="font-serif font-bold text-forestGreen text-base mb-2">Deep Clean &amp; Extract</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">Hot water extraction removes deep down dirt, allergens, and odours for a thorough clean.</p>
+        </div>
+        <div className="process-step">
+          <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-creamLight flex items-center justify-center text-forestGreen"><svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx={12} cy={12} r={3} /><path d="M12 2v6M12 16v6M2 12h6M16 12h6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M19.1 4.9l-4.2 4.2M9.1 14.9l-4.2 4.2" /></svg></div>
+          <span className="process-step__marker inline-flex w-8 h-8 items-center justify-center rounded-full bg-forestGreen text-white font-serif font-bold text-xs">4</span>
+          <h3 className="font-serif font-bold text-forestGreen text-base mb-2">Final Groom &amp; Dry</h3>
+          <p className="text-sm text-stone-600 leading-relaxed">We groom the fabric, set the nap, and speed up drying so your furniture looks fresh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* SECTION 5: HEALTHIER HOME */}
+  <section className="health-section">
+    <div className="health-inner">
+      <div className="health-visual">
+        <img src="/img/health.png" alt="" aria-hidden="true" />
+      </div>
+      <div className="health-copy">
+        <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Healthier Home. Happier Family.</span>
+        <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">A Deeper Clean for the People<br />and Pets You Love</h2>
+        <p className="text-sm text-stone-700 leading-relaxed mb-8">Our cleaning process removes dirt, bacteria, allergens, and odours trapped deep in your upholstery, creating a fresher, healthier environment for your family.</p>
+        <div className="home-benefits">
+          <div className="home-benefit"><svg className="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M20 4c-8.2.5-13.5 5-14.6 11.6" /><path d="M20 4c.5 8.2-4.1 13.1-11.7 13.8" /><path d="M4 20c3.2-5.6 7-8.9 12-11" /></svg><h3 className="font-serif font-bold text-forestGreen text-sm mb-1">Safe Products</h3><p className="text-xs text-stone-600 leading-relaxed">Non-toxic and eco-friendly. Safe for kids and pets.</p></div>
+          <div className="home-benefit"><svg className="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M7 4c2 3 0 5 0 8" /><path d="M12 4c2 3 0 5 0 8" /><path d="M17 4c2 3 0 5 0 8" /><path d="M5 18h14" /></svg><h3 className="font-serif font-bold text-forestGreen text-sm mb-1">Odour Removal</h3><p className="text-xs text-stone-600 leading-relaxed">Eliminates odours at the source, not just masking them.</p></div>
+          <div className="home-benefit"><svg className="w-9 h-9 text-forestGreen mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M12 3l7 3v5c0 4.9-2.9 8.2-7 10-4.1-1.8-7-5.1-7-10V6l7-3z" /><path d="M12 8v8M8 12h8" /></svg><h3 className="font-serif font-bold text-forestGreen text-sm mb-1">Allergen Reduction</h3><p className="text-xs text-stone-600 leading-relaxed">Removes dust, dander, and allergens for a healthier home.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* SECTION 6: CLIENT REVIEWS (static, manually copied from Google) */}
+  <section id="reviews" className="py-16 px-[6%] bg-white border-b border-forestGreen/5">
+    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="lg:col-span-3">
+        <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Client Reviews</span>
+        <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">What Our Clients<br />Are Saying</h2>
+        <p className="text-sm text-stone-700 leading-relaxed mb-6">Real feedback from homeowners across Mississauga and the GTA.</p>
+        <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">See All Reviews on Google Maps</a>
+      </div>
+      <div className="lg:col-span-9">
+        <div className="reviews-carousel" id="reviews-carousel" aria-live="polite">
+          <div className="reviews-carousel__track" id="reviews-track">
+            <blockquote className="review-card">
+              <div className="review-card__stars">★★★★★</div>
+              <p className="review-card__text">“Andrii’s upholstery deep cleaning was exceptional. he managed to completely remove stains in our fabric couch that had been there for years. He also cleaned 6 micro fiber dining chaises and made them look brand new. He is courteous, and thorough and I would use his services again. Highly recommend.”</p>
+              <cite className="review-card__author">
+                <div className="review-card__avatar" />
+                <span>
+                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Kiko44 <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <span className="review-card__time">5 days ago</span>
+                </span>
+              </cite>
+            </blockquote>
+            <blockquote className="review-card">
+              <div className="review-card__stars">★★★★★</div>
+              <p className="review-card__text">“It’s so refreshing to see a company that exceeds expectations. My carpets are over 15 years old with heavy traffic from my son and all his sports equipment. I thought for sure they were wasting their time trying to restore my carpets. But I was wrong. They brought them back to life. A lot of places are going to make a lot of promises this one delivers!! Great results and the friendliest people you will ever meet. 6 stars!!”</p>
+              <cite className="review-card__author">
+                <div className="review-card__avatar" />
+                <span>
+                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Jeff A. <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <span className="review-card__time">a week ago</span>
+                </span>
+              </cite>
+            </blockquote>
+            <blockquote className="review-card">
+              <div className="review-card__stars">★★★★★</div>
+              <p className="review-card__text">“Andrii and his son are incredible!!! They went above and beyond .. they are very very good and detailed. Left very comfortable with them. Would like to give them 10 out of 10 stars”</p>
+              <cite className="review-card__author">
+                <div className="review-card__avatar" />
+                <span>
+                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Julie Trakos <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <span className="review-card__time">2 days ago</span>
+                </span>
+              </cite>
+            </blockquote>
+            <blockquote className="review-card">
+              <div className="review-card__stars">★★★★★</div>
+              <p className="review-card__text">“We had a pet urine issue on our couch and honestly didn’t think it could be cleaned this well. No smell, no stains — it honestly looks like a different couch. They showed up on time, explained what they were doing, and never rushed the job. You can tell they really care about the quality of their work. We’re very happy with the results and wouldn’t hesitate to call SoftNest Fabric Care again.”</p>
+              <cite className="review-card__author">
+                <div className="review-card__avatar" />
+                <span>
+                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Ryan Wilson <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <span className="review-card__time">5 days ago</span>
+                </span>
+              </cite>
+            </blockquote>
+            <blockquote className="review-card">
+              <div className="review-card__stars">★★★★★</div>
+              <p className="review-card__text">“Great service! I recommend it!”</p>
+              <cite className="review-card__author">
+                <div className="review-card__avatar" />
+                <span>
+                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Oleksandr Semenov <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <span className="review-card__time">6 days ago</span>
+                </span>
+              </cite>
+            </blockquote>
+            <blockquote className="review-card">
+              <div className="review-card__stars">★★★★★</div>
+              <p className="review-card__text">“Great service and fair price. Our sectional looks so much cleaner, and the team was friendly and professional. Paid $229 and couldn’t be happier. Thanks!”</p>
+              <cite className="review-card__author">
+                <div className="review-card__avatar" />
+                <span>
+                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Jamal PD <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <span className="review-card__time">a day ago</span>
+                </span>
+              </cite>
+            </blockquote>
+            <blockquote className="review-card">
+              <div className="review-card__stars">★★★★★</div>
+              <p className="review-card__text">“Honestly, my sofa and dining chairs were looking pretty tired, but Softnest Fabric Care completely refreshed them. They got out the stubborn stains and everything looks brand new again. If you’re on the fence about getting your furniture cleaned, just call them—you won’t regret it! Thanks again to the team!”</p>
+              <cite className="review-card__author">
+                <div className="review-card__avatar" />
+                <span>
+                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Daniel Leblanc <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <span className="review-card__time">2 days ago</span>
+                </span>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
+        <div className="reviews-carousel__controls">
+          <div className="reviews-carousel__dots" id="reviews-dots" />
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* SECTION 7: FAQ AND EQUIPMENT */}
+  <section id="faq" className="bg-creamLight/40 border-b border-forestGreen/5">
+    <div className="faq-layout">
+      <div className="faq-copy">
+        <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">FAQ</span>
+        <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight mb-6">Frequently Asked Questions</h2>
+        <div id="faq-list" className="faq-list space-y-2" role="list" aria-live="polite">
+          <p className="text-sm text-stone-600">Loading questions...</p>
+        </div>
+      </div>
+      <div className="faq-equipment">
+        <img src="/img/faq_machine.png" alt="" aria-hidden="true" />
+        <div className="faq-equipment__card">
+          <h3 className="font-serif font-bold text-forestGreen text-base uppercase mb-4">Professional Equipment.<br />Superior Results.</h3>
+          <p className="text-sm text-stone-700 leading-relaxed mb-5">We use commercial-grade equipment and proven techniques to deliver a deeper, longer-lasting clean.</p>
+          <div className="flex gap-3 text-forestGreen"><svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 20h16M6 20v-4h12v4M8 16v-5h8v5M10 11V7h4v4" /></svg><svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M8 20V7a4 4 0 018 0v13" /><circle cx={17} cy={17} r={3} /></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {/* SECTION 8: ABOUT SOFTNEST & MAP */}
+  <section id="about" className="py-16 px-[6%] bg-white border-b border-forestGreen/5">
+    <div className="max-w-6xl mx-auto space-y-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="about-visual lg:col-span-5">
+          <img src="/img/logo/logo1.png" alt="SoftNest Fabric Care logo" />
+        </div>
+        <div className="lg:col-span-7">
+          <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">About SoftNest</span>
+          <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-4">Careful Upholstery Cleaning,<br />Done with Standards</h2>
+          <p className="text-sm text-stone-700 leading-relaxed max-w-2xl mb-4">SoftNest was built around a simple belief: quality should always come first. Every sofa, sectional, chair, and rug is treated with the same care we would expect in our own homes.</p>
+          <p className="text-sm text-stone-700 leading-relaxed max-w-2xl mb-8">From fabric-safe products to professional equipment and careful technique, our goal is to deliver visible results you can trust without rushing the work.</p>
+          <div className="about-stats grid grid-cols-2 md:grid-cols-4 divide-x divide-forestGreen/10 border-t border-forestGreen/10 pt-7">
+            <div className="about-stat px-4 first:pl-0 text-center">
+              <svg className="w-11 h-11 mx-auto mb-3 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3l7 3v5c0 4.9-2.9 8.2-7 10-4.1-1.8-7-5.1-7-10V6l7-3z" /><path d="M8.5 12.2l2.2 2.2 4.8-5" /></svg>
+              <div className="font-serif font-bold text-forestGreen text-xl">100%</div>
+              <p className="text-xs text-stone-600 leading-relaxed">Satisfaction Focused</p>
+            </div>
+            <div className="about-stat px-4 text-center">
+              <svg className="w-11 h-11 mx-auto mb-3 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx={12} cy={8} r={5} /><path d="M8 13l-2 8 6-3 6 3-2-8" /><path d="M9.5 8l1.7 1.7L15 6" /></svg>
+              <div className="font-serif font-bold text-forestGreen text-xl">Pro</div>
+              <p className="text-xs text-stone-600 leading-relaxed">Equipment &amp; Technique</p>
+            </div>
+            <div className="about-stat px-4 text-center">
+              <svg className="w-11 h-11 mx-auto mb-3 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 11l8-7 8 7" /><path d="M6 10v10h12V10" /><path d="M10 20v-5h4v5" /></svg>
+              <div className="font-serif font-bold text-forestGreen text-xl">Local</div>
+              <p className="text-xs text-stone-600 leading-relaxed">Mississauga &amp; GTA</p>
+            </div>
+            <div className="about-stat px-4 text-center">
+              <svg className="w-11 h-11 mx-auto mb-3 text-forestGreen" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z" /></svg>
+              <div className="font-serif font-bold text-forestGreen text-xl">Care</div>
+              <p className="text-xs text-stone-600 leading-relaxed">For Your Home</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="softnest-map h-[330px] border border-forestGreen/10" aria-label="SoftNest upholstery cleaning service radius map">
+        <iframe title="SoftNest service area map centered on Mississauga" loading="lazy" referrerPolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=43.5890,-79.6441&z=10&output=embed">
+        </iframe>
+        <div className="softnest-map__static-layer" aria-hidden="true" />
+      </div>
+    </div>
+  </section>
+  {/* SECTION 9: FINAL CTA */}
+  <section id="quote-form" className="px-[6%] py-12 bg-forestGreen text-white">
+    <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div className="flex items-center gap-6 text-center lg:text-left">
+        <div className="hidden sm:flex w-20 h-20 rounded-full border border-white/40 items-center justify-center"><svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l7 3v5c0 4.9-2.9 8.2-7 10-4.1-1.8-7-5.1-7-10V6l7-3z" /><path d="M8.5 12.2l2.2 2.2 4.8-5" /></svg></div>
+        <div><h2 className="font-serif font-bold text-3xl mb-2">Ready for a Fresher, Cleaner Home?</h2><p className="text-creamLight/80">Get a free quote today and experience the SoftNest difference.</p></div>
+      </div>
+      <div className="flex flex-col items-center gap-4">
+        <a href="#quote-form" className="inline-flex items-center justify-center px-12 h-12 bg-white text-forestGreen font-serif font-bold text-xs uppercase tracking-wider no-underline">Get Your Free Quote</a>
+        <a href="tel:+14167270287" className="font-serif font-bold text-xl text-white no-underline">(416) 727-0287</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+  );
+}

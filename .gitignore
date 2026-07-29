@@ -26,8 +26,15 @@ Desktop.ini
 deploy.ps1
 push.bat
 
-# Project-specific assets
-img/business_cards/
+# Local-only design and migration assets
+/public/img/business_cards/
+/public/js/
+/public/svg/
+/public/file.svg
+/public/globe.svg
+/public/next.svg
+/public/vercel.svg
+/public/window.svg
 
 # Node/Web dependencies (Optional but highly recommended)
 node_modules/
@@ -39,12 +46,9 @@ yarn-error.log*
 .idea/
 .vscode/
 
-# Local migration/build artifacts (not part of the restored static site)
+# Build artifacts
 /.legacy-backup/
 /.next/
 /out/
-/public/
-/src/
 /softnest.zip
-/next-env.d.ts
 /.next-dev*.log
