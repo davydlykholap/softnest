@@ -29,17 +29,6 @@ const cityPhotoAlt: Record<string, string> = {
   milton: "Historic downtown Milton streetscape",
 };
 
-const mapPins = [
-  { city: "Vaughan", className: "locations-map-pin--vaughan" },
-  { city: "Brampton", className: "locations-map-pin--brampton" },
-  { city: "Toronto", className: "locations-map-pin--toronto" },
-  { city: "Mississauga", className: "locations-map-pin--mississauga" },
-  { city: "Etobicoke", className: "locations-map-pin--etobicoke" },
-  { city: "Milton", className: "locations-map-pin--milton" },
-  { city: "Oakville", className: "locations-map-pin--oakville" },
-  { city: "Burlington", className: "locations-map-pin--burlington" },
-];
-
 export default function LocationsPage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -74,8 +63,10 @@ export default function LocationsPage() {
             </p>
             <span className="locations-kicker-line" aria-hidden="true" />
             <h1 id="locations-heading">
-              Professional Care,
-              <span>Closer to Home.</span>
+              <span className="locations-hero__title-line">Professional Care,</span>
+              <span className="locations-hero__title-line locations-hero__title-line--accent">
+                Closer to Home.
+              </span>
             </h1>
             <p className="locations-hero__description">
               Explore SoftNest upholstery and carpet cleaning services in your
@@ -97,18 +88,9 @@ export default function LocationsPage() {
 
           <div className="locations-hero__map" aria-label="SoftNest GTA service area">
             <img
-              src="/img/locations/location-hero-map.webp"
-              alt="Organic map illustration of the Greater Toronto Area beside Lake Ontario"
+              src="/img/locations/location-hero-map-labelled.webp"
+              alt="Illustrated Greater Toronto Area service map showing Vaughan, Brampton, Toronto, Mississauga, Etobicoke, Milton, Oakville and Burlington"
             />
-            {mapPins.map((pin) => (
-              <span
-                className={`locations-map-pin ${pin.className}`}
-                key={pin.city}
-              >
-                <i aria-hidden="true" />
-                <b>{pin.city}</b>
-              </span>
-            ))}
           </div>
         </section>
 
