@@ -48,7 +48,8 @@
 
 .site-shell {
     min-height: 0;
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
     padding: 14px 0 18px;
 }
 
@@ -320,13 +321,11 @@
     transform: translateY(-2px);
 }
 
-.google-g {
-    font-size: 23px;
-    font-weight: 800;
-    background: conic-gradient(from -45deg, #4285f4 0 28%, #34a853 0 48%, #fbbc05 0 68%, #ea4335 0 100%);
-    background-clip: text;
-    color: transparent;
-    text-transform: none;
+.new-hero-root .google-maps-icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    stroke: none;
 }
 
 .hero__benefits {
@@ -1172,13 +1171,6 @@ html:has(.gallery-section-v2:target) {
     transform: translateX(-50%);
 }
 
-.gallery-in-view .site-header,
-body:has(.gallery-section-v2:target) .site-header {
-    left: 3.3vw;
-    right: auto;
-    width: 93.4vw;
-}
-
 @media (min-width: 1261px) {
     .gallery-intro__copy {
         transform: translateX(8px);
@@ -1433,8 +1425,13 @@ body:has(.gallery-section-v2:target) .site-header {
         flex-direction: column;
         gap: 9px;
     }
-    .review-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .review-chip { min-height: 88px; }
+    .journey-card__quote {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+    .journey-card__reviews {
+        display: none;
+    }
     .gallery-section-v2 { margin-top: -38px; }
 }
 

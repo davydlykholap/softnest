@@ -88,24 +88,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const gallerySection = document.querySelector('.gallery-section-v2');
     if (gallerySection) {
-        function syncGalleryHeader() {
-            const bounds = gallerySection.getBoundingClientRect();
-            document.body.classList.toggle('gallery-in-view', bounds.top < window.innerHeight * 0.75 && bounds.bottom > 100);
-        }
-
         function alignGalleryAnchor() {
             if (window.location.hash !== '#results') return;
             const previousBehavior = document.documentElement.style.scrollBehavior;
             document.documentElement.style.scrollBehavior = 'auto';
             window.scrollTo(0, gallerySection.offsetTop);
             document.documentElement.style.scrollBehavior = previousBehavior;
-            syncGalleryHeader();
         }
 
         alignGalleryAnchor();
         window.setTimeout(alignGalleryAnchor, 0);
         window.addEventListener('hashchange', alignGalleryAnchor);
-        window.addEventListener('scroll', syncGalleryHeader, { passive: true });
-        window.addEventListener('resize', syncGalleryHeader);
     }
 });
