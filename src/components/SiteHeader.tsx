@@ -5,6 +5,7 @@ import { useState } from "react";
 
 type SiteHeaderProps = {
   home?: boolean;
+  current?: "locations";
 };
 
 const navigation = [
@@ -15,7 +16,10 @@ const navigation = [
   { label: "About Us", hash: "about" },
 ];
 
-export default function SiteHeader({ home = false }: SiteHeaderProps) {
+export default function SiteHeader({
+  home = false,
+  current,
+}: SiteHeaderProps) {
   const [open, setOpen] = useState(false);
   const homeHref = (hash: string) => (home ? `#${hash}` : `/#${hash}`);
   const quoteHref = home ? "#quote-form" : "/#quote-form";
@@ -39,7 +43,12 @@ export default function SiteHeader({ home = false }: SiteHeaderProps) {
             <path d="m6 9 6 6 6-6" />
           </svg>
         </Link>
-        <Link href="/location/">Locations</Link>
+        <Link
+          href="/location/"
+          className={current === "locations" ? "is-active" : undefined}
+        >
+          Locations
+        </Link>
         {navigation.slice(1).map((item) => (
           <Link href={homeHref(item.hash)} key={item.hash}>
             {item.label}

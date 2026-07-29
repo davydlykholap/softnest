@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import LocationSearch from "@/components/LocationSearch";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { locations } from "@/data/locations";
@@ -9,7 +10,35 @@ export const metadata: Metadata = {
   description:
     "Explore SoftNest upholstery, sofa, sectional, carpet and rug cleaning service areas across Mississauga and the Greater Toronto Area.",
   alternates: { canonical: "/location/" },
+  openGraph: {
+    title: "SoftNest Cleaning Services Across the GTA",
+    description:
+      "Find professional upholstery and carpet cleaning in your community.",
+    url: "/location/",
+  },
 };
+
+const cityPhotoAlt: Record<string, string> = {
+  mississauga: "Mississauga skyline in Ontario",
+  toronto: "Toronto skyline across the waterfront",
+  oakville: "Oakville Harbour pier on Lake Ontario",
+  brampton: "Brampton City Hall in downtown Brampton",
+  etobicoke: "Humber Bay skyline reflected on the water in Etobicoke",
+  burlington: "Spencer Smith Park in Burlington",
+  vaughan: "Vaughan Metropolitan Centre skyline",
+  milton: "Historic downtown Milton streetscape",
+};
+
+const mapPins = [
+  { city: "Vaughan", className: "locations-map-pin--vaughan" },
+  { city: "Brampton", className: "locations-map-pin--brampton" },
+  { city: "Toronto", className: "locations-map-pin--toronto" },
+  { city: "Mississauga", className: "locations-map-pin--mississauga" },
+  { city: "Etobicoke", className: "locations-map-pin--etobicoke" },
+  { city: "Milton", className: "locations-map-pin--milton" },
+  { city: "Oakville", className: "locations-map-pin--oakville" },
+  { city: "Burlington", className: "locations-map-pin--burlington" },
+];
 
 export default function LocationsPage() {
   const breadcrumbSchema = {
@@ -33,59 +62,179 @@ export default function LocationsPage() {
 
   return (
     <>
-      <div className="new-hero-root location-header">
-        <SiteHeader />
+      <div className="new-hero-root locations-header">
+        <SiteHeader current="locations" />
       </div>
-      <main className="location-page location-hub">
-        <nav className="location-breadcrumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
-          <span aria-hidden="true">/</span>
-          <span>Locations</span>
-        </nav>
-        <header className="location-hub__hero">
-          <p className="location-eyebrow">Greater Toronto Area</p>
-          <h1>Upholstery Cleaning Service Areas</h1>
-          <p>
-            SoftNest provides professional sofa, furniture, mattress, carpet
-            and area rug cleaning across Mississauga and surrounding GTA
-            communities.
-          </p>
-        </header>
-        <section className="location-hub__grid" aria-label="Service locations">
-          {locations.map((location, index) => (
-            <article key={location.slug}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h2>{location.name}</h2>
-              <p>{location.shortDescription}</p>
-              <Link href={`/location/${location.slug}/`}>
-                View {location.name} services
+
+      <main className="locations-hub-v2">
+        <section className="locations-hero" aria-labelledby="locations-heading">
+          <div className="locations-hero__copy">
+            <p className="locations-kicker">
+              Serving the Greater Toronto Area
+            </p>
+            <span className="locations-kicker-line" aria-hidden="true" />
+            <h1 id="locations-heading">
+              Professional Care,
+              <span>Closer to Home.</span>
+            </h1>
+            <p className="locations-hero__description">
+              Explore SoftNest upholstery and carpet cleaning services in your
+              community.
+            </p>
+            <div className="locations-hero__actions">
+              <a className="locations-pill locations-pill--solid" href="#cities">
+                Find your city
+                <span aria-hidden="true">→</span>
+              </a>
+              <Link
+                className="locations-pill locations-pill--outline"
+                href="/#quote-form"
+              >
+                Request a quote
+              </Link>
+            </div>
+          </div>
+
+          <div className="locations-hero__map" aria-label="SoftNest GTA service area">
+            <img
+              src="/img/locations/location-hero-map.webp"
+              alt="Organic map illustration of the Greater Toronto Area beside Lake Ontario"
+            />
+            {mapPins.map((pin) => (
+              <span
+                className={`locations-map-pin ${pin.className}`}
+                key={pin.city}
+              >
+                <i aria-hidden="true" />
+                <b>{pin.city}</b>
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <div className="locations-search-wrap">
+          <LocationSearch />
+        </div>
+
+        <section className="locations-cities" id="cities">
+          <header className="locations-section-heading">
+            <p className="locations-kicker">Areas we serve</p>
+            <h2>Cleaning Services Across the GTA</h2>
+          </header>
+
+          <div className="locations-bento">
+            {locations.map((location) => (
+              <article
+                className={`locations-city-card locations-city-card--${location.slug}`}
+                key={location.slug}
+              >
+                <img
+                  src={`/img/locations/${location.slug}.webp`}
+                  alt={cityPhotoAlt[location.slug]}
+                />
+                {location.slug === "mississauga" && (
+                  <span className="locations-city-card__badge">Home base</span>
+                )}
+                <div className="locations-city-card__body">
+                  <h3>{location.name}</h3>
+                  <p>Upholstery &amp; carpet cleaning</p>
+                  <Link
+                    href={`/location/${location.slug}/`}
+                    aria-label={`View upholstery cleaning in ${location.name}`}
+                  >
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <details className="locations-photo-credits">
+            <summary>City photography credits</summary>
+            <p>
+              Mississauga: K2HWY · Toronto: Derek Tsang · Oakville: Ibagli ·
+              Brampton: Sikander Iqbal · Etobicoke: Mykola Swarnyk ·
+              Burlington: Municipal Affairs and Housing · Vaughan:
+              Canmenwalker · Milton: XeresNelro.{" "}
+              <a href="/img/locations/ATTRIBUTION.md">
+                Sources and licences
+              </a>
+            </p>
+          </details>
+        </section>
+
+        <section className="locations-missing" id="ask-about-your-city">
+          <div className="locations-missing__copy">
+            <p className="locations-kicker">Still nearby?</p>
+            <h2>Don&apos;t see your city?</h2>
+            <span className="locations-kicker-line" aria-hidden="true" />
+            <p>
+              Send us your city or postal code and we&apos;ll confirm whether we
+              can schedule service in your neighbourhood.
+            </p>
+            <div className="locations-missing__actions">
+              <Link
+                className="locations-pill locations-pill--solid"
+                href="/#quote-form"
+              >
+                Ask about your city
                 <span aria-hidden="true">→</span>
               </Link>
-            </article>
-          ))}
-        </section>
-        <section className="location-cta">
-          <div>
-            <p className="location-eyebrow">Don&apos;t see your community?</p>
-            <h2>Ask us about your GTA address</h2>
-            <p>
-              Send your postal code, photos and the items you would like
-              cleaned. We will confirm whether we can schedule your area.
-            </p>
+              <a
+                className="locations-phone-pill"
+                href="tel:+14167270287"
+              >
+                <span aria-hidden="true">☎</span>
+                (416) 727-0287
+              </a>
+            </div>
           </div>
-          <div className="location-actions">
-            <Link className="location-button location-button--light" href="/#quote-form">
+
+          <div className="locations-estimate-card">
+            <div className="locations-estimate-card__copy">
+              <span className="locations-estimate-card__icon" aria-hidden="true">
+                ◉
+              </span>
+              <h3>Fast, easy photo estimate.</h3>
+              <p>
+                Show us what needs cleaning and we&apos;ll recommend the right
+                solution.
+              </p>
+              <Link href="/#quote-form">No commitment. Just clarity.</Link>
+            </div>
+            <div className="locations-estimate-card__image">
+              <img
+                src="/img/sofa_cleaning.png"
+                alt="Freshly cleaned upholstered sofa"
+              />
+              <span aria-hidden="true" />
+            </div>
+          </div>
+        </section>
+
+        <section className="locations-final-cta">
+          <div className="locations-final-cta__image">
+            <img
+              src="/images/softnest-hero-room.png"
+              alt="SoftNest hero room with a deep green sofa"
+            />
+          </div>
+          <div className="locations-final-cta__copy">
+            <p className="locations-kicker">Professional care, close to home</p>
+            <h2>A fresher home is closer than you think.</h2>
+            <span className="locations-kicker-line" aria-hidden="true" />
+            <p>
+              Trusted by homeowners across the GTA for professional, careful
+              cleaning that makes a real difference.
+            </p>
+            <Link className="locations-pill locations-pill--light" href="/#quote-form">
               Request a free quote
+              <span aria-hidden="true">→</span>
             </Link>
-            <a
-              className="location-button location-button--outline"
-              href="tel:+14167270287"
-            >
-              Call (416) 727-0287
-            </a>
           </div>
         </section>
       </main>
+
       <SiteFooter />
       <script
         type="application/ld+json"

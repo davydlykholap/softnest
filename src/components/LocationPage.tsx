@@ -109,7 +109,7 @@ export default function LocationPage({ location }: LocationPageProps) {
   return (
     <>
       <div className="new-hero-root location-header">
-        <SiteHeader />
+        <SiteHeader current="locations" />
       </div>
       <main className="location-page">
         <nav className="location-breadcrumbs" aria-label="Breadcrumb">

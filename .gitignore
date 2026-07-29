@@ -28,6 +28,7 @@ push.bat
 
 # Local-only design and migration assets
 /public/img/business_cards/
+/public/img/locations/source/
 /public/js/
 /public/svg/
 /public/file.svg
