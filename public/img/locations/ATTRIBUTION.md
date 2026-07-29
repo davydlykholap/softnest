@@ -27,6 +27,9 @@ cropped from the following real photographs:
 - **Milton:** “Downtown Milton Streetscape, Ontario” by XeresNelro,
   [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0),
   [source](https://commons.wikimedia.org/wiki/File:Downtown_Milton_Streetscape,_Ontario.jpg).
+- **Hamilton:** “HamiltonOntarioSkylineB (cropped)” by Rick Cordeiro,
+  [public domain](https://creativecommons.org/publicdomain/mark/1.0/),
+  [source](https://commons.wikimedia.org/wiki/File:HamiltonOntarioSkylineB_(cropped).JPG).
 
 Changes: each source photograph was resized, cropped and encoded as WebP for
 web delivery.

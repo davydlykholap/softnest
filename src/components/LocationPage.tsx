@@ -271,7 +271,7 @@ export default function LocationPage({ location }: LocationPageProps) {
         <section className="location-nearby">
           <div>
             <p className="location-eyebrow">More service areas</p>
-            <h2>Nearby GTA locations</h2>
+            <h2>Nearby service areas</h2>
           </div>
           <div className="location-nearby__links">
             {nearby.map((item) => (

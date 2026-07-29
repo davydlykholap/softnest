@@ -319,6 +319,44 @@ export const locations: Location[] = [
       },
     ],
   },
+  {
+    slug: "hamilton",
+    name: "Hamilton",
+    shortDescription:
+      "Professional upholstery, sofa, sectional, carpet and area rug cleaning for Hamilton homes.",
+    introduction:
+      "SoftNest provides detail-focused upholstery and carpet cleaning for Hamilton households. We clean sofas, sectionals, dining chairs, mattresses, carpets and suitable area rugs using equipment and products selected for the material, condition and type of soil.",
+    localConsiderations:
+      "Hamilton appointments can range from downtown apartments and converted homes to larger properties across the Mountain and surrounding communities. Send clear photos, your postal code and any parking, stair or building-access details so we can confirm availability and prepare for the visit.",
+    neighbourhoods: [
+      "Downtown Hamilton",
+      "Westdale",
+      "Durand",
+      "Ancaster",
+      "Dundas",
+      "Stoney Creek",
+      "Hamilton Mountain",
+      "Waterdown",
+    ],
+    mapQuery: "Hamilton, Ontario",
+    faq: [
+      {
+        question: "How do I confirm upholstery cleaning availability in Hamilton?",
+        answer:
+          "Send your Hamilton postal code, photos of each item and your preferred timing. We will confirm the service window with your quote.",
+      },
+      {
+        question: "Can you clean sofas in Hamilton apartments or condos?",
+        answer:
+          "Yes. Include elevator, loading, parking and entry instructions so access can be planned before the appointment.",
+      },
+      {
+        question: "Can carpet and upholstery be cleaned during the same visit?",
+        answer:
+          "Often, yes. List every furniture item and carpeted area in the same request so we can confirm the scope and timing.",
+      },
+    ],
+  },
 ];
 
 export function getLocation(slug: string) {

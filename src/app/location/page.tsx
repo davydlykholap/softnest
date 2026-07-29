@@ -8,10 +8,10 @@ import { locations } from "@/data/locations";
 export const metadata: Metadata = {
   title: "Upholstery Cleaning Service Areas | SoftNest",
   description:
-    "Explore SoftNest upholstery, sofa, sectional, carpet and rug cleaning service areas across Mississauga and the Greater Toronto Area.",
+    "Explore SoftNest upholstery, sofa, sectional, carpet and rug cleaning service areas across Mississauga, the Greater Toronto Area and Hamilton.",
   alternates: { canonical: "/location/" },
   openGraph: {
-    title: "SoftNest Cleaning Services Across the GTA",
+    title: "SoftNest Cleaning Services Across the GTHA",
     description:
       "Find professional upholstery and carpet cleaning in your community.",
     url: "/location/",
@@ -27,6 +27,7 @@ const cityPhotoAlt: Record<string, string> = {
   burlington: "Spencer Smith Park in Burlington",
   vaughan: "Vaughan Metropolitan Centre skyline",
   milton: "Historic downtown Milton streetscape",
+  hamilton: "Downtown Hamilton skyline from the Niagara Escarpment",
 };
 
 export default function LocationsPage() {
@@ -59,7 +60,7 @@ export default function LocationsPage() {
         <section className="locations-hero" aria-labelledby="locations-heading">
           <div className="locations-hero__copy">
             <p className="locations-kicker">
-              Serving the Greater Toronto Area
+              Serving the Greater Toronto &amp; Hamilton Area
             </p>
             <span className="locations-kicker-line" aria-hidden="true" />
             <h1 id="locations-heading">
@@ -88,8 +89,8 @@ export default function LocationsPage() {
 
           <div className="locations-hero__map" aria-label="SoftNest GTA service area">
             <img
-              src="/img/locations/location-hero-map-labelled.webp"
-              alt="Illustrated Greater Toronto Area service map showing Vaughan, Brampton, Toronto, Mississauga, Etobicoke, Milton, Oakville and Burlington"
+              src="/img/locations/location-hero-map-nine-cities.webp"
+              alt="Illustrated service map showing Vaughan, Brampton, Toronto, Mississauga, Etobicoke, Milton, Oakville, Burlington and Hamilton"
             />
           </div>
         </section>
@@ -101,7 +102,7 @@ export default function LocationsPage() {
         <section className="locations-cities" id="cities">
           <header className="locations-section-heading">
             <p className="locations-kicker">Areas we serve</p>
-            <h2>Cleaning Services Across the GTA</h2>
+            <h2>Cleaning Services Across the GTHA</h2>
           </header>
 
           <div className="locations-bento">
@@ -114,9 +115,6 @@ export default function LocationsPage() {
                   src={`/img/locations/${location.slug}.webp`}
                   alt={cityPhotoAlt[location.slug]}
                 />
-                {location.slug === "mississauga" && (
-                  <span className="locations-city-card__badge">Home base</span>
-                )}
                 <div className="locations-city-card__body">
                   <h3>{location.name}</h3>
                   <p>Upholstery &amp; carpet cleaning</p>
@@ -137,7 +135,7 @@ export default function LocationsPage() {
               Mississauga: K2HWY · Toronto: Derek Tsang · Oakville: Ibagli ·
               Brampton: Sikander Iqbal · Etobicoke: Mykola Swarnyk ·
               Burlington: Municipal Affairs and Housing · Vaughan:
-              Canmenwalker · Milton: XeresNelro.{" "}
+              Canmenwalker · Milton: XeresNelro · Hamilton: Rick Cordeiro.{" "}
               <a href="/img/locations/ATTRIBUTION.md">
                 Sources and licences
               </a>
@@ -206,7 +204,7 @@ export default function LocationsPage() {
             <h2>A fresher home is closer than you think.</h2>
             <span className="locations-kicker-line" aria-hidden="true" />
             <p>
-              Trusted by homeowners across the GTA for professional, careful
+              Trusted by homeowners across the GTHA for professional, careful
               cleaning that makes a real difference.
             </p>
             <Link className="locations-pill locations-pill--light" href="/#quote-form">

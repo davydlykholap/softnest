@@ -16,7 +16,7 @@ export default function SiteFooter() {
           </p>
           <p className="text-sm text-stone-700 leading-relaxed mt-4">
             Professional upholstery cleaning for homes across Mississauga and
-            the GTA.
+            the GTHA.
           </p>
         </div>
         <div>
@@ -62,7 +62,7 @@ export default function SiteFooter() {
           <p className="text-sm text-stone-700">
             Mississauga, Ontario
             <br />
-            Serving the GTA
+            Serving the GTHA
           </p>
           <div
             className="softnest-map softnest-map--footer mt-6 h-28 border border-forestGreen/10"

@@ -4991,3 +4991,228 @@ main[id] {
         padding: 82px 8% 46px;
     }
 }
+
+/* Locations grid, custom combobox and global header layering */
+.new-hero-root {
+    z-index: 2147483647;
+    isolation: isolate;
+    overflow: visible;
+}
+
+.site-header {
+    z-index: 2147483646;
+    isolation: isolate;
+}
+
+.locations-search-wrap {
+    z-index: 40;
+}
+
+.locations-search {
+    z-index: 2;
+}
+
+.locations-search__field {
+    z-index: 5;
+}
+
+.locations-search__field input {
+    padding-right: 54px;
+}
+
+.locations-search__toggle {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: var(--locations-green);
+    background: transparent;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.locations-search__toggle:hover {
+    background: #edf4f0;
+}
+
+.locations-search__toggle > span {
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform 220ms ease;
+}
+
+.locations-search__field:has(input[aria-expanded="true"])
+    .locations-search__toggle
+    > span {
+    transform: translateY(2px) rotate(225deg);
+}
+
+.locations-search__options {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    max-height: 272px;
+    display: grid;
+    gap: 5px;
+    padding: 9px;
+    overflow-y: auto;
+    border: 1px solid rgba(7, 84, 59, .13);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .98);
+    box-shadow: 0 22px 48px rgba(18, 47, 36, .18);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-7px) scale(.985);
+    transform-origin: top center;
+    transition:
+        opacity 170ms ease,
+        visibility 170ms ease,
+        transform 210ms cubic-bezier(.2, .8, .2, 1);
+    scrollbar-color: rgba(7, 84, 59, .35) transparent;
+    scrollbar-width: thin;
+}
+
+.locations-search__options--open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.locations-search__option {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 9px 13px;
+    border: 0;
+    border-radius: 15px;
+    color: #203129;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: color 150ms ease, background 150ms ease, transform 150ms ease;
+}
+
+.locations-search__option span {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.locations-search__option small {
+    color: #75837c;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.locations-search__option:hover,
+.locations-search__option--active {
+    color: #fff;
+    background: var(--locations-green);
+    transform: translateX(2px);
+}
+
+.locations-search__option:hover small,
+.locations-search__option--active small {
+    color: rgba(255, 255, 255, .72);
+}
+
+.locations-search__empty {
+    margin: 0;
+    padding: 15px 13px;
+    color: #5c6a63;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.locations-bento {
+    grid-template-areas: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, 248px);
+}
+
+.locations-city-card,
+.locations-city-card--mississauga,
+.locations-city-card--toronto,
+.locations-city-card--oakville,
+.locations-city-card--brampton,
+.locations-city-card--etobicoke,
+.locations-city-card--burlington,
+.locations-city-card--vaughan,
+.locations-city-card--milton,
+.locations-city-card--hamilton {
+    grid-area: auto;
+}
+
+.locations-city-card--mississauga > img {
+    height: 72%;
+}
+
+.locations-city-card--mississauga .locations-city-card__body {
+    min-height: 103px;
+    padding: 18px 68px 15px 20px;
+    border-radius: 36px 36px 39px 39px;
+}
+
+.locations-city-card--mississauga .locations-city-card__body h3 {
+    font-size: 24px;
+}
+
+@media (max-width: 1100px) {
+    .locations-bento {
+        grid-template-areas: none;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+        grid-auto-rows: 245px;
+    }
+}
+
+@media (max-width: 980px) {
+    .mobile-nav {
+        z-index: 2147483647;
+    }
+}
+
+@media (max-width: 580px) {
+    .locations-search__options {
+        max-height: 235px;
+        border-radius: 20px;
+    }
+
+    .locations-search__option small {
+        display: none;
+    }
+
+    .locations-bento {
+        grid-template-areas: none;
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-auto-rows: 310px;
+    }
+
+    .locations-city-card--mississauga .locations-city-card__body {
+        min-height: 103px;
+        padding: 18px 68px 15px 20px;
+    }
+
+    .locations-city-card--mississauga .locations-city-card__body h3 {
+        font-size: 24px;
+    }
+}
