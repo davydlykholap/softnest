@@ -5776,8 +5776,9 @@ main[id] {
    ========================================================= */
 
 .miss-header {
-    min-height: 108px;
-    background: #f8faf8;
+    height: 0;
+    min-height: 0;
+    background: transparent;
 }
 
 .miss-page {
@@ -5787,7 +5788,7 @@ main[id] {
     --miss-sage: #edf3ef;
     --miss-cream: #f6f6f0;
     width: 100%;
-    padding: 0 0 46px;
+    padding: 0 0 28px;
     overflow: hidden;
     color: var(--miss-ink);
     background:
@@ -6014,13 +6015,13 @@ main[id] {
     position: relative;
     z-index: 3;
     width: min(1260px, 88%);
-    min-height: 150px;
+    min-height: 132px;
     display: grid;
     grid-template-columns: auto 1.3fr .8fr;
     align-items: center;
-    gap: 28px;
+    gap: 24px;
     margin: -30px auto 0;
-    padding: 25px 42px;
+    padding: 20px 36px;
     border: 1px solid rgba(7,84,59,.06);
     border-radius: 46px;
     background: rgba(255,255,255,.97);
@@ -6028,8 +6029,8 @@ main[id] {
 }
 
 .miss-care-band__icon {
-    width: 78px;
-    height: 78px;
+    width: 68px;
+    height: 68px;
     display: grid;
     place-items: center;
     border-radius: 50%;
@@ -6037,8 +6038,8 @@ main[id] {
 }
 
 .miss-care-band__icon svg {
-    width: 45px;
-    height: 45px;
+    width: 39px;
+    height: 39px;
     fill: none;
     stroke: var(--miss-green);
     stroke-linecap: round;
@@ -6102,18 +6103,18 @@ main[id] {
 }
 
 .miss-services {
-    padding: 95px 0 58px;
+    padding: 66px 0 34px;
 }
 
 .miss-section-heading {
-    margin-bottom: 29px;
+    margin-bottom: 22px;
 }
 
 .miss-section-heading h2 {
     margin: 0;
     color: #142019;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(38px, 4.1vw, 58px);
+    font-size: clamp(36px, 3.5vw, 52px);
     font-weight: 400;
     letter-spacing: -.04em;
     line-height: 1;
@@ -6199,7 +6200,7 @@ main[id] {
 }
 
 .miss-results {
-    padding: 58px 0 65px;
+    padding: 34px 0 38px;
 }
 
 .miss-results__grid {
@@ -6230,7 +6231,7 @@ main[id] {
 
 .miss-result-compare {
     position: relative;
-    height: 330px;
+    height: 300px;
     overflow: hidden;
     border-radius: 30px;
     background: #ddd;
@@ -6337,21 +6338,21 @@ main[id] {
 }
 
 .miss-results__note {
-    margin: 18px 0 0;
+    margin: 13px 0 0;
     color: #69766f;
     font-size: 10px;
     text-align: center;
 }
 
 .miss-process {
-    padding: 65px 0 95px;
+    padding: 38px 0 58px;
 }
 
 .miss-process ol {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 54px;
-    margin: 35px 0 0;
+    gap: 46px;
+    margin: 26px 0 0;
     padding: 0;
     list-style: none;
 }
@@ -6359,7 +6360,7 @@ main[id] {
 .miss-process li {
     position: relative;
     display: grid;
-    grid-template-columns: 86px 1fr;
+    grid-template-columns: 76px 1fr;
     align-items: center;
     gap: 19px;
 }
@@ -6392,8 +6393,8 @@ main[id] {
 }
 
 .miss-process__icon {
-    width: 86px;
-    height: 86px;
+    width: 76px;
+    height: 76px;
     display: grid;
     place-items: center;
     border-radius: 50%;
@@ -6421,8 +6422,8 @@ main[id] {
 .miss-coverage {
     width: min(1320px, calc(100% - 34px));
     margin: 0 auto;
-    padding: 65px 5%;
-    border-radius: 62px;
+    padding: 42px 4.5%;
+    border-radius: 52px;
     background:
         radial-gradient(circle at 91% 82%, rgba(159,184,168,.25), transparent 19rem),
         linear-gradient(130deg, #f8f9f5 0%, #eef3ed 100%);
@@ -6431,16 +6432,16 @@ main[id] {
 .miss-coverage__content {
     display: grid;
     grid-template-columns: 1.22fr .78fr;
-    gap: 45px;
+    gap: 34px;
     align-items: center;
 }
 
 .miss-map {
     position: relative;
-    min-height: 460px;
+    min-height: 360px;
     overflow: hidden;
     border: 8px solid rgba(255,255,255,.95);
-    border-radius: 42px;
+    border-radius: 34px;
     box-shadow: 0 16px 35px rgba(23,48,39,.1);
 }
 
@@ -6512,7 +6513,7 @@ main[id] {
 }
 
 .miss-faq {
-    padding: 95px 0 82px;
+    padding: 54px 0 44px;
 }
 
 .miss-faq__grid {
@@ -6567,13 +6568,13 @@ main[id] {
     position: relative;
     isolation: isolate;
     width: min(1320px, calc(100% - 34px));
-    min-height: 360px;
+    min-height: 290px;
     display: grid;
     grid-template-columns: .8fr 1.2fr;
     align-items: center;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 56px;
+    border-radius: 48px;
     color: #fff;
     background:
         radial-gradient(circle at 86% 18%, rgba(255,255,255,.08), transparent 20rem),
@@ -6607,9 +6608,9 @@ main[id] {
 .miss-phone {
     position: relative;
     align-self: end;
-    width: 365px;
+    width: 290px;
     aspect-ratio: 1023 / 1537;
-    margin-left: 55px;
+    margin-left: 48px;
 }
 
 .miss-phone__frame {
@@ -6636,7 +6637,7 @@ main[id] {
 .miss-final-cta__copy {
     position: relative;
     z-index: 3;
-    padding: 50px 9% 50px 20px;
+    padding: 34px 9% 34px 10px;
 }
 
 .miss-final-cta .miss-kicker {
@@ -6647,7 +6648,7 @@ main[id] {
     margin: 0;
     color: #fff;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(43px, 4.6vw, 68px);
+    font-size: clamp(40px, 4vw, 60px);
     font-weight: 400;
     letter-spacing: -.04em;
     line-height: 1;
@@ -6716,7 +6717,8 @@ main[id] {
 
 @media (max-width: 780px) {
     .miss-header {
-        min-height: 92px;
+        height: 0;
+        min-height: 0;
     }
 
     .miss-hero {
@@ -6780,7 +6782,7 @@ main[id] {
     }
 
     .miss-final-cta {
-        min-height: 540px;
+        min-height: 500px;
         grid-template-columns: 1fr;
     }
 
@@ -6849,7 +6851,7 @@ main[id] {
     }
 
     .miss-services {
-        padding-top: 75px;
+        padding-top: 58px;
     }
 
     .miss-section-heading h2 {
@@ -6866,7 +6868,7 @@ main[id] {
 
     .miss-coverage {
         width: calc(100% - 18px);
-        padding: 50px 18px;
+        padding: 38px 18px;
         border-radius: 38px;
     }
 
@@ -6887,7 +6889,7 @@ main[id] {
 
     .miss-final-cta {
         width: calc(100% - 18px);
-        min-height: 580px;
+        min-height: 520px;
         border-radius: 38px;
     }
 

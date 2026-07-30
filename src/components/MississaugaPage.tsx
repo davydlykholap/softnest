@@ -387,8 +387,8 @@ export default function MississaugaPage({
             </h2>
           </div>
           <div className="miss-faq__grid">
-            {location.faq.map((item, index) => (
-              <details key={item.question} open={index === 0}>
+            {location.faq.map((item) => (
+              <details key={item.question}>
                 <summary>{item.question}<span aria-hidden="true">+</span></summary>
                 <p>{item.answer}</p>
               </details>
