@@ -9,28 +9,28 @@ const services = [
     title: "Sofas & Sectionals",
     description:
       "Deep cleaning for everyday soil, spills, body oils and fabric build-up.",
-    image: "/img/sofa_cleaning.png",
+    image: "/img/sofa_cleaning.webp",
     icon: "sofa",
   },
   {
     title: "Carpets & Stairs",
     description:
       "Thorough extraction for traffic lanes, embedded soil and carpeted steps.",
-    image: "/img/carpet_staircase.png",
+    image: "/img/carpet_staircase.webp",
     icon: "stairs",
   },
   {
     title: "Dining Chairs",
     description:
       "Careful cleaning for upholstered seats, backs and frequently used sets.",
-    image: "/img/dining_chairs.png",
+    image: "/img/dining_chairs.webp",
     icon: "chair",
   },
   {
     title: "Area Rugs",
     description:
       "On-site care for suitable rugs after fibre, backing and colour checks.",
-    image: "/img/rug_2.png",
+    image: "/img/rug_2.webp",
     icon: "rug",
   },
 ];
@@ -47,7 +47,25 @@ const neighbourhoodPositions: Record<string, CSSProperties> = {
 };
 
 // Change this one path whenever the photo shown inside the reusable phone changes.
-const phoneScreenImage = "/images/softnest-hero-room.png";
+const phoneScreenImage = "/images/softnest-hero-room.webp";
+
+const extraFaq = [
+  {
+    question: "Can carpet and upholstery be cleaned together?",
+    answer:
+      "Often, yes. Include every furniture item and carpeted area in your quote request so we can confirm the scope and timing.",
+  },
+  {
+    question: "Do you move furniture?",
+    answer:
+      "We discuss safe access and light-item movement before the visit. Large or fragile pieces may need to remain in place.",
+  },
+  {
+    question: "What if an old stain does not come out completely?",
+    answer:
+      "We explain realistic expectations before cleaning. Age, dye loss, fibre damage and previous products can limit improvement.",
+  },
+] as const;
 
 function ServiceIcon({ name }: { name: string }) {
   if (name === "stairs") {
@@ -91,6 +109,7 @@ export default function MississaugaPage({
 }: {
   location: Location;
 }) {
+  const faq = [...location.faq, ...extraFaq];
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -148,7 +167,7 @@ export default function MississaugaPage({
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: location.faq.map((item) => ({
+    mainEntity: faq.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -250,7 +269,7 @@ export default function MississaugaPage({
           <div className="miss-service-grid">
             {services.map((service) => (
               <article key={service.title}>
-                <img src={service.image} alt="" />
+                <img src={service.image} alt="" loading="lazy" decoding="async" />
                 <div>
                   <span className="miss-service-grid__icon">
                     <ServiceIcon name={service.icon} />
@@ -387,33 +406,12 @@ export default function MississaugaPage({
             </h2>
           </div>
           <div className="miss-faq__grid">
-            {location.faq.map((item) => (
+            {faq.map((item) => (
               <details key={item.question}>
                 <summary>{item.question}<span aria-hidden="true">+</span></summary>
                 <p>{item.answer}</p>
               </details>
             ))}
-            <details>
-              <summary>Can carpet and upholstery be cleaned together?<span aria-hidden="true">+</span></summary>
-              <p>
-                Often, yes. Include every furniture item and carpeted area in
-                your quote request so we can confirm the scope and timing.
-              </p>
-            </details>
-            <details>
-              <summary>Do you move furniture?<span aria-hidden="true">+</span></summary>
-              <p>
-                We discuss safe access and light-item movement before the visit.
-                Large or fragile pieces may need to remain in place.
-              </p>
-            </details>
-            <details>
-              <summary>What if an old stain does not come out completely?<span aria-hidden="true">+</span></summary>
-              <p>
-                We explain realistic expectations before cleaning. Age, dye
-                loss, fibre damage and previous products can limit improvement.
-              </p>
-            </details>
           </div>
         </section>
 

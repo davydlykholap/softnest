@@ -184,7 +184,7 @@ export default function LocationsPage() {
             </div>
             <div className="locations-estimate-card__image">
               <img
-                src="/img/sofa_cleaning.png"
+                src="/img/sofa_cleaning.webp"
                 alt="Freshly cleaned upholstered sofa"
               />
               <span aria-hidden="true" />
@@ -195,7 +195,7 @@ export default function LocationsPage() {
         <section className="locations-final-cta">
           <div className="locations-final-cta__image">
             <img
-              src="/images/softnest-hero-room.png"
+              src="/images/softnest-hero-room.webp"
               alt="SoftNest hero room with a deep green sofa"
             />
           </div>

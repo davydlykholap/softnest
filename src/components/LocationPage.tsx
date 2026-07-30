@@ -9,13 +9,13 @@ const services = [
     title: "Sofa & Couch Cleaning",
     description:
       "Deep cleaning for everyday soil, body oils, spills and fabric-safe stain treatment.",
-    image: "/img/sofa_cleaning.png",
+    image: "/img/sofa_cleaning.webp",
   },
   {
     title: "Sectionals & Chairs",
     description:
       "Care for sectionals, recliners, dining chairs, ottomans and upholstered furniture.",
-    image: "/img/sectional_furniture.png",
+    image: "/img/sectional_furniture.webp",
   },
   {
     title: "Pet Stains & Odours",
@@ -27,7 +27,7 @@ const services = [
     title: "Carpets & Area Rugs",
     description:
       "Professional extraction for suitable carpets and rugs to reduce embedded soil and allergens.",
-    image: "/img/rug_2.png",
+    image: "/img/rug_2.webp",
   },
 ];
 
@@ -149,7 +149,7 @@ export default function LocationPage({ location }: LocationPageProps) {
           </div>
           <div className="location-hero__image">
             <img
-              src="/img/sofa_cleaning.png"
+              src="/img/sofa_cleaning.webp"
               alt={`Professionally cleaned sofa in ${location.name}`}
             />
             <div>
@@ -182,7 +182,7 @@ export default function LocationPage({ location }: LocationPageProps) {
           <div className="location-service-grid">
             {services.map((service) => (
               <article key={service.title}>
-                <img src={service.image} alt="" />
+                <img src={service.image} alt="" loading="lazy" decoding="async" />
                 <div>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>

@@ -34,7 +34,7 @@ export default function QuotePage() {
               </p>
             </div>
             <div className="quote-page-photo" aria-hidden="true">
-              <img src="/images/softnest-hero-room.png" alt="" />
+              <img src="/images/softnest-hero-room.webp" alt="" />
               <span className="quote-page-photo__bubble quote-page-photo__bubble--one" />
               <span className="quote-page-photo__bubble quote-page-photo__bubble--two" />
               <div className="quote-page-photo__badge">

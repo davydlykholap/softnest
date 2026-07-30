@@ -29,37 +29,6 @@ export default function HomeInteractions() {
       },
     );
 
-    const dots = Array.from(
-      document.querySelectorAll<HTMLButtonElement>(
-        ".gallery-pagination button",
-      ),
-    );
-    const previous = document.querySelector<HTMLButtonElement>(
-      ".gallery-carousel-arrow--prev",
-    );
-    const next = document.querySelector<HTMLButtonElement>(
-      ".gallery-carousel-arrow--next",
-    );
-    let page = 0;
-    const showPage = (nextPage: number) => {
-      if (!dots.length) return;
-      page = (nextPage + dots.length) % dots.length;
-      dots.forEach((dot, index) =>
-        dot.classList.toggle("is-active", index === page),
-      );
-    };
-    const onPrevious = () => showPage(page - 1);
-    const onNext = () => showPage(page + 1);
-    previous?.addEventListener("click", onPrevious);
-    next?.addEventListener("click", onNext);
-    dots.forEach((dot, index) => {
-      const listener = () => showPage(index);
-      dot.addEventListener("click", listener);
-      cleanups.push(() => dot.removeEventListener("click", listener));
-    });
-    cleanups.push(() => previous?.removeEventListener("click", onPrevious));
-    cleanups.push(() => next?.removeEventListener("click", onNext));
-
     const reviewTrack =
       document.querySelector<HTMLElement>("#reviews-track");
     const reviewDots =

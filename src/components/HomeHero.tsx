@@ -115,7 +115,7 @@ export default function HomeHero() {
           <span className="compare__drag-label">Drag to see</span>
           <span className="compare__line" style={{ left: `${position}%` }}>
             <span className="compare__handle">
-              <img src="/img/logo/header_logo.png" alt="" aria-hidden="true" />
+              <img src="/img/logo/header_logo.webp" alt="" aria-hidden="true" />
             </span>
           </span>
           <input

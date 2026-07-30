@@ -13,8 +13,6 @@ export default defineConfig([
   globalIgnores([
     ".next/**",
     "out/**",
-    ".legacy-backup/**",
     "public/**",
-    "js/**",
   ]),
 ]);

@@ -1,10 +1,11 @@
 import type { CSSProperties } from "react";
+import { homeFaqs } from "@/data/homeFaqs";
 
 export default function HomeSections() {
   return (
 <div className="home-sections">
   <section id="results" className="gallery-section-v2" aria-labelledby="gallery-heading">
-    <img className="gallery-leaves" src="/img/gallery-leaves.png" alt="" aria-hidden="true" />
+    <img className="gallery-leaves" src="/img/gallery-leaves.webp" alt="" aria-hidden="true" />
     <div className="gallery-intro">
       <div className="gallery-intro__copy">
         <p className="gallery-eyebrow">Real Results. Real Homes.</p>
@@ -28,11 +29,9 @@ export default function HomeSections() {
     </div>
     <div className="gallery-stage">
       <span className="gallery-stage__down" aria-hidden="true">⌄</span>
-      <button className="gallery-carousel-arrow gallery-carousel-arrow--prev" type="button" aria-label="Previous results">←</button>
-      <button className="gallery-carousel-arrow gallery-carousel-arrow--next" type="button" aria-label="Next results">→</button>
       <div className="gallery-grid-v2">
         <article className="gallery-result">
-          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/sectional_3.png")' } as CSSProperties}>
+          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/sectional_3.webp")' } as CSSProperties}>
             <div className="gallery-layer gallery-layer--before" />
             <div className="gallery-layer gallery-layer--after" />
             <span className="gallery-category">Sofa</span>
@@ -48,7 +47,7 @@ export default function HomeSections() {
           <p className="gallery-service">Pet stains &amp; odour removal</p>
         </article>
         <article className="gallery-result">
-          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/sectional_1.png")' } as CSSProperties}>
+          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/sectional_1.webp")' } as CSSProperties}>
             <div className="gallery-layer gallery-layer--before" />
             <div className="gallery-layer gallery-layer--after" />
             <span className="gallery-category">Sectional Sofa</span>
@@ -64,7 +63,7 @@ export default function HomeSections() {
           <p className="gallery-service">Deep cleaning</p>
         </article>
         <article className="gallery-result">
-          <div className="gallery-compare-card gallery-compare-card--single" style={{ "--gallery-image": 'url("/img/matress_cleaning.png")' } as CSSProperties}>
+          <div className="gallery-compare-card gallery-compare-card--single" style={{ "--gallery-image": 'url("/img/matress_cleaning.webp")' } as CSSProperties}>
             <div className="gallery-layer gallery-layer--before" />
             <div className="gallery-layer gallery-layer--after" />
             <span className="gallery-category">Mattress</span>
@@ -80,7 +79,7 @@ export default function HomeSections() {
           <p className="gallery-service">Stain &amp; odour removal</p>
         </article>
         <article className="gallery-result">
-          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/before_after_carpet_cleaning.png")' } as CSSProperties}>
+          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/before_after_carpet_cleaning.webp")' } as CSSProperties}>
             <div className="gallery-layer gallery-layer--before" />
             <div className="gallery-layer gallery-layer--after" />
             <span className="gallery-category">Area Rug</span>
@@ -96,13 +95,6 @@ export default function HomeSections() {
           <p className="gallery-service">Deep rug cleaning</p>
         </article>
       </div>
-      <div className="gallery-pagination" aria-label="Results pages">
-        <button type="button" className="is-active" aria-label="Page 1" />
-        <button type="button" aria-label="Page 2" />
-        <button type="button" aria-label="Page 3" />
-        <button type="button" aria-label="Page 4" />
-        <button type="button" aria-label="Page 5" />
-      </div>
       <a className="gallery-more" href="#reviews">View More Results <span>→</span></a>
       <span className="gallery-sparkle" aria-hidden="true">✧</span>
     </div>
@@ -117,7 +109,7 @@ export default function HomeSections() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <article className="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
           <div className="relative h-44 bg-stone-100 overflow-visible">
-            <img src="/img/sofa_cleaning.png" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+            <img src="/img/sofa_cleaning.webp" alt="" className="w-full h-full object-cover" aria-hidden="true" loading="lazy" decoding="async" />
             <div className="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M4 12h16v7H4z" /><path d="M6 12V9c0-2 1.5-3 3-3h6c1.5 0 3 1 3 3v3" /><path d="M7 19v2" /><path d="M17 19v2" /></svg>
             </div>
@@ -141,7 +133,7 @@ export default function HomeSections() {
         </article>
         <article className="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
           <div className="relative h-44 bg-stone-100 overflow-visible">
-            <img src="/img/sectional_furniture.png" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+            <img src="/img/sectional_furniture.webp" alt="" className="w-full h-full object-cover" aria-hidden="true" loading="lazy" decoding="async" />
             <div className="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 10h14v8H5z" /><path d="M7 10V7h10v3" /><path d="M8 18v2" /><path d="M16 18v2" /></svg>
             </div>
@@ -153,7 +145,7 @@ export default function HomeSections() {
         </article>
         <article className="bg-creamLight/60 border border-forestGreen/10 shadow-sm overflow-hidden">
           <div className="relative h-44 bg-stone-100 overflow-visible">
-            <img src="/img/rug_2.png" alt="Carpet and area rug cleaning service by SoftNest" className="w-full h-full object-cover" />
+            <img src="/img/rug_2.webp" alt="Carpet and area rug cleaning service by SoftNest" className="w-full h-full object-cover" loading="lazy" decoding="async" />
             <div className="service-icon-badge absolute -bottom-6 left-5 z-10 w-12 h-12 rounded-full bg-forestGreen text-white flex items-center justify-center border-4 border-white shadow-sm">
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 7h14" /><path d="M5 12h14" /><path d="M5 17h14" /><path d="M8 5v14" /><path d="M16 5v14" /></svg>
             </div>
@@ -238,7 +230,7 @@ export default function HomeSections() {
   <section className="health-section">
     <div className="health-inner">
       <div className="health-visual">
-        <img src="/img/health.png" alt="" aria-hidden="true" />
+        <img src="/img/health.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
       </div>
       <div className="health-copy">
         <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Healthier Home. Happier Family.</span>
@@ -355,12 +347,25 @@ export default function HomeSections() {
       <div className="faq-copy">
         <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">FAQ</span>
         <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight mb-6">Frequently Asked Questions</h2>
-        <div id="faq-list" className="faq-list space-y-2" role="list" aria-live="polite">
-          <p className="text-sm text-stone-600">Loading questions...</p>
+        <div id="faq-list" className="faq-list" role="list">
+          {homeFaqs.map((item, index) => (
+            <details
+              className="faq-item"
+              open={index === 0}
+              key={item.question}
+              role="listitem"
+            >
+              <summary className="faq-question">
+                {item.question}
+                <span aria-hidden="true">+</span>
+              </summary>
+              <p className="faq-answer">{item.answer}</p>
+            </details>
+          ))}
         </div>
       </div>
       <div className="faq-equipment">
-        <img src="/img/faq_machine.png" alt="" aria-hidden="true" />
+        <img src="/img/faq_machine.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
         <div className="faq-equipment__card">
           <h3 className="font-serif font-bold text-forestGreen text-base uppercase mb-4">Professional Equipment.<br />Superior Results.</h3>
           <p className="text-sm text-stone-700 leading-relaxed mb-5">We use commercial-grade equipment and proven techniques to deliver a deeper, longer-lasting clean.</p>
@@ -374,7 +379,7 @@ export default function HomeSections() {
     <div className="max-w-6xl mx-auto space-y-12">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div className="about-visual lg:col-span-5">
-          <img src="/img/logo/logo1.png" alt="SoftNest Fabric Care logo" />
+          <img src="/img/logo/logo1.webp" alt="SoftNest Fabric Care logo" loading="lazy" decoding="async" />
         </div>
         <div className="lg:col-span-7">
           <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">About SoftNest</span>

@@ -109,13 +109,15 @@ export default function QuotePageForm() {
               <input
                 type="checkbox"
                 checked={selected.includes(option)}
-                onChange={() =>
+                aria-describedby={error ? "quote-page-error" : undefined}
+                onChange={() => {
+                  setError("");
                   setSelected((current) =>
                     current.includes(option)
                       ? current.filter((item) => item !== option)
                       : [...current, option],
-                  )
-                }
+                  );
+                }}
               />
               <span className="quote-page-options__check" aria-hidden="true">✓</span>
               <span>{option}</span>
@@ -140,7 +142,16 @@ export default function QuotePageForm() {
         </button>
         <p>No obligation. No hidden fees.</p>
       </div>
-      {error && <p className="quote-page-error">{error}</p>}
+      {error && (
+        <p
+          className="quote-page-error"
+          id="quote-page-error"
+          role="alert"
+          aria-live="assertive"
+        >
+          {error}
+        </p>
+      )}
     </form>
   );
 }

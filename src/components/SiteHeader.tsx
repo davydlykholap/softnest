@@ -28,7 +28,7 @@ export default function SiteHeader({
     <header className="site-header">
       <Link href="/" className="brand" aria-label="SoftNest Fabric Care home">
         <span className="brand__mark">
-          <img src="/img/logo/header_logo.png" alt="" />
+          <img src="/img/logo/header_logo.webp" alt="" />
         </span>
         <span className="brand__name">
           <strong>SoftNest</strong>

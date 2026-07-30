@@ -4,6 +4,7 @@ import HomeInteractions from "@/components/HomeInteractions";
 import HomeSections from "@/components/HomeSections";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { homeFaqs } from "@/data/homeFaqs";
 
 export const metadata: Metadata = {
   title: "SoftNest Upholstery Cleaning | Sofa Cleaning Mississauga",
@@ -26,7 +27,7 @@ const localBusinessSchema = {
   url: "https://softnestcare.ca/",
   telephone: "+1-416-727-0287",
   email: "softnest.upholstery@outlook.com",
-  image: "https://softnestcare.ca/img/logo/logo.png",
+  image: "https://softnestcare.ca/img/logo/logo.webp",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Mississauga",
@@ -46,6 +47,19 @@ const localBusinessSchema = {
   ],
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+
 export default function HomePage() {
   return (
     <>
@@ -56,10 +70,13 @@ export default function HomePage() {
       <HomeSections />
       <SiteFooter />
       <HomeInteractions />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      {[localBusinessSchema, faqSchema].map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     </>
   );
 }

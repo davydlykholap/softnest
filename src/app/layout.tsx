@@ -21,16 +21,16 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
-        width: 1731,
-        height: 909,
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
         alt: "SoftNest Fabric Care — Professional Upholstery Cleaning Across the GTA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og.png"],
+    images: ["/og.jpg"],
   },
   robots: {
     index: true,

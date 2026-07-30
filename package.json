@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "verify:export": "node scripts/verify-export.mjs",
+    "check": "npm run lint && npm run build && npm run verify:export"
   },
   "dependencies": {
     "next": "16.2.12",
@@ -17,7 +19,7 @@
     "@types/node": "20.19.33",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "eslint": "9.39.2",
+    "eslint": "^9.39.5",
     "eslint-config-next": "16.2.12",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3"

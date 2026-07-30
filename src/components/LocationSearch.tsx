@@ -14,7 +14,7 @@ import { locations } from "@/data/locations";
 export default function LocationSearch() {
   const router = useRouter();
   const listId = useId();
-  const fieldRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [query, setQuery] = useState("");
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
@@ -27,8 +27,8 @@ export default function LocationSearch() {
   useEffect(() => {
     const closeOutside = (event: PointerEvent) => {
       if (
-        fieldRef.current &&
-        !fieldRef.current.contains(event.target as Node)
+        formRef.current &&
+        !formRef.current.contains(event.target as Node)
       ) {
         setOpen(false);
         setActiveIndex(-1);
@@ -114,9 +114,9 @@ export default function LocationSearch() {
   };
 
   return (
-    <form className="locations-search" onSubmit={submit}>
+    <form className="locations-search" onSubmit={submit} ref={formRef}>
       <label htmlFor="locations-city-search">Where can we help?</label>
-      <div className="locations-search__field" ref={fieldRef}>
+      <div className="locations-search__field">
         <span className="locations-search__pin" aria-hidden="true" />
         <input
           id="locations-city-search"
