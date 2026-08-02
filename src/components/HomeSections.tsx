@@ -1,6 +1,73 @@
 import type { CSSProperties } from "react";
 import { homeFaqs } from "@/data/homeFaqs";
 
+const galleryResults = [
+  {
+    image: "/img/sectional_3.webp",
+    variant: "paired",
+    category: "Sofa",
+    location: "Mississauga, ON",
+    service: "Pet stains & odour removal",
+    label: "Compare sofa before and after cleaning",
+  },
+  {
+    image: "/img/sectional_1.webp",
+    variant: "paired",
+    category: "Sectional Sofa",
+    location: "Oakville, ON",
+    service: "Deep cleaning",
+    label: "Compare sectional sofa before and after cleaning",
+  },
+  {
+    image: "/img/matress_cleaning.webp",
+    variant: "single",
+    category: "Mattress",
+    location: "Toronto, ON",
+    service: "Stain & odour removal",
+    label: "Compare mattress before and after cleaning",
+  },
+  {
+    image: "/img/before_after_carpet_cleaning.webp",
+    variant: "paired",
+    category: "Carpet",
+    location: "Brampton, ON",
+    service: "Deep carpet cleaning",
+    label: "Compare carpet before and after cleaning",
+  },
+  {
+    image: "/img/gray_sofa_stain.png",
+    variant: "paired",
+    category: "Sofa",
+    location: "GTA, ON",
+    service: "Stain treatment",
+    label: "Compare stained sofa before and after cleaning",
+  },
+  {
+    image: "/img/dining_chairs.webp",
+    variant: "paired",
+    category: "Dining Chairs",
+    location: "GTA, ON",
+    service: "Upholstery cleaning",
+    label: "Compare dining chairs before and after cleaning",
+  },
+  {
+    image: "/img/sectional.png",
+    variant: "paired",
+    category: "Sectional",
+    location: "GTA, ON",
+    service: "Full sectional cleaning",
+    label: "Compare sectional before and after cleaning",
+  },
+  {
+    image: "/img/sectional_sofa.png",
+    variant: "paired",
+    category: "Sectional Sofa",
+    location: "GTA, ON",
+    service: "Deep fabric cleaning",
+    label: "Compare sectional sofa before and after deep cleaning",
+  },
+] as const;
+
 export default function HomeSections() {
   return (
 <div className="home-sections">
@@ -29,72 +96,37 @@ export default function HomeSections() {
     </div>
     <div className="gallery-stage">
       <span className="gallery-stage__down" aria-hidden="true">⌄</span>
-      <div className="gallery-grid-v2">
-        <article className="gallery-result">
-          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/sectional_3.webp")' } as CSSProperties}>
-            <div className="gallery-layer gallery-layer--before" />
-            <div className="gallery-layer gallery-layer--after" />
-            <span className="gallery-category">Sofa</span>
-            <span className="gallery-state gallery-state--before">Before</span>
-            <span className="gallery-state gallery-state--after">After</span>
-            <span className="gallery-divider"><b>‹›</b></span>
-            <input type="range" min={15} max={85} defaultValue={50} aria-label="Compare sofa before and after" />
-          </div>
-          <p className="gallery-location">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
-            Mississauga, ON
-          </p>
-          <p className="gallery-service">Pet stains &amp; odour removal</p>
-        </article>
-        <article className="gallery-result">
-          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/sectional_1.webp")' } as CSSProperties}>
-            <div className="gallery-layer gallery-layer--before" />
-            <div className="gallery-layer gallery-layer--after" />
-            <span className="gallery-category">Sectional Sofa</span>
-            <span className="gallery-state gallery-state--before">Before</span>
-            <span className="gallery-state gallery-state--after">After</span>
-            <span className="gallery-divider"><b>‹›</b></span>
-            <input type="range" min={15} max={85} defaultValue={50} aria-label="Compare sectional sofa before and after" />
-          </div>
-          <p className="gallery-location">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
-            Oakville, ON
-          </p>
-          <p className="gallery-service">Deep cleaning</p>
-        </article>
-        <article className="gallery-result">
-          <div className="gallery-compare-card gallery-compare-card--single" style={{ "--gallery-image": 'url("/img/matress_cleaning.webp")' } as CSSProperties}>
-            <div className="gallery-layer gallery-layer--before" />
-            <div className="gallery-layer gallery-layer--after" />
-            <span className="gallery-category">Mattress</span>
-            <span className="gallery-state gallery-state--before">Before</span>
-            <span className="gallery-state gallery-state--after">After</span>
-            <span className="gallery-divider"><b>‹›</b></span>
-            <input type="range" min={15} max={85} defaultValue={50} aria-label="Compare mattress before and after" />
-          </div>
-          <p className="gallery-location">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
-            Toronto, ON
-          </p>
-          <p className="gallery-service">Stain &amp; odour removal</p>
-        </article>
-        <article className="gallery-result">
-          <div className="gallery-compare-card gallery-compare-card--paired" style={{ "--gallery-image": 'url("/img/before_after_carpet_cleaning.webp")' } as CSSProperties}>
-            <div className="gallery-layer gallery-layer--before" />
-            <div className="gallery-layer gallery-layer--after" />
-            <span className="gallery-category">Area Rug</span>
-            <span className="gallery-state gallery-state--before">Before</span>
-            <span className="gallery-state gallery-state--after">After</span>
-            <span className="gallery-divider"><b>‹›</b></span>
-            <input type="range" min={15} max={85} defaultValue={50} aria-label="Compare area rug before and after" />
-          </div>
-          <p className="gallery-location">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
-            Brampton, ON
-          </p>
-          <p className="gallery-service">Deep rug cleaning</p>
-        </article>
+      <button id="gallery-previous" className="gallery-carousel-arrow gallery-carousel-arrow--prev" type="button" aria-label="Show previous cleaning results">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+      </button>
+      <div id="gallery-carousel" className="gallery-carousel" tabIndex={0} aria-label="Before and after cleaning results carousel">
+        <div id="gallery-track" className="gallery-grid-v2" aria-live="polite">
+          {galleryResults.map((result) => (
+            <article className="gallery-result" key={`${result.image}-${result.category}`}>
+              <div
+                className={`gallery-compare-card gallery-compare-card--${result.variant}`}
+                style={{ "--gallery-image": `url("${result.image}")` } as CSSProperties}
+              >
+                <div className="gallery-layer gallery-layer--before" />
+                <div className="gallery-layer gallery-layer--after" />
+                <span className="gallery-category">{result.category}</span>
+                <span className="gallery-state gallery-state--before">Before</span>
+                <span className="gallery-state gallery-state--after">After</span>
+                <span className="gallery-divider"><b>‹›</b></span>
+                <input type="range" min={15} max={85} defaultValue={50} aria-label={result.label} />
+              </div>
+              <p className="gallery-location">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx={12} cy={10} r="2.5" /></svg>
+                {result.location}
+              </p>
+              <p className="gallery-service">{result.service}</p>
+            </article>
+          ))}
+        </div>
       </div>
+      <button id="gallery-next" className="gallery-carousel-arrow gallery-carousel-arrow--next" type="button" aria-label="Show more cleaning results">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+      </button>
       <a className="gallery-more" href="#reviews">View More Results <span>→</span></a>
       <span className="gallery-sparkle" aria-hidden="true">✧</span>
     </div>
@@ -251,7 +283,7 @@ export default function HomeSections() {
         <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Client Reviews</span>
         <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">What Our Clients<br />Are Saying</h2>
         <p className="text-sm text-stone-700 leading-relaxed mb-6">Real feedback from homeowners across Mississauga and the GTA.</p>
-        <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">See All Reviews on Google Maps</a>
+        <a href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">See All Reviews on Google Maps</a>
       </div>
       <div className="lg:col-span-9">
         <div className="reviews-carousel" id="reviews-carousel" aria-live="polite">
@@ -262,7 +294,7 @@ export default function HomeSections() {
               <cite className="review-card__author">
                 <div className="review-card__avatar" />
                 <span>
-                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Kiko44 <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <a href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer" className="review-card__name">Kiko44 <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
                   <span className="review-card__time">5 days ago</span>
                 </span>
               </cite>
@@ -273,7 +305,7 @@ export default function HomeSections() {
               <cite className="review-card__author">
                 <div className="review-card__avatar" />
                 <span>
-                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Jeff A. <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <a href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer" className="review-card__name">Jeff A. <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
                   <span className="review-card__time">a week ago</span>
                 </span>
               </cite>
@@ -284,7 +316,7 @@ export default function HomeSections() {
               <cite className="review-card__author">
                 <div className="review-card__avatar" />
                 <span>
-                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Julie Trakos <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <a href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer" className="review-card__name">Julie Trakos <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
                   <span className="review-card__time">2 days ago</span>
                 </span>
               </cite>
@@ -295,7 +327,7 @@ export default function HomeSections() {
               <cite className="review-card__author">
                 <div className="review-card__avatar" />
                 <span>
-                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Ryan Wilson <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <a href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer" className="review-card__name">Ryan Wilson <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
                   <span className="review-card__time">5 days ago</span>
                 </span>
               </cite>
@@ -306,7 +338,7 @@ export default function HomeSections() {
               <cite className="review-card__author">
                 <div className="review-card__avatar" />
                 <span>
-                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Oleksandr Semenov <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <a href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer" className="review-card__name">Oleksandr Semenov <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
                   <span className="review-card__time">6 days ago</span>
                 </span>
               </cite>
@@ -317,7 +349,7 @@ export default function HomeSections() {
               <cite className="review-card__author">
                 <div className="review-card__avatar" />
                 <span>
-                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Jamal PD <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <a href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer" className="review-card__name">Jamal PD <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
                   <span className="review-card__time">a day ago</span>
                 </span>
               </cite>
@@ -328,7 +360,7 @@ export default function HomeSections() {
               <cite className="review-card__author">
                 <div className="review-card__avatar" />
                 <span>
-                  <a href="https://www.google.com/maps/place/SoftNest+Fabric+Care/@43.5546235,-79.6518173,14z/data=!4m6!3m5!1s0x6be0a8deec1aede5:0x504db9579f1fd1df!8m2!3d43.570693!4d-79.6382321!16s%2Fg%2F11zgm61s1y" target="_blank" rel="noopener noreferrer" className="review-card__name">Daniel Leblanc <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
+                  <a href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer" className="review-card__name">Daniel Leblanc <svg className="review-card__google-icon" viewBox="0 0 48 48" aria-label="View on Google"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.7-.4-3.5z" /><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 16 18.9 13 24 13c3.1 0 5.8 1.1 8 3l5.7-5.7C34.7 6.1 29.6 4 24 4c-7.7 0-14.4 4.3-17.7 10.7z" /><path fill="#4CAF50" d="M24 44c5.5 0 10.5-2.1 14.3-5.6l-6.6-5.6C29.6 34.7 26.9 36 24 36c-5.3 0-9.7-3.1-11.3-7.5l-6.6 5.1C9.5 39.6 16.2 44 24 44z" /><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.6 5.6C41.4 36.4 44 30.6 44 24c0-1.3-.1-2.7-.4-3.5z" /></svg></a>
                   <span className="review-card__time">2 days ago</span>
                 </span>
               </cite>
@@ -425,7 +457,7 @@ export default function HomeSections() {
         <div><h2 className="font-serif font-bold text-3xl mb-2">Ready for a Fresher, Cleaner Home?</h2><p className="text-creamLight/80">Get a free quote today and experience the SoftNest difference.</p></div>
       </div>
       <div className="flex flex-col items-center gap-4">
-        <a href="/quote/" className="inline-flex items-center justify-center px-12 h-12 bg-white text-forestGreen font-serif font-bold text-xs uppercase tracking-wider no-underline">Get Your Free Quote</a>
+        <a href="/quote/" className="quote-cta quote-cta--light inline-flex items-center justify-center px-12 h-12 bg-white text-forestGreen font-serif font-bold text-xs uppercase tracking-wider no-underline">Get Your Free Quote</a>
         <a href="tel:+14167270287" className="font-serif font-bold text-xl text-white no-underline">(416) 727-0287</a>
       </div>
     </div>

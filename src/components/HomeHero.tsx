@@ -4,6 +4,30 @@ import { useState } from "react";
 
 export default function HomeHero() {
   const [position, setPosition] = useState(50);
+  const googleProfileUrl = "https://maps.app.goo.gl/XHFbygUj49Suv9F48";
+
+  const googleReviews = [
+    {
+      name: "Nicky C.",
+      initial: "N",
+      time: "a day ago",
+      text: "The team was able to accommodate my request to change the time, kept me informed and updated and did an awesome job.",
+    },
+    {
+      name: "Julie T.",
+      initial: "J",
+      time: "2 weeks ago",
+      text: "Andrii and his son are incredible! They went above and beyond. They are very good and detailed, and I would give them 10 out of 10 stars.",
+    },
+    {
+      name: "Andrew G.",
+      initial: "A",
+      time: "4 days ago",
+      text: "They spent hours working hard to make my old sofa look new again. Very friendly and communicative. They gave me options and it worked out very well. Highly recommended!",
+    },
+  ];
+
+
 
   return (
     <main className="site-shell">
@@ -28,13 +52,13 @@ export default function HomeHero() {
             cleaning to delicate rug restoration.
           </p>
           <div className="hero__actions">
-            <a className="button button--primary" href="/quote/">
+            <a className="button button--primary quote-cta quote-cta--pulse" href="/quote/">
               Get an instant estimate
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14m-6-6 6 6-6 6" />
               </svg>
             </a>
-            <a className="button button--secondary" href="#reviews">
+            <a className="button button--secondary" href={googleProfileUrl} target="_blank" rel="noopener noreferrer">
               <svg
                 className="google-maps-icon"
                 viewBox="0 0 24 24"
@@ -97,13 +121,6 @@ export default function HomeHero() {
           </ul>
         </div>
 
-        <div className="hero__trust-badge">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m5 12 4 4L19 6" />
-          </svg>
-          Trusted &amp; local
-        </div>
-
         <div className="compare">
           <div className="compare__image compare__image--before" />
           <div
@@ -152,7 +169,7 @@ export default function HomeHero() {
             a clear, no-obligation quote.
           </p>
           <div className="journey-card__quote-action">
-            <a href="/quote/">
+            <a className="quote-cta" href="/quote/">
               Request an estimate <span aria-hidden="true">→</span>
             </a>
             <small>Fast replies · No hidden fees</small>
@@ -160,20 +177,59 @@ export default function HomeHero() {
         </div>
 
         <div className="journey-card__reviews">
-          <h2 className="section-kicker">Trusted by Homeowners</h2>
-          <div className="review-grid">
-            {["A", "J", "M", "S"].map((key) => (
-              <div className="review-chip" key={key}>
-                <span className="review-chip__google" aria-label="Google">
-                  {"Google".split("").map((letter, index) => (
-                    <i key={`${key}-${index}`}>{letter}</i>
-                  ))}
-                </span>
-                <span className="review-chip__rating">
-                  5.0 <b>★★★★★</b>
-                </span>
-                <small>Verified review</small>
-              </div>
+          <div className="google-review-summary">
+            <div className="google-review-summary__brand">
+              <img
+                className="google-wordmark"
+                src="/img/google-wordmark-official.png"
+                alt="Google"
+              />
+              <span>Reviews</span>
+            </div>
+            <div className="google-review-summary__score">
+              <strong>5.0</strong>
+              <span aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+            <a
+              href={googleProfileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read all reviews <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div className="google-review-cards" aria-label="Recent Google reviews">
+            {googleReviews.map((review) => (
+              <a
+                className="google-review-card"
+                key={review.name}
+                href={googleProfileUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open SoftNest Fabric Care on Google Maps to read ${review.name}'s review`}
+              >
+                <div className="google-review-card__top">
+                  <img
+                    className="google-g-official"
+                    src="/img/google-g-official.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <span aria-label="5 out of 5 stars">★★★★★</span>
+                </div>
+                <p>“{review.text}”</p>
+                <div className="google-review-card__footer">
+                  <span className="google-review-card__avatar" aria-hidden="true">
+                    {review.initial}
+                  </span>
+                  <span className="google-review-card__author">
+                    <strong>{review.name}</strong>
+                    <small>{review.time}</small>
+                  </span>
+                  <span className="google-review-card__open" aria-hidden="true">↗</span>
+                </div>
+              </a>
             ))}
           </div>
         </div>

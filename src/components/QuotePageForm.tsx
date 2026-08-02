@@ -11,8 +11,27 @@ const serviceOptions = [
   "Other furniture",
 ];
 
+function formatPhoneNumber(value: string) {
+  let digits = value.replace(/\D/g, "");
+
+  if (digits.length > 10 && digits.startsWith("1")) {
+    digits = digits.slice(1);
+  }
+
+  digits = digits.slice(0, 10);
+
+  if (!digits) return "";
+  if (digits.length < 4) return `(${digits}`;
+  if (digits.length < 7) {
+    return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  }
+
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 export default function QuotePageForm() {
   const [selected, setSelected] = useState<string[]>([]);
+  const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
@@ -28,7 +47,9 @@ export default function QuotePageForm() {
     setError("");
     const formData = new FormData(event.currentTarget);
     formData.set("furniture", selected.join(", "));
+    formData.set("phone", phone);
     formData.set("access_key", "c204f6bb-0402-4dfe-8981-fc5080ce3ac4");
+    formData.set("from_name", "SoftNest Website");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -89,7 +110,19 @@ export default function QuotePageForm() {
         </label>
         <label className="quote-page-field">
           <span>Phone number</span>
-          <input name="phone" type="tel" autoComplete="tel" placeholder="(416) 555-0123" required />
+          <input
+            name="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel-national"
+            placeholder="(416) 555-0123"
+            value={phone}
+            maxLength={14}
+            pattern="\\(\\d{3}\\) \\d{3}-\\d{4}"
+            title="Enter a 10-digit phone number."
+            onChange={(event) => setPhone(formatPhoneNumber(event.target.value))}
+            required
+          />
         </label>
         <label className="quote-page-field">
           <span>Email address</span>
@@ -136,11 +169,14 @@ export default function QuotePageForm() {
       </label>
 
       <div className="quote-page-form__footer">
-        <button type="submit" disabled={submitting}>
+        <button
+          className="quote-cta quote-cta--pulse"
+          type="submit"
+          disabled={submitting}
+        >
           {submitting ? "Sending…" : "Request my free quote"}
           <span aria-hidden="true">→</span>
         </button>
-        <p>No obligation. No hidden fees.</p>
       </div>
       {error && (
         <p

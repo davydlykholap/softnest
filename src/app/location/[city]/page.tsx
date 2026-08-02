@@ -21,9 +21,12 @@ export async function generateMetadata({
 
   const title =
     location.slug === "mississauga"
-      ? "Upholstery & Carpet Cleaning Mississauga | SoftNest"
+      ? "Upholstery & Carpet Cleaning in Mississauga | SoftNest"
       : `Upholstery Cleaning ${location.name} | SoftNest`;
-  const description = location.shortDescription;
+  const description =
+    location.slug === "mississauga"
+      ? "Professional upholstery and carpet cleaning in Mississauga for sofas, sectionals, chairs, stairs and area rugs. Free photo estimates and professional drying included."
+      : location.shortDescription;
   const path = `/location/${location.slug}/`;
 
   return {
@@ -35,6 +38,17 @@ export async function generateMetadata({
       description,
       url: path,
       type: "website",
+      images:
+        location.slug === "mississauga"
+          ? [
+              {
+                url: "/images/softnest-hero-room.webp",
+                width: 1736,
+                height: 906,
+                alt: "SoftNest upholstery and carpet cleaning in Mississauga",
+              },
+            ]
+          : undefined,
     },
   };
 }

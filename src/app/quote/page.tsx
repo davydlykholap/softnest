@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import QuotePageForm from "@/components/QuotePageForm";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import styles from "./quote-page.module.css";
 
 export const metadata: Metadata = {
   title: "Request a Free Upholstery Cleaning Quote | SoftNest",
@@ -22,7 +23,7 @@ export default function QuotePage() {
       <div className="new-hero-root quote-header">
         <SiteHeader />
       </div>
-      <main className="quote-page">
+      <main className={`quote-page ${styles.quotePage}`}>
         <section className="quote-page-shell">
           <div className="quote-page-intro">
             <div className="quote-page-intro__copy">
@@ -37,15 +38,6 @@ export default function QuotePage() {
               <img src="/images/softnest-hero-room.webp" alt="" />
               <span className="quote-page-photo__bubble quote-page-photo__bubble--one" />
               <span className="quote-page-photo__bubble quote-page-photo__bubble--two" />
-              <div className="quote-page-photo__badge">
-                <span>✓</span>
-                <strong>Trusted &amp; local</strong>
-              </div>
-            </div>
-            <div className="quote-page-promises">
-              <div><span>01</span><strong>Fast response</strong><small>We’ll follow up promptly.</small></div>
-              <div><span>02</span><strong>Clear advice</strong><small>The right care for each fabric.</small></div>
-              <div><span>03</span><strong>No pressure</strong><small>A free, no-obligation quote.</small></div>
             </div>
           </div>
           <div className="quote-page-card">
