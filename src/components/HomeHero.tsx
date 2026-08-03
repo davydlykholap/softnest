@@ -27,8 +27,6 @@ export default function HomeHero() {
     },
   ];
 
-
-
   return (
     <main className="site-shell">
       <section className="hero" aria-labelledby="home-hero-heading">
@@ -52,8 +50,12 @@ export default function HomeHero() {
             cleaning to delicate rug restoration.
           </p>
           <div className="hero__actions">
-            <a className="button button--primary quote-cta quote-cta--pulse" href="/quote/">
-              Get an instant estimate
+            <a
+              className="button button--primary quote-cta quote-cta--pulse"
+              href="/quote/"
+              aria-label="Get a free upholstery and carpet cleaning quote"
+            >
+              Get a free quote
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14m-6-6 6 6-6 6" />
               </svg>

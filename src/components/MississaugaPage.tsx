@@ -161,12 +161,12 @@ const mississaugaFaqs = [
   {
     question: "How much does upholstery cleaning cost in Mississauga?",
     answer:
-      "Pricing depends on the itemâ€™s size, design, fabric and condition. Send clear photos of the full item and any problem areas, and we can usually provide an estimated price before booking.",
+      "Pricing depends on the item’s size, design, fabric and condition. Send clear photos of the full item and any problem areas, and we can usually provide an estimated price before booking.",
   },
   {
     question: "Do you provide condo upholstery cleaning in Mississauga?",
     answer:
-      "Yes. Please share visitor-parking, loading, elevator-booking and access instructions with your quote request so the appointment can be planned around your buildingâ€™s rules.",
+      "Yes. Please share visitor-parking, loading, elevator-booking and access instructions with your quote request so the appointment can be planned around your building’s rules.",
   },
   {
     question: "Can you treat pet odours in sofas and sectionals?",
@@ -430,12 +430,12 @@ export default function MississaugaPage({
             </h1>
             <p className="miss-hero__description">
               Professional cleaning for sofas, sectionals, chairs, carpets and
-              area rugsâ€”planned around your fabric, home, condo access and
+              area rugs—planned around your fabric, home, condo access and
               preferred appointment time.
             </p>
             <div className="miss-actions">
               <Link className="miss-button miss-button--solid" href="/quote/">
-                Request a free quote <span aria-hidden="true">â†’</span>
+                Request a free quote <span aria-hidden="true">→</span>
               </Link>
               <a className="miss-button miss-button--outline" href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer">
                 <svg
@@ -466,7 +466,7 @@ export default function MississaugaPage({
             </div>
           </div>
           <div className="miss-hero__local">
-            <span aria-hidden="true">âŒ–</span>
+            <span aria-hidden="true">⌖</span>
             Serving Mississauga
           </div>
         </section>
@@ -525,7 +525,7 @@ export default function MississaugaPage({
                     href="/quote/"
                     aria-label={`Request a quote for ${service.title.toLowerCase()}`}
                   >
-                    â†’
+                    →
                   </Link>
                 </div>
               </article>
@@ -572,7 +572,7 @@ export default function MississaugaPage({
           </div>
           <div className="miss-results__action">
             <Link className="miss-button miss-button--outline" href="/#results">
-              View more results <span aria-hidden="true">â†’</span>
+              View more results <span aria-hidden="true">→</span>
             </Link>
           </div>
         </section>
@@ -634,13 +634,13 @@ export default function MississaugaPage({
               <ul>
                 {location.neighbourhoods.map((neighbourhood) => (
                   <li key={neighbourhood}>
-                    <span aria-hidden="true">âœ“</span>
+                    <span aria-hidden="true">✓</span>
                     {neighbourhood}
                   </li>
                 ))}
               </ul>
               <small>
-                Nearby area? Send your postal code and weâ€™ll confirm availability.
+                Nearby area? Send your postal code and we’ll confirm availability.
               </small>
             </div>
           </div>
@@ -709,10 +709,10 @@ export default function MississaugaPage({
             </p>
             <div className="miss-actions">
               <Link className="miss-button miss-button--light" href="/quote/">
-                Request a free quote <span aria-hidden="true">â†’</span>
+                Request a free quote <span aria-hidden="true">→</span>
               </Link>
               <a className="miss-button miss-button--ghost" href="tel:+14167270287">
-                <span aria-hidden="true">â˜Ž</span> Call (416) 727-0287
+                <span aria-hidden="true">☎</span> Call (416) 727-0287
               </a>
             </div>
           </div>
