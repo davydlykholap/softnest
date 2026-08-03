@@ -8286,3 +8286,84 @@ main[id] {
         0 15px 31px rgba(104, 55, 25, .34),
         0 0 0 5px var(--hero-cta-bronze-ring) !important;
 }
+/* SOFTNEST_MOBILE_REVIEWS_START */
+@media (max-width: 640px) {
+    .journey-card__quote {
+        padding-bottom: 22px !important;
+        border-bottom: 1px solid #dcdedb !important;
+    }
+
+    .journey-card__reviews {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        padding: 20px 0 0 !important;
+    }
+
+    .google-review-summary {
+        padding: 0 0 18px !important;
+        border-right: 0 !important;
+        border-bottom: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .google-wordmark {
+        width: 60px !important;
+    }
+
+    .google-review-summary__brand {
+        font-size: 12px !important;
+    }
+
+    .google-review-summary__score strong {
+        font-size: 34px !important;
+    }
+
+    .google-review-summary__score span {
+        font-size: 15px !important;
+    }
+
+    .google-review-summary a {
+        white-space: nowrap;
+    }
+
+    .google-review-cards {
+        display: flex !important;
+        gap: 12px !important;
+        overflow-x: auto !important;
+        padding: 18px 0 7px !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .google-review-cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .google-review-card {
+        display: flex !important;
+        flex: 0 0 calc(100% - 34px) !important;
+        min-width: 0 !important;
+        min-height: 168px !important;
+        padding: 14px 14px 13px !important;
+        border-radius: 20px !important;
+        scroll-snap-align: start;
+    }
+
+    .google-review-card > p {
+        font-size: 12px !important;
+        line-height: 1.48 !important;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+
+    .google-review-card__author small {
+        display: block !important;
+    }
+}
+/* SOFTNEST_MOBILE_REVIEWS_END */
