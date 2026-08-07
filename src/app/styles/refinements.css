@@ -1,0 +1,587 @@
+/* Shared high-visibility quote CTA treatment */
+.quote-cta,
+.journey-card__quote-action .quote-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-color: transparent;
+    background: linear-gradient(135deg, #087652 0%, #04563e 58%, #033f2f 100%);
+    box-shadow: 0 11px 24px rgba(7,84,59,.28), 0 0 0 0 rgba(20,126,88,.28);
+    color: #fff;
+    transition:
+        transform 280ms cubic-bezier(.2,.8,.2,1),
+        box-shadow 280ms cubic-bezier(.2,.8,.2,1),
+        filter 280ms ease,
+        background 280ms ease;
+    will-change: transform, box-shadow;
+}
+
+.quote-cta::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -45%;
+    bottom: -45%;
+    left: -48%;
+    width: 31%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.48), transparent);
+    transform: skewX(-19deg);
+    animation: quote-cta-sheen 4.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.quote-cta--pulse {
+    animation: quote-cta-breathe 4.2s ease-in-out infinite;
+}
+
+.quote-cta--light {
+    border: 1px solid rgba(7,84,59,.16);
+    background: #fff;
+    box-shadow: 0 11px 25px rgba(2,44,31,.2), 0 0 0 0 rgba(255,255,255,.25);
+    color: var(--forest);
+}
+
+.quote-cta--light::after {
+    background: linear-gradient(90deg, transparent, rgba(7,84,59,.16), transparent);
+}
+
+.quote-cta:hover {
+    animation-play-state: paused;
+    box-shadow: 0 15px 31px rgba(7,84,59,.34), 0 0 0 5px rgba(20,126,88,.12);
+    transform: translateY(-3px) scale(1.025);
+}
+
+@keyframes quote-cta-breathe {
+    0%, 58%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 11px 24px rgba(7,84,59,.28), 0 0 0 0 rgba(20,126,88,.26);
+    }
+    68% {
+        transform: translateY(-2px) scale(1.018);
+        box-shadow: 0 14px 30px rgba(7,84,59,.34), 0 0 0 7px rgba(20,126,88,.11);
+    }
+    78% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 11px 24px rgba(7,84,59,.28), 0 0 0 0 rgba(20,126,88,0);
+    }
+}
+
+@keyframes quote-cta-sheen {
+    0%, 60% { left: -48%; }
+    82%, 100% { left: 122%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quote-cta--pulse,
+    .quote-cta::after,
+    .gallery-grid-v2 {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* =========================================================
+   HOMEPAGE GALLERY — CONTINUOUS SCULPTED SHELL
+   Replaces the separate top/bottom tabs with one
+   uninterrupted curved silhouette inspired by the approved mockup.
+   ========================================================= */
+.gallery-stage {
+    isolation: isolate;
+    margin-top: 42px;
+    min-height: 0;
+    margin-bottom: 118px;
+    padding: 44px 51px 58px;
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.gallery-stage::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -48px;
+    right: 0;
+    bottom: -70px;
+    left: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: #fff;
+    transform: none;
+    filter: drop-shadow(0 28px 26px rgba(17, 42, 33, .16));
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 720' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M72 48H640C700 48 714 0 800 0C886 0 900 48 960 48H1528C1568 48 1600 80 1600 120V580C1600 620 1568 650 1528 650H1040C960 650 930 720 800 720C670 720 640 650 560 650H72C32 650 0 620 0 580V120C0 80 32 48 72 48Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 720' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M72 48H640C700 48 714 0 800 0C886 0 900 48 960 48H1528C1568 48 1600 80 1600 120V580C1600 620 1568 650 1528 650H1040C960 650 930 720 800 720C670 720 640 650 560 650H72C32 650 0 620 0 580V120C0 80 32 48 72 48Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+    pointer-events: none;
+}
+
+.gallery-stage::after {
+    content: none;
+    display: none;
+}
+
+.gallery-stage__down {
+    top: -35px;
+    font-size: 28px;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 7px 18px rgba(17, 41, 32, .14);
+}
+
+.gallery-carousel {
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-more {
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+}
+
+.gallery-sparkle {
+    z-index: 3;
+    bottom: -101px;
+    width: 64px;
+    height: 64px;
+    box-shadow: 0 9px 22px rgba(17, 42, 33, .16);
+    font-size: 35px;
+}
+
+@media (max-width: 1260px) {
+    .gallery-stage {
+        margin-bottom: 108px;
+        padding: 42px 38px 54px;
+    }
+
+    .gallery-stage::before {
+        top: -44px;
+        bottom: -66px;
+    }
+
+    .gallery-stage__down {
+        top: -33px;
+    }
+
+    .gallery-sparkle {
+        bottom: -96px;
+    }
+}
+
+/* Mobile hero and gallery refinements */
+@media (max-width: 700px) {
+    .gallery-proofs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 7px;
+        margin-top: 15px;
+    }
+
+    .gallery-proofs li {
+        width: auto;
+        min-width: 0;
+        min-height: 54px;
+        justify-content: flex-start;
+        gap: 5px;
+        padding: 7px 6px;
+        border-radius: 14px;
+        font-size: 8.5px;
+        line-height: 1.15;
+        white-space: normal;
+    }
+
+    .gallery-proofs svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .gallery-stage {
+        margin-top: 27px;
+        margin-bottom: 66px;
+        padding: 31px 17px 38px;
+    }
+
+    .gallery-stage::before {
+        top: -22px;
+        bottom: -34px;
+        filter: drop-shadow(0 20px 20px rgba(17, 42, 33, .13));
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 600' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M24 22H135C151 22 155 0 180 0C205 0 209 22 225 22H336C349 22 360 34 360 48V540C360 553 349 564 336 564H222C207 564 203 596 180 596C157 596 153 564 138 564H24C11 564 0 553 0 540V48C0 34 11 22 24 22Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 600' preserveAspectRatio='none'%3E%3Cpath fill='white' d='M24 22H135C151 22 155 0 180 0C205 0 209 22 225 22H336C349 22 360 34 360 48V540C360 553 349 564 336 564H222C207 564 203 596 180 596C157 596 153 564 138 564H24C11 564 0 553 0 540V48C0 34 11 22 24 22Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+    }
+
+    .gallery-stage__down {
+        top: -15px;
+        width: 36px;
+        height: 36px;
+        font-size: 21px;
+    }
+
+    .gallery-more {
+        margin-top: 20px;
+    }
+
+    .gallery-sparkle {
+        bottom: -58px;
+        width: 48px;
+        height: 48px;
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero__wash {
+        background: linear-gradient(
+            180deg,
+            rgba(255,255,255,.98) 4%,
+            rgba(255,255,255,.94) 38%,
+            rgba(255,255,255,.56) 52%,
+            rgba(255,255,255,.10) 66%,
+            rgba(255,255,255,0) 75%
+        );
+    }
+
+    .gallery-intro {
+        gap: 14px;
+    }
+}
+
+
+/* Homepage hero CTA motion refinement */
+
+/* Match the main hero CTA to the smoother header-button motion. */
+.hero__actions .quote-cta--pulse {
+    animation: none !important;
+}
+
+.hero__actions .quote-cta:hover,
+.journey-card__quote-action .quote-cta:hover {
+    filter: saturate(1.05) brightness(1.025);
+}
+
+/* White/pearl hover glow for the Google Reviews button. */
+.hero__actions .button--secondary {
+    transition:
+        transform 280ms cubic-bezier(.2,.8,.2,1),
+        background-color 280ms ease,
+        border-color 280ms ease,
+        box-shadow 280ms cubic-bezier(.2,.8,.2,1),
+        color 280ms ease;
+    box-shadow:
+        0 8px 18px rgba(7,84,59,.08),
+        0 0 0 0 rgba(255,255,255,0);
+    will-change: transform, box-shadow;
+}
+
+.hero__actions .button--secondary:hover,
+.hero__actions .button--secondary:focus-visible {
+    background: rgba(255,255,255,.98);
+    border-color: rgba(7,84,59,.72);
+    box-shadow:
+        0 13px 28px rgba(7,84,59,.15),
+        0 0 0 5px rgba(255,255,255,.78),
+        0 0 25px 9px rgba(255,255,255,.42);
+    transform: translateY(-3px) scale(1.018);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quote-cta,
+    .hero__actions .button--secondary {
+        transition: none !important;
+    }
+}
+
+/* Entire Google review cards are clickable */
+.google-review-card {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.google-review-card:hover {
+    border-color: rgba(10, 93, 66, .28);
+    background: linear-gradient(145deg, #fff 0%, #f4f9f6 100%);
+    box-shadow: 0 18px 32px -23px rgba(13, 48, 35, .65);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.google-review-card:focus-visible {
+    outline: 3px solid rgba(10, 93, 66, .22);
+    outline-offset: 3px;
+    text-decoration: none;
+}
+
+.google-review-card__open {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    margin-left: auto;
+    border: 1px solid #dce3df;
+    border-radius: 50%;
+    color: var(--forest);
+    font-size: 11px;
+    font-weight: 800;
+    transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.google-review-card:hover .google-review-card__open {
+    background: var(--forest);
+    color: #fff;
+    transform: translate(1px, -1px);
+}
+
+
+/* SOFTNEST_MOBILE_REVIEWS_START */
+@media (max-width: 640px) {
+    .journey-card__quote {
+        padding-bottom: 22px !important;
+        border-bottom: 1px solid #dcdedb !important;
+    }
+
+    .journey-card__reviews {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        padding: 20px 0 0 !important;
+    }
+
+    .google-review-summary {
+        padding: 0 0 18px !important;
+        border-right: 0 !important;
+        border-bottom: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .google-wordmark {
+        width: 60px !important;
+    }
+
+    .google-review-summary__brand {
+        font-size: 12px !important;
+    }
+
+    .google-review-summary__score strong {
+        font-size: 34px !important;
+    }
+
+    .google-review-summary__score span {
+        font-size: 15px !important;
+    }
+
+    .google-review-summary a {
+        white-space: nowrap;
+    }
+
+    .google-review-cards {
+        display: flex !important;
+        gap: 12px !important;
+        overflow-x: auto !important;
+        padding: 18px 0 7px !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .google-review-cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .google-review-card {
+        display: flex !important;
+        flex: 0 0 calc(100% - 34px) !important;
+        min-width: 0 !important;
+        min-height: 168px !important;
+        padding: 14px 14px 13px !important;
+        border-radius: 20px !important;
+        scroll-snap-align: start;
+    }
+
+    .google-review-card > p {
+        font-size: 12px !important;
+        line-height: 1.48 !important;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+
+}
+/* SOFTNEST_MOBILE_REVIEWS_END */
+
+/* SEO architecture and interaction refinements */
+html {
+  scroll-padding-top: 104px;
+}
+
+.site-header {
+  transition: top .25s ease, height .25s ease, left .25s ease, right .25s ease,
+    padding .25s ease, border-radius .25s ease, box-shadow .25s ease;
+}
+
+.is-page-scrolled .site-header {
+  top: 8px;
+  height: 66px;
+  left: 6%;
+  right: 6%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(16, 34, 27, .16);
+}
+
+.desktop-nav__services-trigger.is-active {
+  color: #07543b;
+}
+
+.desktop-nav__services-trigger.is-active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -12px;
+  left: 0;
+  height: 2px;
+  background: #07543b;
+}
+
+.services-mega__all {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: 14px;
+  color: #07543b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.home-services-intro {
+  max-width: 660px;
+  margin: 12px auto 0;
+  color: #69736e;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.home-service-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.home-service-card:hover,
+.home-service-card:focus-visible {
+  border-color: rgba(7, 84, 59, .28);
+  box-shadow: 0 18px 38px rgba(16, 50, 37, .12);
+  transform: translateY(-5px);
+}
+
+.home-service-card__image,
+.home-service-card__body,
+.home-service-card__body strong,
+.home-service-card__body > span {
+  display: block;
+}
+
+.home-service-card__image {
+  border-radius: 24px 24px 0 0;
+}
+
+.home-service-card__image > img {
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.home-service-card:hover .home-service-card__image > img {
+  transform: scale(1.035);
+}
+
+.home-service-card__body {
+  flex: 1;
+}
+
+.home-service-card__body b {
+  display: inline-flex;
+  gap: .4rem;
+  margin-top: 16px;
+  color: #07543b;
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.home-services-all {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+.home-services-all a {
+  display: inline-flex;
+  gap: .5rem;
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  color: #07543b;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.footer-service-list a,
+.footer-legal-links a {
+  transition: color .2s ease;
+}
+
+.footer-service-list a:hover,
+.footer-legal-links a:hover {
+  color: #07543b;
+}
+
+.footer-legal-links {
+  display: inline-flex;
+  gap: .65rem;
+}
+
+
+@media (max-width: 640px) {
+  html { scroll-padding-top: 86px; }
+  .is-page-scrolled .site-header {
+    top: 6px;
+    left: 8px;
+    right: 8px;
+    height: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .home-service-card,
+  .home-service-card__image > img {
+    transition: none;
+  }
+}
+
+/* Readability refinements for service summaries and supporting copy */
+.home-service-card__body > span {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (min-width: 900px) {
+  .hero__description,
+  .journey-card__quote > p,
+  .gallery-description {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}

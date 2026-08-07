@@ -1,0 +1,286 @@
+/* =========================================================
+   SERVICES HUB — reuses the Locations hub component system
+   ========================================================= */
+
+/* The service hero keeps the location-page geometry, but gives
+   copy and imagery separate columns so the heading never crosses
+   into the photo collage. */
+.services-hub-hero .locations-hero__copy {
+    width: 52%;
+    max-width: none;
+    padding: 76px 3% 102px 6.5%;
+}
+
+.services-hub-hero h1 {
+    max-width: 640px;
+    font-size: clamp(3.55rem, 4.15vw, 4.75rem);
+    letter-spacing: -.047em;
+    line-height: .96;
+    text-wrap: balance;
+}
+
+.services-hub-hero h1 .locations-hero__title-line {
+    white-space: nowrap;
+}
+
+.services-hub-hero .locations-hero__description {
+    max-width: 475px;
+}
+
+.services-hub-hero .locations-hero__map {
+    width: 48%;
+    padding: 28px 3.2% 34px 2.2%;
+    background:
+        radial-gradient(circle at 82% 18%, rgba(7, 84, 59, .11), transparent 14rem),
+        linear-gradient(145deg, rgba(235, 242, 237, .66), rgba(245, 247, 241, .16));
+}
+
+.services-hub-hero .locations-hero__map::before {
+    z-index: 3;
+    width: 13%;
+    background: linear-gradient(90deg, #eff3ed 0%, rgba(239, 243, 237, .48) 45%, transparent 100%);
+}
+
+.services-hero-collage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.28fr .78fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.services-hero-collage__main,
+.services-hero-collage__top,
+.services-hero-collage__bottom {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .82);
+    background: #dfe9e2;
+    box-shadow: 0 16px 34px rgba(22, 48, 38, .13);
+}
+
+.services-hero-collage__main {
+    grid-row: 1 / 3;
+    border-radius: 54px 30px 60px 40px;
+}
+
+.services-hero-collage__top {
+    border-radius: 32px 50px 28px 36px;
+}
+
+.services-hero-collage__bottom {
+    border-radius: 36px 26px 50px 30px;
+}
+
+.services-hero-collage img {
+    object-fit: cover;
+    transition: transform 600ms ease;
+}
+
+.services-hero-collage__main img {
+    object-position: 51% center;
+}
+
+.services-hero-collage__top img {
+    object-position: 48% 54%;
+}
+
+.services-hero-collage__bottom img {
+    object-position: 51% 54%;
+}
+
+.services-hub-hero:hover .services-hero-collage img {
+    transform: scale(1.018);
+}
+
+.services-search__symbol {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--locations-green);
+    font-size: 10px;
+    transform: translateY(-50%);
+}
+
+.services-directory-card .locations-city-card__body {
+    min-height: 112px;
+    padding: 17px 68px 15px 20px;
+}
+
+.services-directory-card .locations-city-card__body h3 {
+    max-width: 100%;
+    font-size: 23px;
+    line-height: 1.02;
+    text-transform: none;
+}
+
+.services-directory-card .locations-city-card__body p {
+    display: -webkit-box;
+    max-width: 100%;
+    margin-top: 8px;
+    overflow: hidden;
+    font-size: 11px;
+    line-height: 1.38;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.services-directory-card > img {
+    height: 70%;
+}
+
+.services-support h2 {
+    white-space: normal;
+}
+
+.services-support .locations-estimate-card__image::after {
+    inset: 13% 25%;
+}
+
+@media (max-width: 1240px) {
+    .services-hub-hero .locations-hero__copy {
+        width: 51%;
+        padding-right: 2.5%;
+        padding-left: 5.5%;
+    }
+
+    .services-hub-hero h1 {
+        max-width: 570px;
+        font-size: clamp(3.25rem, 4.6vw, 4.1rem);
+    }
+
+    .services-hub-hero .locations-hero__map {
+        width: 49%;
+        padding-right: 2.8%;
+        padding-left: 2%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .services-hub-hero .locations-hero__copy {
+        width: 52%;
+        padding: 68px 2.5% 88px 5%;
+    }
+
+    .services-hub-hero h1 {
+        max-width: 500px;
+        font-size: clamp(3rem, 5vw, 3.65rem);
+    }
+
+    .services-hub-hero h1 .locations-hero__title-line {
+        white-space: normal;
+    }
+
+    .services-hub-hero .locations-hero__map {
+        width: 48%;
+        padding: 25px 2.5% 30px 1.6%;
+    }
+
+    .services-hero-collage {
+        grid-template-columns: 1.22fr .78fr;
+        gap: 12px;
+    }
+
+    .services-directory-card .locations-city-card__body h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 820px) {
+    .services-hub-hero .locations-hero__copy {
+        width: 100%;
+        padding: 60px 8% 44px;
+    }
+
+    .services-hub-hero h1 {
+        max-width: 680px;
+        font-size: clamp(3.25rem, 8vw, 4.1rem);
+    }
+
+    .services-hub-hero h1 .locations-hero__title-line {
+        white-space: nowrap;
+    }
+
+    .services-hub-hero .locations-hero__description {
+        max-width: 560px;
+    }
+
+    .services-hub-hero .locations-hero__map {
+        width: 100%;
+        padding: 22px 7% 58px;
+    }
+
+    .services-hub-hero .locations-hero__map::before {
+        inset: 0 0 auto;
+        width: 100%;
+        height: 17%;
+        background: linear-gradient(180deg, #eef2eb 0%, transparent 100%);
+    }
+
+    .services-hero-collage {
+        grid-template-columns: 1.25fr .8fr;
+        gap: 12px;
+    }
+
+    .services-hero-collage__main {
+        border-radius: 46px 28px 50px 34px;
+    }
+}
+
+@media (max-width: 580px) {
+    .services-hub-hero .locations-hero__copy {
+        padding: 52px 7% 38px;
+    }
+
+    .services-hub-hero h1 {
+        max-width: none;
+        font-size: clamp(2.35rem, 10.7vw, 3rem);
+    }
+
+    .services-hub-hero .locations-hero__map {
+        padding: 16px 5% 46px;
+    }
+
+    .services-hero-collage {
+        grid-template-columns: 1.18fr .82fr;
+        gap: 8px;
+    }
+
+    .services-hero-collage__main {
+        border-radius: 32px 21px 36px 25px;
+    }
+
+    .services-hero-collage__top,
+    .services-hero-collage__bottom {
+        border-radius: 23px;
+    }
+
+    .services-directory-card .locations-city-card__body {
+        min-height: 109px;
+    }
+
+    .services-directory-card .locations-city-card__body h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 430px) {
+    .services-hub-hero h1 .locations-hero__title-line {
+        white-space: normal;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .services-hero-collage img {
+        transition: none;
+    }
+}

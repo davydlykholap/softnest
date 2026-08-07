@@ -1,64 +1,76 @@
+import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import type { Location } from "@/data/locations";
-import { locations } from "@/data/locations";
+import { locations, nearbyLocationSlugs } from "@/data/locations";
+import { getService } from "@/data/services";
 
-const services = [
-  {
-    title: "Sofa & Couch Cleaning",
-    description:
-      "Deep cleaning for everyday soil, body oils, spills and fabric-safe stain treatment.",
-    image: "/img/sofa_cleaning.webp",
-  },
-  {
-    title: "Sectionals & Chairs",
-    description:
-      "Care for sectionals, recliners, dining chairs, ottomans and upholstered furniture.",
-    image: "/img/sectional_furniture.webp",
-  },
-  {
-    title: "Pet Stains & Odours",
-    description:
-      "Targeted treatment for pet accidents and odours, with realistic expectations explained first.",
-    image: "/img/pet_stain.jpg",
-  },
-  {
-    title: "Carpets & Area Rugs",
-    description:
-      "Professional extraction for suitable carpets and rugs to reduce embedded soil and allergens.",
-    image: "/img/rug_2.webp",
-  },
+const locationServiceSlugs = [
+  "sofa-cleaning",
+  "sectional-furniture-cleaning",
+  "pet-stain-odour-removal",
+  "carpet-area-rug-cleaning",
 ];
+
+const locationServices = locationServiceSlugs
+  .map((slug) => getService(slug))
+  .filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
+
+const locationProof: Record<
+  string,
+  { image: string; category: string; service: string; alt: string }
+> = {
+  mississauga: {
+    image: "/img/sectional_3.webp",
+    category: "Sofa",
+    service: "Pet stains and odour removal",
+    alt: "Before and after sofa cleaning result in Mississauga",
+  },
+  oakville: {
+    image: "/img/sectional_1.webp",
+    category: "Sectional sofa",
+    service: "Deep cleaning",
+    alt: "Before and after sectional cleaning result in Oakville",
+  },
+  toronto: {
+    image: "/img/matress_cleaning.webp",
+    category: "Mattress",
+    service: "Stain and odour removal",
+    alt: "Before and after mattress cleaning result in Toronto",
+  },
+  brampton: {
+    image: "/img/before_after_carpet_cleaning.webp",
+    category: "Carpet",
+    service: "Deep carpet cleaning",
+    alt: "Before and after carpet cleaning result in Brampton",
+  },
+};
 
 type LocationPageProps = {
   location: Location;
 };
 
 export default function LocationPage({ location }: LocationPageProps) {
-  const nearby = locations
-    .filter((item) => item.slug !== location.slug)
-    .slice(0, 4);
+  const proof = locationProof[location.slug];
+  const nearby = (nearbyLocationSlugs[location.slug] ?? [])
+    .map((slug) => locations.find((item) => item.slug === slug))
+    .filter((item): item is Location => Boolean(item));
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `Upholstery Cleaning in ${location.name}`,
+    name: `Upholstery and Carpet Cleaning in ${location.name}`,
     url: `https://softnestcare.ca/location/${location.slug}/`,
-    serviceType: "Upholstery cleaning",
+    serviceType: ["Upholstery cleaning", "Carpet cleaning"],
     description: location.shortDescription,
     provider: {
-      "@type": "LocalBusiness",
-      "@id": "https://softnestcare.ca/#business",
+      "@type": "Organization",
+      "@id": "https://softnestcare.ca/#organization",
       name: "SoftNest Fabric Care",
       telephone: "+1-416-727-0287",
       email: "softnest.upholstery@outlook.com",
       url: "https://softnestcare.ca/",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Mississauga",
-        addressRegion: "ON",
-        addressCountry: "CA",
-      },
     },
     areaServed: {
       "@type": "City",
@@ -69,6 +81,7 @@ export default function LocationPage({ location }: LocationPageProps) {
       },
     },
   };
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -93,6 +106,7 @@ export default function LocationPage({ location }: LocationPageProps) {
       },
     ],
   };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -112,21 +126,13 @@ export default function LocationPage({ location }: LocationPageProps) {
         <SiteHeader current="locations" />
       </div>
       <main className="location-page">
-        <nav className="location-breadcrumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
-          <span aria-hidden="true">/</span>
-          <Link href="/location/">Locations</Link>
-          <span aria-hidden="true">/</span>
-          <span>{location.name}</span>
-        </nav>
-
         <section className="location-hero">
           <div className="location-hero__copy">
             <p className="location-eyebrow">
               Professional fabric care in {location.name}
             </p>
             <h1>
-              Upholstery Cleaning
+              Upholstery &amp; Carpet Cleaning
               <span>in {location.name}</span>
             </h1>
             <p>{location.shortDescription}</p>
@@ -143,14 +149,17 @@ export default function LocationPage({ location }: LocationPageProps) {
             </div>
             <ul className="location-trust" aria-label="Service assurances">
               <li>Fabric-appropriate products</li>
-              <li>Professional equipment</li>
-              <li>Clear expectations before work begins</li>
+              <li>Commercial-grade equipment</li>
+              <li>Professional drying included</li>
             </ul>
           </div>
           <div className="location-hero__image">
-            <img
-              src="/img/sofa_cleaning.webp"
-              alt={`Professionally cleaned sofa in ${location.name}`}
+            <Image
+              src="/img/sofa.png"
+              alt={`Grey upholstered sofa in ${location.name}`}
+              fill
+              priority
+              sizes="(max-width: 900px) 100vw, 44vw"
             />
             <div>
               <strong>Local service</strong>
@@ -175,22 +184,54 @@ export default function LocationPage({ location }: LocationPageProps) {
             <p className="location-eyebrow">What we clean</p>
             <h2>Cleaning services available in {location.name}</h2>
             <p>
-              Send clear photos with your request so we can assess the material,
-              size and visible concerns before confirming the visit.
+              Open a service page to see the process, included work, drying
+              guidance and realistic limitations before requesting a quote.
             </p>
           </div>
           <div className="location-service-grid">
-            {services.map((service) => (
-              <article key={service.title}>
-                <img src={service.image} alt="" loading="lazy" decoding="async" />
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </div>
-              </article>
+            {locationServices.map((service) => (
+              <Link href={`/services/${service.slug}/`} key={service.slug}>
+                <span className="location-service-grid__image">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    sizes="(max-width: 720px) 100vw, 50vw"
+                  />
+                </span>
+                <span>
+                  <h3>{service.name}</h3>
+                  <p>{service.summary}</p>
+                  <b>Learn more <span aria-hidden="true">→</span></b>
+                </span>
+              </Link>
             ))}
           </div>
         </section>
+
+        {proof ? (
+          <section className="location-proof" aria-labelledby="location-proof-heading">
+            <div className="location-proof__copy">
+              <p className="location-eyebrow">Real local result</p>
+              <h2 id="location-proof-heading">A completed {proof.category.toLowerCase()} cleaning in {location.name}</h2>
+              <p>
+                This before-and-after example is from our existing project gallery:
+                {" "}{proof.service.toLowerCase()}. Actual results depend on the material,
+                condition, staining and previous treatments.
+              </p>
+              <Link href="/#results">See more cleaning results <span aria-hidden="true">→</span></Link>
+            </div>
+            <div className="location-proof__image">
+              <Image
+                src={proof.image}
+                alt={proof.alt}
+                fill
+                sizes="(max-width: 820px) 100vw, 52vw"
+              />
+              <span>{proof.category} · {location.name}</span>
+            </div>
+          </section>
+        ) : null}
 
         <section className="location-process">
           <div className="location-section-heading">
@@ -219,7 +260,7 @@ export default function LocationPage({ location }: LocationPageProps) {
               <h3>Professional cleaning</h3>
               <p>
                 We inspect again on arrival, pre-treat appropriate areas, clean
-                and extract, then provide drying guidance.
+                and extract, then support drying with air movers.
               </p>
             </li>
           </ol>
@@ -253,7 +294,7 @@ export default function LocationPage({ location }: LocationPageProps) {
         <section className="location-faq" id="faq">
           <div className="location-section-heading">
             <p className="location-eyebrow">Common questions</p>
-            <h2>Upholstery cleaning in {location.name}: FAQ</h2>
+            <h2>Upholstery and carpet cleaning in {location.name}: FAQ</h2>
           </div>
           <div>
             {location.faq.map((item, index) => (

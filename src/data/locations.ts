@@ -21,7 +21,7 @@ export const locations: Location[] = [
     shortDescription:
       "Local upholstery, sofa, sectional, carpet and area rug cleaning throughout Mississauga.",
     introduction:
-      "SoftNest is based in Mississauga and provides careful, fabric-appropriate cleaning for sofas, sectionals, dining chairs, mattresses, carpets and area rugs. We inspect the material and problem areas before choosing the treatment, so the process fits the furniture rather than relying on one method for everything.",
+      "SoftNest provides careful, fabric-appropriate cleaning throughout Mississauga for sofas, sectionals, dining chairs, mattresses, carpets and area rugs. We inspect the material and problem areas before choosing the treatment, so the process fits the furniture rather than relying on one method for everything.",
     localConsiderations:
       "Mississauga homes range from high-rise condos near the city centre to larger family homes in established neighbourhoods. When access, elevators or visitor parking need coordination, tell us when requesting your quote so the visit can be planned efficiently.",
     neighbourhoods: [
@@ -87,7 +87,7 @@ export const locations: Location[] = [
       {
         question: "Are your products suitable for homes with children or pets?",
         answer:
-          "We use fabric-appropriate, non-toxic products and provide after-care guidance for the drying period.",
+          "We select fabric-appropriate products for the material being cleaned and provide after-care guidance for the drying period.",
       },
     ],
   },
@@ -362,3 +362,15 @@ export const locations: Location[] = [
 export function getLocation(slug: string) {
   return locations.find((location) => location.slug === slug);
 }
+
+export const nearbyLocationSlugs: Record<string, string[]> = {
+  mississauga: ["oakville", "brampton", "etobicoke", "milton"],
+  toronto: ["etobicoke", "vaughan", "mississauga", "brampton"],
+  brampton: ["mississauga", "vaughan", "milton", "etobicoke"],
+  oakville: ["mississauga", "burlington", "milton", "hamilton"],
+  etobicoke: ["toronto", "mississauga", "vaughan", "brampton"],
+  burlington: ["oakville", "hamilton", "milton", "mississauga"],
+  vaughan: ["toronto", "brampton", "etobicoke", "mississauga"],
+  milton: ["mississauga", "oakville", "burlington", "brampton"],
+  hamilton: ["burlington", "oakville", "milton", "mississauga"],
+};

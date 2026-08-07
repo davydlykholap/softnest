@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import {
+  DirectoryCard,
+  DirectoryFinalCta,
+  DirectoryHero,
+  DirectorySupportSection,
+} from "@/components/DirectoryHubSections";
 import LocationSearch from "@/components/LocationSearch";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { locations } from "@/data/locations";
+import "../styles/locations-hub.css";
 
 export const metadata: Metadata = {
   title: "Upholstery Cleaning Service Areas | SoftNest",
   description:
-    "Explore SoftNest upholstery, sofa, sectional, carpet and rug cleaning service areas across Mississauga, the Greater Toronto Area and Hamilton.",
+    "Explore SoftNest upholstery, sofa, sectional, carpet and rug cleaning service areas across the Greater Toronto Area and Hamilton.",
   alternates: { canonical: "/location/" },
   openGraph: {
     title: "SoftNest Cleaning Services Across the GTA",
@@ -57,43 +65,27 @@ export default function LocationsPage() {
       </div>
 
       <main className="locations-hub-v2">
-        <section className="locations-hero" aria-labelledby="locations-heading">
-          <div className="locations-hero__copy">
-            <p className="locations-kicker">
-              Serving the Greater Toronto Area
-            </p>
-            <span className="locations-kicker-line" aria-hidden="true" />
-            <h1 id="locations-heading">
-              <span className="locations-hero__title-line">Professional Care,</span>
-              <span className="locations-hero__title-line locations-hero__title-line--accent">
-                Closer to Home.
-              </span>
-            </h1>
-            <p className="locations-hero__description">
-              Explore SoftNest upholstery and carpet cleaning services in your
-              community.
-            </p>
-            <div className="locations-hero__actions">
-              <a className="locations-pill locations-pill--solid" href="#cities">
-                Find your city
-                <span aria-hidden="true">→</span>
-              </a>
-              <Link
-                className="locations-pill locations-pill--outline"
-                href="/quote/"
-              >
-                Request a quote
-              </Link>
-            </div>
-          </div>
-
-          <div className="locations-hero__map" aria-label="SoftNest GTA service area">
-            <img
+        <DirectoryHero
+          id="locations-heading"
+          kicker="Serving the Greater Toronto Area"
+          titleLines={[
+            { text: "Professional Care," },
+            { text: "Closer to Home.", accent: true },
+          ]}
+          description="Explore SoftNest upholstery and carpet cleaning services in your community."
+          primaryAction={{ href: "#cities", label: "Find your city" }}
+          secondaryAction={{ href: "/quote/", label: "Request a quote" }}
+          mediaLabel="SoftNest GTA service area"
+          media={
+            <Image
               src="/img/locations/location-hero-map-nine-cities.webp"
               alt="Illustrated service map showing Vaughan, Brampton, Toronto, Mississauga, Etobicoke, Milton, Oakville, Burlington and Hamilton"
+              fill
+              priority
+              sizes="(max-width: 820px) 100vw, 57vw"
             />
-          </div>
-        </section>
+          }
+        />
 
         <div className="locations-search-wrap">
           <LocationSearch />
@@ -107,25 +99,16 @@ export default function LocationsPage() {
 
           <div className="locations-bento">
             {locations.map((location) => (
-              <article
-                className={`locations-city-card locations-city-card--${location.slug}`}
+              <DirectoryCard
+                href={`/location/${location.slug}/`}
+                image={`/img/locations/${location.slug}.webp`}
+                imageAlt={cityPhotoAlt[location.slug]}
+                title={location.name}
+                subtitle="Upholstery & carpet cleaning"
+                ariaLabel={`View upholstery cleaning in ${location.name}`}
+                className={`locations-city-card--${location.slug}`}
                 key={location.slug}
-              >
-                <img
-                  src={`/img/locations/${location.slug}.webp`}
-                  alt={cityPhotoAlt[location.slug]}
-                />
-                <div className="locations-city-card__body">
-                  <h3>{location.name}</h3>
-                  <p>Upholstery &amp; carpet cleaning</p>
-                  <Link
-                    href={`/location/${location.slug}/`}
-                    aria-label={`View upholstery cleaning in ${location.name}`}
-                  >
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-              </article>
+              />
             ))}
           </div>
 
@@ -143,76 +126,30 @@ export default function LocationsPage() {
           </details>
         </section>
 
-        <section className="locations-missing" id="ask-about-your-city">
-          <div className="locations-missing__copy">
-            <p className="locations-kicker">Still nearby?</p>
-            <h2>Don&apos;t see your city?</h2>
-            <span className="locations-kicker-line" aria-hidden="true" />
-            <p>
-              Send us your city or postal code and we&apos;ll confirm whether we
-              can schedule service in your neighbourhood.
-            </p>
-            <div className="locations-missing__actions">
-              <Link
-                className="locations-pill locations-pill--solid"
-                href="/quote/"
-              >
-                Ask about your city
-                <span aria-hidden="true">→</span>
-              </Link>
-              <a
-                className="locations-phone-pill"
-                href="tel:+14167270287"
-              >
-                <span aria-hidden="true">☎</span>
-                (416) 727-0287
-              </a>
-            </div>
-          </div>
+        <DirectorySupportSection
+          id="ask-about-your-city"
+          kicker="Still nearby?"
+          title="Don't see your city?"
+          description="Send us your city or postal code and we'll confirm whether we can schedule service in your neighbourhood."
+          primaryAction={{ href: "/quote/", label: "Ask about your city" }}
+          card={{
+            title: "Fast, easy photo estimate.",
+            description:
+              "Show us what needs cleaning and we'll recommend the right solution.",
+            link: { href: "/quote/", label: "No commitment. Just clarity." },
+            image: "/img/sofa.png",
+            imageAlt: "Grey upholstered sofa in a natural home interior",
+          }}
+        />
 
-          <div className="locations-estimate-card">
-            <div className="locations-estimate-card__copy">
-              <span className="locations-estimate-card__icon" aria-hidden="true">
-                ◉
-              </span>
-              <h3>Fast, easy photo estimate.</h3>
-              <p>
-                Show us what needs cleaning and we&apos;ll recommend the right
-                solution.
-              </p>
-              <Link href="/quote/">No commitment. Just clarity.</Link>
-            </div>
-            <div className="locations-estimate-card__image">
-              <img
-                src="/img/sofa_cleaning.webp"
-                alt="Freshly cleaned upholstered sofa"
-              />
-              <span aria-hidden="true" />
-            </div>
-          </div>
-        </section>
-
-        <section className="locations-final-cta">
-          <div className="locations-final-cta__image">
-            <img
-              src="/images/softnest-hero-room.webp"
-              alt="SoftNest hero room with a deep green sofa"
-            />
-          </div>
-          <div className="locations-final-cta__copy">
-            <p className="locations-kicker">Professional care, close to home</p>
-            <h2>A fresher home is closer than you think.</h2>
-            <span className="locations-kicker-line" aria-hidden="true" />
-            <p>
-              Trusted by homeowners across the GTA for professional, careful
-              cleaning that makes a real difference.
-            </p>
-            <Link className="locations-pill locations-pill--light" href="/quote/">
-              Request a free quote
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </section>
+        <DirectoryFinalCta
+          kicker="Professional care, close to home"
+          title="A fresher home is closer than you think."
+          description="Trusted by homeowners across the GTA for professional, careful cleaning that makes a real difference."
+          action={{ href: "/quote/", label: "Request a free quote" }}
+          image="/images/softnest-hero-room.webp"
+          imageAlt="SoftNest hero room with a deep green sofa"
+        />
       </main>
 
       <SiteFooter />

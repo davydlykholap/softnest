@@ -7,7 +7,7 @@ export const homeFaqs = [
   {
     question: "Are your cleaning products safe for kids and pets?",
     answer:
-      "Yes. We use fabric-appropriate, non-toxic, pH-balanced products. Once the furniture is dry, it is ready for normal family use.",
+      "We select fabric-appropriate products and follow product directions for the material being cleaned. We also explain drying and after-care before normal use.",
   },
   {
     question: "How often should I have my upholstery cleaned?",
@@ -22,7 +22,7 @@ export const homeFaqs = [
   {
     question: "What areas do you service?",
     answer:
-      "We serve Mississauga, Toronto, Brampton, Oakville, Etobicoke, Burlington, Vaughan, Milton, Hamilton and nearby communities.",
+      "We serve Brampton, Burlington, Etobicoke, Hamilton, Milton, Mississauga, Oakville, Toronto, Vaughan and nearby communities.",
   },
   {
     question: "Can you remove old pet urine stains and odours?",

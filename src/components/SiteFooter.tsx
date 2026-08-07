@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { locations } from "@/data/locations";
+import { navigationServices } from "@/data/services";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
 
 export default function SiteFooter() {
   return (
@@ -15,20 +17,29 @@ export default function SiteFooter() {
             Care You Can Trust.
           </p>
           <p className="text-sm text-stone-700 leading-relaxed mt-4">
-            Professional upholstery cleaning for homes across Mississauga and
-            the GTA.
+            Professional upholstery and carpet cleaning for homes across the GTA.
           </p>
+          <div className="footer-social-block">
+            <p className="footer-social-heading">Follow our work</p>
+            <SocialMediaLinks variant="footer" />
+          </div>
         </div>
         <div>
           <h3 className="font-serif font-bold text-forestGreen text-sm uppercase mb-4">
             Services
           </h3>
-          <ul className="space-y-2 text-sm text-stone-700">
-            <li>Sofa &amp; Couch Cleaning</li>
-            <li>Pet Stain &amp; Odour Removal</li>
-            <li>Sectional &amp; Furniture Cleaning</li>
-            <li>Carpet &amp; Area Rug Cleaning</li>
+          <ul className="footer-service-list space-y-2 text-sm text-stone-700">
+            {navigationServices.map((service) => (
+              <li key={service.slug}>
+                <Link href={`/services/${service.slug}/`}>
+                  {service.menuLabel}
+                </Link>
+              </li>
+            ))}
           </ul>
+          <Link className="footer-location-all" href="/services/">
+            View all services
+          </Link>
         </div>
         <div>
           <h3 className="font-serif font-bold text-forestGreen text-sm uppercase mb-4">
@@ -60,27 +71,31 @@ export default function SiteFooter() {
             </a>
           </p>
           <p className="text-sm text-stone-700">
-            Mississauga, Ontario
+            Greater Toronto Area
             <br />
-            Serving the GTA
+            Ontario
           </p>
           <div
             className="softnest-map softnest-map--footer mt-6 h-28 border border-forestGreen/10"
             aria-label="SoftNest service radius map"
           >
             <iframe
-              title="SoftNest service area mini map"
+              title="SoftNest service area map for Toronto and surrounding cities"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=43.5890,-79.6441&z=10&output=embed"
+              src="https://www.google.com/maps?q=43.66,-79.55&z=10&output=embed"
             />
             <div className="softnest-map__static-layer" aria-hidden="true" />
           </div>
         </div>
       </div>
       <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-forestGreen/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-stone-500">
-        <p>© 2026 SoftNest Upholstery Care. All rights reserved.</p>
-        <p>Privacy Policy &nbsp; | &nbsp; Terms of Service</p>
+        <p>© 2026 SoftNest Fabric Care. All rights reserved.</p>
+        <p className="footer-legal-links">
+          <Link href="/privacy/">Privacy Policy</Link>
+          <span aria-hidden="true">|</span>
+          <Link href="/terms/">Terms of Service</Link>
+        </p>
       </div>
     </footer>
   );

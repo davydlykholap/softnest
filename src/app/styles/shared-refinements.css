@@ -1,0 +1,383 @@
+/* Shared interaction, header and footer refinements. */
+/* Shared high-visibility quote CTA treatment */
+.quote-cta,
+.journey-card__quote-action .quote-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-color: transparent;
+    background: linear-gradient(135deg, #087652 0%, #04563e 58%, #033f2f 100%);
+    box-shadow: 0 11px 24px rgba(7,84,59,.28), 0 0 0 0 rgba(20,126,88,.28);
+    color: #fff;
+    transition:
+        transform 280ms cubic-bezier(.2,.8,.2,1),
+        box-shadow 280ms cubic-bezier(.2,.8,.2,1),
+        filter 280ms ease,
+        background 280ms ease;
+    will-change: transform, box-shadow;
+}
+
+.quote-cta::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -45%;
+    bottom: -45%;
+    left: -48%;
+    width: 31%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.48), transparent);
+    transform: skewX(-19deg);
+    animation: quote-cta-sheen 4.2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.quote-cta--pulse {
+    animation: quote-cta-breathe 4.2s ease-in-out infinite;
+}
+
+.quote-cta--light {
+    border: 1px solid rgba(7,84,59,.16);
+    background: #fff;
+    box-shadow: 0 11px 25px rgba(2,44,31,.2), 0 0 0 0 rgba(255,255,255,.25);
+    color: var(--forest);
+}
+
+.quote-cta--light::after {
+    background: linear-gradient(90deg, transparent, rgba(7,84,59,.16), transparent);
+}
+
+.quote-cta:hover {
+    animation-play-state: paused;
+    box-shadow: 0 15px 31px rgba(7,84,59,.34), 0 0 0 5px rgba(20,126,88,.12);
+    transform: translateY(-3px) scale(1.025);
+}
+
+@keyframes quote-cta-breathe {
+    0%, 58%, 100% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 11px 24px rgba(7,84,59,.28), 0 0 0 0 rgba(20,126,88,.26);
+    }
+    68% {
+        transform: translateY(-2px) scale(1.018);
+        box-shadow: 0 14px 30px rgba(7,84,59,.34), 0 0 0 7px rgba(20,126,88,.11);
+    }
+    78% {
+        transform: translateY(0) scale(1);
+        box-shadow: 0 11px 24px rgba(7,84,59,.28), 0 0 0 0 rgba(20,126,88,0);
+    }
+}
+
+@keyframes quote-cta-sheen {
+    0%, 60% { left: -48%; }
+    82%, 100% { left: 122%; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-cta--pulse,
+  .quote-cta::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Shared hero review button icon. */
+.hero-action-buttons .google-maps-icon {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: none;
+}
+
+/* Shared homepage/location hero action treatment. */
+.hero-action-buttons .quote-cta--pulse {
+  animation: none !important;
+}
+
+.hero-action-buttons .quote-cta:hover {
+  filter: saturate(1.05) brightness(1.025);
+}
+
+.hero-action-buttons .button--secondary {
+  transition:
+    transform 280ms cubic-bezier(.2,.8,.2,1),
+    background-color 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms cubic-bezier(.2,.8,.2,1),
+    color 280ms ease;
+  box-shadow:
+    0 8px 18px rgba(7,84,59,.08),
+    0 0 0 0 rgba(255,255,255,0);
+  will-change: transform, box-shadow;
+}
+
+.hero-action-buttons .button--secondary:hover,
+.hero-action-buttons .button--secondary:focus-visible {
+  background: rgba(255,255,255,.98);
+  border-color: rgba(7,84,59,.72);
+  box-shadow:
+    0 13px 28px rgba(7,84,59,.15),
+    0 0 0 5px rgba(255,255,255,.78),
+    0 0 25px 9px rgba(255,255,255,.42);
+  transform: translateY(-3px) scale(1.018);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-action-buttons .quote-cta,
+  .hero-action-buttons .button--secondary {
+    transition: none !important;
+  }
+}
+
+/* SEO architecture and interaction refinements */
+html {
+  scroll-padding-top: 104px;
+}
+
+.site-header {
+  transition: top .25s ease, height .25s ease, left .25s ease, right .25s ease,
+    padding .25s ease, border-radius .25s ease, box-shadow .25s ease;
+}
+
+.is-page-scrolled .site-header {
+  top: 8px;
+  height: 66px;
+  left: 6%;
+  right: 6%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(16, 34, 27, .16);
+}
+
+.desktop-nav__services-trigger.is-active {
+  color: #07543b;
+}
+
+.desktop-nav__services-trigger.is-active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -12px;
+  left: 0;
+  height: 2px;
+  background: #07543b;
+}
+
+.services-mega__all {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  margin-top: 14px;
+  color: #07543b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.footer-service-list a,
+.footer-legal-links a {
+  transition: color .2s ease;
+}
+
+.footer-service-list a:hover,
+.footer-legal-links a:hover {
+  color: #07543b;
+}
+
+.footer-legal-links {
+  display: inline-flex;
+  gap: .65rem;
+}
+
+
+@media (max-width: 640px) {
+  html { scroll-padding-top: 86px; }
+  .is-page-scrolled .site-header {
+    top: 6px;
+    left: 8px;
+    right: 8px;
+    height: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
+}
+
+
+/* Shared social media links */
+.social-media-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: .65rem;
+}
+
+.social-platform-link {
+  min-width: 0;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  padding: .55rem .8rem;
+  border: 1px solid rgba(7, 84, 59, .13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 5px 14px rgba(17, 42, 33, .07);
+  color: #17231e;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.social-platform-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(7, 84, 59, .24);
+  background: #fff;
+  box-shadow: 0 9px 20px rgba(17, 42, 33, .12);
+}
+
+.social-platform-link:focus-visible {
+  outline: 3px solid rgba(7, 84, 59, .2);
+  outline-offset: 3px;
+}
+
+.social-platform-icon {
+  flex: 0 0 auto;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.social-platform-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.social-platform-icon--facebook {
+  border-radius: 50%;
+  background: #1877f2;
+}
+
+.social-platform-icon--facebook svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-platform-icon--instagram {
+  background: radial-gradient(circle at 31% 104%, #fdf497 0 16%, #fdf497 17%, #fd5949 38%, #d6249f 62%, #285aeb 100%);
+}
+
+.social-platform-icon--instagram svg {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+}
+
+.social-media-links--about {
+  width: min(100%, 350px);
+  margin: 0 auto;
+}
+
+.social-media-links--about .social-platform-link {
+  min-height: 44px;
+  font-size: .8rem;
+}
+
+.social-media-links--gallery {
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.social-media-links--gallery .social-platform-link {
+  width: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  justify-content: center;
+  padding: 0;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(17, 42, 33, .10);
+}
+
+.social-media-links--gallery .social-platform-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+}
+
+.social-media-links--gallery .social-platform-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-media-links--gallery .social-platform-icon--facebook {
+  border-radius: 50%;
+}
+
+.social-media-links--gallery .social-platform-icon--facebook svg {
+  width: 26px;
+  height: 26px;
+}
+
+.social-media-links--gallery .social-platform-icon--instagram {
+  border-radius: 14px;
+}
+
+.footer-social-block {
+  margin-top: 1.4rem;
+}
+
+.footer-social-heading {
+  margin: 0 0 .65rem;
+  color: #07543b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .045em;
+  text-transform: uppercase;
+}
+
+.social-media-links--footer {
+  width: min(100%, 235px);
+}
+
+.social-media-links--footer .social-platform-link {
+  min-height: 39px;
+  padding: .45rem .6rem;
+  font-size: .72rem;
+}
+
+.social-media-links--footer .social-platform-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+}
+
+.social-media-links--footer .social-platform-icon--facebook {
+  border-radius: 50%;
+}
+
+@media (max-width: 400px) {
+  .social-media-links--footer {
+    width: min(100%, 245px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-platform-link {
+    transition: none;
+  }
+}

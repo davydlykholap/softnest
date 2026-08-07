@@ -1,5 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import BeforeAfterCompare from "@/components/BeforeAfterCompare";
+import HeroActionButtons from "@/components/HeroActionButtons";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import type { Location } from "@/data/locations";
@@ -29,46 +32,36 @@ const quickBenefits = [
 
 const services = [
   {
+    slug: "sectional-furniture-cleaning",
     title: "Sofas & Sectionals",
     description:
       "Professional sofa and sectional cleaning for body oils, food spills, everyday soil and odours.",
-    image: "/img/sofa_cleaning.webp",
-    alt: "Professional cleaning of a grey sectional sofa",
+    image: "/img/sofa.png",
+    alt: "Grey upholstered sofa in a natural home interior",
   },
   {
-    title: "Carpet Cleaning",
+    slug: "carpet-area-rug-cleaning",
+    title: "Carpets & Area Rugs",
     description:
-      "Residential carpet cleaning for traffic lanes, embedded dirt and frequently used rooms.",
+      "Residential carpet and suitable area-rug cleaning for traffic lanes, embedded dirt and frequently used rooms.",
     image: "/img/before_after_carpet_cleaning.webp",
-    alt: "Before and after residential carpet cleaning",
+    alt: "Before and after residential carpet and area rug cleaning",
   },
   {
-    title: "Dining Chairs",
+    slug: "dining-chair-cleaning",
+    title: "Dining Chairs & Armchairs",
     description:
-      "Upholstered dining chair cleaning for seats, backs, food marks and everyday use.",
+      "Upholstered dining chair and armchair cleaning for seats, backs, food marks and everyday buildup.",
     image: "/img/dining_chairs.webp",
-    alt: "Before and after cleaning of upholstered dining chairs",
+    alt: "Before and after cleaning of upholstered dining chairs and armchairs",
   },
   {
-    title: "Area Rugs",
+    slug: "pet-stain-odour-removal",
+    title: "Pet Stain & Odour Removal",
     description:
-      "On-site cleaning for suitable area rugs after fibre, colour and backing checks.",
-    image: "/img/rug_2.webp",
-    alt: "Professional cleaning of a residential area rug",
-  },
-  {
-    title: "Stairs & Hallways",
-    description:
-      "Carpeted stair and hallway cleaning for high-traffic treads, edges and landings.",
-    image: "/img/carpet_staircase.webp",
-    alt: "Carpeted staircase prepared for professional cleaning",
-  },
-  {
-    title: "Mattresses & Armchairs",
-    description:
-      "Careful mattress and armchair cleaning for spots, buildup and refreshed fabric surfaces.",
-    image: "/img/matress_cleaning.webp",
-    alt: "Professional mattress cleaning with upholstery equipment",
+      "Targeted treatment for pet accidents, visible staining and odour sources, with realistic expectations explained first.",
+    image: "/img/pet_stain.jpg",
+    alt: "Professional pet stain and odour treatment on upholstered furniture",
   },
 ] as const;
 
@@ -133,9 +126,9 @@ const processSteps = [
 const localAdvantages = [
   {
     icon: "pin",
-    title: "Mississauga-based service",
+    title: "GTA-wide scheduling",
     description:
-      "Local scheduling across Mississauga and nearby Greater Toronto Area communities.",
+      "Appointments planned across Mississauga and other Greater Toronto Area communities.",
   },
   {
     icon: "equipment",
@@ -153,7 +146,7 @@ const localAdvantages = [
     icon: "home",
     title: "Multiple items in one visit",
     description:
-      "Combine sofas, chairs, carpet, stairs and suitable rugs in one photo-estimate request.",
+      "Combine sofas, chairs, mattresses, carpets, suitable rugs and pet treatment in one photo-estimate request.",
   },
 ] as const;
 
@@ -320,22 +313,18 @@ export default function MississaugaPage({
       "Area rug cleaning",
       "Dining chair cleaning",
       "Mattress cleaning",
+      "Armchair cleaning",
+      "Pet stain and odour removal",
     ],
     description:
-      "Professional upholstery and carpet cleaning in Mississauga for sofas, sectionals, chairs, stairs, mattresses and suitable area rugs, with free photo estimates and professional drying included.",
+      "Professional upholstery and carpet cleaning in Mississauga for sofas, sectionals, chairs, mattresses, carpets and suitable area rugs, including pet stain and odour treatment, free photo estimates and professional drying.",
     provider: {
-      "@type": "LocalBusiness",
-      "@id": "https://softnestcare.ca/#business",
+      "@type": "Organization",
+      "@id": "https://softnestcare.ca/#organization",
       name: "SoftNest Fabric Care",
       telephone: "+1-416-727-0287",
       email: "softnest.upholstery@outlook.com",
       url: "https://softnestcare.ca/",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Mississauga",
-        addressRegion: "ON",
-        addressCountry: "CA",
-      },
     },
     areaServed: [
       {
@@ -359,6 +348,7 @@ export default function MississaugaPage({
         itemOffered: {
           "@type": "Service",
           name: service.title,
+          url: `https://softnestcare.ca/services/${service.slug}/`,
         },
       })),
     },
@@ -410,16 +400,17 @@ export default function MississaugaPage({
 
       <main className="miss-page">
         <section className="miss-hero" aria-labelledby="miss-hero-title">
-          <div className="miss-hero__photo" aria-hidden="true" />
+          <div className="miss-hero__photo" aria-hidden="true">
+            <Image
+              src="/images/softnest-hero-room.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+            />
+          </div>
           <div className="miss-hero__wash" aria-hidden="true" />
           <div className="miss-hero__copy">
-            <nav className="miss-breadcrumbs" aria-label="Breadcrumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <Link href="/location/">Locations</Link>
-              <span>/</span>
-              <span>Mississauga</span>
-            </nav>
             <p className="miss-kicker">Local fabric care, done right</p>
             <span className="miss-kicker-line" aria-hidden="true" />
             <h1 id="miss-hero-title">
@@ -433,41 +424,9 @@ export default function MississaugaPage({
               area rugs—planned around your fabric, home, condo access and
               preferred appointment time.
             </p>
-            <div className="miss-actions">
-              <Link className="miss-button miss-button--solid" href="/quote/">
-                Request a free quote <span aria-hidden="true">→</span>
-              </Link>
-              <a className="miss-button miss-button--outline" href="https://maps.app.goo.gl/XHFbygUj49Suv9F48" target="_blank" rel="noopener noreferrer">
-                <svg
-                  className="miss-google-maps-icon"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill="#34a853"
-                    d="M12 22s7-6.25 7-13a7 7 0 1 0-14 0c0 6.75 7 13 7 13Z"
-                  />
-                  <path
-                    fill="#4285f4"
-                    d="M12 2a7 7 0 0 0-7 7c0 2.28.8 4.55 1.9 6.52L12 9Z"
-                  />
-                  <path
-                    fill="#fbbc04"
-                    d="M12 9l5.1 6.52C18.2 13.55 19 11.28 19 9a7 7 0 0 0-1.18-3.9Z"
-                  />
-                  <path
-                    fill="#ea4335"
-                    d="M17.82 5.1A7 7 0 0 0 12 2v7Z"
-                  />
-                  <circle cx="12" cy="9" r="2.45" fill="#fff" />
-                </svg>
-                See our reviews
-              </a>
-            </div>
-          </div>
-          <div className="miss-hero__local">
-            <span aria-hidden="true">⌖</span>
-            Serving Mississauga
+            <HeroActionButtons
+              quoteAriaLabel="Get a free upholstery and carpet cleaning quote in Mississauga"
+            />
           </div>
         </section>
 
@@ -476,9 +435,9 @@ export default function MississaugaPage({
             <p className="miss-kicker">Care that fits Mississauga</p>
             <h2 id="miss-care-heading">Local cleaning, planned before arrival</h2>
             <p>
-              SoftNest is based in Mississauga. We review your photos, fabric,
-              item count and access details so the appointment begins with a
-              clear scope.
+              We review your photos, fabric, item count and access details so
+              the appointment begins with a clear scope and an appropriate
+              cleaning plan.
             </p>
           </div>
           <div className="miss-care-band__features">
@@ -503,32 +462,32 @@ export default function MississaugaPage({
             <p className="miss-kicker">Our services</p>
             <h2 id="miss-services-heading">What we clean in Mississauga</h2>
             <p className="miss-section-heading__intro">
-              From frequently used furniture to carpeted stairs and area rugs,
-              we select the cleaning approach after inspecting the material and
-              condition.
+              From frequently used furniture to carpets, area rugs and pet-related
+              concerns, we select the cleaning approach after inspecting the
+              material and condition.
             </p>
           </div>
           <div className="miss-service-grid">
             {services.map((service) => (
-              <article key={service.title}>
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="miss-service-grid__body">
+              <Link
+                href={`/services/${service.slug}/`}
+                key={service.title}
+                aria-label={`Learn about ${service.title.toLowerCase()}`}
+              >
+                <span className="miss-service-grid__image">
+                  <Image
+                    src={service.image}
+                    alt={service.alt}
+                    fill
+                    sizes="(max-width: 760px) 100vw, 25vw"
+                  />
+                </span>
+                <span className="miss-service-grid__body">
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
-                  <Link
-                    className="miss-card-arrow"
-                    href="/quote/"
-                    aria-label={`Request a quote for ${service.title.toLowerCase()}`}
-                  >
-                    →
-                  </Link>
-                </div>
-              </article>
+                  <span className="miss-card-arrow" aria-hidden="true">→</span>
+                </span>
+              </Link>
             ))}
           </div>
         </section>
@@ -552,17 +511,11 @@ export default function MississaugaPage({
           <div className="miss-results__grid">
             {resultExamples.map((result) => (
               <article key={result.title}>
-                <div className="miss-result-compare">
-                  <img src={result.image} alt={result.alt} loading="lazy" decoding="async" />
-                  <span className="miss-results__category">{result.category}</span>
-                  <span className="miss-result-compare__line" aria-hidden="true" />
-                  <span className="miss-result-compare__label miss-result-compare__label--before">
-                    Before
-                  </span>
-                  <span className="miss-result-compare__label miss-result-compare__label--after">
-                    After
-                  </span>
-                </div>
+                <BeforeAfterCompare
+                  src={result.image}
+                  alt={result.alt}
+                  category={result.category}
+                />
                 <div className="miss-results__caption">
                   <h3>{result.title}</h3>
                   <p>{result.description}</p>
@@ -605,11 +558,11 @@ export default function MississaugaPage({
           </div>
           <div className="miss-coverage__content">
             <div className="miss-map">
-              <img
+              <Image
                 src="/img/mississauga/service-area-map.webp"
                 alt="Map showing SoftNest service coverage across Mississauga neighbourhoods"
-                loading="lazy"
-                decoding="async"
+                fill
+                sizes="(max-width: 760px) 100vw, 55vw"
               />
               {location.neighbourhoods.map((neighbourhood) => (
                 <span
@@ -693,11 +646,19 @@ export default function MississaugaPage({
             className="miss-phone"
             aria-label="A replaceable cleaning photo shown inside a phone"
           >
-            <img className="miss-phone__screen" src={phoneScreenImage} alt="" />
-            <img
+            <Image
+              className="miss-phone__screen"
+              src={phoneScreenImage}
+              alt=""
+              fill
+              sizes="250px"
+            />
+            <Image
               className="miss-phone__frame"
               src="/img/mississauga/phone-frame.webp"
               alt=""
+              fill
+              sizes="250px"
             />
           </div>
           <div className="miss-final-cta__copy">
@@ -707,12 +668,21 @@ export default function MississaugaPage({
               Send clear photos of the full item and problem areas for a
               no-obligation estimate before booking.
             </p>
-            <div className="miss-actions">
-              <Link className="miss-button miss-button--light" href="/quote/">
-                Request a free quote <span aria-hidden="true">→</span>
+            <div className="hero__actions miss-final-actions">
+              <Link
+                className="button button--primary quote-cta quote-cta--pulse"
+                href="/quote/"
+              >
+                Request a free quote
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-6-6 6 6-6 6" />
+                </svg>
               </Link>
-              <a className="miss-button miss-button--ghost" href="tel:+14167270287">
-                <span aria-hidden="true">☎</span> Call (416) 727-0287
+              <a
+                className="button button--secondary"
+                href="tel:+14167270287"
+              >
+                Call (416) 727-0287
               </a>
             </div>
           </div>
