@@ -73,6 +73,7 @@ export default function HomeReviews() {
   const [step, setStep] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(1);
   const maximumIndex = Math.max(0, reviews.length - cardsPerView);
+  const safeIndex = Math.min(index, maximumIndex);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -96,10 +97,6 @@ export default function HomeReviews() {
       window.removeEventListener("resize", measure);
     };
   }, []);
-
-  useEffect(() => {
-    setIndex((current) => Math.min(current, maximumIndex));
-  }, [maximumIndex]);
 
   const goToReview = (nextIndex: number) => {
     setIndex(Math.min(Math.max(nextIndex, 0), maximumIndex));
@@ -126,18 +123,18 @@ export default function HomeReviews() {
           onKeyDown={(event: KeyboardEvent<HTMLDivElement>) => {
             if (event.key === "ArrowLeft") {
               event.preventDefault();
-              goToReview(index <= 0 ? maximumIndex : index - 1);
+              goToReview(safeIndex <= 0 ? maximumIndex : safeIndex - 1);
             }
             if (event.key === "ArrowRight") {
               event.preventDefault();
-              goToReview(index >= maximumIndex ? 0 : index + 1);
+              goToReview(safeIndex >= maximumIndex ? 0 : safeIndex + 1);
             }
           }}
         >
           <div
             ref={trackRef}
             className="reviews-carousel__track"
-            style={{ transform: `translateX(-${index * step}px)` }}
+            style={{ transform: `translateX(-${safeIndex * step}px)` }}
           >
             {reviews.map((review) => (
               <blockquote className="review-card" key={review.name}>
@@ -167,10 +164,10 @@ export default function HomeReviews() {
               <button
                 type="button"
                 className={`reviews-carousel__dot${
-                  dotIndex === index ? " is-active" : ""
+                  dotIndex === safeIndex ? " is-active" : ""
                 }`}
                 aria-label={`Go to review ${dotIndex + 1}`}
-                aria-current={dotIndex === index ? "true" : undefined}
+                aria-current={dotIndex === safeIndex ? "true" : undefined}
                 onClick={() => goToReview(dotIndex)}
                 key={dotIndex}
               />
