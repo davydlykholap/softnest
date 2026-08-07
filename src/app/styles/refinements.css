@@ -579,7 +579,7 @@ html {
 
 @media (min-width: 900px) {
   .hero__description,
-  .journey-card__quote > p,
+  .journey-card__quote > p:not(.journey-card__eyebrow),
   .gallery-description {
     font-size: 16px;
     line-height: 1.65;

@@ -60,7 +60,7 @@ export default function HomeHero() {
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 18 2 18 2c1 5-1 11-7 12m-1 6c0-3 1-7 5-10" />
               </svg>
               <span>
-                Fabric-Appropriate
+                Eco-Friendly
                 <br />
                 Products
               </span>
@@ -71,9 +71,9 @@ export default function HomeHero() {
                 <path d="m9 12 2 2 4-4" />
               </svg>
               <span>
-                Careful Product
+                Safe for Kids
                 <br />
-                Selection
+                &amp; Pets
               </span>
             </li>
             <li>
@@ -82,9 +82,9 @@ export default function HomeHero() {
                 <path d="m9 12 2 2 4-4" />
               </svg>
               <span>
-                Thorough, Detailed
+                Satisfaction
                 <br />
-                Service
+                Guaranteed
               </span>
             </li>
           </ul>

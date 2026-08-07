@@ -571,6 +571,11 @@
   color: #fff;
 }
 
+.finalCta .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+
 .finalCta p:last-child {
   margin: 20px 0 0;
   line-height: 1.75;

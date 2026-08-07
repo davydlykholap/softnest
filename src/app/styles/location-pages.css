@@ -507,6 +507,11 @@
     color: #fff;
 }
 
+.location-cta .location-eyebrow {
+    font-size: 10px;
+    letter-spacing: .13em;
+}
+
 .location-cta p:not(.location-eyebrow) {
     max-width: 680px;
     margin: .8rem 0 0;
