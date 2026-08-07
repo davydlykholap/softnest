@@ -41,3 +41,6 @@ yarn-error.log*
 /out/
 /softnest.zip
 /.next-dev*.log
+
+# Local source backups
+/src*.zip
