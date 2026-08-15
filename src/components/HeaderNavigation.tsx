@@ -40,6 +40,9 @@ const iconBySlug: Record<string, ServiceIconName> = {
 };
 
 const navigation = [
+  { label: "Reviews", hash: "reviews" },
+  { label: "Before & After", hash: "results" },
+  { label: "FAQ", hash: "faq" },
   { label: "About Us", href: "/about/" },
 ] as const;
 
@@ -138,8 +141,10 @@ export default function HeaderNavigation({
   const servicesRef = useRef<HTMLDivElement>(null);
   const servicesTriggerRef = useRef<HTMLButtonElement>(null);
   const servicesCloseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const homeHref = (hash: string) => (home ? `#${hash}` : `/#${hash}`);
+  const navigationHref = (item: (typeof navigation)[number]) =>
+    "href" in item ? item.href : homeHref(item.hash);
   const selectedService = services[activeService] ?? services[0];
-
 
   useEffect(() => {
     const root = document.documentElement;
@@ -154,17 +159,6 @@ export default function HeaderNavigation({
       root.classList.remove("is-page-scrolled");
     };
   }, []);
-
-  useEffect(() => {
-    if (!home || !window.location.hash) return;
-
-    // Remove legacy homepage hashes from older navigation links.
-    window.history.replaceState(
-      window.history.state,
-      "",
-      `${window.location.pathname}${window.location.search}`,
-    );
-  }, [home]);
 
   const cancelServicesClose = useCallback(() => {
     if (servicesCloseTimerRef.current) {
@@ -379,7 +373,7 @@ export default function HeaderNavigation({
           Locations
         </Link>
         {navigation.map((item) => (
-          <Link href={item.href} key={item.label}>
+          <Link href={navigationHref(item)} key={item.label}>
             {item.label}
           </Link>
         ))}
@@ -462,7 +456,7 @@ export default function HeaderNavigation({
         </Link>
         {navigation.map((item) => (
           <Link
-            href={item.href}
+            href={navigationHref(item)}
             key={item.label}
             onClick={() => setOpen(false)}
           >
