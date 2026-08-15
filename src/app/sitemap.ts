@@ -9,6 +9,7 @@ const siteUrl = "https://softnestcare.ca";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${siteUrl}/` },
+    { url: `${siteUrl}/about/` },
     { url: `${siteUrl}/services/` },
     ...services.map((service) => ({
       url: `${siteUrl}/services/${service.slug}/`,
