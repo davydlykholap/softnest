@@ -28,6 +28,11 @@ export type Service = {
   limitations: string;
   faq: ServiceFaq[];
   relatedServices: string[];
+  heroProofs?: string[];
+  includedHeading?: string;
+  processHeading?: string;
+  afterCareEyebrow?: string;
+  afterCareHeading?: string;
   featured?: boolean;
 };
 
@@ -182,6 +187,103 @@ export const services: Service[] = [
       },
     ],
     relatedServices: ["sectional-furniture-cleaning", "pet-stain-odour-removal", "upholstery-cleaning"],
+    featured: true,
+  },
+  {
+    slug: "leather-upholstery-cleaning",
+    name: "Leather Upholstery Cleaning",
+    menuLabel: "Leather Upholstery Cleaning",
+    shortName: "Leather",
+    metaTitle: "Leather Upholstery Cleaning Across the GTA | SoftNest",
+    metaDescription:
+      "Professional leather sofa and upholstery cleaning with conditioning and protective treatment across the GTA. Free photo estimates available.",
+    summary:
+      "Careful cleaning for suitable leather furniture, followed by a moisturizing conditioning treatment and protective solution to support the finish and everyday care.",
+    heroTitle: "Leather upholstery cleaning, conditioning and protection",
+    heroDescription:
+      "We clean suitable leather sofas, sectionals and chairs using a leather-specific process. After cleaning, we apply a moisturizing conditioning treatment and a protective solution, with the approach confirmed after inspecting the leather and its condition.",
+    image: "/images/softnest-hero-room.webp",
+    imageAlt: "Clean furnished living room representing SoftNest leather upholstery care",
+    serviceType: [
+      "Leather upholstery cleaning",
+      "Leather sofa cleaning",
+      "Leather conditioning",
+      "Leather protection",
+    ],
+    concerns: [
+      "Everyday surface soil and body oils",
+      "Dull or lightly soiled leather surfaces",
+      "Frequently touched armrests and headrests",
+      "Dry-feeling finished leather",
+      "General maintenance cleaning",
+      "Leather furniture needing conditioning and protection",
+    ],
+    included: [
+      "Leather type and condition assessment",
+      "Controlled surface cleaning",
+      "Leather-appropriate cleaning products",
+      "Moisturizing and conditioning treatment",
+      "Protective solution application",
+      "Final review and after-care guidance",
+    ],
+    process: [
+      {
+        title: "Photo review and estimate",
+        description:
+          "Send clear photos of the complete leather item and close-ups of any marks, wear, cracking, peeling or areas you want us to inspect.",
+      },
+      {
+        title: "Leather and finish inspection",
+        description:
+          "We inspect the leather type, finish and existing condition before choosing the appropriate cleaning and care products.",
+      },
+      {
+        title: "Controlled leather cleaning",
+        description:
+          "Suitable surfaces are cleaned carefully to remove everyday soil and residue without using the extraction process used for fabric upholstery.",
+      },
+      {
+        title: "Condition and protect",
+        description:
+          "After cleaning, we apply a moisturizing conditioning treatment followed by a protective solution, then review the finished surfaces and after-care.",
+      },
+    ],
+    drying:
+      "Allow the conditioning and protective products to settle and dry before normal use. The technician will explain the practical after-care based on the leather, products used and room conditions.",
+    limitations:
+      "Cleaning and conditioning cannot repair cracking, peeling or delamination, deep scratches, permanent dye loss, worn finish, cuts or other physical damage. Some stains and colour changes may be permanent.",
+    faq: [
+      {
+        question: "What does your leather upholstery service include?",
+        answer:
+          "The service includes careful cleaning of suitable leather surfaces, a moisturizing conditioning treatment and application of a protective solution, followed by after-care guidance.",
+      },
+      {
+        question: "Do you clean every type of leather?",
+        answer:
+          "Not every leather uses the same process. We inspect the material and finish first. Suede, nubuck, heavily damaged leather and specialty finishes may require a different approach or may not be suitable for our standard service.",
+      },
+      {
+        question: "Can leather cleaning remove scratches or peeling?",
+        answer:
+          "No. Cleaning can remove suitable surface soil and improve the overall appearance, but it cannot repair scratches, peeling, cracking, dye loss or worn protective finish.",
+      },
+      {
+        question: "How do I get a leather sofa quote?",
+        answer:
+          "Send clear photos of the full sofa or chair and close-ups of any marks or worn areas. We use the photos to confirm the item, condition and expected service scope before booking.",
+      },
+    ],
+    relatedServices: ["sofa-cleaning", "upholstery-cleaning", "sectional-furniture-cleaning"],
+    heroProofs: [
+      "Leather-appropriate cleaning",
+      "Conditioning treatment",
+      "Protective solution applied",
+    ],
+    includedHeading: "Cleaning, conditioning and protection in one service",
+    processHeading: "From photos to cleaned, conditioned and protected leather",
+    afterCareEyebrow: "After-care",
+    afterCareHeading: "When the furniture can be used again",
     featured: true,
   },
   {
