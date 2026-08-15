@@ -34,7 +34,7 @@ const galleryResults = [
   },
   {
     image: "/img/matress_cleaning.webp",
-    variant: "single",
+    variant: "paired",
     category: "Mattress",
     location: "Toronto, ON",
     service: "Stain & odour removal",
@@ -204,7 +204,7 @@ export default function HomeSections() {
         <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">Why Homeowners Choose SoftNest</span>
         <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight leading-tight mb-5">Quality You Can See.<br />Care You Can Trust.</h2>
         <p className="text-sm text-stone-700 leading-relaxed mb-6 max-w-sm">We go beyond surface cleaning. Every detail matters because your home and furniture deserve the best.</p>
-        <a href="#about" className="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">Learn More About Us</a>
+        <Link href="/about/" className="inline-flex items-center justify-center px-6 h-11 bg-forestGreen text-white font-serif font-bold text-xs uppercase tracking-wider hover:bg-mossGreen transition-colors no-underline">Learn More About Us</Link>
       </div>
       <div className="why-softnest-benefits lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-forestGreen/10">
         <div className="why-softnest-benefit px-6 py-6 text-center">

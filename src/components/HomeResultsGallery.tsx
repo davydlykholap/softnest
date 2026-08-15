@@ -35,7 +35,7 @@ const galleryResults = [
   },
   {
     image: "/img/matress_cleaning.webp",
-    variant: "single",
+    variant: "paired",
     category: "Mattress",
     location: "Toronto, ON",
     service: "Stain & odour removal",
