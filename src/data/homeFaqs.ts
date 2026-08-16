@@ -32,7 +32,7 @@ export const homeFaqs = [
   {
     question: "Do you clean leather sofas?",
     answer:
-      "Not at this time. We specialize in fabric upholstery, carpets and suitable area rugs. Leather requires a different process.",
+      "Yes. We clean suitable leather sofas and other leather upholstery using a leather-specific process that includes cleaning, a moisturizing conditioning treatment and a protective solution. Photos help us confirm the leather and condition before booking.",
   },
   {
     question: "Do I pay before or after the cleaning service?",

@@ -6,6 +6,7 @@ import HeroActionButtons from "@/components/HeroActionButtons";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import type { Location } from "@/data/locations";
+import { organizationProvider, siteConfig } from "@/lib/site";
 
 const quickBenefits = [
   {
@@ -304,8 +305,8 @@ export default function MississaugaPage({
     "@context": "https://schema.org",
     "@type": "Service",
     name: "Upholstery and Carpet Cleaning in Mississauga",
-    url: "https://softnestcare.ca/location/mississauga/",
-    image: "https://softnestcare.ca/images/softnest-hero-room.webp",
+    url: `${siteConfig.url}/location/mississauga/`,
+    image: siteConfig.heroImage,
     serviceType: [
       "Upholstery cleaning",
       "Sofa and sectional cleaning",
@@ -318,14 +319,7 @@ export default function MississaugaPage({
     ],
     description:
       "Professional upholstery and carpet cleaning in Mississauga for sofas, sectionals, chairs, mattresses, carpets and suitable area rugs, including pet stain and odour treatment, free photo estimates and professional drying.",
-    provider: {
-      "@type": "Organization",
-      "@id": "https://softnestcare.ca/#organization",
-      name: "SoftNest Fabric Care",
-      telephone: "+1-416-727-0287",
-      email: "softnest.upholstery@outlook.com",
-      url: "https://softnestcare.ca/",
-    },
+    provider: organizationProvider(),
     areaServed: [
       {
         "@type": "City",

@@ -19,6 +19,9 @@ export default function SiteFooter() {
           <p className="text-sm text-stone-700 leading-relaxed mt-4">
             Professional upholstery and carpet cleaning for homes across the GTA.
           </p>
+          <Link className="footer-location-all" href="/about/">
+            About SoftNest
+          </Link>
           <div className="footer-social-block">
             <p className="footer-social-heading">Follow our work</p>
             <SocialMediaLinks variant="footer" />

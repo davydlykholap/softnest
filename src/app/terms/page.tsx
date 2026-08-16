@@ -114,11 +114,6 @@ export default function TermsPage() {
             </a>
           </p>
 
-          <p className={styles.notice}>
-            These terms are a practical website summary and should be reviewed
-            against the business’s actual operating, insurance and legal
-            requirements before publication.
-          </p>
         </article>
       </main>
       <SiteFooter />

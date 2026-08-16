@@ -5,6 +5,7 @@ import SiteHeader from "@/components/SiteHeader";
 import type { Location } from "@/data/locations";
 import { locations, nearbyLocationSlugs } from "@/data/locations";
 import { getService } from "@/data/services";
+import { organizationProvider, siteConfig } from "@/lib/site";
 
 const locationServiceSlugs = [
   "sofa-cleaning",
@@ -61,17 +62,10 @@ export default function LocationPage({ location }: LocationPageProps) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `Upholstery and Carpet Cleaning in ${location.name}`,
-    url: `https://softnestcare.ca/location/${location.slug}/`,
+    url: `${siteConfig.url}/location/${location.slug}/`,
     serviceType: ["Upholstery cleaning", "Carpet cleaning"],
     description: location.shortDescription,
-    provider: {
-      "@type": "Organization",
-      "@id": "https://softnestcare.ca/#organization",
-      name: "SoftNest Fabric Care",
-      telephone: "+1-416-727-0287",
-      email: "softnest.upholstery@outlook.com",
-      url: "https://softnestcare.ca/",
-    },
+    provider: organizationProvider(),
     areaServed: {
       "@type": "City",
       name: location.name,
@@ -90,19 +84,19 @@ export default function LocationPage({ location }: LocationPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://softnestcare.ca/",
+        item: `${siteConfig.url}/`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Locations",
-        item: "https://softnestcare.ca/location/",
+        item: `${siteConfig.url}/location/`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: location.name,
-        item: `https://softnestcare.ca/location/${location.slug}/`,
+        item: `${siteConfig.url}/location/${location.slug}/`,
       },
     ],
   };

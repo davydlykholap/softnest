@@ -4,6 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import type { Service } from "@/data/services";
 import { getService } from "@/data/services";
+import { absoluteUrl, organizationProvider, siteConfig } from "@/lib/site";
 import styles from "@/app/services/service-page.module.css";
 
 function CheckIcon() {
@@ -18,35 +19,23 @@ export default function ServicePage({ service }: { service: Service }) {
   const related = service.relatedServices
     .map((slug) => getService(slug))
     .filter((item): item is Service => Boolean(item));
+  const heroProofs = service.heroProofs ?? [
+    "Commercial-grade equipment",
+    "Standard stain treatment",
+    "Professional drying included",
+  ];
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `https://softnestcare.ca/services/${service.slug}/#service`,
+    "@id": `${siteConfig.url}/services/${service.slug}/#service`,
     name: service.name,
-    url: `https://softnestcare.ca/services/${service.slug}/`,
-    image: `https://softnestcare.ca${service.image}`,
+    url: `${siteConfig.url}/services/${service.slug}/`,
+    image: absoluteUrl(service.image),
     description: service.metaDescription,
     serviceType: service.serviceType,
-    provider: {
-      "@type": "Organization",
-      "@id": "https://softnestcare.ca/#organization",
-      name: "SoftNest Fabric Care",
-      url: "https://softnestcare.ca/",
-      telephone: "+1-416-727-0287",
-      email: "softnest.upholstery@outlook.com",
-    },
-    areaServed: [
-      "Brampton",
-      "Burlington",
-      "Etobicoke",
-      "Hamilton",
-      "Milton",
-      "Mississauga",
-      "Oakville",
-      "Toronto",
-      "Vaughan",
-    ],
+    provider: organizationProvider(),
+    areaServed: siteConfig.areasServed,
   };
 
   const breadcrumbSchema = {
@@ -57,19 +46,19 @@ export default function ServicePage({ service }: { service: Service }) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://softnestcare.ca/",
+        item: `${siteConfig.url}/`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: "https://softnestcare.ca/services/",
+        item: `${siteConfig.url}/services/`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: service.name,
-        item: `https://softnestcare.ca/services/${service.slug}/`,
+        item: `${siteConfig.url}/services/${service.slug}/`,
       },
     ],
   };
@@ -115,9 +104,9 @@ export default function ServicePage({ service }: { service: Service }) {
               </a>
             </div>
             <ul className={styles.heroProofs} aria-label="Service assurances">
-              <li><CheckIcon /> Commercial-grade equipment</li>
-              <li><CheckIcon /> Standard stain treatment</li>
-              <li><CheckIcon /> Professional drying included</li>
+              {heroProofs.map((proof) => (
+                <li key={proof}><CheckIcon /> {proof}</li>
+              ))}
             </ul>
           </div>
 
@@ -166,7 +155,7 @@ export default function ServicePage({ service }: { service: Service }) {
         <section className={styles.includedSection}>
           <div className={styles.sectionHeading}>
             <p className={styles.eyebrow}>What is included</p>
-            <h2>A complete professional cleaning process</h2>
+            <h2>{service.includedHeading ?? "A complete professional cleaning process"}</h2>
           </div>
           <div className={styles.includedGrid}>
             {service.included.map((item, index) => (
@@ -181,7 +170,7 @@ export default function ServicePage({ service }: { service: Service }) {
         <section className={styles.processSection}>
           <div className={styles.sectionHeading}>
             <p className={styles.eyebrow}>How it works</p>
-            <h2>From photos to a cleaner, properly dried result</h2>
+            <h2>{service.processHeading ?? "From photos to a cleaner, properly dried result"}</h2>
           </div>
           <ol className={styles.processList}>
             {service.process.map((step, index) => (
@@ -198,8 +187,8 @@ export default function ServicePage({ service }: { service: Service }) {
 
         <section className={styles.expectationsSection}>
           <article>
-            <p className={styles.eyebrow}>Drying time</p>
-            <h2>When the item can be used again</h2>
+            <p className={styles.eyebrow}>{service.afterCareEyebrow ?? "Drying time"}</p>
+            <h2>{service.afterCareHeading ?? "When the item can be used again"}</h2>
             <p>{service.drying}</p>
           </article>
           <article>

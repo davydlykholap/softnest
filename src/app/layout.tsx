@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AnalyticsEvents from "@/components/AnalyticsEvents";
 import MarketingAttribution from "@/components/MarketingAttribution";
 import Script from "next/script";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 import "./styles/shared-refinements.css";
 import "./hero-cta.css";
@@ -14,13 +15,13 @@ export const metadata: Metadata = {
   },
   description:
     "Professional upholstery, sofa, carpet and area rug cleaning across the Greater Toronto Area and Hamilton.",
-  applicationName: "SoftNest Fabric Care",
+  applicationName: siteConfig.name,
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
   },
   openGraph: {
-    siteName: "SoftNest Fabric Care",
+    siteName: siteConfig.name,
     locale: "en_CA",
     type: "website",
     images: [

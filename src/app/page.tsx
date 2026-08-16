@@ -4,6 +4,7 @@ import HomeSections from "@/components/HomeSections";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { homeFaqs } from "@/data/homeFaqs";
+import { organizationId, siteConfig, websiteId } from "@/lib/site";
 import "./styles/home-refinements.css";
 
 export const metadata: Metadata = {
@@ -22,36 +23,34 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://softnestcare.ca/#organization",
-  name: "SoftNest Fabric Care",
-  url: "https://softnestcare.ca/",
-  telephone: "+1-416-727-0287",
-  email: "softnest.upholstery@outlook.com",
-  logo: "https://softnestcare.ca/img/logo/logo.webp",
-  image: "https://softnestcare.ca/images/softnest-hero-room.webp",
+  "@id": organizationId,
+  name: siteConfig.name,
+  alternateName: siteConfig.alternateName,
+  url: `${siteConfig.url}/`,
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  logo: siteConfig.logo,
+  image: siteConfig.heroImage,
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-416-727-0287",
+    telephone: siteConfig.phone,
     contactType: "customer service",
     areaServed: "CA",
-    availableLanguage: ["English", "Russian", "Ukrainian"],
+    availableLanguage: siteConfig.languages,
   },
-  areaServed: [
-    "Brampton",
-    "Burlington",
-    "Etobicoke",
-    "Hamilton",
-    "Milton",
-    "Mississauga",
-    "Oakville",
-    "Toronto",
-    "Vaughan",
-  ],
-  sameAs: [
-    "https://maps.app.goo.gl/XHFbygUj49Suv9F48",
-    "https://www.instagram.com/softnestfabriccare/",
-    "https://www.facebook.com/profile.php?id=61590622653207",
-  ],
+  areaServed: siteConfig.areasServed,
+  sameAs: siteConfig.sameAs,
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": websiteId,
+  url: `${siteConfig.url}/`,
+  name: siteConfig.name,
+  alternateName: siteConfig.alternateName,
+  inLanguage: "en-CA",
+  publisher: { "@id": organizationId },
 };
 
 const faqSchema = {
@@ -76,7 +75,7 @@ export default function HomePage() {
       </div>
       <HomeSections />
       <SiteFooter />
-      {[organizationSchema, faqSchema].map((schema, index) => (
+      {[organizationSchema, websiteSchema, faqSchema].map((schema, index) => (
         <script
           key={index}
           type="application/ld+json"

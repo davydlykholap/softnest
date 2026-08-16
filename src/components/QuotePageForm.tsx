@@ -4,19 +4,13 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { trackQuoteConversion } from "@/lib/analytics";
 import { attributionStorageKey } from "@/lib/marketingAttribution";
+import { quoteServiceOptions } from "@/data/quote";
 
 const instagramUrl = "https://www.instagram.com/softnestfabriccare/";
 const facebookUrl = "https://www.facebook.com/profile.php?id=61590622653207";
 const lastQuoteStorageKey = "softnest_last_quote_submission";
 
-const serviceOptions = [
-  "Sofa or couch",
-  "Sectional",
-  "Dining chairs",
-  "Mattress",
-  "Carpet or rug",
-  "Other furniture",
-];
+const serviceOptions = quoteServiceOptions;
 
 function formatPhoneNumber(value: string) {
   let digits = value.replace(/\D/g, "");
