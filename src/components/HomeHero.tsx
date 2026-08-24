@@ -1,5 +1,4 @@
 import Image from "next/image";
-import HeroComparison from "@/components/HeroComparison";
 import HeroActionButtons from "@/components/HeroActionButtons";
 
 export default function HomeHero() {
@@ -53,7 +52,7 @@ export default function HomeHero() {
             techniques refresh your home&apos;s comfort. From deep sofa
             cleaning to careful rug cleaning.
           </p>
-          <HeroActionButtons />
+          <HeroActionButtons primaryTone="gold" />
           <ul className="hero__benefits" aria-label="Service benefits">
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -89,8 +88,6 @@ export default function HomeHero() {
             </li>
           </ul>
         </div>
-
-        <HeroComparison />
 
         <a
           className="hero__scroll"

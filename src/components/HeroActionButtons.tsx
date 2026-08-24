@@ -4,13 +4,17 @@ const googleProfileUrl = "https://maps.app.goo.gl/XHFbygUj49Suv9F48";
 
 type HeroActionButtonsProps = {
   quoteAriaLabel?: string;
+  primaryTone?: "green" | "gold";
 };
 
 export default function HeroActionButtons({
   quoteAriaLabel = "Get a free upholstery and carpet cleaning quote",
+  primaryTone = "green",
 }: HeroActionButtonsProps) {
   return (
-    <div className="hero__actions hero-action-buttons">
+    <div
+      className={`hero__actions hero-action-buttons hero-action-buttons--${primaryTone}`}
+    >
       <Link
         className="button button--primary quote-cta quote-cta--pulse"
         href="/quote/"
