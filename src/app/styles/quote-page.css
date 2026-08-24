@@ -369,11 +369,13 @@
   min-width: 270px;
   height: 54px;
   padding: 0 22px;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, .76);
   border-radius: 99px;
-  color: #fff;
-  background: #0b6048;
-  box-shadow: 0 12px 24px rgba(11, 96, 72, .22);
+  color: #17231e;
+  background: linear-gradient(135deg, #ebc442 0%, #e6b838 52%, #e2b337 100%);
+  box-shadow:
+    0 14px 28px rgba(177, 128, 22, .3),
+    0 0 0 7px rgba(247, 217, 116, .28);
   cursor: pointer;
   font-size: 11px;
   font-weight: 800;
@@ -382,8 +384,16 @@
 }
 
 .quote-page-form__footer button:hover {
-  background: #084c39;
+  background: linear-gradient(135deg, #f1ce50 0%, #ecc342 52%, #e7bc40 100%);
+  box-shadow:
+    0 18px 36px rgba(155, 108, 13, .34),
+    0 0 0 8px rgba(247, 217, 116, .34);
   transform: translateY(-1px);
+}
+
+.quote-page-form__footer button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
 }
 
 .quote-page-form__footer button:disabled {
@@ -588,4 +598,3 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-
