@@ -1,11 +1,16 @@
 import type { NextConfig } from "next";
+import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
 
-const nextConfig: NextConfig = {
-  output: "export",
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
-};
+export default function nextConfig(phase: string): NextConfig {
+  const isDevelopmentServer = phase === PHASE_DEVELOPMENT_SERVER;
 
-export default nextConfig;
+  return {
+    // GitHub Pages needs a static export, but forcing export mode during
+    // `next dev` can interfere with App Router development routing.
+    ...(isDevelopmentServer ? {} : { output: "export" as const }),
+    trailingSlash: true,
+    images: {
+      unoptimized: true,
+    },
+  };
+}

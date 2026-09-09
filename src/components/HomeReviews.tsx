@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/lib/site";
 import {
   type KeyboardEvent,
   useEffect,
@@ -7,7 +8,7 @@ import {
   useState,
 } from "react";
 
-const googleProfileUrl = "https://maps.app.goo.gl/XHFbygUj49Suv9F48";
+const googleProfileUrl = siteConfig.googleProfileUrl;
 
 const reviews = [
   {

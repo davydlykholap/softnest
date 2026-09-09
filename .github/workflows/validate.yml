@@ -1,0 +1,27 @@
+name: Validate website and editor
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            studio/package-lock.json
+      - run: npm ci
+      - run: npm ci --prefix studio
+      - run: npm run content:types
+      - run: npm run studio:check
+      - run: npm run check
+        env:
+          CONTENT_SOURCE: sanity
+          SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ vars.SANITY_DATASET }}

@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/site";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -158,8 +159,8 @@ export function DirectorySupportSection({
   title,
   description,
   primaryAction,
-  phoneLabel = "(416) 727-0287",
-  phoneHref = "tel:+14167270287",
+  phoneLabel = siteConfig.displayPhone,
+  phoneHref = siteConfig.phoneHref,
   card,
   className = "",
 }: DirectorySupportSectionProps) {

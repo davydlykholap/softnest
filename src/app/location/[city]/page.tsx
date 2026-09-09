@@ -1,8 +1,11 @@
+import { pageMetadata } from '@/seo/metadata';
+import { locationUrl } from '@/seo/urls';
+import { siteConfig } from '@/lib/site';
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LocationPage from "@/components/LocationPage";
-import MississaugaPage from "@/components/MississaugaPage";
-import { getLocation, locations } from "@/data/locations";
+import ExpandedLocationPage from "@/components/locations/ExpandedLocationPage";
+import { getLocation, locations } from "@/content/locations";
 
 type CityPageProps = {
   params: Promise<{ city: string }>;
@@ -19,35 +22,7 @@ export async function generateMetadata({
   const location = getLocation(city);
   if (!location) return {};
 
-  const title = `Upholstery & Carpet Cleaning in ${location.name} | SoftNest`;
-  const description =
-    location.slug === "mississauga"
-      ? "Professional upholstery and carpet cleaning in Mississauga for sofas, sectionals, chairs, stairs and area rugs. Free photo estimates and professional drying included."
-      : location.shortDescription;
-  const path = `/location/${location.slug}/`;
-
-  return {
-    title,
-    description,
-    alternates: { canonical: path },
-    openGraph: {
-      title,
-      description,
-      url: path,
-      type: "website",
-      images: [
-        {
-          url:
-            location.slug === "mississauga"
-              ? "/images/softnest-hero-room.webp"
-              : `/img/locations/${location.slug}.webp`,
-          width: 1200,
-          height: 630,
-          alt: `SoftNest upholstery and carpet cleaning in ${location.name}`,
-        },
-      ],
-    },
-  };
+  return pageMetadata({title:location.metaTitle || `Upholstery & Carpet Cleaning in ${location.name} | ${siteConfig.alternateName}`, description:location.metaDescription || location.shortDescription,path:locationUrl(location.slug),image:location.expandedContent?.heroImage || location.image,imageAlt:location.imageAlt,index:location.indexInSearch});
 }
 
 export default async function CityPage({ params }: CityPageProps) {
@@ -55,8 +30,8 @@ export default async function CityPage({ params }: CityPageProps) {
   const location = getLocation(city);
   if (!location) notFound();
 
-  if (location.slug === "mississauga") {
-    return <MississaugaPage location={location} />;
+  if (location.expanded) {
+    return <ExpandedLocationPage location={location} />;
   }
 
   return <LocationPage location={location} />;

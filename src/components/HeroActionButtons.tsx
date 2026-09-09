@@ -1,6 +1,7 @@
+import { siteConfig } from "@/lib/site";
 import Link from "next/link";
 
-const googleProfileUrl = "https://maps.app.goo.gl/XHFbygUj49Suv9F48";
+const googleProfileUrl = siteConfig.googleProfileUrl;
 
 type HeroActionButtonsProps = {
   quoteAriaLabel?: string;

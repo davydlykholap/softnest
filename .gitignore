@@ -15,6 +15,10 @@
 # Environment configurations (Contains credentials/keys)
 .env
 .env.local
+.env.*.local
+/studio/dist/
+/studio/.sanity/
+*.tsbuildinfo
 
 # Operating System files
 Thumbs.db
@@ -44,3 +48,17 @@ yarn-error.log*
 
 # Local source backups
 /src*.zip
+
+# Editorial originals and private migration backups stay local.
+/content/inbox/
+/content/backups/
+
+# Rebuilt from Sanity (or an explicit local seed preview).
+/src/content/generated/
+/studio/schema.json
+/studio/*.log
+
+# Authentication tokens must never be committed.
+.env.*
+!.env.example
+*.zip

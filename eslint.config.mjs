@@ -9,5 +9,7 @@ export default defineConfig([
     ".next/**",
     "out/**",
     "public/**",
+    "studio/**",
+    "src/sanity/sanity.types.ts",
   ]),
 ]);

@@ -1,7 +1,8 @@
+import { siteConfig } from "@/lib/site";
 const socialLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=61590622653207",
+    href: siteConfig.facebookUrl,
     iconClassName: "social-platform-icon--facebook",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -14,7 +15,7 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/softnestfabriccare/",
+    href: siteConfig.instagramUrl,
     iconClassName: "social-platform-icon--instagram",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">

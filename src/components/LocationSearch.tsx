@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
-import { locations } from "@/data/locations";
+import { locations } from "@/content/locations";
 
 export default function LocationSearch() {
   const router = useRouter();

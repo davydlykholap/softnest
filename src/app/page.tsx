@@ -1,9 +1,10 @@
+import { jsonLd } from "@/seo/structuredData";
 import type { Metadata } from "next";
 import HomeHero from "@/components/HomeHero";
 import HomeSections from "@/components/HomeSections";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { homeFaqs } from "@/data/homeFaqs";
+import { homeFaqs } from "@/content/homeFaqs";
 import { organizationId, siteConfig, websiteId } from "@/lib/site";
 import "./styles/home-refinements.css";
 
@@ -79,7 +80,7 @@ export default function HomePage() {
         <script
           key={index}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(schema) }}
         />
       ))}
     </>

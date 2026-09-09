@@ -1,7 +1,8 @@
+import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import styles from "../legal-page.module.css";
+import styles from "@/app/legal-page.module.css";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | SoftNest Fabric Care",
@@ -18,12 +19,13 @@ export default function PrivacyPage() {
       </div>
       <main className={styles.page}>
         <article className={styles.shell}>
-          <p className={styles.eyebrow}>SoftNest Fabric Care</p>
+          <p className={styles.eyebrow}>{siteConfig.name}</p>
           <h1>Privacy Policy</h1>
           <p className={styles.updated}>Last updated: August 6, 2026</p>
 
           <p>
-            This policy explains how SoftNest Fabric Care collects, uses and
+            
+            This policy explains how {siteConfig.name} collects, uses and
             handles personal information when you request a quote, contact us,
             book a service or use this website.
           </p>
@@ -98,11 +100,13 @@ export default function PrivacyPage() {
 
           <h2>Contact us</h2>
           <p>
-            SoftNest Fabric Care<br />
+            
+            {siteConfig.name}<br />
             Greater Toronto Area, Ontario<br />
-            <a href="tel:+14167270287">(416) 727-0287</a><br />
-            <a href="mailto:softnest.upholstery@outlook.com">
-              softnest.upholstery@outlook.com
+            <a href={siteConfig.phoneHref}>{siteConfig.displayPhone}</a><br />
+            <a href={siteConfig.emailHref}>
+              
+              {siteConfig.email}
             </a>
           </p>
 

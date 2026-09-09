@@ -1,3 +1,5 @@
+import { jsonLd } from "@/seo/structuredData";
+import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import sectionalAfterCleaning from "@/assets/services-hero/sectional-after-cleaning.webp";
@@ -12,9 +14,9 @@ import {
 import ServiceSearch from "@/components/ServiceSearch";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { services } from "@/data/services";
-import "../styles/locations-hub.css";
-import "../styles/services-hub.css";
+import { services } from "@/content/services";
+import "@/app/styles/locations-hub.css";
+import "@/app/styles/services-hub.css";
 
 export const metadata: Metadata = {
   title: "Upholstery & Carpet Cleaning Services | SoftNest",
@@ -38,13 +40,13 @@ export default function ServicesPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://softnestcare.ca/",
+        item: siteConfig.url + "/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: "https://softnestcare.ca/services/",
+        item: siteConfig.url + "/services/",
       },
     ],
   };
@@ -147,7 +149,7 @@ export default function ServicesPage() {
           kicker="Professional care for every room"
           title="A fresher home starts with the right service."
           description="Choose the service that best matches your furniture or carpet, or tell us what needs attention and we'll help you narrow it down."
-          action={{ href: "/quote/", label: "Request a free quote" }}
+          action={{ href: "/quote/", label: siteConfig.quoteLabel }}
           image="/images/softnest-hero-room.webp"
           imageAlt="Bright living room with a deep green sofa"
           className="services-final-cta"
@@ -157,7 +159,7 @@ export default function ServicesPage() {
       <SiteFooter />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
       />
     </>
   );

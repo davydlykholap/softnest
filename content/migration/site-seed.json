@@ -1,0 +1,3237 @@
+[
+  {
+    "_id": "siteSettings",
+    "_type": "siteSettings",
+    "name": "SoftNest Fabric Care",
+    "alternateName": "SoftNest",
+    "url": "https://softnestcare.ca",
+    "phone": "+1-416-727-0287",
+    "displayPhone": "(416) 727-0287",
+    "email": "softnest.upholstery@outlook.com",
+    "logo": "https://softnestcare.ca/img/logo/logo1.webp",
+    "heroImage": "https://softnestcare.ca/images/softnest-hero-room.webp",
+    "areasServed": [
+      "Brampton",
+      "Burlington",
+      "Etobicoke",
+      "Hamilton",
+      "Milton",
+      "Mississauga",
+      "Oakville",
+      "Toronto",
+      "Vaughan"
+    ],
+    "languages": [
+      "English",
+      "Russian",
+      "Ukrainian"
+    ],
+    "googleProfileUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48",
+    "instagramUrl": "https://www.instagram.com/softnestfabriccare/",
+    "facebookUrl": "https://www.facebook.com/profile.php?id=61590622653207",
+    "quoteLabel": "Request a free quote",
+    "reviewScore": "5.0",
+    "region": "Greater Toronto Area",
+    "defaultTitle": "Upholstery & Carpet Cleaning Across the GTA | SoftNest",
+    "defaultDescription": "Professional upholstery, sofa, carpet and area rug cleaning across the Greater Toronto Area and Hamilton."
+  },
+  {
+    "_id": "service-upholstery-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "upholstery-cleaning"
+    },
+    "name": "Upholstery Cleaning",
+    "menuLabel": "Upholstery Cleaning",
+    "shortName": "Upholstery",
+    "metaTitle": "Professional Upholstery Cleaning in the GTA | SoftNest",
+    "metaDescription": "Professional upholstery cleaning for sofas, sectionals, chairs, ottomans and other fabric furniture across the GTA.",
+    "summary": "Fabric-appropriate deep cleaning for frequently used upholstered furniture, with stain treatment, extraction and professional drying included.",
+    "heroTitle": "Professional upholstery cleaning for a fresher, more comfortable home",
+    "heroDescription": "We clean sofas, sectionals, chairs, ottomans and other suitable upholstered furniture using a process selected for the fabric, construction and condition of each piece.",
+    "image": "/img/sofa.png",
+    "imageAlt": "Grey upholstered sofa in a natural home interior",
+    "serviceType": [
+      "Upholstery cleaning",
+      "Furniture cleaning",
+      "Sofa cleaning",
+      "Chair cleaning"
+    ],
+    "concerns": [
+      "Everyday soil and body oils",
+      "Food and drink spills",
+      "Pet hair, stains and odours",
+      "Dust and embedded debris",
+      "General dullness and uneven soiling",
+      "Frequently used cushions and armrests"
+    ],
+    "included": [
+      "Pre-inspection and fabric assessment",
+      "Commercial-grade cleaning equipment",
+      "Standard spot and stain treatment",
+      "Cleaning of accessible fabric surfaces",
+      "Professional drying with air movers",
+      "Final review and after-care guidance"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete item or area, along with close-ups of stains, wear or odour concerns."
+      },
+      {
+        "title": "On-site inspection",
+        "description": "We confirm the material, construction, condition and colour stability before choosing the safest practical approach."
+      },
+      {
+        "title": "Pre-treatment and cleaning",
+        "description": "Suitable areas are pre-treated, agitated where appropriate and professionally extracted with commercial-grade equipment."
+      },
+      {
+        "title": "Drying and final review",
+        "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
+      }
+    ],
+    "drying": "Many upholstery items dry in approximately two to four hours. Fabric type, humidity, airflow, cushion density and soil level can change the timing.",
+    "limitations": "Age, permanent dye loss, fibre damage, wear, heat damage and previous cleaning products can limit improvement. We explain realistic expectations before work begins.",
+    "faq": [
+      {
+        "question": "What furniture can you clean?",
+        "answer": "We clean many suitable sofas, sectionals, loveseats, dining chairs, armchairs, recliners, ottomans and other upholstered items after assessing the fabric and construction."
+      },
+      {
+        "question": "Do you clean removable cushions on all sides?",
+        "answer": "When cushions are removable and the fabric is suitable, the accessible sides are included in the quoted scope. Photos help us confirm the construction before booking."
+      },
+      {
+        "question": "Can every stain be removed?",
+        "answer": "No professional cleaner can guarantee every stain. Results depend on the substance, age, fabric, colour loss, wear and previous cleaning attempts."
+      },
+      {
+        "question": "Is professional drying included?",
+        "answer": "Yes. We use air movers after cleaning to support faster and more even drying."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-dining-chair-cleaning"
+      }
+    ],
+    "featured": true,
+    "order": 0,
+    "pageEnabled": true,
+    "showInNavigation": false
+  },
+  {
+    "_id": "service-sofa-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "sofa-cleaning"
+    },
+    "name": "Sofa & Couch Cleaning",
+    "menuLabel": "Sofa & Couch Cleaning",
+    "shortName": "Sofas",
+    "metaTitle": "Sofa & Couch Cleaning Across the GTA | SoftNest",
+    "metaDescription": "Deep sofa and couch cleaning for body oils, spills, stains and everyday buildup. Free photo estimates and professional drying included.",
+    "summary": "Deep cleaning for sofas and couches affected by everyday soil, body oils, spills, stains and odours.",
+    "heroTitle": "Sofa and couch cleaning that goes beyond the surface",
+    "heroDescription": "Frequently used sofas collect body oils, dust, spills and embedded soil. We inspect the fabric first, then clean the accessible surfaces with professional equipment and fabric-appropriate products.",
+    "image": "/img/sofa.png",
+    "imageAlt": "Grey fabric sofa in a natural home interior",
+    "serviceType": [
+      "Sofa cleaning",
+      "Couch cleaning",
+      "Upholstery cleaning"
+    ],
+    "concerns": [
+      "Darkened armrests and headrests",
+      "Body oils and everyday buildup",
+      "Food and drink stains",
+      "Pet hair and light odours",
+      "Dust between cushions",
+      "Unevenly soiled seat cushions"
+    ],
+    "included": [
+      "Fabric and condition inspection",
+      "Vacuuming of accessible areas",
+      "Standard pre-treatment and spot treatment",
+      "Deep cleaning and extraction",
+      "Accessible cushion sides included in the confirmed scope",
+      "Professional drying with air movers"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete item or area, along with close-ups of stains, wear or odour concerns."
+      },
+      {
+        "title": "On-site inspection",
+        "description": "We confirm the material, construction, condition and colour stability before choosing the safest practical approach."
+      },
+      {
+        "title": "Pre-treatment and cleaning",
+        "description": "Suitable areas are pre-treated, agitated where appropriate and professionally extracted with commercial-grade equipment."
+      },
+      {
+        "title": "Drying and final review",
+        "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
+      }
+    ],
+    "drying": "Most sofas dry in roughly two to four hours under normal indoor conditions, although dense cushions and humid rooms may take longer.",
+    "limitations": "Permanent fading, worn fabric, dye loss and old chemical damage cannot be reversed through cleaning. Some deeply set stains may improve without disappearing completely.",
+    "faq": [
+      {
+        "question": "How is a sofa cleaning quote calculated?",
+        "answer": "The price depends on size, seat count, design, removable cushions, fabric and condition. Send photos of the full sofa and problem areas for an estimate."
+      },
+      {
+        "question": "Do you clean the back and sides of the sofa?",
+        "answer": "Accessible upholstered exterior surfaces are included when they form part of the confirmed quote. Tell us if the sofa is against a wall or has unusual construction."
+      },
+      {
+        "question": "Can you remove old sofa stains?",
+        "answer": "We treat suitable stains, but age, fibre damage, colour loss and previous products may limit the result. We provide realistic expectations after inspection."
+      },
+      {
+        "question": "Can decorative pillows be cleaned too?",
+        "answer": "Often, yes. Include them in the photos so we can assess the fabric and add them to the quote."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      }
+    ],
+    "featured": true,
+    "order": 1,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "service-leather-upholstery-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "leather-upholstery-cleaning"
+    },
+    "name": "Leather Upholstery Cleaning",
+    "menuLabel": "Leather Upholstery Cleaning",
+    "shortName": "Leather",
+    "metaTitle": "Leather Upholstery Cleaning Across the GTA | SoftNest",
+    "metaDescription": "Professional leather sofa and upholstery cleaning with conditioning and protective treatment across the GTA. Free photo estimates available.",
+    "summary": "Careful cleaning for suitable leather furniture, followed by a moisturizing conditioning treatment and protective solution to support the finish and everyday care.",
+    "heroTitle": "Leather upholstery cleaning, conditioning and protection",
+    "heroDescription": "We clean suitable leather sofas, sectionals and chairs using a leather-specific process. After cleaning, we apply a moisturizing conditioning treatment and a protective solution, with the approach confirmed after inspecting the leather and its condition.",
+    "image": "/images/softnest-hero-room.webp",
+    "imageAlt": "Clean furnished living room representing SoftNest leather upholstery care",
+    "serviceType": [
+      "Leather upholstery cleaning",
+      "Leather sofa cleaning",
+      "Leather conditioning",
+      "Leather protection"
+    ],
+    "concerns": [
+      "Everyday surface soil and body oils",
+      "Dull or lightly soiled leather surfaces",
+      "Frequently touched armrests and headrests",
+      "Dry-feeling finished leather",
+      "General maintenance cleaning",
+      "Leather furniture needing conditioning and protection"
+    ],
+    "included": [
+      "Leather type and condition assessment",
+      "Controlled surface cleaning",
+      "Leather-appropriate cleaning products",
+      "Moisturizing and conditioning treatment",
+      "Protective solution application",
+      "Final review and after-care guidance"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete leather item and close-ups of any marks, wear, cracking, peeling or areas you want us to inspect."
+      },
+      {
+        "title": "Leather and finish inspection",
+        "description": "We inspect the leather type, finish and existing condition before choosing the appropriate cleaning and care products."
+      },
+      {
+        "title": "Controlled leather cleaning",
+        "description": "Suitable surfaces are cleaned carefully to remove everyday soil and residue without using the extraction process used for fabric upholstery."
+      },
+      {
+        "title": "Condition and protect",
+        "description": "After cleaning, we apply a moisturizing conditioning treatment followed by a protective solution, then review the finished surfaces and after-care."
+      }
+    ],
+    "drying": "Allow the conditioning and protective products to settle and dry before normal use. The technician will explain the practical after-care based on the leather, products used and room conditions.",
+    "limitations": "Cleaning and conditioning cannot repair cracking, peeling or delamination, deep scratches, permanent dye loss, worn finish, cuts or other physical damage. Some stains and colour changes may be permanent.",
+    "faq": [
+      {
+        "question": "What does your leather upholstery service include?",
+        "answer": "The service includes careful cleaning of suitable leather surfaces, a moisturizing conditioning treatment and application of a protective solution, followed by after-care guidance."
+      },
+      {
+        "question": "Do you clean every type of leather?",
+        "answer": "Not every leather uses the same process. We inspect the material and finish first. Suede, nubuck, heavily damaged leather and specialty finishes may require a different approach or may not be suitable for our standard service."
+      },
+      {
+        "question": "Can leather cleaning remove scratches or peeling?",
+        "answer": "No. Cleaning can remove suitable surface soil and improve the overall appearance, but it cannot repair scratches, peeling, cracking, dye loss or worn protective finish."
+      },
+      {
+        "question": "How do I get a leather sofa quote?",
+        "answer": "Send clear photos of the full sofa or chair and close-ups of any marks or worn areas. We use the photos to confirm the item, condition and expected service scope before booking."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      }
+    ],
+    "heroProofs": [
+      "Leather-appropriate cleaning",
+      "Conditioning treatment",
+      "Protective solution applied"
+    ],
+    "includedHeading": "Cleaning, conditioning and protection in one service",
+    "processHeading": "From photos to cleaned, conditioned and protected leather",
+    "afterCareEyebrow": "After-care",
+    "afterCareHeading": "When the furniture can be used again",
+    "featured": true,
+    "order": 2,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "service-sectional-furniture-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "sectional-furniture-cleaning"
+    },
+    "name": "Sectional & Furniture Cleaning",
+    "menuLabel": "Sectional & Furniture Cleaning",
+    "shortName": "Sectionals",
+    "metaTitle": "Sectional & Furniture Cleaning in the GTA | SoftNest",
+    "metaDescription": "Professional sectional, loveseat, recliner, ottoman and upholstered furniture cleaning across the GTA.",
+    "summary": "Detailed cleaning for large sectionals, loveseats, recliners, ottomans and other upholstered furniture.",
+    "heroTitle": "Thorough sectional and upholstered furniture cleaning",
+    "heroDescription": "Large sectionals need enough time, careful preparation and a clear item count. We clean each accessible section methodically, including removable cushions where suitable and included in the estimate.",
+    "image": "/img/sectional_furniture.webp",
+    "imageAlt": "Professional cleaning of a large upholstered sectional",
+    "serviceType": [
+      "Sectional cleaning",
+      "Furniture cleaning",
+      "Loveseat cleaning",
+      "Recliner cleaning"
+    ],
+    "concerns": [
+      "Large multi-seat sectionals",
+      "Frequently used family-room furniture",
+      "Removable seat and back cushions",
+      "Recliners and upholstered armchairs",
+      "Ottomans and upholstered benches",
+      "Food, drink and pet-related soil"
+    ],
+    "included": [
+      "Accurate section and cushion count",
+      "Fabric-specific pre-inspection",
+      "Standard stain treatment",
+      "Deep cleaning of accessible upholstery",
+      "Commercial-grade extraction",
+      "Professional drying with air movers"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete item or area, along with close-ups of stains, wear or odour concerns."
+      },
+      {
+        "title": "On-site inspection",
+        "description": "We confirm the material, construction, condition and colour stability before choosing the safest practical approach."
+      },
+      {
+        "title": "Pre-treatment and cleaning",
+        "description": "Suitable areas are pre-treated, agitated where appropriate and professionally extracted with commercial-grade equipment."
+      },
+      {
+        "title": "Drying and final review",
+        "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
+      }
+    ],
+    "drying": "Sectionals commonly require two to four hours to dry, with thicker cushions or limited airflow sometimes extending the drying period.",
+    "limitations": "Wear patterns, permanent discoloration, damaged fibres and old stains may remain visible after the removable soil has been cleaned.",
+    "faq": [
+      {
+        "question": "How do you count sectional seats?",
+        "answer": "We review the full shape, usable seating sections, chaise sections and cushion construction from photos. This is more accurate than relying only on the overall length."
+      },
+      {
+        "question": "Do large sectionals take longer to clean?",
+        "answer": "Yes. More sections, cushions, staining and detailed edges increase the time required. We schedule enough time to complete the work without rushing."
+      },
+      {
+        "question": "Can an ottoman be cleaned during the same visit?",
+        "answer": "Yes. Add a clear photo and dimensions or approximate size to the quote request."
+      },
+      {
+        "question": "Can you clean recliners and accent furniture?",
+        "answer": "We can clean many suitable upholstered recliners and accent pieces after assessing the fabric, mechanism and condition."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-armchair-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "featured": true,
+    "order": 3,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "service-carpet-area-rug-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "carpet-area-rug-cleaning"
+    },
+    "name": "Carpet & Area Rug Cleaning",
+    "menuLabel": "Carpet & Area Rug Cleaning",
+    "shortName": "Carpets & Rugs",
+    "metaTitle": "Carpet & Area Rug Cleaning Across the GTA | SoftNest",
+    "metaDescription": "Professional carpet, hallway, room and suitable area rug cleaning with stain treatment and commercial-grade extraction.",
+    "summary": "Professional extraction for wall-to-wall carpet, high-traffic areas and suitable area rugs after fibre and backing assessment.",
+    "heroTitle": "Professional carpet and area rug cleaning for lived-in homes",
+    "heroDescription": "We clean suitable residential carpets and area rugs to reduce embedded soil, traffic-lane buildup, spots and odours while avoiding unnecessary oversaturation.",
+    "image": "/img/rug_2.webp",
+    "imageAlt": "Professional carpet and area rug cleaning result",
+    "serviceType": [
+      "Carpet cleaning",
+      "Area rug cleaning",
+      "Residential carpet cleaning"
+    ],
+    "concerns": [
+      "Traffic lanes and entry areas",
+      "Food and drink spots",
+      "Pet-related staining and odours",
+      "Embedded soil and dust",
+      "Carpeted rooms and hallways",
+      "Suitable on-site area rugs"
+    ],
+    "included": [
+      "Fibre and condition assessment",
+      "Pre-vacuuming where required",
+      "Standard spot treatment",
+      "Professional hot-water extraction where suitable",
+      "Care around edges and transitions",
+      "Air movement and drying guidance"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete item or area, along with close-ups of stains, wear or odour concerns."
+      },
+      {
+        "title": "On-site inspection",
+        "description": "We confirm the material, construction, condition and colour stability before choosing the safest practical approach."
+      },
+      {
+        "title": "Pre-treatment and cleaning",
+        "description": "Suitable areas are pre-treated, agitated where appropriate and professionally extracted with commercial-grade equipment."
+      },
+      {
+        "title": "Drying and final review",
+        "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
+      }
+    ],
+    "drying": "Residential carpets often dry in approximately four to eight hours. Ventilation, humidity, pile density and the cleaning scope affect the final timing.",
+    "limitations": "Some rugs require specialist off-site cleaning because of natural fibres, unstable dyes, delicate construction or backing concerns. Permanent colour loss and fibre wear cannot be cleaned away.",
+    "faq": [
+      {
+        "question": "Do you clean wall-to-wall carpet and area rugs?",
+        "answer": "Yes, when the material and construction are suitable for on-site cleaning. Photos, room dimensions and rug dimensions help us prepare the estimate."
+      },
+      {
+        "question": "Do you move furniture?",
+        "answer": "We discuss safe access and light-item movement before the appointment. Large, fragile or heavily loaded furniture may need to remain in place or be moved beforehand."
+      },
+      {
+        "question": "Can you remove pet odour from carpet?",
+        "answer": "Targeted treatment may help, but the result depends on how far contamination has reached into the carpet, underlay and subfloor. We explain the likely limits before treatment."
+      },
+      {
+        "question": "How long does carpet take to dry?",
+        "answer": "Many carpets dry in roughly four to eight hours, depending on pile, ventilation, humidity and the amount of cleaning required."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-stairs-hallways-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      }
+    ],
+    "featured": true,
+    "order": 4,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "service-mattress-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "mattress-cleaning"
+    },
+    "name": "Mattress Cleaning",
+    "menuLabel": "Mattress Cleaning",
+    "shortName": "Mattresses",
+    "metaTitle": "Professional Mattress Cleaning in the GTA | SoftNest",
+    "metaDescription": "Professional mattress surface cleaning for everyday buildup, marks and odours across the GTA.",
+    "summary": "Professional mattress surface cleaning for everyday buildup, suitable spots, light odours and general freshening.",
+    "heroTitle": "A careful professional clean for your mattress",
+    "heroDescription": "Mattresses need controlled moisture, careful extraction and realistic stain expectations. We assess the surface, construction and staining before selecting the treatment.",
+    "image": "/img/matress_cleaning.webp",
+    "imageAlt": "Before and after professional mattress cleaning",
+    "serviceType": [
+      "Mattress cleaning",
+      "Upholstery cleaning"
+    ],
+    "concerns": [
+      "Everyday surface buildup",
+      "Body oils and perspiration marks",
+      "Food or drink spots",
+      "Light odours",
+      "Dust on accessible surfaces",
+      "One-side or two-side cleaning requests"
+    ],
+    "included": [
+      "Surface inspection",
+      "Fabric-safe pre-treatment",
+      "Standard spot treatment",
+      "Controlled-moisture cleaning",
+      "Professional extraction",
+      "Air-mover drying support"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete item or area, along with close-ups of stains, wear or odour concerns."
+      },
+      {
+        "title": "On-site inspection",
+        "description": "We confirm the material, construction, condition and colour stability before choosing the safest practical approach."
+      },
+      {
+        "title": "Pre-treatment and cleaning",
+        "description": "Suitable areas are pre-treated, agitated where appropriate and professionally extracted with commercial-grade equipment."
+      },
+      {
+        "title": "Drying and final review",
+        "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
+      }
+    ],
+    "drying": "Mattresses commonly need several hours to dry fully. Keep bedding off until the surface is completely dry and maintain good ventilation.",
+    "limitations": "Old yellowing, oxidation, dye changes and deeply set body-fluid stains may not return to the original colour even when the surface is thoroughly cleaned.",
+    "faq": [
+      {
+        "question": "Do you clean one side or both sides of a mattress?",
+        "answer": "Both options may be available. Tell us the mattress size and whether you want one or two sides included so the estimate is accurate."
+      },
+      {
+        "question": "Can every mattress stain be removed?",
+        "answer": "No. Older stains may have permanently changed the fibres or colour. We treat suitable spots and explain realistic expectations after inspection."
+      },
+      {
+        "question": "Can I sleep on the mattress the same night?",
+        "answer": "Only after it is completely dry. Drying time varies, so schedule the cleaning early enough to allow proper ventilation and air movement."
+      },
+      {
+        "question": "Do you clean box springs?",
+        "answer": "Suitable upholstered box springs can often be added. Include a photo so we can confirm the material and price."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      }
+    ],
+    "order": 5,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "service-dining-chair-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "dining-chair-cleaning"
+    },
+    "name": "Dining Chair Cleaning",
+    "menuLabel": "Dining Chair Cleaning",
+    "shortName": "Dining Chairs",
+    "metaTitle": "Dining Chair Cleaning Across the GTA | SoftNest",
+    "metaDescription": "Professional upholstered dining chair cleaning for food marks, spills and everyday buildup across the GTA.",
+    "summary": "Detailed cleaning for upholstered dining-chair seats and backs affected by food, spills and everyday use.",
+    "heroTitle": "Upholstered dining chair cleaning for everyday marks and spills",
+    "heroDescription": "Dining chairs often collect food residue, drink spots and uneven soil. We clean suitable upholstered seats and backs with controlled moisture and careful extraction.",
+    "image": "/img/dining_chairs.webp",
+    "imageAlt": "Before and after cleaning of upholstered dining chairs",
+    "serviceType": [
+      "Dining chair cleaning",
+      "Chair upholstery cleaning"
+    ],
+    "concerns": [
+      "Food and drink marks",
+      "Darkened seat edges",
+      "Everyday family use",
+      "Upholstered seats and backs",
+      "Matching chair sets",
+      "Light odours and general buildup"
+    ],
+    "included": [
+      "Chair-by-chair inspection",
+      "Fabric suitability check",
+      "Standard spot treatment",
+      "Cleaning of quoted upholstered areas",
+      "Commercial extraction",
+      "Professional drying support"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete item or area, along with close-ups of stains, wear or odour concerns."
+      },
+      {
+        "title": "On-site inspection",
+        "description": "We confirm the material, construction, condition and colour stability before choosing the safest practical approach."
+      },
+      {
+        "title": "Pre-treatment and cleaning",
+        "description": "Suitable areas are pre-treated, agitated where appropriate and professionally extracted with commercial-grade equipment."
+      },
+      {
+        "title": "Drying and final review",
+        "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
+      }
+    ],
+    "drying": "Dining chairs usually dry faster than heavily cushioned sofas, but fabric, padding and airflow still affect the timing.",
+    "limitations": "Permanent food dye, faded fabric, worn edges and damaged foam or backing may remain visible after cleaning.",
+    "faq": [
+      {
+        "question": "Do you clean both the seat and upholstered back?",
+        "answer": "Yes, when both areas are upholstered and included in the quote. Send photos from the front and back so we can confirm the scope."
+      },
+      {
+        "question": "Can several dining chairs be cleaned together?",
+        "answer": "Yes. Tell us the total chair count and whether every chair has the same design and condition."
+      },
+      {
+        "question": "Can food stains be removed?",
+        "answer": "Many improve significantly, but results depend on the food, dyes, age, fabric and previous cleaning products."
+      },
+      {
+        "question": "How soon can the chairs be used?",
+        "answer": "Use them only after the upholstery is completely dry. Air movers help reduce drying time."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-armchair-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      }
+    ],
+    "order": 6,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "service-armchair-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "armchair-cleaning"
+    },
+    "name": "Armchair & Recliner Cleaning",
+    "menuLabel": "Armchair Cleaning",
+    "shortName": "Armchairs",
+    "metaTitle": "Armchair & Recliner Cleaning in the GTA | SoftNest",
+    "metaDescription": "Professional armchair, recliner and accent-chair upholstery cleaning across the GTA.",
+    "summary": "Fabric-appropriate cleaning for armchairs, recliners and accent seating, including high-contact areas and suitable cushions.",
+    "heroTitle": "Professional cleaning for armchairs, recliners and accent seating",
+    "heroDescription": "We clean suitable upholstered armchairs and recliners with attention to high-contact arms, headrests, seat cushions, seams and moving components.",
+    "image": "/img/sectional_furniture.webp",
+    "imageAlt": "Professional upholstered armchair cleaning",
+    "serviceType": [
+      "Armchair cleaning",
+      "Recliner cleaning",
+      "Chair upholstery cleaning"
+    ],
+    "concerns": [
+      "Darkened headrests and arms",
+      "Body oils and everyday soil",
+      "Food or drink spots",
+      "Recliner seat and footrest buildup",
+      "Accent-chair freshening",
+      "Pet hair and light odours"
+    ],
+    "included": [
+      "Fabric and mechanism inspection",
+      "Standard stain treatment",
+      "Cleaning of accessible quoted surfaces",
+      "Care around seams and moving parts",
+      "Professional extraction",
+      "Air-mover drying support"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete item or area, along with close-ups of stains, wear or odour concerns."
+      },
+      {
+        "title": "On-site inspection",
+        "description": "We confirm the material, construction, condition and colour stability before choosing the safest practical approach."
+      },
+      {
+        "title": "Pre-treatment and cleaning",
+        "description": "Suitable areas are pre-treated, agitated where appropriate and professionally extracted with commercial-grade equipment."
+      },
+      {
+        "title": "Drying and final review",
+        "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
+      }
+    ],
+    "drying": "Most armchairs and recliners dry in approximately two to four hours, depending on cushion thickness, fabric and airflow.",
+    "limitations": "Mechanical damage, worn finishes, permanent dye loss and fabric abrasion cannot be corrected through cleaning.",
+    "faq": [
+      {
+        "question": "Can you clean a powered recliner?",
+        "answer": "Often, yes. We inspect the construction and protect electrical or mechanical components from unnecessary moisture."
+      },
+      {
+        "question": "Are removable armchair cushions cleaned on both sides?",
+        "answer": "Suitable accessible sides can be included in the confirmed quote. Send photos showing whether the cushions detach."
+      },
+      {
+        "question": "Can you clean delicate accent chairs?",
+        "answer": "We first assess the fabric, care information and colour stability. Some delicate materials may require a different method or specialist service."
+      },
+      {
+        "question": "Can an armchair be added to a sofa appointment?",
+        "answer": "Yes. Include it in the original photo estimate so we can plan enough time and provide the combined total."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-dining-chair-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      }
+    ],
+    "order": 7,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "service-stairs-hallways-cleaning",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "stairs-hallways-cleaning"
+    },
+    "name": "Carpeted Stairs & Hallways",
+    "menuLabel": "Stairs & Hallways",
+    "shortName": "Stairs & Hallways",
+    "metaTitle": "Carpeted Stairs & Hallway Cleaning in the GTA | SoftNest",
+    "metaDescription": "Professional cleaning for carpeted stairs, landings and hallways across the GTA.",
+    "summary": "Focused cleaning for carpeted stairs, landings and hallways where traffic lanes and edge soil build up quickly.",
+    "heroTitle": "Detailed cleaning for carpeted stairs, landings and hallways",
+    "heroDescription": "Stairs and hallways receive concentrated foot traffic. We clean suitable carpeted steps, risers, landings and connecting hallways with tools sized for tighter areas.",
+    "image": "/img/before_after_carpet_cleaning.webp",
+    "imageAlt": "Before and after cleaning of a residential carpeted hallway",
+    "serviceType": [
+      "Stair carpet cleaning",
+      "Hallway carpet cleaning",
+      "Carpet cleaning"
+    ],
+    "concerns": [
+      "Dark traffic lanes",
+      "Step edges and risers",
+      "Landings and turns",
+      "Tracked-in soil",
+      "Spots on narrow pathways",
+      "Hallways connecting carpeted rooms"
+    ],
+    "included": [
+      "Step and landing count review",
+      "Pre-inspection",
+      "Standard spot treatment",
+      "Detailed cleaning with stair tools",
+      "Professional extraction",
+      "Drying and safe-use guidance"
+    ],
+    "process": [
+      {
+        "title": "Photo review and estimate",
+        "description": "Send clear photos of the complete item or area, along with close-ups of stains, wear or odour concerns."
+      },
+      {
+        "title": "On-site inspection",
+        "description": "We confirm the material, construction, condition and colour stability before choosing the safest practical approach."
+      },
+      {
+        "title": "Pre-treatment and cleaning",
+        "description": "Suitable areas are pre-treated, agitated where appropriate and professionally extracted with commercial-grade equipment."
+      },
+      {
+        "title": "Drying and final review",
+        "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
+      }
+    ],
+    "drying": "Drying often takes approximately four to eight hours. Avoid using damp stairs where possible and follow the on-site safety guidance.",
+    "limitations": "Worn step edges, flattened pile, permanent colour loss and damaged carpet may remain visible even after soil is removed.",
+    "faq": [
+      {
+        "question": "How are carpeted stairs priced?",
+        "answer": "The estimate depends on the number of steps, whether risers are carpeted, landings, turns and overall condition. Send a full staircase photo and step count."
+      },
+      {
+        "question": "Can hallways be cleaned with carpeted rooms?",
+        "answer": "Yes. Include the hallway length or approximate dimensions together with the rooms and stairs in the quote request."
+      },
+      {
+        "question": "Do you clean the vertical risers?",
+        "answer": "Carpeted risers can be included when shown in the photos and confirmed in the scope."
+      },
+      {
+        "question": "When can the stairs be used again?",
+        "answer": "Wait until the carpet is dry whenever possible. If access is unavoidable, follow the technician’s safety guidance carefully."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      }
+    ],
+    "order": 8,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "service-pet-stain-odour-removal",
+    "_type": "service",
+    "slug": {
+      "_type": "slug",
+      "current": "pet-stain-odour-removal"
+    },
+    "name": "Pet Stain & Odour Treatment",
+    "menuLabel": "Pet Stain & Odour Removal",
+    "shortName": "Pet Treatment",
+    "metaTitle": "Pet Stain & Odour Treatment for Upholstery and Carpet | SoftNest",
+    "metaDescription": "Targeted pet stain and odour treatment for suitable sofas, sectionals, carpets and rugs across the GTA.",
+    "summary": "Targeted treatment for pet accidents, visible staining and odour sources in suitable upholstery and carpet.",
+    "heroTitle": "Targeted pet stain and odour treatment with honest expectations",
+    "heroDescription": "Pet contamination can travel below the visible surface. We inspect the affected material, explain how far treatment can reasonably reach and recommend the appropriate cleaning approach.",
+    "image": "/img/pet_stain.jpg",
+    "imageAlt": "Pet stain and odour treatment for home upholstery",
+    "serviceType": [
+      "Pet stain removal",
+      "Pet odour treatment",
+      "Upholstery cleaning",
+      "Carpet cleaning"
+    ],
+    "concerns": [
+      "Recent pet accidents",
+      "Visible urine staining",
+      "Odour in sofa cushions",
+      "Affected carpet areas",
+      "Repeat contamination spots",
+      "Uncertain contamination depth"
+    ],
+    "included": [
+      "Affected-area inspection",
+      "Contamination-depth discussion",
+      "Suitable targeted pre-treatment",
+      "Cleaning and extraction",
+      "Realistic odour expectations",
+      "Professional drying support"
+    ],
+    "process": [
+      {
+        "title": "Identify the affected areas",
+        "description": "Send photos and describe where the accident occurred, how long ago it happened and whether odour remains when the material is dry."
+      },
+      {
+        "title": "Assess likely depth",
+        "description": "We consider the fabric, cushion filling, carpet backing or underlay and whether contamination may have travelled beyond the cleanable surface."
+      },
+      {
+        "title": "Treat and extract",
+        "description": "Suitable affected areas receive targeted treatment followed by controlled cleaning and extraction."
+      },
+      {
+        "title": "Dry and reassess",
+        "description": "Air movers support drying. Final odour assessment is most reliable once the material is fully dry."
+      }
+    ],
+    "drying": "Treated areas must dry completely before the final odour result can be assessed. Cushion filling, carpet underlay, humidity and contamination depth affect timing.",
+    "limitations": "Surface cleaning cannot always reach contamination that has entered deep foam, carpet underlay, wood or subfloor. Severe or repeated contamination may require replacement of affected materials.",
+    "faq": [
+      {
+        "question": "Can pet urine odour always be removed?",
+        "answer": "No. Results depend on the depth, age and amount of contamination. We explain whether the source appears limited to the surface or may extend into materials that cannot be fully flushed on site."
+      },
+      {
+        "question": "Should I use household products before the appointment?",
+        "answer": "Avoid adding more products unless necessary for immediate blotting. Some cleaners can set stains, leave residues or interfere with professional treatment."
+      },
+      {
+        "question": "Can you treat only one affected area?",
+        "answer": "Yes, when appropriate, although the surrounding item or room may also need cleaning for an even overall result."
+      },
+      {
+        "question": "When will I know whether the odour is gone?",
+        "answer": "The best assessment is after the material has dried fully. Moisture can temporarily change how odours are perceived."
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      }
+    ],
+    "featured": true,
+    "order": 9,
+    "pageEnabled": true,
+    "showInNavigation": true
+  },
+  {
+    "_id": "location-mississauga",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "mississauga"
+    },
+    "name": "Mississauga",
+    "shortDescription": "Local upholstery, sofa, sectional, carpet and area rug cleaning throughout Mississauga.",
+    "introduction": "SoftNest provides careful, fabric-appropriate cleaning throughout Mississauga for sofas, sectionals, dining chairs, mattresses, carpets and area rugs. We inspect the material and problem areas before choosing the treatment, so the process fits the furniture rather than relying on one method for everything.",
+    "localConsiderations": "Mississauga homes range from high-rise condos near the city centre to larger family homes in established neighbourhoods. When access, elevators or visitor parking need coordination, tell us when requesting your quote so the visit can be planned efficiently.",
+    "neighbourhoods": [
+      "City Centre",
+      "Port Credit",
+      "Streetsville",
+      "Clarkson",
+      "Meadowvale",
+      "Erin Mills",
+      "Cooksville",
+      "Mineola"
+    ],
+    "mapQuery": "Mississauga, Ontario",
+    "faq": [
+      {
+        "question": "Do you provide condo upholstery cleaning in Mississauga?",
+        "answer": "Yes. Let us know about elevator booking, loading access or parking instructions when you request a quote."
+      },
+      {
+        "question": "Can you treat pet odours in sofas and sectionals?",
+        "answer": "Yes. We inspect how far the contamination has travelled and explain the realistic treatment options before starting."
+      },
+      {
+        "question": "How long does upholstery take to dry?",
+        "answer": "Most upholstery dries in roughly two to four hours, although fabric type, airflow, humidity and soil level can change the timing."
+      }
+    ],
+    "order": 0,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/mississauga.webp",
+    "imageAlt": "Homes and neighbourhoods in Mississauga",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-oakville"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-brampton"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-etobicoke"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-milton"
+      }
+    ],
+    "expanded": true,
+    "expandedContent": {
+      "quickBenefits": [
+        {
+          "icon": "building",
+          "title": "Condo & high-rise access",
+          "description": "Visitor parking, elevators and loading details planned in advance."
+        },
+        {
+          "icon": "fabric",
+          "title": "Fabric-specific cleaning",
+          "description": "Methods selected for upholstery, carpet and area-rug fibres."
+        },
+        {
+          "icon": "dryer",
+          "title": "Professional drying",
+          "description": "Air movers included to support faster, more even drying."
+        },
+        {
+          "icon": "camera",
+          "title": "Free photo estimates",
+          "description": "Send full-item photos and close-ups before booking."
+        }
+      ],
+      "services": [
+        {
+          "slug": "sectional-furniture-cleaning",
+          "title": "Sofas & Sectionals",
+          "description": "Professional sofa and sectional cleaning for body oils, food spills, everyday soil and odours.",
+          "image": "/img/sofa.png",
+          "alt": "Grey upholstered sofa in a natural home interior"
+        },
+        {
+          "slug": "carpet-area-rug-cleaning",
+          "title": "Carpets & Area Rugs",
+          "description": "Residential carpet and suitable area-rug cleaning for traffic lanes, embedded dirt and frequently used rooms.",
+          "image": "/img/before_after_carpet_cleaning.webp",
+          "alt": "Before and after residential carpet and area rug cleaning"
+        },
+        {
+          "slug": "dining-chair-cleaning",
+          "title": "Dining Chairs & Armchairs",
+          "description": "Upholstered dining chair and armchair cleaning for seats, backs, food marks and everyday buildup.",
+          "image": "/img/dining_chairs.webp",
+          "alt": "Before and after cleaning of upholstered dining chairs and armchairs"
+        },
+        {
+          "slug": "pet-stain-odour-removal",
+          "title": "Pet Stain & Odour Removal",
+          "description": "Targeted treatment for pet accidents, visible staining and odour sources, with realistic expectations explained first.",
+          "image": "/img/pet_stain.jpg",
+          "alt": "Professional pet stain and odour treatment on upholstered furniture"
+        }
+      ],
+      "resultExamples": [
+        {
+          "category": "Sofa",
+          "title": "Sectional sofa cleaning",
+          "description": "Stain treatment and cleaning across the accessible fabric surfaces.",
+          "image": "/img/gray_sofa_stain.png",
+          "alt": "Before and after stain removal on a grey sectional sofa cushion"
+        },
+        {
+          "category": "Carpet",
+          "title": "Residential carpet cleaning",
+          "description": "High-traffic soil lifted for a cleaner, more even overall finish.",
+          "image": "/img/before_after_carpet_cleaning.webp",
+          "alt": "Before and after cleaning of a residential hallway carpet"
+        },
+        {
+          "category": "Dining chairs",
+          "title": "Upholstered chair cleaning",
+          "description": "Food marks and everyday buildup treated across the chair seats.",
+          "image": "/img/dining_chairs.webp",
+          "alt": "Before and after cleaning of two upholstered dining chairs"
+        },
+        {
+          "category": "Sectional",
+          "title": "Full sectional cleaning",
+          "description": "Cushions and accessible sections cleaned for a fresher overall result.",
+          "image": "/img/sectional.png",
+          "alt": "Before and after cleaning of a large light-coloured sectional sofa"
+        }
+      ],
+      "processSteps": [
+        {
+          "icon": "camera",
+          "title": "Send photos",
+          "description": "Show the full furniture item or carpeted area and include close-ups of stains or concerns."
+        },
+        {
+          "icon": "estimate",
+          "title": "Receive a clear estimate",
+          "description": "We confirm the expected scope, included cleaning and any access details before booking."
+        },
+        {
+          "icon": "cleaning",
+          "title": "Inspection & cleaning",
+          "description": "We inspect the material on site, prepare the work area and use an appropriate cleaning method."
+        },
+        {
+          "icon": "sparkle",
+          "title": "Drying & final review",
+          "description": "Air movers support faster drying, followed by a final walkthrough and practical after-care guidance."
+        }
+      ],
+      "localAdvantages": [
+        {
+          "icon": "pin",
+          "title": "GTA-wide scheduling",
+          "description": "Appointments planned across Mississauga and other Greater Toronto Area communities."
+        },
+        {
+          "icon": "equipment",
+          "title": "Commercial-grade equipment",
+          "description": "Professional extraction equipment selected for upholstery, carpet and suitable area rugs."
+        },
+        {
+          "icon": "inspection",
+          "title": "Honest stain expectations",
+          "description": "We explain what appears treatable and where dye loss, wear or fibre damage may remain."
+        },
+        {
+          "icon": "home",
+          "title": "Multiple items in one visit",
+          "description": "Combine sofas, chairs, mattresses, carpets, suitable rugs and pet treatment in one photo-estimate request."
+        }
+      ],
+      "mississaugaFaqs": [
+        {
+          "question": "How much does upholstery cleaning cost in Mississauga?",
+          "answer": "Pricing depends on the item’s size, design, fabric and condition. Send clear photos of the full item and any problem areas, and we can usually provide an estimated price before booking."
+        },
+        {
+          "question": "Do you provide condo upholstery cleaning in Mississauga?",
+          "answer": "Yes. Please share visitor-parking, loading, elevator-booking and access instructions with your quote request so the appointment can be planned around your building’s rules."
+        },
+        {
+          "question": "Can you treat pet odours in sofas and sectionals?",
+          "answer": "Yes. We assess how far the contamination may have travelled and explain the suitable treatment options and realistic limitations before beginning."
+        },
+        {
+          "question": "How long does upholstery take to dry?",
+          "answer": "Many upholstery items dry in roughly two to four hours, although fabric type, airflow, humidity and soil level affect the timing. Professional drying with our air movers is included."
+        },
+        {
+          "question": "Can carpet and upholstery be cleaned in one appointment?",
+          "answer": "Often, yes. Include every sofa, chair, carpeted room, staircase or suitable area rug in the same request so we can confirm the scope, timing and estimated price."
+        },
+        {
+          "question": "Do you move furniture before carpet cleaning?",
+          "answer": "We discuss safe access and light-item movement before the visit. Large, fragile or heavily loaded furniture may need to remain in place or be moved by the customer in advance."
+        },
+        {
+          "question": "What if an old stain does not come out completely?",
+          "answer": "We provide realistic expectations after inspection. Age, dye loss, fibre damage, heat and previous cleaning products can permanently alter the material and limit improvement."
+        },
+        {
+          "question": "Which Mississauga neighbourhoods do you serve?",
+          "answer": "We serve homes and condos across Mississauga, including City Centre, Port Credit, Streetsville, Clarkson, Meadowvale, Erin Mills, Cooksville and Mineola. Send your postal code to confirm availability."
+        }
+      ],
+      "copy": [
+        {
+          "key": "page-1",
+          "label": "Local fabric care, done right",
+          "text": "Local fabric care, done right"
+        },
+        {
+          "key": "page-2",
+          "label": "Upholstery &",
+          "text": "Upholstery &"
+        },
+        {
+          "key": "page-3",
+          "label": "Carpet Cleaning",
+          "text": "Carpet Cleaning"
+        },
+        {
+          "key": "page-4",
+          "label": "in Mississauga",
+          "text": "in {{city}}"
+        },
+        {
+          "key": "page-5",
+          "label": "Professional cleaning for sofas, sectionals, chairs, carpets and area rugs—planned around ",
+          "text": "Professional cleaning for sofas, sectionals, chairs, carpets and area rugs—planned around your fabric, home, condo access and preferred appointment time."
+        },
+        {
+          "key": "page-6",
+          "label": "Care that fits Mississauga",
+          "text": "Care that fits {{city}}"
+        },
+        {
+          "key": "page-7",
+          "label": "Local cleaning, planned before arrival",
+          "text": "Local cleaning, planned before arrival"
+        },
+        {
+          "key": "page-8",
+          "label": "We review your photos, fabric, item count and access details so the appointment begins wit",
+          "text": "We review your photos, fabric, item count and access details so the appointment begins with a clear scope and an appropriate cleaning plan."
+        },
+        {
+          "key": "page-9",
+          "label": "Our services",
+          "text": "Our services"
+        },
+        {
+          "key": "page-10",
+          "label": "What we clean in Mississauga",
+          "text": "What we clean in {{city}}"
+        },
+        {
+          "key": "page-11",
+          "label": "From frequently used furniture to carpets, area rugs and pet-related concerns, we select t",
+          "text": "From frequently used furniture to carpets, area rugs and pet-related concerns, we select the cleaning approach after inspecting the material and condition."
+        },
+        {
+          "key": "page-12",
+          "label": "Real cleaning results",
+          "text": "Real cleaning results"
+        },
+        {
+          "key": "page-13",
+          "label": "Before & after results you can inspect",
+          "text": "Before & after results you can inspect"
+        },
+        {
+          "key": "page-14",
+          "label": "Examples from sofa, chair and residential carpet cleaning. Final results depend on fibre t",
+          "text": "Examples from sofa, chair and residential carpet cleaning. Final results depend on fibre type, condition, staining and previous treatments."
+        },
+        {
+          "key": "page-15",
+          "label": "View more results",
+          "text": "View more results"
+        },
+        {
+          "key": "page-16",
+          "label": "Our process",
+          "text": "Our process"
+        },
+        {
+          "key": "page-17",
+          "label": "A simple, clear cleaning process",
+          "text": "A simple, clear cleaning process"
+        },
+        {
+          "key": "page-18",
+          "label": "Our service area",
+          "text": "Our service area"
+        },
+        {
+          "key": "page-19",
+          "label": "Serving Mississauga neighbourhoods",
+          "text": "Serving {{city}} neighbourhoods"
+        },
+        {
+          "key": "page-20",
+          "label": "We serve City Centre and Square One condos, Port Credit apartments, and family homes acros",
+          "text": "We serve City Centre and Square One condos, Port Credit apartments, and family homes across Erin Mills, Meadowvale, Streetsville, Clarkson, Cooksville and Mineola."
+        },
+        {
+          "key": "page-21",
+          "label": "For condo appointments, include visitor parking, loading access and elevator-booking requi",
+          "text": "For condo appointments, include visitor parking, loading access and elevator-booking requirements with your quote request."
+        },
+        {
+          "key": "page-22",
+          "label": "Nearby area? Send your postal code and we’ll confirm availability.",
+          "text": "Nearby area? Send your postal code and we’ll confirm availability."
+        },
+        {
+          "key": "page-23",
+          "label": "Why choose SoftNest",
+          "text": "Why choose SoftNest"
+        },
+        {
+          "key": "page-24",
+          "label": "Why Mississauga homeowners choose our cleaning service",
+          "text": "Why {{city}} homeowners choose our cleaning service"
+        },
+        {
+          "key": "page-25",
+          "label": "Frequently asked questions",
+          "text": "Frequently asked questions"
+        },
+        {
+          "key": "page-26",
+          "label": "Mississauga upholstery & carpet cleaning FAQs",
+          "text": "{{city}} upholstery & carpet cleaning FAQs"
+        },
+        {
+          "key": "page-27",
+          "label": "Free photo estimates",
+          "text": "Free photo estimates"
+        },
+        {
+          "key": "page-28",
+          "label": "Show us what needs cleaning",
+          "text": "Show us what needs cleaning"
+        },
+        {
+          "key": "page-29",
+          "label": "Send clear photos of the full item and problem areas for a no-obligation estimate before b",
+          "text": "Send clear photos of the full item and problem areas for a no-obligation estimate before booking."
+        },
+        {
+          "key": "page-30",
+          "label": "Request a free quote",
+          "text": "{{quote}}"
+        },
+        {
+          "key": "page-31",
+          "label": "Call (416) 727-0287",
+          "text": "Call {{phone}}"
+        }
+      ],
+      "heroImage": "/images/softnest-hero-room.webp",
+      "mapImage": "/img/mississauga/service-area-map.webp",
+      "mapAlt": "Map showing SoftNest service coverage across Mississauga neighbourhoods",
+      "mapLabels": [
+        {
+          "name": "Meadowvale",
+          "left": 24,
+          "top": 18
+        },
+        {
+          "name": "Streetsville",
+          "left": 28,
+          "top": 42
+        },
+        {
+          "name": "Erin Mills",
+          "left": 43,
+          "top": 31
+        },
+        {
+          "name": "City Centre",
+          "left": 59,
+          "top": 37
+        },
+        {
+          "name": "Cooksville",
+          "left": 61,
+          "top": 52
+        },
+        {
+          "name": "Clarkson",
+          "left": 29,
+          "top": 70
+        },
+        {
+          "name": "Mineola",
+          "left": 70,
+          "top": 63
+        },
+        {
+          "name": "Port Credit",
+          "left": 63,
+          "top": 77
+        }
+      ]
+    },
+    "metaDescription": "Professional upholstery and carpet cleaning in Mississauga for sofas, sectionals, chairs, stairs and area rugs. Free photo estimates and professional drying included."
+  },
+  {
+    "_id": "location-toronto",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "toronto"
+    },
+    "name": "Toronto",
+    "shortDescription": "Professional sofa and upholstery cleaning for Toronto condos, houses and apartments.",
+    "introduction": "SoftNest brings professional upholstery and carpet cleaning to Toronto homes with equipment and products selected for the material being cleaned. From everyday soil on a frequently used couch to stains and odours in a sectional, every job begins with an inspection and a clear explanation of the expected result.",
+    "localConsiderations": "Toronto appointments often involve condo elevators, limited loading areas or on-street parking. Sharing access details and photos in advance helps us recommend the right treatment and plan the visit around the building’s requirements.",
+    "neighbourhoods": [
+      "Downtown",
+      "The Annex",
+      "Leslieville",
+      "The Beaches",
+      "North York",
+      "East York",
+      "Scarborough",
+      "York"
+    ],
+    "mapQuery": "Toronto, Ontario",
+    "faq": [
+      {
+        "question": "Can you clean furniture in a Toronto condo?",
+        "answer": "Yes. Please include elevator, loading and parking details with your quote request so access can be planned in advance."
+      },
+      {
+        "question": "Do I need to move my sofa before the appointment?",
+        "answer": "Usually not. Remove small items and fragile objects nearby; we will assess safe positioning when we arrive."
+      },
+      {
+        "question": "Are your products suitable for homes with children or pets?",
+        "answer": "We select fabric-appropriate products for the material being cleaned and provide after-care guidance for the drying period."
+      }
+    ],
+    "order": 1,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/toronto.webp",
+    "imageAlt": "Homes and neighbourhoods in Toronto",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-etobicoke"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-vaughan"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-brampton"
+      }
+    ]
+  },
+  {
+    "_id": "location-brampton",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "brampton"
+    },
+    "name": "Brampton",
+    "shortDescription": "Deep upholstery, sectional, mattress and carpet cleaning for Brampton homes.",
+    "introduction": "SoftNest serves Brampton households that need a deeper clean for sofas, sectionals, upholstered chairs, mattresses, carpets and rugs. Our process targets embedded soil, spills and odours while accounting for the fabric, construction and condition of each item.",
+    "localConsiderations": "Many Brampton appointments involve large sectionals, multiple dining chairs or several rooms of carpet. Photos and an accurate item count allow us to prepare the right equipment and provide a clearer quote before the visit.",
+    "neighbourhoods": [
+      "Bramalea",
+      "Heart Lake",
+      "Springdale",
+      "Mount Pleasant",
+      "Credit Valley",
+      "Fletcher's Meadow",
+      "Castlemore",
+      "Downtown Brampton"
+    ],
+    "mapQuery": "Brampton, Ontario",
+    "faq": [
+      {
+        "question": "Can you clean a large sectional in Brampton?",
+        "answer": "Yes. Send photos showing the full sectional and any stains so we can account for its size, fabric and condition."
+      },
+      {
+        "question": "Can several dining chairs be cleaned during one visit?",
+        "answer": "Yes. Include the number of chairs and clear photos when asking for a quote."
+      },
+      {
+        "question": "Do you offer carpet and upholstery cleaning together?",
+        "answer": "Yes, depending on the size and scope of the appointment. List everything you would like cleaned in the same request."
+      }
+    ],
+    "order": 2,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/brampton.webp",
+    "imageAlt": "Homes and neighbourhoods in Brampton",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-vaughan"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-milton"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-etobicoke"
+      }
+    ]
+  },
+  {
+    "_id": "location-oakville",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "oakville"
+    },
+    "name": "Oakville",
+    "shortDescription": "Fabric-safe furniture, upholstery, carpet and area rug cleaning in Oakville.",
+    "introduction": "SoftNest provides detail-focused upholstery and carpet cleaning for Oakville homes. We work with sofas, sectionals, accent chairs, dining seating, mattresses and rugs, selecting the cleaning approach after checking the fibres, construction, stains and overall condition.",
+    "localConsiderations": "Oakville homes often combine larger upholstered pieces with area rugs and delicate accent furniture. Identifying care labels and sharing close-up photos helps us flag materials that need a more cautious cleaning plan.",
+    "neighbourhoods": [
+      "Old Oakville",
+      "Bronte",
+      "Glen Abbey",
+      "River Oaks",
+      "West Oak Trails",
+      "Clearview",
+      "Joshua Creek",
+      "Uptown Core"
+    ],
+    "mapQuery": "Oakville, Ontario",
+    "faq": [
+      {
+        "question": "Do you clean delicate or natural-fibre upholstery?",
+        "answer": "We inspect the fabric and care information first. Some materials require a low-moisture method or may need a specialist recommendation."
+      },
+      {
+        "question": "Can you clean area rugs in an Oakville home?",
+        "answer": "We clean suitable area rugs on site after assessing their fibre, backing, colour stability and condition."
+      },
+      {
+        "question": "Will every old stain come out?",
+        "answer": "No cleaner can promise that. We explain what appears treatable and where age, dye loss or prior products may limit the result."
+      }
+    ],
+    "order": 3,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/oakville.webp",
+    "imageAlt": "Homes and neighbourhoods in Oakville",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-burlington"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-milton"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-hamilton"
+      }
+    ]
+  },
+  {
+    "_id": "location-etobicoke",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "etobicoke"
+    },
+    "name": "Etobicoke",
+    "shortDescription": "Convenient upholstery and sofa cleaning for Etobicoke houses, apartments and condos.",
+    "introduction": "SoftNest provides professional furniture and carpet cleaning across Etobicoke. We treat common concerns such as body oils, food spills, tracked-in soil, pet accidents and lingering odours using an approach matched to the item’s fabric and condition.",
+    "localConsiderations": "Etobicoke includes lakeside condos, apartments and detached homes, so access can vary considerably. Include parking, elevator and entrance information with your photos to help us plan a smooth appointment.",
+    "neighbourhoods": [
+      "Mimico",
+      "Long Branch",
+      "New Toronto",
+      "The Kingsway",
+      "Islington",
+      "Rexdale",
+      "Alderwood",
+      "Markland Wood"
+    ],
+    "mapQuery": "Etobicoke, Ontario",
+    "faq": [
+      {
+        "question": "Do you serve both south and north Etobicoke?",
+        "answer": "Coverage includes communities across Etobicoke. Send your postal code when requesting a quote so availability can be confirmed."
+      },
+      {
+        "question": "Can you work in buildings with service-elevator rules?",
+        "answer": "Yes. Please arrange the booking with your building and tell us the available time window and loading instructions."
+      },
+      {
+        "question": "Can you remove food and drink stains from a couch?",
+        "answer": "Many respond well to professional treatment, but results depend on the substance, fabric, age of the stain and previous cleaning attempts."
+      }
+    ],
+    "order": 4,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/etobicoke.webp",
+    "imageAlt": "Homes and neighbourhoods in Etobicoke",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-toronto"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-vaughan"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-brampton"
+      }
+    ]
+  },
+  {
+    "_id": "location-burlington",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "burlington"
+    },
+    "name": "Burlington",
+    "shortDescription": "Professional sofa, furniture, carpet and rug cleaning for Burlington households.",
+    "introduction": "SoftNest serves Burlington homeowners looking for a careful, professional clean for upholstered furniture, mattresses, carpets and area rugs. We use commercial equipment and fabric-appropriate products to remove as much soil and contamination as the material safely allows.",
+    "localConsiderations": "For appointments involving multiple rooms, large sectionals or a mix of furniture and rugs, a complete photo set helps us estimate the scope and prepare for the visit. We will also confirm travel availability for your Burlington address.",
+    "neighbourhoods": [
+      "Downtown Burlington",
+      "Aldershot",
+      "Brant Hills",
+      "Headon Forest",
+      "Millcroft",
+      "Orchard",
+      "Roseland",
+      "Alton Village"
+    ],
+    "mapQuery": "Burlington, Ontario",
+    "faq": [
+      {
+        "question": "How do I confirm availability in Burlington?",
+        "answer": "Send your address or postal code, photos and preferred timing. We will confirm the service window with your quote."
+      },
+      {
+        "question": "Can upholstery and area rugs be cleaned in one appointment?",
+        "answer": "Often, yes. Include photos and measurements for each rug as well as the furniture item count."
+      },
+      {
+        "question": "Do you provide a quote before travelling to Burlington?",
+        "answer": "We can usually provide an initial quote from clear photos and details, subject to confirming the condition on arrival."
+      }
+    ],
+    "order": 5,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/burlington.webp",
+    "imageAlt": "Homes and neighbourhoods in Burlington",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-oakville"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-hamilton"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-milton"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      }
+    ]
+  },
+  {
+    "_id": "location-vaughan",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "vaughan"
+    },
+    "name": "Vaughan",
+    "shortDescription": "Sofa, sectional, dining chair and carpet cleaning throughout Vaughan.",
+    "introduction": "SoftNest provides upholstery and carpet cleaning for Vaughan homes, including frequently used sofas, large sectionals, dining chairs, mattresses and rugs. We focus on careful preparation, thorough extraction and honest expectations for stains or wear that may be permanent.",
+    "localConsiderations": "Vaughan appointments may cover large furniture sets or several floors of a home. A room-by-room list and photos of access points help us understand the job and arrive with an appropriate plan.",
+    "neighbourhoods": [
+      "Woodbridge",
+      "Maple",
+      "Kleinburg",
+      "Concord",
+      "Thornhill",
+      "Vellore Village",
+      "Patterson",
+      "Vaughan Metropolitan Centre"
+    ],
+    "mapQuery": "Vaughan, Ontario",
+    "faq": [
+      {
+        "question": "Can you quote a full sectional from photos?",
+        "answer": "Usually. Send wide photos, the number of seats and close-ups of stains or damaged areas."
+      },
+      {
+        "question": "Do you clean upholstered dining sets?",
+        "answer": "Yes. Tell us the number of chairs, fabric type if known, and whether there are specific stains."
+      },
+      {
+        "question": "Is there a travel charge for Vaughan?",
+        "answer": "Any location-based minimum or travel consideration will be disclosed when availability and the quote are confirmed."
+      }
+    ],
+    "order": 6,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/vaughan.webp",
+    "imageAlt": "Homes and neighbourhoods in Vaughan",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-toronto"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-brampton"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-etobicoke"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      }
+    ]
+  },
+  {
+    "_id": "location-milton",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "milton"
+    },
+    "name": "Milton",
+    "shortDescription": "Family-home upholstery, sectional, carpet and mattress cleaning in Milton.",
+    "introduction": "SoftNest offers professional upholstery and carpet cleaning for Milton households. Our service is suited to busy family furniture, pet-related concerns, dining seating, mattresses, rugs and carpeted areas that need more than routine vacuuming.",
+    "localConsiderations": "Milton homes often have newer, open-plan living spaces with large sectionals and adjoining carpeted areas. Listing all requested items together helps us plan an efficient visit and explain the likely drying time.",
+    "neighbourhoods": [
+      "Old Milton",
+      "Clarke",
+      "Coates",
+      "Dempsey",
+      "Ford",
+      "Harrison",
+      "Scott",
+      "Willmott"
+    ],
+    "mapQuery": "Milton, Ontario",
+    "faq": [
+      {
+        "question": "Do you serve newer Milton neighbourhoods?",
+        "answer": "We assess requests throughout Milton. Send your postal code to confirm scheduling for your address."
+      },
+      {
+        "question": "Can you treat pet accidents on upholstery?",
+        "answer": "Yes. The likely result depends on whether contamination remains near the surface or has reached internal foam and backing."
+      },
+      {
+        "question": "How should I prepare carpeted rooms?",
+        "answer": "Remove small and fragile items. We can discuss furniture movement and access when confirming the scope of work."
+      }
+    ],
+    "order": 7,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/milton.webp",
+    "imageAlt": "Homes and neighbourhoods in Milton",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-oakville"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-burlington"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-brampton"
+      }
+    ]
+  },
+  {
+    "_id": "location-hamilton",
+    "_type": "location",
+    "slug": {
+      "_type": "slug",
+      "current": "hamilton"
+    },
+    "name": "Hamilton",
+    "shortDescription": "Professional upholstery, sofa, sectional, carpet and area rug cleaning for Hamilton homes.",
+    "introduction": "SoftNest provides detail-focused upholstery and carpet cleaning for Hamilton households. We clean sofas, sectionals, dining chairs, mattresses, carpets and suitable area rugs using equipment and products selected for the material, condition and type of soil.",
+    "localConsiderations": "Hamilton appointments can range from downtown apartments and converted homes to larger properties across the Mountain and surrounding communities. Send clear photos, your postal code and any parking, stair or building-access details so we can confirm availability and prepare for the visit.",
+    "neighbourhoods": [
+      "Downtown Hamilton",
+      "Westdale",
+      "Durand",
+      "Ancaster",
+      "Dundas",
+      "Stoney Creek",
+      "Hamilton Mountain",
+      "Waterdown"
+    ],
+    "mapQuery": "Hamilton, Ontario",
+    "faq": [
+      {
+        "question": "How do I confirm upholstery cleaning availability in Hamilton?",
+        "answer": "Send your Hamilton postal code, photos of each item and your preferred timing. We will confirm the service window with your quote."
+      },
+      {
+        "question": "Can you clean sofas in Hamilton apartments or condos?",
+        "answer": "Yes. Include elevator, loading, parking and entry instructions so access can be planned before the appointment."
+      },
+      {
+        "question": "Can carpet and upholstery be cleaned during the same visit?",
+        "answer": "Often, yes. List every furniture item and carpeted area in the same request so we can confirm the scope and timing."
+      }
+    ],
+    "order": 8,
+    "status": "active",
+    "pageEnabled": true,
+    "indexInSearch": true,
+    "showInFooter": true,
+    "image": "/img/locations/hamilton.webp",
+    "imageAlt": "Homes and neighbourhoods in Hamilton",
+    "availableServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      }
+    ],
+    "nearbyLocations": [
+      {
+        "_type": "reference",
+        "_ref": "location-burlington"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-oakville"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-milton"
+      },
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      }
+    ]
+  },
+  {
+    "_id": "faq-home-1",
+    "_type": "faq",
+    "question": "Do you guarantee that every stain will be removed?",
+    "answer": "Many everyday stains lift well, but heat-set stains, dye transfer, fading or deep contamination may be permanent. We inspect first and explain what is realistic before we start.",
+    "order": 0,
+    "onHomepage": true
+  },
+  {
+    "_id": "faq-home-2",
+    "_type": "faq",
+    "question": "Are your cleaning products safe for kids and pets?",
+    "answer": "We select fabric-appropriate products and follow product directions for the material being cleaned. We also explain drying and after-care before normal use.",
+    "order": 1,
+    "onHomepage": true
+  },
+  {
+    "_id": "faq-home-3",
+    "_type": "faq",
+    "question": "How often should I have my upholstery cleaned?",
+    "answer": "Most homes benefit every 12 to 18 months. With pets, kids, allergies or heavy use, every 6 to 12 months is often better.",
+    "order": 2,
+    "onHomepage": true
+  },
+  {
+    "_id": "faq-home-4",
+    "_type": "faq",
+    "question": "How long does it take for upholstery to dry?",
+    "answer": "Most sofas take one to two hours to clean and usually dry within two to four hours, depending on the fabric, airflow and soil level.",
+    "order": 3,
+    "onHomepage": true
+  },
+  {
+    "_id": "faq-home-5",
+    "_type": "faq",
+    "question": "What areas do you service?",
+    "answer": "We serve Brampton, Burlington, Etobicoke, Hamilton, Milton, Mississauga, Oakville, Toronto, Vaughan and nearby communities.",
+    "order": 4,
+    "onHomepage": true
+  },
+  {
+    "_id": "faq-home-6",
+    "_type": "faq",
+    "question": "Can you remove old pet urine stains and odours?",
+    "answer": "Often, yes. Older urine may reach foam or backing, which can limit results. We assess the contamination and explain the treatment options first.",
+    "order": 5,
+    "onHomepage": true
+  },
+  {
+    "_id": "faq-home-7",
+    "_type": "faq",
+    "question": "Do you clean leather sofas?",
+    "answer": "Yes. We clean suitable leather sofas and other leather upholstery using a leather-specific process that includes cleaning, a moisturizing conditioning treatment and a protective solution. Photos help us confirm the leather and condition before booking.",
+    "order": 6,
+    "onHomepage": true
+  },
+  {
+    "_id": "faq-home-8",
+    "_type": "faq",
+    "question": "Do I pay before or after the cleaning service?",
+    "answer": "Payment is collected after the service is complete. We confirm pricing before starting, with no surprise fees.",
+    "order": 7,
+    "onHomepage": true
+  },
+  {
+    "_id": "faq-home-9",
+    "_type": "faq",
+    "question": "How should I prepare my furniture before your visit?",
+    "answer": "Please remove throws, small cushions and fragile items nearby. There is no need to pre-treat stains; point out any concerns when we arrive.",
+    "order": 8,
+    "onHomepage": true
+  },
+  {
+    "_id": "testimonial-home-1",
+    "_type": "testimonial",
+    "name": "Kiko44",
+    "text": "Andrii’s upholstery deep cleaning was exceptional. he managed to completely remove stains in our fabric couch that had been there for years. He also cleaned 6 micro fiber dining chaises and made them look brand new. He is courteous, and thorough and I would use his services again. Highly recommend.",
+    "order": 0,
+    "featured": true,
+    "publicationStatus": "approved",
+    "source": "Google",
+    "sourceUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48"
+  },
+  {
+    "_id": "testimonial-home-2",
+    "_type": "testimonial",
+    "name": "Jeff A.",
+    "text": "It’s so refreshing to see a company that exceeds expectations. My carpets are over 15 years old with heavy traffic from my son and all his sports equipment. I thought for sure they were wasting their time trying to restore my carpets. But I was wrong. They brought them back to life. A lot of places are going to make a lot of promises this one delivers!! Great results and the friendliest people you will ever meet. 6 stars!!",
+    "order": 1,
+    "featured": true,
+    "publicationStatus": "approved",
+    "source": "Google",
+    "sourceUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48"
+  },
+  {
+    "_id": "testimonial-home-3",
+    "_type": "testimonial",
+    "name": "Julie Trakos",
+    "text": "Andrii and his son are incredible!!! They went above and beyond .. they are very very good and detailed. Left very comfortable with them. Would like to give them 10 out of 10 stars",
+    "order": 2,
+    "featured": true,
+    "publicationStatus": "approved",
+    "source": "Google",
+    "sourceUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48"
+  },
+  {
+    "_id": "testimonial-home-4",
+    "_type": "testimonial",
+    "name": "Ryan Wilson",
+    "text": "We had a pet urine issue on our couch and honestly didn’t think it could be cleaned this well. No smell, no stains — it honestly looks like a different couch. They showed up on time, explained what they were doing, and never rushed the job. You can tell they really care about the quality of their work. We’re very happy with the results and wouldn’t hesitate to call SoftNest Fabric Care again.",
+    "order": 3,
+    "featured": true,
+    "publicationStatus": "approved",
+    "source": "Google",
+    "sourceUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48"
+  },
+  {
+    "_id": "testimonial-home-5",
+    "_type": "testimonial",
+    "name": "Oleksandr Semenov",
+    "text": "Great service! I recommend it!",
+    "order": 4,
+    "featured": true,
+    "publicationStatus": "approved",
+    "source": "Google",
+    "sourceUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48"
+  },
+  {
+    "_id": "testimonial-home-6",
+    "_type": "testimonial",
+    "name": "Jamal PD",
+    "text": "Great service and fair price. Our sectional looks so much cleaner, and the team was friendly and professional. Paid $229 and couldn’t be happier. Thanks!",
+    "order": 5,
+    "featured": true,
+    "publicationStatus": "approved",
+    "source": "Google",
+    "sourceUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48"
+  },
+  {
+    "_id": "testimonial-home-7",
+    "_type": "testimonial",
+    "name": "Daniel Leblanc",
+    "text": "Honestly, my sofa and dining chairs were looking pretty tired, but Softnest Fabric Care completely refreshed them. They got out the stubborn stains and everything looks brand new again. If you’re on the fence about getting your furniture cleaned, just call them—you won’t regret it! Thanks again to the team!",
+    "order": 6,
+    "featured": true,
+    "publicationStatus": "approved",
+    "source": "Google",
+    "sourceUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48"
+  },
+  {
+    "_id": "cleaning-project-home-1",
+    "_type": "cleaningProject",
+    "image": "/img/sectional_3.webp",
+    "variant": "paired",
+    "category": "Sofa",
+    "location": "Mississauga, ON",
+    "service": "Pet stains & odour removal",
+    "label": "Compare sofa before and after cleaning",
+    "title": "Sofa — Pet stains & odour removal",
+    "order": 0,
+    "featured": true,
+    "publicationStatus": "approved",
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      }
+    ],
+    "locations": [
+      {
+        "_type": "reference",
+        "_ref": "location-mississauga"
+      }
+    ]
+  },
+  {
+    "_id": "cleaning-project-home-2",
+    "_type": "cleaningProject",
+    "image": "/img/sectional_1.webp",
+    "variant": "paired",
+    "category": "Sectional Sofa",
+    "location": "Oakville, ON",
+    "service": "Deep cleaning",
+    "label": "Compare sectional sofa before and after cleaning",
+    "title": "Sectional Sofa — Deep cleaning",
+    "order": 1,
+    "featured": true,
+    "publicationStatus": "approved",
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      }
+    ],
+    "locations": [
+      {
+        "_type": "reference",
+        "_ref": "location-oakville"
+      }
+    ]
+  },
+  {
+    "_id": "cleaning-project-home-3",
+    "_type": "cleaningProject",
+    "image": "/img/matress_cleaning.webp",
+    "variant": "paired",
+    "category": "Mattress",
+    "location": "Toronto, ON",
+    "service": "Stain & odour removal",
+    "label": "Compare mattress before and after cleaning",
+    "title": "Mattress — Stain & odour removal",
+    "order": 2,
+    "featured": true,
+    "publicationStatus": "approved",
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-mattress-cleaning"
+      }
+    ],
+    "locations": [
+      {
+        "_type": "reference",
+        "_ref": "location-toronto"
+      }
+    ]
+  },
+  {
+    "_id": "cleaning-project-home-4",
+    "_type": "cleaningProject",
+    "image": "/img/before_after_carpet_cleaning.webp",
+    "variant": "paired",
+    "category": "Carpet",
+    "location": "Brampton, ON",
+    "service": "Deep carpet cleaning",
+    "label": "Compare carpet before and after cleaning",
+    "title": "Carpet — Deep carpet cleaning",
+    "order": 3,
+    "featured": true,
+    "publicationStatus": "approved",
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      }
+    ],
+    "locations": [
+      {
+        "_type": "reference",
+        "_ref": "location-brampton"
+      }
+    ]
+  },
+  {
+    "_id": "cleaning-project-home-5",
+    "_type": "cleaningProject",
+    "image": "/img/gray_sofa_stain.png",
+    "variant": "paired",
+    "category": "Sofa",
+    "location": "GTA, ON",
+    "service": "Stain treatment",
+    "label": "Compare stained sofa before and after cleaning",
+    "title": "Sofa — Stain treatment",
+    "order": 4,
+    "featured": true,
+    "publicationStatus": "approved",
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      }
+    ],
+    "locations": []
+  },
+  {
+    "_id": "cleaning-project-home-6",
+    "_type": "cleaningProject",
+    "image": "/img/dining_chairs.webp",
+    "variant": "paired",
+    "category": "Dining Chairs",
+    "location": "GTA, ON",
+    "service": "Upholstery cleaning",
+    "label": "Compare dining chairs before and after cleaning",
+    "title": "Dining Chairs — Upholstery cleaning",
+    "order": 5,
+    "featured": true,
+    "publicationStatus": "approved",
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-dining-chair-cleaning"
+      }
+    ],
+    "locations": []
+  },
+  {
+    "_id": "cleaning-project-home-7",
+    "_type": "cleaningProject",
+    "image": "/img/sectional.png",
+    "variant": "paired",
+    "category": "Sectional",
+    "location": "GTA, ON",
+    "service": "Full sectional cleaning",
+    "label": "Compare sectional before and after cleaning",
+    "title": "Sectional — Full sectional cleaning",
+    "order": 6,
+    "featured": true,
+    "publicationStatus": "approved",
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      }
+    ],
+    "locations": []
+  },
+  {
+    "_id": "cleaning-project-home-8",
+    "_type": "cleaningProject",
+    "image": "/img/sectional_sofa.png",
+    "variant": "paired",
+    "category": "Sectional Sofa",
+    "location": "GTA, ON",
+    "service": "Deep fabric cleaning",
+    "label": "Compare sectional sofa before and after deep cleaning",
+    "title": "Sectional Sofa — Deep fabric cleaning",
+    "order": 7,
+    "featured": true,
+    "publicationStatus": "approved",
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      }
+    ],
+    "locations": []
+  },
+  {
+    "_id": "quote-category-1",
+    "_type": "quoteCategory",
+    "label": "Sofa or couch",
+    "order": 0,
+    "enabled": true,
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      }
+    ]
+  },
+  {
+    "_id": "quote-category-2",
+    "_type": "quoteCategory",
+    "label": "Sectional",
+    "order": 1,
+    "enabled": true,
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      }
+    ]
+  },
+  {
+    "_id": "quote-category-3",
+    "_type": "quoteCategory",
+    "label": "Leather sofa or chair",
+    "order": 2,
+    "enabled": true,
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-leather-upholstery-cleaning"
+      }
+    ]
+  },
+  {
+    "_id": "quote-category-4",
+    "_type": "quoteCategory",
+    "label": "Dining chairs",
+    "order": 3,
+    "enabled": true,
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-dining-chair-cleaning"
+      }
+    ]
+  },
+  {
+    "_id": "quote-category-5",
+    "_type": "quoteCategory",
+    "label": "Mattress",
+    "order": 4,
+    "enabled": true,
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-mattress-cleaning"
+      }
+    ]
+  },
+  {
+    "_id": "quote-category-6",
+    "_type": "quoteCategory",
+    "label": "Carpet or rug",
+    "order": 5,
+    "enabled": true,
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      }
+    ]
+  },
+  {
+    "_id": "quote-category-7",
+    "_type": "quoteCategory",
+    "label": "Other furniture",
+    "order": 6,
+    "enabled": true,
+    "services": [
+      {
+        "_type": "reference",
+        "_ref": "service-armchair-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      }
+    ]
+  },
+  {
+    "_id": "page-content-home",
+    "_type": "pageContent",
+    "title": "Homepage",
+    "key": "home",
+    "featuredServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-pet-stain-odour-removal"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-sectional-furniture-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-carpet-area-rug-cleaning"
+      }
+    ],
+    "copy": [
+      {
+        "key": "hero-1",
+        "label": "Proudly Serving the GTA",
+        "text": "Proudly Serving the GTA"
+      },
+      {
+        "key": "hero-2",
+        "label": "Expert Care For",
+        "text": "Expert Care For"
+      },
+      {
+        "key": "hero-3",
+        "label": "Your Furniture",
+        "text": "Your Furniture"
+      },
+      {
+        "key": "hero-4",
+        "label": "& Carpets.",
+        "text": "& Carpets."
+      },
+      {
+        "key": "hero-5",
+        "label": "Results You'll Feel.",
+        "text": "Results You'll Feel."
+      },
+      {
+        "key": "hero-6",
+        "label": "Professional equipment, fabric-appropriate products, and meticulous techniques refresh you",
+        "text": "Professional equipment, fabric-appropriate products, and meticulous techniques refresh your home's comfort. From deep sofa cleaning to careful rug cleaning."
+      },
+      {
+        "key": "hero-7",
+        "label": "Eco-Friendly",
+        "text": "Eco-Friendly"
+      },
+      {
+        "key": "hero-8",
+        "label": "Products",
+        "text": "Products"
+      },
+      {
+        "key": "hero-9",
+        "label": "Safe for Kids",
+        "text": "Safe for Kids"
+      },
+      {
+        "key": "hero-10",
+        "label": "& Pets",
+        "text": "& Pets"
+      },
+      {
+        "key": "hero-11",
+        "label": "Satisfaction",
+        "text": "Satisfaction"
+      },
+      {
+        "key": "hero-12",
+        "label": "Guaranteed",
+        "text": "Guaranteed"
+      },
+      {
+        "key": "hero-13",
+        "label": "Free photo estimate",
+        "text": "Free photo estimate"
+      },
+      {
+        "key": "hero-14",
+        "label": "Show us what needs cleaning.",
+        "text": "Show us what needs cleaning."
+      },
+      {
+        "key": "hero-15",
+        "label": "Send a few photos through",
+        "text": "Send a few photos through"
+      },
+      {
+        "key": "hero-16",
+        "label": "Instagram",
+        "text": "Instagram"
+      },
+      {
+        "key": "hero-17",
+        "label": "Facebook",
+        "text": "Facebook"
+      },
+      {
+        "key": "hero-18",
+        "label": "and we'll recommend the right treatment with a clear, no-obligation quote.",
+        "text": "and we'll recommend the right treatment with a clear, no-obligation quote."
+      },
+      {
+        "key": "hero-19",
+        "label": "Request an estimate",
+        "text": "Request an estimate"
+      },
+      {
+        "key": "hero-20",
+        "label": "Fast replies · No hidden fees",
+        "text": "Fast replies · No hidden fees"
+      },
+      {
+        "key": "hero-21",
+        "label": "Reviews",
+        "text": "Reviews"
+      },
+      {
+        "key": "hero-22",
+        "label": "Read all reviews",
+        "text": "Read all reviews"
+      },
+      {
+        "key": "sections-23",
+        "label": "Real Results. Real Homes.",
+        "text": "Real Results. Real Homes."
+      },
+      {
+        "key": "sections-24",
+        "label": "Before & After Results",
+        "text": "Before & After Results"
+      },
+      {
+        "key": "sections-25",
+        "label": "You Can See and Feel.",
+        "text": "You Can See and Feel."
+      },
+      {
+        "key": "sections-26",
+        "label": "From everyday messes to tough stains and odours,",
+        "text": "From everyday messes to tough stains and odours,"
+      },
+      {
+        "key": "sections-27",
+        "label": "see how we bring furniture and carpets back to life.",
+        "text": "see how we bring furniture and carpets back to life."
+      },
+      {
+        "key": "sections-28",
+        "label": "Follow SoftNest",
+        "text": "Follow SoftNest"
+      },
+      {
+        "key": "sections-29",
+        "label": "Careful, Thorough",
+        "text": "Careful, Thorough"
+      },
+      {
+        "key": "sections-30",
+        "label": "Service",
+        "text": "Service"
+      },
+      {
+        "key": "sections-31",
+        "label": "Fabric-Appropriate",
+        "text": "Fabric-Appropriate"
+      },
+      {
+        "key": "sections-32",
+        "label": "Products",
+        "text": "Products"
+      },
+      {
+        "key": "sections-33",
+        "label": "Professional",
+        "text": "Professional"
+      },
+      {
+        "key": "sections-34",
+        "label": "Equipment",
+        "text": "Equipment"
+      },
+      {
+        "key": "sections-35",
+        "label": "View More Results",
+        "text": "View More Results"
+      },
+      {
+        "key": "sections-36",
+        "label": "What We Clean",
+        "text": "What We Clean"
+      },
+      {
+        "key": "sections-37",
+        "label": "Our Cleaning Services",
+        "text": "Our Cleaning Services"
+      },
+      {
+        "key": "sections-38",
+        "label": "Explore what each service includes, how the process works and the results you can realisti",
+        "text": "Explore what each service includes, how the process works and the results you can realistically expect."
+      },
+      {
+        "key": "sections-39",
+        "label": "Learn more",
+        "text": "Learn more"
+      },
+      {
+        "key": "sections-40",
+        "label": "View all cleaning services",
+        "text": "View all cleaning services"
+      },
+      {
+        "key": "sections-41",
+        "label": "Why Homeowners Choose SoftNest",
+        "text": "Why Homeowners Choose SoftNest"
+      },
+      {
+        "key": "sections-42",
+        "label": "Quality You Can See.",
+        "text": "Quality You Can See."
+      },
+      {
+        "key": "sections-43",
+        "label": "Care You Can Trust.",
+        "text": "Care You Can Trust."
+      },
+      {
+        "key": "sections-44",
+        "label": "We go beyond surface cleaning. Every detail matters because your home and furniture deserv",
+        "text": "We go beyond surface cleaning. Every detail matters because your home and furniture deserve the best."
+      },
+      {
+        "key": "sections-45",
+        "label": "Learn More About Us",
+        "text": "Learn More About Us"
+      },
+      {
+        "key": "sections-46",
+        "label": "Fully Insured",
+        "text": "Fully Insured"
+      },
+      {
+        "key": "sections-47",
+        "label": "Your furniture and home are protected with full liability insurance.",
+        "text": "Your furniture and home are protected with full liability insurance."
+      },
+      {
+        "key": "sections-48",
+        "label": "Local & Family-Run",
+        "text": "Local & Family-Run"
+      },
+      {
+        "key": "sections-49",
+        "label": "We're a small local team serving communities across the GTA with care.",
+        "text": "We're a small local team serving communities across the GTA with care."
+      },
+      {
+        "key": "sections-50",
+        "label": "Detail-Focused Care",
+        "text": "Detail-Focused Care"
+      },
+      {
+        "key": "sections-51",
+        "label": "Careful preparation, professional equipment, and attention to the material being cleaned.",
+        "text": "Careful preparation, professional equipment, and attention to the material being cleaned."
+      },
+      {
+        "key": "sections-52",
+        "label": "Pay After Service",
+        "text": "Pay After Service"
+      },
+      {
+        "key": "sections-53",
+        "label": "No upfront charges. Payment is collected after the cleaning service is complete.",
+        "text": "No upfront charges. Payment is collected after the cleaning service is complete."
+      },
+      {
+        "key": "sections-54",
+        "label": "How It Works",
+        "text": "How It Works"
+      },
+      {
+        "key": "sections-55",
+        "label": "Our 4-Step Cleaning Process",
+        "text": "Our 4-Step Cleaning Process"
+      },
+      {
+        "key": "sections-56",
+        "label": "Inspection",
+        "text": "Inspection"
+      },
+      {
+        "key": "sections-57",
+        "label": "We check the fabric, identify stains and problem areas, and choose the best cleaning appro",
+        "text": "We check the fabric, identify stains and problem areas, and choose the best cleaning approach."
+      },
+      {
+        "key": "sections-58",
+        "label": "Pre-Treat & Loosen",
+        "text": "Pre-Treat & Loosen"
+      },
+      {
+        "key": "sections-59",
+        "label": "We apply professional pre-treatments and agitate the fabric to break down dirt, oils, and ",
+        "text": "We apply professional pre-treatments and agitate the fabric to break down dirt, oils, and stains."
+      },
+      {
+        "key": "sections-60",
+        "label": "Deep Clean & Extract",
+        "text": "Deep Clean & Extract"
+      },
+      {
+        "key": "sections-61",
+        "label": "Hot water extraction lifts embedded soil, residue, and suitable odour sources for a thorou",
+        "text": "Hot water extraction lifts embedded soil, residue, and suitable odour sources for a thorough clean."
+      },
+      {
+        "key": "sections-62",
+        "label": "Final Groom & Dry",
+        "text": "Final Groom & Dry"
+      },
+      {
+        "key": "sections-63",
+        "label": "We groom the fabric, set the nap, and speed up drying so your furniture looks fresh.",
+        "text": "We groom the fabric, set the nap, and speed up drying so your furniture looks fresh."
+      },
+      {
+        "key": "sections-64",
+        "label": "Healthier Home. Happier Family.",
+        "text": "Healthier Home. Happier Family."
+      },
+      {
+        "key": "sections-65",
+        "label": "A Deeper Clean for the People",
+        "text": "A Deeper Clean for the People"
+      },
+      {
+        "key": "sections-66",
+        "label": "and Pets You Love",
+        "text": "and Pets You Love"
+      },
+      {
+        "key": "sections-67",
+        "label": "Our cleaning process lifts embedded soil, dust, dander, and suitable odour sources from cl",
+        "text": "Our cleaning process lifts embedded soil, dust, dander, and suitable odour sources from cleanable upholstery fibres for a fresher home."
+      },
+      {
+        "key": "sections-68",
+        "label": "Fabric-Appropriate Products",
+        "text": "Fabric-Appropriate Products"
+      },
+      {
+        "key": "sections-69",
+        "label": "Products are selected for the material and used according to the cleaning process.",
+        "text": "Products are selected for the material and used according to the cleaning process."
+      },
+      {
+        "key": "sections-70",
+        "label": "Odour Treatment",
+        "text": "Odour Treatment"
+      },
+      {
+        "key": "sections-71",
+        "label": "Targets suitable odour sources rather than simply covering them with fragrance.",
+        "text": "Targets suitable odour sources rather than simply covering them with fragrance."
+      },
+      {
+        "key": "sections-72",
+        "label": "Embedded Soil Removal",
+        "text": "Embedded Soil Removal"
+      },
+      {
+        "key": "sections-73",
+        "label": "Helps lift dust, dander, and everyday buildup from cleanable fibres.",
+        "text": "Helps lift dust, dander, and everyday buildup from cleanable fibres."
+      },
+      {
+        "key": "sections-74",
+        "label": "Client Reviews",
+        "text": "Client Reviews"
+      },
+      {
+        "key": "sections-75",
+        "label": "What Our Clients",
+        "text": "What Our Clients"
+      },
+      {
+        "key": "sections-76",
+        "label": "Are Saying",
+        "text": "Are Saying"
+      },
+      {
+        "key": "sections-77",
+        "label": "Real feedback from homeowners across the GTA.",
+        "text": "Real feedback from homeowners across the GTA."
+      },
+      {
+        "key": "sections-78",
+        "label": "See All Reviews on Google Maps",
+        "text": "See All Reviews on Google Maps"
+      },
+      {
+        "key": "sections-79",
+        "label": "FAQ",
+        "text": "FAQ"
+      },
+      {
+        "key": "sections-80",
+        "label": "Frequently Asked Questions",
+        "text": "Frequently Asked Questions"
+      },
+      {
+        "key": "sections-81",
+        "label": "Professional Equipment.",
+        "text": "Professional Equipment."
+      },
+      {
+        "key": "sections-82",
+        "label": "Superior Results.",
+        "text": "Superior Results."
+      },
+      {
+        "key": "sections-83",
+        "label": "We use commercial-grade equipment and proven techniques to deliver a deeper, longer-lastin",
+        "text": "We use commercial-grade equipment and proven techniques to deliver a deeper, longer-lasting clean."
+      },
+      {
+        "key": "sections-84",
+        "label": "About SoftNest",
+        "text": "About SoftNest"
+      },
+      {
+        "key": "sections-85",
+        "label": "Careful Upholstery Cleaning,",
+        "text": "Careful Upholstery Cleaning,"
+      },
+      {
+        "key": "sections-86",
+        "label": "Done with Standards",
+        "text": "Done with Standards"
+      },
+      {
+        "key": "sections-87",
+        "label": "SoftNest was built around a simple belief: quality should always come first. Every sofa, s",
+        "text": "SoftNest was built around a simple belief: quality should always come first. Every sofa, sectional, chair, and rug is treated with the same care we would expect in our own homes."
+      },
+      {
+        "key": "sections-88",
+        "label": "From fabric-safe products to professional equipment and careful technique, our goal is to ",
+        "text": "From fabric-safe products to professional equipment and careful technique, our goal is to deliver visible results you can trust without rushing the work."
+      },
+      {
+        "key": "sections-89",
+        "label": "Satisfaction Focused",
+        "text": "Satisfaction Focused"
+      },
+      {
+        "key": "sections-90",
+        "label": "Pro",
+        "text": "Pro"
+      },
+      {
+        "key": "sections-91",
+        "label": "Equipment & Technique",
+        "text": "Equipment & Technique"
+      },
+      {
+        "key": "sections-92",
+        "label": "Local",
+        "text": "Local"
+      },
+      {
+        "key": "sections-93",
+        "label": "Across the GTA",
+        "text": "Across the GTA"
+      },
+      {
+        "key": "sections-94",
+        "label": "Care",
+        "text": "Care"
+      },
+      {
+        "key": "sections-95",
+        "label": "For Your Home",
+        "text": "For Your Home"
+      },
+      {
+        "key": "sections-96",
+        "label": "Ready for a Fresher, Cleaner Home?",
+        "text": "Ready for a Fresher, Cleaner Home?"
+      },
+      {
+        "key": "sections-97",
+        "label": "Get a free quote today and experience the SoftNest difference.",
+        "text": "Get a free quote today and experience the SoftNest difference."
+      },
+      {
+        "key": "sections-98",
+        "label": "Get Your Free Quote",
+        "text": "Get Your Free Quote"
+      }
+    ],
+    "heroReviews": [
+      {
+        "name": "Nicky C.",
+        "initial": "N",
+        "text": "The team was able to accommodate my request to change the time, kept me informed and updated and did an awesome job."
+      },
+      {
+        "name": "Julie T.",
+        "initial": "J",
+        "text": "Andrii and his son are incredible! They went above and beyond. They are very good and detailed, and I would give them 10 out of 10 stars."
+      },
+      {
+        "name": "Andrew G.",
+        "initial": "A",
+        "text": "They spent hours working hard to make my old sofa look new again. Very friendly and communicative. They gave me options and it worked out very well. Highly recommended!"
+      }
+    ]
+  },
+  {
+    "_id": "page-content-about",
+    "_type": "pageContent",
+    "title": "About SoftNest",
+    "key": "about",
+    "principles": [
+      {
+        "title": "Inspect before we clean",
+        "text": "We consider the material, construction, condition and problem areas before choosing the cleaning approach."
+      },
+      {
+        "title": "Use the right process",
+        "text": "Fabric and leather are treated differently. Products and methods are selected for the material and the work being performed."
+      },
+      {
+        "title": "Work carefully, not hurriedly",
+        "text": "Our goal is thorough cleaning of the confirmed scope, including detailed and hard-to-reach areas where practical."
+      },
+      {
+        "title": "Set honest expectations",
+        "text": "Cleaning can remove soil and improve many stains, but it cannot reverse permanent wear, dye loss, cracking or physical damage."
+      }
+    ],
+    "copy": [
+      {
+        "key": "page-1",
+        "label": "About SoftNest Fabric Care",
+        "text": "About {{business}}"
+      },
+      {
+        "key": "page-2",
+        "label": "Careful work. Clear expectations.",
+        "text": "Careful work. Clear expectations."
+      },
+      {
+        "key": "page-3",
+        "label": "Professional fabric care.",
+        "text": "Professional fabric care."
+      },
+      {
+        "key": "page-4",
+        "label": "SoftNest Fabric Care is a local, family-run cleaning team serving homes across the Greater",
+        "text": "{{business}} is a local, family-run cleaning team serving homes across the Greater Toronto Area. We focus on upholstery, carpet, mattresses and suitable leather furniture, with the work planned around the material and condition of each item."
+      },
+      {
+        "key": "page-5",
+        "label": "The standard is simple: inspect first, use professional equipment and appropriate products",
+        "text": "The standard is simple: inspect first, use professional equipment and appropriate products, clean thoroughly, and explain honestly what can and cannot be improved."
+      },
+      {
+        "key": "page-6",
+        "label": "Request a free quote",
+        "text": "{{quote}}"
+      },
+      {
+        "key": "page-7",
+        "label": "View our services",
+        "text": "View our services"
+      },
+      {
+        "key": "page-8",
+        "label": "Professional fabric care",
+        "text": "Professional fabric care"
+      },
+      {
+        "key": "page-9",
+        "label": "Upholstery · carpet · mattresses · suitable leather",
+        "text": "Upholstery · carpet · mattresses · suitable leather"
+      },
+      {
+        "key": "page-10",
+        "label": "Local",
+        "text": "Local"
+      },
+      {
+        "key": "page-11",
+        "label": "Family-run team",
+        "text": "Family-run team"
+      },
+      {
+        "key": "page-12",
+        "label": "Insured",
+        "text": "Insured"
+      },
+      {
+        "key": "page-13",
+        "label": "Liability coverage",
+        "text": "Liability coverage"
+      },
+      {
+        "key": "page-14",
+        "label": "Professional",
+        "text": "Professional"
+      },
+      {
+        "key": "page-15",
+        "label": "Commercial-grade equipment",
+        "text": "Commercial-grade equipment"
+      },
+      {
+        "key": "page-16",
+        "label": "Simple",
+        "text": "Simple"
+      },
+      {
+        "key": "page-17",
+        "label": "Payment after service",
+        "text": "Payment after service"
+      },
+      {
+        "key": "page-18",
+        "label": "How we work",
+        "text": "How we work"
+      },
+      {
+        "key": "page-19",
+        "label": "Quality comes from the process, not from rushing the job",
+        "text": "Quality comes from the process, not from rushing the job"
+      },
+      {
+        "key": "page-20",
+        "label": "Furniture and carpet do not all respond the same way. That is why our work starts with the",
+        "text": "Furniture and carpet do not all respond the same way. That is why our work starts with the item itself: its fabric or leather, construction, soil level, staining, previous treatments and any visible wear."
+      },
+      {
+        "key": "page-21",
+        "label": "We use commercial-grade equipment where appropriate, standard spot and stain treatment for",
+        "text": "We use commercial-grade equipment where appropriate, standard spot and stain treatment for suitable fabric, professional drying for wet-cleaned upholstery and carpet, and a separate cleaning, conditioning and protection process for suitable leather."
+      },
+      {
+        "key": "page-22",
+        "label": "Professional equipment, selected for the material and job.",
+        "text": "Professional equipment, selected for the material and job."
+      },
+      {
+        "key": "page-23",
+        "label": "What we clean",
+        "text": "What we clean"
+      },
+      {
+        "key": "page-24",
+        "label": "Focused on the surfaces people use every day",
+        "text": "Focused on the surfaces people use every day"
+      },
+      {
+        "key": "page-25",
+        "label": "Our work is centered on furniture and soft surfaces in the home. For a more accurate estim",
+        "text": "Our work is centered on furniture and soft surfaces in the home. For a more accurate estimate, send photos of the complete item together with close-ups of stains, wear or other concerns."
+      },
+      {
+        "key": "page-26",
+        "label": "Service area",
+        "text": "Service area"
+      },
+      {
+        "key": "page-27",
+        "label": "Serving homes across the GTA",
+        "text": "Serving homes across the GTA"
+      },
+      {
+        "key": "page-28",
+        "label": "SoftNest serves Mississauga, Toronto, Brampton, Oakville, Burlington, Etobicoke, Vaughan, ",
+        "text": "SoftNest serves Mississauga, Toronto, Brampton, Oakville, Burlington, Etobicoke, Vaughan, Milton, Hamilton and nearby communities. Send your location with the quote request so we can confirm service availability."
+      },
+      {
+        "key": "page-29",
+        "label": "Free photo estimate",
+        "text": "Free photo estimate"
+      },
+      {
+        "key": "page-30",
+        "label": "Show us what needs cleaning",
+        "text": "Show us what needs cleaning"
+      },
+      {
+        "key": "page-31",
+        "label": "Send the item details and any problem areas. We will review the scope and confirm the esti",
+        "text": "Send the item details and any problem areas. We will review the scope and confirm the estimate before the work begins."
+      },
+      {
+        "key": "page-32",
+        "label": "Request a free quote",
+        "text": "{{quote}}"
+      },
+      {
+        "key": "page-33",
+        "label": "Call now",
+        "text": "Call now"
+      }
+    ]
+  }
+]

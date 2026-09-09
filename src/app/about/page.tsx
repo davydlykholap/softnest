@@ -1,3 +1,6 @@
+import { jsonLd } from "@/seo/structuredData";
+import { pageText } from "@/content/pages";
+import { aboutContent } from "@/content/pages";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,31 +22,14 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/softnest-hero-room.webp",
+        url: siteConfig.heroImage,
         alt: "SoftNest Fabric Care professional upholstery cleaning",
       },
     ],
   },
 };
 
-const principles = [
-  {
-    title: "Inspect before we clean",
-    text: "We consider the material, construction, condition and problem areas before choosing the cleaning approach.",
-  },
-  {
-    title: "Use the right process",
-    text: "Fabric and leather are treated differently. Products and methods are selected for the material and the work being performed.",
-  },
-  {
-    title: "Work carefully, not hurriedly",
-    text: "Our goal is thorough cleaning of the confirmed scope, including detailed and hard-to-reach areas where practical.",
-  },
-  {
-    title: "Set honest expectations",
-    text: "Cleaning can remove soil and improve many stains, but it cannot reverse permanent wear, dye loss, cracking or physical damage.",
-  },
-] as const;
+const principles = aboutContent.principles;
 
 const serviceLinks = [
   ["Sofa & Couch Cleaning", "/services/sofa-cleaning/"],
@@ -95,24 +81,19 @@ export default function AboutPage() {
       <main className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <p className={styles.kicker}>About SoftNest Fabric Care</p>
+            <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-1") + ""}</p>
             <h1>
-              Careful work. Clear expectations.
-              <span>Professional fabric care.</span>
+              {" " + pageText(aboutContent.copy, "page-2") + " "}<span>{"" + pageText(aboutContent.copy, "page-3") + ""}</span>
             </h1>
             <p className={styles.lead}>
-              SoftNest Fabric Care is a local, family-run cleaning team serving homes across the Greater Toronto Area. We focus on upholstery, carpet, mattresses and suitable leather furniture, with the work planned around the material and condition of each item.
-            </p>
+              {" " + pageText(aboutContent.copy, "page-4") + " "}</p>
             <p className={styles.sublead}>
-              The standard is simple: inspect first, use professional equipment and appropriate products, clean thoroughly, and explain honestly what can and cannot be improved.
-            </p>
+              {" " + pageText(aboutContent.copy, "page-5") + " "}</p>
             <div className={styles.actions}>
               <Link className={styles.primaryButton} href="/quote/">
-                Request a free quote
-              </Link>
+                {" " + pageText(aboutContent.copy, "page-6") + " "}</Link>
               <Link className={styles.secondaryButton} href="/services/">
-                View our services
-              </Link>
+                {" " + pageText(aboutContent.copy, "page-7") + " "}</Link>
             </div>
           </div>
 
@@ -126,41 +107,39 @@ export default function AboutPage() {
               className="object-cover"
             />
             <div className={styles.heroNote}>
-              <strong>Professional fabric care</strong>
-              <span>Upholstery · carpet · mattresses · suitable leather</span>
+              <strong>{"" + pageText(aboutContent.copy, "page-8") + ""}</strong>
+              <span>{"" + pageText(aboutContent.copy, "page-9") + ""}</span>
             </div>
           </div>
         </section>
 
         <section className={styles.proofRail} aria-label="SoftNest service principles">
           <div className={styles.proofItem}>
-            <strong>Local</strong>
-            <span>Family-run team</span>
+            <strong>{"" + pageText(aboutContent.copy, "page-10") + ""}</strong>
+            <span>{"" + pageText(aboutContent.copy, "page-11") + ""}</span>
           </div>
           <div className={styles.proofItem}>
-            <strong>Insured</strong>
-            <span>Liability coverage</span>
+            <strong>{"" + pageText(aboutContent.copy, "page-12") + ""}</strong>
+            <span>{"" + pageText(aboutContent.copy, "page-13") + ""}</span>
           </div>
           <div className={styles.proofItem}>
-            <strong>Professional</strong>
-            <span>Commercial-grade equipment</span>
+            <strong>{"" + pageText(aboutContent.copy, "page-14") + ""}</strong>
+            <span>{"" + pageText(aboutContent.copy, "page-15") + ""}</span>
           </div>
           <div className={styles.proofItem}>
-            <strong>Simple</strong>
-            <span>Payment after service</span>
+            <strong>{"" + pageText(aboutContent.copy, "page-16") + ""}</strong>
+            <span>{"" + pageText(aboutContent.copy, "page-17") + ""}</span>
           </div>
         </section>
 
         <section className={styles.processSection}>
           <div className={styles.sectionCopy}>
-            <p className={styles.kicker}>How we work</p>
-            <h2>Quality comes from the process, not from rushing the job</h2>
+            <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-18") + ""}</p>
+            <h2>{"" + pageText(aboutContent.copy, "page-19") + ""}</h2>
             <p>
-              Furniture and carpet do not all respond the same way. That is why our work starts with the item itself: its fabric or leather, construction, soil level, staining, previous treatments and any visible wear.
-            </p>
+              {" " + pageText(aboutContent.copy, "page-20") + " "}</p>
             <p>
-              We use commercial-grade equipment where appropriate, standard spot and stain treatment for suitable fabric, professional drying for wet-cleaned upholstery and carpet, and a separate cleaning, conditioning and protection process for suitable leather.
-            </p>
+              {" " + pageText(aboutContent.copy, "page-21") + " "}</p>
           </div>
 
           <div className={styles.principlesGrid}>
@@ -189,16 +168,14 @@ export default function AboutPage() {
                 />
               </div>
               <div className={styles.equipmentLabel}>
-                Professional equipment, selected for the material and job.
-              </div>
+                {" " + pageText(aboutContent.copy, "page-22") + " "}</div>
             </div>
 
             <div className={styles.cleanCopy}>
-              <p className={styles.kicker}>What we clean</p>
-              <h2>Focused on the surfaces people use every day</h2>
+              <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-23") + ""}</p>
+              <h2>{"" + pageText(aboutContent.copy, "page-24") + ""}</h2>
               <p>
-                Our work is centered on furniture and soft surfaces in the home. For a more accurate estimate, send photos of the complete item together with close-ups of stains, wear or other concerns.
-              </p>
+                {" " + pageText(aboutContent.copy, "page-25") + " "}</p>
               <div className={styles.serviceLinks}>
                 {serviceLinks.map(([label, href]) => (
                   <Link className={styles.serviceLink} href={href} key={href}>
@@ -213,11 +190,10 @@ export default function AboutPage() {
 
         <section className={styles.areaSection}>
           <div className={styles.areaCopy}>
-            <p className={styles.kicker}>Service area</p>
-            <h2>Serving homes across the GTA</h2>
+            <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-26") + ""}</p>
+            <h2>{"" + pageText(aboutContent.copy, "page-27") + ""}</h2>
             <p>
-              SoftNest serves Mississauga, Toronto, Brampton, Oakville, Burlington, Etobicoke, Vaughan, Milton, Hamilton and nearby communities. Send your location with the quote request so we can confirm service availability.
-            </p>
+              {" " + pageText(aboutContent.copy, "page-28") + " "}</p>
           </div>
 
           <div className={styles.areaVisual} aria-label="Areas served">
@@ -230,15 +206,14 @@ export default function AboutPage() {
         <div className={styles.finalCtaWrap}>
           <section className={styles.finalCta}>
             <div className={styles.finalCtaCopy}>
-              <p className={styles.kicker}>Free photo estimate</p>
-              <h2>Show us what needs cleaning</h2>
+              <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-29") + ""}</p>
+              <h2>{"" + pageText(aboutContent.copy, "page-30") + ""}</h2>
               <p>
-                Send the item details and any problem areas. We will review the scope and confirm the estimate before the work begins.
-              </p>
+                {" " + pageText(aboutContent.copy, "page-31") + " "}</p>
             </div>
             <div className={styles.finalActions}>
-              <Link className={styles.lightButton} href="/quote/">Request a free quote</Link>
-              <a className={styles.outlineButton} href="tel:+14167270287">Call now</a>
+              <Link className={styles.lightButton} href="/quote/">{"" + pageText(aboutContent.copy, "page-32") + ""}</Link>
+              <a className={styles.outlineButton} href={siteConfig.phoneHref}>{"" + pageText(aboutContent.copy, "page-33") + ""}</a>
             </div>
           </section>
         </div>
@@ -250,7 +225,7 @@ export default function AboutPage() {
         <script
           key={index}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(schema) }}
         />
       ))}
     </>

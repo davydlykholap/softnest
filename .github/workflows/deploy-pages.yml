@@ -4,6 +4,8 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  repository_dispatch:
+    types: [sanity-content-published]
 
 permissions:
   contents: read
@@ -35,6 +37,14 @@ jobs:
 
       - name: Validate and build static export
         run: npm run check
+        env:
+          SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ vars.SANITY_DATASET }}
+          CONTENT_SOURCE: sanity
+          NEXT_PUBLIC_GOOGLE_ADS_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_ADS_ID }}
+          NEXT_PUBLIC_GOOGLE_ADS_QUOTE_CONVERSION: ${{ vars.NEXT_PUBLIC_GOOGLE_ADS_QUOTE_CONVERSION }}
+          NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION: ${{ vars.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION }}
+          NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ vars.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY }}
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -47,3 +57,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Record publishing outcome
+        if: always()
+        run: |
+          echo "## SoftNest publishing" >> "$GITHUB_STEP_SUMMARY"
+          echo "Result: ${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Website: https://softnestcare.ca" >> "$GITHUB_STEP_SUMMARY"
+          echo "A failed build does not replace the currently published website." >> "$GITHUB_STEP_SUMMARY"

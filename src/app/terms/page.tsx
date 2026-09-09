@@ -1,7 +1,8 @@
+import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import styles from "../legal-page.module.css";
+import styles from "@/app/legal-page.module.css";
 
 export const metadata: Metadata = {
   title: "Terms of Service | SoftNest Fabric Care",
@@ -18,12 +19,13 @@ export default function TermsPage() {
       </div>
       <main className={styles.page}>
         <article className={styles.shell}>
-          <p className={styles.eyebrow}>SoftNest Fabric Care</p>
+          <p className={styles.eyebrow}>{siteConfig.name}</p>
           <h1>Terms of Service</h1>
           <p className={styles.updated}>Last updated: August 6, 2026</p>
 
           <p>
-            These terms apply to use of the SoftNest Fabric Care website and to
+            
+            These terms apply to use of the {siteConfig.name} website and to
             estimates, appointments and cleaning services arranged with us.
           </p>
 
@@ -108,9 +110,10 @@ export default function TermsPage() {
 
           <h2>Contact</h2>
           <p>
-            <a href="tel:+14167270287">(416) 727-0287</a><br />
-            <a href="mailto:softnest.upholstery@outlook.com">
-              softnest.upholstery@outlook.com
+            <a href={siteConfig.phoneHref}>{siteConfig.displayPhone}</a><br />
+            <a href={siteConfig.emailHref}>
+              
+              {siteConfig.email}
             </a>
           </p>
 

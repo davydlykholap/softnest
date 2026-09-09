@@ -1,9 +1,11 @@
+import RelatedGuides from "@/components/blog/RelatedGuides";
+import { jsonLd } from "@/seo/structuredData";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import type { Service } from "@/data/services";
-import { getService } from "@/data/services";
+import type { Service } from "@/content/services";
+import { getService } from "@/content/services";
 import { absoluteUrl, organizationProvider, siteConfig } from "@/lib/site";
 import styles from "@/app/services/service-page.module.css";
 
@@ -97,10 +99,12 @@ export default function ServicePage({ service }: { service: Service }) {
             <p className={styles.heroDescription}>{service.heroDescription}</p>
             <div className={styles.actions}>
               <Link className={styles.primaryButton} href="/quote/">
-                Request a free quote <span aria-hidden="true">→</span>
+                
+                {siteConfig.quoteLabel} <span aria-hidden="true">→</span>
               </Link>
-              <a className={styles.secondaryButton} href="tel:+14167270287">
-                Call (416) 727-0287
+              <a className={styles.secondaryButton} href={siteConfig.phoneHref}>
+                
+                Call {siteConfig.displayPhone}
               </a>
             </div>
             <ul className={styles.heroProofs} aria-label="Service assurances">
@@ -256,22 +260,24 @@ export default function ServicePage({ service }: { service: Service }) {
           </div>
           <div className={styles.actions}>
             <Link className={styles.lightButton} href="/quote/">
-              Request a free quote <span aria-hidden="true">→</span>
+              
+              {siteConfig.quoteLabel} <span aria-hidden="true">→</span>
             </Link>
-            <a className={styles.outlineButton} href="tel:+14167270287">
+            <a className={styles.outlineButton} href={siteConfig.phoneHref}>
               Call now
             </a>
           </div>
         </section>
       </main>
 
+      <RelatedGuides service={service.slug} />
       <SiteFooter />
 
       {[serviceSchema, breadcrumbSchema, faqSchema].map((schema, index) => (
         <script
           key={index}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(schema) }}
         />
       ))}
     </>

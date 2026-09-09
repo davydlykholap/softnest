@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
-import { services } from "@/data/services";
+import { services } from "@/content/services";
 
 function serviceMatchesQuery(
   service: (typeof services)[number],

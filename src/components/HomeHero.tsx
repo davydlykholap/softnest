@@ -1,26 +1,13 @@
+import { siteConfig } from "@/lib/site";
+import { pageText } from "@/content/pages";
+import { homeContent } from "@/content/pages";
 import Image from "next/image";
 import HeroActionButtons from "@/components/HeroActionButtons";
 
 export default function HomeHero() {
-  const googleProfileUrl = "https://maps.app.goo.gl/XHFbygUj49Suv9F48";
+  const googleProfileUrl = siteConfig.googleProfileUrl;
 
-  const googleReviews = [
-    {
-      name: "Nicky C.",
-      initial: "N",
-      text: "The team was able to accommodate my request to change the time, kept me informed and updated and did an awesome job.",
-    },
-    {
-      name: "Julie T.",
-      initial: "J",
-      text: "Andrii and his son are incredible! They went above and beyond. They are very good and detailed, and I would give them 10 out of 10 stars.",
-    },
-    {
-      name: "Andrew G.",
-      initial: "A",
-      text: "They spent hours working hard to make my old sofa look new again. Very friendly and communicative. They gave me options and it worked out very well. Highly recommended!",
-    },
-  ];
+  const googleReviews = homeContent.heroReviews;
 
   return (
     <main className="site-shell">
@@ -37,21 +24,15 @@ export default function HomeHero() {
         <div className="hero__wash" aria-hidden="true" />
 
         <div className="hero__content">
-          <p className="hero__eyebrow">Proudly Serving the GTA</p>
+          <p className="hero__eyebrow">{"" + pageText(homeContent.copy, "hero-1") + ""}</p>
           <span className="hero__eyebrow-line" aria-hidden="true" />
           <h1 id="home-hero-heading" className="hero__title">
-            Expert Care For
-            <br />
-            Your Furniture
-            <br />
-            &amp; Carpets.
-            <span>Results You&apos;ll Feel.</span>
+            {" " + pageText(homeContent.copy, "hero-2") + " "}<br />
+            {" " + pageText(homeContent.copy, "hero-3") + " "}<br />
+            {" " + pageText(homeContent.copy, "hero-4") + " "}<span>{"" + pageText(homeContent.copy, "hero-5") + ""}</span>
           </h1>
           <p className="hero__description">
-            Professional equipment, fabric-appropriate products, and meticulous
-            techniques refresh your home&apos;s comfort. From deep sofa
-            cleaning to careful rug cleaning.
-          </p>
+            {" " + pageText(homeContent.copy, "hero-6") + " "}</p>
           <HeroActionButtons primaryTone="gold" />
           <ul className="hero__benefits" aria-label="Service benefits">
             <li>
@@ -59,10 +40,8 @@ export default function HomeHero() {
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 18 2 18 2c1 5-1 11-7 12m-1 6c0-3 1-7 5-10" />
               </svg>
               <span>
-                Eco-Friendly
-                <br />
-                Products
-              </span>
+                {" " + pageText(homeContent.copy, "hero-7") + " "}<br />
+                {" " + pageText(homeContent.copy, "hero-8") + " "}</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -70,10 +49,8 @@ export default function HomeHero() {
                 <path d="m9 12 2 2 4-4" />
               </svg>
               <span>
-                Safe for Kids
-                <br />
-                &amp; Pets
-              </span>
+                {" " + pageText(homeContent.copy, "hero-9") + " "}<br />
+                {" " + pageText(homeContent.copy, "hero-10") + " "}</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -81,10 +58,8 @@ export default function HomeHero() {
                 <path d="m9 12 2 2 4-4" />
               </svg>
               <span>
-                Satisfaction
-                <br />
-                Guaranteed
-              </span>
+                {" " + pageText(homeContent.copy, "hero-11") + " "}<br />
+                {" " + pageText(homeContent.copy, "hero-12") + " "}</span>
             </li>
           </ul>
         </div>
@@ -105,33 +80,29 @@ export default function HomeHero() {
         aria-label="Free photo estimate and Google reviews"
       >
         <div className="journey-card__quote">
-          <p className="journey-card__eyebrow">Free photo estimate</p>
-          <h2>Show us what needs cleaning.</h2>
+          <p className="journey-card__eyebrow">{"" + pageText(homeContent.copy, "hero-13") + ""}</p>
+          <h2>{"" + pageText(homeContent.copy, "hero-14") + ""}</h2>
           <p>
-            Send a few photos through{" "}
+            {" " + pageText(homeContent.copy, "hero-15") + ""}{" "}
             <a
-              href="https://www.instagram.com/softnestfabriccare/"
+              href={siteConfig.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Instagram
-            </a>{" "}
+              {" " + pageText(homeContent.copy, "hero-16") + " "}</a>{" "}
             or{" "}
             <a
-              href="https://www.facebook.com/profile.php?id=61590622653207"
+              href={siteConfig.facebookUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Facebook
-            </a>{" "}
-            and we&apos;ll recommend the right treatment with a clear,
-            no-obligation quote.
-          </p>
+              {" " + pageText(homeContent.copy, "hero-17") + " "}</a>{" "}
+            {" " + pageText(homeContent.copy, "hero-18") + " "}</p>
           <div className="journey-card__quote-action">
             <a className="quote-cta" href="/quote/">
-              Request an estimate <span aria-hidden="true">→</span>
+              {" " + pageText(homeContent.copy, "hero-19") + " "}<span aria-hidden="true">→</span>
             </a>
-            <small>Fast replies · No hidden fees</small>
+            <small>{"" + pageText(homeContent.copy, "hero-20") + ""}</small>
           </div>
         </div>
 
@@ -145,10 +116,10 @@ export default function HomeHero() {
                 width={120}
                 height={40}
               />
-              <span>Reviews</span>
+              <span>{"" + pageText(homeContent.copy, "hero-21") + ""}</span>
             </div>
             <div className="google-review-summary__score">
-              <strong>5.0</strong>
+              <strong>{siteConfig.reviewScore}</strong>
               <span aria-label="5 out of 5 stars">★★★★★</span>
             </div>
             <a
@@ -156,7 +127,7 @@ export default function HomeHero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Read all reviews <span aria-hidden="true">→</span>
+              {" " + pageText(homeContent.copy, "hero-22") + " "}<span aria-hidden="true">→</span>
             </a>
           </div>
 

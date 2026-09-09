@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import QuotePageForm from "@/components/QuotePageForm";
@@ -54,7 +55,7 @@ export default function QuotePage() {
         <section className="quote-page-contact">
           <p>Prefer to talk?</p>
           <h2>We’re happy to help.</h2>
-          <a href="tel:+14167270287">(416) 727-0287 <span aria-hidden="true">→</span></a>
+          <a href={siteConfig.phoneHref}>{siteConfig.displayPhone} <span aria-hidden="true">→</span></a>
         </section>
       </main>
       <SiteFooter />

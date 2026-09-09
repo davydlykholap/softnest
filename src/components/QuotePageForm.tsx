@@ -1,13 +1,16 @@
 "use client";
 
+import { siteConfig } from "@/lib/site";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { trackQuoteConversion } from "@/lib/analytics";
+import { integrations } from "@/lib/integrations";
+import { submitQuote } from "@/domain/quote";
 import { attributionStorageKey } from "@/lib/marketingAttribution";
-import { quoteServiceOptions } from "@/data/quote";
+import { quoteCategories, quoteServiceOptions } from "@/content/quote";
 
-const instagramUrl = "https://www.instagram.com/softnestfabriccare/";
-const facebookUrl = "https://www.facebook.com/profile.php?id=61590622653207";
+const instagramUrl = siteConfig.instagramUrl;
+const facebookUrl = siteConfig.facebookUrl;
 const lastQuoteStorageKey = "softnest_last_quote_submission";
 
 const serviceOptions = quoteServiceOptions;
@@ -83,10 +86,11 @@ export default function QuotePageForm() {
     setError("");
     formData.set("name", name);
     formData.set("furniture", selected.join(", "));
+    formData.set("service_ids", quoteCategories.filter(item=>selected.includes(item.label)).map(item=>item.id).join(","));
     formData.set("phone", phone);
     formData.set("notes", notes);
     formData.delete("website");
-    formData.set("access_key", "c204f6bb-0402-4dfe-8981-fc5080ce3ac4");
+    formData.set("access_key", integrations.web3formsAccessKey);
     formData.set("from_name", "SoftNest Website");
     formData.set("source_page", window.location.pathname);
     if (document.referrer) formData.set("referrer", document.referrer);
@@ -107,21 +111,7 @@ export default function QuotePageForm() {
     const timeout = window.setTimeout(() => controller.abort(), 12_000);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData,
-        credentials: "omit",
-        referrerPolicy: "strict-origin-when-cross-origin",
-        signal: controller.signal,
-      });
-      const result = (await response.json()) as {
-        success?: boolean;
-        message?: string;
-      };
-      if (!response.ok || !result.success) {
-        throw new Error(result.message || "Submission failed.");
-      }
+      await submitQuote(formData, controller.signal);
 
       try {
         window.sessionStorage.setItem(lastQuoteStorageKey, String(Date.now()));
@@ -133,7 +123,7 @@ export default function QuotePageForm() {
       trackQuoteConversion(() => window.location.assign("/quote/thank-you/"));
     } catch {
       setError(
-        "We couldn’t send the form. Please call or text (416) 727-0287.",
+        "We couldn’t send the form. Please call or text " + siteConfig.displayPhone + ".",
       );
     } finally {
       window.clearTimeout(timeout);
@@ -151,7 +141,7 @@ export default function QuotePageForm() {
           We received your cleaning details. A SoftNest specialist will contact
           you to discuss the right treatment and next steps.
         </p>
-        <a href="tel:+14167270287">Need us sooner? Call (416) 727-0287</a>
+        <a href={siteConfig.phoneHref}>Need us sooner? Call {siteConfig.displayPhone}</a>
       </div>
     );
   }

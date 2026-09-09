@@ -1,10 +1,11 @@
 "use client";
 
+import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Service } from "@/data/services";
+import type { Service } from "@/content/services";
 
 type NavigationService = Pick<
   Service,
@@ -41,8 +42,7 @@ const iconBySlug: Record<string, ServiceIconName> = {
 
 const navigation = [
   { label: "Reviews", hash: "reviews" },
-  { label: "Before & After", hash: "results" },
-  { label: "FAQ", hash: "faq" },
+  { label: "Blog", href: "/blog/" },
   { label: "About Us", href: "/about/" },
 ] as const;
 
@@ -463,13 +463,14 @@ export default function HeaderNavigation({
             {item.label}
           </Link>
         ))}
-        <a href="tel:+14167270287">Call (416) 727-0287</a>
+        <a href={siteConfig.phoneHref}>Call {siteConfig.displayPhone}</a>
         <Link
           className="mobile-nav__quote quote-cta"
           href="/quote/"
           onClick={() => setOpen(false)}
         >
-          Request a free quote
+          
+          {siteConfig.quoteLabel}
         </Link>
       </nav>
     </>

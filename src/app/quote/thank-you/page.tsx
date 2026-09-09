@@ -1,7 +1,8 @@
+import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import styles from "../quote-page.module.css";
+import styles from "@/app/quote/quote-page.module.css";
 
 export const metadata: Metadata = {
   title: "Quote Request Received | SoftNest",
@@ -32,7 +33,7 @@ export default function QuoteThankYouPage() {
               <p className="quote-page-photo-channels">
                 You can send your photos through{" "}
                 <a
-                  href="https://www.instagram.com/softnestfabriccare/"
+                  href={siteConfig.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -40,14 +41,14 @@ export default function QuoteThankYouPage() {
                 </a>{" "}
                 or{" "}
                 <a
-                  href="https://www.facebook.com/profile.php?id=61590622653207"
+                  href={siteConfig.facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Facebook
                 </a>.
               </p>
-              <a href="tel:+14167270287">Need us sooner? Call (416) 727-0287</a>
+              <a href={siteConfig.phoneHref}>Need us sooner? Call {siteConfig.displayPhone}</a>
             </div>
           </div>
         </section>

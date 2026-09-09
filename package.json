@@ -3,18 +3,37 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "studio": "npm run dev --prefix studio",
+    "studio:deploy": "npm run deploy --prefix studio",
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint .",
+    "check": "npm run content:sync && eslint . && npm run content:verify && next build && npm run verify:export",
+    "content:sync": "node scripts/content/sync.mjs",
+    "content:seed": "node scripts/content/run-seed.mjs",
+    "content:import:check": "node scripts/content/import.mjs --dry-run",
+    "content:import": "node scripts/content/import.mjs",
+    "content:verify": "node --test scripts/content/normalize.test.mjs",
     "verify:export": "node scripts/verify-export.mjs",
-    "check": "npm run lint && npm run build && npm run verify:export"
+    "predev": "npm run content:sync",
+    "prebuild": "npm run content:sync",
+    "prelint": "npm run content:sync",
+    "studio:check": "npm run typecheck --prefix studio && npm run build --prefix studio",
+    "content:types": "npm run typegen --prefix studio",
+    "preview": "node scripts/content/preview.mjs",
+    "content:repair-ids": "node scripts/content/repair-ids.mjs"
   },
   "dependencies": {
+    "@portabletext/react": "^8.0.1",
+    "@sanity/client": "^8.5.0",
+    "@sanity/image-url": "^2.1.1",
+    "groq": "^6.12.0",
     "next": "16.2.12",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "4.1.18",
     "@types/node": "20.19.33",
     "@types/react": "19.2.14",
@@ -27,5 +46,6 @@
   "overrides": {
     "postcss": "8.5.25",
     "sharp": "0.35.3"
-  }
+  },
+  "type": "module"
 }

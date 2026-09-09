@@ -1,3 +1,4 @@
+import { siteConfig } from "@/lib/site";
 import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
@@ -8,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://softnestcare.ca/sitemap.xml",
-    host: "https://softnestcare.ca",
+    sitemap: siteConfig.url + "/sitemap.xml",
+    host: siteConfig.url + "",
   };
 }

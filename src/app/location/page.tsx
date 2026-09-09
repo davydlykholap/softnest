@@ -1,3 +1,5 @@
+import { jsonLd } from "@/seo/structuredData";
+import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
@@ -9,8 +11,8 @@ import {
 import LocationSearch from "@/components/LocationSearch";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import { locations } from "@/data/locations";
-import "../styles/locations-hub.css";
+import { locations } from "@/content/locations";
+import "@/app/styles/locations-hub.css";
 
 export const metadata: Metadata = {
   title: "Upholstery Cleaning Service Areas | SoftNest",
@@ -46,13 +48,13 @@ export default function LocationsPage() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://softnestcare.ca/",
+        item: siteConfig.url + "/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Locations",
-        item: "https://softnestcare.ca/location/",
+        item: siteConfig.url + "/location/",
       },
     ],
   };
@@ -100,7 +102,7 @@ export default function LocationsPage() {
             {locations.map((location) => (
               <DirectoryCard
                 href={`/location/${location.slug}/`}
-                image={`/img/locations/${location.slug}.webp`}
+                image={location.image}
                 imageAlt={cityPhotoAlt[location.slug]}
                 title={location.name}
                 subtitle="Upholstery & carpet cleaning"
@@ -145,7 +147,7 @@ export default function LocationsPage() {
           kicker="Professional care, close to home"
           title="A fresher home is closer than you think."
           description="Trusted by homeowners across the GTA for professional, careful cleaning that makes a real difference."
-          action={{ href: "/quote/", label: "Request a free quote" }}
+          action={{ href: "/quote/", label: siteConfig.quoteLabel }}
           image="/images/softnest-hero-room.webp"
           imageAlt="SoftNest hero room with a deep green sofa"
         />
@@ -154,7 +156,7 @@ export default function LocationsPage() {
       <SiteFooter />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
       />
     </>
   );

@@ -1,7 +1,9 @@
+import { pageMetadata } from '@/seo/metadata';
+import { serviceUrl } from '@/seo/urls';
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServicePage from "@/components/ServicePage";
-import { getService, services } from "@/data/services";
+import { getService, services } from "@/content/services";
 
 type ServiceRouteProps = {
   params: Promise<{ service: string }>;
@@ -18,25 +20,7 @@ export async function generateMetadata({
   const service = getService(slug);
   if (!service) return {};
 
-  const path = `/services/${service.slug}/`;
-
-  return {
-    title: service.metaTitle,
-    description: service.metaDescription,
-    alternates: { canonical: path },
-    openGraph: {
-      title: service.metaTitle,
-      description: service.metaDescription,
-      url: path,
-      type: "website",
-      images: [
-        {
-          url: service.image,
-          alt: service.imageAlt,
-        },
-      ],
-    },
-  };
+  return pageMetadata({title:service.metaTitle,description:service.metaDescription,path:serviceUrl(service.slug),image:service.image,imageAlt:service.imageAlt});
 }
 
 export default async function ServiceRoute({ params }: ServiceRouteProps) {

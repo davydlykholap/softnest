@@ -1,59 +1,22 @@
+import { getProjects } from "@/content/pages";
+import { jsonLd } from "@/seo/structuredData";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
-import type { Location } from "@/data/locations";
-import { locations, nearbyLocationSlugs } from "@/data/locations";
-import { getService } from "@/data/services";
+import type { Location } from "@/content/locations";
+import { locations, nearbyLocationSlugs } from "@/content/locations";
+import { getService } from "@/content/services";
 import { organizationProvider, siteConfig } from "@/lib/site";
-
-const locationServiceSlugs = [
-  "sofa-cleaning",
-  "sectional-furniture-cleaning",
-  "pet-stain-odour-removal",
-  "carpet-area-rug-cleaning",
-];
-
-const locationServices = locationServiceSlugs
-  .map((slug) => getService(slug))
-  .filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
-
-const locationProof: Record<
-  string,
-  { image: string; category: string; service: string; alt: string }
-> = {
-  mississauga: {
-    image: "/img/sectional_3.webp",
-    category: "Sofa",
-    service: "Pet stains and odour removal",
-    alt: "Before and after sofa cleaning result in Mississauga",
-  },
-  oakville: {
-    image: "/img/sectional_1.webp",
-    category: "Sectional sofa",
-    service: "Deep cleaning",
-    alt: "Before and after sectional cleaning result in Oakville",
-  },
-  toronto: {
-    image: "/img/matress_cleaning.webp",
-    category: "Mattress",
-    service: "Stain and odour removal",
-    alt: "Before and after mattress cleaning result in Toronto",
-  },
-  brampton: {
-    image: "/img/before_after_carpet_cleaning.webp",
-    category: "Carpet",
-    service: "Deep carpet cleaning",
-    alt: "Before and after carpet cleaning result in Brampton",
-  },
-};
 
 type LocationPageProps = {
   location: Location;
 };
 
 export default function LocationPage({ location }: LocationPageProps) {
-  const proof = locationProof[location.slug];
+  const locationServices = location.availableServices.map(getService).filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
+  const project = getProjects({location:location.slug})[0];
+  const proof = project ? {...project,alt:project.label} : undefined;
   const nearby = (nearbyLocationSlugs[location.slug] ?? [])
     .map((slug) => locations.find((item) => item.slug === slug))
     .filter((item): item is Location => Boolean(item));
@@ -132,13 +95,15 @@ export default function LocationPage({ location }: LocationPageProps) {
             <p>{location.shortDescription}</p>
             <div className="location-actions">
               <Link className="location-button location-button--primary" href="/quote/">
-                Request a free quote
+                
+                {siteConfig.quoteLabel}
               </Link>
               <a
                 className="location-button location-button--secondary"
-                href="tel:+14167270287"
+                href={siteConfig.phoneHref}
               >
-                Call (416) 727-0287
+                
+                Call {siteConfig.displayPhone}
               </a>
             </div>
             <ul className="location-trust" aria-label="Service assurances">
@@ -333,11 +298,12 @@ export default function LocationPage({ location }: LocationPageProps) {
           </div>
           <div className="location-actions">
             <Link className="location-button location-button--light" href="/quote/">
-              Request a free quote
+              
+              {siteConfig.quoteLabel}
             </Link>
             <a
               className="location-button location-button--outline"
-              href="tel:+14167270287"
+              href={siteConfig.phoneHref}
             >
               Call now
             </a>
@@ -349,7 +315,7 @@ export default function LocationPage({ location }: LocationPageProps) {
         <script
           key={index}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(schema) }}
         />
       ))}
     </>

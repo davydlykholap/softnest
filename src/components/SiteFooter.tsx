@@ -1,6 +1,7 @@
+import { siteConfig } from "@/lib/site";
 import Link from "next/link";
-import { locations } from "@/data/locations";
-import { navigationServices } from "@/data/services";
+import { footerLocations } from "@/content/locations";
+import { navigationServices } from "@/content/services";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 
 export default function SiteFooter() {
@@ -49,7 +50,7 @@ export default function SiteFooter() {
             Areas We Serve
           </h3>
           <ul className="footer-location-list text-sm text-stone-700">
-            {locations.map((location) => (
+            {footerLocations.map((location) => (
               <li key={location.slug}>
                 <Link href={`/location/${location.slug}/`}>
                   {location.name}
@@ -66,11 +67,12 @@ export default function SiteFooter() {
             Contact
           </h3>
           <p className="text-sm text-stone-700 mb-2">
-            <a href="tel:+14167270287">(416) 727-0287</a>
+            <a href={siteConfig.phoneHref}>{siteConfig.displayPhone}</a>
           </p>
           <p className="text-sm text-stone-700 mb-2">
-            <a href="mailto:softnest.upholstery@outlook.com">
-              softnest.upholstery@outlook.com
+            <a href={siteConfig.emailHref}>
+              
+              {siteConfig.email}
             </a>
           </p>
           <p className="text-sm text-stone-700">
@@ -93,7 +95,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="max-w-6xl mx-auto mt-10 pt-6 border-t border-forestGreen/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-stone-500">
-        <p>© 2026 SoftNest Fabric Care. All rights reserved.</p>
+        <p>© 2026 {siteConfig.name}. All rights reserved.</p>
         <p className="footer-legal-links">
           <Link href="/privacy/">Privacy Policy</Link>
           <span aria-hidden="true">|</span>
