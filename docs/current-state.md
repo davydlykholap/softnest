@@ -11,7 +11,7 @@ This file is the handoff point for the current website/CMS modernization. Read i
 - Public business settings, services, service areas, FAQs, approved testimonials, approved cleaning results, quote-form categories, homepage/About copy and blog posts have a structured Sanity model.
 - The website consumes one validated generated content snapshot through `src/content` selectors.
 - Blog data now follows the same `src/content` boundary as the rest of the website rather than reading generated JSON from Sanity/UI modules directly.
-- Two prepared blog articles are represented in `content/migration/article-seed.json`; the first article includes five prepared body images.
+- Three prepared blog articles are represented in `content/migration/article-seed.json`; the stain-removal article includes five prepared body images.
 - Service-area coverage is separate from page publication, search indexing and footer visibility.
 - The richer Mississauga presentation is handled by the reusable expanded-location component rather than a Mississauga-only page component.
 - Business URLs/phone/social details are centralized rather than repeated through normal page components.
@@ -29,7 +29,7 @@ This file is the handoff point for the current website/CMS modernization. Read i
 
 `npm run content:verify` validates the migration/content contract. It currently checks, among other things:
 
-- exactly expected migrated catalogs and the two prepared articles;
+- exactly expected migrated catalogs and the three prepared articles;
 - public Sanity document IDs/references never use dotted private paths;
 - preservation of the original article prose;
 - duplicate service/location/article slugs;
@@ -64,8 +64,9 @@ Until this is verified, publishing in Sanity and deploying the website are still
 
 ## Blog milestone
 
-The first two intended article URLs are:
+The three intended article URLs are:
 
+- `/blog/what-cleaning-solution-can-i-use-on-my-couch/`
 - `/blog/how-to-remove-stain-from-couch/`
 - `/blog/why-did-my-couch-stain-come-back-after-cleaning/`
 

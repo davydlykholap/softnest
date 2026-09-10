@@ -28,11 +28,11 @@ test("migration IDs and references stay publicly readable", () => {
   assert.deepEqual(dotted, []);
 });
 
-test("complete migration preserves catalogs and exactly two complete articles", () => {
+test("complete migration preserves catalogs and exactly three complete articles", () => {
   const content = normalizeContent(seed(), config);
   assert.equal(content.services.length, 10);
   assert.equal(content.locations.length, 9);
-  assert.equal(content.posts.length, 2);
+  assert.equal(content.posts.length, 3);
 
   const first = content.posts.find(
     (post) => post.slug === "how-to-remove-stain-from-couch",
@@ -40,8 +40,12 @@ test("complete migration preserves catalogs and exactly two complete articles", 
   const second = content.posts.find(
     (post) => post.slug === "why-did-my-couch-stain-come-back-after-cleaning",
   );
+  const third = content.posts.find(
+    (post) => post.slug === "what-cleaning-solution-can-i-use-on-my-couch",
+  );
   assert.equal(first.body.filter((block) => block._type === "image").length, 5);
   assert.equal(second.body.filter((block) => block._type === "image").length, 0);
+  assert.equal(third.body.filter((block) => block._type === "image").length, 0);
 
   for (const post of content.posts) {
     const source = fs
@@ -113,7 +117,11 @@ test("unapproved results and reviews never appear in the public snapshot", () =>
 test("an article image without alt text fails validation", () => {
   const documents = seed();
   delete documents
-    .find((document) => document._type === "post" && document.order === 0)
+    .find(
+      (document) =>
+        document._type === "post" &&
+        document.slug.current === "how-to-remove-stain-from-couch",
+    )
     .body.find((block) => block._type === "image").alt;
   assert.throws(
     () => normalizeContent(documents, config),

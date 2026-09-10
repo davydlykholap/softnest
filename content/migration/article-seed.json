@@ -8892,6 +8892,5211 @@
     "showCover": false
   },
   {
+    "_id": "post-what-cleaning-solution-can-i-use-on-my-couch",
+    "_type": "post",
+    "title": "What Cleaning Solution Can I Use on My Couch? How to Choose Without Damaging the Fabric",
+    "seoTitle": "What Cleaning Solution Can I Use on My Couch? | SoftNest",
+    "slug": {
+      "_type": "slug",
+      "current": "what-cleaning-solution-can-i-use-on-my-couch"
+    },
+    "excerpt": "Not every couch cleaner is safe for every fabric. Learn how to choose an upholstery cleaning solution based on fabric type, stain type and cleaning code.",
+    "seoDescription": "Not every couch cleaner is safe for every fabric. Learn how to choose an upholstery cleaning solution based on fabric type, stain type and cleaning code.",
+    "publishedAt": "2026-09-07T12:00:00Z",
+    "author": {
+      "_type": "reference",
+      "_ref": "author-softnest"
+    },
+    "categories": [
+      {
+        "_type": "reference",
+        "_ref": "category-fabric-care"
+      }
+    ],
+    "relatedServices": [
+      {
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      }
+    ],
+    "body": [
+      {
+        "_type": "block",
+        "_key": "text-0",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "You have a stain on your couch, so you start looking for a cleaner.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-1",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "There are sprays, foams, carpet cleaners, enzyme products, peroxide-based cleaners, homemade mixtures, dish soap, vinegar and dozens of products that promise to remove almost anything.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-2",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "So what should you actually use?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-3",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The safest answer is:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-4",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It depends on both the stain and the fabric.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-5",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "At SoftNest Fabric Care, this is one of the biggest differences between DIY cleaning and professional upholstery cleaning.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-6",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A homeowner often sees:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-7",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“I have a fabric couch with a stain.”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-8",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A professional cleaner has to look at several things:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-9",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What is the upholstery made from?",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-10",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What caused the stain?",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-11",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Is the colour stable?",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-12",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "How much moisture can the fabric safely handle?",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-13",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What type of cleaning chemistry makes sense?",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-14",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And how will that cleaning solution be removed afterward?",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-15",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Two sofas can look almost identical and still require very different cleaning methods.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-16",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That is why there is no single bottle we would call the best couch cleaner for every sofa.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-17",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Start With the Couch, Not the Cleaner",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-18",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Before choosing a product, check the furniture itself.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-19",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Many sofas have a manufacturer's cleaning tag underneath a cushion or on the bottom of the furniture.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-20",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "You may see one of these common cleaning codes:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-21",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "W — water-based cleaning products may be used.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-22",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "S — a water-free solvent cleaning method is indicated.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-23",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "WS / SW — either water-based or solvent-based cleaning may be permitted.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-24",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "X — liquid cleaning products should generally not be used.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-25",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "These codes are important, but they are only a starting point.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-26",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A W code does not mean:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-27",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Use any water-based cleaner and as much water as you want.”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-28",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And WS does not mean:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-29",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Every cleaning product is safe.”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-30",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The code tells you the general type of cleaning method that may be suitable.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-31",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It does not tell you everything about the fibre, dye, backing, construction, stain or chemistry.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-32",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Why Fabric Type Matters",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-33",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Fabric sofa” can mean many different things.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-34",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A couch may contain:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-35",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "polyester;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-36",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "nylon;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-37",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "olefin;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-38",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "cotton;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-39",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "linen;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-40",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "wool;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-41",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "rayon;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-42",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "viscose;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-43",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "or a blend of several fibres.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-44",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The construction matters too.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-45",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Velvet, chenille, woven upholstery and other fabrics can all react differently to cleaning.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-46",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A product that works very well on a durable synthetic sectional may be too aggressive for a more sensitive material.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-47",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This is one reason we do not choose a cleaning solution simply by looking at the colour or appearance of a sofa.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-48",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Two beige couches can look almost identical while being made from completely different materials.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-49",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Appearance does not tell you how the fabric will react to cleaning.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-50",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The Stain Matters Just as Much as the Fabric",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-51",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Now consider the stain itself.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-52",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Coffee.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-53",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Grease.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-54",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Urine.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-55",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Ink.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-56",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Food.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-57",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Blood.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-58",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Makeup.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-59",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Adhesive.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-60",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Rust.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-61",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "They can all look like a dark or discoloured area on the sofa, but chemically they are very different problems.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-62",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That means they may require different treatments.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-63",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A cleaner that is useful for oily contamination is not automatically the best choice for an organic stain.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-64",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A product that helps with protein-based contamination may not be appropriate for ink or adhesive.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-65",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And even if a product is capable of attacking the stain, it still has to be safe for the upholstery underneath it.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-66",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The decision is really based on:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-67",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the stain + the fabric + the dye + the construction.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-68",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That is why professional cleaners use different products for different situations rather than one universal bottle.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-69",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Stronger Does Not Always Mean Better",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-70",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This is one of the easiest mistakes to make.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-71",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The first product does not remove the stain.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-72",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "So you use more.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-73",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Still there?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-74",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Try something stronger.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-75",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Still there?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-76",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Scrub harder.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-77",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "But cleaning chemistry does not really work according to:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-78",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "weak cleaner → strong cleaner → strongest cleaner.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-79",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The better question is:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-80",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What chemistry is appropriate for this particular problem?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-81",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Sometimes a mild product is exactly what is needed.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-82",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Sometimes a completely different type of chemistry is required.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-83",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And sometimes the visible mark is no longer removable soil at all.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-84",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It may already be:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-85",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "dye loss;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-86",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "bleaching;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-87",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "colour transfer;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-88",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "permanent discoloration;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-89",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "fibre damage.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-90",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "At that point, using stronger and stronger products can damage the surrounding upholstery without removing the mark.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-91",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Safe for Upholstery” Does Not Mean Safe for Every Sofa",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-92",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A cleaning product can genuinely be a good upholstery cleaner and still be wrong for your particular furniture.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-93",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The manufacturer of that cleaner does not know whether you are about to use it on:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-94",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "durable polyester;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-95",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "cotton;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-96",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "linen;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-97",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "rayon;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-98",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "viscose;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-99",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "velvet;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-100",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "wool;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-101",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "or a blended fabric.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-102",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That decision still has to be made by the person doing the cleaning.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-103",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "So if the bottle says:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-104",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“For upholstery”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-105",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "read the complete instructions.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-106",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Do not automatically translate that into:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-107",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Safe for every sofa.”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-108",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Those are two different things.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-109",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Can I Use Carpet Cleaner on My Couch?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-110",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This is a very common question.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-111",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Some products are specifically labelled for both carpet and upholstery.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-112",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If the manufacturer clearly permits upholstery use and the product is compatible with your furniture's care instructions, that is different.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-113",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "But you should not assume that every carpet-cleaning product is automatically suitable for a sofa.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-114",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Carpet and upholstery may have very different:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-115",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "fibres;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-116",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "dyes;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-117",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "backing;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-118",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "construction;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-119",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "sensitivity to moisture.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-120",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "So:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-121",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“I already use this in my carpet machine”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-122",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "is not enough reason to put it on your couch.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-123",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Always check whether the specific product and machine are intended for upholstery use.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-124",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Can I Use Dish Soap on a Couch?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-125",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Dish soap appears in countless DIY cleaning recipes.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-126",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And the idea makes sense at first.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-127",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It removes grease from dishes, so why wouldn't it remove grease from furniture?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-128",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The problem is not necessarily whether dish soap can loosen dirt.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-129",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The bigger questions are:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-130",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "How much are you using?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-131",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "How will the fabric react?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-132",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And most importantly:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-133",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "How are you going to remove the detergent afterward?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-134",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "When you wash a plate, you rinse it thoroughly with running water.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-135",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A sofa cushion is different.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-136",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If a large amount of detergent is worked into upholstery and then simply wiped with a towel, some of it may remain in the fabric.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-137",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That can contribute to residue and faster resoiling.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-138",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This connects directly with our first guide:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-139",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "[How to Remove a Stain from a Couch Without Making It Worse]",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-140",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A cleaning solution can loosen contamination.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-141",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "But the loosened contamination and cleaner still need to be removed.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-142",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What About Vinegar and Baking Soda?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-143",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Vinegar and baking soda are pro",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-144",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "[ Sunday, September 6, 2026 6:01 PM ] ⁨Dad⁩: bably two of the most common ingredients in DIY cleaning advice.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-145",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That does not make them universal upholstery cleaners.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-146",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Vinegar is acidic.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-147",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Baking soda is alkaline.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-148",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Different fabrics and dyes can react differently to chemistry and moisture.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-149",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "There is also a common assumption that something is automatically safe for fabric because it is “natural.”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-150",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "But upholstery does not know whether a chemical came from your kitchen or from a professional cleaning supplier.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-151",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The material simply reacts to what is applied to it.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-152",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "So the better question is not:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-153",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Is this natural?”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-154",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It is:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-155",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Is this appropriate for this fabric?”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-156",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What About Hydrogen Peroxide?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-157",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Peroxide-based products can be very useful for certain stains.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-158",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Professional cleaners use oxidizing chemistry too.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-159",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "But peroxide is not a universal couch cleaner.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-160",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Oxidizing products can affect colour as well as contamination.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-161",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That may be useful in the correct situation.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-162",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "In the wrong situation, it can leave a permanent colour change.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-163",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Before applying peroxide to visible upholstery, you should consider:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-164",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "fabric type;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-165",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "colour stability;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-166",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "concentration;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-167",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "contact time;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-168",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "and the stain you are actually trying to treat.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-169",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Seeing someone successfully use peroxide on another sofa does not mean their fabric and yours will react the same way.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-170",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What About Enzyme Cleaners for Pet Stains?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-171",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Enzyme products can be useful for organic contamination such as some pet accidents.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-172",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "But there are two separate questions:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-173",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Is the product safe for the upholstery?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-174",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-175",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "How deep did the contamination go?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-176",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If urine has penetrated through the fabric and into batting or cushion foam, simply spraying the surface may not fully address the problem.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-177",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The visible stain may improve while contamination or odour remains deeper inside.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-178",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "In situations like that, the problem is no longer just:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-179",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Which spray should I use?”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-180",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It becomes:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-181",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Where is the contamination, and how will it be removed?”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-182",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That can require a much deeper treatment than ordinary surface spot cleaning.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-183",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Why pH Matters",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-184",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "You may see professional cleaners talking about pH.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-185",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Very simply:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-186",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A lower pH generally means a solution is more acidic.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-187",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A higher pH generally means it is more alkaline.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-188",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That matters because different soils, fibres and dyes can respond differently to cleaning chemistry.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-189",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "But pH alone does not tell you whether a product is safe.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-190",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Two products with a similar pH can still contain very different chemistry.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-191",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "So choosing a cleaner based on one number alone is not enough.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-192",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Professional cleaning looks at the complete situation:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-193",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "fabric + contamination + chemistry + cleaning method.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-194",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Natural and Delicate Fabrics Need More Care",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-195",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Some sofas look completely ordinary until you discover what they are actually made from.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-196",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Cotton.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-197",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Linen.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-198",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Wool.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-199",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Rayon.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-200",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Viscose.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-201",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Delicate velvet.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-202",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Blended fabrics.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-203",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "These can require much more careful control of chemistry, moisture and agitation than many durable synthetic fabrics.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-204",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Rayon and viscose in particular can be very sensitive to moisture and physical agitation.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-205",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Some natural fibres may also be more prone to:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-206",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "browning;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-207",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "water marks;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-208",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "colour movement;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-209",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "shrinkage;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-210",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "texture changes.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-211",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That does not mean these fabrics cannot be cleaned.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-212",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "We clean delicate upholstery regularly.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-213",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It means the cleaning process needs to be chosen carefully.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-214",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The Cleaner Can Affect the Fabric, Not Just the Stain",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-215",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This is an important point.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-216",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "When you apply chemistry to a stain, the product is not touching only the contamination.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-217",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It is touching:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-218",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the stain and the upholstery underneath it.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-219",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A successful cleaning treatment therefore needs to do two things:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-220",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Help remove the contamination.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-221",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Avoid creating an unacceptable change in the fabric.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-222",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If the stain disappears but the area becomes lighter, darker, rougher or visibly damaged, that is not a successful cleaning result.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-223",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "You simply replaced one problem with another.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-224",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Why Testing a Hidden Area Matters",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-225",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Before using an unfamiliar product on a visible part of the couch, test it somewhere inconspicuous.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-226",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Then let the area dry.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-227",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This can help reveal problems such as:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-228",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "colour transfer;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-229",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "dye instability;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-230",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "texture change;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-231",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "moisture sensitivity;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-232",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "unexpected reaction to the cleaner.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-233",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Drying matters because some problems are difficult to see while the fabric is wet.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-234",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A small test does not guarantee that every part of the sofa will react identically, but it can reveal obvious problems before you treat the centre of a seat cushion.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-235",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Do Not Start Mixing Cleaning Products",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-236",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This is one of the most important rules.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-237",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Cleaner #1 does not work.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-238",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "So cleaner #2 goes on top.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-239",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Then vinegar.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-240",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Then peroxide.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-241",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Then another stain remover.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-242",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "At that point, the original stain is no longer the only problem.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-243",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Now there may be several different products inside the fabric.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-244",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "That makes future treatment much less predictable.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-245",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "When we arrive at a sofa after several DIY attempts, we sometimes need to deal with:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-246",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the original contamination + detergent residue + excess moisture + multiple cleaning chemicals.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-247",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If one careful treatment is not helping, randomly layering more products is rarely the best next move.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-248",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Too Much of the Right Cleaner Can Still Be a Problem",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-249",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Even if you choose a completely appropriate product, using far too much can create problems.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-250",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Cleaning products are designed to work at a particular concentration.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-251",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If the instructions say to dilute the product, follow them.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-252",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Making the solution three or five times stronger does not mean it will clean three or five times better.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-253",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It may simply leave much more cleaning residue behind.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-254",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And that becomes especially important when you do not have a way to thoroughly rinse and extract the fabric afterward.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-255",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "More chemical is not automatically more cleaning.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-256",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Do Not Forget About Extraction",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-257",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This is where our first and second articles connect.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-258",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Even if you choose the correct cleaning product, the job is not finished when the cleaner has loosened the stain.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-259",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The soil and cleaning solution still need to be removed.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-260",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If you heavily spray a sofa, scrub the area and leave everything inside until it dries, the cleaner may have performed its part of the job perfectly.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-261",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "But the cleaning process itself is still incomplete.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-262",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Professional upholstery cleaning typically combines treatment with rinsing and extraction so that loosened contamination, cleaning residue and moisture are recovered from the fabric.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-263",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "You can read more about this in:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-264",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "[How to Remove a Stain from a Couch Without Making It Worse]",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-265",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "So What Cleaning Solution Should I Use on My Couch?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-266",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Before choosing anything, ask yourself these questions.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-267",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "1. What does the manufacturer's care tag say?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-268",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Find the cleaning code if possible.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-269",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "2. Do I know what the upholstery is made from?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-270",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If not, be conservative.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-271",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "3. What caused the stain?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-272",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Different contamination can require different chemistry.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-273",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "4. Is this product specifically suitable for upholstery?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-274",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Read the complete directions and limitations.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-275",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "5. Can I test it somewhere hidden?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-276",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Always test when practical.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-277",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "6. Am I following the correct [ Sunday, September 6, 2026 6:01 PM ] ⁨Dad⁩: dilution?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-278",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Do not assume stronger is better.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-279",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "7. How much moisture will I introduce?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-280",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Avoid soaking the fabric.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-281",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "8. How will I remove the cleaner afterward?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-282",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This may be the most overlooked question of all.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-283",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If your plan involves saturating the cushion with detergent and simply waiting for it to dry, it may be better to reconsider.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-284",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "When Should You Stop Experimenting?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-285",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Consider stopping before applying more chemistry if:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-286",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "you cannot identify the fabric;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-287",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "there is no usable care information;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-288",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the upholstery is expensive or delicate;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-289",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the fabric contains sensitive fibres;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-290",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "several products have already been used;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-291",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the treated area is changing colour;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-292",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the texture is changing;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-293",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the stain is becoming larger;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-294",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "a water ring is developing;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-295",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "urine or another liquid has reached the cushion foam;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-296",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the furniture has an X cleaning code;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-297",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "you are considering strong solvents or oxidizers without knowing how the upholstery will react.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-298",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Sometimes professional cleaning is recommended not because the stain is impossible to remove.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-299",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "There may simply be too many unknowns to make further experimentation worth the risk.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-300",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What Professional Upholstery Cleaners Do Differently",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-301",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Professional upholstery cleaning is not about owning one secret bottle.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-302",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Different problems require different chemistry.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-303",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Before choosing a solution, we consider:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-304",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the fabric;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-305",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the construction;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-306",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the colour;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-307",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the condition;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-308",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "the type of contamination;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-309",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "previous cleaning attempts;",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-310",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "and the cleaning method we plan to use.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-311",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Then the product still needs to be used correctly.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-312",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It may need dwell time.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-313",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It may require controlled agitation.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-314",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "And once the contamination has been loosened, the fabric may need to be properly rinsed and extracted.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-315",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "This is why the question:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-316",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“Which cleaner do you use?”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-317",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "often has another question before the answer:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-318",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "“What are we cleaning?”",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-319",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The Simple Rule to Remember",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-320",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "There is no universal best couch cleaner.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-321",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "The right product is one that makes sense for:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-322",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "that particular stain",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-323",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "on that particular fabric",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-324",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "at the correct concentration",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-325",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "using the correct cleaning method",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-326",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "and with a safe way to remove it afterward.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-327",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If you are missing important information, use caution.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-328",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "A small stain is usually easier to deal with than damaged upholstery.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-329",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Need Help With a Sofa Stain in Mississauga or the GTA?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-330",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "SoftNest Fabric Care provides professional sofa cleaning, upholstery cleaning and stain treatment in Mississauga and throughout the GTA.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-331",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If you have a stain and are unsure what is safe to put on it, send us a photo of the furniture and, if possible, a photo of the care tag.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-332",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Sometimes a careful home treatment is perfectly reasonable.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-333",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Other times, the safest thing you can do is simply:",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-334",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "don’t put anything else on it yet.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-335",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If you have already tried cleaning the stain yourself, let us know what products were used. That can help us choose the safest next step.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-336",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Frequently Asked Questions",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-337",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What is the safest cleaner for a fabric couch?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-338",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "There is no single cleaner that is safest for every sofa. Start with the manufacturer's cleaning code and care instructions, then choose a product intended for the appropriate cleaning method and test it in a hidden area.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-339",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What does W mean on a couch cleaning tag?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-340",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "W generally indicates that a water-based cleaning method may be used. It does not mean the furniture should be soaked or that every water-based cleaning product is appropriate.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-341",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Can I use dish soap on my couch?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-342",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Dish soap may loosen some soils, but it is not automatically suitable for every upholstery fabric. It can also leave detergent residue if too much is used and not properly removed.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-343",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Can I use carpet cleaning solution on a sofa?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-344",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Only when the product is specifically approved for upholstery and the furniture's care instructions permit that cleaning method.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-345",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Is vinegar safe for upholstery?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-346",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Not universally. Different fibres and dyes can react differently to acidic products and moisture. Test carefully and follow the furniture manufacturer's instructions.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-347",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Can hydrogen peroxide remove stains from a couch?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-348",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Peroxide-based products can help with certain stains, but they can also affect colour. They should not be considered universal upholstery cleaners.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-349",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Are enzyme cleaners safe for couches?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-350",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Some are suitable for certain upholstery materials, but you need to check both the cleaner's instructions and the furniture-care information. With pet accidents, contamination may also extend deeper than the visible fabric.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-351",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Can I mix different couch stain removers?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-352",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "It is better not to. Layering different products makes the chemistry less predictable and can make later professional treatment more difficult.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-353",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "What if my couch has no cleaning tag?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-354",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "If you cannot identify the material or find the manufacturer's care instructions, use extra caution with chemistry and moisture. For expensive or delicate upholstery, professional assessment may be safer.",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-355",
+        "style": "h3",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Should I use more cleaner if the stain is not coming out?",
+            "marks": []
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "_key": "text-356",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "Not necessarily. Repeatedly adding product can increase residue and moisture without improving the stain. If a careful first attempt is not working, stop before the situation becomes more difficult.",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      },
+      {
+        "_type": "block",
+        "_key": "text-357",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "_key": "text",
+            "text": "[ Sunday, September 6, 2026 6:07 PM ] ⁨Dad⁩:",
+            "marks": []
+          }
+        ],
+        "listItem": "bullet",
+        "level": 1
+      }
+    ],
+    "order": 2,
+    "showCover": false
+  },
+  {
     "_id": "author-softnest",
     "_type": "author",
     "name": "SoftNest Fabric Care"
