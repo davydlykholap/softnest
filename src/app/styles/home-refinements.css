@@ -1,5 +1,16 @@
 /* Homepage-only refinements. Keep these out of unrelated routes. */
 
+@media (min-width: 981px) {
+  .hero {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__content {
+    padding-top: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .gallery-grid-v2 {
     animation: none !important;
