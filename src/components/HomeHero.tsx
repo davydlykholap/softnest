@@ -26,14 +26,8 @@ export default function HomeHero() {
         <div className="hero__content">
           <p className="hero__eyebrow">{"" + pageText(homeContent.copy, "hero-1") + ""}</p>
           <span className="hero__eyebrow-line" aria-hidden="true" />
-          <h1
-            id="home-hero-heading"
-            className="hero__title hero__title--centered"
-          >
-            <span className="hero__title-line">We Clean What You</span>
-            <span className="hero__title-line hero__title-line--accent">
-              Live On.
-            </span>
+          <h1 id="home-hero-heading" className="hero__title">
+            We Clean What You<span>Live On.</span>
           </h1>
           <p className="hero__description">
             {" " + pageText(homeContent.copy, "hero-6") + " "}</p>

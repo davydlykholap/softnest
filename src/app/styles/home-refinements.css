@@ -1,19 +1,5 @@
 /* Homepage-only refinements. Keep these out of unrelated routes. */
 
-.hero__title--centered {
-  width: 100%;
-  text-align: center;
-  text-wrap: balance;
-}
-
-.hero__title--centered .hero__title-line {
-  display: block;
-}
-
-.hero__title--centered .hero__title-line--accent {
-  color: var(--forest);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .gallery-grid-v2 {
     animation: none !important;
