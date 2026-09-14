@@ -466,6 +466,7 @@ export const businessTypes = [
     }),
     order,
     flag("featured"),
+    flag("locationPageFeatured"),
     defineField({
       name: "publicationStatus",
       title: "Publication status",

@@ -29,7 +29,7 @@ export type PageContent = {
   _updatedAt: string;
   _rev: string;
   title: string;
-  key?: string;
+  key: string;
   featuredServices?: Array<
     {
       _key: string;
@@ -47,7 +47,7 @@ export type PageContent = {
     _key: string;
   }>;
   copy?: Array<{
-    key?: string;
+    key: string;
     label?: string;
     text: string;
     _key: string;
@@ -105,7 +105,7 @@ export type CleaningProject = {
     _type: "image";
   };
   image?: string;
-  variant?: "paired" | "single";
+  variant?: "single" | "paired";
   fabric?: string;
   problem?: string;
   treatment?: string;
@@ -156,6 +156,7 @@ export type Testimonial = {
   rating?: number;
   order?: number;
   featured?: boolean;
+  locationPageFeatured?: boolean;
   publicationStatus?: "pending" | "approved" | "withheld";
   services?: Array<
     {
@@ -318,7 +319,7 @@ export type Location = {
       _key: string;
     }>;
     copy?: Array<{
-      key?: string;
+      key: string;
       label?: string;
       text: string;
       _key: string;
@@ -339,7 +340,6 @@ export type Service = {
   order?: number;
   pageEnabled?: boolean;
   showInNavigation?: boolean;
-  featured?: boolean;
   metaTitle: string;
   metaDescription: string;
   heroTitle: string;
@@ -858,7 +858,7 @@ export type WebsiteContentQueryResult = Array<
           _key: string;
         }>;
         copy?: Array<{
-          key?: string;
+          key: string;
           label?: string;
           text: string;
           _key: string;
@@ -872,7 +872,7 @@ export type WebsiteContentQueryResult = Array<
       _updatedAt: string;
       _rev: string;
       title: string;
-      key?: string;
+      key: string;
       featuredServices?: Array<
         {
           _key: string;
@@ -890,7 +890,7 @@ export type WebsiteContentQueryResult = Array<
         _key: string;
       }>;
       copy?: Array<{
-        key?: string;
+        key: string;
         label?: string;
         text: string;
         _key: string;
@@ -994,7 +994,6 @@ export type WebsiteContentQueryResult = Array<
       order?: number;
       pageEnabled?: boolean;
       showInNavigation?: boolean;
-      featured?: boolean;
       metaTitle: string;
       metaDescription: string;
       heroTitle: string;
@@ -1087,6 +1086,7 @@ export type WebsiteContentQueryResult = Array<
       rating?: number;
       order?: number;
       featured?: boolean;
+      locationPageFeatured?: boolean;
       publicationStatus?: "approved" | "pending" | "withheld";
       services?: Array<
         {

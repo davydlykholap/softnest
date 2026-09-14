@@ -1,6 +1,6 @@
-# What Cleaning Solution Can I Use on My Couch? How to Choose Without Damaging the Fabric
+# What Cleaning Solution Can I Use on My Couch?
 
-Source: Article 1.txt in the dated inbox. Complete article body preserved; metadata moved to fields, paragraphs/headings formatted. No substantive rewrite.
+Editorial source for the professional, plain-English revision. The original received draft remains preserved in the ignored dated inbox.
 
 URL: /blog/what-cleaning-solution-can-i-use-on-my-couch/
 

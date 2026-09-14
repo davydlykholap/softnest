@@ -70,7 +70,7 @@ export default async function BlogArticlePage({ params }: Props) {
   return (
     <>
       <div className="new-hero-root">
-        <SiteHeader />
+        <SiteHeader current="blog" />
       </div>
       <main id="main-content" className={styles.main}>
         <article className={styles.article}>

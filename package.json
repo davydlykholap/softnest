@@ -21,7 +21,8 @@
     "studio:check": "npm run typecheck --prefix studio && npm run build --prefix studio",
     "content:types": "npm run typegen --prefix studio",
     "preview": "node scripts/content/preview.mjs",
-    "content:repair-ids": "node scripts/content/repair-ids.mjs"
+    "content:repair-ids": "node scripts/content/repair-ids.mjs",
+    "content:publish-reviews": "node scripts/content/publish-reviews.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",

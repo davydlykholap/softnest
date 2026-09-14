@@ -2,11 +2,12 @@ import { jsonLd } from "@/seo/structuredData";
 import { pageText } from "@/content/pages";
 import Image from "next/image";
 import Link from "next/link";
-import BeforeAfterCompare from "@/components/BeforeAfterCompare";
 import HeroActionButtons from "@/components/HeroActionButtons";
+import LocationReviews from "@/components/locations/LocationReviews";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import type { Location } from "@/content/locations";
+import { getService } from "@/content/services";
 import { organizationProvider, siteConfig } from "@/lib/site";
 
 
@@ -109,12 +110,105 @@ function FeatureIcon({ name }: { name: string }) {
   return null;
 }
 
+const defaultProcessSteps = [
+  {
+    icon: "camera",
+    title: "Send photos",
+    description: "Show the full item or carpeted area and include close-ups of stains or concerns.",
+  },
+  {
+    icon: "estimate",
+    title: "Receive a clear estimate",
+    description: "We confirm the expected scope, included cleaning and access details before booking.",
+  },
+  {
+    icon: "cleaning",
+    title: "Inspection & cleaning",
+    description: "We inspect the material on site, prepare the work area and use an appropriate method.",
+  },
+  {
+    icon: "sparkle",
+    title: "Drying & final review",
+    description: "Air movers support drying, followed by a walkthrough and practical after-care guidance.",
+  },
+];
+
+const defaultQuickBenefits = [
+  {
+    icon: "building",
+    title: "Access planned in advance",
+    description: "Share parking, elevator or entry details when requesting your quote.",
+  },
+  {
+    icon: "fabric",
+    title: "Fabric-specific cleaning",
+    description: "Methods are selected for upholstery, carpet and area-rug fibres.",
+  },
+  {
+    icon: "dryer",
+    title: "Professional drying",
+    description: "Air movers support faster and more even drying after cleaning.",
+  },
+  {
+    icon: "camera",
+    title: "Free photo estimates",
+    description: "Send full-item photos and close-ups before booking.",
+  },
+];
+
+const defaultLocalAdvantages = [
+  {
+    icon: "pin",
+    title: "GTA-wide scheduling",
+    description: "Appointments are planned across the Greater Toronto Area and nearby communities.",
+  },
+  {
+    icon: "equipment",
+    title: "Commercial-grade equipment",
+    description: "Professional equipment is selected for upholstery, carpet and suitable area rugs.",
+  },
+  {
+    icon: "inspection",
+    title: "Honest stain expectations",
+    description: "We explain what appears treatable and where wear or fibre damage may remain.",
+  },
+  {
+    icon: "home",
+    title: "Multiple items in one visit",
+    description: "Combine furniture, mattresses, carpets and suitable rugs in one estimate request.",
+  },
+];
+
+function copyText(location: Location, key: string, fallback: string) {
+  const copy = location.expandedContent?.copy;
+  return copy?.some((item) => item.key === key)
+    ? pageText(copy, key, location.name)
+    : fallback;
+}
+
 export default function ExpandedLocationPage({
   location,
 }: {
   location: Location;
 }) {
-  const { quickBenefits, services, resultExamples, processSteps, localAdvantages, mississaugaFaqs } = location.expandedContent!;
+  const expanded = location.expandedContent;
+  const heroImage = expanded?.heroImage || siteConfig.heroImage;
+  const quickBenefits = expanded?.quickBenefits?.length ? expanded.quickBenefits : defaultQuickBenefits;
+  const processSteps = expanded?.processSteps ?? defaultProcessSteps;
+  const localAdvantages = expanded?.localAdvantages ?? defaultLocalAdvantages;
+  const locationFaqs = expanded?.mississaugaFaqs ?? location.faq;
+  const services =
+    expanded?.services ??
+    location.availableServices
+      .map(getService)
+      .filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service))
+      .map((service) => ({
+        slug: service.slug,
+        title: service.name,
+        description: service.summary,
+        image: service.image,
+        alt: service.imageAlt,
+      }));
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -190,7 +284,7 @@ export default function ExpandedLocationPage({
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: mississaugaFaqs.map((item) => ({
+    mainEntity: locationFaqs.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -210,7 +304,7 @@ export default function ExpandedLocationPage({
         <section className="miss-hero" aria-labelledby="miss-hero-title">
           <div className="miss-hero__photo" aria-hidden="true">
             <Image
-              src={location.expandedContent!.heroImage}
+              src={heroImage}
               alt=""
               fill
               priority
@@ -219,14 +313,14 @@ export default function ExpandedLocationPage({
           </div>
           <div className="miss-hero__wash" aria-hidden="true" />
           <div className="miss-hero__copy">
-            <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-1", location.name) + ""}</p>
+            <p className="miss-kicker">{copyText(location, "page-1", `Professional fabric care in ${location.name}`)}</p>
             <span className="miss-kicker-line" aria-hidden="true" />
             <h1 id="miss-hero-title">
-              {" " + pageText(location.expandedContent!.copy, "page-2", location.name) + " "}<br />
-              {" " + pageText(location.expandedContent!.copy, "page-3", location.name) + " "}<span>{"" + pageText(location.expandedContent!.copy, "page-4", location.name) + ""}</span>
+              {copyText(location, "page-2", "Upholstery &")}<br />
+              {copyText(location, "page-3", "Carpet Cleaning")}<span>{copyText(location, "page-4", `in ${location.name}`)}</span>
             </h1>
             <p className="miss-hero__description">
-              {" " + pageText(location.expandedContent!.copy, "page-5", location.name) + " "}</p>
+              {copyText(location, "page-5", location.shortDescription)}</p>
             <HeroActionButtons
               quoteAriaLabel={`Get a free upholstery and carpet cleaning quote in ${location.name}`}
             />
@@ -235,10 +329,10 @@ export default function ExpandedLocationPage({
 
         <section className="miss-care-band" aria-labelledby="miss-care-heading">
           <div className="miss-care-band__intro">
-            <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-6", location.name) + ""}</p>
-            <h2 id="miss-care-heading">{"" + pageText(location.expandedContent!.copy, "page-7", location.name) + ""}</h2>
+            <p className="miss-kicker">{copyText(location, "page-6", `Care that fits ${location.name}`)}</p>
+            <h2 id="miss-care-heading">{copyText(location, "page-7", "Local cleaning, planned before arrival")}</h2>
             <p>
-              {" " + pageText(location.expandedContent!.copy, "page-8", location.name) + " "}</p>
+              {copyText(location, "page-8", location.localConsiderations)}</p>
           </div>
           <div className="miss-care-band__features">
             {quickBenefits.map((benefit) => (
@@ -259,10 +353,10 @@ export default function ExpandedLocationPage({
           aria-labelledby="miss-services-heading"
         >
           <div className="miss-section-heading">
-            <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-9", location.name) + ""}</p>
-            <h2 id="miss-services-heading">{"" + pageText(location.expandedContent!.copy, "page-10", location.name) + ""}</h2>
+            <p className="miss-kicker">{copyText(location, "page-9", "Our services")}</p>
+            <h2 id="miss-services-heading">{copyText(location, "page-10", `What we clean in ${location.name}`)}</h2>
             <p className="miss-section-heading__intro">
-              {" " + pageText(location.expandedContent!.copy, "page-11", location.name) + " "}</p>
+              {copyText(location, "page-11", location.introduction)}</p>
           </div>
           <div className="miss-service-grid">
             {services.map((service) => (
@@ -289,45 +383,12 @@ export default function ExpandedLocationPage({
           </div>
         </section>
 
-        <section
-          className="miss-results"
-          id="results"
-          aria-labelledby="miss-results-heading"
-        >
-          <div className="miss-section-heading miss-section-heading--split">
-            <div>
-              <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-12", location.name) + ""}</p>
-              <h2 id="miss-results-heading">{"" + pageText(location.expandedContent!.copy, "page-13", location.name) + ""}</h2>
-            </div>
-            <p className="miss-section-heading__intro">
-              {" " + pageText(location.expandedContent!.copy, "page-14", location.name) + " "}</p>
-          </div>
-          <div className="miss-results__grid">
-            {resultExamples.map((result) => (
-              <article key={result.title}>
-                <BeforeAfterCompare
-                  src={result.image}
-                  alt={result.alt}
-                  category={result.category}
-                />
-                <div className="miss-results__caption">
-                  <h3>{result.title}</h3>
-                  <p>{result.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="miss-results__action">
-            <Link className="miss-button miss-button--outline" href="/#results">
-              {" " + pageText(location.expandedContent!.copy, "page-15", location.name) + " "}<span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </section>
+        <LocationReviews location={location} />
 
         <section className="miss-process" aria-labelledby="miss-process-heading">
           <div className="miss-section-heading">
-            <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-16", location.name) + ""}</p>
-            <h2 id="miss-process-heading">{"" + pageText(location.expandedContent!.copy, "page-17", location.name) + ""}</h2>
+            <p className="miss-kicker">{copyText(location, "page-16", "Our process")}</p>
+            <h2 id="miss-process-heading">{copyText(location, "page-17", "A simple, clear cleaning process")}</h2>
           </div>
           <ol>
             {processSteps.map((step, index) => (
@@ -347,32 +408,39 @@ export default function ExpandedLocationPage({
 
         <section className="miss-coverage" aria-labelledby="miss-coverage-heading">
           <div className="miss-section-heading">
-            <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-18", location.name) + ""}</p>
-            <h2 id="miss-coverage-heading">{"" + pageText(location.expandedContent!.copy, "page-19", location.name) + ""}</h2>
+            <p className="miss-kicker">{copyText(location, "page-18", "Our service area")}</p>
+            <h2 id="miss-coverage-heading">{copyText(location, "page-19", `Serving ${location.name} neighbourhoods`)}</h2>
           </div>
           <div className="miss-coverage__content">
-            {location.expandedContent!.mapImage ? <div className="miss-map">
+            {expanded?.mapImage ? <div className="miss-map">
               <Image
-                src={location.expandedContent!.mapImage!}
-                alt={location.expandedContent!.mapAlt || `Service coverage in ${location.name}`}
+                src={expanded.mapImage}
+                alt={expanded.mapAlt || `Service coverage in ${location.name}`}
                 fill
                 sizes="(max-width: 760px) 100vw, 55vw"
               />
-              {location.neighbourhoods.filter(name=>location.expandedContent!.mapLabels?.some(label=>label.name===name)).map((neighbourhood) => (
+              {location.neighbourhoods.filter(name=>expanded.mapLabels?.some(label=>label.name===name)).map((neighbourhood) => (
                 <span
                   className="miss-map__label"
-                  style={(() => { const label=location.expandedContent!.mapLabels?.find(item=>item.name===neighbourhood); return label?{left:`${label.left}%`,top:`${label.top}%`}:undefined; })()}
+                  style={(() => { const label=expanded.mapLabels?.find(item=>item.name===neighbourhood); return label?{left:`${label.left}%`,top:`${label.top}%`}:undefined; })()}
                   key={neighbourhood}
                 >
                   {neighbourhood}
                 </span>
               ))}
-            </div> : null}
+            </div> : <div className="softnest-map miss-map">
+              <iframe
+                title={`SoftNest service map for ${location.name}`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(location.mapQuery)}&z=11&output=embed`}
+              />
+            </div>}
             <div className="miss-coverage__copy">
               <p>
-                {" " + pageText(location.expandedContent!.copy, "page-20", location.name) + " "}</p>
+                {copyText(location, "page-20", location.introduction)}</p>
               <p className="miss-coverage__detail">
-                {" " + pageText(location.expandedContent!.copy, "page-21", location.name) + " "}</p>
+                {copyText(location, "page-21", location.localConsiderations)}</p>
               <ul>
                 {location.neighbourhoods.map((neighbourhood) => (
                   <li key={neighbourhood}>
@@ -382,16 +450,16 @@ export default function ExpandedLocationPage({
                 ))}
               </ul>
               <small>
-                {" " + pageText(location.expandedContent!.copy, "page-22", location.name) + " "}</small>
+                {copyText(location, "page-22", "Nearby area? Send your postal code and we’ll confirm availability.")}</small>
             </div>
           </div>
         </section>
 
         <section className="miss-local-value" aria-labelledby="miss-local-value-heading">
           <div className="miss-section-heading">
-            <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-23", location.name) + ""}</p>
+            <p className="miss-kicker">{copyText(location, "page-23", "Why choose SoftNest")}</p>
             <h2 id="miss-local-value-heading">
-              {" " + pageText(location.expandedContent!.copy, "page-24", location.name) + " "}</h2>
+              {copyText(location, "page-24", `Why ${location.name} homeowners choose our cleaning service`)}</h2>
           </div>
           <div className="miss-local-value__grid">
             {localAdvantages.map((advantage) => (
@@ -410,12 +478,12 @@ export default function ExpandedLocationPage({
 
         <section className="miss-faq" id="faq" aria-labelledby="miss-faq-heading">
           <div className="miss-section-heading">
-            <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-25", location.name) + ""}</p>
+            <p className="miss-kicker">{copyText(location, "page-25", "Frequently asked questions")}</p>
             <h2 id="miss-faq-heading">
-              {" " + pageText(location.expandedContent!.copy, "page-26", location.name) + " "}</h2>
+              {copyText(location, "page-26", `${location.name} upholstery & carpet cleaning FAQs`)}</h2>
           </div>
           <div className="miss-faq__grid">
-            {mississaugaFaqs.map((item) => (
+            {locationFaqs.map((item) => (
               <details key={item.question}>
                 <summary>
                   {item.question}
@@ -434,7 +502,7 @@ export default function ExpandedLocationPage({
           >
             <Image
               className="miss-phone__screen"
-              src={location.expandedContent!.heroImage}
+              src={heroImage}
               alt=""
               fill
               sizes="250px"
@@ -448,16 +516,16 @@ export default function ExpandedLocationPage({
             />
           </div>
           <div className="miss-final-cta__copy">
-            <p className="miss-kicker">{"" + pageText(location.expandedContent!.copy, "page-27", location.name) + ""}</p>
-            <h2 id="miss-cta-heading">{"" + pageText(location.expandedContent!.copy, "page-28", location.name) + ""}</h2>
+            <p className="miss-kicker">{copyText(location, "page-27", "Free photo estimates")}</p>
+            <h2 id="miss-cta-heading">{copyText(location, "page-28", "Show us what needs cleaning")}</h2>
             <p>
-              {" " + pageText(location.expandedContent!.copy, "page-29", location.name) + " "}</p>
+              {copyText(location, "page-29", "Send clear photos of the full item and problem areas for a no-obligation estimate before booking.")}</p>
             <div className="hero__actions miss-final-actions">
               <Link
                 className="button button--primary quote-cta quote-cta--pulse"
                 href="/quote/"
               >
-                {" " + pageText(location.expandedContent!.copy, "page-30", location.name) + " "}<svg viewBox="0 0 24 24" aria-hidden="true">
+                {copyText(location, "page-30", siteConfig.quoteLabel)}<svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h14m-6-6 6 6-6 6" />
                 </svg>
               </Link>
@@ -465,7 +533,7 @@ export default function ExpandedLocationPage({
                 className="button button--secondary"
                 href={siteConfig.phoneHref}
               >
-                {" " + pageText(location.expandedContent!.copy, "page-31", location.name) + " "}</a>
+                {copyText(location, "page-31", `Call ${siteConfig.displayPhone}`)}</a>
             </div>
           </div>
         </section>

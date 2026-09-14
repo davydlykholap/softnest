@@ -3,7 +3,6 @@ import { locationUrl } from '@/seo/urls';
 import { siteConfig } from '@/lib/site';
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import LocationPage from "@/components/LocationPage";
 import ExpandedLocationPage from "@/components/locations/ExpandedLocationPage";
 import { getLocation, locations } from "@/content/locations";
 
@@ -30,9 +29,5 @@ export default async function CityPage({ params }: CityPageProps) {
   const location = getLocation(city);
   if (!location) notFound();
 
-  if (location.expanded) {
-    return <ExpandedLocationPage location={location} />;
-  }
-
-  return <LocationPage location={location} />;
+  return <ExpandedLocationPage location={location} />;
 }

@@ -1,6 +1,6 @@
 # SoftNest modernization status
 
-Last updated: 2026-09-07
+Last updated: 2026-09-11
 
 This file is the handoff point for the current website/CMS modernization. Read it together with `project-guide.md` and `sanity-setup.md` before continuing migration work.
 
@@ -13,7 +13,7 @@ This file is the handoff point for the current website/CMS modernization. Read i
 - Blog data now follows the same `src/content` boundary as the rest of the website rather than reading generated JSON from Sanity/UI modules directly.
 - Three prepared blog articles are represented in `content/migration/article-seed.json`; the stain-removal article includes five prepared body images.
 - Service-area coverage is separate from page publication, search indexing and footer visibility.
-- The richer Mississauga presentation is handled by the reusable expanded-location component rather than a Mississauga-only page component.
+- All published city pages use the reusable expanded-location presentation. Mississauga supplies richer page-specific content, while the remaining cities use their existing local content with shared service, process and value-section fallbacks.
 - Business URLs/phone/social details are centralized rather than repeated through normal page components.
 - Quote submission transport is isolated in `src/domain/quote.ts` so a later lead database can replace Web3Forms without rewriting the form UI.
 - SEO URL, metadata and structured-data helpers are centralized under `src/seo`.
@@ -70,7 +70,9 @@ The three intended article URLs are:
 - `/blog/how-to-remove-stain-from-couch/`
 - `/blog/why-did-my-couch-stain-come-back-after-cleaning/`
 
-After the live import, review these in Studio and on the real generated pages before adding more articles. Subsequent editorial changes should happen in Sanity, not by editing the prepared local import records.
+All three articles received a professional plain-English editorial rewrite on 2026-09-11. The revisions reduce repetition, use semantic lists and heading hierarchy, separate the search intent of each guide, and remove chat-export text that was accidentally present in the cleaning-solution source. The revised published records are live in Sanity and mirrored in the prepared local article records. A pre-revision Sanity backup was saved locally before publishing.
+
+Subsequent editorial changes should happen in Sanity. If a deliberate future rewrite also needs to refresh the migration snapshot, keep the published record and local article record synchronized and run the complete content checks.
 
 ## Supabase milestone — intentionally later
 

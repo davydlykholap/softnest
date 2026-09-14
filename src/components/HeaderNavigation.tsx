@@ -14,7 +14,7 @@ type NavigationService = Pick<
 
 type HeaderNavigationProps = {
   home?: boolean;
-  current?: "locations" | "services";
+  current?: "blog" | "locations" | "services";
   actions: ReactNode;
   services: NavigationService[];
 };
@@ -172,6 +172,7 @@ export default function HeaderNavigation({
     if (!trigger || typeof window === "undefined") return;
 
     const triggerRect = trigger.getBoundingClientRect();
+    const headerRect = trigger.closest(".site-header")?.getBoundingClientRect();
     const viewportPadding = 24;
     const desktopMenuMax = window.innerWidth <= 1180 ? 760 : 820;
     const menuWidth = Math.min(
@@ -184,18 +185,21 @@ export default function HeaderNavigation({
       viewportPadding,
       window.innerWidth - menuWidth - viewportPadding,
     );
-    const left = Math.min(
+    const viewportLeft = Math.min(
       Math.max(triggerCenter - desiredPointer, viewportPadding),
       maxLeft,
     );
     const pointer = Math.min(
-      Math.max(triggerCenter - left, 34),
+      Math.max(triggerCenter - viewportLeft, 34),
       menuWidth - 34,
     );
 
     setServicesPosition({
-      left,
-      top: triggerRect.bottom + 18,
+      // The header's backdrop-filter makes it the containing block for this
+      // fixed-position menu, so convert viewport coordinates to header-local
+      // coordinates before applying them.
+      left: viewportLeft - (headerRect?.left ?? 0),
+      top: triggerRect.bottom + 18 - (headerRect?.top ?? 0),
       pointer,
     });
   }, []);
@@ -256,7 +260,6 @@ export default function HeaderNavigation({
         <div
           className={`services-menu ${servicesOpen ? "services-menu--open" : ""}`}
           ref={servicesRef}
-          onMouseEnter={openServices}
           onMouseLeave={scheduleServicesClose}
         >
           <button
@@ -267,6 +270,7 @@ export default function HeaderNavigation({
             }`}
             aria-expanded={servicesOpen}
             aria-controls="services-mega-menu"
+            onMouseEnter={openServices}
             onClick={() => {
               if (servicesOpen) {
                 cancelServicesClose();
@@ -373,7 +377,15 @@ export default function HeaderNavigation({
           Locations
         </Link>
         {navigation.map((item) => (
-          <Link href={navigationHref(item)} key={item.label}>
+          <Link
+            href={navigationHref(item)}
+            key={item.label}
+            className={
+              current === "blog" && "href" in item && item.href === "/blog/"
+                ? "is-active"
+                : undefined
+            }
+          >
             {item.label}
           </Link>
         ))}

@@ -18,7 +18,7 @@ export type Location = {
     mapLabels?: {name:string;left:number;top:number}[];
     quickBenefits: {icon:string;title:string;description:string}[];
     services: {slug:string;title:string;description:string;image:string;alt:string}[];
-    resultExamples: {category:string;title:string;description:string;image:string;alt:string}[];
+    resultExamples?: {category:string;title:string;description:string;image:string;alt:string}[];
     processSteps: {icon:string;title:string;description:string}[];
     localAdvantages: {icon:string;title:string;description:string}[];
     mississaugaFaqs: LocationFaq[];

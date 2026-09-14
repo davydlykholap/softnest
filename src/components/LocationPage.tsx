@@ -1,9 +1,9 @@
-import { getProjects } from "@/content/pages";
 import { jsonLd } from "@/seo/structuredData";
 import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import LocationReviews from "@/components/locations/LocationReviews";
 import type { Location } from "@/content/locations";
 import { locations, nearbyLocationSlugs } from "@/content/locations";
 import { getService } from "@/content/services";
@@ -15,8 +15,6 @@ type LocationPageProps = {
 
 export default function LocationPage({ location }: LocationPageProps) {
   const locationServices = location.availableServices.map(getService).filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
-  const project = getProjects({location:location.slug})[0];
-  const proof = project ? {...project,alt:project.label} : undefined;
   const nearby = (nearbyLocationSlugs[location.slug] ?? [])
     .map((slug) => locations.find((item) => item.slug === slug))
     .filter((item): item is Location => Boolean(item));
@@ -168,29 +166,7 @@ export default function LocationPage({ location }: LocationPageProps) {
           </div>
         </section>
 
-        {proof ? (
-          <section className="location-proof" aria-labelledby="location-proof-heading">
-            <div className="location-proof__copy">
-              <p className="location-eyebrow">Real local result</p>
-              <h2 id="location-proof-heading">A completed {proof.category.toLowerCase()} cleaning in {location.name}</h2>
-              <p>
-                This before-and-after example is from our existing project gallery:
-                {" "}{proof.service.toLowerCase()}. Actual results depend on the material,
-                condition, staining and previous treatments.
-              </p>
-              <Link href="/#results">See more cleaning results <span aria-hidden="true">→</span></Link>
-            </div>
-            <div className="location-proof__image">
-              <Image
-                src={proof.image}
-                alt={proof.alt}
-                fill
-                sizes="(max-width: 820px) 100vw, 52vw"
-              />
-              <span>{proof.category} · {location.name}</span>
-            </div>
-          </section>
-        ) : null}
+        <LocationReviews location={location} />
 
         <section className="location-process">
           <div className="location-section-heading">

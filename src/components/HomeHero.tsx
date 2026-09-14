@@ -61,16 +61,6 @@ export default function HomeHero() {
             </li>
           </ul>
         </div>
-
-        <a
-          className="hero__scroll"
-          href="#results"
-          aria-label="See our results"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 5v14m-6-6 6 6 6-6" />
-          </svg>
-        </a>
       </section>
 
       <section

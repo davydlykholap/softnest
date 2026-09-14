@@ -6,7 +6,7 @@ import { navigationServices } from "@/content/services";
 
 type SiteHeaderProps = {
   home?: boolean;
-  current?: "locations" | "services";
+  current?: "blog" | "locations" | "services";
 };
 
 const headerServices = navigationServices.map(

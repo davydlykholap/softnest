@@ -1,0 +1,152 @@
+.list {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.item {
+  overflow: clip;
+  border: 1px solid rgba(7, 84, 59, 0.12);
+  border-radius: 19px 19px 28px 19px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 7px 20px rgba(16, 52, 39, 0.045);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.item:hover {
+  border-color: rgba(7, 84, 59, 0.24);
+  box-shadow: 0 10px 26px rgba(16, 52, 39, 0.08);
+  transform: translateY(-1px);
+}
+
+.item[open] {
+  border-color: rgba(7, 84, 59, 0.2);
+  box-shadow: 0 12px 28px rgba(16, 52, 39, 0.08);
+}
+
+.summary {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px;
+  align-items: center;
+  gap: 16px;
+  padding: 13px 15px 13px 20px;
+  color: #07543b;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  list-style: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary::marker {
+  content: "";
+}
+
+.summary:focus-visible {
+  border-radius: inherit;
+  outline: 3px solid rgba(7, 84, 59, 0.25);
+  outline-offset: -3px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7f2ec;
+  color: #07543b;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    transform 220ms ease;
+}
+
+.icon svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.item[open] .icon {
+  background: #07543b;
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+.answer {
+  padding: 1px 64px 20px 20px;
+  color: #536159;
+  font-size: 14px;
+  line-height: 1.68;
+}
+
+.answer > :first-child {
+  margin-top: 0;
+}
+
+.answer > :last-child {
+  margin-bottom: 0;
+}
+
+.article .item {
+  border-radius: 22px 22px 32px 22px;
+}
+
+.article .summary {
+  min-height: 66px;
+  padding: 15px 17px 15px 22px;
+  font-size: clamp(1rem, 2vw, 1.08rem);
+}
+
+.article .answer {
+  padding: 2px 70px 22px 22px;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+@media (max-width: 600px) {
+  .list {
+    gap: 8px;
+  }
+
+  .summary,
+  .article .summary {
+    grid-template-columns: minmax(0, 1fr) 30px;
+    min-height: 58px;
+    gap: 12px;
+    padding: 13px 13px 13px 17px;
+    font-size: 0.94rem;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .answer,
+  .article .answer {
+    padding: 0 17px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .icon {
+    transition: none;
+  }
+}

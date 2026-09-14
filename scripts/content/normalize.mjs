@@ -202,7 +202,6 @@ export function normalizeContent(documents, config) {
       for (const key of [
         "quickBenefits",
         "services",
-        "resultExamples",
         "processSteps",
         "localAdvantages",
         "mississaugaFaqs",
@@ -253,7 +252,7 @@ export function normalizeContent(documents, config) {
                 image: image(service),
                 alt: service.imageUpload?.alt || service.alt,
               })),
-              resultExamples: expanded.resultExamples.map((result) => ({
+              resultExamples: (expanded.resultExamples ?? []).map((result) => ({
                 ...result,
                 image: image(result),
                 alt: result.imageUpload?.alt || result.alt,

@@ -7,6 +7,7 @@ import { homeFaqs } from "@/content/homeFaqs";
 import { getService } from "@/content/services";
 import HomeResultsCarousel from "@/components/HomeResultsCarousel";
 import HomeReviewsCarousel from "@/components/HomeReviewsCarousel";
+import FaqAccordion from "@/components/FaqAccordion";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 
 const homeServices = homeContent.featuredServices.map(getService).filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
@@ -208,22 +209,11 @@ export default function HomeSections() {
       <div className="faq-copy">
         <span className="block font-serif text-xs font-bold uppercase tracking-widest text-forestGreen mb-3">{"" + pageText(homeContent.copy, "sections-79") + ""}</span>
         <h2 className="font-serif font-bold text-forestGreen text-3xl uppercase tracking-tight mb-6">{"" + pageText(homeContent.copy, "sections-80") + ""}</h2>
-        <div id="faq-list" className="faq-list" role="list">
-          {homeFaqs.map((item, index) => (
-            <details
-              className="faq-item"
-              open={index === 0}
-              key={item.question}
-              role="listitem"
-            >
-              <summary className="faq-question">
-                {item.question}
-                <span aria-hidden="true">+</span>
-              </summary>
-              <p className="faq-answer">{item.answer}</p>
-            </details>
-          ))}
-        </div>
+        <FaqAccordion
+          className="faq-list"
+          defaultOpenIndex={0}
+          items={homeFaqs}
+        />
       </div>
       <div className="faq-equipment">
         <Image src="/img/faq_machine.webp" alt="" aria-hidden="true" width={1200} height={900} sizes="(max-width: 900px) 100vw, 50vw" />
