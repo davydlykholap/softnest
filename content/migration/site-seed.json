@@ -29,7 +29,7 @@
     "googleProfileUrl": "https://maps.app.goo.gl/XHFbygUj49Suv9F48",
     "instagramUrl": "https://www.instagram.com/softnestfabriccare/",
     "facebookUrl": "https://www.facebook.com/profile.php?id=61590622653207",
-    "quoteLabel": "Request a free quote",
+    "quoteLabel": "Get a Quote",
     "reviewScore": "5.0",
     "region": "Greater Toronto Area",
     "defaultTitle": "Upholstery & Carpet Cleaning Across the GTA | SoftNest",
@@ -1381,7 +1381,7 @@
         },
         {
           "key": "page-30",
-          "label": "Request a free quote",
+          "label": "Get a Quote",
           "text": "{{quote}}"
         },
         {
@@ -3016,13 +3016,13 @@
       },
       {
         "key": "sections-97",
-        "label": "Get a free quote today and experience the SoftNest difference.",
-        "text": "Get a free quote today and experience the SoftNest difference."
+        "label": "Get a quote today and experience the SoftNest difference.",
+        "text": "Get a quote today and experience the SoftNest difference."
       },
       {
         "key": "sections-98",
-        "label": "Get Your Free Quote",
-        "text": "Get Your Free Quote"
+        "label": "Get Your Quote",
+        "text": "Get Your Quote"
       }
     ],
     "heroReviews": [
@@ -3094,7 +3094,7 @@
       },
       {
         "key": "page-6",
-        "label": "Request a free quote",
+        "label": "Get a Quote",
         "text": "{{quote}}"
       },
       {
@@ -3224,7 +3224,7 @@
       },
       {
         "key": "page-32",
-        "label": "Request a free quote",
+        "label": "Get a Quote",
         "text": "{{quote}}"
       },
       {

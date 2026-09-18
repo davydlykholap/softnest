@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const image = blogImageUrl(post.coverImage);
   return {
-    title: post.seoTitle || `${post.title} | ${siteConfig.alternateName}`,
+    title: `${post.title} | ${siteConfig.alternateName}`,
     description: post.seoDescription || post.excerpt,
     alternates: { canonical: blogUrl(post.slug) },
     openGraph: {

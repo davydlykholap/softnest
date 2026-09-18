@@ -1379,3 +1379,31 @@
     grid-column: auto;
   }
 }
+
+/* Keep city-page heroes on the same type scale as the homepage. */
+.miss-hero h1 {
+    font-size: clamp(66px, 4.8vw, 78px);
+}
+
+.miss-hero__description {
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+    .miss-hero h1 {
+        font-size: clamp(43px, 7.3vw, 61px);
+    }
+}
+
+@media (max-width: 640px) {
+    .miss-hero h1 {
+        font-size: 38px;
+        line-height: 1.03;
+    }
+
+    .miss-hero__description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}

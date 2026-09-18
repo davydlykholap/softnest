@@ -6,15 +6,16 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { homeFaqs } from "@/content/homeFaqs";
 import { organizationId, siteConfig, websiteId } from "@/lib/site";
+import "./styles/locations-hub.css";
 import "./styles/home-refinements.css";
 
 export const metadata: Metadata = {
-  title: "Upholstery & Carpet Cleaning Across the GTA | SoftNest",
+  title: "SoftNest Fabric Care",
   description:
     "Professional upholstery, sofa, couch, sectional and furniture cleaning across the GTA. Pet stain treatment, odour removal and fast-drying service.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Upholstery & Carpet Cleaning Across the GTA | SoftNest",
+    title: "SoftNest Fabric Care",
     description:
       "Professional upholstery and carpet cleaning across the Greater Toronto Area and Hamilton.",
     url: "/",

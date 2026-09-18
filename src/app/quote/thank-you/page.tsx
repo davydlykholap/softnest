@@ -5,7 +5,7 @@ import SiteHeader from "@/components/SiteHeader";
 import styles from "@/app/quote/quote-page.module.css";
 
 export const metadata: Metadata = {
-  title: "Quote Request Received | SoftNest",
+  title: "Request Received | SoftNest Fabric Care",
   description: "Your SoftNest cleaning quote request has been received.",
   robots: {
     index: false,

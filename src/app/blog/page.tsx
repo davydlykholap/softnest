@@ -10,7 +10,7 @@ import styles from "@/app/blog/blog.module.css";
 import { blogUrl } from "@/seo/urls";
 
 export const metadata: Metadata = {
-  title: "Fabric Care Blog | SoftNest",
+  title: "Blog | SoftNest Fabric Care",
   description:
     "Practical couch and upholstery care guides from SoftNest Fabric Care, covering stains, cleaning products, fabric safety and professional care.",
   alternates: { canonical: "/blog/" },

@@ -7,7 +7,7 @@ import SiteHeader from "@/components/SiteHeader";
 import styles from "./quote-page.module.css";
 
 export const metadata: Metadata = {
-  title: "Request a Free Upholstery Cleaning Quote | SoftNest",
+  title: "Get a Quote | SoftNest Fabric Care",
   description:
     "Request a free SoftNest quote for upholstery, sofa, carpet and furniture cleaning across the Greater Toronto Area and Hamilton.",
   alternates: { canonical: "/quote/" },
@@ -27,6 +27,9 @@ export default function QuotePage() {
       </div>
       <main className={`quote-page ${styles.quotePage}`}>
         <section className="quote-page-shell">
+          <div className="quote-page-card">
+            <QuotePageForm />
+          </div>
           <div className="quote-page-intro">
             <div className="quote-page-intro__copy">
               <p className="quote-page-kicker">Professional care, close to home</p>
@@ -47,9 +50,6 @@ export default function QuotePage() {
               <span className="quote-page-photo__bubble quote-page-photo__bubble--one" />
               <span className="quote-page-photo__bubble quote-page-photo__bubble--two" />
             </div>
-          </div>
-          <div className="quote-page-card">
-            <QuotePageForm />
           </div>
         </section>
         <section className="quote-page-contact">

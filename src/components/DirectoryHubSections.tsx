@@ -213,6 +213,7 @@ export function DirectorySupportSection({
 }
 
 type DirectoryFinalCtaProps = {
+  id?: string;
   kicker: string;
   title: string;
   description: string;
@@ -223,6 +224,7 @@ type DirectoryFinalCtaProps = {
 };
 
 export function DirectoryFinalCta({
+  id,
   kicker,
   title,
   description,
@@ -232,7 +234,7 @@ export function DirectoryFinalCta({
   className = "",
 }: DirectoryFinalCtaProps) {
   return (
-    <section className={`locations-final-cta ${className}`.trim()}>
+    <section id={id} className={`locations-final-cta ${className}`.trim()}>
       <div className="locations-final-cta__image">
         <Image
           src={image}

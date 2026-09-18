@@ -2,24 +2,30 @@ import { siteConfig } from "@/lib/site";
 import { pageText } from "@/content/pages";
 import { homeContent } from "@/content/pages";
 import Image from "next/image";
+import GoogleReviewCarousel from "@/components/GoogleReviewCarousel";
 import HeroActionButtons from "@/components/HeroActionButtons";
 
 export default function HomeHero() {
   const googleProfileUrl = siteConfig.googleProfileUrl;
 
   const googleReviews = homeContent.heroReviews;
-
   return (
     <main className="site-shell">
       <section className="hero" aria-labelledby="home-hero-heading">
         <div className="hero__photo" aria-hidden="true">
-          <Image
-            src="/images/softnest-hero-room.webp"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-          />
+          <picture>
+            <source
+              media="(max-width: 640px)"
+              srcSet="/images/softnest-hero-room-mobile.webp"
+            />
+            <Image
+              src="/images/softnest-hero-room.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+            />
+          </picture>
         </div>
         <div className="hero__wash" aria-hidden="true" />
 
@@ -27,10 +33,14 @@ export default function HomeHero() {
           <p className="hero__eyebrow">{"" + pageText(homeContent.copy, "hero-1") + ""}</p>
           <span className="hero__eyebrow-line" aria-hidden="true" />
           <h1 id="home-hero-heading" className="hero__title">
-            We Clean What You<span>Live On.</span>
+            A Cleaner Home
+            <span className="hero__title-line">Feels <em>Better.</em></span>
           </h1>
           <p className="hero__description">
-            {" " + pageText(homeContent.copy, "hero-6") + " "}</p>
+            Professional cleaning for the furniture and carpets you live with every
+            day—using fabric-safe products, professional equipment, and meticulous
+            care to refresh your home’s comfort.
+          </p>
           <HeroActionButtons primaryTone="gold" />
           <ul className="hero__benefits" aria-label="Service benefits">
             <li>
@@ -64,39 +74,21 @@ export default function HomeHero() {
       </section>
 
       <section
+        id="reviews"
         className="journey-card"
-        aria-label="Free photo estimate and Google reviews"
+        aria-label="Google reviews"
       >
-        <div className="journey-card__quote">
-          <p className="journey-card__eyebrow">{"" + pageText(homeContent.copy, "hero-13") + ""}</p>
-          <h2>{"" + pageText(homeContent.copy, "hero-14") + ""}</h2>
-          <p>
-            {" " + pageText(homeContent.copy, "hero-15") + ""}{" "}
-            <a
-              href={siteConfig.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" " + pageText(homeContent.copy, "hero-16") + " "}</a>{" "}
-            or{" "}
-            <a
-              href={siteConfig.facebookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" " + pageText(homeContent.copy, "hero-17") + " "}</a>{" "}
-            {" " + pageText(homeContent.copy, "hero-18") + " "}</p>
-          <div className="journey-card__quote-action">
-            <a className="quote-cta" href="/quote/">
-              {" " + pageText(homeContent.copy, "hero-19") + " "}<span aria-hidden="true">→</span>
-            </a>
-            <small>{"" + pageText(homeContent.copy, "hero-20") + ""}</small>
-          </div>
-        </div>
-
         <div className="journey-card__reviews">
           <div className="google-review-summary">
             <div className="google-review-summary__brand">
+              <Image
+                className="google-review-summary__g"
+                src="/img/google-g-official.png"
+                alt=""
+                aria-hidden="true"
+                width={48}
+                height={48}
+              />
               <Image
                 className="google-wordmark"
                 src="/img/google-wordmark-official.png"
@@ -104,7 +96,8 @@ export default function HomeHero() {
                 width={120}
                 height={40}
               />
-              <span>{"" + pageText(homeContent.copy, "hero-21") + ""}</span>
+              <span className="google-review-summary__desktop-label">{"" + pageText(homeContent.copy, "hero-21") + ""}</span>
+              <span className="google-review-summary__mobile-label">Google Reviews</span>
             </div>
             <div className="google-review-summary__score">
               <strong>{siteConfig.reviewScore}</strong>
@@ -119,40 +112,10 @@ export default function HomeHero() {
             </a>
           </div>
 
-          <div className="google-review-cards" aria-label="Recent Google reviews">
-            {googleReviews.map((review) => (
-              <a
-                className="google-review-card"
-                key={review.name}
-                href={googleProfileUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open SoftNest Fabric Care on Google Maps to read ${review.name}'s review`}
-              >
-                <div className="google-review-card__top">
-                  <Image
-                    className="google-g-official"
-                    src="/img/google-g-official.png"
-                    alt=""
-                    aria-hidden="true"
-                    width={24}
-                    height={24}
-                  />
-                  <span aria-label="5 out of 5 stars">★★★★★</span>
-                </div>
-                <p>“{review.text}”</p>
-                <div className="google-review-card__footer">
-                  <span className="google-review-card__avatar" aria-hidden="true">
-                    {review.initial}
-                  </span>
-                  <span className="google-review-card__author">
-                    <strong>{review.name}</strong>
-                  </span>
-                  <span className="google-review-card__open" aria-hidden="true">↗</span>
-                </div>
-              </a>
-            ))}
-          </div>
+          <GoogleReviewCarousel
+            reviews={googleReviews}
+            googleProfileUrl={googleProfileUrl}
+          />
         </div>
       </section>
     </main>

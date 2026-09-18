@@ -1,5 +1,6 @@
 import { pageMetadata } from '@/seo/metadata';
 import { serviceUrl } from '@/seo/urls';
+import { siteConfig } from '@/lib/site';
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServicePage from "@/components/ServicePage";
@@ -20,7 +21,7 @@ export async function generateMetadata({
   const service = getService(slug);
   if (!service) return {};
 
-  return pageMetadata({title:service.metaTitle,description:service.metaDescription,path:serviceUrl(service.slug),image:service.image,imageAlt:service.imageAlt});
+  return pageMetadata({title:`${service.name} | ${siteConfig.name}`,description:service.metaDescription,path:serviceUrl(service.slug),image:service.image,imageAlt:service.imageAlt});
 }
 
 export default async function ServiceRoute({ params }: ServiceRouteProps) {

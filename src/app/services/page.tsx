@@ -19,7 +19,7 @@ import "@/app/styles/locations-hub.css";
 import "@/app/styles/services-hub.css";
 
 export const metadata: Metadata = {
-  title: "Upholstery & Carpet Cleaning Services | SoftNest",
+  title: "Services | SoftNest Fabric Care",
   description:
     "Explore SoftNest sofa, sectional, upholstery, carpet, mattress, chair, stair and pet stain cleaning services across the GTA.",
   alternates: { canonical: "/services/" },

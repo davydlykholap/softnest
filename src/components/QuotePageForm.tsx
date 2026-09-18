@@ -1,19 +1,152 @@
 "use client";
 
 import { siteConfig } from "@/lib/site";
-import { FormEvent, useEffect, useRef, useState } from "react";
+import {
+  FormEvent,
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { trackQuoteConversion } from "@/lib/analytics";
 import { integrations } from "@/lib/integrations";
 import { submitQuote } from "@/domain/quote";
 import { attributionStorageKey } from "@/lib/marketingAttribution";
-import { quoteCategories, quoteServiceOptions } from "@/content/quote";
+import { quoteCategories } from "@/content/quote";
 
 const instagramUrl = siteConfig.instagramUrl;
 const facebookUrl = siteConfig.facebookUrl;
 const lastQuoteStorageKey = "softnest_last_quote_submission";
 
-const serviceOptions = quoteServiceOptions;
+type QuickQuestion = {
+  name: string;
+  label: string;
+  choices: string[];
+};
+
+type OptionPresentation = {
+  label: string;
+  image: string;
+  imageAlt: string;
+  quickQuestions?: QuickQuestion[];
+};
+
+const optionPresentation: Record<string, OptionPresentation> = {
+  "quote-category-1": {
+    label: "Sofa or couch",
+    image: "/images/quote-options/sofa.webp",
+    imageAlt: "Three-seat upholstered sofa",
+    quickQuestions: [
+      { name: "sofa_seats", label: "How many seats?", choices: ["2", "3", "4+"] },
+    ],
+  },
+  "quote-category-2": {
+    label: "Sectional",
+    image: "/images/quote-options/sectional.webp",
+    imageAlt: "L-shaped upholstered sectional",
+    quickQuestions: [
+      { name: "sectional_seats", label: "How many seats?", choices: ["3–4", "5–6", "7+"] },
+    ],
+  },
+  "quote-category-3": {
+    label: "Armchair",
+    image: "/images/quote-options/armchair.webp",
+    imageAlt: "Upholstered armchair",
+    quickQuestions: [
+      { name: "armchair_quantity", label: "How many chairs?", choices: ["1", "2", "3+"] },
+    ],
+  },
+  "quote-category-4": {
+    label: "Dining chairs",
+    image: "/images/quote-options/dining-chairs.webp",
+    imageAlt: "Pair of upholstered dining chairs",
+    quickQuestions: [
+      { name: "dining_chair_quantity", label: "How many chairs?", choices: ["2", "4", "6", "8+"] },
+      { name: "dining_upholstery_area", label: "Upholstery area", choices: ["Seat only", "Seat & back", "Not sure"] },
+    ],
+  },
+  "quote-category-5": {
+    label: "Mattress",
+    image: "/images/quote-options/mattress.webp",
+    imageAlt: "Quilted mattress",
+    quickQuestions: [
+      { name: "mattress_size", label: "Mattress size", choices: ["Twin", "Double", "Queen", "King"] },
+      { name: "mattress_cleaning", label: "Cleaning needed", choices: ["Top only", "Both sides", "Not sure"] },
+    ],
+  },
+  "quote-category-6": {
+    label: "Carpet or rug",
+    image: "/images/quote-options/rug.webp",
+    imageAlt: "Partially rolled woven area rug",
+    quickQuestions: [
+      { name: "carpet_type", label: "What type?", choices: ["Area rug", "Wall-to-wall", "Stairs"] },
+      { name: "carpet_size", label: "Approximate size", choices: ["Small", "Medium", "Large", "Not sure"] },
+    ],
+  },
+  "quote-category-7": {
+    label: "Other furniture",
+    image: "/images/quote-options/other-furniture.webp",
+    imageAlt: "Upholstered storage ottoman",
+    quickQuestions: [
+      { name: "other_piece", label: "What piece?", choices: ["Ottoman", "Bench", "Headboard", "Other"] },
+      { name: "other_quantity", label: "How many pieces?", choices: ["1", "2", "3+"] },
+    ],
+  },
+};
+
+const serviceOptions = quoteCategories.map((category) => ({
+  ...category,
+  presentation: optionPresentation[category.id] ?? {
+    label: category.label,
+    image: "/images/quote-options/other-furniture.webp",
+    imageAlt: category.label,
+  },
+}));
+
+type ServiceOption = (typeof serviceOptions)[number];
+
+type QuoteOptionCardProps = {
+  option: ServiceOption;
+  selected: boolean;
+  errorId?: string;
+  onToggle: (id: string) => void;
+};
+
+const QuoteOptionCard = memo(function QuoteOptionCard({
+  option,
+  selected,
+  errorId,
+  onToggle,
+}: QuoteOptionCardProps) {
+  return (
+    <div className={`quote-page-option${selected ? " is-selected" : ""}`}>
+      <label className="quote-page-option__toggle">
+        <input
+          type="checkbox"
+          checked={selected}
+          aria-describedby={errorId}
+          onChange={() => onToggle(option.id)}
+        />
+        <span className="quote-page-options__visual" aria-hidden="true">
+          <Image
+            src={option.presentation.image}
+            alt=""
+            width={112}
+            height={80}
+            sizes="112px"
+          />
+        </span>
+        <span className="quote-page-options__check" aria-hidden="true">✓</span>
+        <span className="quote-page-options__label">{option.presentation.label}</span>
+      </label>
+    </div>
+  );
+});
 
 function formatPhoneNumber(value: string) {
   let digits = value.replace(/\D/g, "");
@@ -34,12 +167,75 @@ function formatPhoneNumber(value: string) {
 }
 
 export default function QuotePageForm() {
-  const [selected, setSelected] = useState<string[]>([]);
+  const router = useRouter();
+  const [{ selected, activeDetailId }, setSelectionState] = useState({
+    selected: [] as string[],
+    activeDetailId: "",
+  });
+  const [quickDetails, setQuickDetails] = useState<Record<string, string>>({});
   const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
   const openedAt = useRef(0);
+  const selectedSet = useMemo(() => new Set(selected), [selected]);
+  const selectedOptions = useMemo(
+    () => serviceOptions.filter((option) => selectedSet.has(option.id)),
+    [selectedSet],
+  );
+  const activeDetailOption = useMemo(
+    () =>
+      selectedOptions.find((option) => option.id === activeDetailId) ??
+      selectedOptions[selectedOptions.length - 1],
+    [activeDetailId, selectedOptions],
+  );
+  const activeQuestions = activeDetailOption?.presentation.quickQuestions ?? [];
+  const answeredCount = useMemo(
+    () =>
+      selectedOptions.filter((option) => {
+        const questions = option.presentation.quickQuestions ?? [];
+        return questions.length > 0 && questions.every((question) => Boolean(quickDetails[question.name]));
+      }).length,
+    [quickDetails, selectedOptions],
+  );
+
+  const toggleOption = useCallback((id: string) => {
+    setError("");
+    setSelectionState((current) => {
+      const isSelected = current.selected.includes(id);
+      const nextSelected = isSelected
+        ? current.selected.filter((item) => item !== id)
+        : [...current.selected, id];
+
+      return {
+        selected: nextSelected,
+        activeDetailId: isSelected
+          ? current.activeDetailId === id
+            ? nextSelected[nextSelected.length - 1] ?? ""
+            : current.activeDetailId
+          : id,
+      };
+    });
+  }, []);
+
+  const showDetailOption = useCallback((id: string) => {
+    setSelectionState((current) => ({ ...current, activeDetailId: id }));
+  }, []);
+
+  const showNextDetailOption = useCallback(() => {
+    if (!activeDetailOption || selectedOptions.length < 2) return;
+    const currentIndex = selectedOptions.findIndex(
+      (option) => option.id === activeDetailOption.id,
+    );
+    const nextOption = selectedOptions[(currentIndex + 1) % selectedOptions.length];
+    showDetailOption(nextOption.id);
+  }, [activeDetailOption, selectedOptions, showDetailOption]);
+
+  const updateQuickDetail = useCallback((name: string, value: string) => {
+    setQuickDetails((current) =>
+      current[name] === value ? current : { ...current, [name]: value },
+    );
+  }, []);
 
   useEffect(() => {
     openedAt.current = Date.now();
@@ -85,8 +281,28 @@ export default function QuotePageForm() {
     setSubmitting(true);
     setError("");
     formData.set("name", name);
-    formData.set("furniture", selected.join(", "));
-    formData.set("service_ids", quoteCategories.filter(item=>selected.includes(item.label)).map(item=>item.id).join(","));
+    formData.set(
+      "furniture",
+      selectedOptions.map((item) => item.presentation.label).join(", "),
+    );
+    formData.set("service_ids", selectedOptions.map((item) => item.id).join(","));
+    formData.set(
+      "item_details",
+      selectedOptions
+        .map((item) => {
+          const answers = (item.presentation.quickQuestions ?? [])
+            .map((question) =>
+              quickDetails[question.name]
+                ? `${question.label}: ${quickDetails[question.name]}`
+                : "",
+            )
+            .filter(Boolean)
+            .join(", ");
+          return answers ? `${item.presentation.label}: ${answers}` : "";
+        })
+        .filter(Boolean)
+        .join("; "),
+    );
     formData.set("phone", phone);
     formData.set("notes", notes);
     formData.delete("website");
@@ -120,7 +336,7 @@ export default function QuotePageForm() {
       }
 
       setSent(true);
-      trackQuoteConversion(() => window.location.assign("/quote/thank-you/"));
+      trackQuoteConversion(() => router.push("/quote/thank-you/"));
     } catch {
       setError(
         "We couldn’t send the form. Please call or text " + siteConfig.displayPhone + ".",
@@ -213,28 +429,128 @@ export default function QuotePageForm() {
 
       <fieldset className="quote-page-options">
         <legend>What would you like cleaned?</legend>
+        <p className="quote-page-options__hint">Select all that apply.</p>
         <div className="quote-page-options__grid">
           {serviceOptions.map((option) => (
-            <label key={option} className={selected.includes(option) ? "is-selected" : ""}>
-              <input
-                type="checkbox"
-                checked={selected.includes(option)}
-                aria-describedby={error ? "quote-page-error" : undefined}
-                onChange={() => {
-                  setError("");
-                  setSelected((current) =>
-                    current.includes(option)
-                      ? current.filter((item) => item !== option)
-                      : [...current, option],
-                  );
-                }}
-              />
-              <span className="quote-page-options__check" aria-hidden="true">✓</span>
-              <span>{option}</span>
-            </label>
+            <QuoteOptionCard
+              key={option.id}
+              option={option}
+              selected={selectedSet.has(option.id)}
+              errorId={error ? "quote-page-error" : undefined}
+              onToggle={toggleOption}
+            />
           ))}
         </div>
       </fieldset>
+
+      {activeDetailOption && activeQuestions.length > 0 ? (
+        <section className="quote-page-quick-detail" aria-live="polite">
+          <div className="quote-page-quick-detail__heading">
+            <p>
+              <strong>A couple of quick details</strong>
+              <small>
+                {selectedOptions.length} {selectedOptions.length === 1 ? "item" : "items"} selected • answer what you know
+              </small>
+            </p>
+          </div>
+
+          <div
+            className="quote-page-quick-detail__tabs"
+            role="tablist"
+            aria-label="Selected items"
+            style={{
+              gridTemplateColumns: `repeat(${selectedOptions.length}, minmax(0, 1fr))`,
+            }}
+          >
+            {selectedOptions.map((option) => {
+              const questions = option.presentation.quickQuestions ?? [];
+              const answered = questions.length > 0 && questions.every(
+                (question) => Boolean(quickDetails[question.name]),
+              );
+              const active = option.id === activeDetailOption.id;
+
+              return (
+                <button
+                  key={option.id}
+                  id={`quote-detail-tab-${option.id}`}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  aria-controls="quote-detail-panel"
+                  className={`${active ? "is-active" : ""}${answered ? " is-answered" : ""}`}
+                  onClick={() => showDetailOption(option.id)}
+                >
+                  {option.presentation.label}
+                  {answered ? <span aria-label="answered">✓</span> : null}
+                </button>
+              );
+            })}
+          </div>
+
+          <article
+            className="quote-page-quick-detail__card"
+            id="quote-detail-panel"
+            role="tabpanel"
+            aria-labelledby={`quote-detail-tab-${activeDetailOption.id}`}
+          >
+            <div className="quote-page-quick-detail__item">
+              <Image
+                src={activeDetailOption.presentation.image}
+                alt=""
+                width={118}
+                height={72}
+                sizes="118px"
+              />
+              <p>
+                <strong>{activeDetailOption.presentation.label}</strong>
+                <small>Tell us a little about this piece</small>
+              </p>
+            </div>
+
+            <div className="quote-page-quick-detail__questions">
+              {activeQuestions.map((question) => (
+                <fieldset className="quote-page-quick-detail__question" key={question.name}>
+                  <legend>{question.label}</legend>
+                  <div>
+                    {question.choices.map((choice) => (
+                      <label key={choice}>
+                        <input
+                          type="radio"
+                          name={question.name}
+                          value={choice}
+                          checked={quickDetails[question.name] === choice}
+                          onChange={() => updateQuickDetail(question.name, choice)}
+                        />
+                        <span>{choice}</span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+              ))}
+            </div>
+          </article>
+
+          <div className="quote-page-quick-detail__footer">
+            <div className="quote-page-quick-detail__progress" aria-hidden="true">
+              <i
+                style={{
+                  width: `${selectedOptions.length ? (answeredCount / selectedOptions.length) * 100 : 0}%`,
+                }}
+              />
+            </div>
+            <small>{answeredCount} of {selectedOptions.length} described</small>
+            {selectedOptions.length > 1 ? (
+              <button
+                className="quote-page-quick-detail__next"
+                type="button"
+                onClick={showNextDetailOption}
+              >
+                Next item <span aria-hidden="true">→</span>
+              </button>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       <label className="quote-page-field quote-page-field--notes">
         <span>Anything else we should know?</span>
@@ -242,7 +558,7 @@ export default function QuotePageForm() {
           name="notes"
           rows={4}
           maxLength={1500}
-          placeholder="Number of pieces, stains, pet odour, preferred timing..."
+          placeholder="Stains, pet odour, access notes, preferred timing..."
         />
       </label>
 
@@ -252,7 +568,7 @@ export default function QuotePageForm() {
           type="submit"
           disabled={submitting}
         >
-          {submitting ? "Sending…" : "Request my free quote"}
+          {submitting ? "Sending…" : "Get my quote"}
           <span aria-hidden="true">→</span>
         </button>
         <p>

@@ -1890,16 +1890,6 @@ html:has(.gallery-section-v2:target) {
   }
 
   .faq-equipment {
-    aspect-ratio: 1.45 / 1;
-    overflow: hidden;
-    background: #e8e2d8;
-  }
-
-  .faq-equipment img {
-    object-position: 38% center;
-  }
-
-  .faq-equipment__card {
     display: none;
   }
 

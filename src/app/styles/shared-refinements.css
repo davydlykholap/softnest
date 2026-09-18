@@ -191,6 +191,315 @@ html {
   gap: .65rem;
 }
 
+.footer-mobile-nav {
+  display: none;
+}
+
+.site-footer__mobile-brand,
+.site-footer__mobile-contact {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding: 30px 20px 22px;
+  }
+
+  .site-footer__grid {
+    gap: 24px;
+  }
+
+  .site-footer__desktop-brand,
+  .footer-desktop-nav-column,
+  .site-footer__contact--desktop {
+    display: none;
+  }
+
+  .site-footer__mobile-brand,
+  .site-footer__mobile-contact {
+    display: block;
+  }
+
+  .site-footer__mobile-brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .site-footer__mobile-logo {
+    min-width: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #102d24;
+    text-decoration: none;
+  }
+
+  .site-footer__mobile-logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .site-footer__mobile-logo strong,
+  .site-footer__mobile-logo small {
+    display: block;
+  }
+
+  .site-footer__mobile-logo strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: .015em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .site-footer__mobile-logo small {
+    margin-top: 5px;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .24em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .site-footer__mobile-socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-footer__mobile-socials .social-media-links--gallery {
+    display: inline-flex;
+    gap: 8px;
+  }
+
+  .site-footer__mobile-socials .social-platform-link,
+  .site-footer__youtube {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    min-height: 42px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid rgba(7, 84, 59, .13);
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 5px 14px rgba(17, 42, 33, .07);
+  }
+
+  .site-footer__mobile-socials .social-platform-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .site-footer__youtube {
+    color: #ff0033;
+  }
+
+  .site-footer__youtube svg {
+    width: 25px;
+    height: 25px;
+    display: block;
+    fill: currentColor;
+  }
+
+  .site-footer__youtube .site-footer__youtube-play {
+    fill: #fff;
+  }
+
+  .site-footer__mobile-brand > p {
+    max-width: 340px;
+    margin: 25px 0 0;
+    color: #2e3c36;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.52;
+  }
+
+  .site-footer__mobile-about {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid currentColor;
+    color: #07543b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .footer-mobile-nav {
+    display: block;
+    border-top: 1px solid rgba(7, 84, 59, .12);
+    background: transparent;
+  }
+
+  .footer-mobile-nav details {
+    border-bottom: 1px solid rgba(7, 84, 59, .12);
+    background: transparent;
+  }
+
+  .footer-mobile-nav summary {
+    position: relative;
+    display: flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px 0 0;
+    color: #07543b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .055em;
+    list-style: none;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .footer-mobile-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .footer-mobile-nav summary::before,
+  .footer-mobile-nav summary::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    width: 14px;
+    height: 1.5px;
+    border-radius: 2px;
+    background: #07543b;
+    transform: translateY(-50%);
+    transition: transform 180ms ease;
+  }
+
+  .footer-mobile-nav summary::after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  .footer-mobile-nav details[open] summary::after {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  .footer-mobile-nav__content {
+    padding: 2px 0 20px;
+  }
+
+  .footer-mobile-nav .footer-service-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .footer-mobile-nav .footer-location-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+  }
+
+  .footer-mobile-nav a {
+    display: inline-block;
+    min-height: 28px;
+    line-height: 1.4;
+  }
+
+  .site-footer__contact > h3 {
+    margin-bottom: 12px;
+  }
+
+  .site-footer__mobile-contact {
+    padding: 22px 18px;
+    border: 1px solid rgba(7, 84, 59, .14);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(17, 42, 33, .06);
+  }
+
+  .site-footer__mobile-contact h3 {
+    margin: 0 0 17px;
+    color: #07543b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+
+  .site-footer__mobile-call {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 18px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #0a674a, #07543b);
+    box-shadow: 0 10px 22px rgba(7, 84, 59, .2);
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .site-footer__mobile-call svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  .site-footer__mobile-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 17px 0 0;
+    color: #26342e;
+    font-size: 13px;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+
+  .site-footer__mobile-detail svg {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: #07543b;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+  }
+
+  .site-footer .softnest-map--footer {
+    display: none;
+  }
+
+  .site-footer__bottom {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 26px;
+    padding-top: 18px;
+    gap: 10px;
+  }
+
+  .site-footer__rights,
+  .site-footer__legal-suffix {
+    display: none;
+  }
+}
+
 
 @media (max-width: 640px) {
   html { scroll-padding-top: 86px; }
@@ -379,5 +688,151 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .social-platform-link {
     transition: none;
+  }
+}
+
+/* Refined site footer: quieter hierarchy, white canvas and fewer card effects. */
+.site-footer--refined {
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .site-footer--refined .site-footer__grid {
+    grid-template-columns: minmax(220px, 1.35fr) repeat(3, minmax(130px, .82fr)) minmax(190px, 1fr);
+    align-items: start;
+    column-gap: clamp(28px, 3.2vw, 52px);
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer--refined {
+    padding: 38px 24px 24px;
+    border-top: 1px solid rgba(7, 84, 59, .07);
+  }
+
+  .site-footer--refined .site-footer__grid {
+    gap: 0;
+  }
+
+  .site-footer--refined .site-footer__mobile-logo {
+    gap: 12px;
+  }
+
+  .site-footer--refined .site-footer__mobile-logo img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .site-footer--refined .site-footer__mobile-logo strong {
+    font-size: 21px;
+  }
+
+  .site-footer--refined .site-footer__mobile-brand > p {
+    max-width: 350px;
+    margin: 22px 0 0;
+    color: #31443d;
+    font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .site-footer--refined .site-footer__mobile-socials {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .site-footer--refined .site-footer__mobile-socials .social-media-links--gallery {
+    gap: 10px;
+  }
+
+  .site-footer--refined .site-footer__mobile-socials .social-platform-link,
+  .site-footer--refined .site-footer__youtube {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    min-height: 38px;
+    border-color: rgba(7, 84, 59, .18);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+    color: #07543b;
+  }
+
+  .site-footer--refined .site-footer__mobile-socials .social-platform-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    background: transparent;
+    color: #07543b;
+  }
+
+  .site-footer--refined .site-footer__mobile-socials .social-platform-icon svg,
+  .site-footer--refined .site-footer__mobile-socials .social-platform-icon--facebook svg,
+  .site-footer--refined .site-footer__youtube svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .site-footer--refined .site-footer__mobile-socials .social-platform-icon svg {
+    color: #07543b;
+  }
+
+  .site-footer--refined .site-footer__youtube .site-footer__youtube-play {
+    fill: #fff;
+  }
+
+  .site-footer--refined .footer-mobile-nav {
+    margin-top: 30px;
+    border-top-color: rgba(7, 84, 59, .13);
+  }
+
+  .site-footer--refined .footer-mobile-nav details {
+    border-bottom-color: rgba(7, 84, 59, .13);
+  }
+
+  .site-footer--refined .footer-mobile-nav summary {
+    min-height: 58px;
+    font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .13em;
+  }
+
+  .site-footer--refined .footer-mobile-nav summary::before,
+  .site-footer--refined .footer-mobile-nav summary::after {
+    right: 2px;
+    width: 13px;
+  }
+
+  .site-footer--refined .footer-mobile-nav__content {
+    padding-bottom: 18px;
+  }
+
+  .site-footer--refined .site-footer__mobile-contact {
+    display: grid;
+    gap: 15px;
+    margin-top: 26px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .site-footer--refined .site-footer__mobile-detail {
+    gap: 11px;
+    margin: 0;
+    color: #31443d;
+    font-size: 13px;
+  }
+
+  .site-footer--refined .site-footer__mobile-detail svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .site-footer--refined .site-footer__bottom {
+    margin-top: 30px;
+    padding-top: 20px;
   }
 }

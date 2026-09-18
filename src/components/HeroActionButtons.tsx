@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site";
+import Image from "next/image";
 import Link from "next/link";
 
 const googleProfileUrl = siteConfig.googleProfileUrl;
@@ -9,7 +10,7 @@ type HeroActionButtonsProps = {
 };
 
 export default function HeroActionButtons({
-  quoteAriaLabel = "Get a free upholstery and carpet cleaning quote",
+  quoteAriaLabel = "Get an upholstery and carpet cleaning quote",
   primaryTone = "green",
 }: HeroActionButtonsProps) {
   return (
@@ -21,7 +22,7 @@ export default function HeroActionButtons({
         href="/quote/"
         aria-label={quoteAriaLabel}
       >
-        Get a free quote
+        Get a Quote
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -40,29 +41,14 @@ export default function HeroActionButtons({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <svg
-          className="google-maps-icon"
-          viewBox="0 0 24 24"
+        <Image
+          className="google-g-icon"
+          src="/img/google-g-official.png"
+          alt=""
           aria-hidden="true"
-        >
-          <path
-            fill="#34a853"
-            d="M12 22s7-6.25 7-13a7 7 0 1 0-14 0c0 6.75 7 13 7 13Z"
-          />
-          <path
-            fill="#4285f4"
-            d="M12 2a7 7 0 0 0-7 7c0 2.28.8 4.55 1.9 6.52L12 9Z"
-          />
-          <path
-            fill="#fbbc04"
-            d="M12 9l5.1 6.52C18.2 13.55 19 11.28 19 9a7 7 0 0 0-1.18-3.9Z"
-          />
-          <path
-            fill="#ea4335"
-            d="M17.82 5.1A7 7 0 0 0 12 2v7Z"
-          />
-          <circle cx="12" cy="9" r="2.45" fill="#fff" />
-        </svg>
+          width={32}
+          height={32}
+        />
         See our reviews
       </a>
     </div>

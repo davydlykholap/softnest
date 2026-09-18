@@ -11,7 +11,7 @@ import "./hero-cta.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url + ""),
   title: {
-    default: siteConfig.defaultTitle,
+    default: siteConfig.name,
     template: "%s",
   },
   description: siteConfig.defaultDescription,

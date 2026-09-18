@@ -21,7 +21,7 @@ export async function generateMetadata({
   const location = getLocation(city);
   if (!location) return {};
 
-  return pageMetadata({title:location.metaTitle || `Upholstery & Carpet Cleaning in ${location.name} | ${siteConfig.alternateName}`, description:location.metaDescription || location.shortDescription,path:locationUrl(location.slug),image:location.expandedContent?.heroImage || location.image,imageAlt:location.imageAlt,index:location.indexInSearch});
+  return pageMetadata({title:`Cleaning in ${location.name} | ${siteConfig.name}`, description:location.metaDescription || location.shortDescription,path:locationUrl(location.slug),image:location.expandedContent?.heroImage || location.image,imageAlt:location.imageAlt,index:location.indexInSearch});
 }
 
 export default async function CityPage({ params }: CityPageProps) {

@@ -715,3 +715,31 @@
     transition: none;
   }
 }
+
+/* Keep the About hero on the same type scale as the homepage. */
+.hero h1 {
+  font-size: clamp(66px, 4.8vw, 78px);
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+  .hero h1 {
+    font-size: clamp(43px, 7.3vw, 61px);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 38px;
+    line-height: 1.03;
+  }
+
+  .lead {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

@@ -10,7 +10,7 @@ import { organizationId, siteConfig } from "@/lib/site";
 import styles from "./about-page.module.css";
 
 export const metadata: Metadata = {
-  title: "About SoftNest Fabric Care | Professional Cleaning Across the GTA",
+  title: "About | SoftNest Fabric Care",
   description:
     "Learn about SoftNest Fabric Care, our detail-focused approach to upholstery and carpet cleaning, professional equipment and service across the GTA.",
   alternates: { canonical: "/about/" },

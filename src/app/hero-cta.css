@@ -74,6 +74,13 @@
   background: #126849;
 }
 
+.hero-action-buttons .google-g-icon {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
 .journey-card__quote-action .quote-cta {
   background: linear-gradient(135deg, #14835d 0%, #10694b 58%, #0d553f 100%);
 }
