@@ -46,6 +46,13 @@ const navigation = [
   { label: "About Us", href: "/about/" },
 ] as const;
 
+const mobileServiceSlugs = [
+  "sofa-cleaning",
+  "carpet-area-rug-cleaning",
+  "pet-stain-odour-removal",
+  "sectional-furniture-cleaning",
+] as const;
+
 function ServiceIcon({ name }: { name: ServiceIconName }) {
   const commonProps = {
     viewBox: "0 0 24 24",
@@ -145,6 +152,9 @@ export default function HeaderNavigation({
   const navigationHref = (item: (typeof navigation)[number]) =>
     "href" in item ? item.href : homeHref(item.hash);
   const selectedService = services[activeService] ?? services[0];
+  const mobileServices = mobileServiceSlugs
+    .map((slug) => services.find((service) => service.slug === slug))
+    .filter((service): service is NavigationService => Boolean(service));
 
   useEffect(() => {
     const root = document.documentElement;
@@ -431,7 +441,8 @@ export default function HeaderNavigation({
               mobileServicesOpen ? "mobile-services__links--open" : ""
             }`}
           >
-            {services.map((service) => (
+            <p className="mobile-services__eyebrow">Popular services</p>
+            {mobileServices.map((service) => (
               <Link
                 href={`/services/${service.slug}/`}
                 key={service.slug}
@@ -440,50 +451,51 @@ export default function HeaderNavigation({
                   setMobileServicesOpen(false);
                 }}
               >
-                <span className="mobile-services__icon">
-                  <ServiceIcon name={iconBySlug[service.slug] ?? "sofa"} />
-                </span>
                 <span>{service.menuLabel}</span>
-                <span aria-hidden="true">→</span>
               </Link>
             ))}
             <Link
+              className="mobile-services__all"
               href="/services/"
               onClick={() => {
                 setOpen(false);
                 setMobileServicesOpen(false);
               }}
             >
-              <span className="mobile-services__icon">
-                <ServiceIcon name="sofa" />
-              </span>
               <span>View all services</span>
               <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
 
-        <Link href="/location/" onClick={() => setOpen(false)}>
-          Locations
-        </Link>
-        {navigation.map((item) => (
+        <div className="mobile-nav__primary">
+          <Link href="/location/" onClick={() => setOpen(false)}>
+            Locations
+          </Link>
+          <Link href="/blog/" onClick={() => setOpen(false)}>
+            Blog
+          </Link>
+          <Link href="/about/" onClick={() => setOpen(false)}>
+            About SoftNest
+          </Link>
+        </div>
+
+        <div className="mobile-nav__utility">
+          <span className="mobile-nav__utility-label">Prefer to talk?</span>
+          <a className="mobile-nav__phone" href={siteConfig.phoneHref}>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z" />
+            </svg>
+            {siteConfig.displayPhone}
+          </a>
           <Link
-            href={navigationHref(item)}
-            key={item.label}
+            className="mobile-nav__quote quote-cta"
+            href="/quote/"
             onClick={() => setOpen(false)}
           >
-            {item.label}
+            {siteConfig.quoteLabel}
           </Link>
-        ))}
-        <a href={siteConfig.phoneHref}>Call {siteConfig.displayPhone}</a>
-        <Link
-          className="mobile-nav__quote quote-cta"
-          href="/quote/"
-          onClick={() => setOpen(false)}
-        >
-          
-          {siteConfig.quoteLabel}
-        </Link>
+        </div>
       </nav>
     </>
   );

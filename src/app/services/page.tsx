@@ -152,7 +152,7 @@ export default function ServicesPage() {
           action={{ href: "/quote/", label: siteConfig.quoteLabel }}
           image="/images/softnest-hero-room.webp"
           imageAlt="Bright living room with a deep green sofa"
-          className="services-final-cta"
+          className="site-final-cta"
         />
       </main>
 

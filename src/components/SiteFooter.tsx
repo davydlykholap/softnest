@@ -160,17 +160,6 @@ export default function SiteFooter() {
             </div>
           </details>
 
-          <details>
-            <summary>Company</summary>
-            <div className="footer-mobile-nav__content">
-              <ul className="footer-service-list text-sm text-stone-700">
-                <li><Link href="/about/">About SoftNest</Link></li>
-                <li><Link href="/#results">Our Results</Link></li>
-                <li><Link href="/blog/">Care Journal</Link></li>
-                <li><Link href="/quote/">Get a Quote</Link></li>
-              </ul>
-            </div>
-          </details>
         </div>
 
         <div className="site-footer__contact site-footer__contact--desktop">
@@ -221,9 +210,11 @@ export default function SiteFooter() {
       <div className="site-footer__bottom max-w-6xl mx-auto mt-10 pt-6 border-t border-forestGreen/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-stone-500">
         <p>© 2026 {siteConfig.name}<span className="site-footer__rights">. All rights reserved.</span></p>
         <p className="footer-legal-links">
-          <Link href="/privacy/">Privacy<span className="site-footer__legal-suffix"> Policy</span></Link>
+          <Link href="/privacy/">Privacy</Link>
           <span aria-hidden="true">|</span>
-          <Link href="/terms/">Terms<span className="site-footer__legal-suffix"> of Service</span></Link>
+          <Link href="/terms/">Terms</Link>
+          <span aria-hidden="true">|</span>
+          <Link href="/about/">About SoftNest</Link>
         </p>
       </div>
     </footer>

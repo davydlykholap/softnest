@@ -18,8 +18,8 @@ type DirectoryHeroProps = {
   kicker: string;
   titleLines: HeroTitleLine[];
   description: string;
-  primaryAction: HubAction;
-  secondaryAction: HubAction;
+  primaryAction?: HubAction;
+  secondaryAction?: HubAction;
   media: ReactNode;
   mediaLabel: string;
   className?: string;
@@ -57,21 +57,27 @@ export function DirectoryHero({
           ))}
         </h1>
         <p className="locations-hero__description">{description}</p>
-        <div className="locations-hero__actions">
-          <Link
-            className="locations-pill locations-pill--solid"
-            href={primaryAction.href}
-          >
-            {primaryAction.label}
-            <span aria-hidden="true">→</span>
-          </Link>
-          <Link
-            className="locations-pill locations-pill--outline"
-            href={secondaryAction.href}
-          >
-            {secondaryAction.label}
-          </Link>
-        </div>
+        {primaryAction || secondaryAction ? (
+          <div className="locations-hero__actions">
+            {primaryAction ? (
+              <Link
+                className="locations-pill locations-pill--solid"
+                href={primaryAction.href}
+              >
+                {primaryAction.label}
+                <span aria-hidden="true">→</span>
+              </Link>
+            ) : null}
+            {secondaryAction ? (
+              <Link
+                className="locations-pill locations-pill--outline"
+                href={secondaryAction.href}
+              >
+                {secondaryAction.label}
+              </Link>
+            ) : null}
+          </div>
+        ) : null}
       </div>
 
       <div className="locations-hero__map" aria-label={mediaLabel}>

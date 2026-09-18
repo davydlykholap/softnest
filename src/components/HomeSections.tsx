@@ -102,7 +102,7 @@ export default function HomeSections() {
     action={{ href: "/quote/", label: siteConfig.quoteLabel }}
     image="/images/softnest-hero-room.webp"
     imageAlt="Bright living room with a deep green sofa"
-    className="home-final-cta"
+    className="site-final-cta"
   />
 </div>
 

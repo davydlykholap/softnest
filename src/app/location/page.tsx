@@ -74,9 +74,8 @@ export default function LocationsPage() {
             { text: "Closer to Home.", accent: true },
           ]}
           description="Explore SoftNest upholstery and carpet cleaning services in your community."
-          primaryAction={{ href: "#cities", label: "Find your city" }}
-          secondaryAction={{ href: "/quote/", label: "Request a quote" }}
           mediaLabel="SoftNest GTA service area"
+          className="locations-hub-hero--compact"
           media={
             <Image
               src="/img/locations/location-hero-map-nine-cities.webp"
@@ -150,6 +149,7 @@ export default function LocationsPage() {
           action={{ href: "/quote/", label: siteConfig.quoteLabel }}
           image="/images/softnest-hero-room.webp"
           imageAlt="SoftNest hero room with a deep green sofa"
+          className="site-final-cta"
         />
       </main>
 

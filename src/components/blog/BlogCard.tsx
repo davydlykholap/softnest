@@ -10,40 +10,50 @@ type Props = {
   formattedDate: string;
 };
 
+const articleFallbackImages: Record<string, string> = {
+  "why-did-my-couch-stain-come-back-after-cleaning": "/img/gray_sofa_stain.png",
+  "what-cleaning-solution-can-i-use-on-my-couch":
+    "/images/blog/how-to-remove-stain-from-couch/blotting-a-couch-spill.webp",
+  "why-sofa-armrests-get-dirty-faster": "/img/sofa.png",
+  "does-vacuuming-clean-carpet": "/img/rug_2.webp",
+  "how-to-remove-pet-urine-smell-from-couch": "/img/pet_stain.jpg",
+  "how-often-should-office-carpets-be-cleaned": "/img/carpet_staircase.webp",
+  "how-long-does-a-couch-take-to-dry-after-cleaning":
+    "/images/blog/how-to-remove-stain-from-couch/sofa-fabric-after-drying.webp",
+};
+
 export default function BlogCard({ post, formattedDate }: Props) {
-  const image = blogImageUrl(post.coverImage, 900);
+  const image =
+    blogImageUrl(post.coverImage, 900) || articleFallbackImages[post.slug];
   const cardClasses = [styles.card, image ? "" : styles.textOnly]
     .filter(Boolean)
     .join(" ");
 
   return (
     <article className={cardClasses}>
-      {image ? (
-        <Link
-          className={styles.image}
-          href={blogUrl(post.slug)}
-          aria-label={`Read ${post.title}`}
-        >
-          <Image
-            src={image}
-            alt={post.coverImage?.alt || ""}
-            width={900}
-            height={600}
-            sizes="(max-width: 700px) calc(100vw - 46px), (max-width: 1100px) 46vw, 30vw"
-            unoptimized
-          />
-        </Link>
-      ) : null}
-      <div className={styles.copy}>
-        <time dateTime={post.publishedAt}>{formattedDate}</time>
-        <h3>
-          <Link href={blogUrl(post.slug)}>{post.title}</Link>
-        </h3>
-        <p>{post.excerpt}</p>
-        <Link className={styles.readLink} href={blogUrl(post.slug)}>
-          Read article <span aria-hidden="true">→</span>
-        </Link>
-      </div>
+      <Link className={styles.cardLink} href={blogUrl(post.slug)}>
+        {image ? (
+          <span className={styles.image}>
+            <Image
+              src={image}
+              alt={post.coverImage?.alt || ""}
+              width={900}
+              height={600}
+              sizes="(max-width: 700px) 46vw, (max-width: 1100px) 46vw, 25vw"
+              unoptimized
+            />
+          </span>
+        ) : null}
+        <span className={styles.copy}>
+          <time dateTime={post.publishedAt}>{formattedDate}</time>
+          <h2>{post.title}</h2>
+          <span className={styles.arrow} aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M5 12h13M13 7l5 5-5 5" />
+            </svg>
+          </span>
+        </span>
+      </Link>
     </article>
   );
 }

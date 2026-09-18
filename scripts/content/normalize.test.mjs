@@ -28,11 +28,11 @@ test("migration IDs and references stay publicly readable", () => {
   assert.deepEqual(dotted, []);
 });
 
-test("complete migration preserves catalogs and exactly three complete articles", () => {
+test("complete migration preserves catalogs and all eight complete articles", () => {
   const content = normalizeContent(seed(), config);
   assert.equal(content.services.length, 10);
   assert.equal(content.locations.length, 9);
-  assert.equal(content.posts.length, 3);
+  assert.equal(content.posts.length, 8);
 
   const first = content.posts.find(
     (post) => post.slug === "how-to-remove-stain-from-couch",
@@ -54,7 +54,7 @@ test("complete migration preserves catalogs and exactly three complete articles"
       .trim();
     const rendered = post.body
       .filter((block) => block._type === "block")
-      .flatMap((block) => block.children.map((child) => child.text))
+      .map((block) => block.children.map((child) => child.text).join(""))
       .join(" ")
       .replace(/\s+/g, " ")
       .trim();

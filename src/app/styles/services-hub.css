@@ -312,3 +312,22 @@
         line-height: 1.5;
     }
 }
+
+/* Keep directory hero copy aligned with the shared mobile hero rhythm. */
+@media (max-width: 820px) {
+    .services-hub-hero .locations-hero__copy {
+        padding-top: 44px;
+    }
+}
+
+@media (max-width: 580px) {
+    .services-hub-hero .locations-hero__copy {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .services-hub-hero .locations-hero__copy {
+        padding-top: 0;
+    }
+}

@@ -1,9 +1,5 @@
 import { jsonLd } from "@/seo/structuredData";
-import { pageText } from "@/content/pages";
-import { aboutContent } from "@/content/pages";
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { organizationId, siteConfig } from "@/lib/site";
@@ -28,17 +24,6 @@ export const metadata: Metadata = {
     ],
   },
 };
-
-const principles = aboutContent.principles;
-
-const serviceLinks = [
-  ["Sofa & Couch Cleaning", "/services/sofa-cleaning/"],
-  ["Sectional & Furniture Cleaning", "/services/sectional-furniture-cleaning/"],
-  ["Leather Upholstery Cleaning", "/services/leather-upholstery-cleaning/"],
-  ["Carpet & Area Rug Cleaning", "/services/carpet-area-rug-cleaning/"],
-  ["Mattress Cleaning", "/services/mattress-cleaning/"],
-  ["Pet Stain & Odour Treatment", "/services/pet-stain-odour-removal/"],
-] as const;
 
 const aboutSchema = {
   "@context": "https://schema.org",
@@ -79,144 +64,48 @@ export default function AboutPage() {
       </div>
 
       <main className={styles.page}>
-        <section className={styles.hero}>
-          <div className={styles.heroCopy}>
-            <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-1") + ""}</p>
+        <article className={styles.about}>
+          <header className={styles.introduction}>
             <h1>
-              {" " + pageText(aboutContent.copy, "page-2") + " "}<span>{"" + pageText(aboutContent.copy, "page-3") + ""}</span>
+              About <span>SoftNest</span>
             </h1>
-            <p className={styles.lead}>
-              {" " + pageText(aboutContent.copy, "page-4") + " "}</p>
-            <p className={styles.sublead}>
-              {" " + pageText(aboutContent.copy, "page-5") + " "}</p>
-            <div className={styles.actions}>
-              <Link className={styles.primaryButton} href="/quote/">
-                {" " + pageText(aboutContent.copy, "page-6") + " "}</Link>
-              <Link className={styles.secondaryButton} href="/services/">
-                {" " + pageText(aboutContent.copy, "page-7") + " "}</Link>
-            </div>
-          </div>
-
-          <div className={styles.heroMedia}>
-            <Image
-              src="/images/softnest-hero-room.webp"
-              alt="Clean home interior representing SoftNest Fabric Care service"
-              fill
-              priority
-              sizes="(max-width: 980px) 88vw, 40vw"
-              className="object-cover"
-            />
-            <div className={styles.heroNote}>
-              <strong>{"" + pageText(aboutContent.copy, "page-8") + ""}</strong>
-              <span>{"" + pageText(aboutContent.copy, "page-9") + ""}</span>
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.proofRail} aria-label="SoftNest service principles">
-          <div className={styles.proofItem}>
-            <strong>{"" + pageText(aboutContent.copy, "page-10") + ""}</strong>
-            <span>{"" + pageText(aboutContent.copy, "page-11") + ""}</span>
-          </div>
-          <div className={styles.proofItem}>
-            <strong>{"" + pageText(aboutContent.copy, "page-12") + ""}</strong>
-            <span>{"" + pageText(aboutContent.copy, "page-13") + ""}</span>
-          </div>
-          <div className={styles.proofItem}>
-            <strong>{"" + pageText(aboutContent.copy, "page-14") + ""}</strong>
-            <span>{"" + pageText(aboutContent.copy, "page-15") + ""}</span>
-          </div>
-          <div className={styles.proofItem}>
-            <strong>{"" + pageText(aboutContent.copy, "page-16") + ""}</strong>
-            <span>{"" + pageText(aboutContent.copy, "page-17") + ""}</span>
-          </div>
-        </section>
-
-        <section className={styles.processSection}>
-          <div className={styles.sectionCopy}>
-            <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-18") + ""}</p>
-            <h2>{"" + pageText(aboutContent.copy, "page-19") + ""}</h2>
             <p>
-              {" " + pageText(aboutContent.copy, "page-20") + " "}</p>
-            <p>
-              {" " + pageText(aboutContent.copy, "page-21") + " "}</p>
-          </div>
+              SoftNest Fabric Care is a family-run upholstery and carpet
+              cleaning company serving homes across the Greater Toronto Area.
+            </p>
+          </header>
 
-          <div className={styles.principlesGrid}>
-            {principles.map((item, index) => (
-              <article className={styles.principleCard} key={item.title}>
-                <span className={styles.principleNumber}>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <div className={styles.cleanBand}>
-          <section className={styles.cleanSection}>
-            <div className={styles.equipmentWrap}>
-              <div className={styles.equipmentImage}>
-                <Image
-                  src="/img/faq_machine.webp"
-                  alt="Professional upholstery cleaning equipment used by SoftNest Fabric Care"
-                  fill
-                  sizes="(max-width: 980px) 88vw, 38vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className={styles.equipmentLabel}>
-                {" " + pageText(aboutContent.copy, "page-22") + " "}</div>
-            </div>
-
-            <div className={styles.cleanCopy}>
-              <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-23") + ""}</p>
-              <h2>{"" + pageText(aboutContent.copy, "page-24") + ""}</h2>
+          <section className={styles.story} aria-labelledby="our-approach">
+            <h2 id="our-approach">A careful, straightforward approach</h2>
+            <div className={styles.storyCopy}>
               <p>
-                {" " + pageText(aboutContent.copy, "page-25") + " "}</p>
-              <div className={styles.serviceLinks}>
-                {serviceLinks.map(([label, href]) => (
-                  <Link className={styles.serviceLink} href={href} key={href}>
-                    <span>{label}</span>
-                    <span className={styles.arrowCircle} aria-hidden="true">→</span>
-                  </Link>
-                ))}
-              </div>
+                We focus on the furniture and soft surfaces people live with
+                every day, including sofas, carpets, mattresses and suitable
+                leather furniture. Each item is different, so we begin by
+                looking at its material, construction, condition and the areas
+                that need attention.
+              </p>
+              <p>
+                From there, we choose the products, equipment and cleaning
+                process that make sense for the work. We take our time with the
+                confirmed scope and pay attention to the details and
+                hard-to-reach areas where practical.
+              </p>
+              <p>
+                We also believe in being clear about what cleaning can and
+                cannot change. Soil and many stains can often be improved, but
+                permanent wear, dye loss, cracking and physical damage cannot
+                be reversed by cleaning. We would rather explain that honestly
+                than promise a result the material cannot support.
+              </p>
+              <p className={styles.closing}>
+                Our goal is simple: treat every home and every item with care,
+                communicate clearly and leave the work feeling properly
+                finished.
+              </p>
             </div>
           </section>
-        </div>
-
-        <section className={styles.areaSection}>
-          <div className={styles.areaCopy}>
-            <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-26") + ""}</p>
-            <h2>{"" + pageText(aboutContent.copy, "page-27") + ""}</h2>
-            <p>
-              {" " + pageText(aboutContent.copy, "page-28") + " "}</p>
-          </div>
-
-          <div className={styles.areaVisual} aria-label="Areas served">
-            {siteConfig.areasServed.map((area) => (
-              <span className={styles.areaChip} key={area}>{area}</span>
-            ))}
-          </div>
-        </section>
-
-        <div className={styles.finalCtaWrap}>
-          <section className={styles.finalCta}>
-            <div className={styles.finalCtaCopy}>
-              <p className={styles.kicker}>{"" + pageText(aboutContent.copy, "page-29") + ""}</p>
-              <h2>{"" + pageText(aboutContent.copy, "page-30") + ""}</h2>
-              <p>
-                {" " + pageText(aboutContent.copy, "page-31") + " "}</p>
-            </div>
-            <div className={styles.finalActions}>
-              <Link className={styles.lightButton} href="/quote/">{"" + pageText(aboutContent.copy, "page-32") + ""}</Link>
-              <a className={styles.outlineButton} href={siteConfig.phoneHref}>{"" + pageText(aboutContent.copy, "page-33") + ""}</a>
-            </div>
-          </section>
-        </div>
+        </article>
       </main>
 
       <SiteFooter />
