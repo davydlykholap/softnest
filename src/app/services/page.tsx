@@ -2,6 +2,7 @@ import { jsonLd } from "@/seo/structuredData";
 import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import sectionalAfterCleaning from "@/assets/services-hero/sectional-after-cleaning.webp";
 import carpetCleaningInProgress from "@/assets/services-hero/carpet-cleaning-in-progress.webp";
 import upholsteredDiningChairs from "@/assets/services-hero/upholstered-dining-chairs.webp";
@@ -9,7 +10,6 @@ import {
   DirectoryCard,
   DirectoryFinalCta,
   DirectoryHero,
-  DirectorySupportSection,
 } from "@/components/DirectoryHubSections";
 import ServiceSearch from "@/components/ServiceSearch";
 import SiteFooter from "@/components/SiteFooter";
@@ -66,8 +66,6 @@ export default function ServicesPage() {
             { text: "For Every Room.", accent: true },
           ]}
           description="Explore SoftNest upholstery, furniture and carpet cleaning services for the items your home uses every day."
-          primaryAction={{ href: "#services", label: "Find your service" }}
-          secondaryAction={{ href: "/quote/", label: "Request a quote" }}
           mediaLabel="Examples of SoftNest upholstery and carpet cleaning services"
           className="services-hub-hero"
           media={
@@ -128,22 +126,25 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <DirectorySupportSection
-          id="not-sure-service"
-          kicker="Need a hand?"
-          title="Not sure which service?"
-          description="Tell us what furniture or carpet needs cleaning and note any stains, odours or other concerns. We'll confirm the right service when we reply."
-          primaryAction={{ href: "/quote/", label: "Ask about your item" }}
-          className="services-support"
-          card={{
-            title: "Quick, clear estimate.",
-            description:
-              "Start with your name, phone number, furniture and notes. We'll follow up for photos when needed.",
-            link: { href: "/quote/", label: "No commitment. Just clarity." },
-            image: "/img/sofa.png",
-            imageAlt: "Grey upholstered sofa in a natural home interior",
-          }}
-        />
+        <section className="services-support" id="not-sure-service">
+          <div className="services-support__copy">
+            <p className="locations-kicker">Need a hand?</p>
+            <h2>Not sure which service?</h2>
+            <span className="locations-kicker-line" aria-hidden="true" />
+            <p>
+              Tell us what furniture or carpet needs cleaning and note any
+              stains, odours or other concerns. We&apos;ll confirm the right
+              service when we reply.
+            </p>
+            <Link
+              className="locations-pill locations-pill--solid services-support__action"
+              href="/quote/"
+            >
+              Ask about your item
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
 
         <DirectoryFinalCta
           kicker="Professional care for every room"

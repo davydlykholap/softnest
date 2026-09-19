@@ -975,6 +975,12 @@
     transform: translate(1px, -1px);
 }
 
+@media (min-width: 641px) {
+    .google-review-card:nth-child(n + 4) {
+        display: none;
+    }
+}
+
 .google-review-summary__g,
 .google-review-summary__mobile-label,
 .google-review-card__quote-mark,

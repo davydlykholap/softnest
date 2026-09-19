@@ -101,7 +101,6 @@ export default function HomeResultsCarousel({ results }: HomeResultsCarouselProp
   };
 
   return (
-    <>
       <div className="gallery-carousel-shell">
         <button
           className="gallery-carousel-arrow gallery-carousel-arrow--prev"
@@ -144,18 +143,5 @@ export default function HomeResultsCarousel({ results }: HomeResultsCarouselProp
           <TbChevronRight aria-hidden="true" />
         </button>
       </div>
-      <div className="gallery-pagination" aria-label="Choose a cleaning result">
-        {results.slice(0, maxIndex + 1).map((result, resultIndex) => (
-          <button
-            className={`gallery-pagination__dot${resultIndex === index ? " is-active" : ""}`}
-            type="button"
-            aria-label={`Show ${result.category.toLowerCase()} result ${resultIndex + 1}`}
-            aria-current={resultIndex === index ? "true" : undefined}
-            onClick={() => goToResult(resultIndex)}
-            key={`${result.image}-dot`}
-          />
-        ))}
-      </div>
-    </>
   );
 }

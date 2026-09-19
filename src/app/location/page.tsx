@@ -2,11 +2,11 @@ import { jsonLd } from "@/seo/structuredData";
 import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import {
   DirectoryCard,
   DirectoryFinalCta,
   DirectoryHero,
-  DirectorySupportSection,
 } from "@/components/DirectoryHubSections";
 import LocationSearch from "@/components/LocationSearch";
 import SiteFooter from "@/components/SiteFooter";
@@ -104,9 +104,8 @@ export default function LocationsPage() {
                 image={location.image}
                 imageAlt={cityPhotoAlt[location.slug]}
                 title={location.name}
-                subtitle="Upholstery & carpet cleaning"
                 ariaLabel={`View upholstery cleaning in ${location.name}`}
-                className={`locations-city-card--${location.slug}`}
+                className={`locations-city-card--location locations-city-card--${location.slug}`}
                 key={location.slug}
               />
             ))}
@@ -126,21 +125,24 @@ export default function LocationsPage() {
           </details>
         </section>
 
-        <DirectorySupportSection
-          id="ask-about-your-city"
-          kicker="Still nearby?"
-          title="Don't see your city?"
-          description="Send us your city or postal code and we'll confirm whether we can schedule service in your neighbourhood."
-          primaryAction={{ href: "/quote/", label: "Ask about your city" }}
-          card={{
-            title: "Fast, easy photo estimate.",
-            description:
-              "Show us what needs cleaning and we'll recommend the right solution.",
-            link: { href: "/quote/", label: "No commitment. Just clarity." },
-            image: "/img/sofa.png",
-            imageAlt: "Grey upholstered sofa in a natural home interior",
-          }}
-        />
+        <section className="locations-simple-support" id="ask-about-your-city">
+          <div className="locations-simple-support__copy">
+            <p className="locations-kicker">Still nearby?</p>
+            <h2>Don&apos;t see your city?</h2>
+            <span className="locations-kicker-line" aria-hidden="true" />
+            <p>
+              Send us your city or postal code and we&apos;ll confirm whether we
+              can schedule service in your neighbourhood.
+            </p>
+            <Link
+              className="locations-pill locations-pill--solid locations-simple-support__action"
+              href="/quote/"
+            >
+              Ask about your city
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
 
         <DirectoryFinalCta
           kicker="Professional care, close to home"

@@ -46,6 +46,13 @@ yarn-error.log*
 /softnest.zip
 /.next-dev*.log
 
+# Local design reviews and visual QA captures
+/.codex/audit/
+/artifacts/
+/audit/
+/design/
+/design-qa.md
+
 # Local source backups
 /src*.zip
 

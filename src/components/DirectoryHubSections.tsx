@@ -92,7 +92,7 @@ type DirectoryCardProps = {
   image: string;
   imageAlt: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   ariaLabel: string;
   className?: string;
 };
@@ -121,7 +121,7 @@ export function DirectoryCard({
       />
       <div className="locations-city-card__body">
         <h3>{title}</h3>
-        <p>{subtitle}</p>
+        {subtitle ? <p>{subtitle}</p> : null}
         <span className="locations-city-card__arrow" aria-hidden="true">
           <svg
             className="locations-city-card__arrow-icon"

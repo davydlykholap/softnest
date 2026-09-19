@@ -41,7 +41,6 @@ const iconBySlug: Record<string, ServiceIconName> = {
 };
 
 const navigation = [
-  { label: "Reviews", hash: "reviews" },
   { label: "Blog", href: "/blog/" },
   { label: "About Us", href: "/about/" },
 ] as const;
@@ -131,7 +130,6 @@ function ServiceIcon({ name }: { name: ServiceIconName }) {
 }
 
 export default function HeaderNavigation({
-  home = false,
   current,
   actions,
   services,
@@ -148,9 +146,6 @@ export default function HeaderNavigation({
   const servicesRef = useRef<HTMLDivElement>(null);
   const servicesTriggerRef = useRef<HTMLButtonElement>(null);
   const servicesCloseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const homeHref = (hash: string) => (home ? `#${hash}` : `/#${hash}`);
-  const navigationHref = (item: (typeof navigation)[number]) =>
-    "href" in item ? item.href : homeHref(item.hash);
   const selectedService = services[activeService] ?? services[0];
   const mobileServices = mobileServiceSlugs
     .map((slug) => services.find((service) => service.slug === slug))
@@ -388,10 +383,10 @@ export default function HeaderNavigation({
         </Link>
         {navigation.map((item) => (
           <Link
-            href={navigationHref(item)}
+            href={item.href}
             key={item.label}
             className={
-              current === "blog" && "href" in item && item.href === "/blog/"
+              current === "blog" && item.href === "/blog/"
                 ? "is-active"
                 : undefined
             }

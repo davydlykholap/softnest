@@ -1636,3 +1636,131 @@
         line-height: 1.5;
     }
 }
+
+/* Location cards use a softly rounded title panel with a shallow image overlap. */
+.locations-city-card--location > img {
+    height: calc(100% - 74px);
+}
+
+.locations-city-card--location .locations-city-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 96px;
+    min-height: 96px;
+    border-radius: 32px 32px 35px 35px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.locations-city-card--location .locations-city-card__arrow {
+    bottom: 29px;
+}
+
+/* Compact, card-free helper used below the location directory. */
+.locations-simple-support {
+    position: relative;
+    width: min(1180px, calc(100% - 48px));
+    margin: 64px auto 68px;
+    padding: 34px 24px 38px;
+    text-align: center;
+}
+
+.locations-simple-support::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    width: min(720px, 100%);
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(224, 238, 229, .52), rgba(244, 248, 245, 0) 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.locations-simple-support__copy {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 610px;
+    margin: 0 auto;
+}
+
+.locations-simple-support .locations-kicker,
+.locations-simple-support h2,
+.locations-simple-support__copy > p:not(.locations-kicker) {
+    width: 100%;
+    text-align: center;
+}
+
+.locations-simple-support h2 {
+    max-width: 580px;
+    margin: 0 auto;
+    color: #18251f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.75rem, 4.8vw, 4.65rem);
+    font-weight: 400;
+    letter-spacing: -.045em;
+    line-height: .98;
+    text-wrap: balance;
+}
+
+.locations-simple-support h2 + .locations-kicker-line {
+    margin: 20px auto;
+}
+
+.locations-simple-support__copy > p:not(.locations-kicker) {
+    max-width: 500px;
+    margin: 0 auto;
+    color: #526159;
+    font-size: 15px;
+    line-height: 1.72;
+}
+
+.locations-simple-support__action {
+    width: min(100%, 320px);
+    min-width: 0;
+    margin: 26px auto 0;
+}
+
+@media (max-width: 820px) {
+    .locations-simple-support {
+        width: 88%;
+        margin-top: 54px;
+        margin-bottom: 58px;
+    }
+}
+
+@media (max-width: 580px) {
+    .locations-simple-support {
+        width: calc(100% - 36px);
+        margin-top: 20px;
+        margin-bottom: 24px;
+        padding: 20px 10px 24px;
+    }
+
+    .locations-simple-support h2 {
+        max-width: 340px;
+        font-size: clamp(2.35rem, 10.5vw, 3rem);
+    }
+
+    .locations-simple-support h2 + .locations-kicker-line {
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+
+    .locations-simple-support__copy > p:not(.locations-kicker) {
+        max-width: 350px;
+        font-size: 14px;
+        line-height: 1.68;
+    }
+
+    .locations-simple-support__action {
+        width: min(100%, 320px);
+        margin-top: 24px;
+    }
+}

@@ -1,5 +1,6 @@
 import type { PortableTextBlock } from "@portabletext/react";
 import records from "@/content/generated/posts.json";
+import { localPosts } from "@/content/localPosts";
 import type { Post as SanityPost } from "@/sanity/sanity.types";
 
 export type BlogImage = {
@@ -29,7 +30,10 @@ export type Post = Omit<
   body: PortableTextBlock[];
 };
 
-const posts = records as unknown as Post[];
+const posts = [
+  ...(records as unknown as Post[]),
+  ...(localPosts as unknown as Post[]),
+];
 
 export function getPosts(): Post[] {
   return posts;
