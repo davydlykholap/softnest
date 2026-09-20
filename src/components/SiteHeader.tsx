@@ -5,7 +5,6 @@ import HeaderNavigation from "@/components/HeaderNavigation";
 import { navigationServices } from "@/content/services";
 
 type SiteHeaderProps = {
-  home?: boolean;
   current?: "blog" | "locations" | "services";
 };
 
@@ -36,7 +35,7 @@ function HeaderActions() {
   );
 }
 
-export default function SiteHeader({ home = false, current }: SiteHeaderProps) {
+export default function SiteHeader({ current }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <Link href="/" className="brand" aria-label="SoftNest Fabric Care home">
@@ -56,7 +55,6 @@ export default function SiteHeader({ home = false, current }: SiteHeaderProps) {
       </Link>
 
       <HeaderNavigation
-        home={home}
         current={current}
         actions={<HeaderActions />}
         services={headerServices}

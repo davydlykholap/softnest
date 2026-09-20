@@ -1,6 +1,4 @@
-import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
-import Image from "next/image";
 import QuotePageForm from "@/components/QuotePageForm";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -30,32 +28,6 @@ export default function QuotePage() {
           <div className="quote-page-card">
             <QuotePageForm />
           </div>
-          <div className="quote-page-intro">
-            <div className="quote-page-intro__copy">
-              <p className="quote-page-kicker">Professional care, close to home</p>
-              <h1>A fresher home starts here.</h1>
-              <p>
-                Tell us about your furniture and we’ll help you choose the right
-                care—thoughtful, transparent and tailored to your home.
-              </p>
-            </div>
-            <div className="quote-page-photo" aria-hidden="true">
-              <Image
-                src="/images/softnest-hero-room.webp"
-                alt=""
-                fill
-                priority
-                sizes="(max-width: 900px) 100vw, 44vw"
-              />
-              <span className="quote-page-photo__bubble quote-page-photo__bubble--one" />
-              <span className="quote-page-photo__bubble quote-page-photo__bubble--two" />
-            </div>
-          </div>
-        </section>
-        <section className="quote-page-contact">
-          <p>Prefer to talk?</p>
-          <h2>We’re happy to help.</h2>
-          <a href={siteConfig.phoneHref}>{siteConfig.displayPhone} <span aria-hidden="true">→</span></a>
         </section>
       </main>
       <SiteFooter />

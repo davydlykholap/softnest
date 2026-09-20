@@ -112,7 +112,7 @@ export default function LocationPage({ location }: LocationPageProps) {
           </div>
           <div className="location-hero__image">
             <Image
-              src="/img/sofa.png"
+              src="/img/sofa.webp"
               alt={`Grey upholstered sofa in ${location.name}`}
               fill
               priority

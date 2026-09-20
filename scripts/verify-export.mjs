@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { join, relative, resolve, sep } from "node:path";
 
 const exportRoot = resolve("out");
 
@@ -13,7 +13,8 @@ const walk = (directory) =>
     return statSync(path).isDirectory() ? walk(path) : [path];
   });
 
-const htmlFiles = walk(exportRoot).filter((path) => path.endsWith("index.html"));
+const exportedFiles = walk(exportRoot);
+const htmlFiles = exportedFiles.filter((path) => path.endsWith("index.html"));
 const references = new Set();
 const failures = [];
 
@@ -43,6 +44,20 @@ for (const reference of references) {
   }
 }
 
+const fragmentFiles = exportedFiles.filter((path) => {
+  const parts = relative(exportRoot, path).split(sep);
+  return path.endsWith(".txt") && parts.slice(0, -1).some((part) => part.startsWith("__next."));
+});
+
+for (const fragment of fragmentFiles) {
+  const parts = relative(exportRoot, fragment).split(sep);
+  const fragmentIndex = parts.findIndex((part) => part.startsWith("__next."));
+  const alias = join(exportRoot, ...parts.slice(0, fragmentIndex), parts.slice(fragmentIndex).join("."));
+  if (!existsSync(alias)) {
+    failures.push(`Missing static route fragment alias: ${alias}`);
+  }
+}
+
 const obsoleteExportPaths = [
   "js",
   "svg",
@@ -62,6 +77,6 @@ if (failures.length) {
   process.exitCode = 1;
 } else {
   console.log(
-    `Verified ${htmlFiles.length} HTML pages and ${references.size} internal references.`,
+    `Verified ${htmlFiles.length} HTML pages, ${references.size} internal references, and ${fragmentFiles.length} route fragments.`,
   );
 }

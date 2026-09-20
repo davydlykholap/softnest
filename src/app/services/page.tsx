@@ -1,20 +1,12 @@
 import { jsonLd } from "@/seo/structuredData";
 import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import sectionalAfterCleaning from "@/assets/services-hero/sectional-after-cleaning.webp";
-import carpetCleaningInProgress from "@/assets/services-hero/carpet-cleaning-in-progress.webp";
-import upholsteredDiningChairs from "@/assets/services-hero/upholstered-dining-chairs.webp";
-import {
-  DirectoryCard,
-  DirectoryFinalCta,
-  DirectoryHero,
-} from "@/components/DirectoryHubSections";
-import ServiceSearch from "@/components/ServiceSearch";
+import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
+import ServicesExplorer from "@/components/ServicesExplorer";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { services } from "@/content/services";
+import styles from "@/app/services/service-page.module.css";
 import "@/app/styles/locations-hub.css";
 import "@/app/styles/services-hub.css";
 
@@ -36,18 +28,8 @@ export default function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteConfig.url + "/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Services",
-        item: siteConfig.url + "/services/",
-      },
+      { "@type": "ListItem", position: 1, name: "Home", item: `${siteConfig.url}/` },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${siteConfig.url}/services/` },
     ],
   };
 
@@ -57,95 +39,8 @@ export default function ServicesPage() {
         <SiteHeader current="services" />
       </div>
 
-      <main className="locations-hub-v2 services-hub">
-        <DirectoryHero
-          id="services-heading"
-          kicker="Upholstery & carpet care across the GTA"
-          titleLines={[
-            { text: "Professional Cleaning" },
-            { text: "For Every Room.", accent: true },
-          ]}
-          description="Explore SoftNest upholstery, furniture and carpet cleaning services for the items your home uses every day."
-          mediaLabel="Examples of SoftNest upholstery and carpet cleaning services"
-          className="services-hub-hero"
-          media={
-            <div className="services-hero-collage" aria-hidden="true">
-              <div className="services-hero-collage__main">
-                <Image
-                  src={sectionalAfterCleaning}
-                  alt=""
-                  fill
-                  priority
-                  sizes="(max-width: 820px) 88vw, 35vw"
-                />
-              </div>
-              <div className="services-hero-collage__top">
-                <Image
-                  src={upholsteredDiningChairs}
-                  alt=""
-                  fill
-                  priority
-                  sizes="(max-width: 820px) 42vw, 20vw"
-                />
-              </div>
-              <div className="services-hero-collage__bottom">
-                <Image
-                  src={carpetCleaningInProgress}
-                  alt=""
-                  fill
-                  sizes="(max-width: 820px) 42vw, 20vw"
-                />
-              </div>
-            </div>
-          }
-        />
-
-        <div className="locations-search-wrap">
-          <ServiceSearch />
-        </div>
-
-        <section className="locations-cities services-directory" id="services">
-          <header className="locations-section-heading">
-            <p className="locations-kicker">What we clean</p>
-            <h2>Professional Cleaning Services</h2>
-          </header>
-
-          <div className="locations-bento services-bento">
-            {services.map((service) => (
-              <DirectoryCard
-                href={`/services/${service.slug}/`}
-                image={service.image}
-                imageAlt={service.imageAlt}
-                title={service.shortName}
-                subtitle={service.summary}
-                ariaLabel={`View ${service.name}`}
-                className="services-directory-card"
-                key={service.slug}
-              />
-            ))}
-          </div>
-        </section>
-
-        <section className="services-support" id="not-sure-service">
-          <div className="services-support__copy">
-            <p className="locations-kicker">Need a hand?</p>
-            <h2>Not sure which service?</h2>
-            <span className="locations-kicker-line" aria-hidden="true" />
-            <p>
-              Tell us what furniture or carpet needs cleaning and note any
-              stains, odours or other concerns. We&apos;ll confirm the right
-              service when we reply.
-            </p>
-            <Link
-              className="locations-pill locations-pill--solid services-support__action"
-              href="/quote/"
-            >
-              Ask about your item
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </section>
-
+      <main className={styles.servicePage}>
+        <ServicesExplorer services={services} />
         <DirectoryFinalCta
           kicker="Professional care for every room"
           title="A fresher home starts with the right service."

@@ -11,10 +11,10 @@ type Props = {
 };
 
 const articleFallbackImages: Record<string, string> = {
-  "why-did-my-couch-stain-come-back-after-cleaning": "/img/gray_sofa_stain.png",
+  "why-did-my-couch-stain-come-back-after-cleaning": "/img/gray_sofa_stain.webp",
   "what-cleaning-solution-can-i-use-on-my-couch":
     "/images/blog/how-to-remove-stain-from-couch/blotting-a-couch-spill.webp",
-  "why-sofa-armrests-get-dirty-faster": "/img/sofa.png",
+  "why-sofa-armrests-get-dirty-faster": "/img/sofa.webp",
   "does-vacuuming-clean-carpet": "/img/rug_2.webp",
   "how-to-remove-pet-urine-smell-from-couch": "/img/pet_stain.jpg",
   "how-often-should-office-carpets-be-cleaned": "/img/carpet_staircase.webp",

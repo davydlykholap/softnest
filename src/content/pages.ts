@@ -4,6 +4,7 @@ import projects from './generated/projects.json';
 import testimonials from './generated/testimonials.json';
 import type { GalleryResult } from '@/components/HomeResultsCarousel';
 import { siteConfig } from '@/lib/site';
+import { optimizedLocalImage } from '@/lib/optimizedLocalImage';
 
 export const homeContent = home;
 export const aboutContent = about;
@@ -18,8 +19,18 @@ export function pageText(copy: {key:string;text:string}[], key:string, city?:str
     .replace(/Get Your Free Quote/g, "Get Your Quote")
     .replace(/Request a free quote/g, "Get a Quote");
 }
-export function getProjects(filters: {service?:string;location?:string} = {}): GalleryResult[] {
-  return projects.filter(p=>(filters.service || filters.location || p.featured) && (!filters.service || (p.services as string[]).includes(filters.service)) && (!filters.location || (p.locations as string[]).includes(filters.location))).map(p=>({...p,variant:p.variant as GalleryResult['variant']}));
+export function getProjects(filters: { service?: string; location?: string } = {}): GalleryResult[] {
+  return projects
+    .filter((project) =>
+      (filters.service || filters.location || project.featured) &&
+      (!filters.service || (project.services as string[]).includes(filters.service)) &&
+      (!filters.location || (project.locations as string[]).includes(filters.location)),
+    )
+    .map((project) => ({
+      ...project,
+      image: optimizedLocalImage(project.image),
+      variant: project.variant as GalleryResult["variant"],
+    }));
 }
 type TestimonialOptions = {
   location?: string;

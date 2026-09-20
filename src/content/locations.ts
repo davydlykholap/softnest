@@ -1,4 +1,5 @@
 import records from "@/content/generated/locations.json";
+import { optimizedLocalImage } from "@/lib/optimizedLocalImage";
 export type LocationFaq = {
   question: string;
   answer: string;
@@ -41,8 +42,33 @@ export type Location = {
 };
 
 
-export const serviceAreas = records as Location[];
-export const locations = serviceAreas.filter(l=>l.pageEnabled && l.status!=="not-served");
-export const footerLocations = locations.filter(l=>l.showInFooter);
-export const nearbyLocationSlugs = Object.fromEntries(locations.map(l=>[l.slug,l.nearbyLocations]));
-export function getLocation(slug:string) { return locations.find(l=>l.slug===slug); }
+export const serviceAreas: Location[] = (records as Location[]).map((location) => ({
+  ...location,
+  image: optimizedLocalImage(location.image),
+  expandedContent: location.expandedContent && {
+    ...location.expandedContent,
+    heroImage: optimizedLocalImage(location.expandedContent.heroImage),
+    mapImage: location.expandedContent.mapImage
+      ? optimizedLocalImage(location.expandedContent.mapImage)
+      : undefined,
+    services: location.expandedContent.services.map((service) => ({
+      ...service,
+      image: optimizedLocalImage(service.image),
+    })),
+    resultExamples: location.expandedContent.resultExamples?.map((result) => ({
+      ...result,
+      image: optimizedLocalImage(result.image),
+    })),
+  },
+}));
+export const locations = serviceAreas.filter(
+  (location) => location.pageEnabled && location.status !== "not-served",
+);
+export const footerLocations = locations.filter((location) => location.showInFooter);
+export const nearbyLocationSlugs = Object.fromEntries(
+  locations.map((location) => [location.slug, location.nearbyLocations]),
+);
+
+export function getLocation(slug: string) {
+  return locations.find((location) => location.slug === slug);
+}

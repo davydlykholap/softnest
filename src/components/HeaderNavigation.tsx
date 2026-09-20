@@ -1,133 +1,17 @@
 "use client";
 
-import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Service } from "@/content/services";
-
-type NavigationService = Pick<
-  Service,
-  "slug" | "menuLabel" | "summary" | "image" | "imageAlt"
->;
+import { MobileHeaderNavigation } from "@/components/navigation/MobileHeaderNavigation";
+import { ServiceIcon, iconBySlug, mobileServiceSlugs, navigation, type NavigationService } from "@/components/navigation/navigationData";
 
 type HeaderNavigationProps = {
-  home?: boolean;
   current?: "blog" | "locations" | "services";
   actions: ReactNode;
   services: NavigationService[];
 };
-
-type ServiceIconName =
-  | "sofa"
-  | "paw"
-  | "sectional"
-  | "rug"
-  | "mattress"
-  | "chair"
-  | "armchair"
-  | "stairs";
-
-const iconBySlug: Record<string, ServiceIconName> = {
-  "sofa-cleaning": "sofa",
-  "pet-stain-odour-removal": "paw",
-  "sectional-furniture-cleaning": "sectional",
-  "carpet-area-rug-cleaning": "rug",
-  "mattress-cleaning": "mattress",
-  "dining-chair-cleaning": "chair",
-  "armchair-cleaning": "armchair",
-  "stairs-hallways-cleaning": "stairs",
-};
-
-const navigation = [
-  { label: "Blog", href: "/blog/" },
-  { label: "About Us", href: "/about/" },
-] as const;
-
-const mobileServiceSlugs = [
-  "sofa-cleaning",
-  "carpet-area-rug-cleaning",
-  "pet-stain-odour-removal",
-  "sectional-furniture-cleaning",
-] as const;
-
-function ServiceIcon({ name }: { name: ServiceIconName }) {
-  const commonProps = {
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.8,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    "aria-hidden": true,
-  };
-
-  switch (name) {
-    case "paw":
-      return (
-        <svg {...commonProps}>
-          <path d="M8.4 11.2c1.1-1.5 2.1-2.3 3.6-2.3s2.5.8 3.6 2.3c1.6 2.2 2.7 3.3 2.7 5.1 0 1.9-1.6 3.1-3.4 3.1-1.1 0-1.8-.5-2.9-.5s-1.8.5-2.9.5c-1.8 0-3.4-1.2-3.4-3.1 0-1.8 1.1-2.9 2.7-5.1Z" />
-          <path d="M5.2 9.8c-1.2.1-2.2-1.1-2.3-2.6S3.5 4.4 4.7 4.3 6.9 5.4 7 6.9s-.6 2.8-1.8 2.9Z" />
-          <path d="M9.6 7.3C8.4 7.2 7.6 6 7.8 4.5S9 1.9 10.2 2s2 1.3 1.8 2.8-1.2 2.6-2.4 2.5Z" />
-          <path d="M14.4 7.3c1.2-.1 2-1.3 1.8-2.8S15 1.9 13.8 2s-2 1.3-1.8 2.8 1.2 2.6 2.4 2.5Z" />
-          <path d="M18.8 9.8c1.2.1 2.2-1.1 2.3-2.6s-.6-2.8-1.8-2.9-2.2 1.1-2.3 2.6.6 2.8 1.8 2.9Z" />
-        </svg>
-      );
-    case "rug":
-      return (
-        <svg {...commonProps}>
-          <rect x="5" y="3.5" width="14" height="17" rx="2" />
-          <path d="M8 3.5v17M16 3.5v17M9.7 8.2h4.6M9.7 12h4.6M9.7 15.8h4.6" />
-        </svg>
-      );
-    case "mattress":
-      return (
-        <svg {...commonProps}>
-          <path d="M3 9.5h18v7H3zM5 6.5h14a2 2 0 0 1 2 2v1H3v-1a2 2 0 0 1 2-2Z" />
-          <path d="M5 16.5v2M19 16.5v2M7 9.5v7M17 9.5v7" />
-        </svg>
-      );
-    case "chair":
-      return (
-        <svg {...commonProps}>
-          <path d="M7 4.5h10v8H7zM6 12.5h12v3H6zM8 15.5v4M16 15.5v4" />
-        </svg>
-      );
-    case "armchair":
-      return (
-        <svg {...commonProps}>
-          <path d="M7 8V5.5A2.5 2.5 0 0 1 9.5 3h5A2.5 2.5 0 0 1 17 5.5V8" />
-          <path d="M6 8.5h12a2 2 0 0 1 2 2v5H4v-5a2 2 0 0 1 2-2Z" />
-          <path d="M7 15.5v3M17 15.5v3M4 12.5h16" />
-        </svg>
-      );
-    case "stairs":
-      return (
-        <svg {...commonProps}>
-          <path d="M4 19h5v-4h4v-4h4V7h3" />
-          <path d="M4 15h5M9 11h4M13 7h4" />
-        </svg>
-      );
-    case "sectional":
-      return (
-        <svg {...commonProps}>
-          <path d="M4 9V6.5A2.5 2.5 0 0 1 6.5 4H15a2 2 0 0 1 2 2v3" />
-          <path d="M4 9h13a3 3 0 0 1 3 3v4H4z" />
-          <path d="M9 9v7M4 16v2M18 16v2" />
-        </svg>
-      );
-    case "sofa":
-    default:
-      return (
-        <svg {...commonProps}>
-          <path d="M5 10V7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5V10" />
-          <path d="M4 9.5a2 2 0 0 0-2 2v4.5h20v-4.5a2 2 0 0 0-2-2" />
-          <path d="M7 10v6M17 10v6M5 16v2.5M19 16v2.5" />
-        </svg>
-      );
-  }
-}
 
 export default function HeaderNavigation({
   current,
@@ -284,7 +168,9 @@ export default function HeaderNavigation({
                 openServices();
               }
             }}
-            onFocus={openServices}
+            onFocus={(event) => {
+              if (event.currentTarget.matches(":focus-visible")) openServices();
+            }}
           >
             Services
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -398,100 +284,13 @@ export default function HeaderNavigation({
 
       {actions}
 
-      <button
-        type="button"
-        className="menu-toggle"
-        onClick={() => setOpen((value) => !value)}
-        aria-expanded={open}
-        aria-controls="mobile-navigation"
-        aria-label={open ? "Close menu" : "Open menu"}
-      >
-        <svg className="menu-icon-open" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg className="menu-icon-close" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="m6 6 12 12M18 6 6 18" />
-        </svg>
-      </button>
-
-      <nav
-        className={`mobile-nav ${open ? "mobile-nav--open" : ""}`}
-        id="mobile-navigation"
-        aria-label="Mobile navigation"
-      >
-        <div className="mobile-services">
-          <button
-            type="button"
-            className="mobile-services__trigger"
-            aria-expanded={mobileServicesOpen}
-            onClick={() => setMobileServicesOpen((value) => !value)}
-          >
-            Services
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div
-            className={`mobile-services__links ${
-              mobileServicesOpen ? "mobile-services__links--open" : ""
-            }`}
-          >
-            <p className="mobile-services__eyebrow">Popular services</p>
-            {mobileServices.map((service) => (
-              <Link
-                href={`/services/${service.slug}/`}
-                key={service.slug}
-                onClick={() => {
-                  setOpen(false);
-                  setMobileServicesOpen(false);
-                }}
-              >
-                <span>{service.menuLabel}</span>
-              </Link>
-            ))}
-            <Link
-              className="mobile-services__all"
-              href="/services/"
-              onClick={() => {
-                setOpen(false);
-                setMobileServicesOpen(false);
-              }}
-            >
-              <span>View all services</span>
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-
-        <div className="mobile-nav__primary">
-          <Link href="/location/" onClick={() => setOpen(false)}>
-            Locations
-          </Link>
-          <Link href="/blog/" onClick={() => setOpen(false)}>
-            Blog
-          </Link>
-          <Link href="/about/" onClick={() => setOpen(false)}>
-            About SoftNest
-          </Link>
-        </div>
-
-        <div className="mobile-nav__utility">
-          <span className="mobile-nav__utility-label">Prefer to talk?</span>
-          <a className="mobile-nav__phone" href={siteConfig.phoneHref}>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z" />
-            </svg>
-            {siteConfig.displayPhone}
-          </a>
-          <Link
-            className="mobile-nav__quote quote-cta"
-            href="/quote/"
-            onClick={() => setOpen(false)}
-          >
-            {siteConfig.quoteLabel}
-          </Link>
-        </div>
-      </nav>
+      <MobileHeaderNavigation
+        open={open}
+        mobileServicesOpen={mobileServicesOpen}
+        setOpen={setOpen}
+        setMobileServicesOpen={setMobileServicesOpen}
+        mobileServices={mobileServices}
+      />
     </>
   );
 }

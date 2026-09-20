@@ -1,45 +1,7 @@
-.quotePage :global(.quote-page-intro) {
-  grid-column: 1;
-  grid-row: 1;
-  padding-bottom: 48px;
-}
-
 .quotePage :global(.quote-page-card) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.quotePage :global(.quote-page-photo) {
-  margin-bottom: 0;
+  width: 100%;
 }
 
 .quotePage :global(.quote-page-form__footer) {
   margin-top: 22px;
-}
-
-@media (max-width: 1100px) {
-  .quotePage :global(.quote-page-intro) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .quotePage :global(.quote-page-card) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-}
-
-@media (max-width: 700px) {
-  .quotePage :global(.quote-page-card) {
-    grid-row: 1;
-  }
-
-  .quotePage :global(.quote-page-intro) {
-    grid-row: 2;
-    padding-bottom: 30px;
-  }
-
-  .quotePage :global(.quote-page-photo) {
-    margin-bottom: 0;
-  }
 }

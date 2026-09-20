@@ -72,7 +72,7 @@ export default function HomePage() {
   return (
     <>
       <div className="new-hero-root">
-        <SiteHeader home />
+        <SiteHeader />
         <HomeHero />
       </div>
       <HomeSections />

@@ -42,7 +42,7 @@ const galleryResults = [
     label: "Compare mattress before and after cleaning",
   },
   {
-    image: "/img/gray_sofa_stain.png",
+    image: "/img/gray_sofa_stain.webp",
     variant: "paired",
     category: "Sofa",
     location: "GTA, ON",
@@ -58,7 +58,7 @@ const galleryResults = [
     label: "Compare dining chairs before and after cleaning",
   },
   {
-    image: "/img/sectional.png",
+    image: "/img/sectional.webp",
     variant: "paired",
     category: "Sectional",
     location: "GTA, ON",
@@ -66,7 +66,7 @@ const galleryResults = [
     label: "Compare sectional before and after cleaning",
   },
   {
-    image: "/img/sectional_sofa.png",
+    image: "/img/sectional_sofa.webp",
     variant: "paired",
     category: "Sectional Sofa",
     location: "GTA, ON",
