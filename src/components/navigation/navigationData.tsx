@@ -1,9 +1,6 @@
 import type { Service } from "@/content/services";
 
-export type NavigationService = Pick<
-  Service,
-  "slug" | "menuLabel" | "summary" | "image" | "imageAlt"
->;
+export type NavigationService = Pick<Service, "slug" | "menuLabel">;
 
 type ServiceIconName =
   | "sofa"

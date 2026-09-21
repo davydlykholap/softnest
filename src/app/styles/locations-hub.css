@@ -531,8 +531,9 @@
 
 .locations-bento {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(3, 248px);
+    grid-template-columns: repeat(3, minmax(0, 335px));
+    grid-template-rows: repeat(3, 310px);
+    justify-content: center;
     gap: 16px;
 }
 
@@ -809,10 +810,10 @@
 
     .locations-bento {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 335px));
         gap: 16px;
         grid-template-rows: none;
-        grid-auto-rows: 245px;
+        grid-auto-rows: 310px;
     }
 
     .locations-hero h1 {
@@ -1492,8 +1493,11 @@
         opacity 170ms ease,
         visibility 170ms ease,
         transform 210ms cubic-bezier(.2, .8, .2, 1);
-    scrollbar-color: rgba(7, 84, 59, .35) transparent;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+}
+
+.locations-search__options::-webkit-scrollbar {
+    display: none;
 }
 
 .locations-search__options--open {

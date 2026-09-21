@@ -9,12 +9,9 @@ type SiteHeaderProps = {
 };
 
 const headerServices = navigationServices.map(
-  ({ slug, menuLabel, summary, image, imageAlt }) => ({
+  ({ slug, menuLabel }) => ({
     slug,
     menuLabel,
-    summary,
-    image,
-    imageAlt,
   }),
 );
 

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -13,6 +12,30 @@ type HeaderNavigationProps = {
   services: NavigationService[];
 };
 
+const serviceMenuOrder = [
+  "sofa-cleaning",
+  "mattress-cleaning",
+  "sectional-furniture-cleaning",
+  "carpet-area-rug-cleaning",
+  "leather-upholstery-cleaning",
+  "stairs-hallways-cleaning",
+  "dining-chair-cleaning",
+  "pet-stain-odour-removal",
+  "armchair-cleaning",
+];
+
+const serviceMenuLabels: Record<string, string> = {
+  "sofa-cleaning": "Sofa & Couch",
+  "mattress-cleaning": "Mattresses",
+  "sectional-furniture-cleaning": "Sectional & Furniture",
+  "carpet-area-rug-cleaning": "Carpet & Area Rugs",
+  "leather-upholstery-cleaning": "Leather Upholstery",
+  "stairs-hallways-cleaning": "Stairs & Hallways",
+  "dining-chair-cleaning": "Dining Chairs",
+  "pet-stain-odour-removal": "Pet Stains & Odours",
+  "armchair-cleaning": "Armchairs",
+};
+
 export default function HeaderNavigation({
   current,
   actions,
@@ -21,7 +44,6 @@ export default function HeaderNavigation({
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [activeService, setActiveService] = useState(0);
   const [servicesPosition, setServicesPosition] = useState({
     left: 24,
     top: 104,
@@ -30,7 +52,14 @@ export default function HeaderNavigation({
   const servicesRef = useRef<HTMLDivElement>(null);
   const servicesTriggerRef = useRef<HTMLAnchorElement>(null);
   const servicesCloseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const selectedService = services[activeService] ?? services[0];
+  const menuServices = [...services].sort(
+    (left, right) => {
+      const leftRank = serviceMenuOrder.indexOf(left.slug);
+      const rightRank = serviceMenuOrder.indexOf(right.slug);
+      return (leftRank < 0 ? Infinity : leftRank) -
+        (rightRank < 0 ? Infinity : rightRank);
+    },
+  );
   const mobileServices = mobileServiceSlugs
     .map((slug) => services.find((service) => service.slug === slug))
     .filter((service): service is NavigationService => Boolean(service));
@@ -63,12 +92,12 @@ export default function HeaderNavigation({
     const triggerRect = trigger.getBoundingClientRect();
     const headerRect = trigger.closest(".site-header")?.getBoundingClientRect();
     const viewportPadding = 24;
-    const desktopMenuMax = window.innerWidth <= 1180 ? 760 : 820;
+    const desktopMenuMax = 650;
     const menuWidth = Math.min(
       desktopMenuMax,
       window.innerWidth - viewportPadding * 2,
     );
-    const desiredPointer = 190;
+    const desiredPointer = 90;
     const triggerCenter = triggerRect.left + triggerRect.width / 2;
     const maxLeft = Math.max(
       viewportPadding,
@@ -179,6 +208,8 @@ export default function HeaderNavigation({
             className="services-mega"
             id="services-mega-menu"
             aria-label="Cleaning services"
+            aria-hidden={!servicesOpen}
+            inert={!servicesOpen}
             onMouseEnter={cancelServicesClose}
             onMouseLeave={scheduleServicesClose}
             style={
@@ -189,33 +220,26 @@ export default function HeaderNavigation({
               } as CSSProperties
             }
           >
-            <div className="services-mega__list-panel">
-              <p className="services-mega__eyebrow">Our cleaning services</p>
-              <div className="services-mega__list">
-                {services.map((service, index) => (
-                  <Link
-                    href={`/services/${service.slug}/`}
-                    className={`services-mega__item ${
-                      activeService === index ? "is-active" : ""
-                    }`}
-                    key={service.slug}
-                    onMouseEnter={() => setActiveService(index)}
-                    onFocus={() => setActiveService(index)}
-                    onClick={() => {
-                      cancelServicesClose();
-                      setServicesOpen(false);
-                    }}
-                  >
-                    <span className="services-mega__item-icon">
-                      <ServiceIcon name={iconBySlug[service.slug] ?? "sofa"} />
-                    </span>
-                    <span>{service.menuLabel}</span>
-                    <span className="services-mega__item-arrow" aria-hidden="true">
-                      →
-                    </span>
-                  </Link>
-                ))}
-              </div>
+            <h2 className="services-mega__heading">Services</h2>
+            <div className="services-mega__list">
+              {menuServices.map((service) => (
+                <Link
+                  href={`/services/${service.slug}/`}
+                  className="services-mega__item"
+                  key={service.slug}
+                  onClick={() => {
+                    cancelServicesClose();
+                    setServicesOpen(false);
+                  }}
+                >
+                  <span className="services-mega__item-icon">
+                    <ServiceIcon name={iconBySlug[service.slug] ?? "sofa"} />
+                  </span>
+                  <span>{serviceMenuLabels[service.slug] ?? service.menuLabel}</span>
+                </Link>
+              ))}
+            </div>
+            <div className="services-mega__footer">
               <Link
                 className="services-mega__all"
                 href="/services/"
@@ -223,37 +247,6 @@ export default function HeaderNavigation({
               >
                 View all services <span aria-hidden="true">→</span>
               </Link>
-            </div>
-
-            <div className="services-mega__preview">
-              <div className="services-mega__preview-copy">
-                <p className="services-mega__preview-kicker">Featured service</p>
-                <h2>{selectedService.menuLabel}</h2>
-                <p>{selectedService.summary}</p>
-                <ul>
-                  <li>Fabric-appropriate methods</li>
-                  <li>Professional drying included</li>
-                </ul>
-                <Link
-                  href={`/services/${selectedService.slug}/`}
-                  className="services-mega__learn"
-                  onClick={() => {
-                    cancelServicesClose();
-                    setServicesOpen(false);
-                  }}
-                >
-                  Learn more <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-
-              <div className="services-mega__image-wrap">
-                <Image
-                  src={selectedService.image}
-                  alt={selectedService.imageAlt}
-                  fill
-                  sizes="340px"
-                />
-              </div>
             </div>
           </div>
         </div>

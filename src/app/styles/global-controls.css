@@ -153,20 +153,11 @@
     display: grid;
     align-content: start;
     gap: 8px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(15,81,63,0.35) rgba(15,81,63,0.08);
+    scrollbar-width: none;
 }
 
     .faq-list::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .faq-list::-webkit-scrollbar-track {
-        background: rgba(15,81,63,0.08);
-    }
-
-    .faq-list::-webkit-scrollbar-thumb {
-        background: rgba(15,81,63,0.35);
+        display: none;
     }
 
 .faq-equipment {

@@ -69,6 +69,10 @@
     object-position: center;
 }
 
+.miss-hero--mississauga .miss-hero__photo img {
+    object-position: 55% center;
+}
+
 .miss-hero__wash {
     z-index: -1;
     background: linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.92) 23%, rgba(255,255,255,.68) 38%, rgba(255,255,255,.3) 48%, rgba(255,255,255,.08) 57%, rgba(255,255,255,0) 64%);
@@ -1184,6 +1188,10 @@
 
     .miss-hero__photo img {
         object-position: 61% calc(100% + 158px);
+    }
+
+    .miss-hero--mississauga .miss-hero__photo img {
+        object-position: 70% center;
     }
 
     .miss-hero__copy {

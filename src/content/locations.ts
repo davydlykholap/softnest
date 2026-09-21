@@ -47,7 +47,9 @@ export const serviceAreas: Location[] = (records as Location[]).map((location) =
   image: optimizedLocalImage(location.image),
   expandedContent: location.expandedContent && {
     ...location.expandedContent,
-    heroImage: optimizedLocalImage(location.expandedContent.heroImage),
+    heroImage: location.slug === "mississauga"
+      ? "/images/mississauga-cleaning-hero-v2.webp"
+      : optimizedLocalImage(location.expandedContent.heroImage),
     mapImage: location.expandedContent.mapImage
       ? optimizedLocalImage(location.expandedContent.mapImage)
       : undefined,

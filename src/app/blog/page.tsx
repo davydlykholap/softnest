@@ -4,10 +4,11 @@ import BlogExplorer, {
   type BlogListingPost,
 } from "@/components/blog/BlogExplorer";
 import { getArticleImage } from "@/components/blog/articleImages";
-import { DirectoryHero } from "@/components/DirectoryHubSections";
+import { DirectoryFinalCta, DirectoryHero } from "@/components/DirectoryHubSections";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { getPosts } from "@/content/posts";
+import { siteConfig } from "@/lib/site";
 import { blogUrl } from "@/seo/urls";
 import styles from "@/app/blog/blog-index.module.css";
 import "@/app/styles/locations-hub.css";
@@ -83,6 +84,15 @@ export default function BlogIndexPage() {
             Our first fabric care guides are on their way. Check back soon.
           </p>
         )}
+        <DirectoryFinalCta
+          kicker="Ready for professional care?"
+          title="Put your new fabric care know-how to work."
+          description="When your sofa or carpet needs more than everyday care, tell us what needs cleaning and we'll help you plan the next step."
+          action={{ href: "/quote/", label: siteConfig.quoteLabel }}
+          image="/images/softnest-hero-room.webp"
+          imageAlt="Bright living room with a deep green sofa"
+          className="site-final-cta"
+        />
       </main>
       <SiteFooter />
     </>

@@ -71,7 +71,10 @@ export default function ExpandedLocationPage({
       </div>
 
       <main className="miss-page">
-        <section className="miss-hero" aria-labelledby="miss-hero-title">
+        <section
+          className={`miss-hero ${location.slug === "mississauga" ? "miss-hero--mississauga" : ""}`.trim()}
+          aria-labelledby="miss-hero-title"
+        >
           <div className="miss-hero__photo" aria-hidden="true">
             <Image
               src={heroImage}
