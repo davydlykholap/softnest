@@ -1763,4 +1763,11 @@
         width: min(100%, 320px);
         margin-top: 24px;
     }
+
+    .locations-cities .locations-section-heading h2 {
+        max-width: none;
+        font-size: clamp(32px, 8.7vw, 38px) !important;
+        line-height: 1 !important;
+        white-space: nowrap;
+    }
 }

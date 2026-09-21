@@ -38,18 +38,34 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
         aria-label="Mobile navigation"
       >
         <div className="mobile-services">
-          <button
-            type="button"
-            className="mobile-services__trigger"
-            aria-expanded={mobileServicesOpen}
-            onClick={() => setMobileServicesOpen((value) => !value)}
+          <div
+            className={`mobile-services__trigger ${
+              mobileServicesOpen ? "mobile-services__trigger--open" : ""
+            }`}
           >
-            Services
+            <Link
+              href="/services/"
+              onClick={() => {
+                setOpen(false);
+                setMobileServicesOpen(false);
+              }}
+            >
+              Services
+            </Link>
+            <button
+              type="button"
+              aria-label={mobileServicesOpen ? "Close services menu" : "Open services menu"}
+              aria-expanded={mobileServicesOpen}
+              aria-controls="mobile-services-links"
+              onClick={() => setMobileServicesOpen((value) => !value)}
+            >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="m6 9 6 6 6-6" />
             </svg>
-          </button>
+            </button>
+          </div>
           <div
+            id="mobile-services-links"
             className={`mobile-services__links ${
               mobileServicesOpen ? "mobile-services__links--open" : ""
             }`}

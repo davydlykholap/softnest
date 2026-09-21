@@ -28,7 +28,7 @@ export default function HeaderNavigation({
     pointer: 180,
   });
   const servicesRef = useRef<HTMLDivElement>(null);
-  const servicesTriggerRef = useRef<HTMLButtonElement>(null);
+  const servicesTriggerRef = useRef<HTMLAnchorElement>(null);
   const servicesCloseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const selectedService = services[activeService] ?? services[0];
   const mobileServices = mobileServiceSlugs
@@ -151,22 +151,19 @@ export default function HeaderNavigation({
           ref={servicesRef}
           onMouseLeave={scheduleServicesClose}
         >
-          <button
+          <Link
             ref={servicesTriggerRef}
-            type="button"
+            href="/services/"
             className={`desktop-nav__services-trigger ${
               current === "services" ? "is-active" : ""
             }`}
             aria-expanded={servicesOpen}
             aria-controls="services-mega-menu"
+            aria-haspopup="true"
             onMouseEnter={openServices}
             onClick={() => {
-              if (servicesOpen) {
-                cancelServicesClose();
-                setServicesOpen(false);
-              } else {
-                openServices();
-              }
+              cancelServicesClose();
+              setServicesOpen(false);
             }}
             onFocus={(event) => {
               if (event.currentTarget.matches(":focus-visible")) openServices();
@@ -176,7 +173,7 @@ export default function HeaderNavigation({
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="m6 9 6 6 6-6" />
             </svg>
-          </button>
+          </Link>
 
           <div
             className="services-mega"

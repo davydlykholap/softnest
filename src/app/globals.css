@@ -554,28 +554,66 @@
 }
 
 .mobile-services__trigger {
+    position: relative;
     width: 100%;
-    min-height: 50px;
+    min-height: 51px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 14px;
+    padding: 0;
     border: 0;
     border-radius: 12px;
     background: transparent;
     color: inherit;
     font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .04em;
+    font-weight: 500;
+    letter-spacing: .02em;
     text-align: left;
     text-transform: uppercase;
-    cursor: pointer;
 }
 
 .mobile-services__trigger:hover,
-.mobile-services__trigger[aria-expanded="true"] {
+.mobile-services__trigger--open {
     background: #eff5f1;
     color: var(--forest);
+}
+
+.mobile-nav .mobile-services__trigger > a {
+    position: absolute;
+    inset: 0 48px 0 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border: 0;
+    color: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    text-decoration: none;
+}
+
+.mobile-services__trigger > button {
+    position: relative;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    flex: 0 0 40px;
+    place-items: center;
+    margin-right: 5px;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-services__trigger > button:hover,
+.mobile-services__trigger > button:focus-visible {
+    background: rgba(7, 84, 59, .08);
 }
 
 .mobile-services__trigger svg {
@@ -587,7 +625,7 @@
     transition: transform 180ms ease;
 }
 
-.mobile-services__trigger[aria-expanded="true"] svg {
+.mobile-services__trigger--open svg {
     transform: rotate(180deg);
 }
 

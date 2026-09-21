@@ -93,8 +93,7 @@ export default function LocationsPage() {
 
         <section className="locations-cities" id="cities">
           <header className="locations-section-heading">
-            <p className="locations-kicker">Areas we serve</p>
-            <h2>Cleaning Services Across the GTA</h2>
+            <h2>Cleaning Across the GTA</h2>
           </header>
 
           <div className="locations-bento">
