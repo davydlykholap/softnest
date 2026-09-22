@@ -1,14 +1,18 @@
 import { jsonLd } from "@/seo/structuredData";
 import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
-import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
-import ServicesExplorer from "@/components/ServicesExplorer";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  DirectoryCard,
+  DirectoryFinalCta,
+  DirectoryHero,
+} from "@/components/DirectoryHubSections";
+import ServiceSearch from "@/components/ServiceSearch";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { services } from "@/content/services";
-import styles from "@/app/services/service-page.module.css";
 import "@/app/styles/locations-hub.css";
-import "@/app/styles/services-hub.css";
 
 export const metadata: Metadata = {
   title: "Services | SoftNest Fabric Care",
@@ -39,15 +43,79 @@ export default function ServicesPage() {
         <SiteHeader current="services" />
       </div>
 
-      <main className={styles.servicePage}>
-        <ServicesExplorer services={services} />
+      <main className="locations-hub-v2">
+        <DirectoryHero
+          id="services-heading"
+          kicker="Upholstery & carpet care across the GTA"
+          titleLines={[
+            { text: "Professional Care," },
+            { text: "For Every Room.", accent: true },
+          ]}
+          description="Explore SoftNest upholstery and carpet cleaning services for the items your home uses every day."
+          mediaLabel="Professional upholstery and carpet cleaning equipment prepared in a home"
+          className="locations-hub-hero--compact"
+          media={
+            <Image
+              src="/images/services/services-hero-equipment.webp"
+              alt="Professional upholstery and carpet cleaning equipment arranged in a living room"
+              fill
+              priority
+              sizes="(max-width: 820px) 100vw, 57vw"
+            />
+          }
+        />
+
+        <div className="locations-search-wrap">
+          <ServiceSearch />
+        </div>
+
+        <section className="locations-cities" id="services">
+          <header className="locations-section-heading">
+            <h2>Cleaning Services</h2>
+          </header>
+
+          <div className="locations-bento">
+            {services.map((service) => (
+              <DirectoryCard
+                href={`/services/${service.slug}/`}
+                image={service.image}
+                imageAlt={service.imageAlt}
+                title={service.shortName}
+                ariaLabel={`View ${service.name}`}
+                className="locations-city-card--location"
+                key={service.slug}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section className="locations-simple-support" id="not-sure-service">
+          <div className="locations-simple-support__copy">
+            <p className="locations-kicker">Need a hand?</p>
+            <h2>Not sure which service?</h2>
+            <span className="locations-kicker-line" aria-hidden="true" />
+            <p>
+              Tell us what furniture or carpet needs cleaning and note any
+              stains, odours or other concerns. We&apos;ll confirm the right
+              service when we reply.
+            </p>
+            <Link
+              className="locations-pill locations-pill--solid locations-simple-support__action"
+              href="/quote/"
+            >
+              Ask about your item
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </section>
+
         <DirectoryFinalCta
-          kicker="Professional care for every room"
-          title="A fresher home starts with the right service."
-          description="Choose the service that best matches your furniture or carpet, or tell us what needs attention and we'll help you narrow it down."
+          kicker="Professional care, close to home"
+          title="A fresher home is closer than you think."
+          description="Trusted by homeowners across the GTA for professional, careful cleaning that makes a real difference."
           action={{ href: "/quote/", label: siteConfig.quoteLabel }}
           image="/images/softnest-hero-room.webp"
-          imageAlt="Bright living room with a deep green sofa"
+          imageAlt="SoftNest hero room with a deep green sofa"
           className="site-final-cta"
         />
       </main>

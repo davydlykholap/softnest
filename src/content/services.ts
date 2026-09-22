@@ -1,5 +1,6 @@
 import records from "@/content/generated/services.json";
 import { optimizedLocalImage } from "@/lib/optimizedLocalImage";
+import { serviceImages } from "@/content/serviceImages";
 export type ServiceFaq = {
   question: string;
   answer: string;
@@ -44,7 +45,11 @@ export type Service = {
 
 export const services: Service[] = (records as Service[])
   .filter((service) => service.pageEnabled !== false)
-  .map((service) => ({ ...service, image: optimizedLocalImage(service.image) }));
+  .map((service) => ({
+    ...service,
+    image: optimizedLocalImage(serviceImages[service.slug]?.image ?? service.image),
+    imageAlt: serviceImages[service.slug]?.imageAlt ?? service.imageAlt,
+  }));
 export const navigationServices = services.filter((service) => service.showInNavigation);
 
 export function getService(slug: string) {
