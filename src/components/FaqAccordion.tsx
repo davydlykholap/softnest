@@ -10,6 +10,7 @@ type Props = {
   items: readonly FaqAccordionItem[];
   className?: string;
   defaultOpenIndex?: number;
+  groupName?: string;
   tone?: "compact" | "article";
 };
 
@@ -17,6 +18,7 @@ export default function FaqAccordion({
   items,
   className,
   defaultOpenIndex,
+  groupName,
   tone = "compact",
 }: Props) {
   const classes = [
@@ -33,6 +35,7 @@ export default function FaqAccordion({
         <details
           className={styles.item}
           key={`${item.question}-${index}`}
+          name={groupName}
           open={index === defaultOpenIndex}
         >
           <summary className={styles.summary}>

@@ -2,7 +2,9 @@ import { jsonLd } from "@/seo/structuredData";
 import { pageText } from "@/content/pages";
 import Image from "next/image";
 import Link from "next/link";
+import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import HeroActionButtons from "@/components/HeroActionButtons";
+import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import LocationReviews from "@/components/locations/LocationReviews";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -50,7 +52,7 @@ export default function ExpandedLocationPage({
       )
       .map((label) => [label.name, label] as const),
   );
-  const services =
+  const services = (
     expanded?.services ??
     location.availableServices
       .map(getService)
@@ -61,7 +63,16 @@ export default function ExpandedLocationPage({
         description: service.summary,
         image: service.image,
         alt: service.imageAlt,
-      }));
+      }))
+  ).map((service) => {
+    const canonicalService = getService(service.slug);
+
+    return {
+      ...service,
+      image: canonicalService?.image ?? service.image,
+      alt: canonicalService?.imageAlt ?? service.alt,
+    };
+  });
   const schemas = getExpandedLocationSchemas(location, services, locationFaqs);
 
   return (
@@ -86,14 +97,14 @@ export default function ExpandedLocationPage({
           </div>
           <div className="miss-hero__wash" aria-hidden="true" />
           <div className="miss-hero__copy">
-            <p className="miss-kicker">{copyText(location, "page-1", `Professional fabric care in ${location.name}`)}</p>
+            <p className="miss-kicker">Proudly serving {location.name}</p>
             <span className="miss-kicker-line" aria-hidden="true" />
             <h1 id="miss-hero-title">
               {copyText(location, "page-2", "Upholstery &")}<br />
               {copyText(location, "page-3", "Carpet Cleaning")}<span>{copyText(location, "page-4", `in ${location.name}`)}</span>
             </h1>
             <p className="miss-hero__description">
-              {copyText(location, "page-5", location.shortDescription)}</p>
+              Professional upholstery and carpet cleaning for {location.name} homes and condos—using fabric-safe products, professional equipment, and meticulous care.</p>
             <HeroActionButtons
               quoteAriaLabel={`Get a free upholstery and carpet cleaning quote in ${location.name}`}
             />
@@ -102,10 +113,10 @@ export default function ExpandedLocationPage({
 
         <section className="miss-care-band" aria-labelledby="miss-care-heading">
           <div className="miss-care-band__intro">
-            <p className="miss-kicker">{copyText(location, "page-6", `Care that fits ${location.name}`)}</p>
-            <h2 id="miss-care-heading">{copyText(location, "page-7", "Local cleaning, planned before arrival")}</h2>
+            <p className="miss-kicker">Care in {location.name}</p>
+            <h2 id="miss-care-heading">Cleaning planned around your home</h2>
             <p>
-              {copyText(location, "page-8", location.localConsiderations)}</p>
+              Share photos, fabric details, access notes, and the items you want cleaned. We’ll confirm the recommended service and scope before your appointment.</p>
           </div>
           <div className="miss-care-band__features">
             {quickBenefits.map((benefit) => (
@@ -126,10 +137,11 @@ export default function ExpandedLocationPage({
           aria-labelledby="miss-services-heading"
         >
           <div className="miss-section-heading">
-            <p className="miss-kicker">{copyText(location, "page-9", "Our services")}</p>
-            <h2 id="miss-services-heading">{copyText(location, "page-10", `What we clean in ${location.name}`)}</h2>
+            <p className="miss-kicker">What we clean</p>
+            <span className="miss-section-rule" aria-hidden="true" />
+            <h2 id="miss-services-heading">Cleaning services in {location.name}</h2>
             <p className="miss-section-heading__intro">
-              {copyText(location, "page-11", location.introduction)}</p>
+              Explore upholstery and carpet cleaning services available across {location.name}, with methods selected for each material, condition, and concern.</p>
           </div>
           <div className="miss-service-grid">
             {services.map((service) => (
@@ -148,7 +160,6 @@ export default function ExpandedLocationPage({
                 </span>
                 <span className="miss-service-grid__body">
                   <h3>{service.title}</h3>
-                  <p>{service.description}</p>
                   <span className="miss-card-arrow" aria-hidden="true">→</span>
                 </span>
               </Link>
@@ -161,7 +172,10 @@ export default function ExpandedLocationPage({
         <section className="miss-process" aria-labelledby="miss-process-heading">
           <div className="miss-section-heading">
             <p className="miss-kicker">{copyText(location, "page-16", "Our process")}</p>
-            <h2 id="miss-process-heading">{copyText(location, "page-17", "A simple, clear cleaning process")}</h2>
+            <span className="miss-section-rule" aria-hidden="true" />
+            <h2 id="miss-process-heading">How our cleaning works</h2>
+            <p className="miss-section-heading__intro">
+              A clear four-step process—from your photo estimate to cleaning, professional drying, and a final walkthrough.</p>
           </div>
           <ol>
             {processSteps.map((step, index) => (
@@ -181,8 +195,9 @@ export default function ExpandedLocationPage({
 
         <section className="miss-coverage" aria-labelledby="miss-coverage-heading">
           <div className="miss-section-heading">
-            <p className="miss-kicker">{copyText(location, "page-18", "Our service area")}</p>
-            <h2 id="miss-coverage-heading">{copyText(location, "page-19", `Serving ${location.name} neighbourhoods`)}</h2>
+            <p className="miss-kicker">Our service area</p>
+            <span className="miss-section-rule" aria-hidden="true" />
+            <h2 id="miss-coverage-heading">Serving all of {location.name}</h2>
           </div>
           <div className="miss-coverage__content">
             {expanded?.mapImage ? <div className="miss-map">
@@ -214,9 +229,10 @@ export default function ExpandedLocationPage({
             </div>}
             <div className="miss-coverage__copy">
               <p>
-                {copyText(location, "page-20", location.introduction)}</p>
+                SoftNest provides upholstery and carpet cleaning throughout {location.name}, including condos, houses, apartments, and commercial spaces.</p>
               <p className="miss-coverage__detail">
-                {copyText(location, "page-21", location.localConsiderations)}</p>
+                These neighbourhoods are examples of areas we serve—not service boundaries.</p>
+              <p className="miss-coverage__includes">Including:</p>
               <ul>
                 {location.neighbourhoods.map((neighbourhood) => (
                   <li key={neighbourhood}>
@@ -226,7 +242,8 @@ export default function ExpandedLocationPage({
                 ))}
               </ul>
               <small>
-                {copyText(location, "page-22", "Nearby area? Send your postal code and we’ll confirm availability.")}</small>
+                Live elsewhere in {location.name}? You are still in our service
+                area. Send your postal code and we’ll confirm your appointment.</small>
             </div>
           </div>
         </section>
@@ -234,8 +251,11 @@ export default function ExpandedLocationPage({
         <section className="miss-local-value" aria-labelledby="miss-local-value-heading">
           <div className="miss-section-heading">
             <p className="miss-kicker">{copyText(location, "page-23", "Why choose SoftNest")}</p>
+            <span className="miss-section-rule" aria-hidden="true" />
             <h2 id="miss-local-value-heading">
-              {copyText(location, "page-24", `Why ${location.name} homeowners choose our cleaning service`)}</h2>
+              Why choose SoftNest in {location.name}</h2>
+            <p className="miss-section-heading__intro">
+              Fabric-aware methods, clear estimates, and practical scheduling for homes and condos across {location.name}.</p>
           </div>
           <div className="miss-local-value__grid">
             {localAdvantages.map((advantage) => (
@@ -252,67 +272,18 @@ export default function ExpandedLocationPage({
           </div>
         </section>
 
-        <section className="miss-faq" id="faq" aria-labelledby="miss-faq-heading">
-          <div className="miss-section-heading">
-            <p className="miss-kicker">{copyText(location, "page-25", "Frequently asked questions")}</p>
-            <h2 id="miss-faq-heading">
-              {copyText(location, "page-26", `${location.name} upholstery & carpet cleaning FAQs`)}</h2>
-          </div>
-          <div className="miss-faq__grid">
-            {locationFaqs.map((item) => (
-              <details key={item.question}>
-                <summary>
-                  {item.question}
-                  <span aria-hidden="true">+</span>
-                </summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
-          </div>
-        </section>
+        <HomeFaqExplorer items={locationFaqs} />
 
-        <section className="miss-final-cta" aria-labelledby="miss-cta-heading">
-          <div
-            className="miss-phone"
-            aria-label="A replaceable cleaning photo shown inside a phone"
-          >
-            <Image
-              className="miss-phone__screen"
-              src={heroImage}
-              alt=""
-              fill
-              sizes="250px"
-            />
-            <Image
-              className="miss-phone__frame"
-              src="/img/mississauga/phone-frame.webp"
-              alt=""
-              fill
-              sizes="250px"
-            />
-          </div>
-          <div className="miss-final-cta__copy">
-            <p className="miss-kicker">{copyText(location, "page-27", "Free photo estimates")}</p>
-            <h2 id="miss-cta-heading">{copyText(location, "page-28", "Show us what needs cleaning")}</h2>
-            <p>
-              {copyText(location, "page-29", "Send clear photos of the full item and problem areas for a no-obligation estimate before booking.")}</p>
-            <div className="hero__actions miss-final-actions">
-              <Link
-                className="button button--primary quote-cta quote-cta--pulse"
-                href="/quote/"
-              >
-                {copyText(location, "page-30", siteConfig.quoteLabel)}<svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M5 12h14m-6-6 6 6-6 6" />
-                </svg>
-              </Link>
-              <a
-                className="button button--secondary"
-                href={siteConfig.phoneHref}
-              >
-                {copyText(location, "page-31", `Call ${siteConfig.displayPhone}`)}</a>
-            </div>
-          </div>
-        </section>
+        <DirectoryFinalCta
+          id="quote-cta"
+          kicker="Professional care for every room"
+          title="Ready for a Fresher, Cleaner Home?"
+          description="Get a quote today and experience the SoftNest difference."
+          action={{ href: "/quote/", label: siteConfig.quoteLabel }}
+          image="/images/softnest-hero-room.webp"
+          imageAlt="Bright living room with a deep green sofa"
+          className="site-final-cta"
+        />
       </main>
 
       <SiteFooter />

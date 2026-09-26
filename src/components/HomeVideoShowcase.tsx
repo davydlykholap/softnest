@@ -11,21 +11,13 @@ export default function HomeVideoShowcase() {
       aria-labelledby="cleaning-video-heading"
     >
       <div className="home-video-section__inner">
-        <header className="home-video-section__header">
-          <p>See SoftNest in action</p>
-          <h2 id="cleaning-video-heading">See How We Clean</h2>
-          <span>
-            A quick look at the care, equipment, and attention that go into every cleaning.
-          </span>
-        </header>
-
         <div className="home-video-frame">
           {videoSrc ? (
             <video
               controls
               playsInline
               preload="metadata"
-              poster="/img/faq_machine.webp"
+              poster="/images/blog/how-to-remove-stain-from-couch/controlled-sofa-extraction.webp"
               aria-label="Watch how SoftNest professionally cleans upholstery and carpets"
             >
               <source src={videoSrc} />
@@ -40,8 +32,8 @@ export default function HomeVideoShowcase() {
               aria-label="Watch SoftNest cleaning videos on Instagram"
             >
               <Image
-                src="/img/faq_machine.webp"
-                alt="Professional SoftNest cleaning equipment beside a freshly cleaned sofa"
+                src="/images/blog/how-to-remove-stain-from-couch/controlled-sofa-extraction.webp"
+                alt="Professional upholstery extraction on a cream sofa"
                 fill
                 sizes="(max-width: 900px) 92vw, 960px"
               />
@@ -53,6 +45,14 @@ export default function HomeVideoShowcase() {
               </span>
             </a>
           )}
+        </div>
+
+        <div className="home-video-copy">
+          <p className="home-video-copy__kicker">See SoftNest in action</p>
+          <h2 id="cleaning-video-heading">See How We Clean</h2>
+          <p>
+            Proven methods and professional extraction equipment, used with care in your home.
+          </p>
         </div>
 
       </div>

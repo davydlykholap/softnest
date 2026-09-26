@@ -29,7 +29,7 @@ export default function HomeHero() {
     <main className="site-shell">
       <section className="hero" aria-labelledby="home-hero-heading">
         <div className="hero__photo" aria-hidden="true">
-          <picture>
+          <picture className="hero__photo-picture">
             <source
               media="(max-width: 640px)"
               srcSet="/images/softnest-hero-room-mobile.webp"
@@ -38,7 +38,7 @@ export default function HomeHero() {
               src="/images/softnest-hero-room.webp"
               alt=""
               fill
-              priority
+              loading="eager"
               sizes="100vw"
             />
           </picture>
@@ -99,7 +99,7 @@ export default function HomeHero() {
             <div className="google-review-summary__brand">
               <Image
                 className="google-review-summary__g"
-                src="/img/google-g-official.png"
+                src="/img/google-g-official.svg"
                 alt=""
                 aria-hidden="true"
                 width={48}

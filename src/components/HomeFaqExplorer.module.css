@@ -1,0 +1,217 @@
+.section {
+  --faq-forest: #07543b;
+  --faq-ink: #111713;
+  --faq-muted: #5d6964;
+  --faq-line: rgba(7, 84, 59, 0.15);
+  --faq-serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --faq-sans: "Avenir Next", "Segoe UI", Arial, sans-serif;
+  padding: 78px 0 82px;
+  border-bottom: 1px solid rgba(7, 84, 59, 0.06);
+  background: #f5f9f7;
+  color: var(--faq-ink);
+  font-family: var(--faq-sans);
+}
+
+.desktop {
+  width: min(90vw, 1340px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(390px, 0.86fr) minmax(0, 1.14fr);
+  align-items: start;
+  gap: clamp(48px, 5vw, 82px);
+}
+
+.mobile {
+  display: none;
+}
+
+.header {
+  margin-bottom: 22px;
+}
+
+.kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--faq-forest);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.rule {
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-bottom: 15px;
+  background: var(--faq-forest);
+}
+
+.header h2 {
+  max-width: 610px;
+  margin: 0;
+  color: var(--faq-ink);
+  font-family: var(--faq-serif);
+  font-size: clamp(42px, 4vw, 58px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.header p {
+  max-width: 560px;
+  margin: 16px 0 0;
+  color: var(--faq-muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.list {
+  border-top: 1px solid var(--faq-line);
+}
+
+.question {
+  width: 100%;
+  min-height: 66px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38px;
+  align-items: center;
+  gap: 20px;
+  padding: 13px 16px 13px 0;
+  border: 0;
+  border-bottom: 1px solid var(--faq-line);
+  background: transparent;
+  color: #173d31;
+  cursor: pointer;
+  font-family: var(--faq-sans);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: left;
+  transition: background-color 180ms ease, color 180ms ease, padding 180ms ease;
+}
+
+.question:hover,
+.question[aria-expanded="true"] {
+  padding-left: 16px;
+  background: #eaf3ee;
+  color: var(--faq-forest);
+}
+
+.question:focus-visible {
+  outline: 3px solid rgba(7, 84, 59, 0.25);
+  outline-offset: -3px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e5f0ea;
+  color: var(--faq-forest);
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.question[aria-expanded="true"] .icon {
+  background: var(--faq-forest);
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+.detail {
+  min-width: 0;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.62 / 1;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #e8e2d8;
+}
+
+.image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.answer {
+  min-height: 250px;
+  padding: 34px clamp(12px, 4vw, 70px) 20px;
+}
+
+.answer h3 {
+  max-width: 650px;
+  margin: 0;
+  color: var(--faq-ink);
+  font-family: var(--faq-serif);
+  font-size: clamp(28px, 2.6vw, 39px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.answer p {
+  max-width: 650px;
+  margin: 18px 0 0;
+  color: var(--faq-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    width: min(92vw, 760px);
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .section:global(#faq) {
+    /* Beat the legacy global #faq mobile reset so the section divider breathes. */
+    padding: 58px 0 64px !important;
+  }
+
+  .mobile {
+    width: calc(100vw - 32px);
+  }
+
+  .header h2 {
+    /* The legacy global h2 rule is !important; keep this title on the site scale. */
+    font-size: 40px !important;
+    line-height: 1.02 !important;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .mobileList {
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .question,
+  .icon {
+    transition: none;
+  }
+}

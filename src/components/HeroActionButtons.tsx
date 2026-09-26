@@ -43,7 +43,7 @@ export default function HeroActionButtons({
       >
         <Image
           className="google-g-icon"
-          src="/img/google-g-official.png"
+          src="/img/google-g-official.svg"
           alt=""
           aria-hidden="true"
           width={32}

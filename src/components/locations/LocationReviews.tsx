@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Image from "next/image";
+import GoogleReviewCarousel from "@/components/GoogleReviewCarousel";
 import { getTestimonials } from "@/content/pages";
 import type { Location } from "@/content/locations";
 import { siteConfig } from "@/lib/site";
@@ -13,56 +14,70 @@ export default function LocationReviews({ location }: { location: Location }) {
   const reviews = getTestimonials({ location: location.slug, limit: 3 });
   if (!reviews.length) return null;
 
-  const hasLocalReview = reviews.some((review) =>
-    review.locations.includes(location.slug),
-  );
+  const carouselReviews = reviews.map((review) => ({
+    initial: review.name.trim().charAt(0).toUpperCase(),
+    name: review.name,
+    text: reviewExcerpt(review.text),
+  }));
 
   return (
     <section
       className="location-customer-reviews"
+      id="reviews"
       aria-labelledby="location-reviews-heading"
     >
       <div className="location-customer-reviews__heading">
         <div>
           <p className="location-eyebrow">Customer feedback</p>
-          <h2 id="location-reviews-heading">
-            {hasLocalReview
-              ? `What customers in ${location.name} say`
-              : "What customers say about SoftNest"}
-          </h2>
+          <span className="location-reviews-rule" aria-hidden="true" />
+          <h2 id="location-reviews-heading">What customers say</h2>
         </div>
         <p>
-          Experiences shared by customers after professional upholstery and
-          carpet cleaning appointments.
+          Feedback from {location.name} customers after professional upholstery
+          and carpet cleaning appointments.
         </p>
       </div>
 
-      <div className="location-customer-reviews__grid">
-        {reviews.map((review) => (
-          <blockquote key={review._id}>
-            <div aria-label="5 out of 5 stars">★★★★★</div>
-            <p>“{reviewExcerpt(review.text)}”</p>
-            <footer>
-              <cite>{review.name}</cite>
-              <span>
-                Google review
-                {review.locations.includes(location.slug)
-                  ? ` · ${location.name}`
-                  : ""}
-              </span>
-            </footer>
-          </blockquote>
-        ))}
+      <div className="location-review-experience">
+        <div className="location-review-mobile-summary google-review-summary">
+          <div className="google-review-summary__brand">
+            <Image
+              className="google-review-summary__g"
+              src="/img/google-g-official.svg"
+              alt=""
+              aria-hidden="true"
+              width={48}
+              height={48}
+            />
+            <span className="google-review-summary__mobile-label">Google Reviews</span>
+          </div>
+          <div className="google-review-summary__score">
+            <strong>{siteConfig.reviewScore}</strong>
+            <span aria-label="5 out of 5 stars">★★★★★</span>
+          </div>
+          <a
+            href={siteConfig.googleProfileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read all reviews <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <GoogleReviewCarousel
+          reviews={carouselReviews}
+          googleProfileUrl={siteConfig.googleProfileUrl}
+        />
       </div>
 
-      <Link
+      <a
         className="location-customer-reviews__link"
         href={siteConfig.googleProfileUrl}
         target="_blank"
         rel="noopener noreferrer"
       >
         Read more reviews on Google <span aria-hidden="true">→</span>
-      </Link>
+      </a>
     </section>
   );
 }

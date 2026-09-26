@@ -1,4 +1,6 @@
+import FaqAccordion from "@/components/FaqAccordion";
 import Image from "next/image";
+import ServiceResultCompare from "@/components/ServiceResultCompare";
 import type { Service } from "@/content/services";
 import { getProjects, getTestimonials } from "@/content/pages";
 import styles from "@/app/services/service-page.module.css";
@@ -50,24 +52,28 @@ export default function ServiceDetailPanel({
       </section>
 
       {project ? (
-        <section className={`${styles.serviceSection} ${styles.proofSection}`} aria-labelledby="proof-heading">
-          <div className={styles.proofInner}>
-            <div className={styles.proofHeading}>
-              <p className={styles.eyebrow}>Real homes, real results</p>
-              <SectionHeading id="proof-heading">See the work</SectionHeading>
+        <section className={styles.resultFeature} aria-labelledby="proof-heading">
+          <div className={styles.resultFeatureCopy}>
+            <p className={styles.eyebrow}>Real homes, real results</p>
+            <span className={styles.resultFeatureRule} aria-hidden="true" />
+            <SectionHeading id="proof-heading">
+              <span>See the</span>
+              <span>Difference.</span>
+            </SectionHeading>
+            <p className={styles.resultFeatureDescription}>
+              A real SoftNest cleaning result from {project.location}.
+            </p>
+            <div className={styles.resultFeatureMeta}>
+              <strong>{project.category} · {project.service}</strong>
+              <span>{project.location}</span>
             </div>
-            <div className={styles.proofCard}>
-              <div className={styles.proofImage}>
-                <Image src={project.image} alt={project.label} fill sizes="(max-width: 820px) 100vw, 55vw" />
-                {project.variant === "paired" ? (
-                  <div className={styles.proofLabels} aria-hidden="true"><span>Before</span><span>After</span></div>
-                ) : null}
-              </div>
-              <div className={styles.proofCaption}>
-                <strong>{project.category} · {project.service}</strong>
-                <span>{project.location}</span>
-              </div>
-            </div>
+          </div>
+          <div className={styles.resultFeatureMedia}>
+            <ServiceResultCompare
+              image={project.image}
+              label={project.label}
+              variant={project.variant}
+            />
           </div>
         </section>
       ) : review ? (
@@ -85,6 +91,14 @@ export default function ServiceDetailPanel({
         </section>
       ) : null}
 
+      <section className={`${styles.serviceSection} ${styles.faqSection}`} id="faq" aria-labelledby="faq-heading">
+        <div className={styles.faqHeading}>
+          <p className={styles.eyebrow}>Questions we hear</p>
+          <SectionHeading id="faq-heading">Frequently asked questions</SectionHeading>
+        </div>
+        <FaqAccordion items={service.faq} />
+      </section>
+
       <section className={styles.bookingDetails} aria-labelledby="details-heading">
         <p className={styles.eyebrow}>Good to know</p>
         <SectionHeading id="details-heading">Before you book</SectionHeading>
@@ -95,21 +109,6 @@ export default function ServiceDetailPanel({
         <div>
           <NoteHeading>Realistic results</NoteHeading>
           <p>{service.limitations}</p>
-        </div>
-      </section>
-
-      <section className={`${styles.serviceSection} ${styles.faqSection}`} id="faq" aria-labelledby="faq-heading">
-        <div className={styles.faqHeading}>
-          <p className={styles.eyebrow}>Questions we hear</p>
-          <SectionHeading id="faq-heading">Frequently asked questions</SectionHeading>
-        </div>
-        <div className={styles.faqList}>
-          {service.faq.map((item, index) => (
-            <details key={item.question} open={index === 0}>
-              <summary>{item.question}<span aria-hidden="true">+</span></summary>
-              <p>{item.answer}</p>
-            </details>
-          ))}
         </div>
       </section>
     </div>

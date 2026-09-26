@@ -17,6 +17,25 @@ function textBlock(key: string, text: string, style: BlockStyle = "normal") {
   };
 }
 
+function richTextBlock(
+  key: string,
+  segments: { text: string; marks?: string[] }[],
+  style: BlockStyle = "normal",
+) {
+  return {
+    _key: key,
+    _type: "block",
+    children: segments.map((segment, index) => ({
+      _key: `${key}-text-${index}`,
+      _type: "span",
+      marks: segment.marks ?? [],
+      text: segment.text,
+    })),
+    markDefs: [],
+    style,
+  };
+}
+
 const mississaugaServiceLink = {
   _key: "mississauga-service-link",
   _type: "block",
@@ -51,6 +70,173 @@ const mississaugaServiceLink = {
 };
 
 export const localPosts = [
+  {
+    _id: "post-upholstery-cleaning-prices-toronto",
+    _type: "post",
+    author: "SoftNest Fabric Care",
+    body: [
+      textBlock(
+        "pricing-1",
+        "If you’re comparing upholstery cleaning prices in Toronto or the GTA, you may get very different quotes for the same sofa.",
+      ),
+      textBlock(
+        "pricing-2",
+        "That doesn’t mean the cheapest company will do a worse job. And paying more doesn’t automatically mean you’ll get better cleaning.",
+      ),
+      richTextBlock("pricing-3", [
+        { text: "The important thing is to understand " },
+        {
+          text: "what you’re actually getting for the price.",
+          marks: ["strong"],
+        },
+      ]),
+      textBlock(
+        "pricing-4",
+        "Before choosing an upholstery cleaner, ask these five questions.",
+      ),
+      textBlock("pricing-5", "1. What exactly is included in the price?", "h2"),
+      textBlock("pricing-6", "Start with the simplest question."),
+      textBlock(
+        "pricing-7",
+        "Does the quote include stain treatment? Deodorizing? Sanitizing? Removable cushions? If the cushions can be flipped, are both sides cleaned?",
+      ),
+      textBlock(
+        "pricing-8",
+        "Different companies package their services differently, so two similar prices may not include the same work.",
+      ),
+      textBlock(
+        "pricing-9",
+        "Ask what is included before you book rather than finding out once the cleaning has already started.",
+      ),
+      textBlock("pricing-10", "2. How thorough will the cleaning be?", "h2"),
+      textBlock("pricing-11", "This is probably the most important question."),
+      textBlock(
+        "pricing-12",
+        "Ask whether the entire accessible upholstered area will be cleaned — not only the seats.",
+      ),
+      textBlock(
+        "pricing-13",
+        "That can include the cushions, armrests, sides, front, back and upholstered frame, depending on the design of the sofa.",
+      ),
+      textBlock("pricing-14", "Also ask what happens if one area needs more work."),
+      textBlock(
+        "pricing-15",
+        "Armrests, headrests and favourite sitting areas can be much dirtier than the rest of the furniture. If an armrest still needs attention after the first cleaning, will they go over it again? If another section needs an extra pass, is that simply part of the job?",
+      ),
+      textBlock(
+        "pricing-16",
+        "You’re not asking how many times every part will be cleaned.",
+      ),
+      textBlock(
+        "pricing-17",
+        "You’re trying to understand whether the cleaner is focused on the result or simply completing one quick pass and moving on.",
+      ),
+      textBlock(
+        "pricing-18",
+        "3. What happens if a stain or dirty area needs more attention?",
+        "h2",
+      ),
+      textBlock(
+        "pricing-19",
+        "Not every stain comes out on the first attempt, and some marks may be permanent discoloration rather than removable soil.",
+      ),
+      textBlock("pricing-20", "That’s normal."),
+      textBlock(
+        "pricing-21",
+        "What’s worth asking is whether the cleaner will inspect the furniture after cleaning and re-treat areas that can reasonably be improved.",
+      ),
+      textBlock(
+        "pricing-22",
+        "A good service doesn’t mean promising that every stain will disappear. It means making a reasonable effort to get the best result possible before the job is finished.",
+      ),
+      textBlock("pricing-23", "4. How do you protect my home while you work?", "h2"),
+      textBlock(
+        "pricing-24",
+        "Upholstery cleaning also means bringing equipment, hoses and cleaning products into your home.",
+      ),
+      textBlock(
+        "pricing-25",
+        "Ask how flooring is protected where necessary and how hoses and equipment are handled around walls, corners and furniture.",
+      ),
+      textBlock(
+        "pricing-26",
+        "These are small details, but they can tell you a lot about how carefully a company works.",
+      ),
+      textBlock(
+        "pricing-27",
+        "Good upholstery cleaning isn’t only about leaving the sofa clean. It’s also about taking care of the home around it.",
+      ),
+      textBlock(
+        "pricing-28",
+        "5. Is this the final price, and what could cost extra?",
+        "h2",
+      ),
+      textBlock(
+        "pricing-29",
+        "Before booking, ask whether the quote is the final price based on the photos and information you provided.",
+      ),
+      textBlock(
+        "pricing-30",
+        "Some situations may genuinely require additional treatment. Pet urine, unusual contamination or certain specialty stains are good examples.",
+      ),
+      textBlock(
+        "pricing-31",
+        "There’s nothing wrong with charging separately for additional work.",
+      ),
+      richTextBlock("pricing-32", [
+        { text: "The important thing is knowing " },
+        {
+          text: "what is included, what could cost extra and whether you’ll be told before any additional work is done.",
+          marks: ["strong"],
+        },
+      ]),
+      textBlock("pricing-33", "Compare the Service, Not Just the Price", "h2"),
+      textBlock(
+        "pricing-34",
+        "When comparing couch or upholstery cleaning prices in Toronto, don’t assume that cheaper means worse or that more expensive automatically means better.",
+      ),
+      textBlock(
+        "pricing-35",
+        "Instead, compare what each company is actually offering.",
+      ),
+      richTextBlock("pricing-36", [
+        {
+          text: "What is included? How thoroughly will the furniture be cleaned? Will problem areas get extra attention? How will your home be protected? And is the quoted price really the final price?",
+          marks: ["strong"],
+        },
+      ]),
+      textBlock(
+        "pricing-37",
+        "Once you know those answers, comparing prices becomes much easier.",
+      ),
+      textBlock(
+        "pricing-38",
+        "At SoftNest Fabric Care, we provide our pricing in advance based on the furniture and information you send us. If you’d like a quote, send us the number of seats and, if possible, a photo of the furniture. We can take a look and let you know the price before you book.",
+      ),
+    ],
+    categories: ["Upholstery care", "Pricing"],
+    coverImage: {
+      localPath: "/images/blog/upholstery-cleaning-prices-toronto.webp",
+      width: 1672,
+      height: 941,
+      alt: "Professional upholstery cleaning technician using an extraction tool on a light-coloured sectional sofa",
+    },
+    excerpt:
+      "Compare upholstery cleaning prices in Toronto by checking what is included, how thoroughly the furniture is cleaned and what may cost extra.",
+    order: 9,
+    publishedAt: "2026-09-25T12:00:00Z",
+    relatedServices: [
+      "upholstery-cleaning",
+      "sofa-cleaning",
+      "sectional-furniture-cleaning",
+    ],
+    seoDescription:
+      "Compare upholstery cleaning prices in Toronto with five practical questions about inclusions, stain treatment, home protection and extra costs.",
+    seoTitle: "Upholstery Cleaning Prices in Toronto: 5 Questions to Ask",
+    showCover: true,
+    slug: "upholstery-cleaning-prices-toronto",
+    title: "Upholstery Cleaning Prices in Toronto: 5 Questions to Ask Before Booking",
+  },
   {
     _id: "post-how-to-know-when-your-sofa-needs-professional-cleaning",
     _type: "post",

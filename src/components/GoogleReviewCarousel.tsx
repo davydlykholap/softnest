@@ -32,7 +32,7 @@ export default function GoogleReviewCarousel({
           <div className="google-review-card__top">
             <Image
               className="google-g-official"
-              src="/img/google-g-official.png"
+              src="/img/google-g-official.svg"
               alt=""
               aria-hidden="true"
               width={24}
