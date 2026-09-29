@@ -2,6 +2,10 @@ import { jsonLd } from "@/seo/structuredData";
 import { pageText } from "@/content/pages";
 import Image from "next/image";
 import Link from "next/link";
+import CardArrow, {
+  cardArrowHostClassName,
+  cardPanelClassName,
+} from "@/components/CardArrow";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import HeroActionButtons from "@/components/HeroActionButtons";
 import HomeFaqExplorer from "@/components/HomeFaqExplorer";
@@ -106,6 +110,7 @@ export default function ExpandedLocationPage({
             <p className="miss-hero__description">
               Professional upholstery and carpet cleaning for {location.name} homes and condos—using fabric-safe products, professional equipment, and meticulous care.</p>
             <HeroActionButtons
+              primaryTone="gold"
               quoteAriaLabel={`Get a free upholstery and carpet cleaning quote in ${location.name}`}
             />
           </div>
@@ -146,6 +151,7 @@ export default function ExpandedLocationPage({
           <div className="miss-service-grid">
             {services.map((service) => (
               <Link
+                className={cardArrowHostClassName}
                 href={`/services/${service.slug}/`}
                 key={service.title}
                 aria-label={`Learn about ${service.title.toLowerCase()}`}
@@ -158,9 +164,9 @@ export default function ExpandedLocationPage({
                     sizes="(max-width: 760px) 100vw, 25vw"
                   />
                 </span>
-                <span className="miss-service-grid__body">
+                <span className={`miss-service-grid__body ${cardPanelClassName}`}>
                   <h3>{service.title}</h3>
-                  <span className="miss-card-arrow" aria-hidden="true">→</span>
+                  <CardArrow className="miss-card-arrow" />
                 </span>
               </Link>
             ))}

@@ -3,10 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { TbArrowUpRight } from "react-icons/tb";
 import DirectorySearch, {
   type DirectorySearchOption,
 } from "@/components/DirectorySearch";
+import CardArrow, {
+  cardArrowHostClassName,
+  cardPanelClassName,
+} from "@/components/CardArrow";
 import styles from "@/app/blog/blog-index.module.css";
 
 export type BlogListingPost = {
@@ -100,17 +103,17 @@ export default function BlogExplorer({ posts }: Props) {
           <div className={styles.articleLayout}>
             <div className={styles.articleGrid}>
               <article className={styles.featuredCard}>
-                <Link href={featured.href} className={styles.cardLink}>
+                <Link href={featured.href} className={`${styles.cardLink} ${cardArrowHostClassName}`}>
                   <span className={styles.featuredImage}>
                     <ArticleImage post={featured} priority />
                     <span className={styles.featuredLabel}>Featured guide</span>
                   </span>
-                  <span className={styles.featuredCopy}>
+                  <span className={`${styles.featuredCopy} ${cardPanelClassName}`}>
                     <time dateTime={featured.publishedAt}>{featured.formattedDate}</time>
                     <h3>{featured.title}</h3>
                     <p>{featured.excerpt}</p>
                     <span className={styles.readLink}>
-                      Read article <TbArrowUpRight aria-hidden="true" />
+                      Read article <CardArrow className={styles.featuredArrow} />
                     </span>
                   </span>
                 </Link>
@@ -151,16 +154,14 @@ export default function BlogExplorer({ posts }: Props) {
 function ArticleCard({ post }: { post: BlogListingPost }) {
   return (
     <article className={styles.articleCard}>
-      <Link href={post.href} className={styles.cardLink}>
+      <Link href={post.href} className={`${styles.cardLink} ${cardArrowHostClassName}`}>
         <span className={styles.cardImage}>
           <ArticleImage post={post} />
         </span>
-        <span className={styles.cardCopy}>
+        <span className={`${styles.cardCopy} ${cardPanelClassName}`}>
           <time dateTime={post.publishedAt}>{post.formattedDate}</time>
           <h3>{post.title}</h3>
-          <span className={styles.cardArrow} aria-hidden="true">
-            <TbArrowUpRight />
-          </span>
+          <CardArrow className={styles.cardArrow} />
         </span>
       </Link>
     </article>

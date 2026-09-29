@@ -1,12 +1,11 @@
 /* Shared interaction, header and footer refinements. */
 /* Shared high-visibility quote CTA treatment */
-.quote-cta,
-.journey-card__quote-action .quote-cta {
+.quote-cta {
     position: relative;
     isolation: isolate;
     overflow: hidden;
     border-color: transparent;
-    background: linear-gradient(135deg, #087652 0%, #04563e 58%, #033f2f 100%);
+    background: var(--brand-green);
     box-shadow: 0 11px 24px rgba(7,84,59,.28), 0 0 0 0 rgba(20,126,88,.28);
     color: #fff;
     transition:
@@ -35,19 +34,9 @@
     animation: quote-cta-breathe 4.2s ease-in-out infinite;
 }
 
-.quote-cta--light {
-    border: 1px solid rgba(7,84,59,.16);
-    background: #fff;
-    box-shadow: 0 11px 25px rgba(2,44,31,.2), 0 0 0 0 rgba(255,255,255,.25);
-    color: var(--forest);
-}
-
-.quote-cta--light::after {
-    background: linear-gradient(90deg, transparent, rgba(7,84,59,.16), transparent);
-}
-
 .quote-cta:hover {
     animation-play-state: paused;
+    background: var(--brand-green-dark);
     box-shadow: 0 15px 31px rgba(7,84,59,.34), 0 0 0 5px rgba(20,126,88,.12);
     transform: translateY(-3px) scale(1.025);
 }
@@ -82,13 +71,6 @@
 }
 
 /* Shared hero review button icon. */
-.hero-action-buttons .google-maps-icon {
-  width: 26px;
-  height: 26px;
-  flex: 0 0 auto;
-  fill: none;
-  stroke: none;
-}
 
 /* Shared homepage/location hero action treatment. */
 .hero-action-buttons .quote-cta--pulse {
@@ -320,20 +302,6 @@ html {
     line-height: 1.52;
   }
 
-  .site-footer__mobile-about {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 14px;
-    padding-bottom: 3px;
-    border-bottom: 1px solid currentColor;
-    color: #07543b;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
   .footer-mobile-nav {
     display: block;
     border-top: 1px solid rgba(7, 84, 59, .12);
@@ -430,34 +398,6 @@ html {
     text-transform: uppercase;
   }
 
-  .site-footer__mobile-call {
-    min-height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 0 18px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #0a674a, #07543b);
-    box-shadow: 0 10px 22px rgba(7, 84, 59, .2);
-    color: #fff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-  }
-
-  .site-footer__mobile-call svg {
-    width: 20px;
-    height: 20px;
-    flex: 0 0 auto;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.8;
-  }
-
   .site-footer__mobile-detail {
     display: flex;
     align-items: center;
@@ -494,8 +434,7 @@ html {
     gap: 10px;
   }
 
-  .site-footer__rights,
-  .site-footer__legal-suffix {
+  .site-footer__rights {
     display: none;
   }
 }
@@ -592,16 +531,6 @@ html {
   width: 20px;
   height: 20px;
   color: #fff;
-}
-
-.social-media-links--about {
-  width: min(100%, 350px);
-  margin: 0 auto;
-}
-
-.social-media-links--about .social-platform-link {
-  min-height: 44px;
-  font-size: .8rem;
 }
 
 .social-media-links--gallery {

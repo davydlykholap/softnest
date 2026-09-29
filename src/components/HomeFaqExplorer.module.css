@@ -7,7 +7,7 @@
   --faq-sans: "Avenir Next", "Segoe UI", Arial, sans-serif;
   padding: 78px 0 82px;
   border-bottom: 1px solid rgba(7, 84, 59, 0.06);
-  background: #f5f9f7;
+  background: var(--surface-soft);
   color: var(--faq-ink);
   font-family: var(--faq-sans);
 }

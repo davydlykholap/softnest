@@ -7,7 +7,6 @@ import type { Service } from "@/content/services";
 import { absoluteUrl, organizationProvider, siteConfig } from "@/lib/site";
 import styles from "@/app/services/service-page.module.css";
 import "@/app/styles/locations-hub.css";
-import "@/app/styles/services-hub.css";
 
 export default function ServicePage({ service }: { service: Service }) {
   const serviceSchema = {

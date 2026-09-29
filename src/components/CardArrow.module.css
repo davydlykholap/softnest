@@ -1,0 +1,51 @@
+.panel {
+  border: 1px solid rgba(7, 84, 59, 0.08);
+  border-radius: 32px 32px 35px 35px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+}
+
+.arrow {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border: 1px solid #dce3df;
+  border-radius: 50%;
+  color: #07543b;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(18, 47, 36, 0.12);
+  pointer-events: none;
+  font-style: normal;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease;
+}
+
+.icon {
+  display: block;
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.host:is(:hover, :focus-visible, :focus-within) .arrow {
+  border-color: #07543b;
+  color: #fff;
+  background-color: #07543b;
+  box-shadow: 0 10px 22px rgba(7, 84, 59, 0.24);
+  transform: translate(2px, -2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow {
+    transition: none;
+  }
+}

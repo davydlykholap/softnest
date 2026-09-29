@@ -2,7 +2,6 @@ import settings from "@/content/generated/settings.json";
 
 export const siteConfig = {
   ...settings,
-  quoteLabel: "Get a Quote",
   phoneHref: `tel:${settings.phone.replace(/[^+0-9]/g, "")}`,
   emailHref: `mailto:${settings.email}`,
 };

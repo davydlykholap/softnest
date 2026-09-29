@@ -6,7 +6,7 @@
   min-height: 72vh;
   padding: 170px 0 120px;
   color: var(--about-ink);
-  background: #fff;
+  background: var(--surface-page);
   font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
 }
 

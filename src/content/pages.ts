@@ -12,12 +12,7 @@ export function pageText(copy: {key:string;text:string}[], key:string, city?:str
   const entry=copy.find(item=>item.key===key);
   if(!entry) throw new Error(`Missing page content: ${key}`);
   const values:Record<string,string>={phone:siteConfig.displayPhone,business:siteConfig.name,quote:siteConfig.quoteLabel,city:city||''};
-  return entry.text
-    .replace(/\{\{(phone|business|quote|city)\}\}/g,(_,name:string)=>values[name])
-    .replace(/Get a free quote/g, "Get a quote")
-    .replace(/get a free quote/g, "get a quote")
-    .replace(/Get Your Free Quote/g, "Get Your Quote")
-    .replace(/Request a free quote/g, "Get a Quote");
+  return entry.text.replace(/\{\{(phone|business|quote|city)\}\}/g,(_,name:string)=>values[name]);
 }
 export function getProjects(filters: { service?: string; location?: string } = {}): GalleryResult[] {
   return projects

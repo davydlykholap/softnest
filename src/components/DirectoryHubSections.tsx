@@ -1,5 +1,9 @@
 import { siteConfig } from "@/lib/site";
 import type { ReactNode } from "react";
+import CardArrow, {
+  cardArrowHostClassName,
+  cardPanelClassName,
+} from "@/components/CardArrow";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -108,7 +112,7 @@ export function DirectoryCard({
 }: DirectoryCardProps) {
   return (
     <Link
-      className={`locations-city-card ${className}`.trim()}
+      className={`locations-city-card ${cardArrowHostClassName} ${className}`.trim()}
       href={href}
       aria-label={ariaLabel}
     >
@@ -119,20 +123,10 @@ export function DirectoryCard({
         height={600}
         sizes="(max-width: 820px) 100vw, (max-width: 1100px) 50vw, 33vw"
       />
-      <div className="locations-city-card__body">
+      <div className={`locations-city-card__body ${cardPanelClassName}`}>
         <h3>{title}</h3>
         {subtitle ? <p>{subtitle}</p> : null}
-        <span className="locations-city-card__arrow" aria-hidden="true">
-          <svg
-            className="locations-city-card__arrow-icon"
-            viewBox="0 0 24 24"
-            fill="none"
-            focusable="false"
-          >
-            <path d="M7 17 17 7" />
-            <path d="M9 7h8v8" />
-          </svg>
-        </span>
+        <CardArrow className="locations-city-card__arrow" />
       </div>
     </Link>
   );

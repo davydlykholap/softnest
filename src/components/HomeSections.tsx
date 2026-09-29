@@ -1,11 +1,9 @@
 import { siteConfig } from "@/lib/site";
 import { pageText } from "@/content/pages";
 import { homeContent, getProjects } from "@/content/pages";
-import Image from "next/image";
-import Link from "next/link";
 import { homeFaqs } from "@/content/homeFaqs";
 import { getService } from "@/content/services";
-import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
+import { DirectoryCard, DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import HomeResultsCarousel from "@/components/HomeResultsCarousel";
 import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
@@ -48,25 +46,15 @@ export default function HomeSections() {
       </div>
       <div className="home-services-grid">
         {homeServices.map((service) => (
-          <Link
-            className="home-service-card"
+          <DirectoryCard
             href={`/services/${service.slug}/`}
+            image={service.image}
+            imageAlt={service.imageAlt}
+            title={service.shortName}
+            ariaLabel={`Learn about ${service.name.toLowerCase()}`}
+            className="locations-city-card--location home-service-card"
             key={service.slug}
-            aria-label={`Learn about ${service.name.toLowerCase()}`}
-          >
-            <span className="home-service-card__image">
-              <Image
-                src={service.image}
-                alt={service.imageAlt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              />
-            </span>
-            <span className="home-service-card__body">
-              <strong>{service.name}</strong>
-              <span className="home-service-card__arrow" aria-hidden="true">→</span>
-            </span>
-          </Link>
+          />
         ))}
       </div>
     </div>

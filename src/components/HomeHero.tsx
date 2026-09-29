@@ -8,15 +8,13 @@ export default function HomeHero() {
   const googleProfileUrl = siteConfig.googleProfileUrl;
 
   const existingReviewerNames = new Set(
-    homeContent.heroReviews.map((review) =>
-      review.name.trim().split(/\s+/)[0].toLowerCase(),
-    ),
+    homeContent.heroReviews.map((review) => review.name.trim().toLowerCase()),
   );
   const additionalReviews = getTestimonials()
     .filter(
       (review) =>
         !existingReviewerNames.has(
-          review.name.trim().split(/\s+/)[0].toLowerCase(),
+          review.name.trim().toLowerCase(),
         ),
     )
     .map((review) => ({

@@ -5,10 +5,7 @@
   --journal-muted: #56645d;
   min-height: 100vh;
   color: var(--journal-ink);
-  background:
-    radial-gradient(circle at 4% 45%, rgba(217, 230, 222, 0.45), transparent 26rem),
-    radial-gradient(circle at 96% 82%, rgba(224, 235, 227, 0.55), transparent 30rem),
-    #f9fbf9;
+  background: var(--surface-page);
 }
 
 :global(.locations-hub-v2).indexMain {
@@ -156,6 +153,14 @@
 }
 
 .featuredCopy {
+  position: relative;
+  z-index: 2;
+  margin-top: -20px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  width: calc(100% + 2px);
+  border-radius: 32px 32px 39px 27px;
   padding: 22px 28px 24px;
 }
 
@@ -196,21 +201,14 @@
 .readLink {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   color: var(--journal-green);
   font-size: 12px;
   font-weight: 750;
 }
 
-.readLink svg {
-  width: 17px;
-  height: 17px;
-  transition: transform 180ms ease;
-}
-
-.featuredCard:hover .readLink svg,
-.featuredCard:focus-within .readLink svg {
-  transform: translate(2px, -2px);
+.featuredArrow {
+  position: static;
 }
 
 .cardGrid {
@@ -227,6 +225,13 @@
 
 .cardCopy {
   position: relative;
+  z-index: 2;
+  margin-top: -20px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  width: calc(100% + 2px);
+  border-radius: 24px 24px 27px 21px;
   min-height: 154px;
   padding: 20px 47px 22px 21px;
 }
@@ -244,24 +249,6 @@
   position: absolute;
   right: 18px;
   bottom: 19px;
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--journal-green);
-  background: #edf4ef;
-}
-
-.cardArrow svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 180ms ease;
-}
-
-.articleCard:hover .cardArrow svg,
-.articleCard:focus-within .cardArrow svg {
-  transform: translate(2px, -2px);
 }
 
 .emptyState {
@@ -336,6 +323,12 @@
     min-height: 390px;
     aspect-ratio: auto;
   }
+
+  .featuredCopy {
+    margin-top: 0;
+    margin-left: -20px;
+    width: calc(100% + 21px);
+  }
 }
 
 @media (max-width: 760px) {
@@ -369,6 +362,9 @@
   }
 
   .featuredCopy {
+    margin-top: -20px;
+    margin-left: -1px;
+    width: calc(100% + 2px);
     padding: 24px 22px 27px;
   }
 
@@ -405,7 +401,12 @@
   }
 
   .cardCopy {
+    margin: 0;
+    width: auto;
     min-height: 174px;
+    border: 0;
+    border-radius: 0;
+    backdrop-filter: none;
     padding: 18px 38px 19px 17px;
   }
 
@@ -436,7 +437,7 @@
   .featuredImage img,
   .cardImage img,
   .readLink svg,
-  .cardArrow svg {
+  .cardArrow {
     transition: none;
   }
 }

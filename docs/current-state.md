@@ -1,79 +1,70 @@
 # SoftNest modernization status
 
-Last updated: 2026-09-11
+Last updated: 2026-09-29
 
-This file is the handoff point for the current website/CMS modernization. Read it together with `project-guide.md` and `sanity-setup.md` before continuing migration work.
+This is the handoff point for the current website/CMS architecture. Read it with `project-guide.md` and `sanity-setup.md` before making structural content or deployment changes.
 
-## Completed in source
+## Current architecture
 
-- Next.js remains the public static-export website.
-- Sanity Studio is included in `studio/` and is the intended source of truth for public editable content.
-- Public business settings, services, service areas, FAQs, approved testimonials, approved cleaning results, quote-form categories, homepage/About copy and blog posts have a structured Sanity model.
-- The website consumes one validated generated content snapshot through `src/content` selectors.
-- Blog data now follows the same `src/content` boundary as the rest of the website rather than reading generated JSON from Sanity/UI modules directly.
-- Three prepared blog articles are represented in `content/migration/article-seed.json`; the stain-removal article includes five prepared body images.
-- Service-area coverage is separate from page publication, search indexing and footer visibility.
-- All published city pages use the reusable expanded-location presentation. Mississauga supplies richer page-specific content, while the remaining cities use their existing local content with shared service, process and value-section fallbacks.
-- Business URLs/phone/social details are centralized rather than repeated through normal page components.
-- Quote submission transport is isolated in `src/domain/quote.ts` so a later lead database can replace Web3Forms without rewriting the form UI.
-- SEO URL, metadata and structured-data helpers are centralized under `src/seo`.
-- Supabase is deliberately planned but not connected. See `supabase-plan.md`.
-- Sanity Studio navigation is organized by Website, Services & areas, Proof & answers, and Journal.
-- Page-copy rows have recognizable previews while their internal template keys remain fixed.
-- Studio hides/clarifies controls that are derived elsewhere, including service-area coverage in Business settings.
-- Website preview supports local draft preview and a configurable published-site URL.
-- Confirmed unreferenced legacy React components have been removed.
-- Clean-check ordering is reproducible: development, lint and production checks generate/validate the Sanity content snapshot before code that imports it is evaluated.
+- Next.js 16 + React 19 + strict TypeScript power the public website.
+- Production is currently a static export deployed through GitHub Pages.
+- Sanity Studio in `studio/` is the source of truth for public editable content.
+- The build reads Sanity once, validates the complete published dataset, and writes a generated snapshot under `src/content/generated/`.
+- UI code consumes content through `src/content` selectors instead of issuing independent Sanity queries.
+- The published catalog currently contains 10 services, 9 service areas, and 11 blog articles.
+- Blog posts now come exclusively from the generated Sanity snapshot; the former local-post runtime fallback has been removed.
+- Service and location pages use shared templates rather than separate page implementations.
+- Quote submission transport remains isolated in `src/domain/quote.ts` so lead storage can be replaced later without rebuilding the form UI.
+- SEO URL, metadata, sitemap, robots, breadcrumb, and structured-data helpers live under `src/seo`.
+
+## Content ownership rules
+
+Sanity owns public business settings, services, service areas, FAQs, testimonials, cleaning results, quote categories, page copy, and blog posts.
+
+React owns layout, rendering, interaction, reusable components, and presentation logic. Avoid adding runtime text rewrites that silently change Sanity values. If public wording is wrong, correct the published Sanity record and keep the migration seed aligned.
+
+Business settings are exposed through `src/lib/site.ts`; components should not duplicate phone, email, social URLs, or quote labels.
 
 ## Content safeguards
 
-`npm run content:verify` validates the migration/content contract. It currently checks, among other things:
+`npm run content:verify` validates the migration/content contract, including:
 
-- exactly expected migrated catalogs and the three prepared articles;
-- public Sanity document IDs/references never use dotted private paths;
-- preservation of the original article prose;
-- duplicate service/location/article slugs;
-- broken references;
-- required article image alt text;
+- expected service, location, and article catalogs;
+- public Sanity IDs and references;
+- duplicate service, location, and article slugs;
+- broken relationships;
+- required article body content and image alternative text;
 - approval gating for testimonials and cleaning results;
 - required and unique page-template copy keys;
-- location page/index/footer publishing consistency;
+- service-area publication/index/footer consistency;
 - prevention of a public landing page for an area marked not served.
 
-## Live Sanity migration status
+Archived `content/articles/<slug>/article.txt` files are fidelity references when present. Newer articles can live only in Sanity; the migration test validates their body without requiring a duplicate text archive.
 
-The initial 57-record import was completed on 2026-09-07. A Sanity-specific ID issue was then discovered: the first snapshot used dotted IDs such as `service.sofa-cleaning` and `pageContent.home`. Sanity treats dotted document IDs as private paths, so the unauthenticated static-site content read could not see them.
+## Sanity migration state
 
-The source snapshot now uses public hyphenated IDs such as `service-sofa-cleaning`, `location-mississauga` and `page-content-home`. The production dataset repair was completed successfully on 2026-09-07: 56 public records were created, anonymous website reads were verified, and 56 legacy dotted/private records were removed after backup.
+The original dotted/private document IDs were repaired on 2026-09-07. Public content uses root IDs such as `service-sofa-cleaning`, `location-mississauga`, and `page-content-home` so anonymous production reads work correctly.
 
-`npm run content:types` and `npm run studio:check` pass. The live Sanity-backed website build also passes content sync, all 12 content-contract tests, Next.js compilation/TypeScript/static generation, and export verification.
+On 2026-09-29, the two previously local-only articles were confirmed as published Sanity records and the generated snapshot was refreshed to include all 11 articles. Their local runtime fallback is no longer required.
 
-For a brand-new dataset, the normal first-import path remains `npm run content:import:check` followed by `npm run content:import`; the corrected migration snapshot now creates public IDs from the start.
+Also on 2026-09-29, published quote wording and upholstery drying-time copy were reconciled in Sanity so the frontend no longer needs hidden string replacements. A pre-change Sanity backup was saved under `content/backups/`.
 
-## Publishing automation still needs live verification
+## Development and verification
 
-Source support exists for Sanity published-content changes to trigger the GitHub Pages deployment workflow. Before relying on it:
+Use `npm run check` before treating structural work as complete. It performs content sync, ESLint, content-contract tests, focused Playwright tests, the Next.js production build, static-export preparation, and exported-route verification.
 
-1. Confirm the required GitHub repository variables described in `.env.example`/`sanity-setup.md`.
-2. Configure the Sanity webhook using `scripts/content/configure-webhook.mjs` and appropriately scoped tokens.
-3. Publish a harmless test edit.
-4. Confirm the GitHub deployment starts, passes content validation/build/export checks and updates the public page.
-5. Confirm an intentionally invalid draft does not affect the public website.
+The migration seed under `content/migration/` is a recovery/bootstrap snapshot, not an alternate runtime CMS. Keep it compatible with the published dataset when adding durable content records.
 
-Until this is verified, publishing in Sanity and deploying the website are still two operational steps.
+Line endings are standardized through `.gitattributes` so text files use LF across development and CI, while Windows batch/cmd files retain CRLF.
 
-## Blog milestone
+## Publishing automation
 
-The three intended article URLs are:
+Source support exists for published Sanity changes to trigger the GitHub Pages deployment workflow. Before relying on it operationally, verify the repository variables, webhook configuration, a harmless publish-triggered deployment, and that draft-only edits never affect production.
 
-- `/blog/what-cleaning-solution-can-i-use-on-my-couch/`
-- `/blog/how-to-remove-stain-from-couch/`
-- `/blog/why-did-my-couch-stain-come-back-after-cleaning/`
+Until that path has been verified end to end, publishing content and deploying the website should be treated as separate operational steps.
 
-All three articles received a professional plain-English editorial rewrite on 2026-09-11. The revisions reduce repetition, use semantic lists and heading hierarchy, separate the search intent of each guide, and remove chat-export text that was accidentally present in the cleaning-solution source. The revised published records are live in Sanity and mirrored in the prepared local article records. A pre-revision Sanity backup was saved locally before publishing.
+## Supabase — intentionally later
 
-Subsequent editorial changes should happen in Sanity. If a deliberate future rewrite also needs to refresh the migration snapshot, keep the published record and local article record synchronized and run the complete content checks.
+Do not add an unused Supabase SDK or empty database connection. The first worthwhile database feature remains private enquiry/job tracking with statuses such as New → Contacted → Quoted → Booked → Completed/Closed.
 
-## Supabase milestone — intentionally later
-
-Do not add an unused Supabase SDK or empty database connection. The first worthwhile Supabase feature remains structured enquiry tracking with statuses such as New → Contacted → Quoted → Booked → Completed/Closed. Customer/private operational records must stay out of the public Sanity dataset.
+Private customer and operational records must stay out of the public Sanity dataset.

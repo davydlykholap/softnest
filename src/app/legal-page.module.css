@@ -1,7 +1,7 @@
 .page {
   padding: 146px 24px 90px;
   color: #17231e;
-  background: #f7faf8;
+  background: var(--surface-page);
   font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
 }
 
@@ -70,7 +70,7 @@
   margin-top: 44px;
   padding: 20px 22px;
   border-radius: 18px;
-  background: #f0f6f2;
+  background: var(--surface-soft);
 }
 
 @media (max-width: 640px) {

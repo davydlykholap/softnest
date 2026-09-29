@@ -166,11 +166,15 @@ export default function QuotePageForm() {
     const name = String(formData.get("name") ?? "").trim();
     const notes = String(formData.get("notes") ?? "").trim();
     const phoneDigits = phone.replace(/\D/g, "");
+    const localPhoneDigits =
+      phoneDigits.length === 11 && phoneDigits.startsWith("1")
+        ? phoneDigits.slice(1)
+        : phoneDigits;
     if (name.length < 2 || name.length > 80) {
       setError("Please enter your name.");
       return;
     }
-    if (phoneDigits.length !== 10) {
+    if (localPhoneDigits.length !== 10) {
       setError("Please enter a valid 10-digit phone number.");
       return;
     }

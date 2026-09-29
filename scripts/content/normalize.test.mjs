@@ -28,11 +28,11 @@ test("migration IDs and references stay publicly readable", () => {
   assert.deepEqual(dotted, []);
 });
 
-test("complete migration preserves catalogs and all eight complete articles", () => {
+test("complete migration preserves catalogs and all published articles", () => {
   const content = normalizeContent(seed(), config);
   assert.equal(content.services.length, 10);
   assert.equal(content.locations.length, 9);
-  assert.equal(content.posts.length, 8);
+  assert.equal(content.posts.length, 11);
 
   const first = content.posts.find(
     (post) => post.slug === "how-to-remove-stain-from-couch",
@@ -48,8 +48,11 @@ test("complete migration preserves catalogs and all eight complete articles", ()
   assert.equal(third.body.filter((block) => block._type === "image").length, 0);
 
   for (const post of content.posts) {
-    const source = fs
-      .readFileSync(`content/articles/${post.slug}/article.txt`, "utf8")
+    assert(post.body.length > 0);
+    const sourcePath = `content/articles/${post.slug}/article.txt`;
+    if (!fs.existsSync(sourcePath)) continue;
+    const archivedSource = fs
+      .readFileSync(sourcePath, "utf8")
       .replace(/\s+/g, " ")
       .trim();
     const rendered = post.body
@@ -58,7 +61,7 @@ test("complete migration preserves catalogs and all eight complete articles", ()
       .join(" ")
       .replace(/\s+/g, " ")
       .trim();
-    assert.equal(rendered, source);
+    assert.equal(rendered, archivedSource);
   }
 });
 

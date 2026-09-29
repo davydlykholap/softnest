@@ -7,7 +7,6 @@ import { siteConfig } from "@/lib/site";
 import "./globals.css";
 import "./styles/gallery.css";
 import "./styles/global-controls.css";
-import "./styles/reviews-carousel.css";
 import "./styles/shared-refinements.css";
 import "./hero-cta.css";
 
@@ -53,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
-      <body className="bg-creamLight text-woodCharcoal font-sans antialiased m-0 flex flex-col min-h-screen">
+      <body className="bg-white text-woodCharcoal font-sans antialiased m-0 flex flex-col min-h-screen">
         <MarketingAttribution />
         <AnalyticsEvents />
         {children}

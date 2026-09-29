@@ -7,7 +7,7 @@
     "url": "https://softnestcare.ca",
     "phone": "+1-416-727-0287",
     "displayPhone": "(416) 727-0287",
-    "email": "softnest.upholstery@outlook.com",
+    "email": "softnestfabriccare@gmail.com",
     "logo": "https://softnestcare.ca/img/logo/logo1.webp",
     "heroImage": "https://softnestcare.ca/images/softnest-hero-room.webp",
     "areasServed": [
@@ -92,7 +92,7 @@
         "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
       }
     ],
-    "drying": "Many upholstery items dry in approximately two to four hours. Fabric type, humidity, airflow, cushion density and soil level can change the timing.",
+    "drying": "Many upholstery items dry in approximately six to eight hours. Fabric type, humidity, airflow, cushion density and soil level can change the timing.",
     "limitations": "Age, permanent dye loss, fibre damage, wear, heat damage and previous cleaning products can limit improvement. We explain realistic expectations before work begins.",
     "faq": [
       {
@@ -187,7 +187,7 @@
         "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
       }
     ],
-    "drying": "Most sofas dry in roughly two to four hours under normal indoor conditions, although dense cushions and humid rooms may take longer.",
+    "drying": "Most sofas dry in roughly six to eight hours under normal indoor conditions, although dense cushions and humid rooms may take longer.",
     "limitations": "Permanent fading, worn fabric, dye loss and old chemical damage cannot be reversed through cleaning. Some deeply set stains may improve without disappearing completely.",
     "faq": [
       {
@@ -388,7 +388,7 @@
         "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
       }
     ],
-    "drying": "Sectionals commonly require two to four hours to dry, with thicker cushions or limited airflow sometimes extending the drying period.",
+    "drying": "Sectionals commonly require six to eight hours to dry, with thicker cushions or limited airflow sometimes extending the drying period.",
     "limitations": "Wear patterns, permanent discoloration, damaged fibres and old stains may remain visible after the removable soil has been cleaned.",
     "faq": [
       {
@@ -764,7 +764,7 @@
         "description": "Air movers are used to support faster drying, followed by a walkthrough and practical after-care guidance."
       }
     ],
-    "drying": "Most armchairs and recliners dry in approximately two to four hours, depending on cushion thickness, fabric and airflow.",
+    "drying": "Most armchairs and recliners dry in approximately six to eight hours, depending on cushion thickness, fabric and airflow.",
     "limitations": "Mechanical damage, worn finishes, permanent dye loss and fabric abrasion cannot be corrected through cleaning.",
     "faq": [
       {
@@ -1025,7 +1025,7 @@
       },
       {
         "question": "How long does upholstery take to dry?",
-        "answer": "Most upholstery dries in roughly two to four hours, although fabric type, airflow, humidity and soil level can change the timing."
+        "answer": "Most upholstery dries in roughly six to eight hours, although fabric type, airflow, humidity and soil level can change the timing."
       }
     ],
     "order": 0,
@@ -1214,7 +1214,7 @@
         },
         {
           "question": "How long does upholstery take to dry?",
-          "answer": "Many upholstery items dry in roughly two to four hours, although fabric type, airflow, humidity and soil level affect the timing. Professional drying with our air movers is included."
+          "answer": "Many upholstery items dry in roughly six to eight hours, although fabric type, airflow, humidity and soil level affect the timing. Professional drying with our air movers is included."
         },
         {
           "question": "Can carpet and upholstery be cleaned in one appointment?",
@@ -2106,7 +2106,7 @@
     "_id": "faq-home-4",
     "_type": "faq",
     "question": "How long does it take for upholstery to dry?",
-    "answer": "Most sofas take one to two hours to clean and usually dry within two to four hours, depending on the fabric, airflow and soil level.",
+    "answer": "Most sofas take one to two hours to clean and usually dry within six to eight hours, depending on the fabric, airflow and soil level.",
     "order": 3,
     "onHomepage": true
   },

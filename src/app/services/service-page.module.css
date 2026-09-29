@@ -1,7 +1,7 @@
 .servicePage {
   overflow: clip;
   padding: 132px 0 1px;
-  background: #fff;
+  background: var(--surface-page);
   color: #17231e;
   font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
 }
@@ -43,73 +43,13 @@
   text-transform: uppercase;
 }
 
-.serviceLayout {
-  display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(32px, 4.5vw, 76px);
-  width: min(1380px, calc(100% - 96px));
-  margin: 0 auto 100px;
-}
-
 .standaloneLayout {
   width: min(1180px, calc(100% - 96px));
   margin: 0 auto 100px;
 }
 
-.serviceLayout,
 .standaloneLayout {
   scroll-margin-top: 115px;
-}
-
-.serviceSidebar {
-  position: sticky;
-  top: 116px;
-  min-width: 0;
-  padding-top: 26px;
-}
-
-.serviceSidebar h1,
-.serviceSidebar h2 {
-  margin-bottom: 26px;
-  color: #073e2e;
-  font-size: 31px;
-  line-height: 1.08;
-}
-
-.serviceNav {
-  display: grid;
-  gap: 7px;
-}
-
-.serviceNav a {
-  display: block;
-  min-width: 0;
-  padding: 15px 16px;
-  border: 1px solid transparent;
-  border-radius: 12px;
-  color: #355348;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.35;
-  transition: background .2s, border-color .2s, color .2s;
-}
-
-.serviceNav a:hover,
-.serviceNav a:focus-visible {
-  border-color: #d7e7de;
-  background: #f1f7f3;
-}
-
-.serviceNav a[aria-current] {
-  background: #07543b;
-  color: #fff;
-  box-shadow: 0 10px 22px rgba(7, 84, 59, .13);
-}
-
-.serviceNav a:focus-visible {
-  outline: 2px solid #07543b;
-  outline-offset: 2px;
 }
 
 .serviceContent {
@@ -165,51 +105,105 @@
 
 .serviceSection h2,
 .serviceSection h3,
-.bookingDetails h2,
-.bookingDetails h3 {
+.expectationsSection h2,
+.expectationsSection h3 {
   margin-bottom: 26px;
   color: #074530;
   font-size: clamp(35px, 3.25vw, 48px);
   line-height: 1.06;
 }
 
-.scopeSection {
-  margin-bottom: 76px;
-}
-
-.includedList {
+.editorialSection {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 32px;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid #dce7e0;
-  list-style: none;
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  gap: 42px clamp(48px, 6vw, 90px);
+  margin-bottom: 84px;
 }
 
-.includedList li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  min-height: 65px;
-  padding: 16px 2px;
-  border-bottom: 1px solid #dce7e0;
-  color: #284335;
-  font-size: 14px;
-  font-weight: 650;
-  line-height: 1.45;
+.editorialIntro h2,
+.editorialIntro h3 {
+  max-width: 500px;
+  margin-bottom: 22px;
 }
 
-.includedList svg {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
-  margin-top: 1px;
-  fill: none;
-  stroke: #07543b;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.editorialLead {
+  max-width: 500px;
+  margin-bottom: 0;
+  color: #43584d;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: clamp(20px, 1.65vw, 25px);
+  letter-spacing: -.018em;
+  line-height: 1.48;
+}
+
+.editorialBody {
+  padding-top: 3px;
+  border-top: 1px solid #d7e4dc;
+}
+
+.editorialBody article {
+  padding: 28px 4px 30px;
+}
+
+.editorialBody article + article {
+  border-top: 1px solid #d7e4dc;
+}
+
+.editorialBody h3,
+.editorialBody h4,
+.examplesNote h3,
+.examplesNote h4,
+.expectationsCopy h3,
+.expectationsCopy h4 {
+  margin-bottom: 12px;
+  color: #0a4632;
+  font-size: 27px;
+  line-height: 1.15;
+}
+
+.editorialBody p,
+.examplesNote > p:last-child,
+.expectationsHeading > p:last-child,
+.expectationsCopy p {
+  margin-bottom: 0;
+  color: #52655a;
+  font-size: 15px;
+  line-height: 1.78;
+}
+
+.editorialBody p + p {
+  margin-top: 14px;
+}
+
+.examplesNote {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(230px, .62fr) minmax(0, 1.38fr);
+  column-gap: clamp(36px, 5vw, 70px);
+  align-items: start;
+  padding: 34px 38px 36px;
+  border: 1px solid var(--surface-line);
+  border-radius: 30px 30px 48px 30px;
+  background: var(--surface-page);
+}
+
+.examplesNote .eyebrow {
+  grid-column: 1;
+  margin-bottom: 9px;
+}
+
+.examplesNote h3,
+.examplesNote h4 {
+  grid-column: 1;
+  margin-bottom: 0;
+}
+
+.examplesNote > p:last-child {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  padding-top: 2px;
+  color: #40564a;
+  font-size: 16px;
 }
 
 .resultFeature {
@@ -233,7 +227,7 @@
   bottom: 12px;
   left: 45%;
   border-radius: 52px 0 0 52px;
-  background: #f1f7f3;
+  background: var(--surface-soft);
 }
 
 .resultFeatureCopy {
@@ -391,8 +385,9 @@
 .proofSection {
   margin-bottom: 76px;
   padding: 42px;
+  border: 1px solid var(--surface-line);
   border-radius: 28px;
-  background: #f3f8f5;
+  background: var(--surface-page);
 }
 
 .proofInner {
@@ -433,39 +428,38 @@
   font-weight: 700;
 }
 
-.bookingDetails {
+.expectationsSection {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 34px;
-  margin-bottom: 76px;
-  padding: 38px;
-  border-radius: 27px;
-  background: #f2f7f4;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(40px, 6vw, 88px);
+  margin-bottom: 84px;
+  padding: 46px clamp(36px, 5vw, 64px) 48px;
+  border-radius: 34px 34px 58px 34px;
+  background: var(--surface-soft);
 }
 
-.bookingDetails > .eyebrow,
-.bookingDetails > h2,
-.bookingDetails > h3 {
-  grid-column: 1 / -1;
+.expectationsHeading h2,
+.expectationsHeading h3 {
+  margin-bottom: 20px;
 }
 
-.bookingDetails > div {
-  padding-top: 21px;
+.expectationsHeading > p:last-child {
+  color: #40564a;
+  font-size: 16px;
+}
+
+.expectationsCopy > div {
+  padding: 24px 0 26px;
   border-top: 1px solid #d5e4da;
 }
 
-.bookingDetails > div h3,
-.bookingDetails > div h4 {
-  margin-bottom: 9px;
-  color: #0a4632;
-  font-size: 23px;
+.expectationsCopy > div:last-child {
+  padding-bottom: 0;
 }
 
-.bookingDetails div p {
-  margin-bottom: 0;
-  color: #52655a;
-  font-size: 14px;
-  line-height: 1.68;
+.expectationsCopy h3,
+.expectationsCopy h4 {
+  font-size: 25px;
 }
 
 .faqSection {
@@ -486,11 +480,6 @@
 }
 
 @media (max-width: 1150px) {
-  .serviceLayout {
-    grid-template-columns: 205px minmax(0, 1fr);
-    gap: 28px;
-    width: calc(100% - 48px);
-  }
 
   .standaloneLayout {
     width: calc(100% - 48px);
@@ -545,56 +534,9 @@
     padding-top: 100px;
   }
 
-  .serviceLayout {
-    display: block;
-    width: min(580px, calc(100% - 24px));
-    margin-bottom: 65px;
-  }
-
   .standaloneLayout {
     width: min(580px, calc(100% - 24px));
     margin-bottom: 65px;
-  }
-
-  .serviceSidebar {
-    position: static;
-    padding: 0 6px;
-    margin-bottom: 28px;
-  }
-
-  .serviceSidebar .eyebrow {
-    margin-bottom: 3px;
-  }
-
-  .serviceSidebar h1,
-  .serviceSidebar h2 {
-    margin-bottom: 14px;
-    font-size: 27px;
-  }
-
-  .serviceNav {
-    display: flex;
-    gap: 7px;
-    margin-right: -6px;
-    padding: 0 6px 10px 0;
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
-  }
-
-  .serviceNav a {
-    flex: 0 0 auto;
-    max-width: 220px;
-    padding: 11px 13px;
-    border-color: #dce7e0;
-    border-radius: 11px;
-    background: #fff;
-    font-size: 12px;
-    scroll-snap-align: start;
-  }
-
-  .serviceNav a[aria-current] {
-    border-color: #07543b;
   }
 
   .serviceHero {
@@ -626,16 +568,16 @@
 
   .serviceSection h2,
   .serviceSection h3,
-  .bookingDetails h2,
-  .bookingDetails h3 {
+  .expectationsSection h2,
+  .expectationsSection h3 {
     margin-bottom: 18px;
     font-size: clamp(30px, 7vw, 39px);
   }
 
-  .scopeSection,
+  .editorialSection,
   .proofSection,
   .resultFeature,
-  .bookingDetails {
+  .expectationsSection {
     margin-bottom: 55px;
   }
 
@@ -706,13 +648,41 @@
     height: 23px;
   }
 
-  .includedList {
-    grid-template-columns: 1fr;
+  .editorialSection {
+    display: block;
   }
 
-  .includedList li {
-    min-height: 0;
-    padding: 13px 3px;
+  .editorialIntro {
+    margin-bottom: 34px;
+  }
+
+  .editorialLead {
+    font-size: 20px;
+  }
+
+  .editorialBody article {
+    padding: 23px 2px 25px;
+  }
+
+  .editorialBody h3,
+  .editorialBody h4,
+  .examplesNote h3,
+  .examplesNote h4,
+  .expectationsCopy h3,
+  .expectationsCopy h4 {
+    font-size: 24px;
+  }
+
+  .examplesNote {
+    display: block;
+    margin-top: 28px;
+    padding: 27px 24px 29px;
+    border-radius: 25px 25px 38px 25px;
+  }
+
+  .examplesNote h3,
+  .examplesNote h4 {
+    margin-bottom: 13px;
   }
 
   .proofSection {
@@ -724,17 +694,18 @@
     gap: 16px;
   }
 
-  .bookingDetails {
+  .expectationsSection {
     display: block;
-    padding: 27px 24px 7px;
+    padding: 30px 24px 10px;
+    border-radius: 28px 28px 42px 28px;
   }
 
-  .bookingDetails > div {
-    padding: 18px 0 20px;
+  .expectationsHeading {
+    margin-bottom: 27px;
   }
 
-  .bookingDetails > div + div {
-    margin-top: 0;
+  .expectationsCopy > div {
+    padding: 20px 0 22px;
   }
 
   .faqSection {
