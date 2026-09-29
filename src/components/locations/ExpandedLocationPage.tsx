@@ -73,6 +73,7 @@ export default function ExpandedLocationPage({
 
     return {
       ...service,
+      cardTitle: canonicalService?.shortName ?? service.title,
       image: canonicalService?.image ?? service.image,
       alt: canonicalService?.imageAlt ?? service.alt,
     };
@@ -153,8 +154,8 @@ export default function ExpandedLocationPage({
               <Link
                 className={cardArrowHostClassName}
                 href={`/services/${service.slug}/`}
-                key={service.title}
-                aria-label={`Learn about ${service.title.toLowerCase()}`}
+                key={service.slug}
+                aria-label={`Learn about ${service.cardTitle.toLowerCase()}`}
               >
                 <span className="miss-service-grid__image">
                   <Image
@@ -165,7 +166,7 @@ export default function ExpandedLocationPage({
                   />
                 </span>
                 <span className={`miss-service-grid__body ${cardPanelClassName}`}>
-                  <h3>{service.title}</h3>
+                  <h3>{service.cardTitle}</h3>
                   <CardArrow className="miss-card-arrow" />
                 </span>
               </Link>
