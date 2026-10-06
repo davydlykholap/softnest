@@ -51,6 +51,12 @@ jobs:
           NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION: ${{ vars.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION }}
           NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ vars.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY }}
 
+      - name: Install Chromium for browser checks
+        run: npx playwright install --with-deps chromium
+
+      - name: Run browser smoke and accessibility checks
+        run: npm run test:e2e:built
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 

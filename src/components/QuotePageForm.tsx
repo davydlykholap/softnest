@@ -18,8 +18,11 @@ import { attributionStorageKey } from "@/lib/marketingAttribution";
 import { QuoteOptionCard } from "@/components/quote/QuoteOptionCard";
 import { QuoteContactFields } from "@/components/quote/QuoteContactFields";
 import { serviceOptions } from "@/components/quote/quoteOptions";
-import { isPlusChoice } from "@/components/quote/quoteAnswers";
-import { buildQuoteSubmission, validateQuoteItems } from "@/components/quote/quoteRequest";
+import {
+  buildQuoteSubmission,
+  validateQuoteItems,
+  type QuoteEntry,
+} from "@/components/quote/quoteRequest";
 
 const instagramUrl = siteConfig.instagramUrl;
 const facebookUrl = siteConfig.facebookUrl;
@@ -38,62 +41,71 @@ export default function QuotePageForm() {
     selected: [] as string[],
     activeDetailId: "",
   });
-  const [quickDetails, setQuickDetails] = useState<Record<string, string>>({});
-  const [exactQuantities, setExactQuantities] = useState<Record<string, string>>({});
+  const [quoteItems, setQuoteItems] = useState<Record<string, QuoteEntry[]>>({});
   const [businessAmounts, setBusinessAmounts] = useState<Record<string, string>>({});
+  const nextEntryNumber = useRef(1);
   const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
   const openedAt = useRef(0);
   const submissionInFlight = useRef(false);
+  const collapseCleanupTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   const selectedSet = useMemo(() => new Set(selected), [selected]);
   const selectedOptions = useMemo(
     () => serviceOptions.filter((option) => selectedSet.has(option.id)),
     [selectedSet],
   );
+  const createEntry = useCallback((): QuoteEntry => ({
+    id: `quote-entry-${nextEntryNumber.current++}`,
+    answers: {},
+    exactQuantities: {},
+  }), []);
+
   const toggleOption = useCallback((id: string) => {
     setError("");
-    setSelectionState((current) => {
-      if (!current.selected.includes(id)) {
-        return { selected: [...current.selected, id], activeDetailId: id };
-      }
-      return {
-        selected: current.selected.filter((item) => item !== id),
-        activeDetailId: "",
-      };
-    });
-    const option = serviceOptions.find((item) => item.id === id);
-    if (selectedSet.has(id) && option) {
-      setQuickDetails((current) => {
-        const next = { ...current };
-        for (const question of option.presentation.quickQuestions ?? []) {
-          delete next[question.name];
-        }
-        return next;
-      });
-      setExactQuantities((current) => {
-        const next = { ...current };
-        for (const question of option.presentation.quickQuestions ?? []) {
-          delete next[question.name];
-        }
-        return next;
-      });
-      setBusinessAmounts((current) => {
-        const next = { ...current };
-        delete next[id];
-        return next;
-      });
+    const existingCleanup = collapseCleanupTimers.current[id];
+    if (existingCleanup) {
+      clearTimeout(existingCleanup);
+      delete collapseCleanupTimers.current[id];
     }
-  }, [selectedSet]);
 
-  const ensureSelected = useCallback((id: string) => {
-    setError("");
-    setSelectionState((current) => ({
-      selected: current.selected.includes(id) ? current.selected : [...current.selected, id],
-      activeDetailId: id,
-    }));
-  }, []);
+    const isSelected = selectedSet.has(id);
+    const willDeselect = isSelected && activeDetailId === id;
+
+    setSelectionState((current) => {
+      if (current.selected.includes(id)) {
+        if (current.activeDetailId !== id) {
+          return { ...current, activeDetailId: id };
+        }
+        return {
+          selected: current.selected.filter((item) => item !== id),
+          activeDetailId: "",
+        };
+      }
+      return { selected: [...current.selected, id], activeDetailId: id };
+    });
+
+    if (!isSelected) {
+      setQuoteItems((current) => current[id]?.length
+        ? current
+        : { ...current, [id]: [createEntry()] });
+    } else if (willDeselect) {
+      collapseCleanupTimers.current[id] = setTimeout(() => {
+        setQuoteItems((current) => {
+          const next = { ...current };
+          delete next[id];
+          return next;
+        });
+        setBusinessAmounts((current) => {
+          const next = { ...current };
+          delete next[id];
+          return next;
+        });
+        delete collapseCleanupTimers.current[id];
+      }, 340);
+    }
+  }, [activeDetailId, createEntry, selectedSet]);
 
   const activateOption = useCallback((id: string) => {
     setSelectionState((current) => ({ ...current, activeDetailId: id }));
@@ -105,22 +117,36 @@ export default function QuotePageForm() {
       : current);
   }, []);
 
-  const updateQuickDetail = useCallback((name: string, value: string) => {
-    if (!isPlusChoice(value)) {
-      setExactQuantities((current) => {
-        if (!(name in current)) return current;
-        const next = { ...current };
-        delete next[name];
-        return next;
-      });
-    }
-    setQuickDetails((current) =>
-      current[name] === value ? current : { ...current, [name]: value },
-    );
+  const addEntry = useCallback((id: string) => {
+    setQuoteItems((current) => ({
+      ...current,
+      [id]: [...(current[id] ?? []), createEntry()],
+    }));
+  }, [createEntry]);
+
+  const removeEntry = useCallback((id: string, entryId: string) => {
+    setQuoteItems((current) => ({
+      ...current,
+      [id]: (current[id] ?? []).filter((entry) => entry.id !== entryId),
+    }));
   }, []);
 
-  const updateExactQuantity = useCallback((name: string, value: string) => {
-    setExactQuantities((current) => ({ ...current, [name]: value }));
+  const updateEntryAnswer = useCallback((id: string, entryId: string, name: string, value: string) => {
+    setQuoteItems((current) => ({
+      ...current,
+      [id]: (current[id] ?? []).map((entry) => entry.id === entryId
+        ? { ...entry, answers: { ...entry.answers, [name]: value } }
+        : entry),
+    }));
+  }, []);
+
+  const updateEntryExactQuantity = useCallback((id: string, entryId: string, name: string, value: string) => {
+    setQuoteItems((current) => ({
+      ...current,
+      [id]: (current[id] ?? []).map((entry) => entry.id === entryId
+        ? { ...entry, exactQuantities: { ...entry.exactQuantities, [name]: value } }
+        : entry),
+    }));
   }, []);
 
   const updateBusinessAmount = useCallback((id: string, value: string) => {
@@ -128,16 +154,21 @@ export default function QuotePageForm() {
   }, []);
 
   const changeCustomerType = useCallback((nextType: "Individual" | "Business") => {
+    Object.values(collapseCleanupTimers.current).forEach(clearTimeout);
+    collapseCleanupTimers.current = {};
     setCustomerType(nextType);
     setSelectionState({ selected: [], activeDetailId: "" });
-    setQuickDetails({});
-    setExactQuantities({});
+    setQuoteItems({});
     setBusinessAmounts({});
     setError("");
   }, []);
 
   useEffect(() => {
     openedAt.current = Date.now();
+    return () => {
+      Object.values(collapseCleanupTimers.current).forEach(clearTimeout);
+      collapseCleanupTimers.current = {};
+    };
   }, []);
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
@@ -204,8 +235,7 @@ export default function QuotePageForm() {
       return;
     }
     const itemError = validateQuoteItems(selectedOptions, customerType, {
-      quickDetails,
-      exactQuantities,
+      items: quoteItems,
       businessAmounts,
     });
     if (itemError) {
@@ -214,8 +244,12 @@ export default function QuotePageForm() {
       window.setTimeout(() => {
         const selector = itemError.kind === "amount"
           ? `#quote-item-details-${itemError.itemId} .quote-page-option__amount input`
-          : `[name="${itemError.name}"]`;
-        formElement.querySelector<HTMLInputElement>(selector)?.focus();
+          : itemError.entryId && itemError.name
+            ? `[data-quote-entry="${itemError.entryId}"] ${itemError.kind === "exact"
+              ? `[data-quote-exact="${itemError.name}"]`
+              : `[data-quote-question="${itemError.name}"]`}`
+            : "";
+        if (selector) formElement.querySelector<HTMLElement>(selector)?.focus();
       }, 0);
       return;
     }
@@ -226,7 +260,7 @@ export default function QuotePageForm() {
     }
     if (customerType === "Business" && !String(formData.get("service_frequency") ?? "")) {
       setError("Please select a service frequency.");
-      formElement.querySelector<HTMLSelectElement>('[name="service_frequency"]')?.focus();
+      formElement.querySelector<HTMLElement>('[data-quote-select-name="service_frequency"]')?.focus();
       return;
     }
 
@@ -242,8 +276,7 @@ export default function QuotePageForm() {
       formData,
       customerType,
       selectedOptions,
-      quickDetails,
-      exactQuantities,
+      items: quoteItems,
       businessAmounts,
       name,
       phone,
@@ -355,7 +388,12 @@ export default function QuotePageForm() {
         </p>
       </div>
 
-      <QuoteContactFields customerType={customerType} phone={phone} onPhoneChange={setPhone} />
+      <QuoteContactFields
+        key={customerType}
+        customerType={customerType}
+        phone={phone}
+        onPhoneChange={setPhone}
+      />
 
       <fieldset className="quote-page-options">
         <legend>What would you like cleaned?</legend>
@@ -368,15 +406,15 @@ export default function QuotePageForm() {
               selected={selectedSet.has(option.id)}
               active={activeDetailId === option.id}
               customerType={customerType}
-              quickDetails={quickDetails}
-              exactQuantities={exactQuantities}
+              entries={quoteItems[option.id] ?? []}
               businessAmount={businessAmounts[option.id] ?? ""}
               onToggle={toggleOption}
-              onEnsureSelected={ensureSelected}
               onActivate={activateOption}
               onDeactivate={deactivateOption}
-              onDetailChange={updateQuickDetail}
-              onExactQuantityChange={updateExactQuantity}
+              onAddEntry={addEntry}
+              onRemoveEntry={removeEntry}
+              onAnswerChange={updateEntryAnswer}
+              onExactQuantityChange={updateEntryExactQuantity}
               onAmountChange={updateBusinessAmount}
             />
           ))}

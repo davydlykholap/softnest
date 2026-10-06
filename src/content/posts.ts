@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { PortableTextBlock } from "@portabletext/react";
 import records from "@/content/generated/posts.json";
 import type { Post as SanityPost } from "@/sanity/sanity.types";

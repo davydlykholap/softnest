@@ -1,5 +1,8 @@
 "use client";
 
+import { useState } from "react";
+import { QuoteSelect } from "./QuoteSelect";
+
 type QuoteContactFieldsProps = {
   customerType: "Individual" | "Business";
   phone: string;
@@ -25,6 +28,8 @@ function formatPhoneNumber(value: string) {
 }
 
 export function QuoteContactFields({ customerType, phone, onPhoneChange }: QuoteContactFieldsProps) {
+  const [serviceFrequency, setServiceFrequency] = useState("");
+
   return (
       <div className="quote-page-form__grid">
         {customerType === "Business" && (
@@ -95,15 +100,23 @@ export function QuoteContactFields({ customerType, phone, onPhoneChange }: Quote
                 required
               />
             </label>
-            <label className="quote-page-field">
+            <div className="quote-page-field">
               <span>Service frequency</span>
-              <select name="service_frequency" defaultValue="" required>
-                <option value="">Select frequency</option>
-                <option value="One-time">One-time</option>
-                <option value="Recurring">Recurring</option>
-                <option value="Not sure">Not sure yet</option>
-              </select>
-            </label>
+              <QuoteSelect
+                value={serviceFrequency}
+                options={[
+                  { value: "One-time" },
+                  { value: "Recurring" },
+                  { value: "Not sure", label: "Not sure yet" },
+                ]}
+                onChange={setServiceFrequency}
+                ariaLabel="Service frequency"
+                placeholder="Select frequency"
+                size="large"
+                name="service_frequency"
+                dataSelectName="service_frequency"
+              />
+            </div>
           </>
         )}
       </div>

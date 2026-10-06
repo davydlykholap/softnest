@@ -15,8 +15,8 @@ import SiteHeader from "@/components/SiteHeader";
 import type { Location } from "@/content/locations";
 import { getService } from "@/content/services";
 import { siteConfig } from "@/lib/site";
-import { FeatureIcon, defaultLocalAdvantages, defaultProcessSteps, defaultQuickBenefits } from "./expandedLocationDefaults";
-import { getExpandedLocationSchemas } from "./expandedLocationSchemas";
+import { FeatureIcon, defaultLocalAdvantages, defaultProcessSteps, defaultQuickBenefits } from "./locationPageDefaults";
+import { getLocationPageSchemas } from "./locationPageSchemas";
 
 
 
@@ -37,19 +37,19 @@ function copyText(location: Location, key: string, fallback: string) {
     : fallback;
 }
 
-export default function ExpandedLocationPage({
+export default function LocationPage({
   location,
 }: {
   location: Location;
 }) {
-  const expanded = location.expandedContent;
-  const heroImage = expanded?.heroImage || siteConfig.heroImage;
-  const quickBenefits = expanded?.quickBenefits?.length ? expanded.quickBenefits : defaultQuickBenefits;
-  const processSteps = expanded?.processSteps ?? defaultProcessSteps;
-  const localAdvantages = expanded?.localAdvantages ?? defaultLocalAdvantages;
-  const locationFaqs = expanded?.mississaugaFaqs ?? location.faq;
+  const localOverrides = location.expandedContent;
+  const heroImage = localOverrides?.heroImage || siteConfig.heroImage;
+  const quickBenefits = localOverrides?.quickBenefits?.length ? localOverrides.quickBenefits : defaultQuickBenefits;
+  const processSteps = localOverrides?.processSteps ?? defaultProcessSteps;
+  const localAdvantages = localOverrides?.localAdvantages ?? defaultLocalAdvantages;
+  const locationFaqs = localOverrides?.mississaugaFaqs ?? location.faq;
   const mapLabels = new Map(
-    (expanded?.mapLabels ?? [])
+    (localOverrides?.mapLabels ?? [])
       .filter((label) =>
         Number.isFinite(label.left) && label.left >= 0 && label.left <= 100 &&
         Number.isFinite(label.top) && label.top >= 0 && label.top <= 100,
@@ -57,7 +57,7 @@ export default function ExpandedLocationPage({
       .map((label) => [label.name, label] as const),
   );
   const services = (
-    expanded?.services ??
+    localOverrides?.services ??
     location.availableServices
       .map(getService)
       .filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service))
@@ -78,20 +78,20 @@ export default function ExpandedLocationPage({
       alt: canonicalService?.imageAlt ?? service.alt,
     };
   });
-  const schemas = getExpandedLocationSchemas(location, services, locationFaqs);
+  const schemas = getLocationPageSchemas(location, services, locationFaqs);
 
   return (
     <>
-      <div className="new-hero-root miss-header">
+      <div className="new-hero-root location-page-header">
         <SiteHeader current="locations" />
       </div>
 
-      <main className="miss-page">
+      <main className="location-page-page">
         <section
-          className={`miss-hero ${location.slug === "mississauga" ? "miss-hero--mississauga" : ""}`.trim()}
-          aria-labelledby="miss-hero-title"
+          className={`location-page-hero ${location.slug === "mississauga" ? "location-page-hero--mississauga" : ""}`.trim()}
+          aria-labelledby="location-page-hero-title"
         >
-          <div className="miss-hero__photo" aria-hidden="true">
+          <div className="location-page-hero__photo" aria-hidden="true">
             <Image
               src={heroImage}
               alt=""
@@ -100,15 +100,15 @@ export default function ExpandedLocationPage({
               sizes="100vw"
             />
           </div>
-          <div className="miss-hero__wash" aria-hidden="true" />
-          <div className="miss-hero__copy">
-            <p className="miss-kicker">Proudly serving {location.name}</p>
-            <span className="miss-kicker-line" aria-hidden="true" />
-            <h1 id="miss-hero-title">
+          <div className="location-page-hero__wash" aria-hidden="true" />
+          <div className="location-page-hero__copy">
+            <p className="location-page-kicker">Proudly serving {location.name}</p>
+            <span className="location-page-kicker-line" aria-hidden="true" />
+            <h1 id="location-page-hero-title">
               {copyText(location, "page-2", "Upholstery &")}<br />
               {copyText(location, "page-3", "Carpet Cleaning")}<span>{copyText(location, "page-4", `in ${location.name}`)}</span>
             </h1>
-            <p className="miss-hero__description">
+            <p className="location-page-hero__description">
               Professional upholstery and carpet cleaning for {location.name} homes and condos—using fabric-safe products, professional equipment, and meticulous care.</p>
             <HeroActionButtons
               primaryTone="gold"
@@ -117,17 +117,17 @@ export default function ExpandedLocationPage({
           </div>
         </section>
 
-        <section className="miss-care-band" aria-labelledby="miss-care-heading">
-          <div className="miss-care-band__intro">
-            <p className="miss-kicker">Care in {location.name}</p>
-            <h2 id="miss-care-heading">Cleaning planned around your home</h2>
+        <section className="location-page-care-band" aria-labelledby="location-page-care-heading">
+          <div className="location-page-care-band__intro">
+            <p className="location-page-kicker">Care in {location.name}</p>
+            <h2 id="location-page-care-heading">Cleaning planned around your home</h2>
             <p>
               Share photos, fabric details, access notes, and the items you want cleaned. We’ll confirm the recommended service and scope before your appointment.</p>
           </div>
-          <div className="miss-care-band__features">
+          <div className="location-page-care-band__features">
             {quickBenefits.map((benefit) => (
               <article key={benefit.title}>
-                <span className="miss-round-icon">
+                <span className="location-page-round-icon">
                   <FeatureIcon name={benefit.icon} />
                 </span>
                 <h3>{benefit.title}</h3>
@@ -138,18 +138,18 @@ export default function ExpandedLocationPage({
         </section>
 
         <section
-          className="miss-services"
+          className="location-page-services"
           id="services"
-          aria-labelledby="miss-services-heading"
+          aria-labelledby="location-page-services-heading"
         >
-          <div className="miss-section-heading">
-            <p className="miss-kicker">What we clean</p>
-            <span className="miss-section-rule" aria-hidden="true" />
-            <h2 id="miss-services-heading">Cleaning services in {location.name}</h2>
-            <p className="miss-section-heading__intro">
+          <div className="location-page-section-heading">
+            <p className="location-page-kicker">What we clean</p>
+            <span className="location-page-section-rule" aria-hidden="true" />
+            <h2 id="location-page-services-heading">Cleaning services in {location.name}</h2>
+            <p className="location-page-section-heading__intro">
               Explore upholstery and carpet cleaning services available across {location.name}, with methods selected for each material, condition, and concern.</p>
           </div>
-          <div className="miss-service-grid">
+          <div className="location-page-service-grid">
             {services.map((service) => (
               <Link
                 className={cardArrowHostClassName}
@@ -157,7 +157,7 @@ export default function ExpandedLocationPage({
                 key={service.slug}
                 aria-label={`Learn about ${service.cardTitle.toLowerCase()}`}
               >
-                <span className="miss-service-grid__image">
+                <span className="location-page-service-grid__image">
                   <Image
                     src={service.image}
                     alt={service.alt}
@@ -165,9 +165,9 @@ export default function ExpandedLocationPage({
                     sizes="(max-width: 760px) 100vw, 25vw"
                   />
                 </span>
-                <span className={`miss-service-grid__body ${cardPanelClassName}`}>
+                <span className={`location-page-service-grid__body ${cardPanelClassName}`}>
                   <h3>{service.cardTitle}</h3>
-                  <CardArrow className="miss-card-arrow" />
+                  <CardArrow className="location-page-card-arrow" />
                 </span>
               </Link>
             ))}
@@ -176,19 +176,19 @@ export default function ExpandedLocationPage({
 
         <LocationReviews location={location} />
 
-        <section className="miss-process" aria-labelledby="miss-process-heading">
-          <div className="miss-section-heading">
-            <p className="miss-kicker">{copyText(location, "page-16", "Our process")}</p>
-            <span className="miss-section-rule" aria-hidden="true" />
-            <h2 id="miss-process-heading">How our cleaning works</h2>
-            <p className="miss-section-heading__intro">
+        <section className="location-page-process" aria-labelledby="location-page-process-heading">
+          <div className="location-page-section-heading">
+            <p className="location-page-kicker">{copyText(location, "page-16", "Our process")}</p>
+            <span className="location-page-section-rule" aria-hidden="true" />
+            <h2 id="location-page-process-heading">How our cleaning works</h2>
+            <p className="location-page-section-heading__intro">
               A clear four-step process—from your photo estimate to cleaning, professional drying, and a final walkthrough.</p>
           </div>
           <ol>
             {processSteps.map((step, index) => (
               <li key={step.title}>
-                <span className="miss-process__number">{index + 1}</span>
-                <span className="miss-process__icon">
+                <span className="location-page-process__number">{index + 1}</span>
+                <span className="location-page-process__icon">
                   <FeatureIcon name={step.icon} />
                 </span>
                 <div>
@@ -200,17 +200,17 @@ export default function ExpandedLocationPage({
           </ol>
         </section>
 
-        <section className="miss-coverage" aria-labelledby="miss-coverage-heading">
-          <div className="miss-section-heading">
-            <p className="miss-kicker">Our service area</p>
-            <span className="miss-section-rule" aria-hidden="true" />
-            <h2 id="miss-coverage-heading">Serving all of {location.name}</h2>
+        <section className="location-page-coverage" aria-labelledby="location-page-coverage-heading">
+          <div className="location-page-section-heading">
+            <p className="location-page-kicker">Our service area</p>
+            <span className="location-page-section-rule" aria-hidden="true" />
+            <h2 id="location-page-coverage-heading">Serving all of {location.name}</h2>
           </div>
-          <div className="miss-coverage__content">
-            {expanded?.mapImage ? <div className="miss-map">
+          <div className="location-page-coverage__content">
+            {localOverrides?.mapImage ? <div className="location-page-map">
               <Image
-                src={expanded.mapImage}
-                alt={expanded.mapAlt || `Service coverage in ${location.name}`}
+                src={localOverrides.mapImage}
+                alt={localOverrides.mapAlt || `Service coverage in ${location.name}`}
                 fill
                 sizes="(max-width: 760px) 100vw, 55vw"
               />
@@ -218,7 +218,7 @@ export default function ExpandedLocationPage({
                 const label = mapLabels.get(neighbourhood)!;
                 return (
                   <span
-                    className="miss-map__label"
+                    className="location-page-map__label"
                     style={{ left: `${label.left}%`, top: `${label.top}%` }}
                     key={neighbourhood}
                   >
@@ -226,7 +226,7 @@ export default function ExpandedLocationPage({
                   </span>
                 );
               })}
-            </div> : <div className="softnest-map miss-map">
+            </div> : <div className="softnest-map location-page-map">
               <iframe
                 title={`SoftNest service map for ${location.name}`}
                 loading="lazy"
@@ -234,12 +234,12 @@ export default function ExpandedLocationPage({
                 src={`https://www.google.com/maps?q=${encodeURIComponent(location.mapQuery)}&z=11&output=embed`}
               />
             </div>}
-            <div className="miss-coverage__copy">
+            <div className="location-page-coverage__copy">
               <p>
                 SoftNest provides upholstery and carpet cleaning throughout {location.name}, including condos, houses, apartments, and commercial spaces.</p>
-              <p className="miss-coverage__detail">
+              <p className="location-page-coverage__detail">
                 These neighbourhoods are examples of areas we serve—not service boundaries.</p>
-              <p className="miss-coverage__includes">Including:</p>
+              <p className="location-page-coverage__includes">Including:</p>
               <ul>
                 {location.neighbourhoods.map((neighbourhood) => (
                   <li key={neighbourhood}>
@@ -255,19 +255,19 @@ export default function ExpandedLocationPage({
           </div>
         </section>
 
-        <section className="miss-local-value" aria-labelledby="miss-local-value-heading">
-          <div className="miss-section-heading">
-            <p className="miss-kicker">{copyText(location, "page-23", "Why choose SoftNest")}</p>
-            <span className="miss-section-rule" aria-hidden="true" />
-            <h2 id="miss-local-value-heading">
+        <section className="location-page-local-value" aria-labelledby="location-page-local-value-heading">
+          <div className="location-page-section-heading">
+            <p className="location-page-kicker">{copyText(location, "page-23", "Why choose SoftNest")}</p>
+            <span className="location-page-section-rule" aria-hidden="true" />
+            <h2 id="location-page-local-value-heading">
               Why choose SoftNest in {location.name}</h2>
-            <p className="miss-section-heading__intro">
+            <p className="location-page-section-heading__intro">
               Fabric-aware methods, clear estimates, and practical scheduling for homes and condos across {location.name}.</p>
           </div>
-          <div className="miss-local-value__grid">
+          <div className="location-page-local-value__grid">
             {localAdvantages.map((advantage) => (
               <article key={advantage.title}>
-                <span className="miss-round-icon">
+                <span className="location-page-round-icon">
                   <FeatureIcon name={advantage.icon} />
                 </span>
                 <div>

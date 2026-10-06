@@ -1,0 +1,33 @@
+name: Check production uptime
+
+on:
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  uptime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check public endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          for url in \
+            "https://softnestcare.ca/" \
+            "https://softnestcare.ca/quote/" \
+            "https://softnestcare.ca/sitemap.xml"; do
+            echo "Checking $url"
+            curl --fail --silent --show-error --location \
+              --max-time 20 --retry 2 --retry-delay 3 "$url" > /dev/null
+          done
+
+      - name: Record result
+        if: always()
+        run: |
+          echo "## Production uptime check" >> "$GITHUB_STEP_SUMMARY"
+          echo "Result: ${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Checked homepage, quote page and sitemap from an external GitHub runner." >> "$GITHUB_STEP_SUMMARY"

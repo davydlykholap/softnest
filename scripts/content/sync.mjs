@@ -20,8 +20,11 @@ if(source==='seed'){
  documents=await createClient({...config,apiVersion:'2026-09-01',useCdn:false,perspective:preview?'drafts':'published',token:preview?process.env.SANITY_API_READ_TOKEN:undefined,timeout:30000}).fetch(websiteContentQuery);
 }else throw Error('CONTENT_SOURCE must be sanity or seed.');
 const normalized=normalizeContent(documents,config);
-fs.mkdirSync('src/content/generated',{recursive:true});
-// Validate the entire snapshot before replacing files. Failed reads leave the live deployment intact.
-for(const [name,value] of Object.entries(normalized))fs.writeFileSync(`src/content/generated/${name}.json`,JSON.stringify(value,null,2)+'\n');
-fs.writeFileSync('src/content/generated/status.json',JSON.stringify({source,preview,generatedAt:new Date().toISOString()})+'\n');
+const outputDir='src/content/generated';
+// Normalize first, then replace the generated snapshot atomically from the build's point of view.
+// Removing the directory prevents stale files from surviving when a content type is retired.
+fs.rmSync(outputDir,{recursive:true,force:true});
+fs.mkdirSync(outputDir,{recursive:true});
+for(const [name,value] of Object.entries(normalized))fs.writeFileSync(`${outputDir}/${name}.json`,JSON.stringify(value,null,2)+'\n');
+fs.writeFileSync(`${outputDir}/status.json`,JSON.stringify({source,preview,generatedAt:new Date().toISOString()})+'\n');
 console.log(`Prepared ${normalized.services.length} services, ${normalized.locations.length} areas and ${normalized.posts.length} articles from ${source}.`);

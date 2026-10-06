@@ -5,9 +5,16 @@ import { useRouter } from "next/navigation";
 import DirectorySearch, {
   type DirectorySearchOption,
 } from "@/components/DirectorySearch";
-import { services } from "@/content/services";
 
-function matchesService(query: string, service: (typeof services)[number]) {
+export type ServiceSearchItem = {
+  slug: string;
+  name: string;
+  menuLabel: string;
+  shortName: string;
+  serviceType: string[];
+};
+
+function matchesService(query: string, service: ServiceSearchItem) {
   return [
     service.name,
     service.menuLabel,
@@ -20,7 +27,11 @@ function matchesService(query: string, service: (typeof services)[number]) {
     .includes(query);
 }
 
-export default function ServiceSearch() {
+export default function ServiceSearch({
+  services,
+}: {
+  services: readonly ServiceSearchItem[];
+}) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [message, setMessage] = useState("");
@@ -40,11 +51,13 @@ export default function ServiceSearch() {
 
   const submit = () => {
     const match = services.find((service) =>
-      [service.name, service.menuLabel, service.shortName, service.slug]
-        .some((name) => name.toLowerCase() === normalizedQuery),
-    ) ?? (normalizedQuery.length >= 3
-      ? services.find((service) => matchesService(normalizedQuery, service))
-      : undefined);
+      [service.name, service.menuLabel, service.shortName, service.slug].some(
+        (name) => name.toLowerCase() === normalizedQuery,
+      ),
+    ) ??
+      (normalizedQuery.length >= 3
+        ? services.find((service) => matchesService(normalizedQuery, service))
+        : undefined);
 
     if (match) {
       router.push(`/services/${match.slug}/`);
@@ -52,7 +65,9 @@ export default function ServiceSearch() {
     }
 
     setMessage("Choose a service below, or tell us what needs cleaning.");
-    document.querySelector("#services")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .querySelector("#services")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (

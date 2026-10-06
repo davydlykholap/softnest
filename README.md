@@ -1,5 +1,52 @@
 # SoftNest Fabric Care
 
-SoftNest provides professional upholstery, sofa, sectional, mattress, carpet, and rug cleaning across the Greater Toronto Area. We care for the fabrics people use every day and give clear, practical guidance before booking.
+Production website for SoftNest Fabric Care, a GTA upholstery and carpet cleaning business.
 
-[Visit SoftNest](https://softnestcare.ca/) · [Get a quote](https://softnestcare.ca/quote/)
+## Stack
+
+- Next.js 16 + React 19 + TypeScript
+- static export hosted on GitHub Pages
+- Sanity Studio for public structured content
+- Web3Forms for current browser-side quote delivery
+- Google Ads/attribution tracking
+
+Published Sanity content is validated and converted into build snapshots under `src/content/generated/` before Next.js renders the site. Generated content is not hand-edited or committed.
+
+## Development
+
+```bash
+npm ci
+npm ci --prefix studio
+npm run dev
+```
+
+Sanity Studio:
+
+```bash
+npm run studio
+```
+
+Production website validation:
+
+```bash
+npm run check
+npm run test:e2e:built
+```
+
+`npm run test:e2e` runs the production build/check first and then executes the Chromium smoke and accessibility suite. CI/deployment runs the rendered checks automatically after the static export is built.
+
+After a Sanity schema change:
+
+```bash
+npm run content:types
+npm run studio:check
+npm run check
+```
+
+## Documentation
+
+Start with [`docs/README.md`](docs/README.md). `docs/current-state.md` is the authoritative architecture/status handoff. The two research/blueprint files are explicitly historical and are not current implementation specifications.
+
+## Public site
+
+[softnestcare.ca](https://softnestcare.ca/) ? [Get a quote](https://softnestcare.ca/quote/)

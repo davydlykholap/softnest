@@ -42,12 +42,6 @@ export const structure: StructureResolver = (S) =>
             .items([
               singleton(S, "Business settings", "siteSettings", "siteSettings"),
               singleton(S, "Homepage", "pageContent", "page-content-home"),
-              singleton(
-                S,
-                "About SoftNest",
-                "pageContent",
-                "page-content-about",
-              ),
               S.divider(),
               S.documentTypeListItem("quoteCategory").title("Quote form choices"),
             ]),

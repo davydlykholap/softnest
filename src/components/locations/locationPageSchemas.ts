@@ -1,7 +1,7 @@
 import type { Location } from "@/content/locations";
 import { organizationProvider, siteConfig } from "@/lib/site";
 
-export function getExpandedLocationSchemas(
+export function getLocationPageSchemas(
   location: Location,
   services: { slug: string; title: string }[],
   locationFaqs: { question: string; answer: string }[],

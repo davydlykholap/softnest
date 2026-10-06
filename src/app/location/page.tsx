@@ -27,17 +27,7 @@ export const metadata: Metadata = {
   },
 };
 
-const cityPhotoAlt: Record<string, string> = {
-  mississauga: "Mississauga skyline in Ontario",
-  toronto: "Toronto skyline across the waterfront",
-  oakville: "Oakville Harbour pier on Lake Ontario",
-  brampton: "Brampton City Hall in downtown Brampton",
-  etobicoke: "Humber Bay skyline reflected on the water in Etobicoke",
-  burlington: "Spencer Smith Park in Burlington",
-  vaughan: "Vaughan Metropolitan Centre skyline",
-  milton: "Historic downtown Milton streetscape",
-  hamilton: "Downtown Hamilton skyline from the Niagara Escarpment",
-};
+const locationSearchItems = locations.map(({ slug, name }) => ({ slug, name }));
 
 export default function LocationsPage() {
   const breadcrumbSchema = {
@@ -88,7 +78,7 @@ export default function LocationsPage() {
         />
 
         <div className="locations-search-wrap">
-          <LocationSearch />
+          <LocationSearch locations={locationSearchItems} />
         </div>
 
         <section className="locations-cities" id="cities">
@@ -101,7 +91,7 @@ export default function LocationsPage() {
               <DirectoryCard
                 href={`/location/${location.slug}/`}
                 image={location.image}
-                imageAlt={cityPhotoAlt[location.slug]}
+                imageAlt={location.imageAlt}
                 title={location.name}
                 ariaLabel={`View upholstery cleaning in ${location.name}`}
                 className={`locations-city-card--location locations-city-card--${location.slug}`}

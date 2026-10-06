@@ -1,107 +1,152 @@
 # SoftNest system overview
 
-SoftNest is a statically exported Next.js website with a separate Sanity Studio for public content management. The public site is deployed to GitHub Pages. Sanity owns editable website content; Next.js owns presentation and interaction. Supabase is intentionally reserved for future private business records such as enquiries, customers, quotes and jobs.
+SoftNest is a build-time CMS website: Sanity supplies validated public content, Next.js renders it into a static export, and GitHub Pages serves the result. There is no application server in production.
 
-## Project layout
+## Data flow
 
-| Folder | Purpose |
+```text
+Published Sanity documents
+        ?
+scripts/content/sync.mjs
+        ?
+normalizeContent() validation + normalization
+        ?
+src/content/generated/*.json
+        ?
+server-side content selectors in src/content
+        ?
+Next.js Server Components + small interactive Client Components
+        ?
+next build ? out/
+        ?
+GitHub Pages ? softnestcare.ca
+```
+
+A content error fails before the generated snapshot is replaced. The sync then recreates the generated directory so files belonging to retired content contracts cannot linger.
+
+## Repository layout
+
+| Folder | Responsibility |
 | --- | --- |
-| `src/app` | Public routes and route-level styling |
-| `src/components` | Shared website presentation and interactions |
-| `src/content` | Website-facing content selectors and generated build snapshots |
-| `src/domain` | Business workflows such as quote submission |
-| `src/sanity` | Sanity configuration, queries and generated query/schema types |
-| `src/seo` | URL, metadata and structured-data helpers |
-| `studio` | Sanity Studio application and content schemas |
-| `content/articles` | Prepared article source/import records |
-| `content/migration` | One-time migration snapshot for the first Sanity import |
-| `docs` | Publishing, project and future-system documentation |
-| `scripts/content` | Content validation, migration, preview and publishing automation |
+| `src/app` | Public routes, route metadata and route-level styles |
+| `src/components` | Shared rendering and interactive UI |
+| `src/components/quote` | Quote option UI, answers, validation and payload construction |
+| `src/components/locations` | Shared location-page template, defaults, reviews and schemas |
+| `src/content` | Server-side selectors over generated build snapshots |
+| `src/content/generated` | Rebuilt Sanity snapshot; never hand-edit or commit |
+| `src/domain` | Business transport boundaries such as quote submission |
+| `src/lib` | Shared site settings, public integrations, attribution and utilities |
+| `src/sanity` | Sanity connection, query and generated schema/query types |
+| `src/seo` | URL, metadata and JSON-LD helpers |
+| `studio` | Sanity Studio and public content schema |
+| `scripts/content` | Sanity sync/import/preview/validation/publishing automation |
+| `content/migration` | Bootstrap/recovery import snapshot, not a runtime CMS |
+| `content/articles` | Prepared article-source records retained for migration/editorial traceability |
+| `docs` | Current operating documentation and clearly marked historical research |
 
-See [`docs/project-guide.md`](project-guide.md) for ownership rules and working practices.
+## Sanity content model
 
-## Install
+The production build fetches public structured records: business settings, services, service areas, FAQs, testimonials, cleaning projects, quote categories, the Homepage page-content document, blog posts, authors and categories.
 
-The website and Studio have separate dependency locks:
+The old About `pageContent` record is not fetched. The About page is a code-owned template today.
+
+The normalizer validates relationships and converts references into website-friendly values before anything in `src/content` sees the records. Only approved testimonials/results enter the public snapshot.
+
+### Homepage
+
+The Homepage record still contains historical copy rows in Sanity, but the website contract intentionally keeps only the keys currently rendered. `home.json` contains the live copy fragments, hero reviews and featured service slugs?not the retired redesign text.
+
+### Services
+
+A service record supplies its name/menu labels, metadata, summary, hero description, imagery, service types, concerns, included work, drying guidance, limitations, FAQs and related-service references.
+
+The old service `heroTitle`, `process`, `heroProofs` and retired section-heading fields are no longer editor fields or public snapshot requirements.
+
+### Locations
+
+Every published city uses the same `LocationPage` React template. Base location fields provide metadata, image, service availability, neighbourhoods, map query and FAQs.
+
+`expandedContent` is an optional set of local overrides. Most cities currently use shared defaults; Mississauga has richer local overrides. The former `expanded` boolean is retired and ignored.
+
+The local-FAQ storage key remains `mississaugaFaqs` only to avoid a destructive Sanity migration. Studio presents it as **Local FAQs** and application code treats it as generic local content.
+
+### Blog
+
+Published posts are normalized into `posts.json` and rendered through one article template using Portable Text. Article body images require alternative text. Blog runtime fallbacks to local article files do not exist.
+
+## Server and client components
+
+Pages/layouts remain Server Components by default. Client Components are limited to UI that needs state, event handling or browser APIs: navigation menus, search controls, carousels, FAQs, attribution and the quote form.
+
+Do not import large `src/content` modules into Client Components. Pass the smallest serializable data shape needed from a Server Component. The service and location search controls follow this pattern.
+
+`src/content/services.ts`, `locations.ts`, `pages.ts` and `posts.ts` are marked server-only so accidental future client imports fail early.
+
+## Static hosting constraints
+
+`next.config.ts` enables static export outside the development server, keeps trailing slashes and disables the default Next image optimizer. The output is `out/`.
+
+Because production is static:
+
+- there are no Server Actions or request-time API routes;
+- there are no request-time redirects/rewrites/headers;
+- dynamic routes must have `generateStaticParams()`;
+- the browser submits the quote directly to Web3Forms;
+- public `NEXT_PUBLIC_*` values are build-time browser configuration, not secrets.
+
+`scripts/prepare-export.mjs` creates Windows-compatible aliases for static RSC route fragments when needed. `scripts/verify-export.mjs` then checks exported pages, internal references and fragment aliases.
+
+## Quote submission
+
+`QuotePageForm` owns interaction and user-facing validation. `quoteRequest.ts` owns item validation and the exact `FormData` payload. `src/domain/quote.ts` owns transport to Web3Forms.
+
+Each selected category stores an array of quote entries rather than one shared answer set. Each entry owns its own dropdown/input answers and any exact quantity, allowing mixed configurations such as a 2-seat sofa plus a 3-seat sofa in one request. Additional entries are opt-in through the selected card rather than shown up front. Questions may be conditional on earlier answers, so carpet/rug entries reveal only the measurements relevant to area rugs, wall-to-wall carpet or stairs/landings.
+
+This boundary is intentional: a future backend can replace the transport without redesigning the form.
+
+Attribution data is sanitized before storage/submission. Referrers are reduced to safe origin/path information rather than sending arbitrary query strings or fragments.
+
+## Analytics and public integrations
+
+`src/lib/integrations.ts` is the single public configuration module for:
+
+- Google Ads ID;
+- quote conversion destination;
+- phone conversion destination;
+- Web3Forms access key;
+- optional homepage video URL;
+- optional YouTube URL.
+
+`src/lib/analytics.ts` emits lead, phone and selected outbound-link events. `MarketingAttribution` captures campaign identifiers in session storage.
+
+## SEO
+
+`src/seo/metadata.ts`, `structuredData.ts` and `urls.ts` centralize page metadata, canonical URL generation and safe JSON-LD serialization. Homepage/service/location/article pages add appropriate Organization, WebSite, Service, BlogPosting, FAQ or breadcrumb structures.
+
+## Development commands
 
 ```bash
 npm ci
 npm ci --prefix studio
-```
-
-## Website development
-
-Normal development reads the current published Sanity dataset:
-
-```bash
 npm run dev
+npm run studio
 ```
 
-To inspect the original migration snapshot without touching Sanity:
-
-```bash
-npm run content:seed -- dev
-```
-
-The production-quality website check is:
+Production-quality website verification:
 
 ```bash
 npm run check
 ```
 
-It validates content relationships, runs lint and focused unit tests, builds the static export, and verifies generated pages and internal links. Run `npm run test:unit` while changing the quote form, attribution, or image mapping.
-On Windows, the check also prepares flat aliases for route fragments that Next.js link prefetching requests during local static previews. Linux exports already use the requested filenames.
-
-The quote form is organized under `src/components/quote/`: option definitions, item cards, contact fields, and request validation/payload construction. Large source photos with legacy PNG paths are mapped to optimized WebP copies in `src/lib/optimizedLocalImage.ts`; keep the original files until their CMS references and any direct links are migrated.
-
-The public form sends directly to Web3Forms from the browser. Its access key is a public integration identifier, and client validation improves usability but cannot enforce server-side rules. Keep the form provider's allowed-domain and spam settings configured, and monitor delivery there. GitHub Pages serves static files, so adding server-side validation or custom response headers would require a hosting or endpoint change.
-
-## Sanity Studio
-
-Start the editor with:
-
-```bash
-npm run studio
-```
-
-Then open http://localhost:3333. The editor contains business settings, homepage/About content, services, service areas, FAQs, reviews, cleaning results, quote-form choices and blog content.
-
-Studio validation:
+Schema/editor verification:
 
 ```bash
 npm run content:types
 npm run studio:check
 ```
 
-Follow [`docs/sanity-setup.md`](sanity-setup.md) for the first import, the one-time public-ID repair (when applicable), draft preview and publishing workflow. Use `npm run content:import:check` before a first import into a new dataset.
+Local draft preview requires a Sanity read token and `npm run preview`. Seed mode is only for inspecting the migration snapshot and is blocked in CI.
 
-## Content publishing
+## Future private system
 
-The intended workflow is:
-
-```text
-Edit in Sanity → Publish → GitHub Pages build/validation → softnestcare.ca
-```
-
-The repository includes a webhook setup script so published Sanity changes can trigger the deployment workflow automatically. Until that webhook is configured, run the GitHub Pages workflow manually after publishing.
-
-Generated files under `src/content/generated/` are build snapshots. Do not edit them by hand.
-
-## Services and locations
-
-Services and service areas are CMS-managed records. A service area can exist operationally without publishing or indexing a landing page. Published page addresses remain:
-
-```text
-/services/<service>/
-/location/<city>/
-```
-
-Do not casually change a published slug. GitHub Pages cannot provide normal Next.js request-time redirects, so URL changes need an explicit redirect strategy first.
-
-## Blog
-
-Blog posts are Sanity documents rendered through one shared article template. Prepared article source files are kept under `content/articles/` for migration traceability; after the first import, Sanity becomes the authoritative editable copy.
-
-## Future Supabase use
-
-Supabase is planned but deliberately not connected yet. See [`docs/supabase-plan.md`](supabase-plan.md). It should be introduced with the first real private business-record workflow rather than as an unused dependency.
+Sanity is public editorial infrastructure, not a CRM. Customer addresses, private notes, enquiries, quotes, appointments and job history belong in a separate authenticated system. `supabase-plan.md` describes that future boundary.

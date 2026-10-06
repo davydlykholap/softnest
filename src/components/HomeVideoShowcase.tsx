@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { integrations } from "@/lib/integrations";
 import { siteConfig } from "@/lib/site";
 
-const videoSrc = process.env.NEXT_PUBLIC_HOME_VIDEO_URL?.trim();
+const videoSrc = integrations.homeVideoUrl;
 
 export default function HomeVideoShowcase() {
   return (

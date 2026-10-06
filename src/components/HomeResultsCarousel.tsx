@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { CSSProperties, KeyboardEvent } from "react";
-import { TbChevronLeft, TbChevronRight, TbGripVertical } from "react-icons/tb";
+import { ChevronLeftIcon, ChevronRightIcon, GripVerticalIcon } from "@/components/UiIcons";
 
 export type GalleryResult = {
   image: string;
@@ -37,7 +37,7 @@ function ComparisonCard({ result }: { result: GalleryResult }) {
           aria-hidden="true"
         >
           <span className="gallery-divider__grip">
-            <TbGripVertical />
+            <GripVerticalIcon />
           </span>
         </span>
         <input
@@ -109,7 +109,7 @@ export default function HomeResultsCarousel({ results }: HomeResultsCarouselProp
           disabled={maxIndex === 0}
           onClick={() => goToResult(index <= 0 ? maxIndex : index - 1)}
         >
-          <TbChevronLeft aria-hidden="true" />
+          <ChevronLeftIcon />
         </button>
         <div
           id="gallery-carousel"
@@ -140,7 +140,7 @@ export default function HomeResultsCarousel({ results }: HomeResultsCarouselProp
           disabled={maxIndex === 0}
           onClick={() => goToResult(index >= maxIndex ? 0 : index + 1)}
         >
-          <TbChevronRight aria-hidden="true" />
+          <ChevronRightIcon />
         </button>
       </div>
   );

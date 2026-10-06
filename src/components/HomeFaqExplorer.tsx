@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { FiChevronDown } from "react-icons/fi";
+import { ChevronDownIcon } from "@/components/UiIcons";
 import FaqAccordion from "@/components/FaqAccordion";
 import styles from "./HomeFaqExplorer.module.css";
 
@@ -45,7 +45,7 @@ export default function HomeFaqExplorer({ items }: Props) {
                 >
                   <span>{item.question}</span>
                   <span className={styles.icon} aria-hidden="true">
-                    <FiChevronDown />
+                    <ChevronDownIcon />
                   </span>
                 </button>
               );

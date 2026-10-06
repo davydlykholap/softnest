@@ -1,70 +1,107 @@
-# SoftNest modernization status
+# SoftNest current state
 
-Last updated: 2026-09-29
+Last updated: 2026-10-02
 
-This is the handoff point for the current website/CMS architecture. Read it with `project-guide.md` and `sanity-setup.md` before making structural content or deployment changes.
+This is the authoritative handoff for the production website. Read it before structural content, routing, CMS or deployment work. For folder ownership and day-to-day rules, continue with `project-guide.md`.
 
-## Current architecture
+## Production architecture
 
-- Next.js 16 + React 19 + strict TypeScript power the public website.
-- Production is currently a static export deployed through GitHub Pages.
-- Sanity Studio in `studio/` is the source of truth for public editable content.
-- The build reads Sanity once, validates the complete published dataset, and writes a generated snapshot under `src/content/generated/`.
-- UI code consumes content through `src/content` selectors instead of issuing independent Sanity queries.
-- The published catalog currently contains 10 services, 9 service areas, and 11 blog articles.
-- Blog posts now come exclusively from the generated Sanity snapshot; the former local-post runtime fallback has been removed.
-- Service and location pages use shared templates rather than separate page implementations.
-- Quote submission transport remains isolated in `src/domain/quote.ts` so lead storage can be replaced later without rebuilding the form UI.
-- SEO URL, metadata, sitemap, robots, breadcrumb, and structured-data helpers live under `src/seo`.
+- Next.js 16.3.8, React 19 and strict TypeScript power the public site.
+- Production uses `output: "export"` and is deployed as static files to GitHub Pages.
+- Sanity Studio in `studio/` manages public structured content.
+- Every normal dev/build first reads published Sanity content, validates it, and writes a generated snapshot under `src/content/generated/`.
+- React consumes that snapshot; public pages do not issue independent runtime Sanity requests.
+- The current catalog contains 10 services, 9 service areas and 11 blog articles.
+- Services, city routes and blog articles are generated at build time with `generateStaticParams()`.
+- Supabase is intentionally not connected. Private leads/jobs remain a future system.
 
-## Content ownership rules
+## Content ownership today
 
-Sanity owns public business settings, services, service areas, FAQs, testimonials, cleaning results, quote categories, page copy, and blog posts.
+Sanity owns business settings, services, service-area records, shared FAQs, approved customer reviews, approved cleaning results, quote categories, blog content and the homepage text fragments that the current template actually reads.
 
-React owns layout, rendering, interaction, reusable components, and presentation logic. Avoid adding runtime text rewrites that silently change Sanity values. If public wording is wrong, correct the published Sanity record and keep the migration seed aligned.
+React owns page structure, interactions and template prose that is intentionally part of the design. In particular:
 
-Business settings are exposed through `src/lib/site.ts`; components should not duplicate phone, email, social URLs, or quote labels.
+- the About page is code-owned in `src/app/about/page.tsx`;
+- the homepage uses a small validated set of Sanity text keys while its main headline/description and several section labels are code-owned;
+- city pages use one shared `LocationPage` template, with optional city-specific overrides from Sanity;
+- service pages use one shared `ServicePage`/`ServiceDetailPanel` template and no longer use the old CMS process/hero-heading fields.
 
-## Content safeguards
+Do not assume that every text value present in an old Sanity document is still rendered. The build contract now validates only content the current UI consumes.
 
-`npm run content:verify` validates the migration/content contract, including:
+## Compatibility cleanup completed 2026-10-02
 
-- expected service, location, and article catalogs;
-- public Sanity IDs and references;
-- duplicate service, location, and article slugs;
-- broken relationships;
-- required article body content and image alternative text;
-- approval gating for testimonials and cleaning results;
-- required and unique page-template copy keys;
-- service-area publication/index/footer consistency;
-- prevention of a public landing page for an area marked not served.
+Older Sanity records may still physically contain fields that are no longer part of the editor or generated public snapshot. They are harmless and can be migrated or removed later without urgency:
 
-Archived `content/articles/<slug>/article.txt` files are fidelity references when present. Newer articles can live only in Sanity; the migration test validates their body without requiring a duplicate text archive.
+- `page-content-about` may remain in the dataset, but the website query and Studio navigation no longer use it;
+- old service fields such as `heroTitle`, `process`, `heroProofs` and the old section-heading fields are ignored;
+- an old location `expanded` boolean is ignored; the presence of `expandedContent` itself determines whether city-specific overrides exist;
+- the local FAQ field keeps its legacy internal Sanity key `mississaugaFaqs` for data compatibility, but Studio labels it **Local FAQs** and the page treats it generically.
 
-## Sanity migration state
+Generated snapshots are replaced as a set during content sync, so retired files such as the former `about.json` cannot linger and accidentally look authoritative.
 
-The original dotted/private document IDs were repaired on 2026-09-07. Public content uses root IDs such as `service-sofa-cleaning`, `location-mississauga`, and `page-content-home` so anonymous production reads work correctly.
+## Client/server boundary
 
-On 2026-09-29, the two previously local-only articles were confirmed as published Sanity records and the generated snapshot was refreshed to include all 11 articles. Their local runtime fallback is no longer required.
+Static content selectors under `src/content` are server-only unless a module is explicitly designed for the browser. Interactive components receive small serializable props rather than importing full Sanity snapshots.
 
-Also on 2026-09-29, published quote wording and upholstery drying-time copy were reconciled in Sanity so the frontend no longer needs hidden string replacements. A pre-change Sanity backup was saved under `content/backups/`.
+The location and service search controls now receive slim search records from their server pages. This prevents the roughly 40 KB location/service content files from being pulled into those client module graphs.
 
-## Development and verification
+The site no longer depends on `react-icons`; the few UI icons used by interactive components are local SVG components in `src/components/UiIcons.tsx`.
 
-Use `npm run check` before treating structural work as complete. It performs content sync, ESLint, content-contract tests, focused Playwright tests, the Next.js production build, static-export preparation, and exported-route verification.
+## Quote and marketing flow
 
-The migration seed under `content/migration/` is a recovery/bootstrap snapshot, not an alternate runtime CMS. Keep it compatible with the published dataset when adding durable content records.
+The quote UI lives under `src/components/quote/`. Validation and payload construction are separate from transport. `src/domain/quote.ts` submits directly from the browser to Web3Forms because GitHub Pages has no application server.
 
-Line endings are standardized through `.gitattributes` so text files use LF across development and CI, while Windows batch/cmd files retain CRLF.
+A selected quote category can contain multiple independently configured entries. For example, one request can include a 2-seat sofa and a separate 3-seat sofa. Question choices use compact, shared-styled dropdowns; additional pieces/groups are added only when needed, so the common single-item path stays short. Item questions are type-aware: rugs collect dimensions/material/pile, wall-to-wall carpet can use dimensions or square footage, stairs collect stair/landing counts, and other furniture branches into the relevant size/description fields.
 
-## Publishing automation
+The form includes client validation, a honeypot, minimum-open-time filtering, duplicate-submit protection, a request timeout and a friendly phone fallback. These controls improve quality but are not server-side security enforcement.
 
-Source support exists for published Sanity changes to trigger the GitHub Pages deployment workflow. Before relying on it operationally, verify the repository variables, webhook configuration, a harmless publish-triggered deployment, and that draft-only edits never affect production.
+Campaign attribution stores sanitized `utm_*`, `gclid`, `gbraid` and `wbraid` values in session storage and includes them with a successful quote request. Google Ads quote/phone conversion hooks are isolated in `src/lib/analytics.ts`.
 
-Until that path has been verified end to end, publishing content and deploying the website should be treated as separate operational steps.
+All public integration settings are centralized in `src/lib/integrations.ts`: Google Ads, Web3Forms, the optional homepage video and optional YouTube URL.
 
-## Supabase — intentionally later
+## SEO and routing
 
-Do not add an unused Supabase SDK or empty database connection. The first worthwhile database feature remains private enquiry/job tracking with statuses such as New → Contacted → Quoted → Booked → Completed/Closed.
+Metadata, canonical URLs and structured-data helpers live under `src/seo`. The site generates sitemap and robots files at build time. Location sitemap inclusion respects `indexInSearch`.
 
-Private customer and operational records must stay out of the public Sanity dataset.
+Published slugs are external URLs and must remain stable. GitHub Pages cannot provide normal request-time Next.js redirects, rewrites or headers. Agree on a static-host-compatible redirect strategy before changing a published service, city or article slug.
+
+## Validation
+
+`npm run check` is the production website gate. It performs Sanity sync, ESLint, content-contract tests, focused Playwright tests, a production build, static-export preparation and exported-link verification.
+
+After editing the Sanity schema, run:
+
+```bash
+npm run content:types
+npm run studio:check
+npm run check
+```
+
+The content-contract suite currently protects public IDs/references, unique slugs, required live template copy, relationship integrity, approval gating, image alt text, location publication/indexing consistency and article body preservation.
+
+Rendered production checks are separate from the focused unit-style Playwright tests. `tests/e2e/` serves the generated `out/` directory in Chromium and verifies core navigation/search/quote behavior plus representative WCAG 2.x rules with Axe. Normal validation and deployment install Chromium and run these checks before a release can proceed.
+
+## Operational safeguards
+
+- Dependabot checks GitHub Actions, website npm dependencies and Studio npm dependencies weekly.
+- `.github/workflows/security.yml` performs a scheduled moderate-or-higher `npm audit` for both dependency trees.
+- `.github/workflows/uptime.yml` checks the production homepage, quote page and sitemap twice per hour from a GitHub-hosted runner.
+- `.github/workflows/backup-sanity.yml` creates a full weekly Sanity `prod` export with assets and retains the GitHub Actions artifact for 30 days.
+- The Sanity export path has been tested against the production dataset; generated JSON snapshots are not treated as backups.
+
+Recovery steps and the deliberately cautious restore procedure are documented in `recovery.md`.
+
+## Deployment
+
+`main` deploys through `.github/workflows/deploy-pages.yml`. A successful build uploads `out/` to GitHub Pages. A failed build leaves the currently published site untouched.
+
+A Sanity webhook can send the `sanity-content-published` repository dispatch event so a publish triggers the same deployment workflow. Draft preview is local-only and is explicitly blocked in GitHub Actions.
+
+## Known intentional limitations
+
+- Default Next.js image optimization is unavailable on the static host, so `images.unoptimized` remains enabled. Local photography should therefore be pre-sized/compressed; Sanity image URLs can still request optimized remote renditions.
+- There is no SoftNest-controlled server endpoint for quote validation/storage yet.
+- There is no private CRM/job database yet.
+- GitHub Pages cannot supply application-level security headers or request-time redirects.
+
+See `supabase-plan.md` for the future private-record direction rather than adding unused backend dependencies now.

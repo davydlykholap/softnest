@@ -45,6 +45,7 @@ yarn-error.log*
 /out/
 /test-results/
 /playwright-report/
+/backups/
 /softnest.zip
 /.next-dev*.log
 

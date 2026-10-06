@@ -1,11 +1,17 @@
 import { sanitizeAttribution } from "@/lib/marketingAttribution";
 import { businessQuantityQuestions, isPlusChoice } from "./quoteAnswers";
+import type { QuickQuestion } from "./quoteOptions";
 
 export type CustomerType = "Individual" | "Business";
 
-type Answers = {
-  quickDetails: Record<string, string>;
+export type QuoteEntry = {
+  id: string;
+  answers: Record<string, string>;
   exactQuantities: Record<string, string>;
+};
+
+export type QuoteAnswers = {
+  items: Record<string, QuoteEntry[]>;
   businessAmounts: Record<string, string>;
 };
 
@@ -13,95 +19,158 @@ export type QuoteItemOption = {
   id: string;
   presentation: {
     label: string;
-    quickQuestions?: { name: string; label: string; choices: string[] }[];
+    entryLabel?: string;
+    quickQuestions?: QuickQuestion[];
   };
 };
 
 export type ItemError = {
   itemId: string;
+  entryId?: string;
   kind: "choice" | "exact" | "amount";
   name?: string;
   message: string;
 };
-
 export function visibleQuestions(option: QuoteItemOption, customerType: CustomerType) {
   return (option.presentation.quickQuestions ?? []).filter(
     (question) => customerType !== "Business" || !businessQuantityQuestions.has(question.name),
   );
 }
 
+function entryQuestions(
+  option: QuoteItemOption,
+  customerType: CustomerType,
+  entry: QuoteEntry,
+) {
+  return visibleQuestions(option, customerType).filter((question) => {
+    if (!question.showWhen) return true;
+    return question.showWhen.values.includes(entry.answers[question.showWhen.name] ?? "");
+  });
+}
+
+function validateInputQuestion(question: QuickQuestion, value: string) {
+  const required = question.required !== false;
+  if (!value) return required ? "required" : null;
+  if (question.type === "text") {
+    return question.max && value.length > question.max ? "invalid" : null;
+  }
+  if (question.type === "number") {
+    if (!/^\d+(?:\.\d{1,2})?$/.test(value)) return "invalid";
+    const number = Number(value);
+    if (question.min !== undefined && number < question.min) return "invalid";
+    if (question.max !== undefined && number > question.max) return "invalid";
+  }
+  return null;
+}
+
 export function validateQuoteItems(
   options: QuoteItemOption[],
   customerType: CustomerType,
-  answers: Answers,
+  answers: QuoteAnswers,
 ): ItemError | null {
   for (const option of options) {
-    for (const question of visibleQuestions(option, customerType)) {
-      const choice = answers.quickDetails[question.name] ?? "";
-      if (!question.choices.includes(choice)) {
-        return {
-          itemId: option.id,
-          kind: "choice",
-          name: question.name,
-          message: `Please answer “${question.label}” for ${option.presentation.label}.`,
-        };
-      }
+    const entries = answers.items[option.id] ?? [];
+    if (!entries.length) {
+      return {
+        itemId: option.id,
+        kind: "choice",
+        message: `Please add details for ${option.presentation.label}.`,
+      };
+    }
 
-      if (isPlusChoice(choice)) {
-        const exact = answers.exactQuantities[question.name] ?? "";
-        if (!/^\d{1,3}$/.test(exact) || Number(exact) < Number(choice.slice(0, -1))) {
+    for (const [entryIndex, entry] of entries.entries()) {
+      for (const question of entryQuestions(option, customerType, entry)) {
+        const value = (entry.answers[question.name] ?? "").trim();
+        const entryName = `${option.presentation.entryLabel ?? option.presentation.label} ${entryIndex + 1}`;
+
+        if (question.type === "number" || question.type === "text") {
+          if (validateInputQuestion(question, value)) {
+            return {
+              itemId: option.id,
+              entryId: entry.id,
+              kind: "choice",
+              name: question.name,
+              message: `Please enter “${question.label}” for ${entryName}.`,
+            };
+          }
+          continue;
+        }
+
+        const choices = question.choices ?? [];
+        if (!choices.includes(value)) {
           return {
             itemId: option.id,
-            kind: "exact",
-            name: `${question.name}_exact`,
-            message: `Please enter the exact number for ${option.presentation.label} (${choice.slice(0, -1)} or more).`,
+            entryId: entry.id,
+            kind: "choice",
+            name: question.name,
+            message: `Please answer “${question.label}” for ${entryName}.`,
           };
+        }
+
+        if (isPlusChoice(value)) {
+          const exact = entry.exactQuantities[question.name] ?? "";
+          if (!/^\d{1,3}$/.test(exact) || Number(exact) < Number(value.slice(0, -1))) {
+            return {
+              itemId: option.id,
+              entryId: entry.id,
+              kind: "exact",
+              name: question.name,
+              message: `Please enter the exact number for ${entryName} (${value.slice(0, -1)} or more).`,
+            };
+          }
         }
       }
     }
 
-    if (customerType === "Business") {
+    if (customerType === "Business" && option.id !== "quote-category-6") {
       const amount = answers.businessAmounts[option.id] ?? "";
       if (!/^[1-9]\d{0,5}$/.test(amount)) {
         return {
           itemId: option.id,
           kind: "amount",
-          message: `Please enter ${option.id === "quote-category-6" ? "the approximate area" : "the number of pieces"} for ${option.presentation.label}.`,
+          message: `Please enter the number of pieces for ${option.presentation.label}.`,
         };
       }
     }
   }
-
   return null;
 }
 
 export function formatItemDetails(
   options: QuoteItemOption[],
   customerType: CustomerType,
-  answers: Answers,
+  answers: QuoteAnswers,
 ) {
   return options
     .map((option) => {
-      const details = visibleQuestions(option, customerType)
-        .filter((question) => answers.quickDetails[question.name])
-        .map((question) => {
-          const choice = answers.quickDetails[question.name];
-          return `${question.label}: ${isPlusChoice(choice)
-            ? answers.exactQuantities[question.name]
-            : choice}`;
-        });
+      const entryLabel = option.presentation.entryLabel ?? option.presentation.label;
+      const entries = answers.items[option.id] ?? [];
+      const entryDetails = entries.map((entry, index) => {
+        const details = entryQuestions(option, customerType, entry)
+          .filter((question) => entry.answers[question.name])
+          .map((question) => {
+            const value = entry.answers[question.name];
+            return `${question.label}: ${isPlusChoice(value)
+              ? entry.exactQuantities[question.name]
+              : value}`;
+          });
+        return details.length ? `${entryLabel} ${index + 1} — ${details.join(", ")}` : "";
+      }).filter(Boolean);
 
-      const amount = customerType === "Business" ? answers.businessAmounts[option.id] : "";
-      if (amount) {
-        details.push(`${option.id === "quote-category-6" ? "Approx. area (sq ft)" : "Number of pieces"}: ${amount}`);
+      if (customerType === "Business") {
+        const amount = answers.businessAmounts[option.id] ?? "";
+        if (amount) {
+          entryDetails.push(`${option.id === "quote-category-6" ? "Approx. area (sq ft)" : "Number of pieces"}: ${amount}`);
+        }
       }
-      return details.length ? `${option.presentation.label}: ${details.join(", ")}` : "";
+
+      return entryDetails.length ? `${option.presentation.label}: ${entryDetails.join(" | ")}` : "";
     })
     .filter(Boolean)
     .join("; ");
 }
 
-type SubmissionInput = Answers & {
+type SubmissionInput = QuoteAnswers & {
   formData: FormData;
   customerType: CustomerType;
   selectedOptions: QuoteItemOption[];

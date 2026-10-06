@@ -1,5 +1,6 @@
+import "server-only";
+
 import home from './generated/home.json';
-import about from './generated/about.json';
 import projects from './generated/projects.json';
 import testimonials from './generated/testimonials.json';
 import type { GalleryResult } from '@/components/HomeResultsCarousel';
@@ -7,7 +8,6 @@ import { siteConfig } from '@/lib/site';
 import { optimizedLocalImage } from '@/lib/optimizedLocalImage';
 
 export const homeContent = home;
-export const aboutContent = about;
 export function pageText(copy: {key:string;text:string}[], key:string, city?:string) {
   const entry=copy.find(item=>item.key===key);
   if(!entry) throw new Error(`Missing page content: ${key}`);

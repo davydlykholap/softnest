@@ -1,3 +1,5 @@
+import "server-only";
+
 import records from "@/content/generated/locations.json";
 import { optimizedLocalImage } from "@/lib/optimizedLocalImage";
 export type LocationFaq = {
@@ -11,7 +13,6 @@ export type Location = {
   pageEnabled: boolean;
   indexInSearch: boolean;
   showInFooter: boolean;
-  expanded?: boolean;
   expandedContent?: {
     heroImage: string;
     mapImage?: string;

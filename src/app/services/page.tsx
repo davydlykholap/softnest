@@ -14,6 +14,16 @@ import SiteHeader from "@/components/SiteHeader";
 import { services } from "@/content/services";
 import "@/app/styles/locations-hub.css";
 
+const serviceSearchItems = services.map(
+  ({ slug, name, menuLabel, shortName, serviceType }) => ({
+    slug,
+    name,
+    menuLabel,
+    shortName,
+    serviceType,
+  }),
+);
+
 export const metadata: Metadata = {
   title: "Services | SoftNest Fabric Care",
   description:
@@ -66,7 +76,7 @@ export default function ServicesPage() {
         />
 
         <div className="locations-search-wrap">
-          <ServiceSearch />
+          <ServiceSearch services={serviceSearchItems} />
         </div>
 
         <section className="locations-cities" id="services">

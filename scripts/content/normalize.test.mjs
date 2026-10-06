@@ -144,12 +144,37 @@ test("template copy cannot lose a required key", () => {
 
 test("template copy cannot contain duplicate keys", () => {
   const documents = seed();
-  const about = documents.find((document) => document._id === "page-content-about");
-  about.copy.push({ ...about.copy[0] });
+  const home = documents.find((document) => document._id === "page-content-home");
+  home.copy.push({ ...home.copy[0] });
   assert.throws(
     () => normalizeContent(documents, config),
-    /Duplicate page-copy key: page-1/,
+    /Duplicate page-copy key: hero-1/,
   );
+});
+
+test("retired homepage copy is not part of the build contract", () => {
+  const documents = seed();
+  const home = documents.find((document) => document._id === "page-content-home");
+  home.copy = home.copy.filter((entry) => entry.key !== "hero-2");
+  assert.doesNotThrow(() => normalizeContent(documents, config));
+});
+
+test("retired service-template fields are optional", () => {
+  const documents = seed();
+  const service = documents.find((document) => document._type === "service");
+  delete service.heroTitle;
+  delete service.process;
+  assert.doesNotThrow(() => normalizeContent(documents, config));
+});
+
+test("local page overrides do not depend on the retired expanded flag", () => {
+  const documents = seed();
+  const mississauga = documents.find(
+    (document) => document._type === "location" && document.slug.current === "mississauga",
+  );
+  delete mississauga.expanded;
+  const result = normalizeContent(documents, config);
+  assert(result.locations.find((location) => location.slug === "mississauga").expandedContent);
 });
 
 test("a location cannot be indexable without a published page", () => {

@@ -1,17 +1,29 @@
 import { createImageUrlBuilder } from "@sanity/image-url";
 
 const HOME_COPY_KEYS = [
-  ...Array.from({ length: 22 }, (_, index) => `hero-${index + 1}`),
-  ...Array.from({ length: 76 }, (_, index) => `sections-${index + 23}`),
+  "hero-1",
+  "hero-7",
+  "hero-8",
+  "hero-9",
+  "hero-10",
+  "hero-11",
+  "hero-12",
+  "hero-21",
+  "hero-22",
+  "sections-28",
+  "sections-36",
+  "sections-37",
+  "sections-38",
+  "sections-96",
+  "sections-97",
 ];
-const ABOUT_COPY_KEYS = Array.from(
-  { length: 33 },
-  (_, index) => `page-${index + 1}`,
-);
-const EXPANDED_LOCATION_COPY_KEYS = Array.from(
-  { length: 31 },
-  (_, index) => `page-${index + 1}`,
-);
+const EXPANDED_LOCATION_COPY_KEYS = [
+  "page-2",
+  "page-3",
+  "page-4",
+  "page-16",
+  "page-23",
+];
 
 export function normalizeContent(documents, config) {
   if (!Array.isArray(documents)) throw new Error("Content query did not return documents.");
@@ -137,26 +149,34 @@ export function normalizeContent(documents, config) {
       "shortName",
       "metaTitle",
       "metaDescription",
-      "heroTitle",
       "heroDescription",
       "summary",
       "drying",
       "limitations",
     ]);
-    for (const key of ["concerns", "included", "process", "serviceType"]) {
+    for (const key of ["concerns", "included", "serviceType"]) {
       if (!Array.isArray(document[key]) || !document[key].length) {
         fail(document, `Missing ${key}`);
       }
     }
-    for (const step of document.process) required(step, ["title", "description"]);
-
     const src = image(document);
     validateUrl(src, document, "service image URL");
     const alt = document.imageUpload?.alt || document.imageAlt;
     if (!alt) fail(document, "Missing image description");
 
+    const publicService = { ...document };
+    for (const key of [
+      "heroTitle",
+      "heroProofs",
+      "process",
+      "includedHeading",
+      "processHeading",
+      "afterCareEyebrow",
+      "afterCareHeading",
+    ]) delete publicService[key];
+
     return {
-      ...document,
+      ...publicService,
       id: document._id,
       slug: slug(document),
       image: src,
@@ -196,9 +216,8 @@ export function normalizeContent(documents, config) {
       }
     }
 
-    const expanded = document.expandedContent;
-    if (document.expanded) {
-      if (!expanded) fail(document, "Expanded sections missing");
+    const localOverrides = document.expandedContent;
+    if (localOverrides) {
       for (const key of [
         "quickBenefits",
         "services",
@@ -207,24 +226,27 @@ export function normalizeContent(documents, config) {
         "mississaugaFaqs",
         "copy",
       ]) {
-        if (!Array.isArray(expanded[key]) || !expanded[key].length) {
-          fail(document, `Expanded section ${key} missing`);
+        if (!Array.isArray(localOverrides[key]) || !localOverrides[key].length) {
+          fail(document, `Local override section ${key} missing`);
         }
       }
-      validateUrl(expanded.heroImage, document, "expanded hero image URL");
-      if (expanded.mapImage) {
-        validateUrl(expanded.mapImage, document, "expanded map image URL");
+      validateUrl(localOverrides.heroImage, document, "local hero image URL");
+      if (localOverrides.mapImage) {
+        validateUrl(localOverrides.mapImage, document, "local map image URL");
       }
-      validateCopy(document, expanded.copy, EXPANDED_LOCATION_COPY_KEYS);
-      for (const item of expanded.services) {
+      validateCopy(document, localOverrides.copy, EXPANDED_LOCATION_COPY_KEYS);
+      for (const item of localOverrides.services) {
         if (!services.some((service) => service.slug === item.slug && service.pageEnabled !== false)) {
-          fail(document, `Unknown expanded service ${item.slug}`);
+          fail(document, `Unknown local override service ${item.slug}`);
         }
       }
     }
 
+    const publicLocation = { ...document };
+    delete publicLocation.expanded;
+
     return {
-      ...document,
+      ...publicLocation,
       id: document._id,
       slug: slug(document),
       image: src,
@@ -243,16 +265,16 @@ export function normalizeContent(documents, config) {
           (location) => location.pageEnabled && location.status !== "not-served",
         )
         .map(slug),
-      ...(expanded
+      ...(localOverrides
         ? {
             expandedContent: {
-              ...expanded,
-              services: expanded.services.map((service) => ({
+              ...localOverrides,
+              services: localOverrides.services.map((service) => ({
                 ...service,
                 image: image(service),
                 alt: service.imageUpload?.alt || service.alt,
               })),
-              resultExamples: (expanded.resultExamples ?? []).map((result) => ({
+              resultExamples: (localOverrides.resultExamples ?? []).map((result) => ({
                 ...result,
                 image: image(result),
                 alt: result.imageUpload?.alt || result.alt,
@@ -263,21 +285,16 @@ export function normalizeContent(documents, config) {
     };
   });
 
-  const pages = {};
-  for (const [key, requiredKeys] of [
-    ["home", HOME_COPY_KEYS],
-    ["about", ABOUT_COPY_KEYS],
-  ]) {
-    const document = byId.get(`page-content-${key}`);
-    if (!document) throw new Error(`Missing ${key} page content`);
-    validateCopy(document, document.copy, requiredKeys);
-    pages[key] = {
-      ...document,
-      featuredServices: references(document, "featuredServices", "service")
-        .filter((service) => service.pageEnabled !== false)
-        .map(slug),
-    };
-  }
+  const homePage = byId.get("page-content-home");
+  if (!homePage) throw new Error("Missing home page content");
+  validateCopy(homePage, homePage.copy, HOME_COPY_KEYS);
+  const home = {
+    copy: homePage.copy.filter((item) => HOME_COPY_KEYS.includes(item.key)),
+    heroReviews: homePage.heroReviews ?? [],
+    featuredServices: references(homePage, "featuredServices", "service")
+      .filter((service) => service.pageEnabled !== false)
+      .map(slug),
+  };
 
   const projects = ordered("cleaningProject")
     .filter((document) => document.publicationStatus === "approved")
@@ -370,8 +387,7 @@ export function normalizeContent(documents, config) {
     },
     services,
     locations,
-    home: pages.home,
-    about: pages.about,
+    home,
     projects,
     testimonials,
     faqs: ordered("faq").filter((document) => document.onHomepage).map(faq),

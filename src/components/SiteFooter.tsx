@@ -1,3 +1,4 @@
+import { integrations } from "@/lib/integrations";
 import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +7,7 @@ import { navigationServices } from "@/content/services";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 
 export default function SiteFooter() {
-  const youtubeUrl = process.env.NEXT_PUBLIC_YOUTUBE_URL?.trim();
+  const youtubeUrl = integrations.youtubeUrl;
 
   return (
     <footer className="site-footer site-footer--refined bg-white px-[6%] py-12 border-b border-forestGreen/10">

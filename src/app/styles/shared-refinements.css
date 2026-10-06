@@ -163,6 +163,17 @@ html {
   transition: color .2s ease;
 }
 
+.footer-desktop-nav-column .footer-location-list a {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding-block: 4px;
+}
+
+.footer-desktop-nav-column .footer-location-list li + li {
+  margin-top: 2px;
+}
+
 .footer-service-list a:hover,
 .footer-legal-links a:hover {
   color: #07543b;

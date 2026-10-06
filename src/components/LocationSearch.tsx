@@ -5,9 +5,17 @@ import { useRouter } from "next/navigation";
 import DirectorySearch, {
   type DirectorySearchOption,
 } from "@/components/DirectorySearch";
-import { locations } from "@/content/locations";
 
-export default function LocationSearch() {
+export type LocationSearchItem = {
+  slug: string;
+  name: string;
+};
+
+export default function LocationSearch({
+  locations,
+}: {
+  locations: readonly LocationSearchItem[];
+}) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [message, setMessage] = useState("");
@@ -39,7 +47,7 @@ export default function LocationSearch() {
       return;
     }
 
-    setMessage("Send us your city or postal code and we’ll confirm availability.");
+    setMessage("Send us your city or postal code and we?ll confirm availability.");
     document
       .querySelector("#ask-about-your-city")
       ?.scrollIntoView({ behavior: "smooth", block: "center" });

@@ -212,7 +212,6 @@ export type Location = {
   pageEnabled?: boolean;
   indexInSearch?: boolean;
   showInFooter?: boolean;
-  expanded?: boolean;
   shortDescription: string;
   introduction: string;
   localConsiderations?: string;
@@ -342,7 +341,6 @@ export type Service = {
   showInNavigation?: boolean;
   metaTitle: string;
   metaDescription: string;
-  heroTitle: string;
   heroDescription: string;
   summary: string;
   imageUpload?: {
@@ -357,14 +355,8 @@ export type Service = {
   image?: string;
   imageAlt: string;
   serviceType?: Array<string>;
-  heroProofs?: Array<string>;
   concerns?: Array<string>;
   included?: Array<string>;
-  process?: Array<{
-    title: string;
-    description: string;
-    _key: string;
-  }>;
   drying: string;
   limitations: string;
   faq?: Array<{
@@ -382,10 +374,6 @@ export type Service = {
       _key: string;
     } & ServiceReference
   >;
-  includedHeading?: string;
-  processHeading?: string;
-  afterCareEyebrow?: string;
-  afterCareHeading?: string;
 };
 
 export type Slug = {
@@ -658,7 +646,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../src/sanity/queries.ts
 // Variable: websiteContentQuery
-// Query: *[_type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category"]] | order(_id asc)
+// Query: *[  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category"] &&  (_type != "pageContent" || _id == "page-content-home")] | order(_id asc)
 export type WebsiteContentQueryResult = Array<
   | {
       _id: string;
@@ -751,7 +739,6 @@ export type WebsiteContentQueryResult = Array<
       pageEnabled?: boolean;
       indexInSearch?: boolean;
       showInFooter?: boolean;
-      expanded?: boolean;
       shortDescription: string;
       introduction: string;
       localConsiderations?: string;
@@ -996,7 +983,6 @@ export type WebsiteContentQueryResult = Array<
       showInNavigation?: boolean;
       metaTitle: string;
       metaDescription: string;
-      heroTitle: string;
       heroDescription: string;
       summary: string;
       imageUpload?: {
@@ -1011,14 +997,8 @@ export type WebsiteContentQueryResult = Array<
       image?: string;
       imageAlt: string;
       serviceType?: Array<string>;
-      heroProofs?: Array<string>;
       concerns?: Array<string>;
       included?: Array<string>;
-      process?: Array<{
-        title: string;
-        description: string;
-        _key: string;
-      }>;
       drying: string;
       limitations: string;
       faq?: Array<{
@@ -1036,10 +1016,6 @@ export type WebsiteContentQueryResult = Array<
           _key: string;
         } & ServiceReference
       >;
-      includedHeading?: string;
-      processHeading?: string;
-      afterCareEyebrow?: string;
-      afterCareHeading?: string;
     }
   | {
       _id: string;
@@ -1104,7 +1080,7 @@ export type WebsiteContentQueryResult = Array<
 // Query TypeMap
 declare global {
   interface SanityQueries {
-    '*[_type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category"]] | order(_id asc)': WebsiteContentQueryResult;
+    '*[\n  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category"] &&\n  (_type != "pageContent" || _id == "page-content-home")\n] | order(_id asc)': WebsiteContentQueryResult;
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

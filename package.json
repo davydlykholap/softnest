@@ -14,7 +14,7 @@
     "content:import:check": "node scripts/content/import.mjs --dry-run",
     "content:import": "node scripts/content/import.mjs",
     "content:verify": "node --test scripts/content/normalize.test.mjs",
-    "test:unit": "playwright test tests --reporter=line",
+    "test:unit": "playwright test tests/marketing-attribution.spec.ts tests/images.spec.ts tests/quote-request.spec.ts --reporter=line",
     "verify:export": "node scripts/verify-export.mjs",
     "prepare:export": "node scripts/prepare-export.mjs",
     "predev": "npm run content:sync",
@@ -24,26 +24,29 @@
     "content:types": "npm run typegen --prefix studio",
     "preview": "node scripts/content/preview.mjs",
     "content:repair-ids": "node scripts/content/repair-ids.mjs",
-    "content:publish-reviews": "node scripts/content/publish-reviews.mjs"
+    "content:publish-reviews": "node scripts/content/publish-reviews.mjs",
+    "test:e2e:built": "playwright test -c playwright.e2e.config.ts",
+    "test:e2e": "npm run check && npm run test:e2e:built",
+    "test:a11y:built": "playwright test tests/e2e/accessibility.spec.ts -c playwright.e2e.config.ts"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
     "@sanity/client": "^8.5.0",
     "@sanity/image-url": "^2.1.1",
     "groq": "^6.12.0",
-    "next": "16.3.5",
+    "next": "16.3.8",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "react-icons": "^5.7.0"
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "4.1.18",
     "@types/node": "20.19.33",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "eslint": "^9.39.5",
-    "eslint-config-next": "16.3.5",
+    "eslint-config-next": "16.3.8",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3"
   },

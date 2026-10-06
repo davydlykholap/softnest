@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties } from "react";
-import { TbGripVertical } from "react-icons/tb";
+import { GripVerticalIcon } from "@/components/UiIcons";
 import styles from "@/app/services/service-page.module.css";
 
 type ServiceResultCompareProps = {
@@ -40,7 +40,7 @@ export default function ServiceResultCompare({
         aria-hidden="true"
       >
         <span className={styles.resultGrip}>
-          <TbGripVertical />
+          <GripVerticalIcon />
         </span>
       </span>
       <input

@@ -3,7 +3,7 @@ import { locationUrl } from '@/seo/urls';
 import { siteConfig } from '@/lib/site';
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ExpandedLocationPage from "@/components/locations/ExpandedLocationPage";
+import LocationPage from "@/components/locations/LocationPage";
 import { getLocation, locations } from "@/content/locations";
 
 type CityPageProps = {
@@ -22,7 +22,9 @@ export async function generateMetadata({
   if (!location) return {};
 
   return pageMetadata({
-    title: `Upholstery & Carpet Cleaning in ${location.name} | ${siteConfig.alternateName}`,
+    title:
+      location.metaTitle ||
+      `Upholstery & Carpet Cleaning in ${location.name} | ${siteConfig.alternateName}`,
     description: location.metaDescription || location.shortDescription,
     path: locationUrl(location.slug),
     image: location.expandedContent?.heroImage || location.image,
@@ -36,5 +38,5 @@ export default async function CityPage({ params }: CityPageProps) {
   const location = getLocation(city);
   if (!location) notFound();
 
-  return <ExpandedLocationPage location={location} />;
+  return <LocationPage location={location} />;
 }

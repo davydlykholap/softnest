@@ -55,10 +55,11 @@ const rows = (
   name: string,
   fields: FieldDefinition[],
   preview?: { title?: string; subtitle?: string; description?: string },
+  titleOverride?: string,
 ) =>
   defineField({
     name,
-    title: label(name),
+    title: titleOverride ?? label(name),
     type: "array",
     of: [
       defineArrayMember({
@@ -285,28 +286,19 @@ export const businessTypes = [
     }),
     text("metaTitle", true),
     text("metaDescription", true, true),
-    text("heroTitle", true),
     text("heroDescription", true, true),
     text("summary", true, true),
     media(),
     legacyImage,
     text("imageAlt", true),
     strings("serviceType"),
-    strings("heroProofs"),
     strings("concerns"),
     strings("included"),
-    rows("process", steps, { title: "title", subtitle: "description" }),
     text("drying", true, true),
     text("limitations", true, true),
     rows("faq", faqFields, { title: "question", subtitle: "answer" }),
     refs("sharedFaqs", "faq"),
     refs("relatedServices", "service"),
-    ...[
-      "includedHeading",
-      "processHeading",
-      "afterCareEyebrow",
-      "afterCareHeading",
-    ].map((name) => text(name)),
   ], { title: "name", subtitle: "slug.current" }),
 
   doc("location", "Service areas", [
@@ -352,14 +344,6 @@ export const businessTypes = [
       initialValue: false,
       hidden: ({ parent }) => !parent?.pageEnabled,
     }),
-    defineField({
-      name: "expanded",
-      title: "Use expanded local page",
-      type: "boolean",
-      initialValue: false,
-      description:
-        "Uses the richer local-page layout when the expanded sections below are complete.",
-    }),
     text("shortDescription", true, true),
     text("introduction", true, true),
     text("localConsiderations", false, true),
@@ -376,9 +360,10 @@ export const businessTypes = [
     refs("sharedFaqs", "faq"),
     defineField({
       name: "expandedContent",
-      title: "Expanded location sections",
+      title: "Local page overrides",
+      description:
+        "Optional city-specific hero, map, benefits, services, FAQs and text. Shared defaults are used when these fields are not provided.",
       type: "object",
-      hidden: ({ parent }) => !parent?.expanded,
       fields: [
         text("heroImage"),
         text("mapImage"),
@@ -436,10 +421,12 @@ export const businessTypes = [
           title: "title",
           subtitle: "description",
         }),
-        rows("mississaugaFaqs", faqFields, {
-          title: "question",
-          subtitle: "answer",
-        }),
+        rows(
+          "mississaugaFaqs",
+          faqFields,
+          { title: "question", subtitle: "answer" },
+          "Local FAQs",
+        ),
         copyRows(),
       ],
     }),

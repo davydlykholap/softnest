@@ -1,11 +1,15 @@
-name: Validate website and editor
+name: Scheduled dependency security check
+
 on:
-  pull_request:
+  schedule:
+    - cron: "31 13 * * 1"
   workflow_dispatch:
+
 permissions:
   contents: read
+
 jobs:
-  validate:
+  audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -20,18 +24,8 @@ jobs:
             studio/package-lock.json
       - run: npm ci
       - run: npm ci --prefix studio
-      - run: npm audit --audit-level=moderate
+      - name: Audit website dependencies
+        run: npm audit --audit-level=moderate
       - name: Audit Studio dependencies
         run: npm audit --audit-level=moderate
         working-directory: studio
-      - run: npm run content:types
-      - run: npm run studio:check
-      - run: npm run check
-        env:
-          CONTENT_SOURCE: sanity
-          SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
-          SANITY_DATASET: ${{ vars.SANITY_DATASET }}
-      - name: Install Chromium for browser checks
-        run: npx playwright install --with-deps chromium
-      - name: Run browser smoke and accessibility checks
-        run: npm run test:e2e:built

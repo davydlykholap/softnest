@@ -1,50 +1,133 @@
 # Editing and publishing SoftNest
 
+This document describes the current Sanity editor and publishing workflow as of 2026-10-02.
+
 ## Start the editor
 
-From the repository root, run `npm run studio`. Open http://localhost:3333 and sign in to the account with access to project `u0x0al83`, dataset `prod`.
+From the repository root:
 
-The editor includes Business settings, Homepage, About, Blog posts, Services, Service areas, Common questions, Customer reviews, Cleaning results and Quote form choices.
+```bash
+npm run studio
+```
 
-## First content import
+Open http://localhost:3333 and sign in to the account with access to the saved SoftNest Sanity project/dataset.
 
-The source articles and existing website content have been prepared in `content/migration`. First run `npm run content:import:check` with `SANITY_API_WRITE_TOKEN` in the ignored `.env.local`, or log into the Studio CLI first. The check reads the current dataset, verifies relationships, slug conflicts and local image files, and reports what would be created without changing Sanity. Then run `npm run content:import` to perform the migration. The real import saves a local backup, uploads article images and creates only missing records in one transaction. Existing IDs are preserved. A different existing ID with the same article/service/location address stops the import for reconciliation.
+The Studio navigation currently exposes:
 
-**September 7 migration repair:** an early import used dotted document IDs. Sanity treats dotted IDs as private paths, which prevents the unauthenticated static website build from reading them. The corrected source uses hyphenated public IDs. If that early 57-record import has already been run, execute `npm run content:repair-ids` once before `npm run check`. The repair validates the anonymous website read before removing any legacy copies.
+- Business settings and Homepage;
+- Quote form choices;
+- Services and Service areas;
+- Cleaning results, Customer reviews and Common questions;
+- Blog posts, Authors and Categories.
 
-The prepared articles are:
+The About page is intentionally **not** editable in Sanity today. Its visible content lives in `src/app/about/page.tsx`. An old `page-content-about` document may remain in the dataset from the migration, but builds do not fetch it and Studio no longer presents it as an editing surface.
 
-1. **How to Remove a Stain from a Couch Without Making It Worse** — complete source text, five supplied images within the body, and a listing-card image.
-2. **Why Did My Couch Stain Come Back After Cleaning?** — complete source text, text-only.
+## Homepage editing
 
-Original metadata proposed root-level addresses. These new articles use the established `/blog/` route. The source is kept in the inbox. The choosing-a-cleaner article and alternate drafts are retained but are not published by this import.
+The Homepage document contains rows created during earlier site versions. Only the text keys used by the current React homepage are part of the production contract and generated snapshot.
 
-## Everyday article editing
+Changing an old unused row will not change the website. When a new homepage fragment should become CMS-editable, connect it in React and add its key to `HOME_COPY_KEYS` in `scripts/content/normalize.mjs` as part of the same change.
 
-Open **Journal → Blog posts**. Enter the title, excerpt, body, publication date and address. Use the separate Search title for a shorter search heading. Add body images between paragraphs, provide descriptive alternative text and optional captions. A cover can be used only for the blog card/social preview by turning off “Show cover above article.” Link related services through their reference fields.
+Featured-service references and hero-review entries are also read from the Homepage document.
 
-Publication date is a display date, not a scheduler. Publish deliberately when the article is ready. Draft edits do not change the public website. New published articles appear on the blog listing and sitemap after the next successful deployment.
+## Service editing
 
-## Preview drafts locally
+A service currently controls its public name/menu labels, slug/order/publication, search metadata, hero description, summary, image, service types, common concerns, included work, drying guidance, realistic limitations, FAQs and related services.
 
-Run `npm run preview` in a second terminal, with a read token in `.env.local` (`SANITY_API_READ_TOKEN`). An existing write token can also be used locally. Then open Website preview in the editor, or http://localhost:3000. Outside localhost, the preview uses `SANITY_STUDIO_WEBSITE_URL` when set and otherwise opens the production site. The watcher refreshes the website content after saved edits. Incomplete drafts that fail validation leave the last valid local snapshot in place; read the terminal and correct the missing content. Restart the preview if its connection is lost.
+The older generic service fields `heroTitle`, `process`, `heroProofs`, `includedHeading`, `processHeading`, `afterCareEyebrow` and `afterCareHeading` were retired because the current shared service template does not render them. Existing records may retain those old values in Sanity storage, but they are not shown in Studio and are removed from the generated website snapshot.
 
-This is a saved-draft page preview, not click-to-edit overlays or a public hosted preview. Hosted Studio previews show the published site. Draft preview is refused in GitHub Actions and must never be deployed publicly.
+Do not change a published service slug without a redirect plan.
 
-## Publishing the website
+## Service-area editing
 
-Normal builds use published Sanity content: `npm run check`. GitHub Pages runs the same checks before replacing the public site. Publishing requires a successful website deployment; the old site stays available if the build fails.
+The core controls are independent:
 
-Automatic publishing is configured with `node scripts/content/configure-webhook.mjs`. It needs the Sanity token plus a fine-grained GitHub token in `.env.local` named `GITHUB_WORKFLOW_TOKEN`, restricted to this repository with **Actions: write**. Sanity stores the authorization header; it is never bundled into the website. The webhook triggers `deploy-pages.yml` on main for published creates, edits and deletions. It ignores drafts and release-version documents. Do not expose webhook configuration or share links containing its headers.
+- **Service status** ? active, limited or not served;
+- **Publish location page** ? whether a route exists;
+- **Allow search indexing** ? whether the published page may appear in sitemap/search;
+- **Show in footer** ? whether it is promoted in the footer.
 
-Until that webhook is configured, use the GitHub Actions “Deploy SoftNest to GitHub Pages” workflow's Run workflow control after publishing content. The run summary shows success or failure. Configure GitHub notification preferences for failed workflows if desired.
+A not-served area cannot publish a page. An unpublished page cannot be indexable or appear in the footer; content validation enforces those rules.
 
-## Business records and content safeguards
+Every published city uses the same shared `LocationPage` template. **Local page overrides** are optional. Most cities can rely on shared defaults; fill the override object only when there is accurate city-specific hero/map/benefit/service/FAQ/copy content worth maintaining.
 
-Service-area coverage, published pages, search indexing and footer prominence are separate controls. Expanded cities need their own local content and map. Reviews/results only appear when approved; recorded cities and services must be accurate. Google rating is manually maintained and should be verified against its source. Hours should only be filled with actual business hours.
+The former `expanded` checkbox is retired and ignored even if an older record still contains it. The existence of valid local override content is what matters now.
 
-The production project is a public content dataset. Never store customer addresses, private notes, credentials or other internal records here. See `supabase-plan.md` for the separate future business system.
+The FAQ list inside local overrides is displayed in Studio as **Local FAQs**. Its underlying Sanity field name is still `mississaugaFaqs` solely to preserve existing production data without a risky migration; treat it as generic local content.
 
-## Advertising configuration
+## Reviews and cleaning results
 
-The Google Ads tag and Web3Forms public identifiers have centralized defaults. Quote and phone conversions require their full `AW-…/label` destinations in GitHub repository variables matching `.env.example`. No conversion label is invented. A successful local form simulation does not verify real email delivery or Google Ads reporting.
+Testimonials and cleaning projects must be **Approved for website** before they enter the generated public snapshot. Pending/withheld records are excluded during normalization.
+
+Attach accurate service/location references when they are known. Those references control which proof can appear on service or city pages. Do not add a city/service tag merely for marketing if the underlying job/review does not support it.
+
+Google rating in Business settings is manually maintained. Verify the source before updating it.
+
+## Blog editing
+
+Open **Journal ? Blog posts**. Enter the title, excerpt, body, publication date and slug. Optional fields include cover image, separate search title, SEO description, author/categories and related services.
+
+Article body images require alternative text. A cover can be used only for listing/social previews by disabling ?Show cover above article.?
+
+Publication date is display metadata, not a scheduler. Publish deliberately. Draft changes do not reach the public site until a successful deployment reads them.
+
+## Local draft preview
+
+Put `SANITY_API_READ_TOKEN` in ignored `.env.local`, then run:
+
+```bash
+npm run preview
+```
+
+The local preview uses the draft perspective and refreshes the generated snapshot while you edit. Invalid/incomplete draft data does not become a valid website build; correct the terminal-reported content error.
+
+Draft preview is local-only and explicitly blocked in GitHub Actions. It is not a public hosted preview and does not provide click-to-edit overlays.
+
+## Normal publishing
+
+The production content path is:
+
+```text
+Edit ? Publish in Sanity ? GitHub Pages build ? validated static site
+```
+
+`npm run check` uses **published** Sanity data. If validation/build fails, the current deployed website remains in place.
+
+A Sanity webhook can trigger `.github/workflows/deploy-pages.yml` through the `sanity-content-published` repository-dispatch event. Configure it with `scripts/content/configure-webhook.mjs`. The setup script requires local tokens; those values must never be bundled into the site.
+
+If the webhook is not operational, run the **Deploy SoftNest to GitHub Pages** workflow manually after publishing.
+
+## Schema changes
+
+When changing `studio/schemaTypes`:
+
+```bash
+npm run content:types
+npm run studio:check
+npm run check
+```
+
+`content:types` regenerates `src/sanity/sanity.types.ts`. Commit that generated TypeScript file when it changes. `studio/schema.json` is local generated output and remains ignored.
+
+## Initial/bootstrap import
+
+`content/migration` is retained for recovery/bootstrap of a new dataset. It is not a second editorial source after migration.
+
+Before importing into a new dataset, use `npm run content:import:check`. A real import creates only missing records and preserves stable IDs. The historical public-ID repair command exists only for the early September 2026 dotted-ID migration issue; do not run it on a healthy dataset without a specific reason.
+
+## Public-data boundary
+
+Sanity is a public website CMS. Never store customer addresses, private phone/email notes, credentials, job notes or other internal records there. Those belong in the future private business system described in `supabase-plan.md`.
+
+## Build-time public configuration
+
+Public browser/build settings are documented in `.env.example` and centralized in `src/lib/integrations.ts`:
+
+- `NEXT_PUBLIC_GOOGLE_ADS_ID`;
+- `NEXT_PUBLIC_GOOGLE_ADS_QUOTE_CONVERSION`;
+- `NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION`;
+- `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`;
+- optional `NEXT_PUBLIC_HOME_VIDEO_URL`;
+- optional `NEXT_PUBLIC_YOUTUBE_URL`.
+
+These are public identifiers/URLs, not private credentials. Sanity read/write tokens and the GitHub workflow token are private and must remain unprefixed/local or in the appropriate platform secret storage.

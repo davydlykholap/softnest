@@ -1,3 +1,5 @@
+import { integrations } from "@/lib/integrations";
+
 export type AnalyticsEventParams = Record<string, string | number | boolean | undefined>;
 
 declare global {
@@ -7,10 +9,8 @@ declare global {
   }
 }
 
-const quoteConversionDestination =
-  process.env.NEXT_PUBLIC_GOOGLE_ADS_QUOTE_CONVERSION?.trim() ?? "";
-const phoneConversionDestination =
-  process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION?.trim() ?? "";
+const quoteConversionDestination = integrations.googleAdsQuoteConversion;
+const phoneConversionDestination = integrations.googleAdsPhoneConversion;
 
 function gtag(...args: unknown[]) {
   if (typeof window === "undefined") return;
