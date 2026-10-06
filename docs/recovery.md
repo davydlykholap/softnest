@@ -8,7 +8,7 @@ This document covers the lightweight production safeguards used by SoftNest and 
 - Sanity `prod` is exported weekly as a restorable archive, including assets.
 - GitHub Actions checks the live homepage, quote page and sitemap twice per hour.
 - Dependabot checks npm and GitHub Actions dependencies weekly.
-- A separate scheduled workflow runs `npm audit` for the website and Studio every Monday.
+- A separate scheduled workflow runs `npm run audit:dependencies` for the website and Studio every Monday, including checks that temporary tooling exceptions have not expired.
 - Browser smoke tests and automated WCAG checks must pass before normal validation/deployment succeeds.
 
 The workflows live under `.github/workflows/`:
@@ -76,3 +76,7 @@ For an actual website outage:
 4. Preserve the failing logs before changing several things at once.
 
 For confidence in recovery, perform an occasional manual Sanity restore into a temporary dataset rather than waiting for a real incident to discover that a backup cannot be used.
+
+## Confirm the deployed version
+
+The static export includes `/release.json`, containing the Git commit and the SHA-256 hash of the exported quote page. Compare its commit with GitHub main to distinguish a saved commit from a published release. A failed workflow leaves the previous release live.

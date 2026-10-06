@@ -1,0 +1,20 @@
+{
+  "exceptions": [
+    {
+      "package": "braces",
+      "advisory": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+      "versions": ["3.0.3"],
+      "targets": ["website", "studio"],
+      "expires": "2026-11-06",
+      "reason": "No upstream patch exists. Used by ESLint and Sanity CLI globbing over repository paths; the deployed website is static and does not accept user-supplied glob patterns. Review upstream patch availability weekly. Build-time denial-of-service risk remains."
+    },
+    {
+      "package": "sprintf-js",
+      "advisory": "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+      "versions": ["1.0.3"],
+      "targets": ["studio"],
+      "expires": "2026-11-06",
+      "reason": "No upstream patch exists. Reached through argparse in Sanity CLI framework detection; deployed website does not accept printf format strings. Retain js-yaml v3 compatibility because the upstream caller uses safeLoad. Review weekly; CLI denial-of-service risk remains."
+    }
+  ]
+}

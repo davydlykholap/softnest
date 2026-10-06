@@ -50,3 +50,7 @@ Start with [`docs/README.md`](docs/README.md). `docs/current-state.md` is the au
 ## Public site
 
 [softnestcare.ca](https://softnestcare.ca/) ? [Get a quote](https://softnestcare.ca/quote/)
+
+### Runtime and dependency checks
+
+Use Node.js 24.16.0 (`.nvmrc`) and npm 11.14.1 for local and CI installs. Run `npm ci`, `npm ci --prefix studio`, and `npm run audit:dependencies`. The audit gate preserves temporary, exact-version exceptions for two unpatched CLI/lint advisories; it blocks new moderate-or-higher findings, critical findings, changed versions, and expired exceptions. Review `dependency-audit-exceptions.json` weekly.

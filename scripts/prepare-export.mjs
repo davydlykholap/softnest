@@ -1,5 +1,7 @@
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
+import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const exportRoot = resolve("out");
 let aliases = 0;
@@ -37,4 +39,12 @@ async function walk(directory, relativeParts = []) {
 }
 
 await walk(exportRoot);
+const commit = process.env.GITHUB_SHA ?? execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim();
+if (!/^[a-f0-9]{40}$/.test(commit)) throw new Error("Invalid release commit");
+const quoteHtml = await readFile(join(exportRoot, "quote", "index.html"));
+await writeFile(join(exportRoot, "release.json"), JSON.stringify({
+  commit,
+  builtAt: new Date().toISOString(),
+  quoteSha256: createHash("sha256").update(quoteHtml).digest("hex"),
+}, null, 2) + "\n");
 console.log(`Prepared ${aliases} static route fragment aliases.`);

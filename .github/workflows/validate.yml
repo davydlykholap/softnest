@@ -13,17 +13,18 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 22
+          node-version-file: .nvmrc
           cache: npm
           cache-dependency-path: |
             package-lock.json
             studio/package-lock.json
+      - name: Use pinned npm version
+        run: npm install --global npm@11.14.1
+
       - run: npm ci
       - run: npm ci --prefix studio
-      - run: npm audit --audit-level=moderate
-      - name: Audit Studio dependencies
-        run: npm audit --audit-level=moderate
-        working-directory: studio
+      - name: Audit dependencies
+        run: npm run audit:dependencies
       - run: npm run content:types
       - run: npm run studio:check
       - run: npm run check

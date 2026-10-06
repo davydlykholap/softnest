@@ -8,7 +8,7 @@
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint .",
-    "check": "npm run content:sync && eslint . && npm run content:verify && npm run test:unit && next build && npm run prepare:export && npm run verify:export",
+    "check": "npm run content:sync && eslint . && npm run test:audit && npm run content:verify && npm run test:unit && next build && npm run prepare:export && npm run verify:export",
     "content:sync": "node scripts/content/sync.mjs",
     "content:seed": "node scripts/content/run-seed.mjs",
     "content:import:check": "node scripts/content/import.mjs --dry-run",
@@ -27,32 +27,40 @@
     "content:publish-reviews": "node scripts/content/publish-reviews.mjs",
     "test:e2e:built": "playwright test -c playwright.e2e.config.ts",
     "test:e2e": "npm run check && npm run test:e2e:built",
-    "test:a11y:built": "playwright test tests/e2e/accessibility.spec.ts -c playwright.e2e.config.ts"
+    "test:a11y:built": "playwright test tests/e2e/accessibility.spec.ts -c playwright.e2e.config.ts",
+    "audit:dependencies": "node scripts/dependency-audit.mjs",
+    "test:audit": "node --test scripts/dependency-audit.test.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
-    "@sanity/client": "^8.5.0",
+    "@sanity/client": "^8.9.0",
     "@sanity/image-url": "^2.1.1",
-    "groq": "^6.12.0",
-    "next": "16.3.8",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "groq": "^6.18.0",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.63.0",
-    "@tailwindcss/postcss": "4.1.18",
+    "@tailwindcss/postcss": "4.3.3",
     "@types/node": "20.19.33",
-    "@types/react": "19.2.14",
-    "@types/react-dom": "19.2.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "16.3.8",
-    "tailwindcss": "4.1.18",
+    "eslint-config-next": "16.4.0",
+    "tailwindcss": "4.3.3",
     "typescript": "5.9.3"
   },
   "overrides": {
     "postcss": "8.5.25",
-    "sharp": "0.35.4"
+    "sharp": "0.35.5",
+    "source-map-js": "1.2.2"
   },
-  "type": "module"
+  "type": "module",
+  "engines": {
+    "node": ">=24.16.0 <25",
+    "npm": ">=11.14.1 <12"
+  },
+  "packageManager": "npm@11.14.1"
 }

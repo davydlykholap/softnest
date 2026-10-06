@@ -6,7 +6,7 @@ This is the authoritative handoff for the production website. Read it before str
 
 ## Production architecture
 
-- Next.js 16.3.8, React 19 and strict TypeScript power the public site.
+- Next.js 16.4.0, React 19.3 and strict TypeScript power the public site.
 - Production uses `output: "export"` and is deployed as static files to GitHub Pages.
 - Sanity Studio in `studio/` manages public structured content.
 - Every normal dev/build first reads published Sanity content, validates it, and writes a generated snapshot under `src/content/generated/`.
@@ -84,7 +84,7 @@ Rendered production checks are separate from the focused unit-style Playwright t
 ## Operational safeguards
 
 - Dependabot checks GitHub Actions, website npm dependencies and Studio npm dependencies weekly.
-- `.github/workflows/security.yml` performs a scheduled moderate-or-higher `npm audit` for both dependency trees.
+- `.github/workflows/security.yml` runs `npm run audit:dependencies` weekly for both dependency trees. New moderate-or-higher advisories fail; exact, version-scoped tooling exceptions expire on 2026-11-06.
 - `.github/workflows/uptime.yml` checks the production homepage, quote page and sitemap twice per hour from a GitHub-hosted runner.
 - `.github/workflows/backup-sanity.yml` creates a full weekly Sanity `prod` export with assets and retains the GitHub Actions artifact for 30 days.
 - The Sanity export path has been tested against the production dataset; generated JSON snapshots are not treated as backups.

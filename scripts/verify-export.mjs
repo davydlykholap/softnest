@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative, resolve, sep } from "node:path";
+import { createHash } from "node:crypto";
 
 const exportRoot = resolve("out");
 
@@ -70,6 +71,12 @@ for (const relative of obsoleteExportPaths) {
   if (existsSync(target)) {
     failures.push(`Obsolete public asset was copied into the export: ${target}`);
   }
+}
+
+const release = JSON.parse(readFileSync(join(exportRoot, "release.json"), "utf8"));
+const quoteHash = createHash("sha256").update(readFileSync(join(exportRoot, "quote", "index.html"))).digest("hex");
+if (!/^[a-f0-9]{40}$/.test(release.commit) || release.quoteSha256 !== quoteHash) {
+  failures.push("Release marker does not identify a valid commit and the exported quote page.");
 }
 
 if (failures.length) {
