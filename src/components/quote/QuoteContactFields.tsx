@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { QuoteSelect } from "./QuoteSelect";
+import QuoteLocationField, { type QuoteCity } from "./QuoteLocationField";
 
 type QuoteContactFieldsProps = {
   customerType: "Individual" | "Business";
   phone: string;
   onPhoneChange: (value: string) => void;
+  cities: QuoteCity[];
 };
 
 function formatPhoneNumber(value: string) {
@@ -27,7 +29,7 @@ function formatPhoneNumber(value: string) {
   return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
 }
 
-export function QuoteContactFields({ customerType, phone, onPhoneChange }: QuoteContactFieldsProps) {
+export function QuoteContactFields({ customerType, phone, onPhoneChange, cities }: QuoteContactFieldsProps) {
   const [serviceFrequency, setServiceFrequency] = useState("");
 
   return (
@@ -87,19 +89,11 @@ export function QuoteContactFields({ customerType, phone, onPhoneChange }: Quote
             required
           />
         </label>
+        <Suspense fallback={<label className="quote-page-field"><span>Service city or postal code</span><input name="service_location" type="text" placeholder="Where is the cleaning needed?" minLength={2} maxLength={120} required /></label>}>
+          <QuoteLocationField cities={cities} />
+        </Suspense>
         {customerType === "Business" && (
           <>
-            <label className="quote-page-field">
-              <span>Service city or postal code</span>
-              <input
-                name="service_location"
-                type="text"
-                placeholder="Where is the cleaning needed?"
-                minLength={2}
-                maxLength={120}
-                required
-              />
-            </label>
             <div className="quote-page-field">
               <span>Service frequency</span>
               <QuoteSelect

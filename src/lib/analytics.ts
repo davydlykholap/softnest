@@ -28,10 +28,17 @@ export function trackEvent(name: string, params: AnalyticsEventParams = {}) {
   gtag("event", name, params);
 }
 
-export function trackQuoteConversion(onComplete?: () => void) {
+export function cityFromUrl(url: URL, citySlugs: readonly string[]) {
+  const routeCity = /^\/location\/([a-z0-9-]+)\/$/.exec(url.pathname)?.[1];
+  const city = routeCity ?? (url.pathname === "/quote/" ? url.searchParams.get("city") : undefined);
+  return city && citySlugs.includes(city) ? city : undefined;
+}
+
+export function trackQuoteConversion(onComplete?: () => void, sourceCity?: string) {
   trackEvent("generate_lead", {
     event_category: "lead",
     event_label: "quote_form",
+    ...(sourceCity ? { source_city: sourceCity } : {}),
   });
 
   if (!quoteConversionDestination) {
@@ -56,10 +63,11 @@ export function trackQuoteConversion(onComplete?: () => void) {
   window.setTimeout(finish, 900);
 }
 
-export function trackPhoneClick() {
+export function trackPhoneClick(sourceCity?: string) {
   trackEvent("click_to_call", {
     event_category: "contact",
     event_label: "phone",
+    ...(sourceCity ? { source_city: sourceCity } : {}),
   });
 
   if (phoneConversionDestination) {

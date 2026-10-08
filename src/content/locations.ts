@@ -5,6 +5,7 @@ import { optimizedLocalImage } from "@/lib/optimizedLocalImage";
 export type LocationFaq = {
   question: string;
   answer: string;
+  link?: { href: string; label: string };
 };
 
 export type Location = {

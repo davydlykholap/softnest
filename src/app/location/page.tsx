@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
 };
 
-const locationSearchItems = locations.map(({ slug, name }) => ({ slug, name }));
+const locationSearchItems = locations.map(({ slug, name, neighbourhoods }) => ({ slug, name, neighbourhoods }));
 
 export default function LocationsPage() {
   const breadcrumbSchema = {

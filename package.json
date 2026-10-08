@@ -14,7 +14,7 @@
     "content:import:check": "node scripts/content/import.mjs --dry-run",
     "content:import": "node scripts/content/import.mjs",
     "content:verify": "node --test scripts/content/normalize.test.mjs",
-    "test:unit": "playwright test tests/marketing-attribution.spec.ts tests/images.spec.ts tests/quote-request.spec.ts --reporter=line",
+    "test:unit": "playwright test tests/marketing-attribution.spec.ts tests/images.spec.ts tests/quote-request.spec.ts tests/location-search.spec.ts --reporter=line",
     "verify:export": "node scripts/verify-export.mjs",
     "prepare:export": "node scripts/prepare-export.mjs",
     "predev": "npm run content:sync",

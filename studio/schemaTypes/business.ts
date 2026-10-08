@@ -165,7 +165,17 @@ const legacyImage = defineField({
     "Preserved migration asset. Upload an image above to replace it.",
 });
 
-const faqFields = [text("question", true), text("answer", true, true)];
+const faqFields = [
+  text("question", true),
+  text("answer", true, true),
+  defineField({
+    name: "relatedService",
+    title: "Learn more about a service",
+    type: "reference",
+    to: [{ type: "service" }],
+    description: "Optional service-page link shown after the answer.",
+  }),
+];
 const steps = [text("title", true), text("description", true, true)];
 
 const doc = (

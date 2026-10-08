@@ -11,12 +11,14 @@ import {
 } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { trackQuoteConversion } from "@/lib/analytics";
+import { trackEvent, trackQuoteConversion } from "@/lib/analytics";
 import { integrations } from "@/lib/integrations";
+import { useHydrated } from "@/lib/useHydrated";
 import { submitQuote } from "@/domain/quote";
 import { attributionStorageKey } from "@/lib/marketingAttribution";
 import { QuoteOptionCard } from "@/components/quote/QuoteOptionCard";
 import { QuoteContactFields } from "@/components/quote/QuoteContactFields";
+import type { QuoteCity } from "@/components/quote/QuoteLocationField";
 import { serviceOptions } from "@/components/quote/quoteOptions";
 import {
   buildQuoteSubmission,
@@ -34,7 +36,8 @@ function growNotes(textarea: HTMLTextAreaElement) {
   textarea.style.overflowY = textarea.scrollHeight > maxHeight ? "auto" : "hidden";
 }
 
-export default function QuotePageForm() {
+export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
+  const isInteractive = useHydrated();
   const router = useRouter();
   const [customerType, setCustomerType] = useState<"Individual" | "Business">("Individual");
   const [{ selected, activeDetailId }, setSelectionState] = useState({
@@ -50,6 +53,7 @@ export default function QuotePageForm() {
   const [error, setError] = useState("");
   const openedAt = useRef(0);
   const submissionInFlight = useRef(false);
+  const quoteStarted = useRef(false);
   const collapseCleanupTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
   const selectedSet = useMemo(() => new Set(selected), [selected]);
   const selectedOptions = useMemo(
@@ -209,10 +213,17 @@ export default function QuotePageForm() {
       setError("Please enter a valid 10-digit phone number.");
       return;
     }
+    const serviceLocation = String(formData.get("service_location") ?? "").trim();
+    if (serviceLocation.length < 2 || serviceLocation.length > 120) {
+      setError("Please enter the service city or postal code.");
+      return;
+    }
+    formData.set("service_location", serviceLocation);
+    const sourceCity = cities.find((city) => city.slug === formData.get("source_city"))?.slug;
+    if (!sourceCity) formData.delete("source_city");
     if (customerType === "Business") {
       const organization = String(formData.get("organization") ?? "").trim();
       const email = String(formData.get("email") ?? "").trim();
-      const serviceLocation = String(formData.get("service_location") ?? "").trim();
       const emailInput = event.currentTarget.elements.namedItem("email");
       if (organization.length < 2 || organization.length > 100) {
         setError("Please enter your organization name.");
@@ -220,10 +231,6 @@ export default function QuotePageForm() {
       }
       if (!email || !(emailInput instanceof HTMLInputElement) || !emailInput.checkValidity()) {
         setError("Please enter a valid work email address.");
-        return;
-      }
-      if (serviceLocation.length < 2 || serviceLocation.length > 120) {
-        setError("Please enter the service city or postal code.");
         return;
       }
       formData.set("organization", organization);
@@ -304,7 +311,7 @@ export default function QuotePageForm() {
       }
 
       setSent(true);
-      trackQuoteConversion(() => router.push("/quote/thank-you/"));
+      trackQuoteConversion(() => router.push("/quote/thank-you/"), sourceCity);
     } catch {
       setError(
         "We couldn’t send the form. Please call or text " + siteConfig.displayPhone + ".",
@@ -332,7 +339,13 @@ export default function QuotePageForm() {
   }
 
   return (
-    <form className="quote-page-form" onSubmit={submit}>
+    <form className="quote-page-form" onSubmit={submit} onChange={(event) => {
+      if (quoteStarted.current) return;
+      quoteStarted.current = true;
+      const value = new FormData(event.currentTarget).get("source_city");
+      const sourceCity = cities.find((city) => city.slug === value)?.slug;
+      trackEvent("quote_start", { ...(sourceCity ? { source_city: sourceCity } : {}) });
+    }}>
       <input
         type="checkbox"
         name="botcheck"
@@ -377,14 +390,14 @@ export default function QuotePageForm() {
             : "Tell us about the furniture and carpets you’d like refreshed. We’ll recommend fabric-safe care and follow up with a clear quote."}
         </p>
         <p className="quote-page-photo-channels">
-          You can send photos through{" "}
+          After requesting your quote, send full-item photos and stain close-ups through{" "}
           <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
             Instagram
           </a>{" "}
           or{" "}
           <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
             Facebook
-          </a>.
+          </a>. Include the same name and service city so we can match your photos to your request.
         </p>
       </div>
 
@@ -393,6 +406,7 @@ export default function QuotePageForm() {
         customerType={customerType}
         phone={phone}
         onPhoneChange={setPhone}
+        cities={cities}
       />
 
       <fieldset className="quote-page-options">
@@ -401,6 +415,7 @@ export default function QuotePageForm() {
         <div className="quote-page-options__grid">
           {serviceOptions.map((option) => (
             <QuoteOptionCard
+              disabled={!isInteractive}
               key={option.id}
               option={option}
               selected={selectedSet.has(option.id)}

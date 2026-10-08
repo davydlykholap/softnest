@@ -7,6 +7,7 @@ import {
   useId,
   useRef,
   useState,
+  type ReactNode,
 } from "react";
 
 export type DirectorySearchOption = {
@@ -24,7 +25,7 @@ type Props = {
   options: DirectorySearchOption[];
   optionsLabel: string;
   emptyMessage: string;
-  message?: string;
+  message?: ReactNode;
   onChange: (value: string) => void;
   onChoose: (option: DirectorySearchOption) => void;
   onSubmit: () => void;

@@ -4,6 +4,7 @@ import AnalyticsEvents from "@/components/AnalyticsEvents";
 import MarketingAttribution from "@/components/MarketingAttribution";
 import Script from "next/script";
 import { siteConfig } from "@/lib/site";
+import { locations } from "@/content/locations";
 import "./globals.css";
 import "./styles/gallery.css";
 import "./styles/global-controls.css";
@@ -54,7 +55,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
       <body className="bg-white text-woodCharcoal font-sans antialiased m-0 flex flex-col min-h-screen">
         <MarketingAttribution />
-        <AnalyticsEvents />
+        <AnalyticsEvents citySlugs={locations.map((location) => location.slug)} />
         {children}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${integrations.googleAdsId}`}

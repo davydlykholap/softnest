@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { ChevronDownIcon } from "@/components/UiIcons";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -9,6 +10,7 @@ import styles from "./HomeFaqExplorer.module.css";
 type FaqItem = {
   question: string;
   answer: string;
+  link?: { href: string; label: string };
 };
 
 type Props = {
@@ -73,6 +75,9 @@ export default function HomeFaqExplorer({ items }: Props) {
               <>
                 <h3>{activeItem.question}</h3>
                 <p>{activeItem.answer}</p>
+                {activeItem.link ? (
+                  <p><Link className={styles.relatedLink} href={activeItem.link.href}>{activeItem.link.label}</Link></p>
+                ) : null}
               </>
             ) : (
               <>
@@ -93,7 +98,15 @@ export default function HomeFaqExplorer({ items }: Props) {
         </header>
         <FaqAccordion
           className={styles.mobileList}
-          items={items}
+          items={items.map((item) => ({
+            question: item.question,
+            answer: item.link ? (
+              <>
+                <p>{item.answer}</p>
+                <p><Link className={styles.relatedLink} href={item.link.href}>{item.link.label}</Link></p>
+              </>
+            ) : item.answer,
+          }))}
           groupName="home-mobile-faq"
         />
       </div>

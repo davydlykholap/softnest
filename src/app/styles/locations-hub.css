@@ -1520,6 +1520,17 @@
         border-radius: 20px;
     }
 
+    /* Keep suggestions in flow when the submit button is below the input. */
+    .locations-search__options--open {
+        position: relative;
+        top: auto;
+        margin-top: 10px;
+    }
+
+    .locations-search__toggle {
+        top: 24px;
+    }
+
     .locations-search__option small {
         display: none;
     }

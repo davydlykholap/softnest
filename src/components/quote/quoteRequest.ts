@@ -192,8 +192,14 @@ export function buildQuoteSubmission(input: SubmissionInput) {
   }
   submission.set("customer_type", input.customerType);
   submission.set("name", input.name);
+  submission.set("service_location", String(input.formData.get("service_location") ?? "").trim().slice(0, 120));
+  const sourceCity = String(input.formData.get("source_city") ?? "");
+  if (/^[a-z]+(?:-[a-z]+)*$/.test(sourceCity) && sourceCity.length <= 80) {
+    submission.set("source_city", sourceCity);
+    submission.set("landing_page", `/location/${sourceCity}/`);
+  }
   if (input.customerType === "Business") {
-    for (const key of ["organization", "email", "service_location", "service_frequency"]) {
+    for (const key of ["organization", "email", "service_frequency"]) {
       submission.set(key, String(input.formData.get(key) ?? ""));
     }
   }

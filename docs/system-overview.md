@@ -42,7 +42,7 @@ A content error fails before the generated snapshot is replaced. The sync then r
 | `scripts/content` | Sanity sync/import/preview/validation/publishing automation |
 | `content/migration` | Bootstrap/recovery import snapshot, not a runtime CMS |
 | `content/articles` | Prepared article-source records retained for migration/editorial traceability |
-| `docs` | Current operating documentation and clearly marked historical research |
+| `docs` | Current operating documentation |
 
 ## Sanity content model
 
@@ -117,11 +117,13 @@ Attribution data is sanitized before storage/submission. Referrers are reduced t
 - optional homepage video URL;
 - optional YouTube URL.
 
-`src/lib/analytics.ts` emits lead, phone and selected outbound-link events. `MarketingAttribution` captures campaign identifiers in session storage.
+`src/lib/analytics.ts` emits lead, quote-click/start, location-search, phone and selected outbound-link events. City context is validated against published city slugs; location-search events exclude the entered query. The existing Google tag receives these events; GA4 property setup and Search Console remain external configuration. `MarketingAttribution` captures campaign identifiers in session storage.
 
 ## SEO
 
 `src/seo/metadata.ts`, `structuredData.ts` and `urls.ts` centralize page metadata, canonical URL generation and safe JSON-LD serialization. Homepage/service/location/article pages add appropriate Organization, WebSite, Service, BlogPosting, FAQ or breadcrumb structures.
+
+Location search matches names/slugs and neighbourhoods, and carries unmatched availability inquiries to the quote form without assigning a city.
 
 ## Development commands
 

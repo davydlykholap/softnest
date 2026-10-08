@@ -42,6 +42,7 @@ test("quote form shows useful validation", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText("refresh your space");
   await page.getByRole("textbox", { name: "Your name" }).fill("Test Customer");
   await page.getByRole("textbox", { name: "Phone number" }).fill("4165550123");
+  await page.getByRole("textbox", { name: "Service city or postal code" }).fill("Toronto");
   await page.getByRole("textbox", { name: "Anything else we should know?" }).fill("None");
   await page.getByRole("button", { name: "Get my quote" }).click();
   await expect(page.locator("#quote-page-error")).toHaveText("Please select at least one item.");
@@ -73,6 +74,23 @@ test("quote form supports multiple sofas with separate seat counts", async ({ pa
   await expect(firstSofa).toContainText("2");
   await expect(secondSofa).toContainText("3");
   await expect(page.getByRole("button", { name: "Remove sofa 2" })).toBeVisible();
+});
+
+test("quote category controls wait for hydration before accepting a click", async ({ page }) => {
+  let releaseScripts!: () => void;
+  const scriptsReady = new Promise<void>((resolve) => { releaseScripts = resolve; });
+  await page.route(/\/_next\/static\/.*\.js(?:\?.*)?$/, async (route) => {
+    await scriptsReady;
+    await route.continue();
+  });
+  await page.goto("/quote/", { waitUntil: "domcontentloaded" });
+  const sofa = page.getByRole("button", { name: "Sofa or couch" });
+  await expect(sofa).toBeDisabled();
+  releaseScripts();
+  await expect(sofa).toBeEnabled();
+  await sofa.click();
+  await expect(sofa).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByRole("combobox", { name: "How many seats? for sofa 1" })).toBeVisible();
 });
 
 test("carpet quote reveals inputs for the selected surface type", async ({ page }) => {

@@ -7,6 +7,7 @@ const representativeRoutes = [
   ["sofa service", "/services/sofa-cleaning/"],
   ["locations", "/location/"],
   ["Mississauga location", "/location/mississauga/"],
+  ["Toronto location", "/location/toronto/"],
   ["quote", "/quote/"],
   ["blog", "/blog/"],
   ["about", "/about/"],
@@ -34,6 +35,8 @@ for (const [name, route] of representativeRoutes) {
 }
 
 test("expanded quote controls have no serious automated accessibility violations", async ({ page }) => {
+  // Check the final control colors rather than intermediate reveal-animation opacity.
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/quote/");
   await page.getByRole("button", { name: "Carpet or rug" }).click();
   await page.getByRole("combobox", { name: "What type? for carpet / rug 1" }).click();

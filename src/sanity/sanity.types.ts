@@ -178,6 +178,7 @@ export type Faq = {
   _rev: string;
   question: string;
   answer: string;
+  relatedService?: ServiceReference;
   order?: number;
   onHomepage?: boolean;
   services?: Array<
@@ -243,6 +244,7 @@ export type Location = {
   faq?: Array<{
     question: string;
     answer: string;
+    relatedService?: ServiceReference;
     _key: string;
   }>;
   sharedFaqs?: Array<
@@ -315,6 +317,7 @@ export type Location = {
     mississaugaFaqs?: Array<{
       question: string;
       answer: string;
+      relatedService?: ServiceReference;
       _key: string;
     }>;
     copy?: Array<{
@@ -362,6 +365,7 @@ export type Service = {
   faq?: Array<{
     question: string;
     answer: string;
+    relatedService?: ServiceReference;
     _key: string;
   }>;
   sharedFaqs?: Array<
@@ -713,6 +717,7 @@ export type WebsiteContentQueryResult = Array<
       _rev: string;
       question: string;
       answer: string;
+      relatedService?: ServiceReference;
       order?: number;
       onHomepage?: boolean;
       services?: Array<
@@ -770,6 +775,7 @@ export type WebsiteContentQueryResult = Array<
       faq?: Array<{
         question: string;
         answer: string;
+        relatedService?: ServiceReference;
         _key: string;
       }>;
       sharedFaqs?: Array<
@@ -842,6 +848,7 @@ export type WebsiteContentQueryResult = Array<
         mississaugaFaqs?: Array<{
           question: string;
           answer: string;
+          relatedService?: ServiceReference;
           _key: string;
         }>;
         copy?: Array<{
@@ -1004,6 +1011,7 @@ export type WebsiteContentQueryResult = Array<
       faq?: Array<{
         question: string;
         answer: string;
+        relatedService?: ServiceReference;
         _key: string;
       }>;
       sharedFaqs?: Array<

@@ -5,11 +5,13 @@ import Link from "next/link";
 const googleProfileUrl = siteConfig.googleProfileUrl;
 
 type HeroActionButtonsProps = {
+  quoteHref?: string;
   quoteAriaLabel?: string;
   primaryTone?: "green" | "gold";
 };
 
 export default function HeroActionButtons({
+  quoteHref = "/quote/",
   quoteAriaLabel = "Get an upholstery and carpet cleaning quote",
   primaryTone = "green",
 }: HeroActionButtonsProps) {
@@ -19,7 +21,7 @@ export default function HeroActionButtons({
     >
       <Link
         className="button button--primary quote-cta quote-cta--pulse"
-        href="/quote/"
+        href={quoteHref}
         aria-label={quoteAriaLabel}
       >
         Get a Quote

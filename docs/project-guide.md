@@ -18,7 +18,7 @@ For the current production snapshot, read `current-state.md` first. This guide d
 | `studio` | Sanity editing schema and desk structure |
 | `scripts/content` | Content import, validation, sync, preview and webhook automation |
 | `content/migration` | Bootstrap/recovery snapshot only |
-| `docs` | Current operating docs plus explicitly historical research |
+| `docs` | Current operating documentation |
 
 Do not put screenshots, source ZIPs, temporary QA output or received customer/editorial files in source folders. Existing local artifacts are ignored; preserve them unless you know who owns them.
 
@@ -79,6 +79,8 @@ The old `expanded` boolean is retired. Do not build new logic around it.
 
 The local FAQ field has the legacy internal name `mississaugaFaqs` in Sanity for compatibility; Studio labels it **Local FAQs**. Treat it as generic location data.
 
+City/neighbourhood search receives only names, slugs and neighbourhoods. Keep postal-code availability manual unless an authoritative coverage source is added. Unmatched requests prefill the quote form through `service_location`, with a 120-character limit and no inferred city attribution. Never send raw location searches to analytics.
+
 ## Homepage and About
 
 The homepage page-content document contains historical rows, but normalization keeps only the keys the current homepage calls through `pageText`. When adding a new editable homepage fragment:
@@ -130,4 +132,4 @@ Prefer small patch/minor updates with a concrete reason. Keep `next` and `eslint
 
 ## Documentation rule
 
-When architecture, ownership, commands or publishing behavior changes, update `current-state.md`, `system-overview.md`, this guide and any affected task-specific document in the same change. Historical research files must remain explicitly labelled historical.
+When architecture, ownership, commands or publishing behavior changes, update `current-state.md`, `system-overview.md`, this guide and any affected task-specific document in the same change.

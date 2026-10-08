@@ -1,6 +1,6 @@
 # SoftNest current state
 
-Last updated: 2026-10-02
+Last updated: 2026-10-07
 
 This is the authoritative handoff for the production website. Read it before structural content, routing, CMS or deployment work. For folder ownership and day-to-day rules, continue with `project-guide.md`.
 
@@ -51,6 +51,8 @@ The site no longer depends on `react-icons`; the few UI icons used by interactiv
 
 The quote UI lives under `src/components/quote/`. Validation and payload construction are separate from transport. `src/domain/quote.ts` submits directly from the browser to Web3Forms because GitHub Pages has no application server.
 
+Both residential and business requests collect a service city or postal code. Submissions retain the originating city separately, and the lead analytics event includes only that public city slug. Photos are sent separately through Instagram or Facebook using the same name and city as the request.
+
 A selected quote category can contain multiple independently configured entries. For example, one request can include a 2-seat sofa and a separate 3-seat sofa. Question choices use compact, shared-styled dropdowns; additional pieces/groups are added only when needed, so the common single-item path stays short. Item questions are type-aware: rugs collect dimensions/material/pile, wall-to-wall carpet can use dimensions or square footage, stairs collect stair/landing counts, and other furniture branches into the relevant size/description fields.
 
 The form includes client validation, a honeypot, minimum-open-time filtering, duplicate-submit protection, a request timeout and a friendly phone fallback. These controls improve quality but are not server-side security enforcement.
@@ -62,6 +64,8 @@ All public integration settings are centralized in `src/lib/integrations.ts`: Go
 ## SEO and routing
 
 Metadata, canonical URLs and structured-data helpers live under `src/seo`. The site generates sitemap and robots files at build time. Location sitemap inclusion respects `indexInSearch`.
+
+The location finder matches city names/slugs and neighbourhoods, and leaves ambiguous matches for the customer to choose. Postal codes require an individual availability check. Unmatched input can be carried to the quote form through a bounded `service_location` query parameter; it never creates a `source_city` attribution. Search events record only the outcome and a validated matched city, never the entered query. Quote-click/start and phone-click events retain validated city context. These hooks use the existing Google tag; a GA4 property and Search Console reporting are not configured by this change.
 
 Published slugs are external URLs and must remain stable. GitHub Pages cannot provide normal request-time Next.js redirects, rewrites or headers. Agree on a static-host-compatible redirect strategy before changing a published service, city or article slug.
 

@@ -9,6 +9,34 @@ const seed = () =>
     JSON.parse(fs.readFileSync(`content/migration/${name}.json`, "utf8")),
   );
 
+test("FAQ service links work in both regular and expanded city content", () => {
+  const documents = seed();
+  const service = documents.find((item) => item._type === "service" && item.slug.current === "sofa-cleaning");
+  const regular = documents.find((item) => item._type === "location" && !item.expandedContent);
+  const expanded = documents.find((item) => item._type === "location" && item.expandedContent);
+  regular.faq[0].relatedService = { _type: "reference", _ref: service._id };
+  expanded.expandedContent.mississaugaFaqs[0].relatedService = { _type: "reference", _ref: service._id };
+  const content = normalizeContent(documents, config);
+  for (const source of [regular, expanded]) {
+    const location = content.locations.find((item) => item.id === source._id);
+    const item = (location.expandedContent?.mississaugaFaqs ?? location.faq)[0];
+    assert.equal(item.link.href, "/services/sofa-cleaning/");
+    assert.equal(item.answer, (source.expandedContent?.mississaugaFaqs ?? source.faq)[0].answer);
+  }
+});
+
+test("FAQ links cannot point to a missing or unpublished service", () => {
+  const documents = seed();
+  const location = documents.find((item) => item._type === "location" && !item.expandedContent);
+  location.faq[0].relatedService = { _type: "reference", _ref: "missing-service" };
+  assert.throws(() => normalizeContent(documents, config), /Broken FAQ service reference/);
+  const service = documents.find((item) => item._type === "service");
+  service.pageEnabled = false;
+  location.faq[0].relatedService._ref = service._id;
+  const content = normalizeContent(documents, config);
+  assert.equal(content.locations.find((item) => item.id === location._id).faq[0].link, undefined);
+});
+
 
 test("migration IDs and references stay publicly readable", () => {
   const documents = seed();

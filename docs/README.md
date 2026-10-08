@@ -1,6 +1,6 @@
 # SoftNest documentation
 
-This folder separates current operating documentation from historical design research.
+This folder contains current operating documentation.
 
 ## Read these first
 
@@ -12,15 +12,6 @@ This folder separates current operating documentation from historical design res
 6. [`supabase-plan.md`](supabase-plan.md) - the deliberately deferred private lead/job system.
 
 When these documents and older notes disagree, `current-state.md` is authoritative.
-
-## Historical research
-
-The following files are retained as dated research records, not as descriptions of the current UI or architecture:
-
-- [`homepage-research-and-blueprint.md`](homepage-research-and-blueprint.md)
-- [`service-pages-research-and-blueprint.md`](service-pages-research-and-blueprint.md)
-
-Each historical file now states what was implemented and which recommendations remain only ideas. Do not use their old screenshots, section descriptions or proposed layouts as implementation instructions.
 
 ## Source of truth by topic
 

@@ -45,7 +45,7 @@ npm run check
 
 ## Documentation
 
-Start with [`docs/README.md`](docs/README.md). `docs/current-state.md` is the authoritative architecture/status handoff. The two research/blueprint files are explicitly historical and are not current implementation specifications.
+Start with [`docs/README.md`](docs/README.md). `docs/current-state.md` is the authoritative architecture/status handoff.
 
 ## Public site
 

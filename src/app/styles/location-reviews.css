@@ -10,7 +10,7 @@
 .location-customer-reviews {
   width: 100%;
   margin: 0 auto;
-  padding: clamp(68px, 7vw, 88px) max(6%, calc((100% - 1220px) / 2));
+  padding: clamp(68px, 7vw, 88px) calc((100% - var(--location-page-content-width)) / 2);
   background: var(--surface-page);
 }
 
@@ -138,7 +138,7 @@
 @media (max-width: 720px) {
   .location-customer-reviews {
     width: 100%;
-    padding: 46px 20px 24px;
+    padding: 46px calc((100% - var(--location-page-content-width)) / 2) 24px;
     overflow: hidden;
     background: var(--surface-page);
   }

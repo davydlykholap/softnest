@@ -3,6 +3,7 @@ import QuotePageForm from "@/components/QuotePageForm";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import styles from "./quote-page.module.css";
+import { locations } from "@/content/locations";
 
 export const metadata: Metadata = {
   title: "Get a Quote | SoftNest Fabric Care",
@@ -26,7 +27,7 @@ export default function QuotePage() {
       <main className={`quote-page ${styles.quotePage}`}>
         <section className="quote-page-shell">
           <div className="quote-page-card">
-            <QuotePageForm />
+            <QuotePageForm cities={locations.map(({ slug, name }) => ({ slug, name }))} />
           </div>
         </section>
       </main>

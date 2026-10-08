@@ -76,7 +76,19 @@ export function normalizeContent(documents, config) {
 
   const faq = (document) => {
     required(document, ["question", "answer"]);
-    return { question: document.question, answer: document.answer };
+    const relatedService = document.relatedService?._ref
+      ? byId.get(document.relatedService._ref)
+      : undefined;
+    if (document.relatedService && (!relatedService || relatedService._type !== "service")) {
+      fail(document, "Broken FAQ service reference");
+    }
+    return {
+      question: document.question,
+      answer: document.answer,
+      ...(relatedService && relatedService.pageEnabled !== false
+        ? { link: { href: `/services/${slug(relatedService)}/`, label: `Learn more about ${relatedService.name.toLowerCase()}` } }
+        : {}),
+    };
   };
 
   const slug = (document) => {
@@ -269,6 +281,7 @@ export function normalizeContent(documents, config) {
         ? {
             expandedContent: {
               ...localOverrides,
+              mississaugaFaqs: localOverrides.mississaugaFaqs.map(faq),
               services: localOverrides.services.map((service) => ({
                 ...service,
                 image: image(service),

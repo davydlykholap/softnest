@@ -8,6 +8,7 @@ import type { QuickQuestion, ServiceOption } from "./quoteOptions";
 import type { QuoteEntry } from "./quoteRequest";
 
 type QuoteOptionCardProps = {
+  disabled: boolean;
   option: ServiceOption;
   selected: boolean;
   active: boolean;
@@ -125,6 +126,7 @@ function QuestionField({
 }
 
 export const QuoteOptionCard = memo(function QuoteOptionCard({
+  disabled,
   option,
   selected,
   active,
@@ -160,6 +162,7 @@ export const QuoteOptionCard = memo(function QuoteOptionCard({
       <button
         className="quote-page-option__toggle"
         type="button"
+        disabled={disabled}
         aria-pressed={selected}
         aria-expanded={active}
         aria-controls={`quote-item-details-${option.id}`}

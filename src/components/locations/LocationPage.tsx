@@ -48,14 +48,6 @@ export default function LocationPage({
   const processSteps = localOverrides?.processSteps ?? defaultProcessSteps;
   const localAdvantages = localOverrides?.localAdvantages ?? defaultLocalAdvantages;
   const locationFaqs = localOverrides?.mississaugaFaqs ?? location.faq;
-  const mapLabels = new Map(
-    (localOverrides?.mapLabels ?? [])
-      .filter((label) =>
-        Number.isFinite(label.left) && label.left >= 0 && label.left <= 100 &&
-        Number.isFinite(label.top) && label.top >= 0 && label.top <= 100,
-      )
-      .map((label) => [label.name, label] as const),
-  );
   const services = (
     localOverrides?.services ??
     location.availableServices
@@ -207,33 +199,14 @@ export default function LocationPage({
             <h2 id="location-page-coverage-heading">Serving all of {location.name}</h2>
           </div>
           <div className="location-page-coverage__content">
-            {localOverrides?.mapImage ? <div className="location-page-map">
-              <Image
-                src={localOverrides.mapImage}
-                alt={localOverrides.mapAlt || `Service coverage in ${location.name}`}
-                fill
-                sizes="(max-width: 760px) 100vw, 55vw"
-              />
-              {location.neighbourhoods.filter((name) => mapLabels.has(name)).map((neighbourhood) => {
-                const label = mapLabels.get(neighbourhood)!;
-                return (
-                  <span
-                    className="location-page-map__label"
-                    style={{ left: `${label.left}%`, top: `${label.top}%` }}
-                    key={neighbourhood}
-                  >
-                    {neighbourhood}
-                  </span>
-                );
-              })}
-            </div> : <div className="softnest-map location-page-map">
+            <div className="softnest-map location-page-map">
               <iframe
                 title={`SoftNest service map for ${location.name}`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(location.mapQuery)}&z=11&output=embed`}
               />
-            </div>}
+            </div>
             <div className="location-page-coverage__copy">
               <p>
                 SoftNest provides upholstery and carpet cleaning throughout {location.name}, including condos, houses, apartments, and commercial spaces.</p>
