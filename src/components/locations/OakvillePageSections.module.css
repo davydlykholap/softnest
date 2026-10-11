@@ -25,7 +25,7 @@
 
 .introduction p {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.75;
   color: var(--location-page-muted);
 }
@@ -33,16 +33,7 @@
 .introductionCopy { display: grid; gap: 18px; }
 
 @media (min-width: 721px) {
-  .introduction {
-    margin: clamp(48px, 5vw, 72px) auto clamp(48px, 5vw, 72px);
-    padding: clamp(36px, 4vw, 60px);
-    border: 1px solid var(--surface-line);
-    border-radius: 28px;
-    background: var(--surface-soft);
-  }
-  .introduction h2 { max-width: 390px; }
-  .introduction p { font-size: 17px; color: #33473f; }
-  .introductionCopy p:first-child { font-size: 20px; line-height: 1.55; color: #17231e; }
+  .introduction p { font-size: 20px; color: #33473f; line-height: 1.65; }
 }
 
 .introduction h2,
@@ -52,7 +43,7 @@
 .coverage h2 {
   margin: 0;
   font-family: var(--location-page-serif);
-  font-size: clamp(36px, 3.8vw, 54px);
+  font-size: clamp(42px, 4vw, 58px);
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: -.045em;
@@ -189,13 +180,11 @@
   .service:nth-child(2) .serviceImage,
   .service:nth-child(2) .serviceCopy { order: initial; }
   .serviceImage { aspect-ratio: 1.4; border-radius: 22px; }
-  .service h2 { margin-bottom: 16px; font-size: 40px; }
+  .service h2 { margin-bottom: 16px; }
   .serviceCopy > p { font-size: 15px; }
   .more { grid-template-columns: 1fr; gap: 16px; }
   .moreActions { grid-column: auto; margin-top: 12px; }
   .why { padding: 28px; border-radius: 22px; gap: 28px; }
-  .why h2,
-  .coverage h2 { font-size: 36px; }
   .advantages { grid-template-columns: 1fr; gap: 24px; }
   .coverage { grid-template-columns: 1fr; padding: 48px 0; gap: 28px; }
   .coverageCopy ul { gap: 14px 16px; }
@@ -204,4 +193,15 @@
 
 @media (prefers-reduced-motion: reduce) {
   .arrow { transition: none; }
+}
+
+@media (max-width: 720px) {
+  .introduction h2,
+  .service h2,
+  .more h2,
+  .why h2,
+  .coverage h2 {
+    font-size: 34px !important;
+    line-height: 1.04 !important;
+  }
 }
