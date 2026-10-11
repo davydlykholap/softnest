@@ -19,7 +19,7 @@ export default function OakvillePageSections({ location }: { location: Location 
       </section>
 
       <section className={styles.services} id="services" aria-label="What we clean">
-        {oakvillePage.services.map((item, index) => {
+        {oakvillePage.services.map((item) => {
           const service = getService(item.slug);
           return (
             <article className={styles.service} key={item.title}>
@@ -34,7 +34,6 @@ export default function OakvillePageSections({ location }: { location: Location 
                 </div>
               ) : null}
               <div className={styles.serviceCopy}>
-                <span className={styles.number} aria-hidden="true">0{index + 1}</span>
                 <h2>
                   <Link href={`/services/${item.slug}/`}>
                     {item.title}<span className={styles.arrow} aria-hidden="true">↗</span>

@@ -32,14 +32,6 @@
   letter-spacing: -.015em;
 }
 
-.number {
-  color: var(--location-page-green);
-  font-size: 12px;
-  font-weight: 750;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
 .service h2,
 .more h2,
 .why h2,
@@ -85,7 +77,6 @@
 
 .serviceImage img { object-fit: cover; }
 .serviceCopy { max-width: 540px; }
-.number { display: block; margin-bottom: 18px; }
 .service h2 { margin-bottom: 24px; }
 .service h2 a { color: inherit; text-decoration: none; }
 
@@ -161,7 +152,6 @@
   .service:nth-child(2) .serviceImage,
   .service:nth-child(2) .serviceCopy { order: initial; }
   .serviceImage { aspect-ratio: 1.4; border-radius: 22px; }
-  .number { margin-bottom: 12px; }
   .service h2 { margin-bottom: 16px; font-size: 40px; }
   .serviceCopy > p { font-size: 15px; }
   .more { grid-template-columns: 1fr; gap: 16px; }
