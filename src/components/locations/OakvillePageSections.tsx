@@ -4,7 +4,6 @@ import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import LocationReviews from "@/components/locations/LocationReviews";
 import HeroActionButtons from "@/components/HeroActionButtons";
-import { FeatureIcon } from "./locationPageDefaults";
 import { oakvillePage } from "@/content/oakvillePage";
 import type { Location } from "@/content/locations";
 import { getService } from "@/content/services";
@@ -55,22 +54,16 @@ export default function OakvillePageSections({ location }: { location: Location 
         </div>
       </section>
 
-      <section className="location-page-local-value" aria-labelledby="oakville-why-heading">
-        <div className="location-page-section-heading">
-          <p className="location-page-kicker">Why choose SoftNest</p>
-          <span className="location-page-section-rule" aria-hidden="true" />
-          <h2 id="oakville-why-heading">Why Oakville books SoftNest</h2>
+      <section className={styles.why} aria-labelledby="oakville-why-heading">
+        <div className={styles.whyHeading}>
+          <span className={styles.rule} aria-hidden="true" />
+          <h2 id="oakville-why-heading">Why Oakville<br /> books SoftNest</h2>
         </div>
-        <div className="location-page-local-value__grid">
-          {oakvillePage.advantages.map((item, index) => (
+        <div className={styles.advantages}>
+          {oakvillePage.advantages.map((item) => (
             <article key={item.title}>
-              <span className="location-page-round-icon">
-                <FeatureIcon name={["fabric", "inspection", "camera", "home"][index]} />
-              </span>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </article>
           ))}
         </div>
@@ -78,31 +71,22 @@ export default function OakvillePageSections({ location }: { location: Location 
 
       <LocationReviews location={location} heading="What Oakville customers say" />
 
-      <section className={`location-page-coverage ${styles.coverage}`} aria-labelledby="oakville-coverage-heading">
-        <div className="location-page-section-heading">
-          <p className="location-page-kicker">Our service area</p>
-          <span className="location-page-section-rule" aria-hidden="true" />
+      <section className={styles.coverage} aria-labelledby="oakville-coverage-heading">
+        <div className={styles.coverageCopy}>
           <h2 id="oakville-coverage-heading">Serving all of Oakville</h2>
+          <p>{oakvillePage.coverage}</p>
+          <ul aria-label="Neighbourhoods we serve">
+            {location.neighbourhoods.map((name) => <li key={name}>{name}</li>)}
+          </ul>
+          <p>{oakvillePage.coverageClosing}</p>
         </div>
-        <div className="location-page-coverage__content">
-          <div className="softnest-map location-page-map">
-            <iframe
-              title="SoftNest service map for Oakville"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              src={`https://www.google.com/maps?q=${encodeURIComponent(location.mapQuery)}&z=11&output=embed`}
-            />
-          </div>
-          <div className="location-page-coverage__copy">
-            <p>{oakvillePage.coverage}</p>
-            <p className="location-page-coverage__includes">Including:</p>
-            <ul aria-label="Neighbourhoods we serve">
-              {location.neighbourhoods.map((name) => (
-                <li key={name}><span aria-hidden="true">✓</span>{name}</li>
-              ))}
-            </ul>
-            <small>{oakvillePage.coverageClosing}</small>
-          </div>
+        <div className={`softnest-map ${styles.map}`}>
+          <iframe
+            title="SoftNest service map for Oakville"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(location.mapQuery)}&z=11&output=embed`}
+          />
         </div>
       </section>
 
