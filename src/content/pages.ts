@@ -8,6 +8,26 @@ import { siteConfig } from '@/lib/site';
 import { optimizedLocalImage } from '@/lib/optimizedLocalImage';
 
 export const homeContent = home;
+export function getGoogleReviews() {
+  const reviews = [
+    ...testimonials.map((review) => ({
+      initial: review.name.trim().charAt(0).toUpperCase(),
+      name: review.name,
+      text: review.text,
+    })),
+    ...home.heroReviews,
+  ];
+  const names = new Set<string>();
+  const texts = new Set<string>();
+  return reviews.filter((review) => {
+    const name = review.name.trim().toLowerCase();
+    const text = review.text.trim().toLowerCase().replace(/\s+/g, " ");
+    if (names.has(name) || texts.has(text)) return false;
+    names.add(name);
+    texts.add(text);
+    return true;
+  });
+}
 export function pageText(copy: {key:string;text:string}[], key:string, city?:string) {
   const entry=copy.find(item=>item.key===key);
   if(!entry) throw new Error(`Missing page content: ${key}`);

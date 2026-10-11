@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import CardArrow, { cardArrowHostClassName } from "@/components/CardArrow";
+import { startTransition, useEffect, useState } from "react";
+import useCardCarousel from "@/components/useCardCarousel";
+import CarouselArrow from "@/components/CarouselArrow";
+import styles from "./GoogleReviewCarousel.module.css";
 
 type GoogleReview = {
   initial: string;
@@ -18,9 +22,23 @@ export default function GoogleReviewCarousel({
   reviews,
   googleProfileUrl,
 }: GoogleReviewCarouselProps) {
+  const [orderedReviews, setOrderedReviews] = useState(reviews);
+  const { trackRef, index, step, maxIndex, previous, next, onKeyDown, onTouchStart, onTouchEnd } = useCardCarousel(reviews.length);
+
+  useEffect(() => {
+    const shuffled = [...reviews];
+    for (let index = shuffled.length - 1; index > 0; index--) {
+      const other = Math.floor(Math.random() * (index + 1));
+      [shuffled[index], shuffled[other]] = [shuffled[other], shuffled[index]];
+    }
+    startTransition(() => setOrderedReviews(shuffled));
+  }, [reviews]);
+
   return (
-    <div className="google-review-cards" aria-label="Recent Google reviews">
-      {reviews.map((review) => (
+    <div className={`gallery-carousel-shell ${styles.carousel}`}>
+    <div className={styles.viewport} tabIndex={0} aria-label="Customer reviews carousel" onKeyDown={onKeyDown} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+    <div ref={trackRef} style={{ transform: `translate3d(-${index * step}px, 0, 0)` }} className={`google-review-cards ${styles.track}`} aria-label="Customer reviews">
+      {orderedReviews.map((review) => (
         <a
           className={`google-review-card ${cardArrowHostClassName}`}
           key={review.name}
@@ -53,6 +71,12 @@ export default function GoogleReviewCarousel({
           </div>
         </a>
       ))}
+    </div>
+    </div>
+    <div className={styles.controls}>
+    <CarouselArrow direction="prev" label="Previous reviews" disabled={maxIndex === 0} onClick={previous} />
+    <CarouselArrow direction="next" label="Next reviews" disabled={maxIndex === 0} onClick={next} />
+    </div>
     </div>
   );
 }

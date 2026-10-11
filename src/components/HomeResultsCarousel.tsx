@@ -1,8 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import type { CSSProperties, KeyboardEvent } from "react";
-import { ChevronLeftIcon, ChevronRightIcon, GripVerticalIcon } from "@/components/UiIcons";
+import { useState } from "react";
+import type { CSSProperties } from "react";
+import { GripVerticalIcon } from "@/components/UiIcons";
+
+import useCardCarousel from "@/components/useCardCarousel";
+import CarouselArrow from "@/components/CarouselArrow";
 
 export type GalleryResult = {
   image: string;
@@ -54,69 +57,20 @@ function ComparisonCard({ result }: { result: GalleryResult }) {
 }
 
 export default function HomeResultsCarousel({ results }: HomeResultsCarouselProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [index, setIndex] = useState(0);
-  const [step, setStep] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(0);
-
-  const measure = useCallback(() => {
-    const track = trackRef.current;
-    const firstCard = track?.firstElementChild as HTMLElement | null;
-    if (!track || !firstCard) return;
-
-    const styles = window.getComputedStyle(track);
-    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 26;
-    const cardStep = firstCard.getBoundingClientRect().width + gap;
-    const carouselWidth = track.parentElement?.getBoundingClientRect().width ?? 0;
-    const visibleCards = Math.max(
-      1,
-      Math.round((carouselWidth + gap) / cardStep),
-    );
-    const nextMax = Math.max(0, results.length - visibleCards);
-
-    setStep(cardStep);
-    setMaxIndex(nextMax);
-    setIndex((current) => Math.min(current, nextMax));
-  }, [results.length]);
-
-  useEffect(() => {
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [measure]);
-
-  const goToResult = useCallback(
-    (nextIndex: number) => setIndex(Math.min(Math.max(nextIndex, 0), maxIndex)),
-    [maxIndex],
-  );
-
-  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      goToResult(index <= 0 ? maxIndex : index - 1);
-    } else if (event.key === "ArrowRight") {
-      event.preventDefault();
-      goToResult(index >= maxIndex ? 0 : index + 1);
-    }
-  };
+  const carousel = useCardCarousel(results.length);
+  const { trackRef, index, step, maxIndex } = carousel;
 
   return (
       <div className="gallery-carousel-shell">
-        <button
-          className="gallery-carousel-arrow gallery-carousel-arrow--prev"
-          type="button"
-          aria-label="Show previous cleaning results"
-          disabled={maxIndex === 0}
-          onClick={() => goToResult(index <= 0 ? maxIndex : index - 1)}
-        >
-          <ChevronLeftIcon />
-        </button>
+        <CarouselArrow direction="prev" label="Show previous cleaning results" disabled={maxIndex === 0} onClick={carousel.previous} />
         <div
           id="gallery-carousel"
           className="gallery-carousel"
           tabIndex={0}
           aria-label={`Before and after cleaning results carousel, showing item ${index + 1} of ${results.length}`}
-          onKeyDown={handleKeyDown}
+          onKeyDown={carousel.onKeyDown}
+          onTouchStart={carousel.onTouchStart}
+          onTouchEnd={carousel.onTouchEnd}
         >
           <div
             ref={trackRef}
@@ -133,15 +87,7 @@ export default function HomeResultsCarousel({ results }: HomeResultsCarouselProp
             ))}
           </div>
         </div>
-        <button
-          className="gallery-carousel-arrow gallery-carousel-arrow--next"
-          type="button"
-          aria-label="Show next cleaning results"
-          disabled={maxIndex === 0}
-          onClick={() => goToResult(index >= maxIndex ? 0 : index + 1)}
-        >
-          <ChevronRightIcon />
-        </button>
+        <CarouselArrow direction="next" label="Show next cleaning results" disabled={maxIndex === 0} onClick={carousel.next} />
       </div>
   );
 }

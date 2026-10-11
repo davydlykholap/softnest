@@ -1,5 +1,5 @@
 import { siteConfig } from "@/lib/site";
-import { getTestimonials, homeContent, pageText } from "@/content/pages";
+import { getGoogleReviews, homeContent, pageText } from "@/content/pages";
 import Image from "next/image";
 import GoogleReviewCarousel from "@/components/GoogleReviewCarousel";
 import HeroActionButtons from "@/components/HeroActionButtons";
@@ -7,22 +7,7 @@ import HeroActionButtons from "@/components/HeroActionButtons";
 export default function HomeHero() {
   const googleProfileUrl = siteConfig.googleProfileUrl;
 
-  const existingReviewerNames = new Set(
-    homeContent.heroReviews.map((review) => review.name.trim().toLowerCase()),
-  );
-  const additionalReviews = getTestimonials()
-    .filter(
-      (review) =>
-        !existingReviewerNames.has(
-          review.name.trim().toLowerCase(),
-        ),
-    )
-    .map((review) => ({
-      initial: review.name.trim().charAt(0).toUpperCase(),
-      name: review.name,
-      text: review.text,
-    }));
-  const googleReviews = [...homeContent.heroReviews, ...additionalReviews];
+  const googleReviews = getGoogleReviews();
   return (
     <main className="site-shell">
       <section className="hero" aria-labelledby="home-hero-heading">

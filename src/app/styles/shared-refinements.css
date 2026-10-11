@@ -785,16 +785,16 @@ html {
 .review-card-arrow { margin-left: auto; }
 
 @media (min-width: 721px) {
-  .new-hero-root .journey-card__reviews { grid-template-columns: 1fr; gap: 24px; }
+  .new-hero-root .journey-card__reviews { grid-template-columns: 148px minmax(0, 1fr); gap: 24px; }
   .new-hero-root .google-review-summary {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 24px;
-    padding: 0;
-    border: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    padding: 0 20px 0 0;
+    border-right: 1px solid #dce3df;
   }
-  .new-hero-root .google-review-summary__score { margin: 0; }
+  .new-hero-root .google-review-summary__score { margin: 11px 0 0; }
   .new-hero-root .google-review-cards { gap: 16px; }
   .new-hero-root .google-review-card {
     min-height: 278px;

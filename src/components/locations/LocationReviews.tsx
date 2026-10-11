@@ -1,24 +1,15 @@
 import Image from "next/image";
 import GoogleReviewCarousel from "@/components/GoogleReviewCarousel";
-import { getTestimonials } from "@/content/pages";
+import { getGoogleReviews } from "@/content/pages";
 import type { Location } from "@/content/locations";
 import { siteConfig } from "@/lib/site";
 
-function reviewExcerpt(text: string, maximumLength = 200) {
-  if (text.length <= maximumLength) return text;
-  const shortened = text.slice(0, maximumLength).replace(/\s+\S*$/, "");
-  return `${shortened}…`;
-}
 
-export default function LocationReviews({ location, heading }: { location: Location; heading?: string }) {
-  const reviews = getTestimonials({ location: location.slug, limit: 3 });
+export default function LocationReviews({ heading }: { location: Location; heading?: string }) {
+  const reviews = getGoogleReviews();
   if (!reviews.length) return null;
 
-  const carouselReviews = reviews.map((review) => ({
-    initial: review.name.trim().charAt(0).toUpperCase(),
-    name: review.name,
-    text: reviewExcerpt(review.text),
-  }));
+  const carouselReviews = reviews;
 
   return (
     <section
@@ -32,7 +23,7 @@ export default function LocationReviews({ location, heading }: { location: Locat
           <h2 id="location-reviews-heading">{heading ?? "What customers say"}</h2>
         </div>
         <p>
-          Feedback from {location.name} customers after professional upholstery
+          Feedback from SoftNest customers after professional upholstery
           and carpet cleaning appointments.
         </p>
       </div>
