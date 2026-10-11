@@ -37,7 +37,11 @@ test("city CTA events and explicit quote prefills keep city context without cust
   await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue("Toronto");
   await page.getByRole("textbox", { name: "Your name" }).fill("Private Customer");
   const events = await page.evaluate(() => window.dataLayer);
-  expect(events.some((entry) => entry?.[0] === "event" && entry?.[1] === "quote_start" && entry?.[2]?.source_city === "toronto")).toBe(true);
+  const eventTuples = (events ?? []).map((entry) => {
+    const indexed = entry as Record<number, unknown>;
+    return [indexed[0], indexed[1], indexed[2]];
+  });
+  expect(eventTuples).toContainEqual(["event", "quote_start", { source_city: "toronto" }]);
   expect(JSON.stringify(events)).not.toContain("Private Customer");
 });
 
