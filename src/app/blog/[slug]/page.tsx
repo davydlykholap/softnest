@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import ArticleBody from "@/components/blog/ArticleBody";
 import { getPost, getPosts } from "@/content/posts";
 import { blogImageUrl } from "@/sanity/image";
@@ -112,11 +113,6 @@ export default async function BlogArticlePage({ params }: Props) {
               ))}
             </nav>
           ) : null}
-          <aside className={styles.cta}>
-            <h2>Need a little extra care?</h2>
-            <p>Get professional fabric cleaning for your home.</p>
-            <Link className="quote-cta" href="/quote/">{siteConfig.quoteLabel} →</Link>
-          </aside>
           <nav
             className={styles.related}
             aria-label="More fabric care articles"
@@ -174,6 +170,13 @@ export default async function BlogArticlePage({ params }: Props) {
           />
         </article>
       </main>
+      <DirectoryFinalCta
+        title="Need a little extra care?"
+        description="Get professional fabric cleaning for your home."
+        action={{ href: "/quote/", label: siteConfig.quoteLabel }}
+        image="/images/softnest-hero-room.webp"
+        imageAlt="Bright living room with a deep green sofa"
+      />
       <SiteFooter />
     </>
   );

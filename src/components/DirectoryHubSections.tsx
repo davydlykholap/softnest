@@ -6,6 +6,8 @@ import CardArrow, {
 } from "@/components/CardArrow";
 import Image from "next/image";
 import Link from "next/link";
+import finalCtaStyles from "./DirectoryFinalCta.module.css";
+import "@/app/styles/locations-hub.css";
 
 type HubAction = {
   href: string;
@@ -224,7 +226,7 @@ export function DirectoryFinalCta({
   className = "",
 }: DirectoryFinalCtaProps) {
   return (
-    <section id={id} className={`locations-final-cta ${className}`.trim()}>
+    <section id={id} className={`locations-final-cta site-final-cta ${finalCtaStyles.cta} ${className}`.trim()}>
       <div className="locations-final-cta__image">
         <Image
           src={image}
@@ -233,11 +235,11 @@ export function DirectoryFinalCta({
           sizes="(max-width: 820px) 100vw, 50vw"
         />
       </div>
-      <div className="locations-final-cta__copy">
+      <div className={`locations-final-cta__copy ${finalCtaStyles.copy}`}>
         <h2>{title}</h2>
         <p>{description}</p>
         <Link
-          className={`locations-pill locations-pill--light${action.href.startsWith("/quote") ? " quote-cta" : ""}`}
+          className={`locations-pill locations-pill--light ${finalCtaStyles.button}${action.href.startsWith("/quote") ? " quote-cta" : ""}`}
           href={action.href}
         >
           {action.label}

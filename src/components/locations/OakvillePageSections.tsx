@@ -103,7 +103,6 @@ export default function OakvillePageSections({ location }: { location: Location 
         action={{ href: "/quote/", label: siteConfig.quoteLabel }}
         image="/images/softnest-hero-room.webp"
         imageAlt="Bright living room with a deep green sofa"
-        className={`site-final-cta ${styles.finalCta}`}
       />
     </>
   );

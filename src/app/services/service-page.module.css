@@ -471,10 +471,6 @@
   border-top: 1px solid #dce7e0;
 }
 
-.servicePage :global(.site-final-cta) {
-  margin-bottom: 88px;
-}
-
 .servicePage :global(.site-final-cta .locations-pill--light) {
   color: #000 !important;
 }
@@ -716,9 +712,5 @@
 
   .faqHeading {
     margin-bottom: 22px;
-  }
-
-  .servicePage :global(.site-final-cta) {
-    margin-bottom: 0;
   }
 }

@@ -1,0 +1,21 @@
+.cta:global(.site-final-cta) {
+  width: min(90vw, 1340px);
+  margin: clamp(48px, 6vw, 80px) auto 36px;
+}
+.cta .copy { gap: 24px; }
+.cta h2 { margin: 0; line-height: 1.12; }
+.cta:global(.site-final-cta) .copy > p:not(:global(.locations-kicker)) {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.cta:global(.site-final-cta) .button {
+  min-width: 230px;
+  min-height: 56px;
+  padding: 0 30px;
+  font-size: 13px;
+  justify-content: space-between;
+}
+@media (min-width: 821px) {
+  .cta:global(.site-final-cta) { grid-template-columns: .42fr .58fr; }
+}
