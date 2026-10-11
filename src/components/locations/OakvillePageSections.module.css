@@ -33,7 +33,7 @@
 .introductionCopy { display: grid; gap: 18px; }
 
 @media (min-width: 721px) {
-  .introduction p { font-size: 20px; color: #33473f; line-height: 1.65; }
+  .introduction p { font-size: 18px; color: #33473f; line-height: 1.65; }
 }
 
 .introduction h2,
