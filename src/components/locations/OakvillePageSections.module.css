@@ -138,7 +138,7 @@
 
 .finalCta:global(.site-final-cta) {
   width: var(--location-page-content-width);
-  margin: 0 auto 36px;
+  margin: clamp(48px, 6vw, 80px) auto 36px;
 }
 
 @media (max-width: 1000px) {
