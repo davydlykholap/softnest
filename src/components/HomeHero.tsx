@@ -1,5 +1,5 @@
 import { siteConfig } from "@/lib/site";
-import { getGoogleReviews, homeContent, pageText } from "@/content/pages";
+import { getGoogleReviews, getTestimonials, homeContent, pageText } from "@/content/pages";
 import Image from "next/image";
 import GoogleReviewCarousel from "@/components/GoogleReviewCarousel";
 import HeroActionButtons from "@/components/HeroActionButtons";
@@ -8,6 +8,10 @@ export default function HomeHero() {
   const googleProfileUrl = siteConfig.googleProfileUrl;
 
   const googleReviews = getGoogleReviews();
+  const existingReviewerNames = new Set(homeContent.heroReviews.map((review) => review.name.trim().toLowerCase()));
+  const mobileReviews = [...homeContent.heroReviews, ...getTestimonials()
+    .filter((review) => !existingReviewerNames.has(review.name.trim().toLowerCase()))
+    .map((review) => ({ initial: review.name.trim().charAt(0).toUpperCase(), name: review.name, text: review.text }))];
   return (
     <main className="site-shell">
       <section className="hero" aria-labelledby="home-hero-heading">
@@ -100,10 +104,14 @@ export default function HomeHero() {
               <strong>{siteConfig.reviewScore}</strong>
               <span aria-label="5 out of 5 stars">★★★★★</span>
             </div>
+            <a className="review-mobile-only" href={googleProfileUrl} target="_blank" rel="noopener noreferrer">
+              {pageText(homeContent.copy, "hero-22")} <span aria-hidden="true">→</span>
+            </a>
           </div>
 
           <GoogleReviewCarousel
             reviews={googleReviews}
+            mobileReviews={mobileReviews}
             googleProfileUrl={googleProfileUrl}
           />
         </div>

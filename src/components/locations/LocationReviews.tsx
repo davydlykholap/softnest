@@ -1,15 +1,20 @@
 import Image from "next/image";
 import GoogleReviewCarousel from "@/components/GoogleReviewCarousel";
-import { getGoogleReviews } from "@/content/pages";
+import { getGoogleReviews, getTestimonials } from "@/content/pages";
 import type { Location } from "@/content/locations";
 import { siteConfig } from "@/lib/site";
 
 
-export default function LocationReviews({ heading }: { location: Location; heading?: string }) {
+export default function LocationReviews({ location, heading }: { location: Location; heading?: string }) {
   const reviews = getGoogleReviews();
   if (!reviews.length) return null;
 
   const carouselReviews = reviews;
+  const mobileReviews = getTestimonials({ location: location.slug, limit: 3 }).map((review) => ({
+    initial: review.name.trim().charAt(0).toUpperCase(),
+    name: review.name,
+    text: review.text.length > 200 ? `${review.text.slice(0, 200).replace(/\s+\S*$/, "")}…` : review.text,
+  }));
 
   return (
     <section
@@ -45,10 +50,12 @@ export default function LocationReviews({ heading }: { location: Location; headi
             <strong>{siteConfig.reviewScore}</strong>
             <span aria-label="5 out of 5 stars">★★★★★</span>
           </div>
+          <a href={siteConfig.googleProfileUrl} target="_blank" rel="noopener noreferrer">Read all reviews <span aria-hidden="true">→</span></a>
         </div>
 
         <GoogleReviewCarousel
           reviews={carouselReviews}
+          mobileReviews={mobileReviews}
           googleProfileUrl={siteConfig.googleProfileUrl}
         />
       </div>

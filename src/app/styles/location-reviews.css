@@ -118,7 +118,7 @@
     background: var(--surface-page);
   }
 
-  .location-customer-reviews__heading h2 { font-size: 36px; }
+  .location-customer-reviews__heading { display: none; }
 
   .location-review-mobile-summary {
     display: flex;

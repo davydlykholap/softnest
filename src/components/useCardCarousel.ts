@@ -18,6 +18,7 @@ export default function useCardCarousel(count: number) {
     const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
     const cardStep = firstCard.getBoundingClientRect().width + gap;
     const width = track.parentElement?.getBoundingClientRect().width ?? 0;
+    if (width === 0 || cardStep === 0) return;
     const visible = Math.max(1, Math.floor((width + gap + 1) / cardStep));
     const nextMax = Math.max(0, count - visible);
     setStep(cardStep);

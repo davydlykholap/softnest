@@ -783,9 +783,24 @@ html {
   }
 }
 .review-card-arrow { margin-left: auto; }
+.review-mobile-only { display: none !important; }
+@media (min-width: 721px) {
+  .google-review-card { transition: transform 180ms ease; }
+  .google-review-card:hover { transform: translateY(-4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .google-review-card { transition: none; }
+  .google-review-card:hover { transform: none; }
+}
 .review-carousel .gallery-carousel-arrow { width: 50px; height: 50px; transform: translateY(-50%); }
 .review-carousel .gallery-carousel-arrow:hover { transform: translateY(-50%) scale(1.04); }
 @media (max-width: 720px) {
+  .review-mobile-only { display: inline-flex !important; }
+  .google-review-card__open {
+    width: 40px; height: 40px; display: grid; place-items: center; flex: 0 0 auto;
+    margin-left: auto; border: 1px solid #dce3df; border-radius: 50%;
+    color: #07543b; background: var(--surface-soft); font-size: 18px;
+  }
   .review-carousel .gallery-carousel-arrow { width: 44px; height: 44px; }
 }
 

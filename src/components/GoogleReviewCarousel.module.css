@@ -3,7 +3,9 @@
 .carousel .controls :global(.gallery-carousel-arrow) { top: 114px; }
 .carousel .controls :global(.gallery-carousel-arrow--prev) { left: 0; }
 .carousel .controls :global(.gallery-carousel-arrow--next) { right: 0; }
-.viewport { overflow: hidden; min-width: 0; touch-action: pan-y; }
+.desktop { min-width: 0; }
+.mobile { display: none; }
+.viewport { overflow: hidden; min-width: 0; padding-block: 20px 44px; margin-block: -20px -44px; touch-action: pan-y; }
 .track:global(.google-review-cards) {
   display: flex;
   width: 100% !important;
@@ -40,10 +42,6 @@
 }
 @media (prefers-reduced-motion: reduce) { .track:global(.google-review-cards) { transition: none; } }
 @media (max-width: 720px) {
-  .carousel { padding-inline: 22px; }
-  .carousel .controls :global(.gallery-carousel-arrow) { top: 138px; }
-  .track:global(.google-review-cards) { margin-top: 24px; }
-  .track:global(.google-review-cards) > a { flex-basis: 100%; padding-inline: 32px !important; }
-  .track:global(.google-review-cards) :global(.google-review-card__quote-mark) { display: none; }
-  .track:global(.google-review-cards) :global(.google-review-card__top) { order: 0; margin: 0; }
+  .desktop { display: none; }
+  .mobile { display: block; min-width: 0; }
 }

@@ -15,11 +15,13 @@ type GoogleReview = {
 
 type GoogleReviewCarouselProps = {
   reviews: GoogleReview[];
+  mobileReviews?: GoogleReview[];
   googleProfileUrl: string;
 };
 
 export default function GoogleReviewCarousel({
   reviews,
+  mobileReviews = reviews,
   googleProfileUrl,
 }: GoogleReviewCarouselProps) {
   const [orderedReviews, setOrderedReviews] = useState(reviews);
@@ -34,13 +36,10 @@ export default function GoogleReviewCarousel({
     startTransition(() => setOrderedReviews(shuffled));
   }, [reviews]);
 
-  return (
-    <div className={`gallery-carousel-shell review-carousel ${styles.carousel}`}>
-    <div className={styles.viewport} tabIndex={0} aria-label="Customer reviews carousel" onKeyDown={onKeyDown} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-    <div ref={trackRef} style={{ transform: `translate3d(-${index * step}px, 0, 0)` }} className={`google-review-cards ${styles.track}`} aria-label="Customer reviews">
-      {orderedReviews.map((review) => (
+  function renderCards(items: GoogleReview[], mobile = false) {
+    return items.map((review) => (
         <a
-          className={`google-review-card ${cardArrowHostClassName}`}
+          className={`google-review-card ${mobile ? "" : cardArrowHostClassName}`}
           key={review.name}
           href={googleProfileUrl}
           target="_blank"
@@ -67,16 +66,30 @@ export default function GoogleReviewCarousel({
             <span className="google-review-card__author">
               <strong>{review.name}</strong>
             </span>
-            <CardArrow className="review-card-arrow" />
+            {mobile ? <span className="google-review-card__open" aria-hidden="true">↗</span> : <CardArrow className="review-card-arrow" />}
           </div>
         </a>
-      ))}
-    </div>
-    </div>
-    <div className={styles.controls}>
-    <CarouselArrow direction="prev" label="Previous reviews" disabled={maxIndex === 0} onClick={previous} />
-    <CarouselArrow direction="next" label="Next reviews" disabled={maxIndex === 0} onClick={next} />
-    </div>
-    </div>
+    ));
+  }
+
+  return (
+    <>
+      <div className={styles.desktop}>
+        <div className={`gallery-carousel-shell review-carousel ${styles.carousel}`}>
+          <div className={styles.viewport} tabIndex={0} aria-label="Customer reviews carousel" onKeyDown={onKeyDown} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+            <div ref={trackRef} style={{ transform: `translate3d(-${index * step}px, 0, 0)` }} className={`google-review-cards ${styles.track}`} aria-label="Customer reviews">
+              {renderCards(orderedReviews)}
+            </div>
+          </div>
+          <div className={styles.controls}>
+            <CarouselArrow direction="prev" label="Previous reviews" disabled={maxIndex === 0} onClick={previous} />
+            <CarouselArrow direction="next" label="Next reviews" disabled={maxIndex === 0} onClick={next} />
+          </div>
+        </div>
+      </div>
+      <div className={styles.mobile}>
+        <div className="google-review-cards" aria-label="Recent Google reviews">{renderCards(mobileReviews, true)}</div>
+      </div>
+    </>
   );
 }
