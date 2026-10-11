@@ -35,7 +35,7 @@ export default function GoogleReviewCarousel({
   }, [reviews]);
 
   return (
-    <div className={`gallery-carousel-shell ${styles.carousel}`}>
+    <div className={`gallery-carousel-shell review-carousel ${styles.carousel}`}>
     <div className={styles.viewport} tabIndex={0} aria-label="Customer reviews carousel" onKeyDown={onKeyDown} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
     <div ref={trackRef} style={{ transform: `translate3d(-${index * step}px, 0, 0)` }} className={`google-review-cards ${styles.track}`} aria-label="Customer reviews">
       {orderedReviews.map((review) => (

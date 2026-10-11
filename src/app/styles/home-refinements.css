@@ -150,26 +150,26 @@
   position: relative;
 }
 
-.gallery-section-v2 .gallery-carousel-arrow {
+:is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow {
   top: 50%;
   width: 50px;
   height: 50px;
   transform: translateY(-50%);
 }
 
-.gallery-section-v2 .gallery-carousel-arrow:hover {
+:is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow:hover {
   transform: translateY(-50%) scale(1.04);
 }
 
-.gallery-section-v2 .gallery-carousel-arrow--prev {
+:is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow--prev {
   left: -25px;
 }
 
-.gallery-section-v2 .gallery-carousel-arrow--next {
+:is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow--next {
   right: -25px;
 }
 
-.gallery-section-v2 .gallery-carousel-arrow:disabled {
+:is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow:disabled {
   display: none;
 }
 
@@ -285,7 +285,7 @@
     border-radius: 24px;
   }
 
-  .gallery-section-v2 .gallery-carousel-arrow {
+  :is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow {
     width: 44px;
     height: 44px;
     border-color: rgba(7, 84, 59, .1);
@@ -293,16 +293,16 @@
     box-shadow: 0 8px 20px rgba(18, 60, 47, .16);
   }
 
-  .gallery-section-v2 .gallery-carousel-arrow svg {
+  :is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow svg {
     width: 19px;
     height: 19px;
   }
 
-  .gallery-section-v2 .gallery-carousel-arrow--prev {
+  :is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow--prev {
     left: 8px;
   }
 
-  .gallery-section-v2 .gallery-carousel-arrow--next {
+  :is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow--next {
     right: 8px;
   }
 
