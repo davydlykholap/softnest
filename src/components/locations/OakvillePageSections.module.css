@@ -34,8 +34,8 @@
 
 @media (min-width: 721px) {
   .introduction p { font-size: 18px; color: #33473f; line-height: 1.65; }
-  .serviceCopy > p,
-  .more p { font-size: 18px; }
+  .services .serviceCopy > p,
+  .services .more p { font-size: 18px; }
 }
 
 .introduction h2,
