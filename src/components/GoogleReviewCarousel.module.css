@@ -1,6 +1,6 @@
 .carousel { position: relative; min-width: 0; padding-inline: 25px; --gallery-forest: #07543b; }
 .controls { display: contents; }
-.carousel .controls :global(.gallery-carousel-arrow) { top: 50%; }
+.carousel .controls :global(.gallery-carousel-arrow) { top: 114px; }
 .carousel .controls :global(.gallery-carousel-arrow--prev) { left: 0; }
 .carousel .controls :global(.gallery-carousel-arrow--next) { right: 0; }
 .viewport { overflow: hidden; min-width: 0; touch-action: pan-y; }
@@ -11,7 +11,7 @@
   overflow: visible !important;
   scroll-snap-type: none;
   margin: 0;
-  padding: 4px 0 16px;
+  padding: 4px 0 16px !important;
   transition: transform 400ms ease;
 }
 .track:global(.google-review-cards) > a {
@@ -41,6 +41,7 @@
 @media (prefers-reduced-motion: reduce) { .track:global(.google-review-cards) { transition: none; } }
 @media (max-width: 720px) {
   .carousel { padding-inline: 22px; }
+  .carousel .controls :global(.gallery-carousel-arrow) { top: 138px; }
   .track:global(.google-review-cards) { margin-top: 24px; }
   .track:global(.google-review-cards) > a { flex-basis: 100%; padding-inline: 32px !important; }
   .track:global(.google-review-cards) :global(.google-review-card__quote-mark) { display: none; }

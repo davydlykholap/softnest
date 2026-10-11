@@ -783,6 +783,11 @@ html {
   }
 }
 .review-card-arrow { margin-left: auto; }
+.review-carousel .gallery-carousel-arrow { width: 50px; height: 50px; transform: translateY(-50%); }
+.review-carousel .gallery-carousel-arrow:hover { transform: translateY(-50%) scale(1.04); }
+@media (max-width: 720px) {
+  .review-carousel .gallery-carousel-arrow { width: 44px; height: 44px; }
+}
 
 @media (min-width: 721px) {
   .new-hero-root .journey-card__reviews { grid-template-columns: 148px minmax(0, 1fr); gap: 24px; }
