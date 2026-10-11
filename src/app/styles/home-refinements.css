@@ -776,26 +776,9 @@
     text-decoration: none;
 }
 
-.google-review-card__open {
-    width: 24px;
-    height: 24px;
-    display: grid;
-    place-items: center;
-    flex: 0 0 auto;
-    margin-left: auto;
-    border: 1px solid #dce3df;
-    border-radius: 50%;
-    color: var(--forest);
-    font-size: 11px;
-    font-weight: 800;
-    transition: transform 180ms ease, background 180ms ease, color 180ms ease;
-}
 
-.google-review-card:hover .google-review-card__open {
-    background: var(--forest);
-    color: #fff;
-    transform: translate(1px, -1px);
-}
+
+
 
 @media (min-width: 641px) {
     .google-review-card:nth-child(n + 4) {
@@ -992,11 +975,7 @@
         font-size: 14px;
     }
 
-    .google-review-card__open {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
+    
 
 }
 /* SOFTNEST_MOBILE_REVIEWS_END */
@@ -1091,7 +1070,7 @@
 
 @media (min-width: 981px) {
   .new-hero-root .journey-card {
-    width: min(90vw, 1340px);
+    width: min(94vw, 1440px);
     min-height: 190px;
     margin-top: -82px;
     padding: 24px 28px;

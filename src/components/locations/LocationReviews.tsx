@@ -54,13 +54,6 @@ export default function LocationReviews({ location, heading }: { location: Locat
             <strong>{siteConfig.reviewScore}</strong>
             <span aria-label="5 out of 5 stars">★★★★★</span>
           </div>
-          <a
-            href={siteConfig.googleProfileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read all reviews <span aria-hidden="true">→</span>
-          </a>
         </div>
 
         <GoogleReviewCarousel
@@ -68,15 +61,6 @@ export default function LocationReviews({ location, heading }: { location: Locat
           googleProfileUrl={siteConfig.googleProfileUrl}
         />
       </div>
-
-      <a
-        className="location-customer-reviews__link"
-        href={siteConfig.googleProfileUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Read more reviews on Google <span aria-hidden="true">→</span>
-      </a>
     </section>
   );
 }

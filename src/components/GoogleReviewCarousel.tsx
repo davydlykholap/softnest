@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import CardArrow, { cardArrowHostClassName } from "@/components/CardArrow";
 
 type GoogleReview = {
   initial: string;
@@ -21,7 +22,7 @@ export default function GoogleReviewCarousel({
     <div className="google-review-cards" aria-label="Recent Google reviews">
       {reviews.map((review) => (
         <a
-          className="google-review-card"
+          className={`google-review-card ${cardArrowHostClassName}`}
           key={review.name}
           href={googleProfileUrl}
           target="_blank"
@@ -48,7 +49,7 @@ export default function GoogleReviewCarousel({
             <span className="google-review-card__author">
               <strong>{review.name}</strong>
             </span>
-            <span className="google-review-card__open" aria-hidden="true">↗</span>
+            <CardArrow className="review-card-arrow" />
           </div>
         </a>
       ))}

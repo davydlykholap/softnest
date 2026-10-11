@@ -115,13 +115,6 @@ export default function HomeHero() {
               <strong>{siteConfig.reviewScore}</strong>
               <span aria-label="5 out of 5 stars">★★★★★</span>
             </div>
-            <a
-              href={googleProfileUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" " + pageText(homeContent.copy, "hero-22") + " "}<span aria-hidden="true">→</span>
-            </a>
           </div>
 
           <GoogleReviewCarousel
