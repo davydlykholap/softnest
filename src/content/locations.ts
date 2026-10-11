@@ -2,6 +2,7 @@ import "server-only";
 
 import records from "@/content/generated/locations.json";
 import { optimizedLocalImage } from "@/lib/optimizedLocalImage";
+import { oakvillePage } from "@/content/oakvillePage";
 export type LocationFaq = {
   question: string;
   answer: string;
@@ -46,6 +47,13 @@ export type Location = {
 
 export const serviceAreas: Location[] = (records as Location[]).map((location) => ({
   ...location,
+  ...(location.slug === "oakville" ? {
+    metaTitle: oakvillePage.metaTitle,
+    metaDescription: oakvillePage.metaDescription,
+    introduction: oakvillePage.introduction,
+    faq: oakvillePage.faqs,
+    neighbourhoods: oakvillePage.neighbourhoods,
+  } : {}),
   image: optimizedLocalImage(location.image),
   expandedContent: location.expandedContent && {
     ...location.expandedContent,

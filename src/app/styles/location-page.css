@@ -818,6 +818,35 @@
 }
 
 /* Keep city-page heroes on the same type scale as the homepage. */
+.location-page-page--oakville .location-page-hero__copy {
+    width: min(750px, 54%);
+}
+
+.location-page-page--oakville .location-page-hero h1 {
+    font-size: clamp(52px, 4.1vw, 70px);
+}
+
+@media (max-width: 820px) {
+    .location-page-page--oakville .location-page-hero__copy {
+        width: 100%;
+    }
+
+    .location-page-page--oakville .location-page-hero h1 {
+        font-size: clamp(40px, 5vw, 52px);
+    }
+}
+
+@media (max-width: 640px) {
+    .location-page-page--oakville .location-page-hero__copy {
+        width: 100%;
+    }
+
+    .location-page-page--oakville .location-page-hero h1 {
+        font-size: 36px;
+        line-height: 1.04;
+    }
+}
+
 .location-page-hero h1 {
     font-size: clamp(66px, 4.8vw, 78px);
 }

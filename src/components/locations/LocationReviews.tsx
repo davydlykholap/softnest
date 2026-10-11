@@ -10,7 +10,7 @@ function reviewExcerpt(text: string, maximumLength = 200) {
   return `${shortened}…`;
 }
 
-export default function LocationReviews({ location }: { location: Location }) {
+export default function LocationReviews({ location, heading }: { location: Location; heading?: string }) {
   const reviews = getTestimonials({ location: location.slug, limit: 3 });
   if (!reviews.length) return null;
 
@@ -30,7 +30,7 @@ export default function LocationReviews({ location }: { location: Location }) {
         <div>
           <p className="location-eyebrow">Customer feedback</p>
           <span className="location-reviews-rule" aria-hidden="true" />
-          <h2 id="location-reviews-heading">What customers say</h2>
+          <h2 id="location-reviews-heading">{heading ?? "What customers say"}</h2>
         </div>
         <p>
           Feedback from {location.name} customers after professional upholstery

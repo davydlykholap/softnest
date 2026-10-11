@@ -8,6 +8,7 @@ const representativeRoutes = [
   ["locations", "/location/"],
   ["Mississauga location", "/location/mississauga/"],
   ["Toronto location", "/location/toronto/"],
+  ["Oakville location", "/location/oakville/"],
   ["quote", "/quote/"],
   ["blog", "/blog/"],
   ["about", "/about/"],
