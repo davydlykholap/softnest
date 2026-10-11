@@ -1163,7 +1163,7 @@
 .locations-hero h1 .locations-hero__title-line {
     display: block;
     color: #0f1512;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .locations-hero h1 .locations-hero__title-line--accent {
@@ -1554,9 +1554,10 @@
     object-fit: cover;
 }
 
-/* Match directory hero typography to the homepage hero. */
+/* Shared page hero typography, without an eyebrow spacer. */
 .locations-hero h1 {
-    font-size: clamp(66px, 4.8vw, 78px);
+    font-size: var(--page-hero-font-size);
+    line-height: var(--page-hero-line-height);
 }
 
 .locations-hero__description {
@@ -1564,17 +1565,7 @@
     line-height: 1.65;
 }
 
-@media (max-width: 980px) {
-    .locations-hero h1 {
-        font-size: clamp(43px, 7.3vw, 61px);
-    }
-}
-
 @media (max-width: 640px) {
-    .locations-hero h1 {
-        font-size: 38px;
-        line-height: 1.03;
-    }
 
     .locations-hero__description {
         font-size: 14px;

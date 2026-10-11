@@ -34,8 +34,8 @@
 
 .shell h1 {
   margin: 0 0 20px;
-  font-size: clamp(42px, 7vw, 66px);
-  line-height: 1;
+  font-size: var(--page-hero-font-size);
+  line-height: var(--page-hero-line-height);
 }
 
 .shell h2 {

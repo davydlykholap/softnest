@@ -12,6 +12,8 @@
 }
 
 :root {
+    --page-hero-font-size: clamp(52px, 4.1vw, 70px);
+    --page-hero-line-height: 1.04;
     --surface-page: #ffffff;
     --surface-soft: #f3f7f4;
     --surface-warm: #f6f3ec;
@@ -1070,4 +1072,12 @@ body {
         scroll-snap-type: x mandatory;
     }
     .google-review-card { scroll-snap-align: start; }
+}
+
+/* One title scale for page heroes without eyebrow labels. */
+@media (max-width: 820px) {
+    :root { --page-hero-font-size: clamp(40px, 5vw, 52px); }
+}
+@media (max-width: 640px) {
+    :root { --page-hero-font-size: 36px; }
 }

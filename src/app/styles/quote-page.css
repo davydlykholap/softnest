@@ -101,9 +101,9 @@
   margin: 0;
   color: #14271f;
   font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(46px, 5vw, 68px);
+  font-size: var(--page-hero-font-size);
   font-weight: 500;
-  line-height: .98;
+  line-height: var(--page-hero-line-height);
   letter-spacing: -.04em;
 }
 
@@ -824,11 +824,7 @@
     margin-bottom: 38px;
   }
 
-  .quote-page-form__heading h1,
-  .quote-page-success h1 {
-    font-size: clamp(39px, 11vw, 49px);
-    line-height: 1;
-  }
+
 
   .quote-page-form__heading > p,
   .quote-page-success > p {
