@@ -794,6 +794,7 @@ html {
 }
 .review-carousel .gallery-carousel-arrow { width: 50px; height: 50px; transform: translateY(-50%); }
 .review-carousel .gallery-carousel-arrow:hover { transform: translateY(-50%) scale(1.04); }
+.review-carousel .gallery-carousel-arrow:disabled { display: none; }
 @media (max-width: 720px) {
   .review-mobile-only { display: inline-flex !important; }
   .google-review-card__open {

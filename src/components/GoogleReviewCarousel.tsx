@@ -16,12 +16,14 @@ type GoogleReview = {
 type GoogleReviewCarouselProps = {
   reviews: GoogleReview[];
   mobileReviews?: GoogleReview[];
+  variant?: "compact" | "city";
   googleProfileUrl: string;
 };
 
 export default function GoogleReviewCarousel({
   reviews,
   mobileReviews = reviews,
+  variant = "compact",
   googleProfileUrl,
 }: GoogleReviewCarouselProps) {
   const [orderedReviews, setOrderedReviews] = useState(reviews);
@@ -75,7 +77,7 @@ export default function GoogleReviewCarousel({
   return (
     <>
       <div className={styles.desktop}>
-        <div className={`gallery-carousel-shell review-carousel ${styles.carousel}`}>
+        <div className={`gallery-carousel-shell review-carousel ${styles.carousel} ${variant === "city" ? styles.city : ""}`}>
           <div className={styles.viewport} tabIndex={0} aria-label="Customer reviews carousel" onKeyDown={onKeyDown} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
             <div ref={trackRef} style={{ transform: `translate3d(-${index * step}px, 0, 0)` }} className={`google-review-cards ${styles.track}`} aria-label="Customer reviews">
               {renderCards(orderedReviews)}

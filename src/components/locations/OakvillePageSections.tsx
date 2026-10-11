@@ -73,7 +73,7 @@ export default function OakvillePageSections({ location }: { location: Location 
         </div>
       </section>
 
-      <LocationReviews location={location} heading="What our customers say" />
+      <LocationReviews location={location} heading="What Oakville customers say" />
 
       <section className={styles.coverage} aria-labelledby="oakville-coverage-heading">
         <div className={styles.coverageCopy}>

@@ -1,16 +1,20 @@
 import Image from "next/image";
 import GoogleReviewCarousel from "@/components/GoogleReviewCarousel";
-import { getGoogleReviews, getTestimonials } from "@/content/pages";
+import { getTestimonials } from "@/content/pages";
 import type { Location } from "@/content/locations";
 import { siteConfig } from "@/lib/site";
 
 
 export default function LocationReviews({ location, heading }: { location: Location; heading?: string }) {
-  const reviews = getGoogleReviews();
+  const reviews = getTestimonials({ location: location.slug, limit: 3 });
   if (!reviews.length) return null;
 
-  const carouselReviews = reviews;
-  const mobileReviews = getTestimonials({ location: location.slug, limit: 3 }).map((review) => ({
+  const carouselReviews = reviews.map((review) => ({
+    initial: review.name.trim().charAt(0).toUpperCase(),
+    name: review.name,
+    text: review.text,
+  }));
+  const mobileReviews = reviews.map((review) => ({
     initial: review.name.trim().charAt(0).toUpperCase(),
     name: review.name,
     text: review.text.length > 200 ? `${review.text.slice(0, 200).replace(/\s+\S*$/, "")}…` : review.text,
@@ -28,7 +32,7 @@ export default function LocationReviews({ location, heading }: { location: Locat
           <h2 id="location-reviews-heading">{heading ?? "What customers say"}</h2>
         </div>
         <p>
-          Feedback from SoftNest customers after professional upholstery
+          Feedback from {location.name} customers after professional upholstery
           and carpet cleaning appointments.
         </p>
       </div>
@@ -55,6 +59,7 @@ export default function LocationReviews({ location, heading }: { location: Locat
 
         <GoogleReviewCarousel
           reviews={carouselReviews}
+          variant="city"
           mobileReviews={mobileReviews}
           googleProfileUrl={siteConfig.googleProfileUrl}
         />

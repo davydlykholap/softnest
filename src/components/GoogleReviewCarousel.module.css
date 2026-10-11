@@ -1,6 +1,7 @@
-.carousel { position: relative; min-width: 0; padding-inline: 25px; --gallery-forest: #07543b; }
+.carousel { position: relative; min-width: 0; padding-inline: 25px; --gallery-forest: #07543b; --review-card-height: 220px; --review-text-height: 90px; }
+.city { --review-card-height: 278px; --review-text-height: 148px; }
 .controls { display: contents; }
-.carousel .controls :global(.gallery-carousel-arrow) { top: 114px; }
+.carousel .controls :global(.gallery-carousel-arrow) { top: calc(4px + var(--review-card-height) / 2); }
 .carousel .controls :global(.gallery-carousel-arrow--prev) { left: 0; }
 .carousel .controls :global(.gallery-carousel-arrow--next) { right: 0; }
 .desktop { min-width: 0; }
@@ -20,15 +21,15 @@
   display: flex !important;
   flex: 0 0 calc((100% - 32px) / 3);
   min-width: 0;
-  height: 220px !important;
-  min-height: 220px !important;
+  height: var(--review-card-height) !important;
+  min-height: var(--review-card-height) !important;
   padding: 20px 40px !important;
   border-radius: 24px;
   scroll-snap-align: start;
 }
 .track:global(.google-review-cards) > a > p {
   display: block;
-  max-height: 90px;
+  max-height: var(--review-text-height);
   overflow-y: auto;
   margin: 14px 0 16px;
   font-size: 15px;
