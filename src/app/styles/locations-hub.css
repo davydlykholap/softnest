@@ -1554,19 +1554,42 @@
     object-fit: cover;
 }
 
-/* Shared page hero typography, without an eyebrow spacer. */
+/* Center the directory copy above the overlapping search card. */
+.locations-hero {
+    display: flex;
+    align-items: center;
+}
+
+.locations-hero .locations-hero__copy {
+    padding: 64px 0 124px 7.5%;
+}
+
 .locations-hero h1 {
     font-size: var(--page-hero-font-size);
     line-height: var(--page-hero-line-height);
 }
 
 .locations-hero__description {
+    font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
+    color: #56645d;
     font-size: 16px;
     line-height: 1.65;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 820px) {
+    .locations-hero {
+        align-items: stretch;
+    }
 
+    .locations-hero .locations-hero__copy {
+        padding: 36px 8% 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .locations-hero .locations-hero__copy {
+        padding: 32px 7% 28px;
+    }
     .locations-hero__description {
         font-size: 14px;
         line-height: 1.5;
