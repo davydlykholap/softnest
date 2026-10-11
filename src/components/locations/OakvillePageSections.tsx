@@ -67,8 +67,6 @@ export default function OakvillePageSections({ location }: { location: Location 
 
       <LocationReviews location={location} heading="What Oakville customers say" />
 
-      <HomeFaqExplorer items={location.faq} />
-
       <section className={styles.coverage} aria-labelledby="oakville-coverage-heading">
         <div className={styles.coverageCopy}>
           <h2 id="oakville-coverage-heading">Serving all of Oakville</h2>
@@ -87,6 +85,8 @@ export default function OakvillePageSections({ location }: { location: Location 
           />
         </div>
       </section>
+
+      <HomeFaqExplorer items={location.faq} />
 
       <DirectoryFinalCta
         id="quote-cta"
