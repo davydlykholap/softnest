@@ -32,6 +32,19 @@
 
 .introductionCopy { display: grid; gap: 18px; }
 
+@media (min-width: 721px) {
+  .introduction {
+    margin: clamp(48px, 5vw, 72px) auto clamp(48px, 5vw, 72px);
+    padding: clamp(36px, 4vw, 60px);
+    border: 1px solid var(--surface-line);
+    border-radius: 28px;
+    background: var(--surface-soft);
+  }
+  .introduction h2 { max-width: 390px; }
+  .introduction p { font-size: 17px; color: #33473f; }
+  .introductionCopy p:first-child { font-size: 20px; line-height: 1.55; color: #17231e; }
+}
+
 .introduction h2,
 .service h2,
 .more h2,
