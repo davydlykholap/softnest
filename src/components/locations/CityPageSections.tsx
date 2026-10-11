@@ -4,27 +4,27 @@ import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import LocationReviews from "@/components/locations/LocationReviews";
 import HeroActionButtons from "@/components/HeroActionButtons";
-import { oakvillePage } from "@/content/oakvillePage";
+import type { CityPageCopy } from "@/content/cityPages";
 import type { Location } from "@/content/locations";
 import { getService } from "@/content/services";
 import { siteConfig } from "@/lib/site";
 import { optimizedLocalImage } from "@/lib/optimizedLocalImage";
-import styles from "./OakvillePageSections.module.css";
+import styles from "./CityPageSections.module.css";
 
-export default function OakvillePageSections({ location }: { location: Location }) {
+export default function CityPageSections({ location, copy }: { location: Location; copy: CityPageCopy }) {
   return (
     <>
-      <section className={styles.introduction} aria-labelledby="oakville-approach-heading">
-        <h2 id="oakville-approach-heading">Care matched to your fabric.</h2>
+      <section className={styles.introduction} aria-labelledby="city-approach-heading">
+        <h2 id="city-approach-heading">Care matched to your fabric.</h2>
         <div className={styles.introductionCopy}>
-          {oakvillePage.introduction.split(/(?<=Ontario\.) |(?=Send us photos)/).map((paragraph) => (
+          {copy.introductionParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
       </section>
 
       <section className={styles.services} id="services" aria-label="What we clean">
-        {oakvillePage.services.map((item) => {
+        {copy.services.map((item) => {
           const service = getService(item.slug);
           return (
             <article className={styles.service} key={item.title}>
@@ -51,20 +51,20 @@ export default function OakvillePageSections({ location }: { location: Location 
         })}
         <div className={styles.more}>
           <h2>And more</h2>
-          <p>{oakvillePage.more}</p>
+          <p>{copy.more}</p>
           <div className={styles.moreActions}>
             <HeroActionButtons primaryTone="gold" showReviews={false} />
           </div>
         </div>
       </section>
 
-      <section className={styles.why} aria-labelledby="oakville-why-heading">
+      <section className={styles.why} aria-labelledby="city-why-heading">
         <div className={styles.whyHeading}>
           <span className={styles.rule} aria-hidden="true" />
-          <h2 id="oakville-why-heading">Why Oakville<br /> books SoftNest</h2>
+          <h2 id="city-why-heading">Why {location.name}<br /> books SoftNest</h2>
         </div>
         <div className={styles.advantages}>
-          {oakvillePage.advantages.map((item) => (
+          {copy.advantages.map((item) => (
             <article key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
@@ -73,20 +73,20 @@ export default function OakvillePageSections({ location }: { location: Location 
         </div>
       </section>
 
-      <LocationReviews location={location} heading="What Oakville customers say" />
+      <LocationReviews location={location} />
 
-      <section className={styles.coverage} aria-labelledby="oakville-coverage-heading">
+      <section className={styles.coverage} aria-labelledby="city-coverage-heading">
         <div className={styles.coverageCopy}>
-          <h2 id="oakville-coverage-heading">Serving all of Oakville</h2>
-          <p>{oakvillePage.coverage}</p>
+          <h2 id="city-coverage-heading">Serving all of {location.name}</h2>
+          <p>{copy.coverage}</p>
           <ul aria-label="Neighbourhoods we serve">
             {location.neighbourhoods.map((name) => <li key={name}>{name}</li>)}
           </ul>
-          <p>{oakvillePage.coverageClosing}</p>
+          <p>{copy.coverageClosing}</p>
         </div>
         <div className={`softnest-map ${styles.map}`}>
           <iframe
-            title="SoftNest service map for Oakville"
+            title={`SoftNest service map for ${location.name}`}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             src={`https://www.google.com/maps?q=${encodeURIComponent(location.mapQuery)}&z=11&output=embed`}
@@ -98,8 +98,8 @@ export default function OakvillePageSections({ location }: { location: Location 
 
       <DirectoryFinalCta
         id="quote-cta"
-        title={oakvillePage.ctaTitle}
-        description={oakvillePage.ctaDescription}
+        title={copy.ctaTitle}
+        description={copy.ctaDescription}
         action={{ href: "/quote/", label: siteConfig.quoteLabel }}
         image="/images/softnest-hero-room.webp"
         imageAlt="Bright living room with a deep green sofa"

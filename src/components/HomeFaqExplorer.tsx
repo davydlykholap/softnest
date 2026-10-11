@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { ChevronDownIcon } from "@/components/UiIcons";
 import FaqAccordion from "@/components/FaqAccordion";
 import styles from "./HomeFaqExplorer.module.css";
@@ -17,8 +17,14 @@ type Props = {
   items: readonly FaqItem[];
 };
 
+// The client snapshot enables controls once hydration has attached handlers.
+const subscribeToHydration = () => () => undefined;
+const clientSnapshot = () => true;
+const serverSnapshot = () => false;
+
 export default function HomeFaqExplorer({ items }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const isInteractive = useSyncExternalStore(subscribeToHydration, clientSnapshot, serverSnapshot);
   const activeItem = activeIndex === null ? null : items[activeIndex];
 
   return (
@@ -39,6 +45,7 @@ export default function HomeFaqExplorer({ items }: Props) {
                 <button
                   className={styles.question}
                   type="button"
+                  disabled={!isInteractive}
                   key={item.question}
                   aria-expanded={isActive}
                   aria-controls="home-faq-answer"
