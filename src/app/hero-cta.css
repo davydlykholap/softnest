@@ -50,7 +50,7 @@
   box-shadow:
     0 14px 28px rgba(177, 128, 22, 0.3),
     0 0 0 7px rgba(247, 217, 116, 0.28);
-  color: #17231e !important;
+  color: #000 !important;
 }
 
 .hero-action-buttons--gold .button--primary.quote-cta::after {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import LocationReviews from "@/components/locations/LocationReviews";
+import HeroActionButtons from "@/components/HeroActionButtons";
 import { oakvillePage } from "@/content/oakvillePage";
 import type { Location } from "@/content/locations";
 import { getService } from "@/content/services";
@@ -47,6 +48,9 @@ export default function OakvillePageSections({ location }: { location: Location 
         <div className={styles.more}>
           <h2>And more</h2>
           <p>{oakvillePage.more}</p>
+          <div className={styles.moreActions}>
+            <HeroActionButtons primaryTone="gold" showReviews={false} />
+          </div>
         </div>
       </section>
 

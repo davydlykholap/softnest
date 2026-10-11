@@ -8,12 +8,14 @@ type HeroActionButtonsProps = {
   quoteHref?: string;
   quoteAriaLabel?: string;
   primaryTone?: "green" | "gold";
+  showReviews?: boolean;
 };
 
 export default function HeroActionButtons({
   quoteHref = "/quote/",
   quoteAriaLabel = "Get an upholstery and carpet cleaning quote",
   primaryTone = "green",
+  showReviews = true,
 }: HeroActionButtonsProps) {
   return (
     <div
@@ -37,7 +39,7 @@ export default function HeroActionButtons({
           <path d="M5 12h14m-6-6 6 6-6 6" />
         </svg>
       </Link>
-      <a
+      {showReviews ? <a
         className="button button--secondary"
         href={googleProfileUrl}
         target="_blank"
@@ -52,7 +54,7 @@ export default function HeroActionButtons({
           height={32}
         />
         See our reviews
-      </a>
+      </a> : null}
     </div>
   );
 }
