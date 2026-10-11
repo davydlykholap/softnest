@@ -65,7 +65,7 @@ export function DirectoryHero({
           <div className="locations-hero__actions">
             {primaryAction ? (
               <Link
-                className="locations-pill locations-pill--solid"
+                className={`locations-pill locations-pill--solid${primaryAction.href.startsWith("/quote") ? " quote-cta" : ""}`}
                 href={primaryAction.href}
               >
                 {primaryAction.label}
@@ -74,7 +74,7 @@ export function DirectoryHero({
             ) : null}
             {secondaryAction ? (
               <Link
-                className="locations-pill locations-pill--outline"
+                className={`locations-pill locations-pill--outline${secondaryAction.href.startsWith("/quote") ? " quote-cta" : ""}`}
                 href={secondaryAction.href}
               >
                 {secondaryAction.label}
@@ -176,7 +176,7 @@ export function DirectorySupportSection({
         <p>{description}</p>
         <div className="locations-missing__actions">
           <Link
-            className="locations-pill locations-pill--solid"
+            className={`locations-pill locations-pill--solid${primaryAction.href.startsWith("/quote") ? " quote-cta" : ""}`}
             href={primaryAction.href}
           >
             {primaryAction.label}
@@ -249,7 +249,7 @@ export function DirectoryFinalCta({
         <span className="locations-kicker-line" aria-hidden="true" />
         <p>{description}</p>
         <Link
-          className="locations-pill locations-pill--light"
+          className={`locations-pill locations-pill--light${action.href.startsWith("/quote") ? " quote-cta" : ""}`}
           href={action.href}
         >
           {action.label}

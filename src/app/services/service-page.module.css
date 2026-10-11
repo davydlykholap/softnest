@@ -476,7 +476,7 @@
 }
 
 .servicePage :global(.site-final-cta .locations-pill--light) {
-  color: #07543b !important;
+  color: #000 !important;
 }
 
 @media (max-width: 1150px) {

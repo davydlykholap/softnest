@@ -46,7 +46,7 @@
 
 .hero-action-buttons--gold .button--primary.quote-cta {
   border-color: rgba(255, 255, 255, 0.76);
-  background: linear-gradient(135deg, #ebc442 0%, #e6b838 52%, #e2b337 100%);
+  background: var(--quote-cta-background);
   box-shadow:
     0 14px 28px rgba(177, 128, 22, 0.3),
     0 0 0 7px rgba(247, 217, 116, 0.28);
@@ -64,14 +64,14 @@
 
 .hero-action-buttons--gold .button--primary.quote-cta:hover,
 .hero-action-buttons--gold .button--primary.quote-cta:focus-visible {
-  background: linear-gradient(135deg, #f1ce50 0%, #ecc342 52%, #e7bc40 100%);
+  background: var(--quote-cta-background-hover);
   box-shadow:
     0 18px 36px rgba(155, 108, 13, 0.34),
     0 0 0 8px rgba(247, 217, 116, 0.34);
 }
 
 .site-header .header-quote {
-  background: linear-gradient(135deg, #ebc442 0%, #e6b838 52%, #e2b337 100%);
+  background: var(--quote-cta-background);
   color: #000 !important;
   box-shadow: 0 8px 18px rgba(177, 128, 22, 0.24);
 }
@@ -85,6 +85,6 @@
 
 .site-header .header-quote:hover,
 .site-header .header-quote:focus-visible {
-  background: linear-gradient(135deg, #f1ce50 0%, #ecc342 52%, #e7bc40 100%);
+  background: var(--quote-cta-background-hover);
   color: #000 !important;
 }

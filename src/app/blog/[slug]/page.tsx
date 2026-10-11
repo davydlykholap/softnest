@@ -116,7 +116,7 @@ export default async function BlogArticlePage({ params }: Props) {
           <aside className={styles.cta}>
             <h2>Need a little extra care?</h2>
             <p>Get professional fabric cleaning for your home.</p>
-            <Link href="/quote/">{siteConfig.quoteLabel} →</Link>
+            <Link className="quote-cta" href="/quote/">{siteConfig.quoteLabel} →</Link>
           </aside>
           <nav
             className={styles.related}
