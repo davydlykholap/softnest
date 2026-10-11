@@ -39,7 +39,8 @@ export default function GoogleReviewCarousel({
   }, [reviews]);
 
   function renderCards(items: GoogleReview[], mobile = false) {
-    return items.map((review) => (
+    return items.map((review) => {
+      const card = (
         <a
           className={`google-review-card ${mobile ? "" : cardArrowHostClassName}`}
           key={review.name}
@@ -71,7 +72,9 @@ export default function GoogleReviewCarousel({
             {mobile ? <span className="google-review-card__open" aria-hidden="true">↗</span> : <CardArrow className="review-card-arrow" />}
           </div>
         </a>
-    ));
+      );
+      return mobile ? card : <div className={styles.slot} key={review.name}>{card}</div>;
+    });
   }
 
   return (
