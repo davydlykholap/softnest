@@ -6,4 +6,4 @@ Category: Our Process
 
 URL: /blog/what-to-expect-when-softnest-cleans-your-sofa/
 
-Text-only article using the shared blog layout.
+Uses the shared blog layout with a generated editorial cover illustrating sofa-cleaning preparation. The cover appears in the blog listing; the article body remains text-only.

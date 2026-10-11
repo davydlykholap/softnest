@@ -313,5 +313,17 @@
     }
   ],
   "order": 12,
-  "showCover": false
+  "showCover": false,
+  "coverImage": {
+    "_type": "image",
+    "_key": "cover",
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-7c3863c5f908dce08b0ed55314c042f7ec440bdc-1536x1024-webp"
+    },
+    "alt": "A gloved technician lifting a sofa seat cushion to access the fabric beneath, with floor protection in place.",
+    "width": 1536,
+    "height": 1024,
+    "localPath": "/images/blog/softnest-sofa-cleaning-preparation.webp"
+  }
 }
