@@ -1,7 +1,5 @@
 .introduction,
 .services,
-.why,
-.coverage,
 .finalCta {
   width: var(--location-page-content-width);
   margin: 0 auto;
@@ -33,9 +31,7 @@
 }
 
 .service h2,
-.more h2,
-.why h2,
-.coverage h2 {
+.more h2 {
   margin: 0;
   font-family: var(--location-page-serif);
   font-size: clamp(36px, 3.8vw, 54px);
@@ -45,9 +41,7 @@
 }
 
 .serviceCopy > p,
-.more p,
-.advantages p,
-.coverageCopy > p {
+.more p {
   margin: 0;
   font-size: 16px;
   line-height: 1.75;
@@ -106,33 +100,9 @@
 .more p { max-width: 700px; }
 .moreActions :global(.hero__actions) { margin: 0; }
 
-.why {
-  padding: clamp(48px, 5vw, 72px);
-  border-radius: 28px;
-  background: var(--surface-warm);
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: clamp(32px, 6vw, 80px);
+.coverage:global(.location-page-coverage) {
+  margin-bottom: clamp(48px, 6vw, 76px);
 }
-
-.advantages { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
-.advantages h3 { margin: 0 0 12px; font-size: 18px; font-weight: 650; line-height: 1.4; }
-.advantages p { font-size: 15px; }
-
-.coverage {
-  padding: clamp(64px, 7vw, 96px) 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: clamp(32px, 6vw, 80px);
-}
-
-.coverage h2 { margin-bottom: 24px; }
-.coverageCopy ul { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; padding: 0; margin: 24px 0; list-style: none; }
-.coverageCopy li { display: flex; gap: 12px; color: var(--location-page-green); font-size: 15px; }
-.coverageCopy li::before { content: "✓"; }
-.map { height: 440px; min-width: 0; overflow: hidden; border-radius: 28px; background: var(--surface-soft); }
-.map iframe { width: 100%; height: 100%; border: 0; }
 
 .finalCta:global(.site-final-cta) {
   width: var(--location-page-content-width);
@@ -143,8 +113,6 @@
   .more { grid-template-columns: 1fr 2fr; }
   .moreActions { grid-column: 2; }
   .introduction { grid-template-columns: 1fr 5fr; gap: 24px; }
-  .why { grid-template-columns: 1fr; }
-  .why h2 br { display: none; }
   .service { gap: 32px; }
 }
 
@@ -160,13 +128,6 @@
   .serviceCopy > p { font-size: 15px; }
   .more { grid-template-columns: 1fr; gap: 16px; }
   .moreActions { grid-column: auto; margin-top: 12px; }
-  .why { padding: 28px; border-radius: 22px; gap: 28px; }
-  .why h2,
-  .coverage h2 { font-size: 36px; }
-  .advantages { grid-template-columns: 1fr; gap: 24px; }
-  .coverage { grid-template-columns: 1fr; padding: 48px 0; gap: 28px; }
-  .coverageCopy ul { gap: 14px 16px; }
-  .map { height: 320px; border-radius: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
