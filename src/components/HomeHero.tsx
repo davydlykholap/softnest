@@ -104,11 +104,9 @@ export default function HomeHero() {
               <strong>{siteConfig.reviewScore}</strong>
               <span aria-label="5 out of 5 stars">★★★★★</span>
             </div>
-            <a className="review-mobile-only" href={googleProfileUrl} target="_blank" rel="noopener noreferrer">
-              {pageText(homeContent.copy, "hero-22")} <span aria-hidden="true">→</span>
-            </a>
           </div>
 
+          <h2 className="review-mobile-heading">What our customers say</h2>
           <GoogleReviewCarousel
             reviews={googleReviews}
             mobileReviews={mobileReviews}

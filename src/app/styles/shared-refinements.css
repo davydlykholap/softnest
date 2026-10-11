@@ -784,6 +784,7 @@ html {
 }
 .review-card-arrow { margin-left: auto; }
 .review-mobile-only { display: none !important; }
+.review-mobile-heading { display: none; }
 @media (min-width: 721px) {
   .google-review-card { transition: transform 180ms ease; }
   .google-review-card:hover { transform: translateY(-4px); }
@@ -796,6 +797,8 @@ html {
 .review-carousel .gallery-carousel-arrow:hover { transform: translateY(-50%) scale(1.04); }
 .review-carousel .gallery-carousel-arrow:disabled { display: none; }
 @media (max-width: 720px) {
+  .review-mobile-heading { display: block; margin: 0; font-family: Georgia, serif; font-size: 34px !important; font-weight: 400; line-height: 1.04; letter-spacing: -.045em; }
+  .new-hero-root .google-review-summary { display: none; }
   .review-mobile-only { display: inline-flex !important; }
   .google-review-card__open {
     width: 40px; height: 40px; display: grid; place-items: center; flex: 0 0 auto;

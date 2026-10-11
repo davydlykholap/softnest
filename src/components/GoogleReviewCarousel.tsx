@@ -42,7 +42,7 @@ export default function GoogleReviewCarousel({
     return items.map((review) => {
       const card = (
         <a
-          className={`google-review-card ${mobile ? "" : cardArrowHostClassName}`}
+          className={`google-review-card ${cardArrowHostClassName}`}
           key={review.name}
           href={googleProfileUrl}
           target="_blank"
@@ -69,7 +69,7 @@ export default function GoogleReviewCarousel({
             <span className="google-review-card__author">
               <strong>{review.name}</strong>
             </span>
-            {mobile ? <span className="google-review-card__open" aria-hidden="true">↗</span> : <CardArrow className="review-card-arrow" />}
+            <CardArrow className="review-card-arrow" />
           </div>
         </a>
       );
@@ -93,7 +93,8 @@ export default function GoogleReviewCarousel({
         </div>
       </div>
       <div className={styles.mobile}>
-        <div className="google-review-cards" aria-label="Recent Google reviews">{renderCards(mobileReviews, true)}</div>
+        <div className={`google-review-cards ${styles.mobileTrack}`} aria-label="Recent Google reviews">{renderCards(mobileReviews, true)}</div>
+        <a className={styles.allReviews} href={googleProfileUrl} target="_blank" rel="noopener noreferrer">Read all reviews <span aria-hidden="true">→</span></a>
       </div>
     </>
   );
