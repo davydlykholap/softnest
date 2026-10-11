@@ -1,0 +1,167 @@
+- alert: Sofa & Couch Cleaning Across the GTA | SoftNest
+- banner:
+  - link "SoftNest Fabric Care home":
+    - /url: /
+    - strong: SoftNest
+    - generic: Fabric Care
+  - navigation "Main navigation":
+    - link "Services":
+      - /url: /services/
+      - text: Services
+    - link "Locations":
+      - /url: /location/
+    - link "Blog":
+      - /url: /blog/
+    - link "About Us":
+      - /url: /about/
+  - link "(416) 727-0287":
+    - /url: tel:+14167270287
+    - generic: (416) 727-0287
+  - link "Get a Quote":
+    - /url: /quote/
+- main:
+  - region "Sofa & Couch Cleaning":
+    - img "Grey fabric sofa in a family living room"
+    - paragraph: Professional fabric care across the GTA
+    - heading "Sofa & Couch Cleaning" [level=1]
+    - paragraph: Frequently used sofas collect body oils, dust, spills and embedded soil. We inspect the fabric first, then clean the accessible surfaces with professional equipment and fabric-appropriate products.
+  - region "A closer look at sofas":
+    - paragraph: About this service
+    - heading "A closer look at sofas" [level=2]
+    - paragraph: Deep cleaning for sofas and couches affected by everyday soil, body oils, spills, stains and odours.
+    - article:
+      - heading "What we look at first" [level=3]
+      - paragraph: We look closely at high-contact areas such as armrests, headrests, seat cushions and seams, then check removable cushions and hidden test areas before cleaning begins.
+    - article:
+      - heading "What the cleaning includes" [level=3]
+      - paragraph: The confirmed service can include fabric and condition inspection, vacuuming of accessible areas, standard pre-treatment and spot treatment, deep cleaning and extraction, accessible cushion sides included in the confirmed scope and professional drying with air movers.
+      - paragraph: We review the item with you before starting, confirm which accessible surfaces are included and adjust the approach when the material or condition calls for extra care.
+    - paragraph: Common examples
+    - heading "When this service may be a good fit" [level=3]
+    - paragraph: Homeowners commonly contact us about darkened armrests and headrests, body oils and everyday buildup, food and drink stains, pet hair and light odours, dust between cushions and unevenly soiled seat cushions. Photos help us understand the item and concern before we confirm the recommended service.
+  - region "See the Difference.":
+    - paragraph: Real homes, real results
+    - heading "See the Difference." [level=2]:
+      - generic: See the
+      - generic: Difference.
+    - paragraph: A real SoftNest cleaning result from Mississauga, ON.
+    - strong: Sofa · Pet stains & odour removal
+    - generic: Mississauga, ON
+    - slider "Compare sofa before and after cleaning": "50"
+  - region "What to expect before you book":
+    - paragraph: Good to know
+    - heading "What to expect before you book" [level=2]
+    - paragraph: Send a few clear photos and describe the item, material if known, and the main stains, odours or areas of concern. We use that information to confirm the likely scope and explain anything that needs an on-site check.
+    - heading "Drying and use" [level=3]
+    - paragraph: Most sofas dry in roughly six to eight hours under normal indoor conditions, although dense cushions and humid rooms may take longer.
+    - heading "Realistic results" [level=3]
+    - paragraph: Permanent fading, worn fabric, dye loss and old chemical damage cannot be reversed through cleaning. Some deeply set stains may improve without disappearing completely.
+  - region "Frequently asked questions":
+    - paragraph: Questions we hear
+    - heading "Frequently asked questions" [level=2]
+    - generic "How is a sofa cleaning quote calculated?" [active]:
+      - generic: How is a sofa cleaning quote calculated?
+    - paragraph: The price depends on size, seat count, design, removable cushions, fabric and condition. Send photos of the full sofa and problem areas for an estimate.
+    - generic "Do you clean the back and sides of the sofa?":
+      - generic: Do you clean the back and sides of the sofa?
+    - generic "Can you remove old sofa stains?":
+      - generic: Can you remove old sofa stains?
+    - generic "Can decorative pillows be cleaned too?":
+      - generic: Can decorative pillows be cleaned too?
+  - img "Bright living room with a deep green sofa"
+  - paragraph: Professional care for your home
+  - heading "Show us what needs cleaning." [level=2]
+  - paragraph: Tell us about the item or area and any stains or odours. We'll confirm the scope and price before cleaning.
+  - link "Get a quote":
+    - /url: /quote/
+    - text: Get a quote
+    - generic: →
+- contentinfo:
+  - heading "SoftNest" [level=2]
+  - paragraph:
+    - text: Quality You Can See.
+    - text: Care You Can Trust.
+  - paragraph: Professional upholstery and carpet cleaning across the Greater Toronto Area.
+  - link "About SoftNest":
+    - /url: /about/
+  - paragraph: Follow our work
+  - group "SoftNest social media":
+    - link "Visit SoftNest Fabric Care on Facebook":
+      - /url: https://www.facebook.com/profile.php?id=61590622653207
+      - generic: Facebook
+    - link "Visit SoftNest Fabric Care on Instagram":
+      - /url: https://www.instagram.com/softnestfabriccare/
+      - generic: Instagram
+  - heading "Services" [level=3]
+  - list:
+    - link "Sofa & Couch Cleaning":
+      - /url: /services/sofa-cleaning/
+    - link "Leather Upholstery Cleaning":
+      - /url: /services/leather-upholstery-cleaning/
+    - link "Sectional & Furniture Cleaning":
+      - /url: /services/sectional-furniture-cleaning/
+    - link "Carpet & Area Rug Cleaning":
+      - /url: /services/carpet-area-rug-cleaning/
+    - link "Mattress Cleaning":
+      - /url: /services/mattress-cleaning/
+    - link "Dining Chair Cleaning":
+      - /url: /services/dining-chair-cleaning/
+    - link "Armchair Cleaning":
+      - /url: /services/armchair-cleaning/
+    - link "Stairs & Hallways":
+      - /url: /services/stairs-hallways-cleaning/
+    - link "Pet Stain & Odour Removal":
+      - /url: /services/pet-stain-odour-removal/
+  - link "View all services":
+    - /url: /services/
+  - heading "Company" [level=3]
+  - list:
+    - link "About SoftNest":
+      - /url: /about/
+    - link "Our Results":
+      - /url: /#results
+    - link "Care Journal":
+      - /url: /blog/
+    - link "Get a Quote":
+      - /url: /quote/
+  - heading "Areas We Serve" [level=3]
+  - list:
+    - link "Mississauga":
+      - /url: /location/mississauga/
+    - link "Toronto":
+      - /url: /location/toronto/
+    - link "Brampton":
+      - /url: /location/brampton/
+    - link "Oakville":
+      - /url: /location/oakville/
+    - link "Etobicoke":
+      - /url: /location/etobicoke/
+    - link "Burlington":
+      - /url: /location/burlington/
+    - link "Vaughan":
+      - /url: /location/vaughan/
+    - link "Milton":
+      - /url: /location/milton/
+    - link "Hamilton":
+      - /url: /location/hamilton/
+  - link "View all locations":
+    - /url: /location/
+  - heading "Contact" [level=3]
+  - paragraph:
+    - link "softnestfabriccare@gmail.com":
+      - /url: mailto:softnestfabriccare@gmail.com
+  - paragraph:
+    - text: Greater Toronto Area
+    - text: Ontario
+  - generic "SoftNest service radius map":
+    - iframe
+  - paragraph: © 2026 SoftNest Fabric Care. All rights reserved.
+  - paragraph:
+    - link "Privacy":
+      - /url: /privacy/
+    - generic: "|"
+    - link "Terms":
+      - /url: /terms/
+    - generic: "|"
+    - link "About SoftNest":
+      - /url: /about/

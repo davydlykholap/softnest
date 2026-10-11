@@ -1,0 +1,186 @@
+- banner:
+  - link "SoftNest Fabric Care home":
+    - /url: /
+    - strong: SoftNest
+    - generic: Fabric Care
+  - navigation "Main navigation":
+    - link "Services":
+      - /url: /services/
+      - text: Services
+    - link "Locations":
+      - /url: /location/
+    - link "Blog":
+      - /url: /blog/
+    - link "About Us":
+      - /url: /about/
+  - link "(416) 727-0287":
+    - /url: tel:+14167270287
+    - generic: (416) 727-0287
+  - link "Get a Quote":
+    - /url: /quote/
+- main:
+  - article:
+    - link "← All articles":
+      - /url: /blog/
+    - paragraph: SoftNest Journal
+    - heading "How to Remove Pet Urine Smell from a Couch" [level=1]
+    - paragraph:
+      - time: September 12, 2026
+      - text: · SoftNest Fabric Care
+    - paragraph: Fabric care
+    - paragraph: Learn what to do after a pet accident on a couch, why urine odour returns, and when contamination inside the cushion needs professional treatment.
+    - img "Dog resting on a sofa beside a visible stain on the seat cushion."
+    - paragraph: A pet accident on a sofa can travel farther than the visible wet spot. Urine may pass through the face fabric into the backing, batting and cushion foam. Cleaning only the surface can improve the appearance while leaving the source of the odour deeper inside.
+    - paragraph: "The best response is prompt and controlled: absorb what you can, avoid spreading the liquid, check the furniture care instructions and resist the urge to cover the area with several different products."
+    - heading "What to Do Right After the Accident" [level=2]
+    - list:
+      - listitem: Remove any washable cover only if the manufacturer says it can be removed and cleaned separately.
+      - listitem: Press clean white towels onto the wet area and replace them as they absorb moisture.
+      - listitem: Blot from the outside toward the centre instead of rubbing across the fabric.
+      - listitem: Check the upholstery care label before applying a liquid treatment.
+      - listitem: Keep pets and people off the cushion while it dries.
+    - paragraph: Do not press so hard that you drive more liquid into the foam. If the accident is large, the cushion feels wet below the surface or the urine reached a fixed seat, professional advice is usually more useful than repeated surface spraying.
+    - heading "Why the Urine Smell Comes Back" [level=2]
+    - paragraph: The top fabric often dries first. Contamination that remains in the inner layers can continue producing odour, especially when humidity rises or the cushion is compressed during use. Fragrance may temporarily cover the smell without removing its source.
+    - paragraph:
+      - text: A returning odour can also mean the treated area was not rinsed and extracted. Cleaner, urine residue and moisture may all remain in the cushion. This is similar to a visible
+      - link "stain that reappears after drying":
+        - /url: /blog/why-did-my-couch-stain-come-back-after-cleaning/
+      - text: ", although odour treatment may need to reach deeper layers."
+    - heading "Why More Product Is Not Always Better" [level=2]
+    - paragraph: Pouring enzyme cleaner or deodorizer into a cushion can make it wetter without guaranteeing contact with every contaminated area. The product still needs to be suitable for the upholstery and used at the correct concentration. Excess residue can leave the fabric stiff, sticky or prone to resoiling.
+    - paragraph: Do not mix household cleaners. Besides creating unpredictable reactions, multiple products make it harder to determine what is inside the fabric when professional treatment becomes necessary.
+    - heading "Can an Enzyme Cleaner Remove Couch Urine?" [level=2]
+    - paragraph: An upholstery-approved enzyme product can help with some organic contamination when used exactly as directed. It is not automatically safe for every fibre or dye, and a small surface application may not reach urine in the foam. Test a hidden area and follow both the furniture and product instructions.
+    - paragraph: If the sofa has an X cleaning code, the fabric is delicate or unknown, or colour transfers onto a white towel, stop before applying a water-based treatment.
+    - heading "What Professional Pet-Odour Treatment Involves" [level=2]
+    - paragraph: The first step is assessing how far the accident travelled. Treatment may include a urine-specific product, appropriate dwell time, controlled rinsing and extraction, and additional attention to the cushion interior where access is possible.
+    - paragraph: No responsible cleaner should promise that every odour can be removed without seeing the furniture. Repeated accidents, inaccessible cushion cores, sensitive fabric and contamination that reached wood or other structural material can limit the result. In severe cases, replacing the cushion insert may be more practical than repeatedly wetting it.
+    - heading "When to Call for Help" [level=2]
+    - list:
+      - listitem: the odour returns after the sofa dries;
+      - listitem: the cushion is wet or contaminated below the surface;
+      - listitem: several products have already been applied;
+      - listitem: a water ring, colour change or stiff patch is developing;
+      - listitem: the sofa has repeated accidents in the same area.
+    - heading "Pet Stain and Odour Treatment in the GTA" [level=2]
+    - paragraph: SoftNest Fabric Care provides pet stain and odour treatment for sofas and upholstery in Mississauga and across the Greater Toronto Area. Send photos of the affected area and care label, describe when the accident happened, and list any products already used. That information helps us set realistic expectations before the visit.
+    - region "Frequently Asked Questions":
+      - heading "Frequently Asked Questions" [level=2]
+      - generic "Will the urine smell disappear when the couch dries?":
+        - generic: Will the urine smell disappear when the couch dries?
+      - paragraph: Surface moisture may dry while urine residue remains in the cushion. If the source is still present, the odour can return with humidity or use.
+      - generic "Can baking soda remove pet urine from a sofa?":
+        - generic: Can baking soda remove pet urine from a sofa?
+      - generic "Can an old pet urine stain still be treated?":
+        - generic: Can an old pet urine stain still be treated?
+    - navigation "Related cleaning services":
+      - paragraph: Professional help for your furniture
+      - link "Pet Stain & Odour Treatment →":
+        - /url: /services/pet-stain-odour-removal/
+      - link "Sofa & Couch Cleaning →":
+        - /url: /services/sofa-cleaning/
+      - link "Upholstery Cleaning →":
+        - /url: /services/upholstery-cleaning/
+    - complementary:
+      - heading "Need a little extra care?" [level=2]
+      - paragraph: Get professional fabric cleaning for your home.
+      - link "Get a Quote →":
+        - /url: /quote/
+    - navigation "More fabric care articles":
+      - paragraph: Keep reading
+      - link "How to Remove a Stain from a Couch Without Making It Worse →":
+        - /url: /blog/how-to-remove-stain-from-couch/
+      - link "Why Did My Couch Stain Come Back After Cleaning? →":
+        - /url: /blog/why-did-my-couch-stain-come-back-after-cleaning/
+- contentinfo:
+  - heading "SoftNest" [level=2]
+  - paragraph:
+    - text: Quality You Can See.
+    - text: Care You Can Trust.
+  - paragraph: Professional upholstery and carpet cleaning across the Greater Toronto Area.
+  - link "About SoftNest":
+    - /url: /about/
+  - paragraph: Follow our work
+  - group "SoftNest social media":
+    - link "Visit SoftNest Fabric Care on Facebook":
+      - /url: https://www.facebook.com/profile.php?id=61590622653207
+      - generic: Facebook
+    - link "Visit SoftNest Fabric Care on Instagram":
+      - /url: https://www.instagram.com/softnestfabriccare/
+      - generic: Instagram
+  - heading "Services" [level=3]
+  - list:
+    - link "Sofa & Couch Cleaning":
+      - /url: /services/sofa-cleaning/
+    - link "Leather Upholstery Cleaning":
+      - /url: /services/leather-upholstery-cleaning/
+    - link "Sectional & Furniture Cleaning":
+      - /url: /services/sectional-furniture-cleaning/
+    - link "Carpet & Area Rug Cleaning":
+      - /url: /services/carpet-area-rug-cleaning/
+    - link "Mattress Cleaning":
+      - /url: /services/mattress-cleaning/
+    - link "Dining Chair Cleaning":
+      - /url: /services/dining-chair-cleaning/
+    - link "Armchair Cleaning":
+      - /url: /services/armchair-cleaning/
+    - link "Stairs & Hallways":
+      - /url: /services/stairs-hallways-cleaning/
+    - link "Pet Stain & Odour Removal":
+      - /url: /services/pet-stain-odour-removal/
+  - link "View all services":
+    - /url: /services/
+  - heading "Company" [level=3]
+  - list:
+    - link "About SoftNest":
+      - /url: /about/
+    - link "Our Results":
+      - /url: /#results
+    - link "Care Journal":
+      - /url: /blog/
+    - link "Get a Quote":
+      - /url: /quote/
+  - heading "Areas We Serve" [level=3]
+  - list:
+    - link "Mississauga":
+      - /url: /location/mississauga/
+    - link "Toronto":
+      - /url: /location/toronto/
+    - link "Brampton":
+      - /url: /location/brampton/
+    - link "Oakville":
+      - /url: /location/oakville/
+    - link "Etobicoke":
+      - /url: /location/etobicoke/
+    - link "Burlington":
+      - /url: /location/burlington/
+    - link "Vaughan":
+      - /url: /location/vaughan/
+    - link "Milton":
+      - /url: /location/milton/
+    - link "Hamilton":
+      - /url: /location/hamilton/
+  - link "View all locations":
+    - /url: /location/
+  - heading "Contact" [level=3]
+  - paragraph:
+    - link "softnestfabriccare@gmail.com":
+      - /url: mailto:softnestfabriccare@gmail.com
+  - paragraph:
+    - text: Greater Toronto Area
+    - text: Ontario
+  - generic "SoftNest service radius map":
+    - iframe
+  - paragraph: © 2026 SoftNest Fabric Care. All rights reserved.
+  - paragraph:
+    - link "Privacy":
+      - /url: /privacy/
+    - generic: "|"
+    - link "Terms":
+      - /url: /terms/
+    - generic: "|"
+    - link "About SoftNest":
+      - /url: /about/
+- button "Open Next.js Dev Tools":
+- alert

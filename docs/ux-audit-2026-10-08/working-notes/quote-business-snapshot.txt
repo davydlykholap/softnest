@@ -1,0 +1,187 @@
+- button "Open Next.js Dev Tools":
+- alert: Get a Quote | SoftNest Fabric Care
+- banner:
+  - link "SoftNest Fabric Care home":
+    - /url: /
+    - strong: SoftNest
+    - generic: Fabric Care
+  - navigation "Main navigation":
+    - link "Services":
+      - /url: /services/
+      - text: Services
+    - link "Locations":
+      - /url: /location/
+    - link "Blog":
+      - /url: /blog/
+    - link "About Us":
+      - /url: /about/
+  - link "(416) 727-0287":
+    - /url: tel:+14167270287
+    - generic: (416) 727-0287
+  - link "Get a Quote":
+    - /url: /quote/
+- main:
+  - text: Website
+  - textbox
+  - group "Who is this quote for?":
+    - generic: Who is this quote for?
+    - radio "Individual"
+    - generic: Individual
+    - radio "Business" [checked] [active]
+    - generic: Business
+  - heading "Let’s refresh your space." [level=1]
+  - paragraph: Tell us about the furniture and carpets in your business space. We’ll recommend a practical cleaning plan and follow up with a clear quote.
+  - paragraph:
+    - text: After requesting your quote, send full-item photos and stain close-ups through
+    - link "Instagram":
+      - /url: https://www.instagram.com/softnestfabriccare/
+    - text: or
+    - link "Facebook":
+      - /url: https://www.facebook.com/profile.php?id=61590622653207
+    - text: . Include the same name and service city so we can match your photos to your request.
+  - generic: Organization name
+  - textbox "Organization name":
+    - /placeholder: Company or organization
+  - generic: Contact name
+  - textbox "Contact name":
+    - /placeholder: Full name
+  - generic: Work email
+  - textbox "Work email":
+    - /placeholder: name@company.com
+  - generic: Phone number
+  - textbox "Phone number":
+    - /placeholder: (416) 555-0123
+  - generic: Service city or postal code
+  - textbox "Service city or postal code":
+    - /placeholder: Where is the cleaning needed?
+  - generic: Service frequency
+  - combobox "Service frequency":
+    - generic: Select frequency
+  - group "What would you like cleaned?":
+    - generic: What would you like cleaned?
+    - paragraph: Select all that apply and answer the questions for each item.
+    - button "Sofa or couch":
+      - generic: Sofa or couch
+    - button "Sectional":
+      - generic: Sectional
+    - button "Armchair":
+      - generic: Armchair
+    - button "Dining chairs":
+      - generic: Dining chairs
+    - button "Mattress":
+      - generic: Mattress
+    - button "Carpet or rug":
+      - generic: Carpet or rug
+    - button "Other furniture":
+      - generic: Other furniture
+  - generic: Anything else we should know?
+  - textbox "Anything else we should know?":
+    - /placeholder: Access details, preferred timing, cleaning concerns...
+  - button "Get my quote":
+    - text: Get my quote
+    - generic: →
+  - paragraph:
+    - text: By submitting, you agree that SoftNest may contact you about this request. See our
+    - link "Privacy Policy":
+      - /url: /privacy/
+    - text: .
+- contentinfo:
+  - heading "SoftNest" [level=2]
+  - paragraph:
+    - text: Quality You Can See.
+    - text: Care You Can Trust.
+  - paragraph: Professional upholstery and carpet cleaning across the Greater Toronto Area.
+  - link "About SoftNest":
+    - /url: /about/
+  - paragraph: Follow our work
+  - group "SoftNest social media":
+    - link "Visit SoftNest Fabric Care on Facebook":
+      - /url: https://www.facebook.com/profile.php?id=61590622653207
+      - generic: Facebook
+    - link "Visit SoftNest Fabric Care on Instagram":
+      - /url: https://www.instagram.com/softnestfabriccare/
+      - generic: Instagram
+  - heading "Services" [level=3]
+  - list:
+    - link "Sofa & Couch Cleaning":
+      - /url: /services/sofa-cleaning/
+    - link "Leather Upholstery Cleaning":
+      - /url: /services/leather-upholstery-cleaning/
+    - link "Sectional & Furniture Cleaning":
+      - /url: /services/sectional-furniture-cleaning/
+    - link "Carpet & Area Rug Cleaning":
+      - /url: /services/carpet-area-rug-cleaning/
+    - link "Mattress Cleaning":
+      - /url: /services/mattress-cleaning/
+    - link "Dining Chair Cleaning":
+      - /url: /services/dining-chair-cleaning/
+    - link "Armchair Cleaning":
+      - /url: /services/armchair-cleaning/
+    - link "Stairs & Hallways":
+      - /url: /services/stairs-hallways-cleaning/
+    - link "Pet Stain & Odour Removal":
+      - /url: /services/pet-stain-odour-removal/
+  - link "View all services":
+    - /url: /services/
+  - heading "Company" [level=3]
+  - list:
+    - link "About SoftNest":
+      - /url: /about/
+    - link "Our Results":
+      - /url: /#results
+    - link "Care Journal":
+      - /url: /blog/
+    - link "Get a Quote":
+      - /url: /quote/
+  - heading "Areas We Serve" [level=3]
+  - list:
+    - link "Mississauga":
+      - /url: /location/mississauga/
+    - link "Toronto":
+      - /url: /location/toronto/
+    - link "Brampton":
+      - /url: /location/brampton/
+    - link "Oakville":
+      - /url: /location/oakville/
+    - link "Etobicoke":
+      - /url: /location/etobicoke/
+    - link "Burlington":
+      - /url: /location/burlington/
+    - link "Vaughan":
+      - /url: /location/vaughan/
+    - link "Milton":
+      - /url: /location/milton/
+    - link "Hamilton":
+      - /url: /location/hamilton/
+  - link "View all locations":
+    - /url: /location/
+  - heading "Contact" [level=3]
+  - paragraph:
+    - link "softnestfabriccare@gmail.com":
+      - /url: mailto:softnestfabriccare@gmail.com
+  - paragraph:
+    - text: Greater Toronto Area
+    - text: Ontario
+  - generic "SoftNest service radius map":
+    - iframe:
+      - button "Keyboard shortcuts"
+      - region "Map"
+      - iframe
+      - img "Google"
+      - button "Keyboard shortcuts"
+      - button "Map Data"
+      - link "Terms (opens in new tab)":
+        - /url: https://www.google.com/intl/en-US_US/help/terms_maps.html
+        - text: Terms
+      - link "Report a map error (opens in new tab)":
+        - /url: https://www.google.com/maps/@43.66,-79.55,10z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3
+  - paragraph: © 2026 SoftNest Fabric Care. All rights reserved.
+  - paragraph:
+    - link "Privacy":
+      - /url: /privacy/
+    - generic: "|"
+    - link "Terms":
+      - /url: /terms/
+    - generic: "|"
+    - link "About SoftNest":
+      - /url: /about/

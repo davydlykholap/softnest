@@ -1,0 +1,121 @@
+- button "Open Next.js Dev Tools":
+- alert: About | SoftNest Fabric Care
+- banner:
+  - link "SoftNest Fabric Care home":
+    - /url: /
+    - strong: SoftNest
+    - generic: Fabric Care
+  - navigation "Main navigation":
+    - link "Services":
+      - /url: /services/
+      - text: Services
+    - link "Locations":
+      - /url: /location/
+    - link "Blog":
+      - /url: /blog/
+    - link "About Us":
+      - /url: /about/
+  - link "(416) 727-0287":
+    - /url: tel:+14167270287
+    - generic: (416) 727-0287
+  - link "Get a Quote":
+    - /url: /quote/
+- main:
+  - article:
+    - heading "About SoftNest" [level=1]
+    - paragraph: SoftNest Fabric Care is a family-run upholstery and carpet cleaning company serving homes across the Greater Toronto Area.
+    - region "A careful, straightforward approach":
+      - heading "A careful, straightforward approach" [level=2]
+      - paragraph: We focus on the furniture and soft surfaces people live with every day, including sofas, carpets, mattresses and suitable leather furniture. Each item is different, so we begin by looking at its material, construction, condition and the areas that need attention.
+      - paragraph: From there, we choose the products, equipment and cleaning process that make sense for the work. We take our time with the confirmed scope and pay attention to the details and hard-to-reach areas where practical.
+      - paragraph: We also believe in being clear about what cleaning can and cannot change. Soil and many stains can often be improved, but permanent wear, dye loss, cracking and physical damage cannot be reversed by cleaning. We would rather explain that honestly than promise a result the material cannot support.
+      - paragraph: "Our goal is simple: treat every home and every item with care, communicate clearly and leave the work feeling properly finished."
+- contentinfo:
+  - heading "SoftNest" [level=2]
+  - paragraph:
+    - text: Quality You Can See.
+    - text: Care You Can Trust.
+  - paragraph: Professional upholstery and carpet cleaning across the Greater Toronto Area.
+  - link "About SoftNest":
+    - /url: /about/
+  - paragraph: Follow our work
+  - group "SoftNest social media":
+    - link "Visit SoftNest Fabric Care on Facebook":
+      - /url: https://www.facebook.com/profile.php?id=61590622653207
+      - generic: Facebook
+    - link "Visit SoftNest Fabric Care on Instagram":
+      - /url: https://www.instagram.com/softnestfabriccare/
+      - generic: Instagram
+  - heading "Services" [level=3]
+  - list:
+    - link "Sofa & Couch Cleaning":
+      - /url: /services/sofa-cleaning/
+    - link "Leather Upholstery Cleaning":
+      - /url: /services/leather-upholstery-cleaning/
+    - link "Sectional & Furniture Cleaning":
+      - /url: /services/sectional-furniture-cleaning/
+    - link "Carpet & Area Rug Cleaning":
+      - /url: /services/carpet-area-rug-cleaning/
+    - link "Mattress Cleaning":
+      - /url: /services/mattress-cleaning/
+    - link "Dining Chair Cleaning":
+      - /url: /services/dining-chair-cleaning/
+    - link "Armchair Cleaning":
+      - /url: /services/armchair-cleaning/
+    - link "Stairs & Hallways":
+      - /url: /services/stairs-hallways-cleaning/
+    - link "Pet Stain & Odour Removal":
+      - /url: /services/pet-stain-odour-removal/
+  - link "View all services":
+    - /url: /services/
+  - heading "Company" [level=3]
+  - list:
+    - link "About SoftNest":
+      - /url: /about/
+    - link "Our Results":
+      - /url: /#results
+    - link "Care Journal":
+      - /url: /blog/
+    - link "Get a Quote":
+      - /url: /quote/
+  - heading "Areas We Serve" [level=3]
+  - list:
+    - link "Mississauga":
+      - /url: /location/mississauga/
+    - link "Toronto":
+      - /url: /location/toronto/
+    - link "Brampton":
+      - /url: /location/brampton/
+    - link "Oakville":
+      - /url: /location/oakville/
+    - link "Etobicoke":
+      - /url: /location/etobicoke/
+    - link "Burlington":
+      - /url: /location/burlington/
+    - link "Vaughan":
+      - /url: /location/vaughan/
+    - link "Milton":
+      - /url: /location/milton/
+    - link "Hamilton":
+      - /url: /location/hamilton/
+  - link "View all locations":
+    - /url: /location/
+  - heading "Contact" [level=3]
+  - paragraph:
+    - link "softnestfabriccare@gmail.com":
+      - /url: mailto:softnestfabriccare@gmail.com
+  - paragraph:
+    - text: Greater Toronto Area
+    - text: Ontario
+  - generic "SoftNest service radius map":
+    - iframe
+  - paragraph: © 2026 SoftNest Fabric Care. All rights reserved.
+  - paragraph:
+    - link "Privacy":
+      - /url: /privacy/
+    - generic: "|"
+    - link "Terms":
+      - /url: /terms/
+    - generic: "|"
+    - link "About SoftNest":
+      - /url: /about/

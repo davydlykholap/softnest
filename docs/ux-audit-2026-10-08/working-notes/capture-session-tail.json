@@ -1,0 +1,17 @@
+[
+  {
+    "name": "01-home-first-impression",
+    "path": "C:/Users/davyd/source/softnest/docs/ux-audit-2026-10-08/screenshots/01-home-first-impression.jpg",
+    "url": "https://softnestcare.ca/"
+  },
+  {
+    "name": "03-home-results-next",
+    "path": "C:/Users/davyd/source/softnest/docs/ux-audit-2026-10-08/screenshots/03-home-results-next.jpg",
+    "url": "https://softnestcare.ca/"
+  },
+  {
+    "name": "13-current-sofa-top",
+    "path": "C:/Users/davyd/source/softnest/docs/ux-audit-2026-10-08/screenshots/13-current-sofa-top.jpg",
+    "url": "http://localhost:3000/services/sofa-cleaning/"
+  }
+]

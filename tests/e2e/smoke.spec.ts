@@ -34,7 +34,9 @@ test("location search reaches a city page", async ({ page }) => {
   await page.getByRole("option", { name: /Mississauga/i }).click();
   await page.getByRole("button", { name: "Check service area" }).click();
   await expect(page).toHaveURL(/\/location\/mississauga\/$/);
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Carpet Cleaning");
+  const cityHeading = page.getByRole("heading", { level: 1 });
+  await expect(cityHeading).toContainText(/carpet cleaning/i);
+  await expect(cityHeading).toContainText("Mississauga");
 });
 
 test("quote form shows useful validation", async ({ page }) => {

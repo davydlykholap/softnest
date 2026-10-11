@@ -1,0 +1,286 @@
+- button "Open Next.js Dev Tools":
+- alert: Upholstery & Carpet Cleaning in Toronto
+- banner:
+  - link "SoftNest Fabric Care home":
+    - /url: /
+    - strong: SoftNest
+    - generic: Fabric Care
+  - navigation "Main navigation":
+    - link "Services":
+      - /url: /services/
+      - text: Services
+    - link "Locations":
+      - /url: /location/
+    - link "Blog":
+      - /url: /blog/
+    - link "About Us":
+      - /url: /about/
+  - link "(416) 727-0287":
+    - /url: tel:+14167270287
+    - generic: (416) 727-0287
+  - link "Get a Quote":
+    - /url: /quote/
+- main:
+  - region "Upholstery & Carpet Cleaning in Toronto":
+    - paragraph: Proudly serving Toronto
+    - heading "Upholstery & Carpet Cleaning in Toronto" [level=1]:
+      - text: Upholstery &
+      - text: Carpet Cleaning
+      - generic: in Toronto
+    - paragraph: Professional upholstery and carpet cleaning for Toronto homes and condos—using fabric-safe products, professional equipment, and meticulous care.
+    - link "Get a free upholstery and carpet cleaning quote in Toronto":
+      - /url: /quote/
+      - text: Get a Quote
+    - link "See our reviews":
+      - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+      - text: See our reviews
+  - region "Cleaning planned around your home":
+    - paragraph: Care in Toronto
+    - heading "Cleaning planned around your home" [level=2]
+    - paragraph: Share photos, fabric details, access notes, and the items you want cleaned. We’ll confirm the recommended service and scope before your appointment.
+    - article:
+      - heading "Access planned in advance" [level=3]
+      - paragraph: Share parking, elevator or entry details when requesting your quote.
+    - article:
+      - heading "Fabric-specific cleaning" [level=3]
+      - paragraph: Methods are selected for upholstery, carpet and area-rug fibres.
+    - article:
+      - heading "Professional drying" [level=3]
+      - paragraph: Air movers support faster and more even drying after cleaning.
+    - article:
+      - heading "Free photo estimates" [level=3]
+      - paragraph: Send full-item photos and close-ups before booking.
+  - region "Cleaning services in Toronto":
+    - paragraph: What we clean
+    - heading "Cleaning services in Toronto" [level=2]
+    - paragraph: Explore upholstery and carpet cleaning services available across Toronto, with methods selected for each material, condition, and concern.
+    - link "Learn about sofas":
+      - /url: /services/sofa-cleaning/
+      - img "Grey fabric sofa in a family living room"
+      - heading "Sofas" [level=3]
+    - link "Learn about sectionals":
+      - /url: /services/sectional-furniture-cleaning/
+      - img "Light fabric L-shaped sectional in a family room"
+      - heading "Sectionals" [level=3]
+    - link "Learn about carpets & rugs":
+      - /url: /services/carpet-area-rug-cleaning/
+      - img "Textured cream area rug in a living room"
+      - heading "Carpets & Rugs" [level=3]
+    - link "Learn about pet treatment":
+      - /url: /services/pet-stain-odour-removal/
+      - img "Golden dog resting on a living room rug beside a sofa"
+      - heading "Pet Treatment" [level=3]
+  - region "What customers say":
+    - paragraph: Customer feedback
+    - heading "What customers say" [level=2]
+    - paragraph: Feedback from Toronto customers after professional upholstery and carpet cleaning appointments.
+    - generic "Recent Google reviews":
+      - link "Open SoftNest Fabric Care on Google Maps to read Karen Jan's review":
+        - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+        - generic "5 out of 5 stars": ★★★★★
+        - paragraph: “If you have upholstered furniture that has seen better days, do yourself a favor and call Soft Nest Fabric Care immediately. I recently had them out to clean my sectional sofa, and the experience was…”
+        - generic: K
+        - strong: Karen Jan
+        - generic: ↗
+      - link "Open SoftNest Fabric Care on Google Maps to read Kathleen Costello's review":
+        - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+        - generic "5 out of 5 stars": ★★★★★
+        - paragraph: “I had a great experience having my couch cleaned today. Very professional and polite guys did a thorough cleaning. They were very careful to place their equipment on their own blankets and change…”
+        - generic: K
+        - strong: Kathleen Costello
+        - generic: ↗
+      - link "Open SoftNest Fabric Care on Google Maps to read Utsav Kohli's review":
+        - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+        - generic "5 out of 5 stars": ★★★★★
+        - paragraph: “I had a great experience with SoftNest Fabric Care. Andrew was professional, punctual, and did an excellent job cleaning our sofas and staircase carpet. The difference before and after the cleaning…”
+        - generic: U
+        - strong: Utsav Kohli
+        - generic: ↗
+    - link "Read more reviews on Google":
+      - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+      - text: Read more reviews on Google
+      - generic: →
+  - region "How our cleaning works":
+    - paragraph: Our process
+    - heading "How our cleaning works" [level=2]
+    - paragraph: A clear four-step process—from your photo estimate to cleaning, professional drying, and a final walkthrough.
+    - list:
+      - generic: "1"
+      - heading "Send photos" [level=3]
+      - paragraph: Show the full item or carpeted area and include close-ups of stains or concerns.
+      - text: •••
+      - generic: "2"
+      - heading "Receive a clear estimate" [level=3]
+      - paragraph: We confirm the expected scope, included cleaning and access details before booking.
+      - text: •••
+      - generic: "3"
+      - heading "Inspection & cleaning" [level=3]
+      - paragraph: We inspect the material on site, prepare the work area and use an appropriate method.
+      - text: •••
+      - generic: "4"
+      - heading "Drying & final review" [level=3]
+      - paragraph: Air movers support drying, followed by a walkthrough and practical after-care guidance.
+  - region "Serving all of Toronto":
+    - paragraph: Our service area
+    - heading "Serving all of Toronto" [level=2]
+    - iframe:
+      - link "Get directions (opens in new tab)":
+        - /url: https://www.google.com/maps/dir//''/data=!4m7!4m6!1m1!4e2!1m2!1m1!1s0x89d4cb90d7c63ba5:0x323555502ab4c477!3e0?g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF
+    - paragraph: SoftNest provides upholstery and carpet cleaning throughout Toronto, including condos, houses, apartments, and commercial spaces.
+    - paragraph: These neighbourhoods are examples of areas we serve—not service boundaries.
+    - paragraph: "Including:"
+    - list:
+      - generic: ✓
+      - text: Downtown
+      - generic: ✓
+      - text: The Annex
+      - generic: ✓
+      - text: Leslieville
+      - generic: ✓
+      - text: The Beaches
+      - generic: ✓
+      - text: North York
+      - generic: ✓
+      - text: East York
+      - generic: ✓
+      - text: Scarborough
+      - generic: ✓
+      - text: York
+    - generic: Live elsewhere in Toronto? You are still in our service area. Send your postal code and we’ll confirm your appointment.
+  - region "Why choose SoftNest in Toronto":
+    - paragraph: Why choose SoftNest
+    - heading "Why choose SoftNest in Toronto" [level=2]
+    - paragraph: Fabric-aware methods, clear estimates, and practical scheduling for homes and condos across Toronto.
+    - article:
+      - heading "GTA-wide scheduling" [level=3]
+      - paragraph: Appointments are planned across the Greater Toronto Area and nearby communities.
+    - article:
+      - heading "Commercial-grade equipment" [level=3]
+      - paragraph: Professional equipment is selected for upholstery, carpet and suitable area rugs.
+    - article:
+      - heading "Honest stain expectations" [level=3]
+      - paragraph: We explain what appears treatable and where wear or fibre damage may remain.
+    - article:
+      - heading "Multiple items in one visit" [level=3]
+      - paragraph: Combine furniture, mattresses, carpets and suitable rugs in one estimate request.
+  - region "Frequently Asked Questions":
+    - generic: FAQ
+    - heading "Frequently Asked Questions" [level=2]
+    - paragraph: Find answers to the most common questions about our cleaning services.
+    - generic "Frequently asked questions":
+      - button "Can I get a sofa cleaning estimate from photos?":
+        - generic: Can I get a sofa cleaning estimate from photos?
+      - button "What should I arrange for cleaning in a Downtown Toronto condo?":
+        - generic: What should I arrange for cleaning in a Downtown Toronto condo?
+      - button "Can you clean a sofa that smells like dog?":
+        - generic: Can you clean a sofa that smells like dog?
+      - button "Can I sit on my sofa the same evening?":
+        - generic: Can I sit on my sofa the same evening?
+      - button "Can you clean my sofa and mattress in the same visit?":
+        - generic: Can you clean my sofa and mattress in the same visit?
+      - button "How much space do you need around the sofa?":
+        - generic: How much space do you need around the sofa?
+      - button "Can you treat a coffee stain I have already tried to clean?":
+        - generic: Can you treat a coffee stain I have already tried to clean?
+      - button "Does your Toronto service include North York and Scarborough?":
+        - generic: Does your Toronto service include North York and Scarborough?
+    - img "Freshly cleaned cream sofa in a bright living room"
+    - heading "Choose a question to see the answer." [level=3]
+    - paragraph: Select any question from the list and the answer will appear here.
+  - img "Bright living room with a deep green sofa"
+  - paragraph: Professional care for every room
+  - heading "Ready for a Fresher, Cleaner Home?" [level=2]
+  - paragraph: Get a quote today and experience the SoftNest difference.
+  - link "Get a Quote":
+    - /url: /quote/
+    - text: Get a Quote
+    - generic: →
+- contentinfo:
+  - heading "SoftNest" [level=2]
+  - paragraph:
+    - text: Quality You Can See.
+    - text: Care You Can Trust.
+  - paragraph: Professional upholstery and carpet cleaning across the Greater Toronto Area.
+  - link "About SoftNest":
+    - /url: /about/
+  - paragraph: Follow our work
+  - group "SoftNest social media":
+    - link "Visit SoftNest Fabric Care on Facebook":
+      - /url: https://www.facebook.com/profile.php?id=61590622653207
+      - generic: Facebook
+    - link "Visit SoftNest Fabric Care on Instagram":
+      - /url: https://www.instagram.com/softnestfabriccare/
+      - generic: Instagram
+  - heading "Services" [level=3]
+  - list:
+    - link "Sofa & Couch Cleaning":
+      - /url: /services/sofa-cleaning/
+    - link "Leather Upholstery Cleaning":
+      - /url: /services/leather-upholstery-cleaning/
+    - link "Sectional & Furniture Cleaning":
+      - /url: /services/sectional-furniture-cleaning/
+    - link "Carpet & Area Rug Cleaning":
+      - /url: /services/carpet-area-rug-cleaning/
+    - link "Mattress Cleaning":
+      - /url: /services/mattress-cleaning/
+    - link "Dining Chair Cleaning":
+      - /url: /services/dining-chair-cleaning/
+    - link "Armchair Cleaning":
+      - /url: /services/armchair-cleaning/
+    - link "Stairs & Hallways":
+      - /url: /services/stairs-hallways-cleaning/
+    - link "Pet Stain & Odour Removal":
+      - /url: /services/pet-stain-odour-removal/
+  - link "View all services":
+    - /url: /services/
+  - heading "Company" [level=3]
+  - list:
+    - link "About SoftNest":
+      - /url: /about/
+    - link "Our Results":
+      - /url: /#results
+    - link "Care Journal":
+      - /url: /blog/
+    - link "Get a Quote":
+      - /url: /quote/
+  - heading "Areas We Serve" [level=3]
+  - list:
+    - link "Mississauga":
+      - /url: /location/mississauga/
+    - link "Toronto":
+      - /url: /location/toronto/
+    - link "Brampton":
+      - /url: /location/brampton/
+    - link "Oakville":
+      - /url: /location/oakville/
+    - link "Etobicoke":
+      - /url: /location/etobicoke/
+    - link "Burlington":
+      - /url: /location/burlington/
+    - link "Vaughan":
+      - /url: /location/vaughan/
+    - link "Milton":
+      - /url: /location/milton/
+    - link "Hamilton":
+      - /url: /location/hamilton/
+  - link "View all locations":
+    - /url: /location/
+  - heading "Contact" [level=3]
+  - paragraph:
+    - link "softnestfabriccare@gmail.com":
+      - /url: mailto:softnestfabriccare@gmail.com
+  - paragraph:
+    - text: Greater Toronto Area
+    - text: Ontario
+  - generic "SoftNest service radius map":
+    - iframe
+  - paragraph: © 2026 SoftNest Fabric Care. All rights reserved.
+  - paragraph:
+    - link "Privacy":
+      - /url: /privacy/
+    - generic: "|"
+    - link "Terms":
+      - /url: /terms/
+    - generic: "|"
+    - link "About SoftNest":
+      - /url: /about/

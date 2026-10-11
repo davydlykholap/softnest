@@ -1,0 +1,185 @@
+- banner:
+  - link "SoftNest Fabric Care home":
+    - /url: /
+    - strong: SoftNest
+    - generic: Fabric Care
+  - navigation "Main navigation":
+    - link "Services":
+      - /url: /services/
+      - text: Services
+    - link "Locations":
+      - /url: /location/
+    - link "Blog":
+      - /url: /blog/
+    - link "About Us":
+      - /url: /about/
+  - link "(416) 727-0287":
+    - /url: tel:+14167270287
+    - generic: (416) 727-0287
+  - link "Get a Quote":
+    - /url: /quote/
+- main:
+  - article:
+    - link "← All articles":
+      - /url: /blog/
+    - paragraph: SoftNest Journal
+    - 'heading "Upholstery Cleaning Prices in Toronto: 5 Questions to Ask Before Booking" [level=1]'
+    - paragraph:
+      - time: September 25, 2026
+      - text: · SoftNest Fabric Care
+    - paragraph: Upholstery care · Pricing
+    - paragraph: Compare upholstery cleaning prices in Toronto by checking what is included, how thoroughly the furniture is cleaned and what may cost extra.
+    - img "Professional upholstery cleaning technician using an extraction tool on a light-coloured sectional sofa"
+    - paragraph: If you’re comparing upholstery cleaning prices in Toronto or the GTA, you may get very different quotes for the same sofa.
+    - paragraph: That doesn’t mean the cheapest company will do a worse job. And paying more doesn’t automatically mean you’ll get better cleaning.
+    - paragraph:
+      - text: The important thing is to understand
+      - strong: what you’re actually getting for the price.
+    - paragraph: Before choosing an upholstery cleaner, ask these five questions.
+    - heading "1. What exactly is included in the price?" [level=2]
+    - paragraph: Start with the simplest question.
+    - paragraph: Does the quote include stain treatment? Deodorizing? Sanitizing? Removable cushions? If the cushions can be flipped, are both sides cleaned?
+    - paragraph: Different companies package their services differently, so two similar prices may not include the same work.
+    - paragraph: Ask what is included before you book rather than finding out once the cleaning has already started.
+    - heading "2. How thorough will the cleaning be?" [level=2]
+    - paragraph: This is probably the most important question.
+    - paragraph: Ask whether the entire accessible upholstered area will be cleaned — not only the seats.
+    - paragraph: That can include the cushions, armrests, sides, front, back and upholstered frame, depending on the design of the sofa.
+    - paragraph: Also ask what happens if one area needs more work.
+    - paragraph: Armrests, headrests and favourite sitting areas can be much dirtier than the rest of the furniture. If an armrest still needs attention after the first cleaning, will they go over it again? If another section needs an extra pass, is that simply part of the job?
+    - paragraph: You’re not asking how many times every part will be cleaned.
+    - paragraph: You’re trying to understand whether the cleaner is focused on the result or simply completing one quick pass and moving on.
+    - heading "3. What happens if a stain or dirty area needs more attention?" [level=2]
+    - paragraph: Not every stain comes out on the first attempt, and some marks may be permanent discoloration rather than removable soil.
+    - paragraph: That’s normal.
+    - paragraph: What’s worth asking is whether the cleaner will inspect the furniture after cleaning and re-treat areas that can reasonably be improved.
+    - paragraph: A good service doesn’t mean promising that every stain will disappear. It means making a reasonable effort to get the best result possible before the job is finished.
+    - heading "4. How do you protect my home while you work?" [level=2]
+    - paragraph: Upholstery cleaning also means bringing equipment, hoses and cleaning products into your home.
+    - paragraph: Ask how flooring is protected where necessary and how hoses and equipment are handled around walls, corners and furniture.
+    - paragraph: These are small details, but they can tell you a lot about how carefully a company works.
+    - paragraph: Good upholstery cleaning isn’t only about leaving the sofa clean. It’s also about taking care of the home around it.
+    - heading "5. Is this the final price, and what could cost extra?" [level=2]
+    - paragraph: Before booking, ask whether the quote is the final price based on the photos and information you provided.
+    - paragraph: Some situations may genuinely require additional treatment. Pet urine, unusual contamination or certain specialty stains are good examples.
+    - paragraph: There’s nothing wrong with charging separately for additional work.
+    - paragraph:
+      - text: The important thing is knowing
+      - strong: what is included, what could cost extra and whether you’ll be told before any additional work is done.
+    - heading "Compare the Service, Not Just the Price" [level=2]
+    - paragraph: When comparing couch or upholstery cleaning prices in Toronto, don’t assume that cheaper means worse or that more expensive automatically means better.
+    - paragraph: Instead, compare what each company is actually offering.
+    - paragraph:
+      - strong: What is included? How thoroughly will the furniture be cleaned? Will problem areas get extra attention? How will your home be protected? And is the quoted price really the final price?
+    - paragraph: Once you know those answers, comparing prices becomes much easier.
+    - paragraph: At SoftNest Fabric Care, we provide our pricing in advance based on the furniture and information you send us. If you’d like a quote, send us the number of seats and, if possible, a photo of the furniture. We can take a look and let you know the price before you book.
+    - navigation "Related cleaning services":
+      - paragraph: Professional help for your furniture
+      - link "Upholstery Cleaning →":
+        - /url: /services/upholstery-cleaning/
+      - link "Sofa & Couch Cleaning →":
+        - /url: /services/sofa-cleaning/
+      - link "Sectional & Furniture Cleaning →":
+        - /url: /services/sectional-furniture-cleaning/
+    - complementary:
+      - heading "Need a little extra care?" [level=2]
+      - paragraph: Get professional fabric cleaning for your home.
+      - link "Get a Quote →":
+        - /url: /quote/
+    - navigation "More fabric care articles":
+      - paragraph: Keep reading
+      - link "How to Remove a Stain from a Couch Without Making It Worse →":
+        - /url: /blog/how-to-remove-stain-from-couch/
+      - link "Why Did My Couch Stain Come Back After Cleaning? →":
+        - /url: /blog/why-did-my-couch-stain-come-back-after-cleaning/
+- contentinfo:
+  - heading "SoftNest" [level=2]
+  - paragraph:
+    - text: Quality You Can See.
+    - text: Care You Can Trust.
+  - paragraph: Professional upholstery and carpet cleaning across the Greater Toronto Area.
+  - link "About SoftNest":
+    - /url: /about/
+  - paragraph: Follow our work
+  - group "SoftNest social media":
+    - link "Visit SoftNest Fabric Care on Facebook":
+      - /url: https://www.facebook.com/profile.php?id=61590622653207
+      - generic: Facebook
+    - link "Visit SoftNest Fabric Care on Instagram":
+      - /url: https://www.instagram.com/softnestfabriccare/
+      - generic: Instagram
+  - heading "Services" [level=3]
+  - list:
+    - link "Sofa & Couch Cleaning":
+      - /url: /services/sofa-cleaning/
+    - link "Leather Upholstery Cleaning":
+      - /url: /services/leather-upholstery-cleaning/
+    - link "Sectional & Furniture Cleaning":
+      - /url: /services/sectional-furniture-cleaning/
+    - link "Carpet & Area Rug Cleaning":
+      - /url: /services/carpet-area-rug-cleaning/
+    - link "Mattress Cleaning":
+      - /url: /services/mattress-cleaning/
+    - link "Dining Chair Cleaning":
+      - /url: /services/dining-chair-cleaning/
+    - link "Armchair Cleaning":
+      - /url: /services/armchair-cleaning/
+    - link "Stairs & Hallways":
+      - /url: /services/stairs-hallways-cleaning/
+    - link "Pet Stain & Odour Removal":
+      - /url: /services/pet-stain-odour-removal/
+  - link "View all services":
+    - /url: /services/
+  - heading "Company" [level=3]
+  - list:
+    - link "About SoftNest":
+      - /url: /about/
+    - link "Our Results":
+      - /url: /#results
+    - link "Care Journal":
+      - /url: /blog/
+    - link "Get a Quote":
+      - /url: /quote/
+  - heading "Areas We Serve" [level=3]
+  - list:
+    - link "Mississauga":
+      - /url: /location/mississauga/
+    - link "Toronto":
+      - /url: /location/toronto/
+    - link "Brampton":
+      - /url: /location/brampton/
+    - link "Oakville":
+      - /url: /location/oakville/
+    - link "Etobicoke":
+      - /url: /location/etobicoke/
+    - link "Burlington":
+      - /url: /location/burlington/
+    - link "Vaughan":
+      - /url: /location/vaughan/
+    - link "Milton":
+      - /url: /location/milton/
+    - link "Hamilton":
+      - /url: /location/hamilton/
+  - link "View all locations":
+    - /url: /location/
+  - heading "Contact" [level=3]
+  - paragraph:
+    - link "softnestfabriccare@gmail.com":
+      - /url: mailto:softnestfabriccare@gmail.com
+  - paragraph:
+    - text: Greater Toronto Area
+    - text: Ontario
+  - generic "SoftNest service radius map":
+    - iframe
+  - paragraph: © 2026 SoftNest Fabric Care. All rights reserved.
+  - paragraph:
+    - link "Privacy":
+      - /url: /privacy/
+    - generic: "|"
+    - link "Terms":
+      - /url: /terms/
+    - generic: "|"
+    - link "About SoftNest":
+      - /url: /about/
+- button "Open Next.js Dev Tools":
+- alert

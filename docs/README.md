@@ -13,6 +13,10 @@ This folder contains current operating documentation.
 
 When these documents and older notes disagree, `current-state.md` is authoritative.
 
+## Customer experience review
+
+The [8 October 2026 UX audit](ux-audit-2026-10-08/report.md) reviews the customer journey, messaging and content discovery. The [visual report](ux-audit-2026-10-08/report.html) includes the complete screenshot evidence, prioritised recommendations and a validation plan. It is a dated review, not a replacement for current operating documentation.
+
 ## Source of truth by topic
 
 | Topic | Source of truth |

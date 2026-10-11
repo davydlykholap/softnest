@@ -1,0 +1,755 @@
+{
+  "date": "2026-10-08",
+  "screenshots": [
+    {
+      "id": "E01",
+      "step": 1,
+      "title": "Homepage first impression",
+      "note": "Published desktop opening: emotional offer, service/GTA context, quote and reviews.",
+      "source": "Published website",
+      "route": "/",
+      "url": "https://softnestcare.ca/",
+      "file": "screenshots/01-home-first-impression.jpg"
+    },
+    {
+      "id": "E03",
+      "step": 4,
+      "title": "Homepage result gallery",
+      "note": "Gallery navigation and real-work proof; job context is quiet.",
+      "source": "Published website",
+      "route": "/",
+      "url": "https://softnestcare.ca/",
+      "file": "screenshots/03-home-results-next.jpg"
+    },
+    {
+      "id": "E04",
+      "step": 11,
+      "title": "Comparison control",
+      "note": "Published baseline comparison state; supports the gallery review. Keyboard behaviour was also checked in the current project.",
+      "source": "Published website",
+      "route": "/",
+      "url": "https://softnestcare.ca/",
+      "file": "screenshots/04-home-comparison-control.jpg"
+    },
+    {
+      "id": "E05",
+      "step": 1,
+      "title": "Desktop FAQ drying answer",
+      "note": "Answer is detached from its question, beneath decorative imagery.",
+      "source": "Published website",
+      "route": "/",
+      "url": "https://softnestcare.ca/",
+      "file": "screenshots/05-home-faq-answer.jpg"
+    },
+    {
+      "id": "E06",
+      "step": 2,
+      "title": "Service directory",
+      "note": "Short item/service labels and large introductory hero.",
+      "source": "Published website",
+      "route": "/services/",
+      "url": "https://softnestcare.ca/services/",
+      "file": "screenshots/06-services-discovery.jpg"
+    },
+    {
+      "id": "E07",
+      "step": 2,
+      "title": "Pet urine service search",
+      "note": "Published service search returns no exact match for the tested problem wording.",
+      "source": "Published website",
+      "route": "/services/",
+      "url": "https://softnestcare.ca/services/",
+      "file": "screenshots/07-service-search-pet-urine.jpg"
+    },
+    {
+      "id": "E08",
+      "step": 3,
+      "title": "Sofa service opening",
+      "note": "Published baseline, large image and description; contextual opening action absent.",
+      "source": "Published website",
+      "route": "/services/sofa-cleaning/",
+      "url": "https://softnestcare.ca/services/sofa-cleaning/",
+      "file": "screenshots/08-sofa-service-top.jpg"
+    },
+    {
+      "id": "E09",
+      "step": 3,
+      "title": "Sofa service inclusions",
+      "note": "Qualified scope description and useful care explanations.",
+      "source": "Published website",
+      "route": "/services/sofa-cleaning/",
+      "url": "https://softnestcare.ca/services/sofa-cleaning/",
+      "file": "screenshots/09-sofa-service-inclusions.jpg"
+    },
+    {
+      "id": "E10",
+      "step": 3,
+      "title": "Sofa pricing FAQ",
+      "note": "Pricing factors rather than a usable example budget.",
+      "source": "Published website",
+      "route": "/services/sofa-cleaning/",
+      "url": "https://softnestcare.ca/services/sofa-cleaning/",
+      "file": "screenshots/10-sofa-pricing-faq.jpg"
+    },
+    {
+      "id": "E11",
+      "step": 7,
+      "title": "Published quote from sofa",
+      "note": "Published baseline; service city field absent here. The current project adds it.",
+      "source": "Published website",
+      "route": "/quote/",
+      "url": "https://softnestcare.ca/quote/",
+      "file": "screenshots/11-quote-entry-from-sofa.jpg"
+    },
+    {
+      "id": "E12",
+      "step": 2,
+      "title": "Current pet urine service search",
+      "note": "Current project reproduces the mismatch despite an existing pet service.",
+      "source": "Current project",
+      "route": "/services/",
+      "url": "http://localhost:3000/services/",
+      "file": "screenshots/12-current-service-search.jpg"
+    },
+    {
+      "id": "E13",
+      "step": 3,
+      "title": "Current sofa opening",
+      "note": "Current service hero reviewed independently of the published baseline.",
+      "source": "Current project",
+      "route": "/services/sofa-cleaning/",
+      "url": "http://localhost:3000/services/sofa-cleaning/",
+      "file": "screenshots/13-current-sofa-top.jpg"
+    },
+    {
+      "id": "E14",
+      "step": 7,
+      "title": "Current quote entry",
+      "note": "Current project includes service city/postal code and clearer photo matching instructions.",
+      "source": "Current project",
+      "route": "/quote/",
+      "url": "http://localhost:3000/quote/",
+      "file": "screenshots/14-current-quote-entry.jpg"
+    },
+    {
+      "id": "E15",
+      "step": 7,
+      "title": "Sofa quote details",
+      "note": "Selected-item detail questions; multi-item support is a strength.",
+      "source": "Current project",
+      "route": "/quote/",
+      "url": "http://localhost:3000/quote/",
+      "file": "screenshots/15-current-quote-sofa.jpg"
+    },
+    {
+      "id": "E16",
+      "step": 7,
+      "title": "Empty quote validation",
+      "note": "Blank action focused the name field. No real lead was sent.",
+      "source": "Current project",
+      "route": "/quote/",
+      "url": "http://localhost:3000/quote/",
+      "file": "screenshots/16-quote-validation.jpg"
+    },
+    {
+      "id": "E17",
+      "step": 8,
+      "title": "Business quote branch",
+      "note": "Organisation, work email and frequency; social photo instructions persist.",
+      "source": "Current project",
+      "route": "/quote/",
+      "url": "http://localhost:3000/quote/",
+      "file": "screenshots/17-business-quote.jpg"
+    },
+    {
+      "id": "E18",
+      "step": 5,
+      "title": "Location directory",
+      "note": "Coverage discovery and map presentation.",
+      "source": "Current project",
+      "route": "/location/",
+      "url": "http://localhost:3000/location/",
+      "file": "screenshots/18-location-hub.jpg"
+    },
+    {
+      "id": "E19",
+      "step": 5,
+      "title": "Neighbourhood matching",
+      "note": "Port Credit resolves to Mississauga.",
+      "source": "Current project",
+      "route": "/location/",
+      "url": "http://localhost:3000/location/",
+      "file": "screenshots/19-neighbourhood-search.jpg"
+    },
+    {
+      "id": "E20",
+      "step": 5,
+      "title": "Postal availability check",
+      "note": "L5B receives a manual-check route; its value is retained in the quote.",
+      "source": "Current project",
+      "route": "/location/",
+      "url": "http://localhost:3000/location/",
+      "file": "screenshots/20-postal-availability.jpg"
+    },
+    {
+      "id": "E21",
+      "step": 5,
+      "title": "Mississauga opening",
+      "note": "Local landing page and scope context.",
+      "source": "Current project",
+      "route": "/location/mississauga/",
+      "url": "http://localhost:3000/location/mississauga/",
+      "file": "screenshots/21-mississauga-entry.jpg"
+    },
+    {
+      "id": "E22",
+      "step": 5,
+      "title": "Mississauga FAQ",
+      "note": "Local planning and pricing questions.",
+      "source": "Current project",
+      "route": "/location/mississauga/",
+      "url": "http://localhost:3000/location/mississauga/",
+      "file": "screenshots/22-mississauga-faq.jpg"
+    },
+    {
+      "id": "E23",
+      "step": 5,
+      "title": "Toronto opening",
+      "note": "Local quote action exists; city was blank in the next quote state.",
+      "source": "Current project",
+      "route": "/location/toronto/",
+      "url": "http://localhost:3000/location/toronto/",
+      "file": "screenshots/23-toronto-entry.jpg"
+    },
+    {
+      "id": "E24",
+      "step": 6,
+      "title": "About SoftNest",
+      "note": "Text-only family-run positioning without a named team introduction.",
+      "source": "Current project",
+      "route": "/about/",
+      "url": "http://localhost:3000/about/",
+      "file": "screenshots/24-about-company.jpg"
+    },
+    {
+      "id": "E25",
+      "step": 9,
+      "title": "Journal directory",
+      "note": "Relevant library; opportunity to browse by practical need.",
+      "source": "Current project",
+      "route": "/blog/",
+      "url": "http://localhost:3000/blog/",
+      "file": "screenshots/25-blog-directory.jpg"
+    },
+    {
+      "id": "E26",
+      "step": 9,
+      "title": "Journal search",
+      "note": "Pet urine wording finds the relevant article, unlike service search.",
+      "source": "Current project",
+      "route": "/blog/",
+      "url": "http://localhost:3000/blog/",
+      "file": "screenshots/26-blog-search.jpg"
+    },
+    {
+      "id": "E27",
+      "step": 9,
+      "title": "Price guide opening",
+      "note": "Five comparison questions; numerical budget remains unresolved.",
+      "source": "Current project",
+      "route": "/blog/upholstery-cleaning-prices-toronto/",
+      "url": "http://localhost:3000/blog/upholstery-cleaning-prices-toronto/",
+      "file": "screenshots/27-price-guide-top.jpg"
+    },
+    {
+      "id": "E28",
+      "step": 9,
+      "title": "Price guide reading",
+      "note": "Useful scope/quote advice; no approved job-price examples.",
+      "source": "Current project",
+      "route": "/blog/upholstery-cleaning-prices-toronto/",
+      "url": "http://localhost:3000/blog/upholstery-cleaning-prices-toronto/",
+      "file": "screenshots/28-price-guide-reading.jpg"
+    },
+    {
+      "id": "E29",
+      "step": 9,
+      "title": "Pet urine guide",
+      "note": "Relevant high-intent problem and cautious advice.",
+      "source": "Current project",
+      "route": "/blog/how-to-remove-pet-urine-smell-from-couch/",
+      "url": "http://localhost:3000/blog/how-to-remove-pet-urine-smell-from-couch/",
+      "file": "screenshots/29-pet-urine-guide.jpg"
+    },
+    {
+      "id": "E30",
+      "step": 9,
+      "title": "Drying guide",
+      "note": "Important customer question; align conditional time expectations.",
+      "source": "Current project",
+      "route": "/blog/how-long-does-a-couch-take-to-dry-after-cleaning/",
+      "url": "http://localhost:3000/blog/how-long-does-a-couch-take-to-dry-after-cleaning/",
+      "file": "screenshots/30-drying-guide.jpg"
+    },
+    {
+      "id": "E31",
+      "step": 9,
+      "title": "Office carpet guide",
+      "note": "Commercial planning content.",
+      "source": "Current project",
+      "route": "/blog/how-often-should-office-carpets-be-cleaned/",
+      "url": "http://localhost:3000/blog/how-often-should-office-carpets-be-cleaned/",
+      "file": "screenshots/31-office-carpet-guide.jpg"
+    },
+    {
+      "id": "E32",
+      "step": 8,
+      "title": "Office article household ending",
+      "note": "Home-focused closing and generic quote dilute the business route.",
+      "source": "Current project",
+      "route": "/blog/how-often-should-office-carpets-be-cleaned/",
+      "url": "http://localhost:3000/blog/how-often-should-office-carpets-be-cleaned/",
+      "file": "screenshots/32-office-guide-household-cta.jpg"
+    },
+    {
+      "id": "E33",
+      "step": 3,
+      "title": "Pet treatment service",
+      "note": "Realistic limitations; relevant case evidence could be stronger.",
+      "source": "Current project",
+      "route": "/services/pet-stain-odour-removal/",
+      "url": "http://localhost:3000/services/pet-stain-odour-removal/",
+      "file": "screenshots/33-pet-treatment-service.jpg"
+    },
+    {
+      "id": "E34",
+      "step": 3,
+      "title": "Carpet and rug service",
+      "note": "Residential focus; stairs and commercial routes need clarity.",
+      "source": "Current project",
+      "route": "/services/carpet-area-rug-cleaning/",
+      "url": "http://localhost:3000/services/carpet-area-rug-cleaning/",
+      "file": "screenshots/34-carpet-rug-service.jpg"
+    },
+    {
+      "id": "E35",
+      "step": 3,
+      "title": "Leather service",
+      "note": "Material-specific care needs a clear onward quote route.",
+      "source": "Current project",
+      "route": "/services/leather-upholstery-cleaning/",
+      "url": "http://localhost:3000/services/leather-upholstery-cleaning/",
+      "file": "screenshots/35-leather-service.jpg"
+    },
+    {
+      "id": "E36",
+      "step": 3,
+      "title": "Mattress service",
+      "note": "Item-specific description and results reviewed.",
+      "source": "Current project",
+      "route": "/services/mattress-cleaning/",
+      "url": "http://localhost:3000/services/mattress-cleaning/",
+      "file": "screenshots/36-mattress-service.jpg"
+    },
+    {
+      "id": "E37",
+      "step": 3,
+      "title": "Sectional service",
+      "note": "Category boundary with other furniture needs explanation.",
+      "source": "Current project",
+      "route": "/services/sectional-furniture-cleaning/",
+      "url": "http://localhost:3000/services/sectional-furniture-cleaning/",
+      "file": "screenshots/37-sectional-service.jpg"
+    },
+    {
+      "id": "E38",
+      "step": 3,
+      "title": "Dining chair service",
+      "note": "Familiar item and contextual proof.",
+      "source": "Current project",
+      "route": "/services/dining-chair-cleaning/",
+      "url": "http://localhost:3000/services/dining-chair-cleaning/",
+      "file": "screenshots/38-dining-chair-service.jpg"
+    },
+    {
+      "id": "E39",
+      "step": 3,
+      "title": "Armchair service",
+      "note": "Helpful specific item page; overlaps broader furniture labels.",
+      "source": "Current project",
+      "route": "/services/armchair-cleaning/",
+      "url": "http://localhost:3000/services/armchair-cleaning/",
+      "file": "screenshots/39-armchair-service.jpg"
+    },
+    {
+      "id": "E40",
+      "step": 3,
+      "title": "Stairs and hallways service",
+      "note": "Dedicated service exists; quote route nests stairs under carpet/rug.",
+      "source": "Current project",
+      "route": "/services/stairs-hallways-cleaning/",
+      "url": "http://localhost:3000/services/stairs-hallways-cleaning/",
+      "file": "screenshots/40-stairs-service.jpg"
+    },
+    {
+      "id": "E41",
+      "step": 3,
+      "title": "General upholstery service",
+      "note": "Useful umbrella; relationship with specific items should be explicit.",
+      "source": "Current project",
+      "route": "/services/upholstery-cleaning/",
+      "url": "http://localhost:3000/services/upholstery-cleaning/",
+      "file": "screenshots/41-general-upholstery-service.jpg"
+    },
+    {
+      "id": "E42",
+      "step": 12,
+      "title": "Privacy page",
+      "note": "Readable policy and photo-publication permission reassurance.",
+      "source": "Current project",
+      "route": "/privacy/",
+      "url": "http://localhost:3000/privacy/",
+      "file": "screenshots/42-privacy.jpg"
+    },
+    {
+      "id": "E43",
+      "step": 12,
+      "title": "Service terms",
+      "note": "Realistic result limits; guarantee needs more practical explanation.",
+      "source": "Current project",
+      "route": "/terms/",
+      "url": "http://localhost:3000/terms/",
+      "file": "screenshots/43-service-terms.jpg"
+    },
+    {
+      "id": "E44",
+      "step": 10,
+      "title": "Confirmation preview",
+      "note": "Opened directly, not by sending a request. Content only; delivery untested.",
+      "source": "Current project",
+      "route": "/quote/thank-you/",
+      "url": "http://localhost:3000/quote/thank-you/",
+      "file": "screenshots/44-confirmation-screen-preview.jpg"
+    },
+    {
+      "id": "E45",
+      "step": 1,
+      "title": "Mobile homepage",
+      "note": "390 × 844 override; clean quote opening, practical proof farther down.",
+      "source": "Current project",
+      "route": "/",
+      "url": "http://localhost:3000/",
+      "file": "screenshots/45-mobile-home-first-screen.jpg"
+    },
+    {
+      "id": "E46",
+      "step": 11,
+      "title": "Mobile menu",
+      "note": "Call and quote are available once menu is opened.",
+      "source": "Current project",
+      "route": "/",
+      "url": "http://localhost:3000/",
+      "file": "screenshots/46-mobile-menu.jpg"
+    },
+    {
+      "id": "E47",
+      "step": 11,
+      "title": "Mobile inline FAQ",
+      "note": "Answer stays with its question; preserve this responsive pattern.",
+      "source": "Current project",
+      "route": "/",
+      "url": "http://localhost:3000/",
+      "file": "screenshots/47-mobile-faq-open.jpg"
+    },
+    {
+      "id": "E48",
+      "step": 11,
+      "title": "Mobile result gallery",
+      "note": "Current comparison keyboard check advanced gallery while value stayed 50; pointer comparison also tested separately.",
+      "source": "Current project",
+      "route": "/",
+      "url": "http://localhost:3000/",
+      "file": "screenshots/48-mobile-results.jpg"
+    },
+    {
+      "id": "E49",
+      "step": 7,
+      "title": "Mobile quote entry",
+      "note": "Mobile individual request introduction.",
+      "source": "Current project",
+      "route": "/quote/",
+      "url": "http://localhost:3000/quote/",
+      "file": "screenshots/49-mobile-quote-entry.jpg"
+    },
+    {
+      "id": "E50",
+      "step": 7,
+      "title": "Mobile carpet item",
+      "note": "Selected detail remains in a half-width card.",
+      "source": "Current project",
+      "route": "/quote/",
+      "url": "http://localhost:3000/quote/",
+      "file": "screenshots/50-mobile-carpet-choice.jpg"
+    },
+    {
+      "id": "E51",
+      "step": 7,
+      "title": "Mobile stair questions",
+      "note": "Narrow stair/landing inputs and wrapped controls.",
+      "source": "Current project",
+      "route": "/quote/",
+      "url": "http://localhost:3000/quote/",
+      "file": "screenshots/51-mobile-stairs-quote.jpg"
+    },
+    {
+      "id": "E52",
+      "step": 3,
+      "title": "Mobile sofa opening",
+      "note": "No immediate contextual quote/call outside menu.",
+      "source": "Current project",
+      "route": "/services/sofa-cleaning/",
+      "url": "http://localhost:3000/services/sofa-cleaning/",
+      "file": "screenshots/52-mobile-service-entry.jpg"
+    },
+    {
+      "id": "E53",
+      "step": 5,
+      "title": "Mobile location opening",
+      "note": "Large map pushes task control down.",
+      "source": "Current project",
+      "route": "/location/",
+      "url": "http://localhost:3000/location/",
+      "file": "screenshots/53-mobile-location-hub.jpg"
+    },
+    {
+      "id": "E54",
+      "step": 5,
+      "title": "Mobile manual availability",
+      "note": "Small manual-check message and action.",
+      "source": "Current project",
+      "route": "/location/",
+      "url": "http://localhost:3000/location/",
+      "file": "screenshots/54-mobile-postal-message.jpg"
+    },
+    {
+      "id": "E55",
+      "step": 12,
+      "title": "Mobile footer",
+      "note": "Email present; phone and contact hours absent from Contact area.",
+      "source": "Current project",
+      "route": "/",
+      "url": "http://localhost:3000/",
+      "file": "screenshots/55-mobile-footer.jpg"
+    },
+    {
+      "id": "E56",
+      "step": 5,
+      "title": "Mobile Toronto opening",
+      "note": "Local quote action and city relevance.",
+      "source": "Current project",
+      "route": "/location/toronto/",
+      "url": "http://localhost:3000/location/toronto/",
+      "file": "screenshots/56-mobile-toronto-entry.jpg"
+    },
+    {
+      "id": "E57",
+      "step": 9,
+      "title": "Mobile pet article opening",
+      "note": "Title/lead/image precede immediate practical action.",
+      "source": "Current project",
+      "route": "/blog/how-to-remove-pet-urine-smell-from-couch/",
+      "url": "http://localhost:3000/blog/how-to-remove-pet-urine-smell-from-couch/",
+      "file": "screenshots/57-mobile-article-entry.jpg"
+    },
+    {
+      "id": "E58",
+      "step": 11,
+      "title": "Narrow article view",
+      "note": "320 × 740 override; no overall horizontal overflow in observed state.",
+      "source": "Current project",
+      "route": "/blog/how-to-remove-pet-urine-smell-from-couch/",
+      "url": "http://localhost:3000/blog/how-to-remove-pet-urine-smell-from-couch/",
+      "file": "screenshots/58-narrow-mobile-article.jpg"
+    },
+    {
+      "id": "E59",
+      "step": 5,
+      "title": "Brampton opening",
+      "note": "Full page text compared with Toronto; distinct neighbourhood/FAQ topics.",
+      "source": "Current project",
+      "route": "/location/brampton/",
+      "url": "http://localhost:3000/location/brampton/",
+      "file": "screenshots/59-brampton-entry.jpg"
+    },
+    {
+      "id": "E60",
+      "step": 5,
+      "title": "Oakville opening",
+      "note": "Full page text compared with Toronto; distinct neighbourhood/FAQ topics.",
+      "source": "Current project",
+      "route": "/location/oakville/",
+      "url": "http://localhost:3000/location/oakville/",
+      "file": "screenshots/60-oakville-entry.jpg"
+    },
+    {
+      "id": "E61",
+      "step": 5,
+      "title": "Etobicoke opening",
+      "note": "Full page text compared with Toronto; distinct neighbourhood/FAQ topics.",
+      "source": "Current project",
+      "route": "/location/etobicoke/",
+      "url": "http://localhost:3000/location/etobicoke/",
+      "file": "screenshots/61-etobicoke-entry.jpg"
+    },
+    {
+      "id": "E62",
+      "step": 5,
+      "title": "Burlington opening",
+      "note": "Full page text compared with Toronto; distinct neighbourhood/FAQ topics.",
+      "source": "Current project",
+      "route": "/location/burlington/",
+      "url": "http://localhost:3000/location/burlington/",
+      "file": "screenshots/62-burlington-entry.jpg"
+    },
+    {
+      "id": "E63",
+      "step": 5,
+      "title": "Vaughan opening",
+      "note": "Full page text compared with Toronto; distinct neighbourhood/FAQ topics.",
+      "source": "Current project",
+      "route": "/location/vaughan/",
+      "url": "http://localhost:3000/location/vaughan/",
+      "file": "screenshots/63-vaughan-entry.jpg"
+    },
+    {
+      "id": "E64",
+      "step": 5,
+      "title": "Milton opening",
+      "note": "Full page text compared with Toronto; distinct neighbourhood/FAQ topics.",
+      "source": "Current project",
+      "route": "/location/milton/",
+      "url": "http://localhost:3000/location/milton/",
+      "file": "screenshots/64-milton-entry.jpg"
+    },
+    {
+      "id": "E65",
+      "step": 5,
+      "title": "Hamilton opening",
+      "note": "Full page text compared with Toronto; distinct neighbourhood/FAQ topics.",
+      "source": "Current project",
+      "route": "/location/hamilton/",
+      "url": "http://localhost:3000/location/hamilton/",
+      "file": "screenshots/65-hamilton-entry.jpg"
+    },
+    {
+      "id": "E66",
+      "step": 4,
+      "title": "Hamilton review attribution",
+      "note": "Three shared reviews under a Hamilton-customer heading.",
+      "source": "Current project",
+      "route": "/location/hamilton/",
+      "url": "http://localhost:3000/location/hamilton/",
+      "file": "screenshots/66-hamilton-review-attribution.jpg"
+    },
+    {
+      "id": "E67",
+      "step": 4,
+      "title": "Toronto review attribution",
+      "note": "Same three reviews under a Toronto-customer heading; provenance unverified.",
+      "source": "Current project",
+      "route": "/location/toronto/",
+      "url": "http://localhost:3000/location/toronto/",
+      "file": "screenshots/67-toronto-review-attribution.jpg"
+    },
+    {
+      "id": "E68",
+      "step": 9,
+      "title": "Choosing a company guide",
+      "note": "Long detailed comparison; useful SoftNest standards near end.",
+      "source": "Current project",
+      "route": "/blog/how-to-choose-an-upholstery-cleaning-company/",
+      "url": "http://localhost:3000/blog/how-to-choose-an-upholstery-cleaning-company/",
+      "file": "screenshots/68-choosing-company-guide.jpg"
+    },
+    {
+      "id": "E69",
+      "step": 9,
+      "title": "Sofa cleaning signs guide",
+      "note": "Early-stage awareness; align inclusion language with service promise.",
+      "source": "Current project",
+      "route": "/blog/how-to-know-when-your-sofa-needs-professional-cleaning/",
+      "url": "http://localhost:3000/blog/how-to-know-when-your-sofa-needs-professional-cleaning/",
+      "file": "screenshots/69-sofa-needs-cleaning-guide.jpg"
+    },
+    {
+      "id": "E70",
+      "step": 9,
+      "title": "Vacuuming guide",
+      "note": "Routine maintenance versus professional cleaning.",
+      "source": "Current project",
+      "route": "/blog/does-vacuuming-clean-carpet/",
+      "url": "http://localhost:3000/blog/does-vacuuming-clean-carpet/",
+      "file": "screenshots/70-vacuuming-guide.jpg"
+    },
+    {
+      "id": "E71",
+      "step": 9,
+      "title": "Armrest guide",
+      "note": "Specific common furniture concern.",
+      "source": "Current project",
+      "route": "/blog/why-sofa-armrests-get-dirty-faster/",
+      "url": "http://localhost:3000/blog/why-sofa-armrests-get-dirty-faster/",
+      "file": "screenshots/71-armrest-guide.jpg"
+    },
+    {
+      "id": "E72",
+      "step": 9,
+      "title": "Stain removal guide",
+      "note": "Conservative first actions and clear stop conditions.",
+      "source": "Current project",
+      "route": "/blog/how-to-remove-stain-from-couch/",
+      "url": "http://localhost:3000/blog/how-to-remove-stain-from-couch/",
+      "file": "screenshots/72-stain-removal-guide.jpg"
+    },
+    {
+      "id": "E73",
+      "step": 9,
+      "title": "Returning stain guide",
+      "note": "Wicking, residue and damage distinctions.",
+      "source": "Current project",
+      "route": "/blog/why-did-my-couch-stain-come-back-after-cleaning/",
+      "url": "http://localhost:3000/blog/why-did-my-couch-stain-come-back-after-cleaning/",
+      "file": "screenshots/73-returning-stain-guide.jpg"
+    },
+    {
+      "id": "E74",
+      "step": 9,
+      "title": "Cleaning solution guide",
+      "note": "Care-code/material-led advice; no universal product promise.",
+      "source": "Current project",
+      "route": "/blog/what-cleaning-solution-can-i-use-on-my-couch/",
+      "url": "http://localhost:3000/blog/what-cleaning-solution-can-i-use-on-my-couch/",
+      "file": "screenshots/74-cleaning-solution-guide.jpg"
+    },
+    {
+      "id": "E75",
+      "step": 3,
+      "title": "Buried pricing promise",
+      "note": "The current article states a tax-inclusive confirmed price and no extra time fees within agreed scope.",
+      "source": "Current project",
+      "route": "/blog/how-to-choose-an-upholstery-cleaning-company/",
+      "url": "http://localhost:3000/blog/how-to-choose-an-upholstery-cleaning-company/",
+      "file": "screenshots/75-buried-price-promise.jpg"
+    },
+    {
+      "id": "E76",
+      "step": 4,
+      "title": "Family products FAQ",
+      "note": "Practical product/drying explanation is more cautious than broad badges.",
+      "source": "Current project",
+      "route": "/",
+      "url": "http://localhost:3000/",
+      "file": "screenshots/76-family-products-faq.jpg"
+    }
+  ]
+}

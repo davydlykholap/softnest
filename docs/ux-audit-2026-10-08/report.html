@@ -1,0 +1,699 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SoftNest — UX and customer journey audit</title><style>
+:root{--ink:#203d33;--green:#0e5941;--paper:#fbf9f3;--line:#dcded4;--muted:#56685e;--gold:#9b762d}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;background:var(--paper);color:#283d34;font:17px/1.72 'Segoe UI',Arial,sans-serif}a{color:var(--green);text-underline-offset:3px}a:hover{color:#86611c}aside{position:fixed;left:0;top:0;bottom:0;width:264px;padding:32px 23px;background:#123d30;color:#fff;overflow:auto}aside .brand{font:28px Georgia,serif;letter-spacing:.03em}aside .sub{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#d2ddcb;margin:5px 0 24px}nav a{display:block;color:#e3e9e0;text-decoration:none;font-size:13px;line-height:1.45;margin:0 0 12px}nav a:hover{color:#e9cc88}aside .download{border-top:1px solid #517063;margin-top:24px;padding-top:20px}aside .download a{color:#fff;font-size:13px}main{max-width:1310px;margin-left:264px;padding:52px 6vw 80px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;color:var(--gold);font-size:12px;font-weight:700}h1,h2,h3{color:var(--ink);line-height:1.2;scroll-margin-top:24px}h1{font:clamp(36px,4.1vw,58px)/1.08 Georgia,serif;max-width:970px;margin:15px 0 26px}h2{font:36px/1.2 Georgia,serif;margin:68px 0 23px;padding-top:28px;border-top:1px solid var(--line)}h3{font-size:22px;margin:34px 0 15px;font-weight:650}p{margin:0 0 19px}strong{font-weight:650}li{padding-left:4px;margin-bottom:12px}blockquote{margin:24px 0;padding:23px 28px;border-left:4px solid var(--gold);background:#eef0e6;border-radius:0 12px 12px 0}blockquote p:last-child{margin-bottom:0}.table-scroll{overflow-x:auto;margin:24px 0 34px;border:1px solid var(--line);border-radius:10px;background:#fff}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55}th,td{padding:15px 16px;text-align:left;vertical-align:top;border-bottom:1px solid #e5e7df}th{background:#e7eee4;color:#153e2e;font-size:12px;letter-spacing:.035em}tr:last-child td{border-bottom:0}tr:nth-child(even) td{background:#fafbf7}figure{margin:32px auto;max-width:820px;text-align:center;background:#f0f2e9;border:1px solid var(--line);border-radius:14px;padding:18px}figure img{max-width:100%;max-height:620px;object-fit:contain;border-radius:8px}figcaption{font-size:13px;text-align:left;color:var(--muted);margin-top:12px}section#evidence-gallery{margin-top:80px}details{background:#fff;border:1px solid var(--line);border-radius:12px;margin:16px 0;overflow:hidden}summary{cursor:pointer;padding:20px 24px;font-weight:650;color:var(--green)}summary span{margin-left:6px}summary small{display:block;margin:8px 0 0 22px;font-size:12px;font-weight:400;color:var(--muted)}.evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:8px 24px 24px}.evidence{border-top:1px solid var(--line);padding-top:18px;min-width:0}.evidence-meta{font-size:11px;color:var(--gold);letter-spacing:.06em;text-transform:uppercase}.evidence h3{font-size:18px;margin:8px 0 16px}.evidence img{width:100%;max-height:350px;object-fit:contain;background:#f4f5ef;border:1px solid #e4e5df}.evidence p{font-size:13px;line-height:1.55;margin:12px 0}.source{font-size:11px;overflow-wrap:anywhere}footer{margin-top:70px;border-top:1px solid var(--line);padding-top:20px;font-size:12px;color:var(--muted)}.top-links{font-size:13px;margin:0 0 28px}.top-links a{margin-right:18px}
+@media(min-width:1700px){main{padding-left:105px;padding-right:105px;max-width:1460px}}@media(max-width:1000px){aside{position:static;width:auto;padding:22px 6vw}aside nav{display:none}aside .sub{margin-bottom:0}aside .download{display:none}main{margin:0;padding:32px 6vw 60px}h1{font-size:43px}h2{font-size:30px}body{font-size:16px}}@media(max-width:580px){h1{font-size:35px}h2{font-size:27px}h3{font-size:20px}main{padding:28px 20px 50px}.table-scroll table{min-width:660px}.evidence-grid{grid-template-columns:1fr;padding:8px 16px 20px}summary{padding:18px 15px}figure{padding:10px}blockquote{padding:18px}figure img{max-height:520px}}@media print{aside,.top-links{display:none}main{margin:0;padding:0;max-width:none}body{background:#fff;font-size:10pt}h1{font-size:28pt}h2{font-size:20pt;margin-top:28px}h3{font-size:14pt}table{font-size:8pt}.table-scroll{overflow:visible}figure img{max-height:330px}h2,h3{break-after:avoid}tr,figure,blockquote{break-inside:avoid}section#evidence-gallery{display:none}a{color:inherit;text-decoration:none}}
+</style></head><body><aside><div class="brand">SOFTNEST</div><div class="sub">Customer experience review</div><nav><a href="#the-judgement">The judgement</a><a href="#scope-and-evidence">Scope and evidence</a><a href="#what-the-experience-needs-to-accomplish">What the experience needs to accomplish</a><a href="#step-1-first-impression-and-homepage">Step 1 — First impression and homepage</a><a href="#step-2-finding-a-service">Step 2 — Finding a service</a><a href="#step-3-evaluating-a-service">Step 3 — Evaluating a service</a><a href="#step-4-proof-reviews-and-promises">Step 4 — Proof, reviews and promises</a><a href="#step-5-coverage-and-city-pages">Step 5 — Coverage and city pages</a><a href="#step-6-who-will-come-into-the-home">Step 6 — Who will come into the home?</a><a href="#step-7-individual-quote-journey">Step 7 — Individual quote journey</a><a href="#step-8-business-customers">Step 8 — Business customers</a><a href="#step-9-journal-and-content-led-discovery">Step 9 — Journal and content-led discovery</a><a href="#step-10-confirmation-and-follow-up">Step 10 — Confirmation and follow-up</a><a href="#step-11-mobile-and-accessibility-observations">Step 11 — Mobile and accessibility observations</a><a href="#step-12-contact-policies-and-appointment-reassurance">Step 12 — Contact, policies and appointment reassurance</a><a href="#suggested-customer-facing-wording">Suggested customer-facing wording</a><a href="#recommended-page-order">Recommended page order</a><a href="#delivery-plan-and-decisions">Delivery plan and decisions</a><a href="#how-to-validate-the-changes-with-people">How to validate the changes with people</a><a href="#evidence-limits-and-review-integrity">Evidence limits and review integrity</a><a href="#screenshot-appendix">Screenshot appendix</a><a href="#evidence-gallery">Complete screenshot library</a></nav><div class="download"><a href="report.md">Editable report</a><br><a href="evidence-index.md">Evidence index</a></div></aside><main><div class="eyebrow">Independent journey review · 8 October 2026</div><div class="top-links"><a href="report.md">Editable report</a><a href="#evidence-gallery">75-screen evidence library</a><a href="evidence-index.md">Evidence index</a></div><h1 id="softnest-the-journey-from-a-worried-homeowner-to-a-confident-enquiry">SoftNest: the journey from a worried homeowner to a confident enquiry</h1>
+<p><strong>UX, customer confidence, marketing and content discovery audit · 8 October 2026</strong></p>
+<p>Prepared for SoftNest Fabric Care, a family-run upholstery and carpet cleaning business serving Mississauga, the GTA and the additional cities listed on its website.</p>
+<h2 id="the-judgement">The judgement</h2>
+<p>SoftNest already looks considered, calm and credible. The visual identity suits a service that enters people&#39;s homes and handles furniture they care about. Its explanations of fabric assessment, stain limitations and drying are more useful than another loud promise to make everything look new.</p>
+<p>The main weakness is the distance between that attractive presentation and a confident buying decision. A visitor can learn that SoftNest is careful, but must work harder to establish a realistic budget, understand the guarantee, see who will arrive, and complete an enquiry with photos. Several of the best reasons to choose the business are present somewhere on the site, but do not appear where the customer needs them.</p>
+<p><strong>The first investment should be a clearer decision and enquiry journey.</strong> Keep the brand, the honest treatment advice and the genuine work. Make the offer easier to understand and the next step easier to take. More city pages, more generic articles or a wholesale visual redesign would come after these improvements.</p>
+<p>This is an expert review of observed experiences. It identifies credible sources of hesitation; it does not claim measured conversion losses, customer motives or search-ranking penalties.</p>
+<h3 id="the-eight-changes-to-put-first">The eight changes to put first</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Order</th>
+<th>Change</th>
+<th>Why it matters for SoftNest</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Keep photo sharing within one coherent enquiry</td>
+<td>Customers currently submit a form, then use Instagram or Facebook and identify themselves again</td>
+<td>F01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Give selected-item questions the full mobile width</td>
+<td>The quote&#39;s stair and carpet details become cramped inside half-width cards</td>
+<td>F02</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Carry the selected service and city into the quote</td>
+<td>Customers arriving from a sofa or Toronto page have to repeat context</td>
+<td>F03</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Explain the quote, reply channel and realistic response window</td>
+<td>“Get my quote” and “soon” leave the next step uncertain</td>
+<td>F04, F28</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Surface the existing tax-inclusive, agreed-scope pricing promise</td>
+<td>A valuable business distinction is buried near the end of a long article</td>
+<td>F05</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Correct or substantiate city-specific review attribution</td>
+<td>The same reviews appear under different city-specific customer headings</td>
+<td>F07</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Explain what the satisfaction guarantee actually provides</td>
+<td>A prominent badge has no equally prominent practical remedy</td>
+<td>F06</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Put a relevant quote action and decision summary near service-page titles</td>
+<td>Search visitors land on a description, with their next step farther away</td>
+<td>F08</td>
+</tr>
+</tbody></table></div>
+<p><strong>Priority meanings:</strong> P1 = address first because it affects an enquiry or a central trust claim; P2 = improve the quality of choosing and exploring; P3 = useful polish after the main journey. These are review priorities, not numerical estimates of lost revenue.</p>
+<h2 id="scope-and-evidence">Scope and evidence</h2>
+<p>The primary review used the current project running locally. The published website, <a href="https://softnestcare.ca/">softnestcare.ca</a>, was also inspected as a baseline. The report distinguishes them where their experiences differ.</p>
+<p>Coverage included the homepage; service and location directories; all <strong>10 service pages</strong>; all <strong>9 city pages</strong>; About; the journal directory and all <strong>11 articles</strong>; individual and business quote branches; selected validation and selection states; privacy and terms; and the thank-you page as a directly opened preview. Desktop, a mobile viewport override of 390 × 844, and a narrower 320 × 740 article view were inspected. These viewport checks are not physical-device testing.</p>
+<p><strong>Important version difference:</strong> the current quote already asks for a service city or postal code. The inspected published quote did not. The current photo instructions also explain how to match photos to an enquiry more clearly. The remaining criticism concerns the split journey and lost page context, not a missing city field in the current project.</p>
+<p>Screenshots are numbered evidence references, such as <strong>E51</strong>. The accompanying <a href="report.html">visual report</a> contains the findings and the complete screenshot appendix, grouped by journey step. The <a href="evidence-index.md">evidence index</a> records the observed state, source and relevant step for each image. Local browser development controls visible in some images are outside this UX assessment.</p>
+<h3 id="the-complete-journey-at-a-glance">The complete journey at a glance</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Customer task</th>
+<th>General health</th>
+<th>Main conclusion</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Understand SoftNest on arrival</td>
+<td>Good foundation; mixed decision clarity</td>
+<td>Warm and credible, with practical distinctions too quiet</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Find the right service</td>
+<td>Needs attention</td>
+<td>Customer problem wording and overlapping categories create avoidable work</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Decide whether a service is right</td>
+<td>Mixed</td>
+<td>Careful explanations; price, proof and action need to arrive earlier</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Judge results and trust</td>
+<td>Mixed; attribution needs attention</td>
+<td>Genuine work is valuable; shared city review labels need verification</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Check service coverage</td>
+<td>Generally good</td>
+<td>Helpful neighbourhood matching; city context is lost at enquiry</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Meet the business</td>
+<td>Underdeveloped</td>
+<td>Family-run positioning needs real people and a more useful About page</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Request an individual quote</td>
+<td>Needs attention</td>
+<td>Flexible item choices, but fragmented photos and difficult mobile detail entry</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Request business cleaning</td>
+<td>Needs attention</td>
+<td>A business form exists, but the journey to it is weak</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Learn through the journal</td>
+<td>Good content; mixed onward journey</td>
+<td>Relevant advice needs faster answers and more specific next steps</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Understand confirmation and follow-up</td>
+<td>Needs attention; content preview only</td>
+<td>“Soon” does not establish a clear expectation</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Use the experience on mobile or by keyboard</td>
+<td>Mixed</td>
+<td>Several good responsive choices, plus a confirmed comparison-control problem</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Find contact and service reassurance</td>
+<td>Mixed</td>
+<td>Contact and policies exist; useful everyday reassurance is dispersed</td>
+</tr>
+</tbody></table></div>
+<h2 id="what-the-experience-needs-to-accomplish">What the experience needs to accomplish</h2>
+<p>For SoftNest, “make people explore” should mean helping them find the next useful answer. Longer browsing is not automatically a better result. Someone with a stained sofa should be able to establish fit, trust the proposed assessment and request help without touring unrelated services.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Visitor situation</th>
+<th>What they are really trying to resolve</th>
+<th>Best next content or action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pet accident or persistent smell</td>
+<td>“Can you help, and have I made it worse with products?”</td>
+<td>Realistic treatment limits, relevant result, photo-based assessment</td>
+</tr>
+<tr>
+<td>Comparing sofa cleaners</td>
+<td>“What will I pay, what is included, and will the price change?”</td>
+<td>Example scope, agreed-price reassurance, relevant reviews, clear quote</td>
+</tr>
+<tr>
+<td>Condo resident</td>
+<td>“Can you work around elevators, parking and drying in my unit?”</td>
+<td>Access guidance, what to tell the team, local enquiry</td>
+</tr>
+<tr>
+<td>Several items around the home</td>
+<td>“Can one visit cover my sectional, chairs and stairs?”</td>
+<td>Simple multi-item request and an understandable combined scope</td>
+</tr>
+<tr>
+<td>Owner of delicate or valuable furniture</td>
+<td>“Will you recognise the fabric and avoid damage?”</td>
+<td>Genuine assessment process, care-label request, named expertise, honest limits</td>
+</tr>
+<tr>
+<td>Office or property contact</td>
+<td>“Can you plan this around operations and give me a usable proposal?”</td>
+<td>Commercial scope, frequency, email contact and business-selected enquiry</td>
+</tr>
+<tr>
+<td>Visitor doing early research</td>
+<td>“Should I attempt this myself or seek help?”</td>
+<td>Immediate practical answer, clear stop conditions, relevant service</td>
+</tr>
+</tbody></table></div>
+<p>The site&#39;s strongest potential position is <strong>careful local cleaning with a clearly agreed scope and realistic expectations</strong>. That position is supported by existing copy and customer comments. Confirm it with the owners, then repeat it consistently at decisions that matter.</p>
+<h2 id="step-1-first-impression-and-homepage">Step 1 — First impression and homepage</h2>
+<p><strong>Health: good visual foundation; mixed buying clarity. Evidence: E01, E03–E05, E45, E76.</strong></p>
+<h3 id="f09-state-the-service-and-location-as-clearly-as-the-feeling-p2">F09 · State the service and location as clearly as the feeling · P2</h3>
+<p><strong>Observed:</strong> “A Cleaner Home Feels Better” leads the page. Furniture/carpet cleaning and GTA coverage appear in supporting content. The combination is understandable, but the emotional headline carries more weight than the practical service statement.</p>
+<p><strong>Customer consequence:</strong> a visitor arriving quickly from search or a shared link must assemble the basic offer before comparing it with other cleaners.</p>
+<p><strong>Recommendation:</strong> keep the warm headline if it is important to the brand, but place an unmistakable line such as “Sofa, upholstery and carpet cleaning in Mississauga and across our GTA service area” directly with it. Follow with one verified distinction, such as an agreed scope and tax-inclusive confirmed price. Do not replace the whole opening with a list of keywords.</p>
+<p><strong>Done when:</strong> a new visitor can say what SoftNest cleans, where it works and what to do next after a brief look at the opening screen.</p>
+<h3 id="f10-bring-practical-confidence-into-the-opening-especially-on-mobile-p2">F10 · Bring practical confidence into the opening, especially on mobile · P2</h3>
+<p><strong>Observed:</strong> desktop shows benefit badges and a quote action; the mobile opening retains the quote but omits those benefit badges. The review section sits farther down. Several opening claims are broad, while the practical pricing promise is much deeper elsewhere.</p>
+<p><strong>Recommendation:</strong> use one compact, genuinely useful reassurance near the mobile quote action, for example careful fabric assessment and a price confirmed before work. Put a short review or result nearby. Keep the attractive room imagery, but let real work and practical information compete successfully for space.</p>
+<p><strong>Done when:</strong> the first mobile screen provides enough confidence to take the next step without requiring the visitor to open the menu or scroll through multiple decorative sections.</p>
+<h3 id="f11-offer-useful-routes-through-the-homepage-p2">F11 · Offer useful routes through the homepage · P2</h3>
+<p><strong>Observed:</strong> the main service cards feature Sofas, Pet Treatment, Sectionals, and Carpets &amp; Rugs. The remaining services are available through navigation and the footer. The hero review link leaves for Google; the “See How We Clean” preview leads to an Instagram profile.</p>
+<p><strong>Recommendation:</strong> retain four featured services, add a nearby “View all cleaning services” link, and create a clear secondary route to on-page results. Make the video destination explicit, or link to the actual relevant video if available. Put social following after the customer&#39;s immediate decision rather than giving it equal emphasis around proof.</p>
+<p><strong>Done when:</strong> a dining-chair or mattress customer can find their service easily, and someone choosing “See how we clean” knows whether they are about to open Instagram.</p>
+<figure><a href="screenshots/45-mobile-home-first-screen.jpg" target="_blank"><img src="screenshots/45-mobile-home-first-screen.jpg" alt="E45 — Mobile homepage: a clear quote action, with practical reassurance and reviews farther down." loading="lazy"></a><figcaption>E45 — Mobile homepage: a clear quote action, with practical reassurance and reviews farther down.</figcaption></figure>
+<h2 id="step-2-finding-a-service">Step 2 — Finding a service</h2>
+<p><strong>Health: needs attention. Evidence: E06, E07, E12, E25–E26, E40–E41.</strong></p>
+<h3 id="f12-match-the-customer-39-s-problem-not-just-a-service-name-p1">F12 · Match the customer&#39;s problem, not just a service name · P1</h3>
+<p><strong>Observed:</strong> typing <strong>“pet urine”</strong> into the service directory produces “No exact service matches,” despite a Pet Stain &amp; Odour Treatment service. The same wording finds the relevant journal article. This was checked on the published site and the current project.</p>
+<p><strong>Customer consequence:</strong> a particularly motivated customer may infer that the business cannot help, or must browse the entire directory to disprove the message.</p>
+<p><strong>Recommendation:</strong> recognise common problem language and show the relevant service first. For this tested example, show Pet Stain &amp; Odour Treatment and a short explanation that assessment depends on depth and fabric. If no match exists, offer “Ask us about this item or problem” with the visitor&#39;s wording retained. Other candidate phrases should be tested with real customer messages rather than assumed to fail.</p>
+<p><strong>Done when:</strong> “pet urine” clearly leads to the treatment service, with a useful fallback that does not discard the enquiry.</p>
+<h3 id="f13-explain-overlapping-service-categories-p2">F13 · Explain overlapping service categories · P2</h3>
+<p><strong>Observed:</strong> Upholstery, Sofas, Sectionals and Armchairs are presented as adjacent short labels. The broader upholstery and sectional/furniture descriptions overlap with specific item pages. Searching “sofa” also exposes broader and material-related choices.</p>
+<p><strong>Recommendation:</strong> make the directory primarily item-led: sofa/couch, sectional, chairs/recliners, dining chairs, mattress, carpet/rug, stairs/hallways. Add one-line fit descriptions. Explain Upholstery as the umbrella or “other upholstered furniture” route. Treat leather as a material distinction and pet stains as a concern that can apply to several items.</p>
+<p>This does not require removing existing useful pages. It requires making their relationship understandable. “Not sure? Send us your item” is a valuable safety net and already exists; retain it.</p>
+<p><strong>Done when:</strong> an ordinary visitor can choose confidently without knowing cleaning-industry terminology.</p>
+<figure><a href="screenshots/12-current-service-search.jpg" target="_blank"><img src="screenshots/12-current-service-search.jpg" alt="E12 — Current service search cannot connect “pet urine” with the existing treatment service." loading="lazy"></a><figcaption>E12 — Current service search cannot connect “pet urine” with the existing treatment service.</figcaption></figure>
+<h2 id="step-3-evaluating-a-service">Step 3 — Evaluating a service</h2>
+<p><strong>Health: mixed. Evidence: E08–E10, E13, E33–E41, E52, E75.</strong></p>
+<h3 id="f08-give-service-landing-pages-an-immediate-next-step-p1">F08 · Give service landing pages an immediate next step · P1</h3>
+<p><strong>Observed:</strong> the sofa page opens with a substantial image and description. A contextual quote action is absent from that opening. Desktop has the global header quote; mobile has logo and menu, with no equivalent immediate service action.</p>
+<p><strong>Recommendation:</strong> place “Request a sofa cleaning quote” beside the opening explanation, with a brief scope summary and one relevant piece of proof. Keep a call alternative where it is useful. Repeat the quote after the meaningful decision sections, not after every paragraph.</p>
+<p><strong>Done when:</strong> a visitor arriving directly at any service page can act from the opening, while a visitor who needs details can see what to read next.</p>
+<h3 id="f05-make-the-strongest-pricing-reassurance-easy-to-find-p1">F05 · Make the strongest pricing reassurance easy to find · P1</h3>
+<p><strong>Observed:</strong> service FAQs explain price factors but provide no concrete budget examples. The pricing article teaches comparison without giving figures. A different article, “How to Choose an Upholstery Cleaning Company,” states near its end that the confirmed price includes tax and that additional time or repeat treatment within the agreed scope does not incur extra fees. It also lists work-area protection, assessment, everyday stain treatment and appropriate rinsing.</p>
+<p><strong>Customer consequence:</strong> price-conscious visitors can miss a strong reason to prefer SoftNest. A review mentioning two sofas for $168, or a sectional for $229, can become the only numerical anchor they encounter, although those comments do not establish today&#39;s price for their job.</p>
+<p><strong>Recommendation:</strong> confirm this existing website promise with the owners and bring it into the service decision summary and quote introduction. Add a few approved example jobs or realistic ranges if the business can stand behind them. Explain inclusions, tax, minimum charges and any access/travel conditions that actually apply. If ranges cannot be published, clearly explain what is needed for a firm quote and when it will arrive. Avoid an attractive “from” figure that rarely represents a bookable job.</p>
+<p><strong>Done when:</strong> visitors understand how price is established and what prevents surprises. Historical review prices are clearly contextual, not presented as current offers.</p>
+<h3 id="f14-convert-long-descriptions-into-an-easy-scope-decision-p2">F14 · Convert long descriptions into an easy scope decision · P2</h3>
+<p><strong>Observed:</strong> all ten service pages include useful explanations and realistic limits. The language often qualifies what cleaning “can include,” while another article makes more definite inclusion claims. Important assessment and drying details are scattered through prose.</p>
+<p><strong>Recommendation:</strong> introduce a compact decision panel: suitable items; standard agreed work; concerns requiring assessment; what cleaning cannot repair; approximate drying guidance with conditions; and how to get a confirmed price. Reconcile “can include” with the actual standard scope. Keep the detailed explanation below for cautious readers.</p>
+<p><strong>Done when:</strong> a customer can compare services without reading every paragraph, and every inclusion promised in an article matches the service description and quote conversation.</p>
+<h3 id="f15-pair-each-service-with-the-most-relevant-proof-p2">F15 · Pair each service with the most relevant proof · P2</h3>
+<p><strong>Observed:</strong> several service pages have captioned real-work comparisons. The pet service lacks an equivalent result in its observed main content, even though the sofa page includes a pet-stain example. Leather, armchair, stairs and general upholstery also have less specific proof in the reviewed content.</p>
+<p><strong>Recommendation:</strong> prioritise pet treatment, sofas/sectionals and carpets with genuine examples that explain the original concern and the achieved result. Reuse a job where it is truly relevant, with accurate context. Add leather or delicate-fabric evidence when the team has permission and a suitable real job. Do not fill gaps with synthetic before-and-after images.</p>
+<p><strong>Done when:</strong> a customer sees evidence for their concern and understands the limits of that example.</p>
+<figure><a href="screenshots/75-buried-price-promise.jpg" target="_blank"><img src="screenshots/75-buried-price-promise.jpg" alt="E75 — Tax-inclusive, agreed-scope pricing reassurance exists, but is buried near the end of a long article." loading="lazy"></a><figcaption>E75 — Tax-inclusive, agreed-scope pricing reassurance exists, but is buried near the end of a long article.</figcaption></figure>
+<h3 id="service-by-service-implications">Service-by-service implications</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Service reviewed</th>
+<th>Preserve</th>
+<th>Most useful improvement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sofa &amp; Couch</td>
+<td>Specific assessment, realistic stain limits, captioned result</td>
+<td>Earlier quote, agreed scope and pricing reassurance</td>
+</tr>
+<tr>
+<td>Sectional &amp; Furniture</td>
+<td>Shape/size relevance and real results</td>
+<td>Explain its boundary with sofas, recliners and other furniture</td>
+</tr>
+<tr>
+<td>Carpet &amp; Area Rug</td>
+<td>Distinguishes carpet/rug needs, useful result</td>
+<td>Make stairs and commercial needs easier to route</td>
+</tr>
+<tr>
+<td>Pet Stain &amp; Odour</td>
+<td>Honest discussion of deep contamination</td>
+<td>Problem-led search, relevant real case and photo assessment</td>
+</tr>
+<tr>
+<td>Leather Upholstery</td>
+<td>Material-specific caution</td>
+<td>Clearly route leather material in the quote; add genuine proof</td>
+</tr>
+<tr>
+<td>Mattress</td>
+<td>Item-specific explanation and real result</td>
+<td>Clear scope and drying/use guidance near the action</td>
+</tr>
+<tr>
+<td>Dining Chairs</td>
+<td>Familiar item category and result</td>
+<td>Easy quantity entry and any genuine combined-visit guidance</td>
+</tr>
+<tr>
+<td>Armchair &amp; Recliner</td>
+<td>Familiar items and care explanation</td>
+<td>Distinguish from broader furniture service and show relevant job</td>
+</tr>
+<tr>
+<td>Stairs &amp; Hallways</td>
+<td>Dedicated service page</td>
+<td>A visible stair route in the quote, with full-width detail questions</td>
+</tr>
+<tr>
+<td>Upholstery</td>
+<td>Useful broad category</td>
+<td>Explain when to use it instead of a specific item page</td>
+</tr>
+</tbody></table></div>
+<h2 id="step-4-proof-reviews-and-promises">Step 4 — Proof, reviews and promises</h2>
+<p><strong>Health: mixed; location attribution needs attention. Evidence: E03–E04, E21–E23, E43, E48, E66–E67, E76.</strong></p>
+<h3 id="f07-make-review-location-claims-accurate-p1">F07 · Make review location claims accurate · P1</h3>
+<p><strong>Observed:</strong> the same three names and review text—Karen Jan, Kathleen Costello and Utsav Kohli—appear under “Feedback from [city] customers” on Toronto and the seven reviewed non-Mississauga city pages. Mississauga uses a different set.</p>
+<p><strong>Customer consequence:</strong> a reader comparing cities can notice the repetition and question the precision of the local proof.</p>
+<p><strong>Recommendation:</strong> check the original customer/job provenance. Use a shared “Feedback from GTA customers” heading unless a specific city is substantiated. Use genuinely city-specific reviews where they are available and permitted.</p>
+<p><strong>Done when:</strong> each location claim can be supported. This observation does <strong>not</strong> establish that the reviews are fabricated or that any named reviewer did not use the business.</p>
+<h3 id="f06-give-satisfaction-guaranteed-a-practical-meaning-p1">F06 · Give “Satisfaction Guaranteed” a practical meaning · P1</h3>
+<p><strong>Observed:</strong> the homepage presents the badge prominently. The reviewed terms explain realistic result limitations and invite customers to contact SoftNest for a review of reasonable next steps, but do not give an equally concrete, prominent remedy or reporting window.</p>
+<p><strong>Recommendation:</strong> explain what customers should do, how promptly they should report a concern, how it is assessed and when follow-up treatment or a return visit is available. The owner must define the actual policy. Keep exclusions for permanent wear, dye loss and deep contamination understandable. A workmanship promise can coexist with honest stain limitations.</p>
+<p><strong>Done when:</strong> a customer can explain what the guarantee provides without interpreting a badge or assuming an unconditional refund. This is a clarity recommendation, not a legal assessment.</p>
+<h3 id="f16-turn-the-gallery-into-understandable-case-evidence-p2">F16 · Turn the gallery into understandable case evidence · P2</h3>
+<p><strong>Observed:</strong> the homepage comparison gallery shows real work but lacks visible item/location/problem captions and prominent Before/After labels. Visitors must distinguish movement between jobs from movement within a comparison. Service-page captions provide better context.</p>
+<p><strong>Recommendation:</strong> label the sides, explain the comparison gesture, and add concise job context: item, verified city, concern, treatment scope and honest outcome. Offer a simple two-image view when comparison is difficult. Place a relevant enquiry action after the case, not social-follow controls in the main path.</p>
+<p><strong>Done when:</strong> a visitor can describe what changed, which item was cleaned and why the example is relevant. Maintain comparable lighting and angles; a result should not depend on flattering presentation.</p>
+<h3 id="f17-make-reviews-informative-and-verifiable-without-forcing-an-exit-p2">F17 · Make reviews informative and verifiable without forcing an exit · P2</h3>
+<p><strong>Observed:</strong> a 5.0 Google rating appears without a visible count or review dates. Some review excerpts end in ellipses. Cards lead to the general Google listing rather than expanding their content on the page.</p>
+<p><strong>Recommendation:</strong> show a verified review count and a maintainable freshness cue. Keep source links, clearly labelled as opening Google. Where permission and source material allow, let visitors read the useful full comment on-site. Select reviews that address scope, final price, care in the home, drying and follow-up, rather than only general praise.</p>
+<p><strong>Done when:</strong> visitors can judge the depth and relevance of the proof and verify it if they choose. The rating and review authenticity were not independently audited.</p>
+<h3 id="f18-explain-family-and-product-reassurance-in-practical-terms-p2">F18 · Explain family and product reassurance in practical terms · P2</h3>
+<p><strong>Observed:</strong> badges say “Safe for Kids &amp; Pets” and “Eco-Friendly Products.” The family-products FAQ instead gives a cautious explanation: fabric-appropriate products, directions followed, and drying/after-care before normal use.</p>
+<p><strong>Recommendation:</strong> bring that practical explanation closer to the promise. Explain when people and pets may use the cleaned furniture, what after-care is required, and how the team handles a disclosed concern. Use product-specific substantiation for environmental claims if the business wants to develop them. Avoid turning this into a long list of unsupported health benefits.</p>
+<p><strong>Done when:</strong> a parent understands the relevant precautions and use-after-cleaning guidance. No chemical safety or environmental certification assessment was performed.</p>
+<figure><a href="screenshots/66-hamilton-review-attribution.jpg" target="_blank"><img src="screenshots/66-hamilton-review-attribution.jpg" alt="E66 — Hamilton review heading. Compare with E67 in the evidence appendix: the same three reviews are labelled as Toronto customer feedback." loading="lazy"></a><figcaption>E66 — Hamilton review heading. Compare with E67 in the evidence appendix: the same three reviews are labelled as Toronto customer feedback.</figcaption></figure>
+<h2 id="step-5-coverage-and-city-pages">Step 5 — Coverage and city pages</h2>
+<p><strong>Health: generally good, with context and proof weaknesses. Evidence: E18–E23, E53–E54, E56, E59–E67.</strong></p>
+<h3 id="f19-keep-the-useful-local-content-replace-generic-repetition-with-real-local-usefulness-p2">F19 · Keep the useful local content; replace generic repetition with real local usefulness · P2</h3>
+<p><strong>Observed:</strong> the city pages share substantial descriptions and process sections. They also contain distinct neighbourhood lists and FAQ questions, plus useful condo access, parking, elevator and drying guidance. This is more helpful than a city name substituted into every sentence.</p>
+<p><strong>Recommendation:</strong> preserve practical access guidance. Improve selected city pages with permissioned local job examples and accurate service arrangements. Prioritise the places that matter commercially once enquiry data is available. Explain extended service coverage consistently with the nine listed locations. Do not manufacture local offices, job histories or neighbourhood claims to make pages look different.</p>
+<p><strong>Done when:</strong> each city page answers a real local planning question and its proof is accurately labelled. The repeated content alone does not demonstrate a search penalty.</p>
+<h3 id="f20-make-coverage-checking-easier-to-start-and-interpret-p2">F20 · Make coverage checking easier to start and interpret · P2</h3>
+<p><strong>Observed:</strong> “Port Credit” resolves to Mississauga. An L5B search offers a manual availability check and carries L5B into the quote—both useful behaviours. On mobile, a large map precedes the location search, and the manual-check message is a small dark pill with a relatively quiet action.</p>
+<p><strong>Recommendation:</strong> put the search before the large illustration on mobile. Make the outcome an easily read message: “We can check service availability for L5B,” followed by a clear enquiry action. Explain that a manual check is uncertainty to resolve, not a rejection. Keep the retained input.</p>
+<p><strong>Done when:</strong> a customer can distinguish a confirmed listed city, an unmatched entry and a location awaiting confirmation without interpreting map boundaries.</p>
+<h3 id="city-coverage-reviewed">City coverage reviewed</h3>
+<p>Mississauga, Toronto, Brampton, Oakville, Etobicoke, Burlington, Vaughan, Milton and Hamilton were each read. The seven additional pages were compared with Toronto to assess what changed. Their separate FAQ topics and neighbourhood lists are strengths. Every collapsed FAQ answer and every neighbourhood synonym was not tested. The review attribution issue applies to the eight non-Mississauga pages observed, not automatically to all other testimonials on the site.</p>
+<h2 id="step-6-who-will-come-into-the-home">Step 6 — Who will come into the home?</h2>
+<p><strong>Health: underdeveloped. Evidence: E24 and the homepage review content in E01/E45 journey.</strong></p>
+<h3 id="f21-make-the-family-run-claim-human-and-useful-p2">F21 · Make the family-run claim human and useful · P2</h3>
+<p><strong>Observed:</strong> About is a short, text-only explanation of a family-run business and careful service. It does not introduce named people, show the actual team, develop a specific origin story or provide a direct closing enquiry action. Customer comments mention Andrii and his son, which is more tangible than the business&#39;s own introduction.</p>
+<p><strong>Recommendation:</strong> introduce the actual team with approved names, roles and a genuine photograph. Explain why they do the work this way, how they assess furniture and what the appointment feels like. Show real work-area protection and equipment handling. Add substantiated training or insurance information only if verified. Finish with a quote or call route.</p>
+<p><strong>Done when:</strong> a hesitant customer has a clearer idea of who may arrive and why that person is competent and considerate. Avoid stock portraits, invented biographies and vague claims of decades of experience.</p>
+<h2 id="step-7-individual-quote-journey">Step 7 — Individual quote journey</h2>
+<p><strong>Health: needs attention; several good foundations. Evidence: E11, E14–E16, E49–E51.</strong></p>
+<p>The multi-item approach is appropriate for this business. Adding more than one sofa is supported, and “Not sure” options reduce the need to know furniture terminology. Preserve those capabilities. A blank submission moved focus to the name field; no real request was sent. This audit does not establish that validation or delivery is broken.</p>
+<h3 id="f01-remove-the-separate-social-media-photo-task-p1">F01 · Remove the separate social-media photo task · P1</h3>
+<p><strong>Observed:</strong> customers are told to request a quote, then send full-item photos and stain close-ups through Instagram or Facebook using the same name and service city. The current instructions are clearer than the published baseline, but the process still crosses channels and requires manual matching. The individual form has no email field or preferred reply channel.</p>
+<p><strong>Customer consequence:</strong> someone can complete the form yet fail to send the photos, lack a social account, switch apps and lose context, or wonder whether the two messages were matched. A busy person may intend to finish later and forget. These are plausible failure points, not measured abandonment rates.</p>
+<p><strong>Recommendation:</strong> let photos accompany the same enquiry, ideally as an optional attachment with simple guidance and a visible preview. Keep a viable “send later” route. If direct attachments are not presently feasible, provide an operationally supported email or other business-approved alternative with a clear matching instruction. Do not claim SMS or WhatsApp is available without confirming it. Social messaging can remain optional.</p>
+<p><strong>Done when:</strong> a person without Instagram or Facebook can complete a usable enquiry, knows whether photos were received, and understands whether further information is still needed.</p>
+<h3 id="f02-expand-item-questions-outside-narrow-mobile-cards-p1">F02 · Expand item questions outside narrow mobile cards · P1</h3>
+<p><strong>Observed:</strong> selected carpet/rug details expand inside one half-width item card. Stair and landing fields are especially narrow; labels and the add-another control wrap tightly. An adjacent unselected card leaves considerable unused space. E50 and E51 show the problem.</p>
+<p><strong>Recommendation:</strong> keep the compact initial item choices, then give the selected item&#39;s questions the full content width below them, or stack the selected detail sections. Provide a clear item heading and an easy way to add another. Preserve independent details for multiple items.</p>
+<p><strong>Done when:</strong> a mobile customer can enter stair counts, rug dimensions and sofa details comfortably without compressed labels or excessive sideways scanning.</p>
+<h3 id="f03-remember-the-service-and-location-already-chosen-p1">F03 · Remember the service and location already chosen · P1</h3>
+<p><strong>Observed:</strong> the sofa service quote link leads to a generic quote without a selected sofa. Toronto&#39;s hero quote opens with the city field blank. By contrast, the unmatched L5B location route does retain its entered location.</p>
+<p><strong>Recommendation:</strong> use the retained-location behaviour as the model. Open a sofa quote with Sofa selected, and a Toronto enquiry with Toronto visible in the editable location field. Preserve the relevant concern from a pet-treatment route as well. Do not silently assume a full address or prevent customers changing the choice.</p>
+<p><strong>Done when:</strong> a customer continues the same task instead of starting the description again.</p>
+<h3 id="f04-say-what-a-quote-request-actually-does-p1">F04 · Say what a quote request actually does · P1</h3>
+<p><strong>Observed:</strong> the action says “Get my quote.” The form describes follow-up, but no specific reply window, reply channel or visible commitment/no-obligation explanation accompanies the decision. Free photo estimates are mentioned elsewhere in city content, rather than consistently at the form.</p>
+<p><strong>Recommendation:</strong> explain that a person reviews the details and confirms the scope and price. Use “Request my quote,” or “Request my free quote” if the owner confirms that policy. State a staffed response window that can actually be met, with out-of-hours wording where needed. Let the customer choose a supported reply channel and explain that requesting a quote does not book a visit, if that is the actual process.</p>
+<p><strong>Done when:</strong> before submitting, the visitor knows whether they will see an immediate price, receive a call or email, or need to provide more details.</p>
+<h3 id="f22-ask-about-material-and-concern-without-requiring-the-right-category-guess-p2">F22 · Ask about material and concern without requiring the right category guess · P2</h3>
+<p><strong>Observed:</strong> the first quote choices are seven item groups. Stairs are nested under Carpet or rug, then a type choice. Leather and pet treatment are service concepts elsewhere, but are not explicit item choices here. Sofa follow-up asks about seats and type; the customer must use the notes to communicate additional concerns.</p>
+<p><strong>Recommendation:</strong> separate “What item?” from “What is it made of?” and “What concerns you?” Ask lightweight, optional questions with “Not sure.” Make stairs discoverable from the first selection or clearly label the carpet category to include them. A leather sofa is still a sofa; a pet accident is a concern, not a competing furniture category.</p>
+<p><strong>Done when:</strong> a customer with a leather couch, stained dining chairs or carpeted stairs can describe the job without guessing a category or typing the entire scope in notes.</p>
+<figure><a href="screenshots/51-mobile-stairs-quote.jpg" target="_blank"><img src="screenshots/51-mobile-stairs-quote.jpg" alt="E51 — Stair details squeezed inside a half-width mobile quote card." loading="lazy"></a><figcaption>E51 — Stair details squeezed inside a half-width mobile quote card.</figcaption></figure>
+<h2 id="step-8-business-customers">Step 8 — Business customers</h2>
+<p><strong>Health: needs attention. Evidence: E17, E31–E32, E34.</strong></p>
+<h3 id="f23-connect-commercial-interest-to-a-commercial-conversation-p2">F23 · Connect commercial interest to a commercial conversation · P2</h3>
+<p><strong>Observed:</strong> the Business quote branch asks for organisation, work email, frequency and location. The office-carpet article discusses commercial needs, but ends with household-oriented language and a generic quote route that defaults to Individual. The carpet service page is principally residential.</p>
+<p><strong>Recommendation:</strong> if commercial work is an active priority, give it a modest dedicated entry explaining suitable spaces, assessment, scheduling and recurring service. Lead the office article into a business-selected quote. Prefer an ordinary work-email photo/requirements exchange over asking an office manager to send job information through social media. Verify after-hours availability, invoicing, insurance and building requirements before presenting them as benefits.</p>
+<p><strong>Done when:</strong> an office contact can reach a relevant request without translating home-focused language or finding a hidden switch. Keep the homepage focused on households if they remain the core business; commercial work does not need equal prominence to have a coherent path.</p>
+<h2 id="step-9-journal-and-content-led-discovery">Step 9 — Journal and content-led discovery</h2>
+<p><strong>Health: good underlying advice; mixed answer speed and onward journey. Evidence: E25–E32, E57–E58, E68–E75.</strong></p>
+<h3 id="f24-give-urgent-readers-the-useful-answer-sooner-p2">F24 · Give urgent readers the useful answer sooner · P2</h3>
+<p><strong>Observed:</strong> long titles, introductions and large imagery occupy substantial space. The mobile pet-urine guide&#39;s first screen establishes the subject but does not yet give the first practical steps. The company-selection article is long and has no visible contents navigation.</p>
+<p><strong>Recommendation:</strong> place a short, specific answer immediately after the introduction, then offer the detailed explanation. For an urgent spill, prioritise the first safe action, what to stop doing and when to ask for assessment. Use a short contents list on longer comparison articles. Keep valuable caution and explanation; shorten the distance to them.</p>
+<p><strong>Done when:</strong> a visitor in a hurry gains something useful before a large editorial image, and a comparison shopper can jump to pricing or guarantee questions.</p>
+<h3 id="f25-complete-the-promise-made-by-cost-and-drying-topics-p2">F25 · Complete the promise made by cost and drying topics · P2</h3>
+<p><strong>Observed:</strong> the upholstery-price guide is sensible about comparison but does not supply a numerical budget. Its “five questions” framing helps qualify that, yet a price-first reader may still leave without an answer. The drying article uses general same-day guidance, while home/service content offers a more useful conditional 6–8 hour expectation.</p>
+<p><strong>Recommendation:</strong> make each article&#39;s scope explicit. Add approved cost examples and inclusions, or state clearly that it explains how quotes are determined. Align drying guidance around the actual fabrics and conditions the team sees; do not make 6–8 hours a universal promise. Include when to contact the cleaner if drying takes longer than expected.</p>
+<p><strong>Done when:</strong> the page gives the kind of answer its title invites, with meaningful caveats and a clear next step for exceptions.</p>
+<h3 id="f26-guide-the-next-click-according-to-the-reader-39-s-task-p2">F26 · Guide the next click according to the reader&#39;s task · P2</h3>
+<p><strong>Observed:</strong> relevant service links exist at article ends, which is useful. Many reviewed articles repeat the same stain-related “Keep reading” suggestions, including content whose audience may need different advice. The journal directory is searchable, but category labels are not useful browse filters.</p>
+<p><strong>Recommendation:</strong> organise the modest eleven-article library around needs: stains and pets; prices and choosing; drying and appointment care; routine maintenance; commercial cleaning. Recommend a small number of genuinely related next reads. Use a specific service or enquiry action after the section where help becomes relevant, rather than relying only on a generic “extra care” ending.</p>
+<p><strong>Done when:</strong> someone reading about office carpet is offered business help, and someone choosing a cleaner finds price, proof and guarantee information next.</p>
+<h3 id="f27-show-the-real-expertise-behind-the-advice-p2">F27 · Show the real expertise behind the advice · P2</h3>
+<p><strong>Observed:</strong> bylines primarily identify SoftNest Fabric Care; the long comparison article identifies the team at its end. There is no visible named author/reviewer introduction establishing who contributed the practical experience. Several pieces discuss careful technique, but the people behind it remain abstract.</p>
+<p><strong>Recommendation:</strong> use a real technician&#39;s name and a short, accurate role where they have genuinely authored or reviewed the advice. Include permissioned photographs or concise examples from the team&#39;s work, especially when explaining residue, pet contamination or protecting floors. Maintain dates when advice actually changes. Do not add credentials or “expert reviewed” labels without a real process.</p>
+<p><strong>Done when:</strong> readers can connect the advice with a real person and relevant experience.</p>
+<h3 id="article-coverage-and-editorial-priorities">Article coverage and editorial priorities</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Article reviewed, abbreviated for scanning</th>
+<th>Strongest value</th>
+<th>Next improvement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Upholstery cleaning prices in Toronto: five questions</td>
+<td>Teaches scope and quote comparison</td>
+<td>Approved budget examples and visible pricing promise</td>
+</tr>
+<tr>
+<td>Pet urine on a couch</td>
+<td>High-intent problem and realistic contamination explanation</td>
+<td>First actions sooner; pet-specific assessment route</td>
+</tr>
+<tr>
+<td>Couch drying after cleaning</td>
+<td>Addresses an important day-of concern</td>
+<td>Consistent conditional time range and exception guidance</td>
+</tr>
+<tr>
+<td>Office carpet cleaning frequency</td>
+<td>Useful commercial planning</td>
+<td>Business route and business-oriented related advice</td>
+</tr>
+<tr>
+<td>How to choose an upholstery cleaning company</td>
+<td>Detailed, fair comparison; specific SoftNest standards</td>
+<td>Contents list; move its valuable SoftNest promise into buying pages</td>
+</tr>
+<tr>
+<td>Signs a sofa needs cleaning</td>
+<td>Helps early-stage recognition</td>
+<td>Align stated inclusions with actual service scope</td>
+</tr>
+<tr>
+<td>Vacuuming and professional carpet cleaning</td>
+<td>Explains maintenance versus deeper cleaning</td>
+<td>Relevant carpet enquiry and maintenance next reads</td>
+</tr>
+<tr>
+<td>Dirty sofa armrests</td>
+<td>Specific everyday problem</td>
+<td>Real close-up case and contextual sofa action</td>
+</tr>
+<tr>
+<td>Remove a couch stain without making it worse</td>
+<td>Conservative practical sequence and stop conditions</td>
+<td>Faster first-answer access and clear photo help</td>
+</tr>
+<tr>
+<td>Why a couch stain returns</td>
+<td>Useful distinction between wicking, residue and damage</td>
+<td>Relevant assessed case and follow-up route</td>
+</tr>
+<tr>
+<td>What cleaning solution to use</td>
+<td>Avoids one-product-fits-all advice</td>
+<td>Short initial checklist and named practical reviewer</td>
+</tr>
+</tbody></table></div>
+<h3 id="seo-through-a-better-customer-experience">SEO through a better customer experience</h3>
+<p>This review concerns content usefulness and discovery, not site mechanics. The most credible search opportunity is to make existing pages satisfy their visitors more completely.</p>
+<ul>
+<li><strong>Service intent:</strong> make the item, service area, scope, proof and enquiry obvious on the landing page. Use natural customer language such as couch, sofa, pet urine and stairs where it genuinely describes the service.</li>
+<li><strong>Price intent:</strong> resolve budget uncertainty with honest examples and inclusions rather than adding more words around a price question.</li>
+<li><strong>Local intent:</strong> build on real jobs and genuine access information. Repeating a city name cannot substitute for local usefulness.</li>
+<li><strong>Problem intent:</strong> answer the immediate question, explain limits, then link to the service that can assess it.</li>
+<li><strong>Trust:</strong> introduce the real business and keep names, service coverage and contact details consistent with the public business profile.</li>
+</ul>
+<p>Google&#39;s guidance supports useful content grounded in real experience and written for people. That is a reason to improve answer completeness and authorship, not a promise of higher rankings. <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content">Google: creating helpful, reliable, people-first content</a>.</p>
+<p>Google also warns about pages created mainly to funnel similar searches onward. The shared city structure observed here is <strong>not</strong> evidence of a violation. It is a reason to prioritise genuine local value before expanding city-page volume. <a href="https://developers.google.com/search/docs/essentials/spam-policies">Google: spam policies</a>.</p>
+<p>Clear public business details help people identify the correct business. Verify the actual business profile and align its customer-facing information with the website as part of ongoing content maintenance. No profile verification or ranking audit was performed here. <a href="https://developers.google.com/search/docs/appearance/establish-business-details">Google: establish your business details</a>.</p>
+<h2 id="step-10-confirmation-and-follow-up">Step 10 — Confirmation and follow-up</h2>
+<p><strong>Health: needs attention; confirmation content only. Evidence: E44.</strong></p>
+<h3 id="f28-give-the-customer-a-concrete-next-expectation-p1">F28 · Give the customer a concrete next expectation · P1</h3>
+<p><strong>Observed:</strong> the directly opened thank-you screen says the request was received and the team will be in touch “soon.” It offers social photo sharing and a phone option. It does not establish a specific response window or show a customer-specific request summary in the preview.</p>
+<p><strong>Recommendation:</strong> tell customers the supported reply channel and a realistic staffed window, including out-of-hours expectations. Show the submitted scope and photo status when available. State clearly whether a booking has been made. If more information is needed, offer one obvious completion action. Keep the phone option for time-sensitive questions without implying emergency availability.</p>
+<p><strong>Done when:</strong> a customer knows what has been received, what is outstanding, when to expect a reply and what to do if it does not arrive.</p>
+<p><strong>Evidence limit:</strong> the page was opened directly. No lead was submitted, and successful delivery, personalised confirmation, failed submission and subsequent communications were not tested.</p>
+<h2 id="step-11-mobile-and-accessibility-observations">Step 11 — Mobile and accessibility observations</h2>
+<p><strong>Health: mixed. Evidence: E45–E58, plus E04/E48.</strong></p>
+<h3 id="f29-separate-comparison-controls-from-gallery-navigation-for-keyboard-users-p1">F29 · Separate comparison controls from gallery navigation for keyboard users · P1</h3>
+<p><strong>Observed:</strong> pressing ArrowRight while focused on the sofa before/after comparison left its value at 50 and advanced the gallery from item 1 to item 2. This was reproduced in the current project. Pointer dragging a sectional comparison did change the comparison, so the issue is specific to the observed keyboard interaction.</p>
+<p><strong>Recommendation:</strong> a focused comparison should respond to its expected adjustment keys without changing the job. Give gallery navigation separate, clearly named controls. Preserve a simpler way to view both images.</p>
+<p><strong>Done when:</strong> a keyboard user can inspect the before and after views, then independently choose another job, with a visible focus indication.</p>
+<h3 id="f30-keep-answers-next-to-questions-and-tasks-ahead-of-decoration-p2">F30 · Keep answers next to questions and tasks ahead of decoration · P2</h3>
+<p><strong>Observed:</strong> desktop homepage FAQ answers appear across the layout, below a large sofa image, with an initially empty answer area. Mobile uses inline answers, which is easier to follow. The mobile location directory gives a large map priority over search; service and journal directories also devote substantial opening space to imagery.</p>
+<p><strong>Recommendation:</strong> preserve the mobile inline FAQ and apply the same close question/answer relationship on desktop. Consider opening the most useful answer initially. Bring search and choice controls earlier on small screens. Order FAQs around buying blockers: quote/price, drying, treatment limits, access, preparation and guarantee.</p>
+<p><strong>Done when:</strong> a selected answer is easy to locate and a directory visitor reaches the relevant choice without unnecessary scrolling.</p>
+<h3 id="f31-improve-contact-access-and-small-text-comfort-on-mobile-p2">F31 · Improve contact access and small-text comfort on mobile · P2</h3>
+<p><strong>Observed:</strong> the mobile menu provides call and quote actions once opened. Service openings do not provide a direct action outside that menu. Some uppercase labels, muted supporting text and status messages are small. The tested 320-wide article did not show overall horizontal overflow in its observed state.</p>
+<p><strong>Recommendation:</strong> give service openings a direct action first. Then consider a compact call/quote bar after scrolling if it demonstrably helps; it must not obscure form fields or the keyboard. Enlarge important status text and secondary instructions. Check touch targeting, text enlargement, focus order and contrast across the completed journey.</p>
+<p><strong>Done when:</strong> a customer can call or enquire comfortably, and important instructions remain readable when text is enlarged.</p>
+<p>These are observed usability and accessibility risks, not a certification or full accessibility assessment. Screen-reader interpretation, all keyboard paths, measured colour contrast, reduced-motion preferences, real-device zoom and motor-access needs require further testing. Do not label the site compliant from screenshots alone.</p>
+<figure><a href="screenshots/47-mobile-faq-open.jpg" target="_blank"><img src="screenshots/47-mobile-faq-open.jpg" alt="E47 — Mobile FAQ keeps the answer with its question; preserve this pattern." loading="lazy"></a><figcaption>E47 — Mobile FAQ keeps the answer with its question; preserve this pattern.</figcaption></figure>
+<h2 id="step-12-contact-policies-and-appointment-reassurance">Step 12 — Contact, policies and appointment reassurance</h2>
+<p><strong>Health: mixed. Evidence: E42–E43, E55, E75–E76.</strong></p>
+<h3 id="f32-put-everyday-service-reassurance-where-people-look-for-it-p2">F32 · Put everyday service reassurance where people look for it · P2</h3>
+<p><strong>Observed:</strong> privacy and terms are accessible and readable. The privacy explanation says customer photos are not published without separate permission, which is useful reassurance. The footer Contact area provides email and GTA location information, but no phone or hours; the phone is elsewhere in the desktop header and mobile menu. Guarantee, pricing and preparation details are distributed across different pages.</p>
+<p><strong>Recommendation:</strong> add a plainly labelled phone, normal contact hours and reply expectations to the footer/contact area. Near photo sharing, state the actual privacy practice briefly. Create a concise “Before your visit” explanation covering accessible furniture, pets, parking/elevator information and drying, using the team&#39;s real requirements. Bring policy essentials into the relevant decision and link to the full text.</p>
+<p><strong>Done when:</strong> someone reaching the footer can contact the business and understand the practical next step without searching back through the site. A business-domain email could be a later polish choice; it is less urgent than making the existing contact path coherent.</p>
+<h2 id="suggested-customer-facing-wording">Suggested customer-facing wording</h2>
+<p>These are working recommendations, not approved promises. The owner should verify operational details before publication. Existing website statements are distinguished from new choices below; a statement observed in the current project has not necessarily been verified on the published website.</p>
+<h3 id="homepage-opening">Homepage opening</h3>
+<blockquote>
+<p><strong>Careful sofa, upholstery and carpet cleaning across the GTA.</strong></p>
+<p>A cleaner home feels better. We assess your fabric and areas of concern, explain what improvement is realistic, and agree the cleaning scope before we start.</p>
+<p><strong>Request a cleaning quote</strong> · <strong>See our results</strong></p>
+</blockquote>
+<p>The service-area line should reflect the business&#39;s exact coverage. The original emotional headline can remain if this practical line is equally easy to see.</p>
+<h3 id="pricing-reassurance">Pricing reassurance</h3>
+<blockquote>
+<p><strong>A clear price for the work we agree.</strong></p>
+<p>Our confirmed quote includes tax. Extra time or repeat treatment within the agreed scope does not add extra fees. We explain the proposed work and any limitations before you decide.</p>
+</blockquote>
+<p>This develops the promise already present in the company-selection article. Confirm that it is current and applies to the services where it will be shown. Explain any actual exclusions alongside it.</p>
+<h3 id="quote-introduction">Quote introduction</h3>
+<blockquote>
+<p><strong>Tell us what needs cleaning.</strong></p>
+<p>Choose your items and share any stains, odours or access details. A SoftNest team member will review your request and confirm the proposed scope and price.</p>
+<p><strong>Request my quote</strong></p>
+</blockquote>
+<p>Add a verified response window and reply channel here. Add “free” and “no obligation” only once the actual policy is confirmed. If photos become part of the form, describe them as helpful rather than making a perfect set of photos a prerequisite for starting a conversation.</p>
+<h3 id="guarantee-explanation">Guarantee explanation</h3>
+<p>Use a short owner-approved statement answering: <strong>“What should I report, how soon, how will you assess it, and when is further work included?”</strong> Keep stain-removal limitations beside it. No new refund, return-visit or response-time promise is proposed as a fact in this audit.</p>
+<h3 id="confirmation-structure">Confirmation structure</h3>
+<blockquote>
+<p><strong>Your quote request has been received.</strong></p>
+<p>We will review your items and contact you using your selected reply method. Your appointment is confirmed only after we agree the details with you.</p>
+</blockquote>
+<p>Use the final sentence only if it describes the actual booking process. Follow with the real response window, a request summary, photo status and a clear fallback contact. Avoid leaving “soon” as the only expectation.</p>
+<h2 id="recommended-page-order">Recommended page order</h2>
+<p>These are content priorities, not a requirement to rebuild every page.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>Recommended sequence</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Homepage</td>
+<td>Clear service/location + quote → short verified proof → what needs cleaning → relevant real results → agreed-scope/pricing reassurance → meet the team → useful FAQs → quote and contact</td>
+</tr>
+<tr>
+<td>Service page</td>
+<td>Item-specific offer + quote → suitable items and concerns → relevant result/review → standard agreed scope and limitations → price explanation → process, access and drying → related questions → contextual quote</td>
+</tr>
+<tr>
+<td>City page</td>
+<td>Confirm coverage + local quote → relevant services → practical access guidance → genuine local or accurately labelled regional proof → neighbourhood/availability help → local questions → quote with city retained</td>
+</tr>
+<tr>
+<td>Individual quote</td>
+<td>Clear expectations → item and location context already retained → comfortable item details → optional material/concerns and photos → contact/reply preference → summary and request action</td>
+</tr>
+<tr>
+<td>Business journey</td>
+<td>Commercial scope → scheduling/assessment expectations → relevant proof → organisation/contact/location/frequency → requirements/photos through a supported business channel → business confirmation</td>
+</tr>
+<tr>
+<td>Article</td>
+<td>Direct answer → practical sequence or comparison → examples and limits → relevant next service/help → task-specific related reading</td>
+</tr>
+</tbody></table></div>
+<p>Avoid adding mandatory fields merely because information might be useful. Request what is needed to provide a helpful first reply; gather remaining details during assessment.</p>
+<h2 id="delivery-plan-and-decisions">Delivery plan and decisions</h2>
+<h3 id="first-pass-remove-enquiry-friction-and-trust-ambiguity">First pass — remove enquiry friction and trust ambiguity</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Work package</th>
+<th>Findings</th>
+<th>Responsible business input</th>
+<th>Acceptance</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Coherent photo and reply journey</td>
+<td>F01, F04, F28</td>
+<td>Which channels are staffed; response window; whether estimates are free</td>
+<td>A non-social customer can request and complete a usable quote</td>
+</tr>
+<tr>
+<td>Comfortable mobile item detail entry</td>
+<td>F02, F22</td>
+<td>Minimum details genuinely needed for each item</td>
+<td>Sofa, carpet and stairs tasks work comfortably at small widths</td>
+</tr>
+<tr>
+<td>Retained context and service-page action</td>
+<td>F03, F08</td>
+<td>Preferred enquiry action wording</td>
+<td>Service/city visitors continue with their selections visible</td>
+</tr>
+<tr>
+<td>Accurate reviews and clear guarantee</td>
+<td>F06, F07</td>
+<td>Original review locations; actual remedy and reporting policy</td>
+<td>Published location/guarantee claims can be explained and supported</td>
+</tr>
+<tr>
+<td>Visible agreed-price reassurance</td>
+<td>F05</td>
+<td>Confirm scope, tax, fee exceptions and examples</td>
+<td>A visitor understands the pricing process before requesting help</td>
+</tr>
+<tr>
+<td>Usable keyboard comparison</td>
+<td>F29</td>
+<td>No special policy decision</td>
+<td>Comparison adjustment and next-job navigation work independently</td>
+</tr>
+</tbody></table></div>
+<h3 id="second-pass-make-softnest-easier-to-choose">Second pass — make SoftNest easier to choose</h3>
+<p>Improve service categorisation and search; add real job stories; introduce the team; improve review context; tighten service scope summaries; bring location search and mobile actions forward; make contact and appointment guidance easy to find. Use actual customer enquiries to choose the most important vocabulary and questions.</p>
+<h3 id="third-pass-strengthen-exploration-and-content-discovery">Third pass — strengthen exploration and content discovery</h3>
+<p>Improve article answers and next steps; organise the journal by customer need; connect commercial content to its form; build useful local evidence for priority cities. Expand content only after existing high-intent pages answer their questions well.</p>
+<p>The sequence is more useful than a promised calendar without knowing staffing, photo workflow and content availability. A small first release can improve the quote journey before a larger proof-and-content refresh.</p>
+<h3 id="owner-decisions-needed-before-publishing-promises">Owner decisions needed before publishing promises</h3>
+<ol>
+<li>Is every enquiry/estimate free, and what exactly commits a customer to a booking?</li>
+<li>Which reply and photo channels are reliably staffed? What reply window is realistic, including evenings and weekends?</li>
+<li>Does the tax-inclusive, no-extra-time-fee promise apply to all services? What changes require a revised agreed scope?</li>
+<li>What does satisfaction follow-up provide, and what reporting period is workable?</li>
+<li>Which reviews can accurately be attributed to each city? Which may only be presented as regional feedback?</li>
+<li>Which real team names/photos, job photos and client details are approved for publication?</li>
+<li>What are the actual minimum charges, travel/access conditions and commercial scheduling capabilities, if any?</li>
+</ol>
+<p>These are content and operating decisions, not permission requests to perform this audit.</p>
+<h2 id="how-to-validate-the-changes-with-people">How to validate the changes with people</h2>
+<p>Run short sessions with people resembling actual customers, including someone who is unfamiliar with upholstery terminology, someone using a small phone, and someone who does not use Instagram or Facebook. Observe what they do before explaining the site. A small set of sessions provides directional insight, not a population-wide conversion estimate.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>What a successful experience looks like</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“Your dog had an accident on a sofa. Find out whether this business can help.”</td>
+<td>Finds pet treatment using ordinary wording; understands limits; reaches relevant assessment</td>
+</tr>
+<tr>
+<td>“Compare this cleaner with another for a three-seat sofa.”</td>
+<td>Explains scope, price process, tax/fees, proof and guarantee without hunting through articles</td>
+</tr>
+<tr>
+<td>“Request cleaning for two sofas and carpeted stairs from your phone.”</td>
+<td>Adds the items comfortably, retains separate details, sees a clear summary</td>
+</tr>
+<tr>
+<td>“You live in a Toronto condo. Ask about a quote.”</td>
+<td>Recognises coverage, retains city, sees what access details matter</td>
+</tr>
+<tr>
+<td>“Send enough information for a quote without a social-media account.”</td>
+<td>Completes a supported route and knows whether photos are still needed</td>
+</tr>
+<tr>
+<td>“Use the result comparison with a keyboard.”</td>
+<td>Adjusts the before/after view without accidentally changing jobs</td>
+</tr>
+<tr>
+<td>“You manage a small office and need recurring carpet cleaning.”</td>
+<td>Finds commercial information, uses Business request, receives relevant expectations</td>
+</tr>
+</tbody></table></div>
+<p>Ask afterwards: “What happens next?”, “What might change the price?”, “What does the guarantee mean?”, and “What information are you still missing?” Those answers reveal whether the changes improved confidence.</p>
+<h3 id="business-outcomes-to-watch">Business outcomes to watch</h3>
+<p>Use a baseline before setting targets. Track the proportion of started enquiries that become usable requests; photo completion; how often the team must chase missing item/location information; qualified enquiries that become booked jobs; response time against the published promise; and the sources/services producing useful enquiries. Separate households from businesses and mobile from desktop when practical.</p>
+<p>Do not optimise only for more form submissions. A useful enquiry that can become a well-scoped job is worth more than a larger pile of incomplete or mismatched requests. Avoid interpreting longer sessions or more page views as success when visitors may be confused.</p>
+<h2 id="evidence-limits-and-review-integrity">Evidence limits and review integrity</h2>
+<ul>
+<li>This is a UX, messaging and content-discovery review. It contains no code, hosting, performance, security, structured-data or other technical audit.</li>
+<li>Observed interface states support the findings. Customer hesitation and commercial impact are expert interpretations to validate, not measured facts.</li>
+<li>No analytics, search performance reports, session recordings, interviews or competitor conversion data were available. No ranking, traffic or revenue effect is quantified.</li>
+<li>No real lead, phone call, email, social message, booking or payment was sent. The thank-you page was inspected directly; delivery and follow-up remain untested.</li>
+<li>All listed service, city and article bodies were reviewed. Not every collapsed FAQ, form combination, input edge case or search synonym was exercised.</li>
+<li>Google review origins, counts, job cities, product claims, qualifications and insurance were not independently authenticated. Verification is recommended where the site relies on those claims.</li>
+<li>Mobile observations use browser viewport overrides, not real-device or assistive-technology coverage. No complete accessibility or legal-compliance claim is made.</li>
+<li>Published and current project states differed. Evidence E01–E11 records the published baseline; E12 onward records the current project. Later screenshots include selected mobile and narrow views. E44 is a confirmation preview, not evidence of a delivered lead.</li>
+</ul>
+<p>The practical standard for the next version is straightforward: <strong>a visitor should be able to recognise their problem, see believable relevant evidence, understand the proposed service and price process, and request help without repeating themselves or needing a social account.</strong></p>
+<h2 id="screenshot-appendix">Screenshot appendix</h2>
+<p>Open the <a href="report.html#evidence-gallery">visual report and complete screenshot appendix</a> for every accepted capture, arranged by the twelve journey steps. The <a href="evidence-index.md">evidence index</a> provides individual file links and notes. The gap at E02 is intentional: an unusable loading capture was rejected.</p>
+<section id="evidence-gallery"><p class="eyebrow">Evidence library</p><h2>Every accepted screen, with context</h2><p>75 inspected captures, grouped by the twelve customer tasks. Expand a step and select an image to inspect it at full size. Source labels distinguish the published baseline from the current project.</p><details><summary><span>Step 1 · Understand SoftNest on arrival</span><small>Good foundation; mixed decision clarity · 3 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e01"><div class="evidence-meta">E01 · Published website</div><h3>Homepage first impression</h3><a href="screenshots/01-home-first-impression.jpg" target="_blank"><img src="screenshots/01-home-first-impression.jpg" alt="Homepage first impression" loading="lazy"></a><p>Published desktop opening: emotional offer, service/GTA context, quote and reviews.</p><a class="source" href="https://softnestcare.ca/">Observed route: /</a></article><article class="evidence" id="e05"><div class="evidence-meta">E05 · Published website</div><h3>Desktop FAQ drying answer</h3><a href="screenshots/05-home-faq-answer.jpg" target="_blank"><img src="screenshots/05-home-faq-answer.jpg" alt="Desktop FAQ drying answer" loading="lazy"></a><p>Answer is detached from its question, beneath decorative imagery.</p><a class="source" href="https://softnestcare.ca/">Observed route: /</a></article><article class="evidence" id="e45"><div class="evidence-meta">E45 · Current project</div><h3>Mobile homepage</h3><a href="screenshots/45-mobile-home-first-screen.jpg" target="_blank"><img src="screenshots/45-mobile-home-first-screen.jpg" alt="Mobile homepage" loading="lazy"></a><p>390 × 844 override; clean quote opening, practical proof farther down.</p><a class="source" href="http://localhost:3000/">Observed route: /</a></article></div></details><details><summary><span>Step 2 · Find the right service</span><small>Needs attention · 3 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e06"><div class="evidence-meta">E06 · Published website</div><h3>Service directory</h3><a href="screenshots/06-services-discovery.jpg" target="_blank"><img src="screenshots/06-services-discovery.jpg" alt="Service directory" loading="lazy"></a><p>Short item/service labels and large introductory hero.</p><a class="source" href="https://softnestcare.ca/services/">Observed route: /services/</a></article><article class="evidence" id="e07"><div class="evidence-meta">E07 · Published website</div><h3>Pet urine service search</h3><a href="screenshots/07-service-search-pet-urine.jpg" target="_blank"><img src="screenshots/07-service-search-pet-urine.jpg" alt="Pet urine service search" loading="lazy"></a><p>Published service search returns no exact match for the tested problem wording.</p><a class="source" href="https://softnestcare.ca/services/">Observed route: /services/</a></article><article class="evidence" id="e12"><div class="evidence-meta">E12 · Current project</div><h3>Current pet urine service search</h3><a href="screenshots/12-current-service-search.jpg" target="_blank"><img src="screenshots/12-current-service-search.jpg" alt="Current pet urine service search" loading="lazy"></a><p>Current project reproduces the mismatch despite an existing pet service.</p><a class="source" href="http://localhost:3000/services/">Observed route: /services/</a></article></div></details><details><summary><span>Step 3 · Decide whether a service is right</span><small>Mixed · 15 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e08"><div class="evidence-meta">E08 · Published website</div><h3>Sofa service opening</h3><a href="screenshots/08-sofa-service-top.jpg" target="_blank"><img src="screenshots/08-sofa-service-top.jpg" alt="Sofa service opening" loading="lazy"></a><p>Published baseline, large image and description; contextual opening action absent.</p><a class="source" href="https://softnestcare.ca/services/sofa-cleaning/">Observed route: /services/sofa-cleaning/</a></article><article class="evidence" id="e09"><div class="evidence-meta">E09 · Published website</div><h3>Sofa service inclusions</h3><a href="screenshots/09-sofa-service-inclusions.jpg" target="_blank"><img src="screenshots/09-sofa-service-inclusions.jpg" alt="Sofa service inclusions" loading="lazy"></a><p>Qualified scope description and useful care explanations.</p><a class="source" href="https://softnestcare.ca/services/sofa-cleaning/">Observed route: /services/sofa-cleaning/</a></article><article class="evidence" id="e10"><div class="evidence-meta">E10 · Published website</div><h3>Sofa pricing FAQ</h3><a href="screenshots/10-sofa-pricing-faq.jpg" target="_blank"><img src="screenshots/10-sofa-pricing-faq.jpg" alt="Sofa pricing FAQ" loading="lazy"></a><p>Pricing factors rather than a usable example budget.</p><a class="source" href="https://softnestcare.ca/services/sofa-cleaning/">Observed route: /services/sofa-cleaning/</a></article><article class="evidence" id="e13"><div class="evidence-meta">E13 · Current project</div><h3>Current sofa opening</h3><a href="screenshots/13-current-sofa-top.jpg" target="_blank"><img src="screenshots/13-current-sofa-top.jpg" alt="Current sofa opening" loading="lazy"></a><p>Current service hero reviewed independently of the published baseline.</p><a class="source" href="http://localhost:3000/services/sofa-cleaning/">Observed route: /services/sofa-cleaning/</a></article><article class="evidence" id="e33"><div class="evidence-meta">E33 · Current project</div><h3>Pet treatment service</h3><a href="screenshots/33-pet-treatment-service.jpg" target="_blank"><img src="screenshots/33-pet-treatment-service.jpg" alt="Pet treatment service" loading="lazy"></a><p>Realistic limitations; relevant case evidence could be stronger.</p><a class="source" href="http://localhost:3000/services/pet-stain-odour-removal/">Observed route: /services/pet-stain-odour-removal/</a></article><article class="evidence" id="e34"><div class="evidence-meta">E34 · Current project</div><h3>Carpet and rug service</h3><a href="screenshots/34-carpet-rug-service.jpg" target="_blank"><img src="screenshots/34-carpet-rug-service.jpg" alt="Carpet and rug service" loading="lazy"></a><p>Residential focus; stairs and commercial routes need clarity.</p><a class="source" href="http://localhost:3000/services/carpet-area-rug-cleaning/">Observed route: /services/carpet-area-rug-cleaning/</a></article><article class="evidence" id="e35"><div class="evidence-meta">E35 · Current project</div><h3>Leather service</h3><a href="screenshots/35-leather-service.jpg" target="_blank"><img src="screenshots/35-leather-service.jpg" alt="Leather service" loading="lazy"></a><p>Material-specific care needs a clear onward quote route.</p><a class="source" href="http://localhost:3000/services/leather-upholstery-cleaning/">Observed route: /services/leather-upholstery-cleaning/</a></article><article class="evidence" id="e36"><div class="evidence-meta">E36 · Current project</div><h3>Mattress service</h3><a href="screenshots/36-mattress-service.jpg" target="_blank"><img src="screenshots/36-mattress-service.jpg" alt="Mattress service" loading="lazy"></a><p>Item-specific description and results reviewed.</p><a class="source" href="http://localhost:3000/services/mattress-cleaning/">Observed route: /services/mattress-cleaning/</a></article><article class="evidence" id="e37"><div class="evidence-meta">E37 · Current project</div><h3>Sectional service</h3><a href="screenshots/37-sectional-service.jpg" target="_blank"><img src="screenshots/37-sectional-service.jpg" alt="Sectional service" loading="lazy"></a><p>Category boundary with other furniture needs explanation.</p><a class="source" href="http://localhost:3000/services/sectional-furniture-cleaning/">Observed route: /services/sectional-furniture-cleaning/</a></article><article class="evidence" id="e38"><div class="evidence-meta">E38 · Current project</div><h3>Dining chair service</h3><a href="screenshots/38-dining-chair-service.jpg" target="_blank"><img src="screenshots/38-dining-chair-service.jpg" alt="Dining chair service" loading="lazy"></a><p>Familiar item and contextual proof.</p><a class="source" href="http://localhost:3000/services/dining-chair-cleaning/">Observed route: /services/dining-chair-cleaning/</a></article><article class="evidence" id="e39"><div class="evidence-meta">E39 · Current project</div><h3>Armchair service</h3><a href="screenshots/39-armchair-service.jpg" target="_blank"><img src="screenshots/39-armchair-service.jpg" alt="Armchair service" loading="lazy"></a><p>Helpful specific item page; overlaps broader furniture labels.</p><a class="source" href="http://localhost:3000/services/armchair-cleaning/">Observed route: /services/armchair-cleaning/</a></article><article class="evidence" id="e40"><div class="evidence-meta">E40 · Current project</div><h3>Stairs and hallways service</h3><a href="screenshots/40-stairs-service.jpg" target="_blank"><img src="screenshots/40-stairs-service.jpg" alt="Stairs and hallways service" loading="lazy"></a><p>Dedicated service exists; quote route nests stairs under carpet/rug.</p><a class="source" href="http://localhost:3000/services/stairs-hallways-cleaning/">Observed route: /services/stairs-hallways-cleaning/</a></article><article class="evidence" id="e41"><div class="evidence-meta">E41 · Current project</div><h3>General upholstery service</h3><a href="screenshots/41-general-upholstery-service.jpg" target="_blank"><img src="screenshots/41-general-upholstery-service.jpg" alt="General upholstery service" loading="lazy"></a><p>Useful umbrella; relationship with specific items should be explicit.</p><a class="source" href="http://localhost:3000/services/upholstery-cleaning/">Observed route: /services/upholstery-cleaning/</a></article><article class="evidence" id="e52"><div class="evidence-meta">E52 · Current project</div><h3>Mobile sofa opening</h3><a href="screenshots/52-mobile-service-entry.jpg" target="_blank"><img src="screenshots/52-mobile-service-entry.jpg" alt="Mobile sofa opening" loading="lazy"></a><p>No immediate contextual quote/call outside menu.</p><a class="source" href="http://localhost:3000/services/sofa-cleaning/">Observed route: /services/sofa-cleaning/</a></article><article class="evidence" id="e75"><div class="evidence-meta">E75 · Current project</div><h3>Buried pricing promise</h3><a href="screenshots/75-buried-price-promise.jpg" target="_blank"><img src="screenshots/75-buried-price-promise.jpg" alt="Buried pricing promise" loading="lazy"></a><p>The current article states a tax-inclusive confirmed price and no extra time fees within agreed scope.</p><a class="source" href="http://localhost:3000/blog/how-to-choose-an-upholstery-cleaning-company/">Observed route: /blog/how-to-choose-an-upholstery-cleaning-company/</a></article></div></details><details><summary><span>Step 4 · Judge results and trust</span><small>Mixed; attribution needs attention · 4 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e03"><div class="evidence-meta">E03 · Published website</div><h3>Homepage result gallery</h3><a href="screenshots/03-home-results-next.jpg" target="_blank"><img src="screenshots/03-home-results-next.jpg" alt="Homepage result gallery" loading="lazy"></a><p>Gallery navigation and real-work proof; job context is quiet.</p><a class="source" href="https://softnestcare.ca/">Observed route: /</a></article><article class="evidence" id="e66"><div class="evidence-meta">E66 · Current project</div><h3>Hamilton review attribution</h3><a href="screenshots/66-hamilton-review-attribution.jpg" target="_blank"><img src="screenshots/66-hamilton-review-attribution.jpg" alt="Hamilton review attribution" loading="lazy"></a><p>Three shared reviews under a Hamilton-customer heading.</p><a class="source" href="http://localhost:3000/location/hamilton/">Observed route: /location/hamilton/</a></article><article class="evidence" id="e67"><div class="evidence-meta">E67 · Current project</div><h3>Toronto review attribution</h3><a href="screenshots/67-toronto-review-attribution.jpg" target="_blank"><img src="screenshots/67-toronto-review-attribution.jpg" alt="Toronto review attribution" loading="lazy"></a><p>Same three reviews under a Toronto-customer heading; provenance unverified.</p><a class="source" href="http://localhost:3000/location/toronto/">Observed route: /location/toronto/</a></article><article class="evidence" id="e76"><div class="evidence-meta">E76 · Current project</div><h3>Family products FAQ</h3><a href="screenshots/76-family-products-faq.jpg" target="_blank"><img src="screenshots/76-family-products-faq.jpg" alt="Family products FAQ" loading="lazy"></a><p>Practical product/drying explanation is more cautious than broad badges.</p><a class="source" href="http://localhost:3000/">Observed route: /</a></article></div></details><details><summary><span>Step 5 · Check service coverage</span><small>Generally good · 16 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e18"><div class="evidence-meta">E18 · Current project</div><h3>Location directory</h3><a href="screenshots/18-location-hub.jpg" target="_blank"><img src="screenshots/18-location-hub.jpg" alt="Location directory" loading="lazy"></a><p>Coverage discovery and map presentation.</p><a class="source" href="http://localhost:3000/location/">Observed route: /location/</a></article><article class="evidence" id="e19"><div class="evidence-meta">E19 · Current project</div><h3>Neighbourhood matching</h3><a href="screenshots/19-neighbourhood-search.jpg" target="_blank"><img src="screenshots/19-neighbourhood-search.jpg" alt="Neighbourhood matching" loading="lazy"></a><p>Port Credit resolves to Mississauga.</p><a class="source" href="http://localhost:3000/location/">Observed route: /location/</a></article><article class="evidence" id="e20"><div class="evidence-meta">E20 · Current project</div><h3>Postal availability check</h3><a href="screenshots/20-postal-availability.jpg" target="_blank"><img src="screenshots/20-postal-availability.jpg" alt="Postal availability check" loading="lazy"></a><p>L5B receives a manual-check route; its value is retained in the quote.</p><a class="source" href="http://localhost:3000/location/">Observed route: /location/</a></article><article class="evidence" id="e21"><div class="evidence-meta">E21 · Current project</div><h3>Mississauga opening</h3><a href="screenshots/21-mississauga-entry.jpg" target="_blank"><img src="screenshots/21-mississauga-entry.jpg" alt="Mississauga opening" loading="lazy"></a><p>Local landing page and scope context.</p><a class="source" href="http://localhost:3000/location/mississauga/">Observed route: /location/mississauga/</a></article><article class="evidence" id="e22"><div class="evidence-meta">E22 · Current project</div><h3>Mississauga FAQ</h3><a href="screenshots/22-mississauga-faq.jpg" target="_blank"><img src="screenshots/22-mississauga-faq.jpg" alt="Mississauga FAQ" loading="lazy"></a><p>Local planning and pricing questions.</p><a class="source" href="http://localhost:3000/location/mississauga/">Observed route: /location/mississauga/</a></article><article class="evidence" id="e23"><div class="evidence-meta">E23 · Current project</div><h3>Toronto opening</h3><a href="screenshots/23-toronto-entry.jpg" target="_blank"><img src="screenshots/23-toronto-entry.jpg" alt="Toronto opening" loading="lazy"></a><p>Local quote action exists; city was blank in the next quote state.</p><a class="source" href="http://localhost:3000/location/toronto/">Observed route: /location/toronto/</a></article><article class="evidence" id="e53"><div class="evidence-meta">E53 · Current project</div><h3>Mobile location opening</h3><a href="screenshots/53-mobile-location-hub.jpg" target="_blank"><img src="screenshots/53-mobile-location-hub.jpg" alt="Mobile location opening" loading="lazy"></a><p>Large map pushes task control down.</p><a class="source" href="http://localhost:3000/location/">Observed route: /location/</a></article><article class="evidence" id="e54"><div class="evidence-meta">E54 · Current project</div><h3>Mobile manual availability</h3><a href="screenshots/54-mobile-postal-message.jpg" target="_blank"><img src="screenshots/54-mobile-postal-message.jpg" alt="Mobile manual availability" loading="lazy"></a><p>Small manual-check message and action.</p><a class="source" href="http://localhost:3000/location/">Observed route: /location/</a></article><article class="evidence" id="e56"><div class="evidence-meta">E56 · Current project</div><h3>Mobile Toronto opening</h3><a href="screenshots/56-mobile-toronto-entry.jpg" target="_blank"><img src="screenshots/56-mobile-toronto-entry.jpg" alt="Mobile Toronto opening" loading="lazy"></a><p>Local quote action and city relevance.</p><a class="source" href="http://localhost:3000/location/toronto/">Observed route: /location/toronto/</a></article><article class="evidence" id="e59"><div class="evidence-meta">E59 · Current project</div><h3>Brampton opening</h3><a href="screenshots/59-brampton-entry.jpg" target="_blank"><img src="screenshots/59-brampton-entry.jpg" alt="Brampton opening" loading="lazy"></a><p>Full page text compared with Toronto; distinct neighbourhood/FAQ topics.</p><a class="source" href="http://localhost:3000/location/brampton/">Observed route: /location/brampton/</a></article><article class="evidence" id="e60"><div class="evidence-meta">E60 · Current project</div><h3>Oakville opening</h3><a href="screenshots/60-oakville-entry.jpg" target="_blank"><img src="screenshots/60-oakville-entry.jpg" alt="Oakville opening" loading="lazy"></a><p>Full page text compared with Toronto; distinct neighbourhood/FAQ topics.</p><a class="source" href="http://localhost:3000/location/oakville/">Observed route: /location/oakville/</a></article><article class="evidence" id="e61"><div class="evidence-meta">E61 · Current project</div><h3>Etobicoke opening</h3><a href="screenshots/61-etobicoke-entry.jpg" target="_blank"><img src="screenshots/61-etobicoke-entry.jpg" alt="Etobicoke opening" loading="lazy"></a><p>Full page text compared with Toronto; distinct neighbourhood/FAQ topics.</p><a class="source" href="http://localhost:3000/location/etobicoke/">Observed route: /location/etobicoke/</a></article><article class="evidence" id="e62"><div class="evidence-meta">E62 · Current project</div><h3>Burlington opening</h3><a href="screenshots/62-burlington-entry.jpg" target="_blank"><img src="screenshots/62-burlington-entry.jpg" alt="Burlington opening" loading="lazy"></a><p>Full page text compared with Toronto; distinct neighbourhood/FAQ topics.</p><a class="source" href="http://localhost:3000/location/burlington/">Observed route: /location/burlington/</a></article><article class="evidence" id="e63"><div class="evidence-meta">E63 · Current project</div><h3>Vaughan opening</h3><a href="screenshots/63-vaughan-entry.jpg" target="_blank"><img src="screenshots/63-vaughan-entry.jpg" alt="Vaughan opening" loading="lazy"></a><p>Full page text compared with Toronto; distinct neighbourhood/FAQ topics.</p><a class="source" href="http://localhost:3000/location/vaughan/">Observed route: /location/vaughan/</a></article><article class="evidence" id="e64"><div class="evidence-meta">E64 · Current project</div><h3>Milton opening</h3><a href="screenshots/64-milton-entry.jpg" target="_blank"><img src="screenshots/64-milton-entry.jpg" alt="Milton opening" loading="lazy"></a><p>Full page text compared with Toronto; distinct neighbourhood/FAQ topics.</p><a class="source" href="http://localhost:3000/location/milton/">Observed route: /location/milton/</a></article><article class="evidence" id="e65"><div class="evidence-meta">E65 · Current project</div><h3>Hamilton opening</h3><a href="screenshots/65-hamilton-entry.jpg" target="_blank"><img src="screenshots/65-hamilton-entry.jpg" alt="Hamilton opening" loading="lazy"></a><p>Full page text compared with Toronto; distinct neighbourhood/FAQ topics.</p><a class="source" href="http://localhost:3000/location/hamilton/">Observed route: /location/hamilton/</a></article></div></details><details><summary><span>Step 6 · Meet the business</span><small>Underdeveloped · 1 screen</small></summary><div class="evidence-grid"><article class="evidence" id="e24"><div class="evidence-meta">E24 · Current project</div><h3>About SoftNest</h3><a href="screenshots/24-about-company.jpg" target="_blank"><img src="screenshots/24-about-company.jpg" alt="About SoftNest" loading="lazy"></a><p>Text-only family-run positioning without a named team introduction.</p><a class="source" href="http://localhost:3000/about/">Observed route: /about/</a></article></div></details><details open><summary><span>Step 7 · Request an individual quote</span><small>Needs attention · 7 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e11"><div class="evidence-meta">E11 · Published website</div><h3>Published quote from sofa</h3><a href="screenshots/11-quote-entry-from-sofa.jpg" target="_blank"><img src="screenshots/11-quote-entry-from-sofa.jpg" alt="Published quote from sofa" loading="lazy"></a><p>Published baseline; service city field absent here. The current project adds it.</p><a class="source" href="https://softnestcare.ca/quote/">Observed route: /quote/</a></article><article class="evidence" id="e14"><div class="evidence-meta">E14 · Current project</div><h3>Current quote entry</h3><a href="screenshots/14-current-quote-entry.jpg" target="_blank"><img src="screenshots/14-current-quote-entry.jpg" alt="Current quote entry" loading="lazy"></a><p>Current project includes service city/postal code and clearer photo matching instructions.</p><a class="source" href="http://localhost:3000/quote/">Observed route: /quote/</a></article><article class="evidence" id="e15"><div class="evidence-meta">E15 · Current project</div><h3>Sofa quote details</h3><a href="screenshots/15-current-quote-sofa.jpg" target="_blank"><img src="screenshots/15-current-quote-sofa.jpg" alt="Sofa quote details" loading="lazy"></a><p>Selected-item detail questions; multi-item support is a strength.</p><a class="source" href="http://localhost:3000/quote/">Observed route: /quote/</a></article><article class="evidence" id="e16"><div class="evidence-meta">E16 · Current project</div><h3>Empty quote validation</h3><a href="screenshots/16-quote-validation.jpg" target="_blank"><img src="screenshots/16-quote-validation.jpg" alt="Empty quote validation" loading="lazy"></a><p>Blank action focused the name field. No real lead was sent.</p><a class="source" href="http://localhost:3000/quote/">Observed route: /quote/</a></article><article class="evidence" id="e49"><div class="evidence-meta">E49 · Current project</div><h3>Mobile quote entry</h3><a href="screenshots/49-mobile-quote-entry.jpg" target="_blank"><img src="screenshots/49-mobile-quote-entry.jpg" alt="Mobile quote entry" loading="lazy"></a><p>Mobile individual request introduction.</p><a class="source" href="http://localhost:3000/quote/">Observed route: /quote/</a></article><article class="evidence" id="e50"><div class="evidence-meta">E50 · Current project</div><h3>Mobile carpet item</h3><a href="screenshots/50-mobile-carpet-choice.jpg" target="_blank"><img src="screenshots/50-mobile-carpet-choice.jpg" alt="Mobile carpet item" loading="lazy"></a><p>Selected detail remains in a half-width card.</p><a class="source" href="http://localhost:3000/quote/">Observed route: /quote/</a></article><article class="evidence" id="e51"><div class="evidence-meta">E51 · Current project</div><h3>Mobile stair questions</h3><a href="screenshots/51-mobile-stairs-quote.jpg" target="_blank"><img src="screenshots/51-mobile-stairs-quote.jpg" alt="Mobile stair questions" loading="lazy"></a><p>Narrow stair/landing inputs and wrapped controls.</p><a class="source" href="http://localhost:3000/quote/">Observed route: /quote/</a></article></div></details><details><summary><span>Step 8 · Request business cleaning</span><small>Needs attention · 2 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e17"><div class="evidence-meta">E17 · Current project</div><h3>Business quote branch</h3><a href="screenshots/17-business-quote.jpg" target="_blank"><img src="screenshots/17-business-quote.jpg" alt="Business quote branch" loading="lazy"></a><p>Organisation, work email and frequency; social photo instructions persist.</p><a class="source" href="http://localhost:3000/quote/">Observed route: /quote/</a></article><article class="evidence" id="e32"><div class="evidence-meta">E32 · Current project</div><h3>Office article household ending</h3><a href="screenshots/32-office-guide-household-cta.jpg" target="_blank"><img src="screenshots/32-office-guide-household-cta.jpg" alt="Office article household ending" loading="lazy"></a><p>Home-focused closing and generic quote dilute the business route.</p><a class="source" href="http://localhost:3000/blog/how-often-should-office-carpets-be-cleaned/">Observed route: /blog/how-often-should-office-carpets-be-cleaned/</a></article></div></details><details><summary><span>Step 9 · Learn through the journal</span><small>Good content; mixed onward journey · 15 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e25"><div class="evidence-meta">E25 · Current project</div><h3>Journal directory</h3><a href="screenshots/25-blog-directory.jpg" target="_blank"><img src="screenshots/25-blog-directory.jpg" alt="Journal directory" loading="lazy"></a><p>Relevant library; opportunity to browse by practical need.</p><a class="source" href="http://localhost:3000/blog/">Observed route: /blog/</a></article><article class="evidence" id="e26"><div class="evidence-meta">E26 · Current project</div><h3>Journal search</h3><a href="screenshots/26-blog-search.jpg" target="_blank"><img src="screenshots/26-blog-search.jpg" alt="Journal search" loading="lazy"></a><p>Pet urine wording finds the relevant article, unlike service search.</p><a class="source" href="http://localhost:3000/blog/">Observed route: /blog/</a></article><article class="evidence" id="e27"><div class="evidence-meta">E27 · Current project</div><h3>Price guide opening</h3><a href="screenshots/27-price-guide-top.jpg" target="_blank"><img src="screenshots/27-price-guide-top.jpg" alt="Price guide opening" loading="lazy"></a><p>Five comparison questions; numerical budget remains unresolved.</p><a class="source" href="http://localhost:3000/blog/upholstery-cleaning-prices-toronto/">Observed route: /blog/upholstery-cleaning-prices-toronto/</a></article><article class="evidence" id="e28"><div class="evidence-meta">E28 · Current project</div><h3>Price guide reading</h3><a href="screenshots/28-price-guide-reading.jpg" target="_blank"><img src="screenshots/28-price-guide-reading.jpg" alt="Price guide reading" loading="lazy"></a><p>Useful scope/quote advice; no approved job-price examples.</p><a class="source" href="http://localhost:3000/blog/upholstery-cleaning-prices-toronto/">Observed route: /blog/upholstery-cleaning-prices-toronto/</a></article><article class="evidence" id="e29"><div class="evidence-meta">E29 · Current project</div><h3>Pet urine guide</h3><a href="screenshots/29-pet-urine-guide.jpg" target="_blank"><img src="screenshots/29-pet-urine-guide.jpg" alt="Pet urine guide" loading="lazy"></a><p>Relevant high-intent problem and cautious advice.</p><a class="source" href="http://localhost:3000/blog/how-to-remove-pet-urine-smell-from-couch/">Observed route: /blog/how-to-remove-pet-urine-smell-from-couch/</a></article><article class="evidence" id="e30"><div class="evidence-meta">E30 · Current project</div><h3>Drying guide</h3><a href="screenshots/30-drying-guide.jpg" target="_blank"><img src="screenshots/30-drying-guide.jpg" alt="Drying guide" loading="lazy"></a><p>Important customer question; align conditional time expectations.</p><a class="source" href="http://localhost:3000/blog/how-long-does-a-couch-take-to-dry-after-cleaning/">Observed route: /blog/how-long-does-a-couch-take-to-dry-after-cleaning/</a></article><article class="evidence" id="e31"><div class="evidence-meta">E31 · Current project</div><h3>Office carpet guide</h3><a href="screenshots/31-office-carpet-guide.jpg" target="_blank"><img src="screenshots/31-office-carpet-guide.jpg" alt="Office carpet guide" loading="lazy"></a><p>Commercial planning content.</p><a class="source" href="http://localhost:3000/blog/how-often-should-office-carpets-be-cleaned/">Observed route: /blog/how-often-should-office-carpets-be-cleaned/</a></article><article class="evidence" id="e57"><div class="evidence-meta">E57 · Current project</div><h3>Mobile pet article opening</h3><a href="screenshots/57-mobile-article-entry.jpg" target="_blank"><img src="screenshots/57-mobile-article-entry.jpg" alt="Mobile pet article opening" loading="lazy"></a><p>Title/lead/image precede immediate practical action.</p><a class="source" href="http://localhost:3000/blog/how-to-remove-pet-urine-smell-from-couch/">Observed route: /blog/how-to-remove-pet-urine-smell-from-couch/</a></article><article class="evidence" id="e68"><div class="evidence-meta">E68 · Current project</div><h3>Choosing a company guide</h3><a href="screenshots/68-choosing-company-guide.jpg" target="_blank"><img src="screenshots/68-choosing-company-guide.jpg" alt="Choosing a company guide" loading="lazy"></a><p>Long detailed comparison; useful SoftNest standards near end.</p><a class="source" href="http://localhost:3000/blog/how-to-choose-an-upholstery-cleaning-company/">Observed route: /blog/how-to-choose-an-upholstery-cleaning-company/</a></article><article class="evidence" id="e69"><div class="evidence-meta">E69 · Current project</div><h3>Sofa cleaning signs guide</h3><a href="screenshots/69-sofa-needs-cleaning-guide.jpg" target="_blank"><img src="screenshots/69-sofa-needs-cleaning-guide.jpg" alt="Sofa cleaning signs guide" loading="lazy"></a><p>Early-stage awareness; align inclusion language with service promise.</p><a class="source" href="http://localhost:3000/blog/how-to-know-when-your-sofa-needs-professional-cleaning/">Observed route: /blog/how-to-know-when-your-sofa-needs-professional-cleaning/</a></article><article class="evidence" id="e70"><div class="evidence-meta">E70 · Current project</div><h3>Vacuuming guide</h3><a href="screenshots/70-vacuuming-guide.jpg" target="_blank"><img src="screenshots/70-vacuuming-guide.jpg" alt="Vacuuming guide" loading="lazy"></a><p>Routine maintenance versus professional cleaning.</p><a class="source" href="http://localhost:3000/blog/does-vacuuming-clean-carpet/">Observed route: /blog/does-vacuuming-clean-carpet/</a></article><article class="evidence" id="e71"><div class="evidence-meta">E71 · Current project</div><h3>Armrest guide</h3><a href="screenshots/71-armrest-guide.jpg" target="_blank"><img src="screenshots/71-armrest-guide.jpg" alt="Armrest guide" loading="lazy"></a><p>Specific common furniture concern.</p><a class="source" href="http://localhost:3000/blog/why-sofa-armrests-get-dirty-faster/">Observed route: /blog/why-sofa-armrests-get-dirty-faster/</a></article><article class="evidence" id="e72"><div class="evidence-meta">E72 · Current project</div><h3>Stain removal guide</h3><a href="screenshots/72-stain-removal-guide.jpg" target="_blank"><img src="screenshots/72-stain-removal-guide.jpg" alt="Stain removal guide" loading="lazy"></a><p>Conservative first actions and clear stop conditions.</p><a class="source" href="http://localhost:3000/blog/how-to-remove-stain-from-couch/">Observed route: /blog/how-to-remove-stain-from-couch/</a></article><article class="evidence" id="e73"><div class="evidence-meta">E73 · Current project</div><h3>Returning stain guide</h3><a href="screenshots/73-returning-stain-guide.jpg" target="_blank"><img src="screenshots/73-returning-stain-guide.jpg" alt="Returning stain guide" loading="lazy"></a><p>Wicking, residue and damage distinctions.</p><a class="source" href="http://localhost:3000/blog/why-did-my-couch-stain-come-back-after-cleaning/">Observed route: /blog/why-did-my-couch-stain-come-back-after-cleaning/</a></article><article class="evidence" id="e74"><div class="evidence-meta">E74 · Current project</div><h3>Cleaning solution guide</h3><a href="screenshots/74-cleaning-solution-guide.jpg" target="_blank"><img src="screenshots/74-cleaning-solution-guide.jpg" alt="Cleaning solution guide" loading="lazy"></a><p>Care-code/material-led advice; no universal product promise.</p><a class="source" href="http://localhost:3000/blog/what-cleaning-solution-can-i-use-on-my-couch/">Observed route: /blog/what-cleaning-solution-can-i-use-on-my-couch/</a></article></div></details><details><summary><span>Step 10 · Understand confirmation and follow-up</span><small>Content preview; needs attention · 1 screen</small></summary><div class="evidence-grid"><article class="evidence" id="e44"><div class="evidence-meta">E44 · Current project</div><h3>Confirmation preview</h3><a href="screenshots/44-confirmation-screen-preview.jpg" target="_blank"><img src="screenshots/44-confirmation-screen-preview.jpg" alt="Confirmation preview" loading="lazy"></a><p>Opened directly, not by sending a request. Content only; delivery untested.</p><a class="source" href="http://localhost:3000/quote/thank-you/">Observed route: /quote/thank-you/</a></article></div></details><details><summary><span>Step 11 · Use mobile and keyboard controls</span><small>Mixed · 5 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e04"><div class="evidence-meta">E04 · Published website</div><h3>Comparison control</h3><a href="screenshots/04-home-comparison-control.jpg" target="_blank"><img src="screenshots/04-home-comparison-control.jpg" alt="Comparison control" loading="lazy"></a><p>Published baseline comparison state; supports the gallery review. Keyboard behaviour was also checked in the current project.</p><a class="source" href="https://softnestcare.ca/">Observed route: /</a></article><article class="evidence" id="e46"><div class="evidence-meta">E46 · Current project</div><h3>Mobile menu</h3><a href="screenshots/46-mobile-menu.jpg" target="_blank"><img src="screenshots/46-mobile-menu.jpg" alt="Mobile menu" loading="lazy"></a><p>Call and quote are available once menu is opened.</p><a class="source" href="http://localhost:3000/">Observed route: /</a></article><article class="evidence" id="e47"><div class="evidence-meta">E47 · Current project</div><h3>Mobile inline FAQ</h3><a href="screenshots/47-mobile-faq-open.jpg" target="_blank"><img src="screenshots/47-mobile-faq-open.jpg" alt="Mobile inline FAQ" loading="lazy"></a><p>Answer stays with its question; preserve this responsive pattern.</p><a class="source" href="http://localhost:3000/">Observed route: /</a></article><article class="evidence" id="e48"><div class="evidence-meta">E48 · Current project</div><h3>Mobile result gallery</h3><a href="screenshots/48-mobile-results.jpg" target="_blank"><img src="screenshots/48-mobile-results.jpg" alt="Mobile result gallery" loading="lazy"></a><p>Current comparison keyboard check advanced gallery while value stayed 50; pointer comparison also tested separately.</p><a class="source" href="http://localhost:3000/">Observed route: /</a></article><article class="evidence" id="e58"><div class="evidence-meta">E58 · Current project</div><h3>Narrow article view</h3><a href="screenshots/58-narrow-mobile-article.jpg" target="_blank"><img src="screenshots/58-narrow-mobile-article.jpg" alt="Narrow article view" loading="lazy"></a><p>320 × 740 override; no overall horizontal overflow in observed state.</p><a class="source" href="http://localhost:3000/blog/how-to-remove-pet-urine-smell-from-couch/">Observed route: /blog/how-to-remove-pet-urine-smell-from-couch/</a></article></div></details><details><summary><span>Step 12 · Find contact and service reassurance</span><small>Mixed · 3 screens</small></summary><div class="evidence-grid"><article class="evidence" id="e42"><div class="evidence-meta">E42 · Current project</div><h3>Privacy page</h3><a href="screenshots/42-privacy.jpg" target="_blank"><img src="screenshots/42-privacy.jpg" alt="Privacy page" loading="lazy"></a><p>Readable policy and photo-publication permission reassurance.</p><a class="source" href="http://localhost:3000/privacy/">Observed route: /privacy/</a></article><article class="evidence" id="e43"><div class="evidence-meta">E43 · Current project</div><h3>Service terms</h3><a href="screenshots/43-service-terms.jpg" target="_blank"><img src="screenshots/43-service-terms.jpg" alt="Service terms" loading="lazy"></a><p>Realistic result limits; guarantee needs more practical explanation.</p><a class="source" href="http://localhost:3000/terms/">Observed route: /terms/</a></article><article class="evidence" id="e55"><div class="evidence-meta">E55 · Current project</div><h3>Mobile footer</h3><a href="screenshots/55-mobile-footer.jpg" target="_blank"><img src="screenshots/55-mobile-footer.jpg" alt="Mobile footer" loading="lazy"></a><p>Email present; phone and contact hours absent from Contact area.</p><a class="source" href="http://localhost:3000/">Observed route: /</a></article></div></details></section><footer>Prepared from the current project and published baseline. UX, messaging and content discovery only. No real enquiry was sent. The editable report and screenshots are stored beside this file.</footer></main></body></html>

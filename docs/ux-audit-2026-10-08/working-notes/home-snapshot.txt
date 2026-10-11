@@ -1,0 +1,252 @@
+- banner:
+  - link "SoftNest Fabric Care home":
+    - /url: /
+    - strong: SoftNest
+    - generic: Fabric Care
+  - navigation "Main navigation":
+    - link "Services":
+      - /url: /services/
+      - text: Services
+    - link "Locations":
+      - /url: /location/
+    - link "Blog":
+      - /url: /blog/
+    - link "About Us":
+      - /url: /about/
+  - link "(416) 727-0287":
+    - /url: tel:+14167270287
+    - generic: (416) 727-0287
+  - link "Get a Quote":
+    - /url: /quote/
+- main:
+  - region "A Cleaner Home Feels Better.":
+    - paragraph: Proudly Serving the GTA
+    - heading "A Cleaner Home Feels Better." [level=1]:
+      - text: A Cleaner Home
+      - text: Feels
+      - emphasis: Better.
+    - paragraph: Professional cleaning for the furniture and carpets you live with every day—using fabric-safe products, professional equipment, and meticulous care to refresh your home’s comfort.
+    - link "Get an upholstery and carpet cleaning quote":
+      - /url: /quote/
+      - text: Get a Quote
+    - link "See our reviews":
+      - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+      - text: See our reviews
+    - list "Service benefits":
+      - text: Eco-Friendly
+      - text: Products
+      - text: Safe for Kids
+      - text: "& Pets"
+      - text: Satisfaction
+      - text: Guaranteed
+  - region "Google reviews":
+    - img "Google"
+    - generic: Reviews
+    - strong: "5.0"
+    - generic "5 out of 5 stars": ★★★★★
+    - link "Read all reviews":
+      - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+      - text: Read all reviews
+      - generic: →
+    - generic "Recent Google reviews":
+      - link "Open SoftNest Fabric Care on Google Maps to read Nicky C.'s review":
+        - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+        - generic "5 out of 5 stars": ★★★★★
+        - paragraph: “The team was able to accommodate my request to change the time, kept me informed and updated and did an awesome job.”
+        - generic: "N"
+        - strong: Nicky C.
+        - generic: ↗
+      - link "Open SoftNest Fabric Care on Google Maps to read Julie T.'s review":
+        - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+        - generic "5 out of 5 stars": ★★★★★
+        - paragraph: “Andrii and his son are incredible! They went above and beyond. They are very good and detailed, and I would give them 10 out of 10 stars.”
+        - generic: J
+        - strong: Julie T.
+        - generic: ↗
+      - link "Open SoftNest Fabric Care on Google Maps to read Andrew G.'s review":
+        - /url: https://maps.app.goo.gl/XHFbygUj49Suv9F48
+        - generic "5 out of 5 stars": ★★★★★
+        - paragraph: “They spent hours working hard to make my old sofa look new again. Very friendly and communicative. They gave me options and it worked out very well. Highly recommended!”
+        - generic: A
+        - strong: Andrew G.
+        - generic: ↗
+- region "See The Difference.":
+  - paragraph: Real Homes. Real Results.
+  - heading "See The Difference." [level=2]
+  - paragraph: Real before-and-after results from sofas and carpets cleaned across the GTA.
+  - generic "SoftNest social media":
+    - paragraph: Follow SoftNest
+    - group "SoftNest social media":
+      - link "Visit SoftNest Fabric Care on Facebook":
+        - /url: https://www.facebook.com/profile.php?id=61590622653207
+      - link "Visit SoftNest Fabric Care on Instagram":
+        - /url: https://www.instagram.com/softnestfabriccare/
+  - button "Show previous cleaning results":
+  - generic "Before and after cleaning results carousel, showing item 3 of 8":
+    - article:
+      - slider "Compare sofa before and after cleaning": "50"
+    - article:
+      - slider "Compare sectional sofa before and after cleaning": "50"
+    - article:
+      - slider "Compare mattress before and after cleaning": "50"
+    - article:
+      - slider "Compare carpet before and after cleaning": "50"
+    - article:
+      - slider "Compare stained sofa before and after cleaning": "50"
+    - article:
+      - slider "Compare dining chairs before and after cleaning": "50"
+    - article:
+      - slider "Compare sectional before and after cleaning": "50"
+    - article:
+      - slider "Compare sectional sofa before and after deep cleaning": "50"
+  - button "Show next cleaning results":
+- generic: What We Clean
+- heading "Our Cleaning Services" [level=2]
+- paragraph: Explore what each service includes, how the process works and the results you can realistically expect.
+- link "Learn about sofa & couch cleaning":
+  - /url: /services/sofa-cleaning/
+  - img "Grey fabric sofa in a family living room"
+  - heading "Sofas" [level=3]
+- link "Learn about pet stain & odour treatment":
+  - /url: /services/pet-stain-odour-removal/
+  - img "Golden dog resting on a living room rug beside a sofa"
+  - heading "Pet Treatment" [level=3]
+- link "Learn about sectional & furniture cleaning":
+  - /url: /services/sectional-furniture-cleaning/
+  - img "Light fabric L-shaped sectional in a family room"
+  - heading "Sectionals" [level=3]
+- link "Learn about carpet & area rug cleaning":
+  - /url: /services/carpet-area-rug-cleaning/
+  - img "Textured cream area rug in a living room"
+  - heading "Carpets & Rugs" [level=3]
+- region "See How We Clean":
+  - link "Watch SoftNest cleaning videos on Instagram":
+    - /url: https://www.instagram.com/softnestfabriccare/
+    - img "Professional upholstery extraction on a cream sofa"
+  - paragraph: See SoftNest in action
+  - heading "See How We Clean" [level=2]
+  - paragraph: Proven methods and professional extraction equipment, used with care in your home.
+- region "Frequently Asked Questions":
+  - generic: FAQ
+  - heading "Frequently Asked Questions" [level=2]
+  - paragraph: Find answers to the most common questions about our cleaning services.
+  - generic "Frequently asked questions":
+    - button "Do you guarantee that every stain will be removed?":
+      - generic: Do you guarantee that every stain will be removed?
+    - button "Are your cleaning products safe for kids and pets?":
+      - generic: Are your cleaning products safe for kids and pets?
+    - button "How often should I have my upholstery cleaned?":
+      - generic: How often should I have my upholstery cleaned?
+    - button "How long does it take for upholstery to dry?" [expanded] [active]:
+      - generic: How long does it take for upholstery to dry?
+    - button "What areas do you service?":
+      - generic: What areas do you service?
+    - button "Can you remove old pet urine stains and odours?":
+      - generic: Can you remove old pet urine stains and odours?
+    - button "Do you clean leather sofas?":
+      - generic: Do you clean leather sofas?
+    - button "Do I pay before or after the cleaning service?":
+      - generic: Do I pay before or after the cleaning service?
+    - button "How should I prepare my furniture before your visit?":
+      - generic: How should I prepare my furniture before your visit?
+  - img "Freshly cleaned cream sofa in a bright living room"
+  - heading "How long does it take for upholstery to dry?" [level=3]
+  - paragraph: Most sofas take one to two hours to clean and usually dry within six to eight hours, depending on the fabric, airflow and soil level.
+- img "Bright living room with a deep green sofa"
+- paragraph: Professional care for every room
+- heading "Ready for a Fresher, Cleaner Home?" [level=2]
+- paragraph: Get a quote today and experience the SoftNest difference.
+- link "Get a Quote":
+  - /url: /quote/
+  - text: Get a Quote
+  - generic: →
+- contentinfo:
+  - heading "SoftNest" [level=2]
+  - paragraph:
+    - text: Quality You Can See.
+    - text: Care You Can Trust.
+  - paragraph: Professional upholstery and carpet cleaning across the Greater Toronto Area.
+  - link "About SoftNest":
+    - /url: /about/
+  - paragraph: Follow our work
+  - group "SoftNest social media":
+    - link "Visit SoftNest Fabric Care on Facebook":
+      - /url: https://www.facebook.com/profile.php?id=61590622653207
+      - generic: Facebook
+    - link "Visit SoftNest Fabric Care on Instagram":
+      - /url: https://www.instagram.com/softnestfabriccare/
+      - generic: Instagram
+  - heading "Services" [level=3]
+  - list:
+    - link "Sofa & Couch Cleaning":
+      - /url: /services/sofa-cleaning/
+    - link "Leather Upholstery Cleaning":
+      - /url: /services/leather-upholstery-cleaning/
+    - link "Sectional & Furniture Cleaning":
+      - /url: /services/sectional-furniture-cleaning/
+    - link "Carpet & Area Rug Cleaning":
+      - /url: /services/carpet-area-rug-cleaning/
+    - link "Mattress Cleaning":
+      - /url: /services/mattress-cleaning/
+    - link "Dining Chair Cleaning":
+      - /url: /services/dining-chair-cleaning/
+    - link "Armchair Cleaning":
+      - /url: /services/armchair-cleaning/
+    - link "Stairs & Hallways":
+      - /url: /services/stairs-hallways-cleaning/
+    - link "Pet Stain & Odour Removal":
+      - /url: /services/pet-stain-odour-removal/
+  - link "View all services":
+    - /url: /services/
+  - heading "Company" [level=3]
+  - list:
+    - link "About SoftNest":
+      - /url: /about/
+    - link "Our Results":
+      - /url: /#results
+    - link "Care Journal":
+      - /url: /blog/
+    - link "Get a Quote":
+      - /url: /quote/
+  - heading "Areas We Serve" [level=3]
+  - list:
+    - link "Mississauga":
+      - /url: /location/mississauga/
+    - link "Toronto":
+      - /url: /location/toronto/
+    - link "Brampton":
+      - /url: /location/brampton/
+    - link "Oakville":
+      - /url: /location/oakville/
+    - link "Etobicoke":
+      - /url: /location/etobicoke/
+    - link "Burlington":
+      - /url: /location/burlington/
+    - link "Vaughan":
+      - /url: /location/vaughan/
+    - link "Milton":
+      - /url: /location/milton/
+    - link "Hamilton":
+      - /url: /location/hamilton/
+  - link "View all locations":
+    - /url: /location/
+  - heading "Contact" [level=3]
+  - paragraph:
+    - link "softnestfabriccare@gmail.com":
+      - /url: mailto:softnestfabriccare@gmail.com
+  - paragraph:
+    - text: Greater Toronto Area
+    - text: Ontario
+  - generic "SoftNest service radius map":
+    - iframe
+  - paragraph: © 2026 SoftNest Fabric Care. All rights reserved.
+  - paragraph:
+    - link "Privacy":
+      - /url: /privacy/
+    - generic: "|"
+    - link "Terms":
+      - /url: /terms/
+    - generic: "|"
+    - link "About SoftNest":
+      - /url: /about/
+- alert
