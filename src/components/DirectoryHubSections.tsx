@@ -19,7 +19,6 @@ type HeroTitleLine = {
 
 type DirectoryHeroProps = {
   id: string;
-  kicker: string;
   titleLines: HeroTitleLine[];
   description: string;
   primaryAction?: HubAction;
@@ -31,7 +30,6 @@ type DirectoryHeroProps = {
 
 export function DirectoryHero({
   id,
-  kicker,
   titleLines,
   description,
   primaryAction,
@@ -46,8 +44,6 @@ export function DirectoryHero({
       aria-labelledby={id}
     >
       <div className="locations-hero__copy">
-        <p className="locations-kicker">{kicker}</p>
-        <span className="locations-kicker-line" aria-hidden="true" />
         <h1 id={id}>
           {titleLines.map((line) => (
             <span
@@ -143,7 +139,6 @@ type SupportCard = {
 
 type DirectorySupportSectionProps = {
   id?: string;
-  kicker: string;
   title: string;
   description: string;
   primaryAction: HubAction;
@@ -155,7 +150,6 @@ type DirectorySupportSectionProps = {
 
 export function DirectorySupportSection({
   id,
-  kicker,
   title,
   description,
   primaryAction,
@@ -170,9 +164,7 @@ export function DirectorySupportSection({
       id={id}
     >
       <div className="locations-missing__copy">
-        <p className="locations-kicker">{kicker}</p>
         <h2>{title}</h2>
-        <span className="locations-kicker-line" aria-hidden="true" />
         <p>{description}</p>
         <div className="locations-missing__actions">
           <Link
@@ -214,7 +206,6 @@ export function DirectorySupportSection({
 
 type DirectoryFinalCtaProps = {
   id?: string;
-  kicker: string;
   title: string;
   description: string;
   action: HubAction;
@@ -225,7 +216,6 @@ type DirectoryFinalCtaProps = {
 
 export function DirectoryFinalCta({
   id,
-  kicker,
   title,
   description,
   action,
@@ -244,9 +234,7 @@ export function DirectoryFinalCta({
         />
       </div>
       <div className="locations-final-cta__copy">
-        <p className="locations-kicker">{kicker}</p>
         <h2>{title}</h2>
-        <span className="locations-kicker-line" aria-hidden="true" />
         <p>{description}</p>
         <Link
           className={`locations-pill locations-pill--light${action.href.startsWith("/quote") ? " quote-cta" : ""}`}

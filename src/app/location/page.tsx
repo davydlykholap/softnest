@@ -58,7 +58,6 @@ export default function LocationsPage() {
       <main className="locations-hub-v2">
         <DirectoryHero
           id="locations-heading"
-          kicker="Serving the Greater Toronto Area"
           titleLines={[
             { text: "Professional Care," },
             { text: "Closer to Home.", accent: true },
@@ -116,9 +115,7 @@ export default function LocationsPage() {
 
         <section className="locations-simple-support" id="ask-about-your-city">
           <div className="locations-simple-support__copy">
-            <p className="locations-kicker">Still nearby?</p>
             <h2>Don&apos;t see your city?</h2>
-            <span className="locations-kicker-line" aria-hidden="true" />
             <p>
               Send us your city or postal code and we&apos;ll confirm whether we
               can schedule service in your neighbourhood.
@@ -134,7 +131,6 @@ export default function LocationsPage() {
         </section>
 
         <DirectoryFinalCta
-          kicker="Professional care, close to home"
           title="A fresher home is closer than you think."
           description="Trusted by homeowners across the GTA for professional, careful cleaning that makes a real difference."
           action={{ href: "/quote/", label: siteConfig.quoteLabel }}

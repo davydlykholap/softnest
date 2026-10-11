@@ -8,11 +8,11 @@
 }
 
 .introduction {
-  padding: clamp(64px, 7vw, 100px) 0;
+  padding: clamp(48px, 5vw, 72px) 0;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 1.5fr;
   align-items: start;
-  gap: 40px;
+  gap: clamp(32px, 6vw, 80px);
 }
 
 .rule {
@@ -24,14 +24,15 @@
 }
 
 .introduction p {
-  max-width: 940px;
   margin: 0;
-  font-family: var(--location-page-serif);
-  font-size: clamp(20px, 1.8vw, 27px);
-  line-height: 1.6;
-  letter-spacing: -.015em;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--location-page-muted);
 }
 
+.introductionCopy { display: grid; gap: 18px; }
+
+.introduction h2,
 .service h2,
 .more h2,
 .why h2,
@@ -143,15 +144,14 @@
 @media (max-width: 1000px) {
   .more { grid-template-columns: 1fr 2fr; }
   .moreActions { grid-column: 2; }
-  .introduction { grid-template-columns: 1fr 5fr; gap: 24px; }
+  .introduction { grid-template-columns: 1fr 1.5fr; gap: 32px; }
   .why { grid-template-columns: 1fr; }
   .why h2 br { display: none; }
   .service { gap: 32px; }
 }
 
 @media (max-width: 700px) {
-  .introduction { display: block; padding: 48px 0; }
-  .introduction p { font-size: 21px; }
+  .introduction { grid-template-columns: 1fr; gap: 24px; padding: 48px 0; }
   .services { padding: 0 0 48px; }
   .service { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
   .service:nth-child(2) .serviceImage,

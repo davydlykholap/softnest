@@ -19,7 +19,6 @@ export default function TermsPage() {
       </div>
       <main className={styles.page}>
         <article className={styles.shell}>
-          <p className={styles.eyebrow}>{siteConfig.name}</p>
           <h1>Terms of Service</h1>
           <p className={styles.updated}>Last updated: August 6, 2026</p>
 

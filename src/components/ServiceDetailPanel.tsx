@@ -53,7 +53,6 @@ export default function ServiceDetailPanel({
           <Image src={service.image} alt={service.imageAlt} fill priority sizes="(max-width: 820px) 100vw, 65vw" />
         </div>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Professional fabric care across the GTA</p>
           <HeroHeading id="service-heading">{service.name}</HeroHeading>
           <p>{service.heroDescription}</p>
         </div>
@@ -61,7 +60,6 @@ export default function ServiceDetailPanel({
 
       <section className={`${styles.serviceSection} ${styles.editorialSection}`} aria-labelledby="service-overview-heading">
         <div className={styles.editorialIntro}>
-          <p className={styles.eyebrow}>About this service</p>
           <SectionHeading id="service-overview-heading">
             A closer look at {service.shortName.toLowerCase()}
           </SectionHeading>
@@ -87,7 +85,6 @@ export default function ServiceDetailPanel({
         </div>
 
         <div className={styles.examplesNote}>
-          <p className={styles.eyebrow}>Common examples</p>
           <NoteHeading>When this service may be a good fit</NoteHeading>
           <p>
             Homeowners commonly contact us about {naturalList(service.concerns)}.
@@ -100,7 +97,6 @@ export default function ServiceDetailPanel({
       {project ? (
         <section className={styles.resultFeature} aria-labelledby="proof-heading">
           <div className={styles.resultFeatureCopy}>
-            <p className={styles.eyebrow}>Real homes, real results</p>
             <span className={styles.resultFeatureRule} aria-hidden="true" />
             <SectionHeading id="proof-heading">
               <span>See the</span>
@@ -126,7 +122,6 @@ export default function ServiceDetailPanel({
         <section className={`${styles.serviceSection} ${styles.proofSection}`} aria-labelledby="proof-heading">
           <div className={styles.proofInner}>
             <div className={styles.proofHeading}>
-              <p className={styles.eyebrow}>Customer feedback</p>
               <SectionHeading id="proof-heading">What a customer said</SectionHeading>
             </div>
             <blockquote className={styles.reviewCard}>
@@ -139,7 +134,6 @@ export default function ServiceDetailPanel({
 
       <section className={styles.expectationsSection} aria-labelledby="expectations-heading">
         <div className={styles.expectationsHeading}>
-          <p className={styles.eyebrow}>Good to know</p>
           <SectionHeading id="expectations-heading">What to expect before you book</SectionHeading>
           <p>
             Send a few clear photos and describe the item, material if known, and
@@ -161,7 +155,6 @@ export default function ServiceDetailPanel({
 
       <section className={`${styles.serviceSection} ${styles.faqSection}`} id="faq" aria-labelledby="faq-heading">
         <div className={styles.faqHeading}>
-          <p className={styles.eyebrow}>Questions we hear</p>
           <SectionHeading id="faq-heading">Frequently asked questions</SectionHeading>
         </div>
         <FaqAccordion items={service.faq} />

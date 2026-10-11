@@ -49,7 +49,6 @@ export default function HomeVideoShowcase() {
         </div>
 
         <div className="home-video-copy">
-          <p className="home-video-copy__kicker">See SoftNest in action</p>
           <h2 id="cleaning-video-heading">See How We Clean</h2>
           <p>
             Proven methods and professional extraction equipment, used with care in your home.

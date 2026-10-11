@@ -28,7 +28,6 @@ export default function LocationReviews({ location, heading }: { location: Locat
     >
       <div className="location-customer-reviews__heading">
         <div>
-          <p className="location-eyebrow">Customer feedback</p>
           <span className="location-reviews-rule" aria-hidden="true" />
           <h2 id="location-reviews-heading">{heading ?? "What customers say"}</h2>
         </div>

@@ -56,7 +56,6 @@ export default function ServicesPage() {
       <main className="locations-hub-v2">
         <DirectoryHero
           id="services-heading"
-          kicker="Upholstery & carpet care across the GTA"
           titleLines={[
             { text: "Professional Care," },
             { text: "For Every Room.", accent: true },
@@ -101,9 +100,7 @@ export default function ServicesPage() {
 
         <section className="locations-simple-support" id="not-sure-service">
           <div className="locations-simple-support__copy">
-            <p className="locations-kicker">Need a hand?</p>
             <h2>Not sure which service?</h2>
-            <span className="locations-kicker-line" aria-hidden="true" />
             <p>
               Tell us what furniture or carpet needs cleaning and note any
               stains, odours or other concerns. We&apos;ll confirm the right
@@ -120,7 +117,6 @@ export default function ServicesPage() {
         </section>
 
         <DirectoryFinalCta
-          kicker="Professional care, close to home"
           title="A fresher home is closer than you think."
           description="Trusted by homeowners across the GTA for professional, careful cleaning that makes a real difference."
           action={{ href: "/quote/", label: siteConfig.quoteLabel }}

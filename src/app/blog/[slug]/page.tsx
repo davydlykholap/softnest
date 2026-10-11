@@ -75,7 +75,6 @@ export default async function BlogArticlePage({ params }: Props) {
       <main id="main-content" className={styles.main}>
         <article className={styles.article}>
           <Link href="/blog/">← All articles</Link>
-          <p className={styles.eyebrow}>SoftNest Journal</p>
           <h1>{post.title}</h1>
           <p className={styles.meta}>
             <time dateTime={post.publishedAt}>

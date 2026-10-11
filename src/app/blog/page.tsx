@@ -59,7 +59,6 @@ export default function BlogIndexPage() {
           <>
             <DirectoryHero
               id="journal-title"
-              kicker="SoftNest Journal"
               titleLines={[
                 { text: "Practical Care." },
                 { text: "Comfortable Homes.", accent: true },
@@ -85,7 +84,6 @@ export default function BlogIndexPage() {
           </p>
         )}
         <DirectoryFinalCta
-          kicker="Ready for professional care?"
           title="Put your new fabric care know-how to work."
           description="When your sofa or carpet needs more than everyday care, tell us what needs cleaning and we'll help you plan the next step."
           action={{ href: "/quote/", label: siteConfig.quoteLabel }}

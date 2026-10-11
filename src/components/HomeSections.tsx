@@ -19,8 +19,6 @@ export default function HomeSections() {
   <section id="results" className="gallery-section-v2" aria-labelledby="gallery-heading">
     <div className="gallery-intro">
       <div className="gallery-intro__copy">
-        <p className="hero__eyebrow gallery-eyebrow">Real Homes. Real Results.</p>
-        <span className="hero__eyebrow-line gallery-eyebrow-line" aria-hidden="true" />
         <h2 id="gallery-heading"><span className="gallery-heading__line gallery-heading__line--primary">See The</span>{" "}<span className="gallery-heading__line">Difference.</span></h2>
         <p className="gallery-description">Real before-and-after results from sofas and carpets cleaned across the GTA.</p>
       </div>
@@ -39,7 +37,6 @@ export default function HomeSections() {
   <section id="services" className="home-services-section">
     <div className="home-section-inner">
       <div className="home-section-heading">
-        <span className="home-section-kicker">{"" + pageText(homeContent.copy, "sections-36") + ""}</span>
         <span className="home-section-rule" aria-hidden="true" />
         <h2 className="home-section-title">{"" + pageText(homeContent.copy, "sections-37") + ""}</h2>
         <p className="home-services-intro">{"" + pageText(homeContent.copy, "sections-38") + ""}</p>
@@ -63,7 +60,6 @@ export default function HomeSections() {
   <HomeFaqExplorer items={homeFaqs} />
   <DirectoryFinalCta
     id="quote-cta"
-    kicker="Professional care for every room"
     title={pageText(homeContent.copy, "sections-96")}
     description={pageText(homeContent.copy, "sections-97")}
     action={{ href: "/quote/", label: siteConfig.quoteLabel }}

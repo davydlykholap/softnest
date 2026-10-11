@@ -44,8 +44,6 @@ export default function HomeHero() {
         <div className="hero__wash" aria-hidden="true" />
 
         <div className="hero__content">
-          <p className="hero__eyebrow">{"" + pageText(homeContent.copy, "hero-1") + ""}</p>
-          <span className="hero__eyebrow-line" aria-hidden="true" />
           <h1 id="home-hero-heading" className="hero__title">
             A Cleaner Home
             <span className="hero__title-line">Feels <em>Better.</em></span>

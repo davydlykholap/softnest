@@ -70,7 +70,6 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
               mobileServicesOpen ? "mobile-services__links--open" : ""
             }`}
           >
-            <p className="mobile-services__eyebrow">Popular services</p>
             {mobileServices.map((service) => (
               <Link
                 href={`/services/${service.slug}/`}

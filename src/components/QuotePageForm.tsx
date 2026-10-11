@@ -327,7 +327,6 @@ export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
     return (
       <div className="quote-page-success" role="status" aria-live="polite">
         <span className="quote-page-success__icon" aria-hidden="true">✓</span>
-        <p className="quote-page-kicker">Request received</p>
         <h1>Thank you.<br />We’ll be in touch soon.</h1>
         <p>
           We received your cleaning details. A SoftNest specialist will contact

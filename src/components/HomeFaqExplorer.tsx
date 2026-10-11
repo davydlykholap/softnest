@@ -26,7 +26,6 @@ export default function HomeFaqExplorer({ items }: Props) {
       <div className={styles.desktop}>
         <div className={styles.questions}>
           <header className={styles.header}>
-            <span className={styles.kicker}>FAQ</span>
             <span className={styles.rule} aria-hidden="true" />
             <h2>Frequently Asked Questions</h2>
             <p>Find answers to the most common questions about our cleaning services.</p>
@@ -91,7 +90,6 @@ export default function HomeFaqExplorer({ items }: Props) {
 
       <div className={styles.mobile}>
         <header className={styles.header}>
-          <span className={styles.kicker}>FAQ</span>
           <span className={styles.rule} aria-hidden="true" />
           <h2>Frequently Asked Questions</h2>
           <p>Find answers to the most common questions about our cleaning services.</p>

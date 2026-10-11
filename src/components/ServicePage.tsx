@@ -43,7 +43,6 @@ export default function ServicePage({ service }: { service: Service }) {
           <ServiceDetailPanel service={service} />
         </div>
         <DirectoryFinalCta
-          kicker="Professional care for your home"
           title="Show us what needs cleaning."
           description="Tell us about the item or area and any stains or odours. We'll confirm the scope and price before cleaning."
           action={{ href: "/quote/", label: "Get a quote" }}

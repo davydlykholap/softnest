@@ -70,8 +70,6 @@ export default function LocationPage({
           </div>
           <div className="location-page-hero__wash" aria-hidden="true" />
           <div className="location-page-hero__copy">
-            <p className="location-page-kicker">{isOakville ? "SoftNest Fabric Care" : `Proudly serving ${location.name}`}</p>
-            <span className="location-page-kicker-line" aria-hidden="true" />
             <h1 id="location-page-hero-title">
               {isOakville ? "Upholstery, Sofa &" : copyText(location, "page-2", "Upholstery &")}<br />
               {isOakville ? "Carpet Cleaning" : copyText(location, "page-3", "Carpet Cleaning")}<span>{isOakville ? "in Oakville" : copyText(location, "page-4", `in ${location.name}`)}</span>
@@ -93,7 +91,6 @@ export default function LocationPage({
 
             <section className="location-page-process" aria-labelledby="location-page-process-heading">
               <div className="location-page-section-heading">
-                <p className="location-page-kicker">{copyText(location, "page-16", "Our process")}</p>
                 <span className="location-page-section-rule" aria-hidden="true" />
                 <h2 id="location-page-process-heading">How our cleaning works</h2>
                 <p className="location-page-section-heading__intro">
@@ -117,7 +114,6 @@ export default function LocationPage({
 
             <section className="location-page-coverage" aria-labelledby="location-page-coverage-heading">
               <div className="location-page-section-heading">
-                <p className="location-page-kicker">Our service area</p>
                 <span className="location-page-section-rule" aria-hidden="true" />
                 <h2 id="location-page-coverage-heading">Serving all of {location.name}</h2>
               </div>
@@ -153,7 +149,6 @@ export default function LocationPage({
 
             <section className="location-page-local-value" aria-labelledby="location-page-local-value-heading">
               <div className="location-page-section-heading">
-                <p className="location-page-kicker">{copyText(location, "page-23", "Why choose SoftNest")}</p>
                 <span className="location-page-section-rule" aria-hidden="true" />
                 <h2 id="location-page-local-value-heading">
                   Why choose SoftNest in {location.name}</h2>
@@ -179,7 +174,6 @@ export default function LocationPage({
 
             <DirectoryFinalCta
               id="quote-cta"
-              kicker="Professional care for every room"
               title="Ready for a Fresher, Cleaner Home?"
               description="Get a quote today and experience the SoftNest difference."
               action={{ href: "/quote/", label: siteConfig.quoteLabel }}

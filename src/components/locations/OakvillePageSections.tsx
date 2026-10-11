@@ -14,9 +14,13 @@ import styles from "./OakvillePageSections.module.css";
 export default function OakvillePageSections({ location }: { location: Location }) {
   return (
     <>
-      <section className={styles.introduction} aria-label="Our approach">
-        <span className={styles.rule} aria-hidden="true" />
-        <p>{oakvillePage.introduction}</p>
+      <section className={styles.introduction} aria-labelledby="oakville-approach-heading">
+        <h2 id="oakville-approach-heading">Care matched to your fabric.</h2>
+        <div className={styles.introductionCopy}>
+          {oakvillePage.introduction.split(/(?<=Ontario\.) |(?=Send us photos)/).map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </section>
 
       <section className={styles.services} id="services" aria-label="What we clean">
@@ -94,7 +98,6 @@ export default function OakvillePageSections({ location }: { location: Location 
 
       <DirectoryFinalCta
         id="quote-cta"
-        kicker="Professional care for every room"
         title={oakvillePage.ctaTitle}
         description={oakvillePage.ctaDescription}
         action={{ href: "/quote/", label: siteConfig.quoteLabel }}
