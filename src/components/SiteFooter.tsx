@@ -18,9 +18,9 @@ export default function SiteFooter() {
               SoftNest
             </h2>
             <p className="text-sm text-stone-700 leading-relaxed">
-              Quality You Can See.
+              Quality you can see.
               <br />
-              Care You Can Trust.
+              Care you can trust.
             </p>
             <p className="text-sm text-stone-700 leading-relaxed mt-4">
               Professional upholstery and carpet cleaning across the Greater Toronto Area.
@@ -103,12 +103,12 @@ export default function SiteFooter() {
             <li><Link href="/about/">About SoftNest</Link></li>
             <li><Link href="/#results">Our Results</Link></li>
             <li><Link href="/blog/">Care Journal</Link></li>
-            <li><Link href="/quote/">Get a Quote</Link></li>
+            <li><Link href="/quote/">Get a quote</Link></li>
           </ul>
         </div>
         <div className="footer-desktop-nav-column">
           <h3 className="font-serif font-bold text-forestGreen text-sm uppercase mb-4">
-            Areas We Serve
+            Areas we serve
           </h3>
           <ul className="footer-location-list text-sm text-stone-700">
             {footerLocations.map((location) => (
@@ -144,7 +144,7 @@ export default function SiteFooter() {
           </details>
 
           <details>
-            <summary>Areas We Serve</summary>
+            <summary>Areas we serve</summary>
             <div className="footer-mobile-nav__content">
               <ul className="footer-location-list text-sm text-stone-700">
                 {footerLocations.map((location) => (

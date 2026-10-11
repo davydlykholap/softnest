@@ -22,12 +22,12 @@ export default function HomeFaqExplorer({ items }: Props) {
   const activeItem = activeIndex === null ? null : items[activeIndex];
 
   return (
-    <section id="faq" className={styles.section} aria-label="Frequently Asked Questions">
+    <section id="faq" className={styles.section} aria-label="Frequently asked questions">
       <div className={styles.desktop}>
         <div className={styles.questions}>
           <header className={styles.header}>
             <span className={styles.rule} aria-hidden="true" />
-            <h2>Frequently Asked Questions</h2>
+            <h2>Frequently asked questions</h2>
             <p>Find answers to the most common questions about our cleaning services.</p>
           </header>
 
@@ -91,7 +91,7 @@ export default function HomeFaqExplorer({ items }: Props) {
       <div className={styles.mobile}>
         <header className={styles.header}>
           <span className={styles.rule} aria-hidden="true" />
-          <h2>Frequently Asked Questions</h2>
+          <h2>Frequently asked questions</h2>
           <p>Find answers to the most common questions about our cleaning services.</p>
         </header>
         <FaqAccordion

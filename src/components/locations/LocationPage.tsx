@@ -71,8 +71,8 @@ export default function LocationPage({
           <div className="location-page-hero__wash" aria-hidden="true" />
           <div className="location-page-hero__copy">
             <h1 id="location-page-hero-title">
-              {isOakville ? "Upholstery, Sofa &" : copyText(location, "page-2", "Upholstery &")}<br />
-              {isOakville ? "Carpet Cleaning" : copyText(location, "page-3", "Carpet Cleaning")}<span>{isOakville ? "in Oakville" : copyText(location, "page-4", `in ${location.name}`)}</span>
+              {isOakville ? "Upholstery, sofa &" : copyText(location, "page-2", "Upholstery &")}<br />
+              {isOakville ? "carpet cleaning" : copyText(location, "page-3", "Carpet Cleaning")}<span>{isOakville ? "in Oakville" : copyText(location, "page-4", `in ${location.name}`)}</span>
             </h1>
             <p className="location-page-hero__description">
               {isOakville ? oakvillePage.heroDescription : `Professional upholstery and carpet cleaning for ${location.name} homes and condos—using fabric-safe products, professional equipment, and meticulous care.`}</p>
