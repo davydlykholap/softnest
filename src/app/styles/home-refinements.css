@@ -1,5 +1,83 @@
 /* Homepage-only refinements. Keep these out of unrelated routes. */
 
+.customer-reviews__compact-title,
+.customer-reviews__rating {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  /* Let the reviews overlap the image while the fixed header stays above both. */
+  .home-hero-root {
+    z-index: auto;
+    isolation: auto;
+  }
+
+  .home-hero-root .hero {
+    box-shadow: 0 12px 36px rgba(14, 42, 32, .08);
+  }
+
+  .home-hero-root + .customer-reviews {
+    position: relative;
+    z-index: 1;
+    width: min(94vw, 1440px);
+    margin-top: -135px;
+    padding-top: 24px;
+    padding-bottom: 32px;
+    padding-inline: calc((min(94vw, 1440px) - var(--reviews-content-width)) / 2);
+    border-radius: 28px 28px 0 0;
+    box-shadow: 0 -8px 28px rgba(14, 42, 32, .035);
+  }
+
+  .home-hero-root + .customer-reviews .customer-reviews__rule {
+    display: none;
+  }
+
+  .customer-reviews--compact-desktop .customer-reviews__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 18px;
+  }
+
+  .customer-reviews--compact-desktop .customer-reviews__heading h2 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .customer-reviews--compact-desktop .customer-reviews__full-title,
+  .customer-reviews--compact-desktop .customer-reviews__heading > p {
+    display: none;
+  }
+
+  .customer-reviews--compact-desktop .customer-reviews__compact-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .customer-reviews--compact-desktop .customer-reviews__title-group {
+    order: 1;
+  }
+
+  .customer-reviews--compact-desktop .customer-reviews__rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #fff7e5;
+    color: #111713;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .customer-reviews__rating-stars {
+    color: #f5a000;
+    letter-spacing: .08em;
+  }
+}
+
 .hero__title .hero__title-line {
   color: #0b0e0c;
 }

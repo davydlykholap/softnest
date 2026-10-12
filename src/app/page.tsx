@@ -73,11 +73,12 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <>
-      <div className="new-hero-root">
+      <div className="new-hero-root home-hero-root">
         <SiteHeader />
         <HomeHero />
       </div>
       <CustomerReviewsSection
+        compactDesktop
         heading="What our customers say"
         description="Feedback from SoftNest customers after professional upholstery and carpet cleaning appointments."
         reviews={getGoogleReviews()}
