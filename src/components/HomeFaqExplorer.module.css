@@ -63,8 +63,8 @@
   max-width: 560px;
   margin: 16px 0 0;
   color: var(--faq-muted);
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .list {
@@ -164,8 +164,8 @@
   max-width: 650px;
   margin: 18px 0 0;
   color: var(--faq-muted);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .relatedLink {

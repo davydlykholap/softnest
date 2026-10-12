@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import LocationReviews from "@/components/locations/LocationReviews";
@@ -39,11 +38,7 @@ export default function CityPageSections({ location, copy }: { location: Locatio
                 </div>
               ) : null}
               <div className={styles.serviceCopy}>
-                <h2>
-                  <Link href={`/services/${item.slug}/`}>
-                    {item.title}<span className={styles.arrow} aria-hidden="true">↗</span>
-                  </Link>
-                </h2>
+                <h2>{item.title}</h2>
                 <p>{item.description}</p>
               </div>
             </article>

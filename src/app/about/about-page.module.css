@@ -77,8 +77,8 @@
 .storyCopy p {
   margin: 0;
   color: var(--about-muted);
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .storyCopy {
@@ -140,8 +140,8 @@
   }
 
   .storyCopy p {
-    font-size: 15px;
-    line-height: 1.72;
+    font-size: var(--text-body-size);
+    line-height: var(--text-body-leading);
   }
 
   .storyCopy {

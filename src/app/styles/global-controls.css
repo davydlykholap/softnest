@@ -29,9 +29,9 @@
     section[id],
     main[id] { scroll-margin-top: 64px; }
 
-    body { font-size: 14px; }
+    body { font-size: var(--text-body-size); }
 
-    section {
+    section:not(.locations-hero):not(.site-final-cta) {
         padding-top: 40px !important;
         padding-bottom: 40px !important;
     }

@@ -88,3 +88,69 @@
   background: var(--quote-cta-background-hover);
   color: #000 !important;
 }
+
+/* Keep the full quote label accessible directly beside the mobile menu. */
+.mobile-header-actions {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    gap: 8px;
+  }
+
+  .mobile-header-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+
+  .mobile-header-actions .menu-toggle {
+    flex: 0 0 42px;
+    margin-left: 0;
+  }
+
+  .mobile-header-quote {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: var(--quote-cta-background);
+    box-shadow: 0 4px 12px rgba(177, 128, 22, 0.2);
+    color: #111 !important;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background 180ms ease, transform 180ms ease;
+  }
+
+  .mobile-header-quote:hover,
+  .mobile-header-quote:focus-visible {
+    background: var(--quote-cta-background-hover);
+    transform: translateY(-1px);
+  }
+
+  .mobile-header-quote:focus-visible {
+    outline: 2px solid var(--forest);
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand__name strong {
+    font-size: 17px;
+  }
+}
+
+/* The quote remains in the hamburger menu when the viewport is exceptionally narrow. */
+@media (max-width: 350px) {
+  .mobile-header-quote {
+    display: none;
+  }
+}

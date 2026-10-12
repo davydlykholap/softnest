@@ -2,8 +2,12 @@
 
 import { siteConfig } from "@/lib/site";
 import Link from "next/link";
-import type { Dispatch, SetStateAction } from "react";
+import { useSyncExternalStore, type Dispatch, type SetStateAction } from "react";
 import type { NavigationService } from "./navigationData";
+
+const subscribeToHydration = () => () => undefined;
+const clientSnapshot = () => true;
+const serverSnapshot = () => false;
 
 type Props = {
   open: boolean;
@@ -14,23 +18,37 @@ type Props = {
 };
 
 export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setMobileServicesOpen, mobileServices }: Props) {
+  const isInteractive = useSyncExternalStore(subscribeToHydration, clientSnapshot, serverSnapshot);
   return (
     <>
-      <button
-        type="button"
-        className="menu-toggle"
-        onClick={() => setOpen((value) => !value)}
-        aria-expanded={open}
-        aria-controls="mobile-navigation"
-        aria-label={open ? "Close menu" : "Open menu"}
-      >
-        <svg className="menu-icon-open" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg className="menu-icon-close" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="m6 6 12 12M18 6 6 18" />
-        </svg>
-      </button>
+      <div className="mobile-header-actions">
+        <Link
+          className="mobile-header-quote"
+          href="/quote/"
+          onClick={() => {
+            setOpen(false);
+            setMobileServicesOpen(false);
+          }}
+        >
+          {siteConfig.quoteLabel}
+        </Link>
+        <button
+          type="button"
+          className="menu-toggle"
+          disabled={!isInteractive}
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Close menu" : "Open menu"}
+        >
+          <svg className="menu-icon-open" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg className="menu-icon-close" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
+      </div>
 
       <nav
         className={`mobile-nav ${open ? "mobile-nav--open" : ""}`}

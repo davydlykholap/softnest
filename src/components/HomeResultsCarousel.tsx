@@ -66,11 +66,8 @@ export default function HomeResultsCarousel({ results }: HomeResultsCarouselProp
         <div
           id="gallery-carousel"
           className="gallery-carousel"
-          tabIndex={0}
+          role="region"
           aria-label={`Before and after cleaning results carousel, showing item ${index + 1} of ${results.length}`}
-          onKeyDown={carousel.onKeyDown}
-          onTouchStart={carousel.onTouchStart}
-          onTouchEnd={carousel.onTouchEnd}
         >
           <div
             ref={trackRef}

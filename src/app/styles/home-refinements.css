@@ -126,7 +126,7 @@
 }
 
 .gallery-section-v2 .gallery-carousel {
-  overflow: hidden;
+  overflow: clip;
   border-radius: 22px;
 }
 
@@ -159,6 +159,12 @@
 
 :is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow:hover {
   transform: translateY(-50%) scale(1.04);
+}
+
+.gallery-section-v2 .gallery-carousel-arrow,
+.gallery-section-v2 .gallery-carousel-arrow:is(:hover, :active, :focus-visible) {
+  color: var(--gallery-forest);
+  background: #fff;
 }
 
 :is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow--prev {
@@ -328,8 +334,9 @@
 
 .hero__description {
   max-width: 520px;
-  font-family: var(--font-sans);
-  font-size: 16px;
+  font-family: var(--text-sans);
+  font-size: var(--text-hero-size);
+  line-height: var(--text-hero-leading);
 }
 
 .home-video-section {
@@ -431,8 +438,8 @@
 
 @media (max-width: 640px) {
   .hero__description {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: var(--text-hero-size);
+    line-height: var(--text-hero-leading);
   }
 }
 
@@ -694,8 +701,8 @@
     .new-hero-root .hero__description {
         max-width: 355px;
         margin-top: 14px;
-        font-size: 14px;
-        line-height: 1.48;
+        font-size: var(--text-hero-size);
+        line-height: var(--text-hero-leading);
     }
 
     .new-hero-root .hero__actions {
@@ -1029,10 +1036,13 @@
 }
 
 @media (min-width: 900px) {
-  .hero__description,
+  .hero__description {
+    font-size: var(--text-hero-size);
+    line-height: var(--text-hero-leading);
+  }
   .gallery-description {
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: var(--text-body-size);
+    line-height: var(--text-body-leading);
   }
 }
 
@@ -1126,9 +1136,9 @@
   max-width: 670px;
   margin-top: 18px;
   color: var(--home-muted);
-  font-family: "Avenir Next", "Segoe UI", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.55;
+  font-family: var(--text-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .home-sections .gallery-section-v2 .gallery-stage {
@@ -1182,8 +1192,8 @@
   max-width: 680px;
   margin: 14px 0 0;
   color: var(--home-muted);
-  font-size: 16px;
-  line-height: 1.55;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .home-services-grid {
@@ -1266,8 +1276,8 @@
   max-width: 420px;
   margin: 20px 0 0;
   color: var(--home-muted);
-  font-size: 16px;
-  line-height: 1.62;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .home-sections #faq {

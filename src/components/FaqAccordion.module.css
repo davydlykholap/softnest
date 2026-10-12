@@ -90,8 +90,8 @@
 .answer {
   padding: 1px 64px 20px 20px;
   color: #536159;
-  font-size: 14px;
-  line-height: 1.68;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .answer > :first-child {
@@ -114,8 +114,8 @@
 
 .article .answer {
   padding: 2px 70px 22px 22px;
-  font-size: 0.98rem;
-  line-height: 1.72;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 @media (max-width: 600px) {
@@ -140,7 +140,7 @@
   .answer,
   .article .answer {
     padding: 0 17px 18px;
-    font-size: 0.9rem;
+    font-size: var(--text-body-size);
   }
 }
 

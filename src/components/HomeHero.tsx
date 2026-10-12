@@ -1,17 +1,8 @@
-import { siteConfig } from "@/lib/site";
-import { getGoogleReviews, getTestimonials, homeContent, pageText } from "@/content/pages";
+import { homeContent, pageText } from "@/content/pages";
 import Image from "next/image";
-import GoogleReviewCarousel from "@/components/GoogleReviewCarousel";
 import HeroActionButtons from "@/components/HeroActionButtons";
 
 export default function HomeHero() {
-  const googleProfileUrl = siteConfig.googleProfileUrl;
-
-  const googleReviews = getGoogleReviews();
-  const existingReviewerNames = new Set(homeContent.heroReviews.map((review) => review.name.trim().toLowerCase()));
-  const mobileReviews = [...homeContent.heroReviews, ...getTestimonials()
-    .filter((review) => !existingReviewerNames.has(review.name.trim().toLowerCase()))
-    .map((review) => ({ initial: review.name.trim().charAt(0).toUpperCase(), name: review.name, text: review.text }))];
   return (
     <main className="site-shell">
       <section className="hero" aria-labelledby="home-hero-heading">
@@ -74,46 +65,6 @@ export default function HomeHero() {
         </div>
       </section>
 
-      <section
-        id="reviews"
-        className="journey-card"
-        aria-label="Google reviews"
-      >
-        <div className="journey-card__reviews">
-          <div className="google-review-summary">
-            <div className="google-review-summary__brand">
-              <Image
-                className="google-review-summary__g"
-                src="/img/google-g-official.svg"
-                alt=""
-                aria-hidden="true"
-                width={48}
-                height={48}
-              />
-              <Image
-                className="google-wordmark"
-                src="/img/google-wordmark-official.png"
-                alt="Google"
-                width={120}
-                height={40}
-              />
-              <span className="google-review-summary__desktop-label">{"" + pageText(homeContent.copy, "hero-21") + ""}</span>
-              <span className="google-review-summary__mobile-label">Google Reviews</span>
-            </div>
-            <div className="google-review-summary__score">
-              <strong>{siteConfig.reviewScore}</strong>
-              <span aria-label="5 out of 5 stars">★★★★★</span>
-            </div>
-          </div>
-
-          <h2 className="review-mobile-heading">What our customers say</h2>
-          <GoogleReviewCarousel
-            reviews={googleReviews}
-            mobileReviews={mobileReviews}
-            googleProfileUrl={googleProfileUrl}
-          />
-        </div>
-      </section>
     </main>
   );
 }

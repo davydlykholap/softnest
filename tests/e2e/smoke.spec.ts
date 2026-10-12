@@ -7,6 +7,32 @@ async function chooseQuoteOption(page: Page, label: string, option: string) {
   return control;
 }
 
+test("hero descriptions use the same responsive typography across page types", async ({ page }) => {
+  for (const [width, expectedSize] of [[400, "17px"], [1280, "19px"]] as const) {
+    await page.setViewportSize({ width, height: 827 });
+
+    for (const [path, selector] of [
+      ["/", ".hero__description"],
+      ["/location/mississauga/", ".location-page-hero__description"],
+      ["/location/toronto/", ".location-page-hero__description"],
+      ["/services/", ".locations-hero__description"],
+      ["/services/sofa-cleaning/", '[class*="heroCopy"] > p:last-child'],
+    ] as const) {
+      await page.goto(path);
+      const description = page.locator(selector).first();
+      await expect(description).toBeVisible();
+      const typography = await description.evaluate((element) => {
+        const computed = getComputedStyle(element);
+        return { size: computed.fontSize, lineHeight: computed.lineHeight, family: computed.fontFamily };
+      });
+      expect(typography.size, path).toBe(expectedSize);
+      expect(parseFloat(typography.lineHeight)).toBeCloseTo(parseFloat(expectedSize) * 1.55, 0);
+      expect(typography.family, path).toContain("Avenir Next");
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    }
+  }
+});
+
 test("homepage and desktop navigation work", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("A Cleaner Home");
@@ -15,6 +41,24 @@ test("homepage and desktop navigation work", async ({ page }) => {
   await desktopNav.getByRole("link", { name: "Locations" }).click();
   await expect(page).toHaveURL(/\/location\/$/);
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Professional Care");
+});
+
+test("home and city pages share the same customer reviews section", async ({ page }) => {
+  await page.setViewportSize({ width: 402, height: 827 });
+
+  for (const path of ["/", "/location/mississauga/"]) {
+    await page.goto(path);
+    const section = page.locator("#reviews.customer-reviews");
+    await expect(section).toBeVisible();
+    await expect(section.locator(".customer-reviews__heading h2")).toHaveText(
+      path === "/" ? "What our customers say" : "What Mississauga customers say",
+    );
+    await expect(section.locator(".customer-reviews__heading > p")).toContainText("after professional upholstery");
+    await expect(section.getByRole("link", { name: "Read all reviews" })).toBeVisible();
+    await expect(section.locator(".google-review-card:visible").first()).toBeVisible();
+    const hasNoOverflow = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
+    expect(hasNoOverflow).toBe(true);
+  }
 });
 
 test("service search reaches a service page", async ({ page }) => {
@@ -57,6 +101,39 @@ test("mobile navigation opens and exposes services", async ({ page }) => {
   await expect(page.getByRole("navigation", { name: "Mobile navigation" })).toBeVisible();
   await page.getByRole("button", { name: "Open services menu" }).click();
   await expect(page.getByRole("link", { name: "View all services" })).toBeVisible();
+});
+
+test("mobile header quote fits, navigates, and retains narrow-screen access", async ({ page }) => {
+  for (const width of [360, 375, 400]) {
+    await page.setViewportSize({ width, height: 827 });
+    await page.goto("/");
+
+    const quote = page.locator(".mobile-header-quote");
+    await expect(quote).toBeVisible();
+    await expect(quote).toHaveText("Get a Quote");
+    await expect(quote).toHaveAttribute("href", "/quote/");
+
+    const spacing = await page.evaluate(() => {
+      const brand = document.querySelector(".site-header .brand")!.getBoundingClientRect();
+      const quote = document.querySelector(".mobile-header-quote")!.getBoundingClientRect();
+      const menu = document.querySelector(".menu-toggle")!.getBoundingClientRect();
+      return {
+        fits: brand.right < quote.left && quote.right < menu.left,
+        hasOverflow: document.documentElement.scrollWidth > innerWidth,
+      };
+    });
+    expect(spacing.fits).toBe(true);
+    expect(spacing.hasOverflow).toBe(false);
+  }
+
+  await page.locator(".mobile-header-quote").click();
+  await expect(page).toHaveURL(/\/quote\/$/);
+
+  await page.setViewportSize({ width: 320, height: 827 });
+  await page.goto("/");
+  await expect(page.locator(".mobile-header-quote")).toBeHidden();
+  await page.getByRole("button", { name: "Open menu" }).click();
+  await expect(page.locator(".mobile-nav__quote")).toBeVisible();
 });
 
 test("quote form supports multiple sofas with separate seat counts", async ({ page }) => {

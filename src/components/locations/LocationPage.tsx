@@ -12,6 +12,8 @@ import { getLocationPageSchemas } from "./locationPageSchemas";
 export default function LocationPage({ location }: { location: Location }) {
   const copy = cityPages[location.slug];
   const heroImage = location.expandedContent?.heroImage || siteConfig.heroImage;
+  const heroImageMobile = location.expandedContent?.heroImageMobile
+    ?? (heroImage === siteConfig.heroImage ? "/images/softnest-hero-room-mobile.webp" : undefined);
   const schemas = getLocationPageSchemas(location, copy.services, location.faq);
 
   return (
@@ -25,7 +27,12 @@ export default function LocationPage({ location }: { location: Location }) {
           aria-labelledby="location-page-hero-title"
         >
           <div className="location-page-hero__photo" aria-hidden="true">
-            <Image src={heroImage} alt="" fill priority sizes="100vw" />
+            <picture className="location-page-hero__picture">
+              {heroImageMobile ? (
+                <source media="(max-width: 640px)" srcSet={heroImageMobile} />
+              ) : null}
+              <Image src={heroImage} alt="" fill priority sizes="100vw" />
+            </picture>
           </div>
           <div className="location-page-hero__wash" aria-hidden="true" />
           <div className="location-page-hero__copy">

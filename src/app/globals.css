@@ -12,8 +12,16 @@
 }
 
 :root {
+    /* Shared reading scale. Section leads, card labels and headings stay distinct. */
+    --text-body-size: 17px;
+    --text-body-leading: 1.65;
+    --text-lead-size: 19px;
+    --text-hero-size: 19px;
+    --text-hero-leading: 1.55;
+    --text-sans: "Avenir Next", "Segoe UI", Arial, sans-serif;
     --page-hero-font-size: clamp(52px, 4.1vw, 70px);
     --page-hero-line-height: 1.04;
+    --mobile-hero-title-top: 134px;
     --surface-page: #ffffff;
     --surface-soft: #f3f7f4;
     --surface-warm: #f6f3ec;
@@ -26,6 +34,20 @@
 html,
 body {
     background: var(--surface-page);
+}
+
+body {
+    font-size: var(--text-body-size);
+    line-height: var(--text-body-leading);
+}
+
+@media (max-width: 640px) {
+    :root {
+        --text-body-size: 16px;
+        --text-lead-size: 18px;
+        --text-hero-size: 17px;
+        --text-hero-leading: 1.55;
+    }
 }
 
 /* =========================================================
@@ -681,9 +703,9 @@ body {
     max-width: 520px;
     margin: 27px 0 0;
     font-family: var(--font-sans);
-    font-size: 16px;
+    font-size: var(--text-hero-size);
     font-weight: 400;
-    line-height: 1.55;
+    line-height: var(--text-hero-leading);
 }
 
 .hero__actions {
@@ -1079,5 +1101,5 @@ body {
     :root { --page-hero-font-size: clamp(40px, 5vw, 52px); }
 }
 @media (max-width: 640px) {
-    :root { --page-hero-font-size: 36px; }
+    :root { --page-hero-font-size: clamp(2.35rem, 10.7vw, 3rem); }
 }

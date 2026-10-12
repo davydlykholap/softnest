@@ -112,8 +112,8 @@
   max-width: 620px;
   margin: 19px auto 0;
   color: #65716b;
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .quote-page-form__heading > p.quote-page-photo-channels,
@@ -828,7 +828,7 @@
 
   .quote-page-form__heading > p,
   .quote-page-success > p {
-    font-size: 14px;
+    font-size: var(--text-body-size);
   }
 
   .quote-page-form__grid {

@@ -17,6 +17,7 @@ export type Location = {
   showInFooter: boolean;
   expandedContent?: {
     heroImage: string;
+    heroImageMobile?: string;
     mapImage?: string;
     mapAlt?: string;
     mapLabels?: {name:string;left:number;top:number}[];
@@ -60,6 +61,13 @@ export const serviceAreas: Location[] = (records as Location[]).map((location) =
     heroImage: location.slug === "mississauga"
       ? "/images/mississauga-cleaning-hero-v2.webp"
       : optimizedLocalImage(location.expandedContent.heroImage),
+    heroImageMobile: location.slug === "mississauga"
+      ? "/images/mississauga-cleaning-hero-mobile.webp"
+      : location.expandedContent.heroImageMobile
+        ? optimizedLocalImage(location.expandedContent.heroImageMobile)
+        : location.expandedContent.heroImage === "/images/softnest-hero-room.webp"
+          ? "/images/softnest-hero-room-mobile.webp"
+          : undefined,
     mapImage: location.expandedContent.mapImage
       ? optimizedLocalImage(location.expandedContent.mapImage)
       : undefined,

@@ -12,6 +12,12 @@
   padding: 6px 0 100px;
 }
 
+@media (max-width: 640px) {
+  :global(.locations-hub-v2).indexMain {
+    padding-top: 0;
+  }
+}
+
 :global(.desktop-nav a.is-active) {
   position: relative;
   color: var(--journal-green);
@@ -194,8 +200,8 @@
   max-width: 560px;
   margin: 12px 0 16px;
   color: var(--journal-muted);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-leading);
 }
 
 .readLink {

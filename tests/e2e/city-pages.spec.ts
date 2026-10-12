@@ -2,6 +2,30 @@ import { expect, test } from "@playwright/test";
 
 const cities = ["Mississauga", "Toronto", "Brampton", "Oakville", "Etobicoke", "Burlington", "Vaughan", "Milton", "Hamilton"];
 
+test("city heroes load portrait images on mobile and keep desktop images intact", async ({ page }) => {
+  await page.setViewportSize({ width: 400, height: 827 });
+
+  for (const city of ["mississauga", "toronto", "oakville"]) {
+    await page.goto(`/location/${city}/`);
+    const expectedMobileImage = city === "mississauga"
+      ? "/images/mississauga-cleaning-hero-mobile.webp"
+      : "/images/softnest-hero-room-mobile.webp";
+
+    await expect(page.locator(".location-page-hero__picture source")).toHaveAttribute("srcset", expectedMobileImage);
+    const image = page.locator(".location-page-hero__picture img");
+    await expect.poll(() => image.evaluate((element: HTMLImageElement) => new URL(element.currentSrc).pathname)).toBe(expectedMobileImage);
+    const isPortrait = await image.evaluate((element: HTMLImageElement) => element.naturalHeight > element.naturalWidth);
+    expect(isPortrait).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+
+  await page.setViewportSize({ width: 1280, height: 827 });
+  await page.goto("/location/mississauga/");
+  const desktopImage = page.locator(".location-page-hero__picture img");
+  await expect.poll(() => desktopImage.evaluate((element: HTMLImageElement) => new URL(element.currentSrc).pathname))
+    .toBe("/images/mississauga-cleaning-hero-v2.webp");
+});
+
 for (const city of cities) {
   const slug = city.toLowerCase();
   test(`${city} FAQs display answers matching their structured data`, async ({ page }) => {
@@ -10,7 +34,9 @@ for (const city of cities) {
     await expect(page).toHaveTitle(`Upholstery & Carpet Cleaning ${city} | Sofa & Rug | SoftNest`);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /one final price with tax included/);
     await expect(page.locator(".location-page-care-band, .location-page-services, .location-page-process")).toHaveCount(0);
-    await expect(page.locator("#services h2")).toHaveText(["Sofas↗", "Carpets↗", "Area rugs↗", "And more"]);
+    await expect(page.locator("#services h2")).toHaveText(["Sofas", "Carpets", "Area rugs", "And more"]);
+    await expect(page.locator("#services article a")).toHaveCount(0);
+    await expect(page.locator("#services article h2 span")).toHaveCount(0);
 
     const scripts = await page.locator('script[type="application/ld+json"]').allTextContents();
     const faq = scripts.map((script) => JSON.parse(script)).find((schema) => schema["@type"] === "FAQPage");
@@ -30,17 +56,15 @@ for (const city of cities) {
     );
   });
 
-  test(`mobile ${city} FAQs, service and quote links work`, async ({ page }) => {
+  test(`mobile ${city} FAQs, static services and quote links work`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`/location/${slug}/`);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await page.locator("#faq summary").filter({ hasText: "How do I get a quote?" }).click();
     await expect(page.locator("#faq details[open]")).toContainText("one final price, tax included");
-    await page.locator("#services").getByRole("link", { name: "Sofas" }).click();
-    await expect(page).toHaveURL(/\/services\/sofa-cleaning\/$/);
-    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(page.locator("#services article").first().getByRole("heading", { name: "Sofas" })).toBeVisible();
+    await expect(page.locator("#services article a")).toHaveCount(0);
 
-    await page.goto(`/location/${slug}/`);
     await page.locator("#quote-cta").getByRole("link", { name: "Get a Quote" }).click();
     await expect(page).toHaveURL(/\/quote\/$/);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();

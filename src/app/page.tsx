@@ -1,6 +1,8 @@
 import { jsonLd } from "@/seo/structuredData";
 import type { Metadata } from "next";
 import HomeHero from "@/components/HomeHero";
+import CustomerReviewsSection from "@/components/CustomerReviewsSection";
+import { getGoogleReviews } from "@/content/pages";
 import HomeSections from "@/components/HomeSections";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -75,6 +77,11 @@ export default function HomePage() {
         <SiteHeader />
         <HomeHero />
       </div>
+      <CustomerReviewsSection
+        heading="What our customers say"
+        description="Feedback from SoftNest customers after professional upholstery and carpet cleaning appointments."
+        reviews={getGoogleReviews()}
+      />
       <HomeSections />
       <SiteFooter />
       {[organizationSchema, websiteSchema, faqSchema].map((schema, index) => (
