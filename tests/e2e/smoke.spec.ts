@@ -52,6 +52,7 @@ test("home and city pages share the same customer reviews section", async ({ pag
     await expect(section).toBeVisible();
     await expect(section.locator(".customer-reviews__heading h2")).toHaveText(
       path === "/" ? "What our customers say" : "What Mississauga customers say",
+      { useInnerText: true },
     );
     await expect(section.locator(".customer-reviews__heading > p")).toContainText("after professional upholstery");
     await expect(section.getByRole("link", { name: "Read all reviews" })).toBeVisible();
@@ -59,6 +60,18 @@ test("home and city pages share the same customer reviews section", async ({ pag
     const hasNoOverflow = await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth);
     expect(hasNoOverflow).toBe(true);
   }
+
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/");
+  const section = page.locator("#reviews.customer-reviews");
+  const title = section.getByRole("heading", { name: "Google Reviews", exact: true });
+  const rating = section.getByRole("img", { name: "5 out of 5 stars", exact: true });
+  await expect(title).toBeVisible();
+  await expect(rating).toBeVisible();
+  await expect(section.locator(".customer-reviews__heading > p")).toBeHidden();
+  const titleBounds = await title.boundingBox();
+  const ratingBounds = await rating.boundingBox();
+  expect(ratingBounds!.x + ratingBounds!.width).toBeLessThan(titleBounds!.x);
 });
 
 test("service search reaches a service page", async ({ page }) => {

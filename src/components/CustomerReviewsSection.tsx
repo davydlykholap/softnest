@@ -46,7 +46,7 @@ export default function CustomerReviewsSection({
         </div>
         <p>{description}</p>
         {compactDesktop && (
-          <div className="customer-reviews__rating" aria-label="5 out of 5 stars">
+          <div className="customer-reviews__rating" role="img" aria-label="5 out of 5 stars">
             <span aria-hidden="true">5</span>
             <span className="customer-reviews__rating-stars" aria-hidden="true">★★★★★</span>
           </div>
