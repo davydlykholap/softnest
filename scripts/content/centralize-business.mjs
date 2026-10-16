@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import ts from 'typescript';
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(`${dir}/${e.name}`):[`${dir}/${e.name}`]);
 const exact={
- 'tel:+14167270287':'siteConfig.phoneHref','(416) 727-0287':'siteConfig.displayPhone','+1-416-727-0287':'siteConfig.phone',
+ 'tel:+14167264907':'siteConfig.phoneHref','(416) 726-4907':'siteConfig.displayPhone','+1-416-726-4907':'siteConfig.phone',
  'mailto:softnest.upholstery@outlook.com':'siteConfig.emailHref','softnest.upholstery@outlook.com':'siteConfig.email',
  'https://maps.app.goo.gl/XHFbygUj49Suv9F48':'siteConfig.googleProfileUrl','https://www.instagram.com/softnestfabriccare/':'siteConfig.instagramUrl',
  'https://www.facebook.com/profile.php?id=61590622653207':'siteConfig.facebookUrl','Request a free quote':'siteConfig.quoteLabel',
@@ -14,7 +14,7 @@ for(const path of walk('src').filter(p=>/\.(tsx?|css)$/.test(p)&&!p.includes('/g
   if(ts.isStringLiteral(n)&&!ts.isImportDeclaration(n.parent)&&!ts.isLiteralTypeNode(n.parent)){
    let replacement=exact[n.text];
    if(!replacement&&n.text.startsWith('https://softnestcare.ca'))replacement=`siteConfig.url + ${JSON.stringify(n.text.slice('https://softnestcare.ca'.length))}`;
-   if(!replacement&&n.text.includes('(416) 727-0287'))replacement=n.text.split('(416) 727-0287').map(JSON.stringify).join(' + siteConfig.displayPhone + ');
+   if(!replacement&&n.text.includes('(416) 726-4907'))replacement=n.text.split('(416) 726-4907').map(JSON.stringify).join(' + siteConfig.displayPhone + ');
    if(replacement)edits.push({start:n.getStart(tree),end:n.end,value:ts.isJsxAttribute(n.parent)?`{${replacement}}`:replacement});
   }else if(ts.isJsxText(n)){
    let value=n.text;

@@ -5,8 +5,8 @@
     "name": "SoftNest Fabric Care",
     "alternateName": "SoftNest",
     "url": "https://softnestcare.ca",
-    "phone": "+1-416-727-0287",
-    "displayPhone": "(416) 727-0287",
+    "phone": "+1-416-726-4907",
+    "displayPhone": "(416) 726-4907",
     "email": "softnestfabriccare@gmail.com",
     "logo": "https://softnestcare.ca/img/logo/logo1.webp",
     "heroImage": "https://softnestcare.ca/images/softnest-hero-room.webp",
@@ -1386,7 +1386,7 @@
         },
         {
           "key": "page-31",
-          "label": "Call (416) 727-0287",
+          "label": "Call (416) 726-4907",
           "text": "Call {{phone}}"
         }
       ],
