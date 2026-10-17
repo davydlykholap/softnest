@@ -15,13 +15,17 @@ const phoneConversionDestination = integrations.googleAdsPhoneConversion;
 function gtag(...args: unknown[]) {
   if (typeof window === "undefined") return;
 
-  if (window.gtag) {
-    window.gtag(...args);
-    return;
-  }
+  try {
+    if (window.gtag) {
+      window.gtag(...args);
+      return;
+    }
 
-  window.dataLayer = window.dataLayer ?? [];
-  window.dataLayer.push(args);
+    window.dataLayer = window.dataLayer ?? [];
+    window.dataLayer.push(args);
+  } catch {
+    // Tracking failures must never interrupt contact links or a successful quote.
+  }
 }
 
 export function trackEvent(name: string, params: AnalyticsEventParams = {}) {
@@ -29,7 +33,7 @@ export function trackEvent(name: string, params: AnalyticsEventParams = {}) {
 }
 
 export function cityFromUrl(url: URL, citySlugs: readonly string[]) {
-  const routeCity = /^\/location\/([a-z0-9-]+)\/$/.exec(url.pathname)?.[1];
+  const routeCity = /^\/location\/([a-z0-9-]+)\/(?:[a-z0-9-]+\/)?$/.exec(url.pathname)?.[1];
   const city = routeCity ?? (url.pathname === "/quote/" ? url.searchParams.get("city") : undefined);
   return city && citySlugs.includes(city) ? city : undefined;
 }

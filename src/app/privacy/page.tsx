@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       <main className={styles.page}>
         <article className={styles.shell}>
           <h1>Privacy Policy</h1>
-          <p className={styles.updated}>Last updated: August 6, 2026</p>
+          <p className={styles.updated}>Last updated: October 16, 2026</p>
 
           <p>
             
@@ -67,6 +67,18 @@ export default function PrivacyPage() {
             information only as needed for their role. We may also disclose
             information when required by law or when reasonably necessary to
             protect customers, our business or others.
+          </p>
+
+          <h2>Website analytics</h2>
+          <p>
+            We use Google Analytics 4 to understand page visits, navigation and
+            actions such as quote requests and contact-link clicks. Google
+            Analytics may use cookies and similar identifiers to measure these
+            interactions. Names, phone numbers, quote notes and photos are not
+            included in our custom analytics events. Learn more about{" "}
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">
+              how Google uses information from websites that use its services
+            </a>.
           </p>
 
           <h2>Photos</h2>

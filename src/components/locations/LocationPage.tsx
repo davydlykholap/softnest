@@ -11,6 +11,7 @@ import { getLocationPageSchemas } from "./locationPageSchemas";
 
 export default function LocationPage({ location }: { location: Location }) {
   const copy = cityPages[location.slug];
+  const quoteHref = `/quote/?city=${encodeURIComponent(location.slug)}`;
   const heroImage = location.expandedContent?.heroImage || siteConfig.heroImage;
   const heroImageMobile = location.expandedContent?.heroImageMobile
     ?? (heroImage === siteConfig.heroImage ? "/images/softnest-hero-room-mobile.webp" : undefined);
@@ -19,7 +20,7 @@ export default function LocationPage({ location }: { location: Location }) {
   return (
     <>
       <div className="new-hero-root location-page-header">
-        <SiteHeader current="locations" />
+        <SiteHeader current="locations" quoteHref={quoteHref} />
       </div>
       <main className="location-page-page location-page-page--city">
         <section
@@ -41,6 +42,7 @@ export default function LocationPage({ location }: { location: Location }) {
             </h1>
             <p className="location-page-hero__description">{copy.heroDescription}</p>
             <HeroActionButtons
+              quoteHref={quoteHref}
               primaryTone="gold"
               quoteAriaLabel={`Get a free upholstery and carpet cleaning quote in ${location.name}`}
             />
@@ -48,7 +50,7 @@ export default function LocationPage({ location }: { location: Location }) {
         </section>
         <CityPageSections location={location} copy={copy} />
       </main>
-      <SiteFooter />
+      <SiteFooter quoteHref={quoteHref} />
       {schemas.map((schema, index) => (
         <script
           key={index}

@@ -30,7 +30,7 @@ test("city CTA events and explicit quote prefills keep city context without cust
   const callEvents = await page.evaluate(() => window.dataLayer);
   expect(callEvents).toContainEqual(["event", "click_to_call", { event_category: "contact", event_label: "phone", source_city: "toronto" }]);
   await page.locator(".hero-action-buttons").getByRole("link", { name: /Get a free/ }).click();
-  await expect(page).toHaveURL(/\/quote\/$/);
+  await expect(page).toHaveURL(/\/quote\/\?city=toronto$/);
   expect(await page.evaluate(() => window.dataLayer)).toContainEqual(["event", "quote_click", { source_city: "toronto" }]);
   await page.goto("/quote/?city=toronto");
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });

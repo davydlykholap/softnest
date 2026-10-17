@@ -15,16 +15,17 @@ type Props = {
   setOpen: Dispatch<SetStateAction<boolean>>;
   setMobileServicesOpen: Dispatch<SetStateAction<boolean>>;
   mobileServices: NavigationService[];
+  quoteHref: string;
 };
 
-export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setMobileServicesOpen, mobileServices }: Props) {
+export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setMobileServicesOpen, mobileServices, quoteHref }: Props) {
   const isInteractive = useSyncExternalStore(subscribeToHydration, clientSnapshot, serverSnapshot);
   return (
     <>
       <div className="mobile-header-actions">
         <Link
           className="mobile-header-quote"
-          href="/quote/"
+          href={quoteHref}
           onClick={() => {
             setOpen(false);
             setMobileServicesOpen(false);
@@ -136,7 +137,7 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
           </a>
           <Link
             className="mobile-nav__quote quote-cta"
-            href="/quote/"
+            href={quoteHref}
             onClick={() => setOpen(false)}
           >
             {siteConfig.quoteLabel}

@@ -77,6 +77,10 @@ All published city pages use `src/components/locations/LocationPage.tsx`. Shared
 
 The old `expanded` boolean is retired. Do not build new logic around it.
 
+Reviewed city copy lives in `src/content/cityPages.ts`; `locations.ts` deliberately applies its metadata, introduction, FAQ and neighbourhood overrides. Edit that source for the reviewed city text rather than generated JSON. City service descriptions have crawlable service links. Every city quote CTA, including shared navigation, must retain its explicit `?city=` destination.
+
+Service pages render related-service references and relevant articles. City links use the reviewed `cityServiceCoverage` configuration and lead to the matching local service page; featured links prioritize Milton, Oakville and Etobicoke. All eligible cities are also listed. The legacy four-service `availableServices` seed references do not limit the newly authorized combinations. See `city-service-pages.md` before changing coverage.
+
 The local FAQ field has the legacy internal name `mississaugaFaqs` in Sanity for compatibility; Studio labels it **Local FAQs**. Treat it as generic location data.
 
 City/neighbourhood search receives only names, slugs and neighbourhoods. Keep postal-code availability manual unless an authoritative coverage source is added. Unmatched requests prefill the quote form through `service_location`, with a 120-character limit and no inferred city attribution. Never send raw location searches to analytics.
@@ -106,6 +110,8 @@ Use `src/lib/integrations.ts` instead of reading `NEXT_PUBLIC_*` environment val
 
 Private tokens must never be placed in that module or use a `NEXT_PUBLIC_` prefix.
 
+`NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` overrides the default SoftNest GA4 stream `G-CM48WEXDDQ` and is passed through the deployment workflow. Set `off` to disable it. Local previews do not configure GA4. Do not also connect this stream through a second tag/container. Verify one page view per navigation in GA4 and the quote/call conversion destinations in their accounts after deployment. Photo-quote channel clicks are engagement events, not completed leads.
+
 ## URLs and redirects
 
 Do not casually change published slugs. Sanity references preserve internal relationships, but external links/search indexes depend on the URL itself. GitHub Pages cannot perform normal Next.js request-time redirects.
@@ -133,3 +139,6 @@ Prefer small patch/minor updates with a concrete reason. Keep `next` and `eslint
 ## Documentation rule
 
 When architecture, ownership, commands or publishing behavior changes, update `current-state.md`, `system-overview.md`, this guide and any affected task-specific document in the same change.
+## City-service pages
+
+The reusable `/location/[city]/[service]/` route, its reviewed coverage, content ownership and quote defaults are documented in `city-service-pages.md`. Edit the shared configuration/template rather than adding separate city-service route files. The website coverage intentionally supports all current services in all nine active cities, independently of the legacy four-service seed references.

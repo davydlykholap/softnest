@@ -6,7 +6,7 @@ import { footerLocations } from "@/content/locations";
 import { navigationServices } from "@/content/services";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 
-export default function SiteFooter() {
+export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: string }) {
   const youtubeUrl = integrations.youtubeUrl;
 
   return (
@@ -103,7 +103,7 @@ export default function SiteFooter() {
             <li><Link href="/about/">About SoftNest</Link></li>
             <li><Link href="/#results">Our Results</Link></li>
             <li><Link href="/blog/">Care Journal</Link></li>
-            <li><Link href="/quote/">Get a quote</Link></li>
+            <li><Link href={quoteHref}>Get a quote</Link></li>
           </ul>
         </div>
         <div className="footer-desktop-nav-column">

@@ -32,10 +32,13 @@ for (const city of cities) {
     await page.goto(`/location/${slug}/`);
 
     await expect(page).toHaveTitle(`Upholstery & Carpet Cleaning ${city} | Sofa & Rug | SoftNest`);
-    await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /one final price with tax included/);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", new RegExp(city));
     await expect(page.locator(".location-page-care-band, .location-page-services, .location-page-process")).toHaveCount(0);
     await expect(page.locator("#services h2")).toHaveText(["Sofas", "Carpets", "Area rugs", "And more"]);
-    await expect(page.locator("#services article a")).toHaveCount(0);
+    await expect(page.locator('#services article a[href^="/location/"]')).toHaveCount(3);
+    const quoteLinks = await page.locator('a[href^="/quote/"]').evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+    expect(quoteLinks.length).toBeGreaterThan(3);
+    expect(quoteLinks.every((href) => href === `/quote/?city=${slug}`)).toBe(true);
     await expect(page.locator("#services article h2 span")).toHaveCount(0);
 
     const scripts = await page.locator('script[type="application/ld+json"]').allTextContents();
@@ -63,10 +66,12 @@ for (const city of cities) {
     await page.locator("#faq summary").filter({ hasText: "How do I get a quote?" }).click();
     await expect(page.locator("#faq details[open]")).toContainText("one final price, tax included");
     await expect(page.locator("#services article").first().getByRole("heading", { name: "Sofas" })).toBeVisible();
-    await expect(page.locator("#services article a")).toHaveCount(0);
+    await expect(page.locator('#services article a[href^="/location/"]')).toHaveCount(3);
 
     await page.locator("#quote-cta").getByRole("link", { name: "Get a Quote" }).click();
-    await expect(page).toHaveURL(/\/quote\/$/);
+    await expect(page).toHaveURL(new RegExp(`/quote/\\?city=${slug}$`));
+    await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue(city);
+    await expect(page.locator('input[name="source_city"]')).toHaveValue(slug);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   });
 

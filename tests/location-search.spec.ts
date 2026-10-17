@@ -25,6 +25,8 @@ test("prefilled inquiry is bounded and never treated as analytics city context",
   expect(quoteLocationValue("x".repeat(200))).toHaveLength(120);
   const slugs = locations.map((location) => location.slug);
   expect(cityFromUrl(new URL("https://example.com/location/toronto/"), slugs)).toBe("toronto");
+  expect(cityFromUrl(new URL("https://example.com/location/toronto/sofa-cleaning/"), slugs)).toBe("toronto");
+  expect(cityFromUrl(new URL("https://example.com/location/unknown/sofa-cleaning/"), slugs)).toBeUndefined();
   expect(cityFromUrl(new URL("https://example.com/quote/?city=mississauga"), slugs)).toBe("mississauga");
   expect(cityFromUrl(new URL("https://example.com/quote/?city=private&service_location=Private+Address"), slugs)).toBeUndefined();
 });

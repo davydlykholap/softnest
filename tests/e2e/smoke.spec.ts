@@ -178,11 +178,31 @@ test("quote category controls wait for hydration before accepting a click", asyn
   await page.goto("/quote/", { waitUntil: "domcontentloaded" });
   const sofa = page.getByRole("button", { name: "Sofa or couch" });
   await expect(sofa).toBeDisabled();
+  await expect(page.getByRole("textbox", { name: "Your name" })).toBeDisabled();
+  await expect(page.getByRole("button", { name: "Get my quote" })).toBeDisabled();
   releaseScripts();
   await expect(sofa).toBeEnabled();
+  await expect(page.getByRole("textbox", { name: "Your name" })).toBeEnabled();
   await sofa.click();
   await expect(sofa).toHaveAttribute("aria-pressed", "true");
   await expect(page.getByRole("combobox", { name: "How many seats? for sofa 1" })).toBeVisible();
+});
+
+test("directory search waits for hydration before accepting input", async ({ page }) => {
+  let releaseScripts!: () => void;
+  const scriptsReady = new Promise<void>((resolve) => { releaseScripts = resolve; });
+  await page.route(/\/_next\/static\/.*\.js(?:\?.*)?$/, async (route) => {
+    await scriptsReady;
+    await route.continue();
+  });
+  await page.goto("/location/", { waitUntil: "domcontentloaded" });
+  const search = page.getByRole("combobox");
+  await expect(search).toBeDisabled();
+  await expect(page.getByRole("button", { name: "Check service area" })).toBeDisabled();
+  releaseScripts();
+  await expect(search).toBeEnabled();
+  await search.fill("Port Credit");
+  await expect(page.getByRole("option", { name: /Mississauga/ })).toBeVisible();
 });
 
 test("carpet quote reveals inputs for the selected surface type", async ({ page }) => {

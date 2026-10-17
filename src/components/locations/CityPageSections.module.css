@@ -1,7 +1,8 @@
 .introduction,
 .services,
 .why,
-.coverage {
+.coverage,
+.localDirectory {
   width: var(--location-page-content-width);
   margin: 0 auto;
 }
@@ -30,6 +31,21 @@
 }
 
 .introductionCopy { display: grid; gap: 18px; }
+
+.serviceLink,
+.relatedLinks a,
+.nearby a {
+  color: var(--location-page-green);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+.serviceLink { display: inline-block; margin-top: 20px; line-height: 1.6; }
+.moreCopy { min-width: 0; }
+.relatedLinks { display: flex; flex-wrap: wrap; gap: 10px 24px; list-style: none; margin: 16px 0 0; padding: 0; }
+.relatedLinks li { font-size: 15px; line-height: 1.6; }
+.coverageCopy > .nearby { margin-top: 20px; font-size: 16px; }
 
 @media (min-width: 721px) {
   .introduction p { font-size: var(--text-lead-size); color: #33473f; line-height: 1.65; }
@@ -164,3 +180,7 @@
     line-height: 1.04 !important;
   }
 }
+.localDirectory { padding: 0 0 44px; }
+.localDirectory h2 { font-size: 28px; margin-bottom: 20px; }
+.localDirectory ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; padding: 0; }
+.localDirectory a { color: #245b42; text-underline-offset: 4px; font-size: 16px; }

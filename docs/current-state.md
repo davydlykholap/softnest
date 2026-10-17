@@ -1,6 +1,8 @@
 # SoftNest current state
 
-Last updated: 2026-10-07
+Last updated: 2026-10-16
+
+The October 16 SEO, quote and GA4 integration changes described below are implemented in the current checkout and await deployment. The GA4 business account/property has been created externally; production collection must be verified after deployment. The homepage title, H1, visible copy and design are preserved.
 
 This is the authoritative handoff for the production website. Read it before structural content, routing, CMS or deployment work. For folder ownership and day-to-day rules, continue with `project-guide.md`.
 
@@ -11,8 +13,9 @@ This is the authoritative handoff for the production website. Read it before str
 - Sanity Studio in `studio/` manages public structured content.
 - Every normal dev/build first reads published Sanity content, validates it, and writes a generated snapshot under `src/content/generated/`.
 - React consumes that snapshot; public pages do not issue independent runtime Sanity requests.
-- The current catalog contains 10 services, 9 service areas and 11 blog articles.
+- The current catalog contains 10 services, 9 service areas and 13 blog articles.
 - Services, city routes and blog articles are generated at build time with `generateStaticParams()`.
+- One shared city-service route now generates 90 additional concise pages (10 services × 9 active cities), with local/service hub links, sitemap entries and quote context. See `city-service-pages.md` for coverage controls and content ownership; these changes await deployment.
 - Supabase is intentionally not connected. Private leads/jobs remain a future system.
 
 ## Content ownership today
@@ -23,7 +26,7 @@ React owns page structure, interactions and template prose that is intentionally
 
 - the About page is code-owned in `src/app/about/page.tsx`;
 - the homepage uses a small validated set of Sanity text keys while its main headline/description and several section labels are code-owned;
-- city pages use one shared `LocationPage` template, with optional city-specific overrides from Sanity;
+- city pages use one shared `LocationPage` template; reviewed copy in `src/content/cityPages.ts` overrides generated titles, descriptions, introductions, FAQs and neighbourhoods through `locations.ts`;
 - service pages use one shared `ServicePage`/`ServiceDetailPanel` template and no longer use the old CMS process/hero-heading fields.
 
 Do not assume that every text value present in an old Sanity document is still rendered. The build contract now validates only content the current UI consumes.
@@ -51,7 +54,11 @@ The site no longer depends on `react-icons`; the few UI icons used by interactiv
 
 The quote UI lives under `src/components/quote/`. Validation and payload construction are separate from transport. `src/domain/quote.ts` submits directly from the browser to Web3Forms because GitHub Pages has no application server.
 
-Both residential and business requests collect a service city or postal code. Submissions retain the originating city separately, and the lead analytics event includes only that public city slug. Photos are sent separately through Instagram or Facebook using the same name and city as the request.
+Both residential and business requests collect a service city or postal code. Every city-page quote link, including desktop/mobile navigation and footer links, passes `?city=<slug>`. Submissions retain the originating city separately from the editable service location. Lead analytics includes only that validated public city slug.
+
+Local service pages also pass a validated `service` query parameter. The form retains this context, preselects an item category where the match is unambiguous and preserves the original city-service landing URL in the submission. Customers can still change the service location and requested items. General upholstery, leather and pet treatment do not guess an item category.
+
+Customers may request a photo quote directly through Instagram/Facebook without first completing the form. The detailed form remains available for residential and business requests; any needed photos can be requested during follow-up. Photo-channel clicks emit `photo_quote_click`, never `generate_lead`. Direct photo uploads are not offered.
 
 A selected quote category can contain multiple independently configured entries. For example, one request can include a 2-seat sofa and a separate 3-seat sofa. Question choices use compact, shared-styled dropdowns; additional pieces/groups are added only when needed, so the common single-item path stays short. Item questions are type-aware: rugs collect dimensions/material/pile, wall-to-wall carpet can use dimensions or square footage, stairs collect stair/landing counts, and other furniture branches into the relevant size/description fields.
 
@@ -65,7 +72,7 @@ All public integration settings are centralized in `src/lib/integrations.ts`: Go
 
 Metadata, canonical URLs and structured-data helpers live under `src/seo`. The site generates sitemap and robots files at build time. Location sitemap inclusion respects `indexInSearch`.
 
-The location finder matches city names/slugs and neighbourhoods, and leaves ambiguous matches for the customer to choose. Postal codes require an individual availability check. Unmatched input can be carried to the quote form through a bounded `service_location` query parameter; it never creates a `source_city` attribution. Search events record only the outcome and a validated matched city, never the entered query. Quote-click/start and phone-click events retain validated city context. These hooks use the existing Google tag; a GA4 property and Search Console reporting are not configured by this change.
+The location finder matches city names/slugs and neighbourhoods, and leaves ambiguous matches for the customer to choose. Postal codes require an individual availability check. Unmatched input can be carried to the quote form through a bounded `service_location` query parameter; it never creates a `source_city` attribution. Search events record only the outcome and a validated matched city, never the entered query. Quote-click/start and phone-click events retain validated city context. These hooks use the existing Google tag. The SoftNest GA4 web stream `G-CM48WEXDDQ` is configured by default; `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` can override it (use `off` to disable). Localhost previews do not configure the GA4 destination. Do not duplicate a destination already connected to the Google tag. GA4 account 412323320 / property 559357252 / stream 16145916765 belongs to the SoftNest business Google account, with Toronto reporting time and CAD. `generate_lead` is registered as a code-based key event with no invented monetary value, and `source_city` is an event-scoped “Origin city page” dimension. Automatic form and site-search measurement are off. Query redaction excludes `service_location`, `email`, `phone`, `name` and `address`; email redaction remains enabled. Search Console domain property `softnestcare.ca` has a successful sitemap with 40 discovered pages (last read October 14, 2026). Production GA4 receipt and Ads conversion destinations still require post-deployment verification. Tracking failures cannot interrupt a successful quote.
 
 Published slugs are external URLs and must remain stable. GitHub Pages cannot provide normal request-time Next.js redirects, rewrites or headers. Agree on a static-host-compatible redirect strategy before changing a published service, city or article slug.
 

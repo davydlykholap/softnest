@@ -64,7 +64,9 @@ The old service `heroTitle`, `process`, `heroProofs` and retired section-heading
 
 ### Locations
 
-Every published city uses the same `LocationPage` React template. Base location fields provide metadata, image, service availability, neighbourhoods, map query and FAQs.
+Every published city uses the same `LocationPage` React template. Base location fields provide imagery, service availability and map queries. Reviewed `src/content/cityPages.ts` copy overrides generated city metadata, introductions, FAQs and neighbourhoods in `locations.ts`. City sections link to services and nearby locations. All quote links pass city context through server-rendered props, including desktop/mobile navigation.
+
+Service pages render related services and supporting blog articles. City links now use the reviewed `cityServiceCoverage` configuration, with featured links prioritizing Milton, Oakville and Etobicoke and a full list of local service pages underneath. The shared `/location/[city]/[service]/` route generates 90 pages from service facts and authored local booking guidance. See `city-service-pages.md` for coverage controls; the legacy four-service `availableServices` seed references do not limit these newly authorized combinations.
 
 `expandedContent` is an optional set of local overrides. Most cities currently use shared defaults; Mississauga has richer local overrides. The former `expanded` boolean is retired and ignored.
 
@@ -104,6 +106,10 @@ Each selected category stores an array of quote entries rather than one shared a
 
 This boundary is intentional: a future backend can replace the transport without redesigning the form.
 
+The form also offers a separate photo-quote choice through Instagram/Facebook. Messaging customers do not need to submit the form first. Form customers can provide requested photos during follow-up; the static website has no upload storage. Validated origin city remains separate from an edited service location.
+
+The existing Google tag configures SoftNest GA4 web stream `G-CM48WEXDDQ` on the production hostname only. `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` can override it at build time (use `off` to disable). Tracking errors are isolated from successful submissions. `photo_quote_click` records only channel and validated city, and is not a lead conversion.
+
 Attribution data is sanitized before storage/submission. Referrers are reduced to safe origin/path information rather than sending arbitrary query strings or fragments.
 
 ## Analytics and public integrations
@@ -111,13 +117,14 @@ Attribution data is sanitized before storage/submission. Referrers are reduced t
 `src/lib/integrations.ts` is the single public configuration module for:
 
 - Google Ads ID;
+- GA4 measurement ID (default `G-CM48WEXDDQ`; production hostname only);
 - quote conversion destination;
 - phone conversion destination;
 - Web3Forms access key;
 - optional homepage video URL;
 - optional YouTube URL.
 
-`src/lib/analytics.ts` emits lead, quote-click/start, location-search, phone and selected outbound-link events. City context is validated against published city slugs; location-search events exclude the entered query. The existing Google tag receives these events; GA4 property setup and Search Console remain external configuration. `MarketingAttribution` captures campaign identifiers in session storage.
+`src/lib/analytics.ts` emits lead, quote-click/start, location-search, phone and selected outbound-link events. City context is validated against published city slugs; location-search events exclude the entered query. The existing Google tag receives these events; GA4 property 559357252 is created under the SoftNest business account. A code-based `generate_lead` key event and `source_city` custom dimension are configured; receipt remains a post-deployment check. Search Console is already verified separately. `MarketingAttribution` captures campaign identifiers in session storage.
 
 ## SEO
 

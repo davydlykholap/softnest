@@ -1,5 +1,7 @@
 "use client";
 
+import { useHydrated } from "@/lib/useHydrated";
+
 import {
   FormEvent,
   KeyboardEvent,
@@ -45,6 +47,7 @@ export default function DirectorySearch({
   onChoose,
   onSubmit,
 }: Props) {
+  const isInteractive = useHydrated();
   const listId = useId();
   const formRef = useRef<HTMLFormElement>(null);
   const [open, setOpen] = useState(false);
@@ -117,6 +120,7 @@ export default function DirectorySearch({
       <div className="locations-search__field">
         <span className="locations-search__pin" aria-hidden="true" />
         <input
+          disabled={!isInteractive}
           id={id}
           name={id}
           value={value}
@@ -142,6 +146,7 @@ export default function DirectorySearch({
         />
         <button
           className="locations-search__toggle"
+          disabled={!isInteractive}
           type="button"
           aria-label={open ? "Close suggestions" : "Show suggestions"}
           aria-expanded={open}
@@ -187,7 +192,7 @@ export default function DirectorySearch({
           )}
         </div>
       </div>
-      <button type="submit">{submitLabel}</button>
+      <button type="submit" disabled={!isInteractive}>{submitLabel}</button>
       {message ? (
         <p id={messageId} role="status">
           {message}

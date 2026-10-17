@@ -6,6 +6,7 @@ import { navigationServices } from "@/content/services";
 
 type SiteHeaderProps = {
   current?: "blog" | "locations" | "services";
+  quoteHref?: string;
 };
 
 const headerServices = navigationServices.map(
@@ -15,7 +16,7 @@ const headerServices = navigationServices.map(
   }),
 );
 
-function HeaderActions() {
+function HeaderActions({ quoteHref }: { quoteHref: string }) {
   return (
     <div className="site-header__actions">
       <a className="header-phone" href={siteConfig.phoneHref}>
@@ -24,7 +25,7 @@ function HeaderActions() {
         </svg>
         <span>{siteConfig.displayPhone}</span>
       </a>
-      <Link className="header-quote quote-cta" href="/quote/">
+      <Link className="header-quote quote-cta" href={quoteHref}>
         
         {siteConfig.quoteLabel}
       </Link>
@@ -32,7 +33,7 @@ function HeaderActions() {
   );
 }
 
-export default function SiteHeader({ current }: SiteHeaderProps) {
+export default function SiteHeader({ current, quoteHref = "/quote/" }: SiteHeaderProps) {
   return (
     <header className="site-header">
       <Link href="/" className="brand" aria-label="SoftNest Fabric Care home">
@@ -53,7 +54,8 @@ export default function SiteHeader({ current }: SiteHeaderProps) {
 
       <HeaderNavigation
         current={current}
-        actions={<HeaderActions />}
+        actions={<HeaderActions quoteHref={quoteHref} />}
+        quoteHref={quoteHref}
         services={headerServices}
       />
     </header>

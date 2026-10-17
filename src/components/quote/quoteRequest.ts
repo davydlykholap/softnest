@@ -1,4 +1,5 @@
 import { sanitizeAttribution } from "@/lib/marketingAttribution";
+import { cityServiceProfiles } from "@/content/cityServiceConfig";
 import { businessQuantityQuestions, isPlusChoice } from "./quoteAnswers";
 import type { QuickQuestion } from "./quoteOptions";
 
@@ -194,9 +195,12 @@ export function buildQuoteSubmission(input: SubmissionInput) {
   submission.set("name", input.name);
   submission.set("service_location", String(input.formData.get("service_location") ?? "").trim().slice(0, 120));
   const sourceCity = String(input.formData.get("source_city") ?? "");
+  const requestedService = String(input.formData.get("requested_service") ?? "");
+  const validRequestedService = Object.hasOwn(cityServiceProfiles, requestedService);
+  if (validRequestedService) submission.set("requested_service", requestedService);
   if (/^[a-z]+(?:-[a-z]+)*$/.test(sourceCity) && sourceCity.length <= 80) {
     submission.set("source_city", sourceCity);
-    submission.set("landing_page", `/location/${sourceCity}/`);
+    submission.set("landing_page", `/location/${sourceCity}/${validRequestedService ? `${requestedService}/` : ""}`);
   }
   if (input.customerType === "Business") {
     for (const key of ["organization", "email", "service_frequency"]) {

@@ -68,6 +68,9 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', ${JSON.stringify(integrations.googleAdsId).replace(/</g, '\u003c')});
+            ${integrations.googleAnalyticsId ? `if (window.location.hostname === ${JSON.stringify(new URL(siteConfig.url).hostname)}) {
+              gtag('config', ${JSON.stringify(integrations.googleAnalyticsId)});
+            }` : ""}
           `}
         </Script>
       </body>

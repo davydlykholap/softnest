@@ -3,6 +3,7 @@
 import { siteConfig } from "@/lib/site";
 import {
   FormEvent,
+  Suspense,
   useCallback,
   useEffect,
   useMemo,
@@ -10,8 +11,9 @@ import {
   useState,
 } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { trackEvent, trackQuoteConversion } from "@/lib/analytics";
+import { useRouter, useSearchParams } from "next/navigation";
+import { cityServiceProfiles } from "@/content/cityServiceConfig";
+import { cityFromUrl, trackEvent, trackQuoteConversion } from "@/lib/analytics";
 import { integrations } from "@/lib/integrations";
 import { useHydrated } from "@/lib/useHydrated";
 import { submitQuote } from "@/domain/quote";
@@ -37,16 +39,37 @@ function growNotes(textarea: HTMLTextAreaElement) {
 }
 
 export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
+  return <Suspense fallback={<QuoteForm cities={cities} />}>
+    <QuoteFormWithContext cities={cities} />
+  </Suspense>;
+}
+
+function QuoteFormWithContext({ cities }: { cities: QuoteCity[] }) {
+  const params = useSearchParams();
+  const requestedService = params.get("service") ?? "";
+  const service = Object.hasOwn(cityServiceProfiles, requestedService) ? requestedService : "";
+  return <QuoteForm key={service} cities={cities} initialService={service} />;
+}
+
+function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initialService?: string }) {
+  const initialProfile = cityServiceProfiles[initialService];
+  const initialCategory = serviceOptions.find((option) => option.id === initialProfile?.category)?.id;
   const isInteractive = useHydrated();
   const router = useRouter();
+  const trackPhotoQuote = (channel: "instagram" | "facebook") => {
+    const sourceCity = cityFromUrl(new URL(window.location.href), cities.map((city) => city.slug));
+    trackEvent("photo_quote_click", { channel, ...(sourceCity ? { source_city: sourceCity } : {}) });
+  };
   const [customerType, setCustomerType] = useState<"Individual" | "Business">("Individual");
   const [{ selected, activeDetailId }, setSelectionState] = useState({
-    selected: [] as string[],
-    activeDetailId: "",
+    selected: initialCategory ? [initialCategory] : [] as string[],
+    activeDetailId: initialCategory ?? "",
   });
-  const [quoteItems, setQuoteItems] = useState<Record<string, QuoteEntry[]>>({});
+  const [quoteItems, setQuoteItems] = useState<Record<string, QuoteEntry[]>>(() => initialCategory ? {
+    [initialCategory]: [{ id: "quote-entry-1", answers: { ...initialProfile?.answers }, exactQuantities: {} }],
+  } : {});
   const [businessAmounts, setBusinessAmounts] = useState<Record<string, string>>({});
-  const nextEntryNumber = useRef(1);
+  const nextEntryNumber = useRef(initialCategory ? 2 : 1);
   const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
@@ -345,6 +368,7 @@ export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
       const sourceCity = cities.find((city) => city.slug === value)?.slug;
       trackEvent("quote_start", { ...(sourceCity ? { source_city: sourceCity } : {}) });
     }}>
+      {initialService ? <input type="hidden" name="requested_service" value={initialService} /> : null}
       <input
         type="checkbox"
         name="botcheck"
@@ -364,6 +388,7 @@ export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
             type="radio"
             name="customer_type"
             value="Individual"
+            disabled={!isInteractive}
             checked={customerType === "Individual"}
             onChange={() => changeCustomerType("Individual")}
           />
@@ -374,6 +399,7 @@ export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
             type="radio"
             name="customer_type"
             value="Business"
+            disabled={!isInteractive}
             checked={customerType === "Business"}
             onChange={() => changeCustomerType("Business")}
           />
@@ -383,24 +409,30 @@ export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
 
       <div className="quote-page-form__heading">
         <h1>Let’s refresh your space.</h1>
+        {initialProfile ? <p className="quote-page-service-context">Your request: <strong>{initialProfile.title}</strong>. You can adjust the items below.</p> : null}
         <p>
           {customerType === "Business"
             ? "Tell us about the furniture and carpets in your business space. We’ll recommend a practical cleaning plan and follow up with a clear quote."
             : "Tell us about the furniture and carpets you’d like refreshed. We’ll recommend fabric-safe care and follow up with a clear quote."}
         </p>
-        <p className="quote-page-photo-channels">
-          After requesting your quote, send full-item photos and stain close-ups through{" "}
-          <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-            Instagram
-          </a>{" "}
-          or{" "}
-          <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-            Facebook
-          </a>. Include the same name and service city so we can match your photos to your request.
-        </p>
+        <aside className="quote-page-photo-choice" aria-labelledby="photo-quote-heading">
+          <h2 id="photo-quote-heading">Prefer a photo quote?</h2>
+          <p>
+            Message full-item photos and stain close-ups through{" "}
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackPhotoQuote("instagram")}>
+              Instagram
+            </a>{" "}
+            or{" "}
+            <a href={facebookUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackPhotoQuote("facebook")}>
+              Facebook
+            </a>. Include your city or postal code and everything you want cleaned. No form is needed for this option.
+          </p>
+          <p>Prefer a form? Continue below. If we need photos, we’ll explain what to send when we follow up.</p>
+        </aside>
       </div>
 
       <QuoteContactFields
+        disabled={!isInteractive}
         key={customerType}
         customerType={customerType}
         phone={phone}
@@ -438,6 +470,7 @@ export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
       <label className="quote-page-field quote-page-field--notes">
         <span>Anything else we should know?</span>
         <textarea
+          disabled={!isInteractive}
           name="notes"
           rows={4}
           maxLength={1500}
@@ -453,7 +486,7 @@ export default function QuotePageForm({ cities }: { cities: QuoteCity[] }) {
         <button
           className="quote-cta quote-cta--pulse"
           type="submit"
-          disabled={submitting}
+          disabled={submitting || !isInteractive}
         >
           {submitting ? "Sending…" : "Get my quote"}
           <span aria-hidden="true">→</span>

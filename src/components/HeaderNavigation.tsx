@@ -10,6 +10,7 @@ type HeaderNavigationProps = {
   current?: "blog" | "locations" | "services";
   actions: ReactNode;
   services: NavigationService[];
+  quoteHref: string;
 };
 
 const serviceMenuOrder = [
@@ -40,6 +41,7 @@ export default function HeaderNavigation({
   current,
   actions,
   services,
+  quoteHref,
 }: HeaderNavigationProps) {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -275,6 +277,7 @@ export default function HeaderNavigation({
       {actions}
 
       <MobileHeaderNavigation
+        quoteHref={quoteHref}
         open={open}
         mobileServicesOpen={mobileServicesOpen}
         setOpen={setOpen}

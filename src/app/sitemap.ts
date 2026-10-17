@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { locations } from "@/content/locations";
 import { services } from "@/content/services";
 import { getPosts } from "@/content/posts";
+import { cityServicePages } from "@/content/cityServicePages";
 
 export const dynamic = "force-static";
 
@@ -24,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteUrl}/location/${location.slug}/`,
     })),
     { url: `${siteUrl}/quote/` },
+    ...cityServicePages.map((page) => ({ url: `${siteUrl}${page.path}` })),
     { url: `${siteUrl}/privacy/` },
     { url: `${siteUrl}/terms/` },
   ];

@@ -9,6 +9,7 @@ type QuoteContactFieldsProps = {
   phone: string;
   onPhoneChange: (value: string) => void;
   cities: QuoteCity[];
+  disabled: boolean;
 };
 
 function formatPhoneNumber(value: string) {
@@ -29,11 +30,11 @@ function formatPhoneNumber(value: string) {
   return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
 }
 
-export function QuoteContactFields({ customerType, phone, onPhoneChange, cities }: QuoteContactFieldsProps) {
+export function QuoteContactFields({ customerType, phone, onPhoneChange, cities, disabled }: QuoteContactFieldsProps) {
   const [serviceFrequency, setServiceFrequency] = useState("");
 
   return (
-      <div className="quote-page-form__grid">
+      <fieldset className="quote-page-form__grid" disabled={disabled} aria-label="Contact and service location">
         {customerType === "Business" && (
           <label className="quote-page-field">
             <span>Organization name</span>
@@ -113,6 +114,6 @@ export function QuoteContactFields({ customerType, phone, onPhoneChange, cities 
             </div>
           </>
         )}
-      </div>
+      </fieldset>
   );
 }
