@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeroActionButtons from "@/components/HeroActionButtons";
+import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import type { CityServicePageContent } from "@/content/cityServicePages";
@@ -33,7 +34,6 @@ export default function CityServicePage({ content }: { content: CityServicePageC
             <h1 id="city-service-title">{profile.title}{" "}<span>in {location.name}</span></h1>
             <p className={styles.lead}>{content.introduction}</p>
             <HeroActionButtons quoteHref={quoteHref} quoteAriaLabel="Get a Quote" primaryTone="gold" />
-            <p className={styles.reassurance}>Free quote. Clear price, tax included.</p>
           </div>
           <div className={styles.photo}><Image src={service.image} alt={service.imageAlt} fill priority sizes="(max-width: 760px) 100vw, 40vw" /></div>
         </section>
@@ -54,10 +54,15 @@ export default function CityServicePage({ content }: { content: CityServicePageC
           <h2 id="questions-heading">Before you book</h2>
           <div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div>
         </section>
-        <section className={styles.final} aria-labelledby="ready-heading">
-          <div><h2 id="ready-heading">Let’s plan your clean.</h2><p>Tell us what needs attention in your {location.name} home. We’ll confirm the work and price before booking.</p></div>{quoteButton}
-        </section>
       </div>
+      <DirectoryFinalCta
+        id="quote-cta"
+        title="Show us what needs cleaning."
+        description="Tell us about the item or area and any stains or odours. We'll confirm the scope and price before cleaning."
+        action={{ href: quoteHref, label: "Get a quote" }}
+        image="/images/softnest-hero-room.webp"
+        imageAlt="Bright living room with a deep green sofa"
+      />
       <div className={styles.mobileQuote} aria-label="Request your cleaning quote">{quoteButton}</div>
     </main>
     <SiteFooter quoteHref={quoteHref} />
