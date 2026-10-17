@@ -83,7 +83,7 @@ for (const city of cities) {
 
     await page.locator("#quote-cta").getByRole("link", { name: "Get a Quote" }).click();
     await expect(page).toHaveURL(new RegExp(`/quote/\\?city=${slug}$`));
-    await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue(city);
+    await expect(page.getByRole("textbox", { name: "Service city", exact: true })).toHaveValue(city);
     await expect(page.locator('input[name="source_city"]')).toHaveValue(slug);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   });

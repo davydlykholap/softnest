@@ -232,7 +232,7 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
     }
     const serviceLocation = String(formData.get("service_location") ?? "").trim();
     if (serviceLocation.length < 2 || serviceLocation.length > 120) {
-      setError("Please enter the service city or postal code.");
+      setError(customerType === "Individual" ? "Please enter the service city." : "Please enter the service city or postal code.");
       return;
     }
     formData.set("service_location", serviceLocation);
@@ -468,7 +468,6 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
           disabled={submitting || !isInteractive}
         >
           {submitting ? "Sending…" : "Get my quote"}
-          <span aria-hidden="true">→</span>
         </button>
         <p>
           By submitting, you agree that SoftNest may contact you about this

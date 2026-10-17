@@ -83,7 +83,7 @@ Service pages render related-service references and relevant articles. City link
 
 The local FAQ field has the legacy internal name `mississaugaFaqs` in Sanity for compatibility; Studio labels it **Local FAQs**. Treat it as generic location data.
 
-City/neighbourhood search receives only names, slugs and neighbourhoods. Keep postal-code availability manual unless an authoritative coverage source is added. Unmatched requests prefill the quote form through `service_location`, with a 120-character limit and no inferred city attribution. Never send raw location searches to analytics.
+City/neighbourhood search receives only names, slugs and neighbourhoods. Keep postal-code availability manual unless an authoritative coverage source is added. Unmatched requests prefill the quote form through `service_location`, with a 120-character limit and no inferred city attribution. On the individual form, Canadian postal codes (or postal prefixes) from those inquiries prefill the separate optional postal field; other location text prefills the city field. Never send raw location searches to analytics.
 
 ## Homepage and About
 

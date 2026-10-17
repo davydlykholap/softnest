@@ -97,6 +97,8 @@ test("submission preserves multiple differently configured sofas", () => {
   formData.set("botcheck", "");
   formData.set("website", "should-not-send");
   formData.set("organization", "Example Ltd");
+  formData.set("service_location", " Oakville ");
+  formData.set("postal_code", " l6h 1a1 ");
   const submission = buildQuoteSubmission({
     formData,
     customerType: "Individual",
@@ -126,6 +128,8 @@ test("submission preserves multiple differently configured sofas", () => {
   expect(submission.has("unexpected")).toBe(false);
   expect(submission.has("website")).toBe(false);
   expect(submission.has("organization")).toBe(false);
+  expect(submission.get("service_location")).toBe("Oakville");
+  expect(submission.get("postal_code")).toBe("L6H 1A1");
 });
 
 test("carpet questions follow the selected surface type", () => {

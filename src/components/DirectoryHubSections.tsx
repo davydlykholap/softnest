@@ -67,7 +67,7 @@ export function DirectoryHero({
                 href={primaryAction.href}
               >
                 {primaryAction.label}
-                <span aria-hidden="true">→</span>
+                {!primaryAction.href.startsWith("/quote") ? <span aria-hidden="true">→</span> : null}
               </Link>
             ) : null}
             {secondaryAction ? (
@@ -175,7 +175,7 @@ export function DirectorySupportSection({
             href={primaryAction.href}
           >
             {primaryAction.label}
-            <span aria-hidden="true">→</span>
+            {!primaryAction.href.startsWith("/quote") ? <span aria-hidden="true">→</span> : null}
           </Link>
           <a className="locations-phone-pill" href={phoneHref}>
             <span aria-hidden="true">☎</span>
@@ -244,7 +244,7 @@ export function DirectoryFinalCta({
           href={action.href}
         >
           {action.label}
-          <span aria-hidden="true">→</span>
+          {!action.href.startsWith("/quote") ? <span aria-hidden="true">→</span> : null}
         </Link>
       </div>
     </section>

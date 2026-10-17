@@ -14,7 +14,8 @@
   min-height: 56px;
   padding: 0 30px;
   font-size: 13px;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
 }
 @media (min-width: 821px) {
   .cta:global(.site-final-cta) { grid-template-columns: .42fr .58fr; }

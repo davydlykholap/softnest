@@ -111,7 +111,6 @@ export default function ServicesPage() {
               href="/quote/"
             >
               Ask about your item
-              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </section>

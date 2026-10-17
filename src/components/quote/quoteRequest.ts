@@ -194,6 +194,8 @@ export function buildQuoteSubmission(input: SubmissionInput) {
   submission.set("customer_type", input.customerType);
   submission.set("name", input.name);
   submission.set("service_location", String(input.formData.get("service_location") ?? "").trim().slice(0, 120));
+  const postalCode = String(input.formData.get("postal_code") ?? "").trim().toUpperCase().slice(0, 10);
+  if (input.customerType === "Individual" && postalCode) submission.set("postal_code", postalCode);
   const sourceCity = String(input.formData.get("source_city") ?? "");
   const requestedService = String(input.formData.get("requested_service") ?? "");
   const validRequestedService = Object.hasOwn(cityServiceProfiles, requestedService);

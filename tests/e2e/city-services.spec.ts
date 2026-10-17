@@ -80,12 +80,12 @@ test("local quote carries city, service and editable sofa selection into a submi
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
   await page.locator("main section").first().getByRole("link", { name: "Get a Quote", exact: true }).click();
   await expect(page).toHaveURL(/\/quote\/\?city=oakville&service=sofa-cleaning$/);
-  await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue("Oakville");
+  await expect(page.getByRole("textbox", { name: "Service city", exact: true })).toHaveValue("Oakville");
   expect(await page.evaluate(() => window.dataLayer)).toContainEqual(["event", "quote_click", { source_city: "oakville" }]);
   await expect(page.getByRole("button", { name: "Sofa or couch", exact: true })).toHaveAttribute("aria-pressed", "true");
   await page.getByRole("textbox", { name: "Your name" }).fill("Local Page Test");
   await page.getByRole("textbox", { name: "Phone number" }).fill("4165550123");
-  await page.getByRole("textbox", { name: "Service city or postal code" }).fill("Milton");
+  await page.getByRole("textbox", { name: "Service city", exact: true }).fill("Milton");
   for (const [name, value] of [["How many seats? for sofa 1", "3"], ["Sofa type for sofa 1", "Standard"]]) {
     await page.getByRole("combobox", { name }).click();
     await page.getByRole("option", { name: value, exact: true }).click();

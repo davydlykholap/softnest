@@ -67,7 +67,7 @@ export default function ServicePage({ service }: { service: Service }) {
                 items and access details so we can confirm availability and the work for your address.
               </p>
               <p>Your quote depends on the size, condition and treatment required. We confirm the agreed scope and price before booking.</p>
-              <Link href="/quote/">Request a free quote <span aria-hidden="true">→</span></Link>
+              <Link href="/quote/">Request a free quote</Link>
               {localPages.length > 0 ? <nav aria-label={`${service.name} by city`}>
                 <ul>{localPages.map((page) => <li key={page.path}><Link href={page.path}>{page.profile.title} in {page.location.name}</Link></li>)}</ul>
               </nav> : null}

@@ -23,7 +23,8 @@ test("postal code inquiry keeps its value without inventing a city attribution",
   await page.getByRole("button", { name: "Check service area" }).click();
   await expect(page.getByRole("status")).toContainText("Postal codes are confirmed individually");
   await page.getByRole("link", { name: "Ask about this location" }).click();
-  await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue("L5G 1A1");
+  await expect(page.getByRole("textbox", { name: "Postal code (optional)", exact: true })).toHaveValue("L5G 1A1");
+  await expect(page.getByRole("textbox", { name: "Service city", exact: true })).toHaveValue("");
   await expect(page.locator('input[name="source_city"]')).toHaveCount(0);
 });
 
@@ -39,7 +40,7 @@ test("city CTA events and explicit quote prefills keep city context without cust
   expect(await page.evaluate(() => window.dataLayer)).toContainEqual(["event", "quote_click", { source_city: "toronto" }]);
   await page.goto("/quote/?city=toronto");
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
-  await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue("Toronto");
+  await expect(page.getByRole("textbox", { name: "Service city", exact: true })).toHaveValue("Toronto");
   await page.getByRole("textbox", { name: "Your name" }).fill("Private Customer");
   const events = await page.evaluate(() => window.dataLayer);
   const eventTuples = (events ?? []).map((entry) => {

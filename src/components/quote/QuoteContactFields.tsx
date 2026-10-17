@@ -2,7 +2,7 @@
 
 import { Suspense, useState } from "react";
 import { QuoteSelect } from "./QuoteSelect";
-import QuoteLocationField, { type QuoteCity } from "./QuoteLocationField";
+import QuoteLocationField, { QuoteLocationInputs, type QuoteCity } from "./QuoteLocationField";
 
 type QuoteContactFieldsProps = {
   customerType: "Individual" | "Business";
@@ -90,8 +90,8 @@ export function QuoteContactFields({ customerType, phone, onPhoneChange, cities,
             required
           />
         </label>
-        <Suspense fallback={<label className="quote-page-field"><span>Service city or postal code</span><input name="service_location" type="text" placeholder="Where is the cleaning needed?" minLength={2} maxLength={120} required /></label>}>
-          <QuoteLocationField cities={cities} />
+        <Suspense fallback={<QuoteLocationInputs individual={customerType === "Individual"} />}>
+          <QuoteLocationField cities={cities} individual={customerType === "Individual"} />
         </Suspense>
         {customerType === "Business" && (
           <>

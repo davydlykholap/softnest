@@ -125,7 +125,6 @@ export default function LocationsPage() {
               href="/quote/"
             >
               Ask about your city
-              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </section>

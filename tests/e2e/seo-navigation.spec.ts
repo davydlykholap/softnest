@@ -3,7 +3,7 @@ import { expect, test, type Page } from "@playwright/test";
 async function fillSofaQuote(page: Page) {
   await page.getByRole("textbox", { name: "Your name" }).fill("SEO Test Customer");
   await page.getByRole("textbox", { name: "Phone number" }).fill("4165550123");
-  await page.getByRole("textbox", { name: "Service city or postal code" }).fill("Oakville");
+  await page.getByRole("textbox", { name: "Service city", exact: true }).fill("Oakville");
   await page.getByRole("button", { name: "Sofa or couch" }).click();
   await page.getByRole("combobox", { name: "How many seats? for sofa 1" }).click();
   await page.getByRole("option", { name: "3", exact: true }).click();
@@ -74,7 +74,7 @@ test("quote page preselects the item without a contact block or service notice",
     await expect(page.locator("main")).not.toContainText("Choose how to get in touch");
     await expect(page.locator("main")).not.toContainText("Your request:");
     await expect(page.getByRole("button", { name: "Sofa or couch", exact: true })).toHaveAttribute("aria-pressed", "true");
-    await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue("Etobicoke");
+    await expect(page.getByRole("textbox", { name: "Service city", exact: true })).toHaveValue("Etobicoke");
     await expect(page.getByRole("textbox", { name: "Your name" })).toHaveValue("");
   }
 });
@@ -89,19 +89,72 @@ test("successful quote retains its origin separately from an edited city and cou
   });
   await page.goto("/location/milton/");
   await page.locator(".location-page-hero .hero-action-buttons").getByRole("link", { name: /Get a Quote/ }).click();
-  await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue("Milton");
+  await expect(page.getByRole("textbox", { name: "Service city", exact: true })).toHaveValue("Milton");
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
   await fillSofaQuote(page);
+  await page.getByRole("textbox", { name: "Postal code (optional)", exact: true }).fill("l6h 1a1");
   await page.getByRole("button", { name: "Get my quote" }).click();
   await expect(page).toHaveURL(/\/quote\/thank-you\/$/);
   expect(submissions).toBe(1);
   expect(payload).toContain('name="source_city"\r\n\r\nmilton');
   expect(payload).toContain('name="service_location"\r\n\r\nOakville');
+  expect(payload).toContain('name="postal_code"\r\n\r\nL6H 1A1');
   const events = await page.evaluate(() => window.dataLayer);
   const leadEvents = (events ?? []).filter((entry) => (entry as Record<number, unknown>)[1] === "generate_lead");
   expect(leadEvents).toHaveLength(1);
   expect(leadEvents[0]).toEqual(["event", "generate_lead", { event_category: "lead", event_label: "quote_form", source_city: "milton" }]);
   expect(JSON.stringify(events)).not.toContain("SEO Test Customer");
+  expect(JSON.stringify(events)).not.toMatch(/l6h 1a1/i);
+});
+
+test("individual city and optional postal fields fit both layouts and business keeps its location field", async ({ page }) => {
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/quote/?city=oakville&service=sofa-cleaning");
+    const city = page.getByRole("textbox", { name: "Service city", exact: true });
+    const postal = page.getByRole("textbox", { name: "Postal code (optional)", exact: true });
+    await expect(city).toHaveValue("Oakville");
+    await expect(city).toHaveAttribute("placeholder", "City");
+    await expect(postal).toHaveValue("");
+    expect(await postal.evaluate((input: HTMLInputElement) => input.required)).toBe(false);
+    const cityBox = (await city.boundingBox())!;
+    const postalBox = (await postal.boundingBox())!;
+    if (width > 820) {
+      expect(Math.abs(cityBox.y - postalBox.y)).toBeLessThan(1);
+      expect(postalBox.x).toBeGreaterThan(cityBox.x + cityBox.width);
+    } else {
+      expect(postalBox.y).toBeGreaterThan(cityBox.y + cityBox.height);
+    }
+    await postal.fill("L6H 1A1");
+    await page.getByRole("radio", { name: "Business", exact: true }).check();
+    await expect(postal).toHaveCount(0);
+    await expect(page.getByRole("textbox", { name: "Service city or postal code", exact: true })).toHaveValue("Oakville");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  }
+});
+
+test("shared quote buttons have centered text and no arrow on desktop and mobile", async ({ page }) => {
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    for (const path of ["/", "/services/", "/location/", "/services/sofa-cleaning/", "/location/oakville/", "/location/etobicoke/sofa-cleaning/", "/quote/"]) {
+      await page.goto(path);
+      const buttons = page.locator(".quote-cta:visible");
+      expect(await buttons.count(), path).toBeGreaterThan(0);
+      for (const button of await buttons.all()) {
+        await expect(button, path).not.toContainText("→");
+        await expect(button.locator("svg"), path).toHaveCount(0);
+        const offset = await button.evaluate((element) => {
+          const range = document.createRange();
+          range.selectNodeContents(element);
+          const text = range.getBoundingClientRect();
+          const box = element.getBoundingClientRect();
+          return Math.abs((text.left + text.right) / 2 - (box.left + box.right) / 2);
+        });
+        expect(offset, `${width}px ${path}`).toBeLessThan(2);
+      }
+    }
+  }
 });
 
 test("failed delivery preserves the form and a tracking failure cannot block a successful retry", async ({ page }) => {

@@ -106,7 +106,7 @@ test("quote form shows useful validation", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText("refresh your space");
   await page.getByRole("textbox", { name: "Your name" }).fill("Test Customer");
   await page.getByRole("textbox", { name: "Phone number" }).fill("4165550123");
-  await page.getByRole("textbox", { name: "Service city or postal code" }).fill("Toronto");
+  await page.getByRole("textbox", { name: "Service city", exact: true }).fill("Toronto");
   await page.getByRole("textbox", { name: "Anything else we should know?" }).fill("None");
   await page.getByRole("button", { name: "Get my quote" }).click();
   await expect(page.locator("#quote-page-error")).toHaveText("Please select at least one item.");
