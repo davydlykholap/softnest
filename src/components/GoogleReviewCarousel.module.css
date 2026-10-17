@@ -3,7 +3,8 @@
 .controls { display: contents; }
 /* Center on the cards after the viewport shadow padding and track inset. */
 .carousel .controls :global(.gallery-carousel-arrow) { top: calc(24px + var(--review-card-height) / 2); transform: translateY(-50%); }
-.carousel .controls :global(.gallery-carousel-arrow):hover { transform: translateY(-50%) scale(1.04); }
+@media (hover: hover) and (pointer: fine) {
+.carousel .controls :global(.gallery-carousel-arrow):hover { transform: translateY(-50%) scale(1.04); } }
 .carousel .controls :global(.gallery-carousel-arrow--prev) { left: 0; }
 .carousel .controls :global(.gallery-carousel-arrow--next) { right: 0; }
 .desktop { min-width: 0; }

@@ -1,0 +1,68 @@
+/* One mobile hero treatment for the homepage and city landing pages. */
+@media (max-width: 640px) {
+  .location-page-page.location-page-page--city { padding-top: 0; }
+
+  :is(.new-hero-root, .location-page-page--city) .mobile-page-hero {
+    width: 100%;
+    min-height: 100svh;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .mobile-page-hero :is(.hero__photo, .hero__wash, .location-page-hero__photo, .location-page-hero__wash) {
+    border-radius: 0;
+  }
+
+  .mobile-page-hero :is(.hero__photo, .location-page-hero__photo) img {
+    object-position: center;
+  }
+
+  :is(.new-hero-root, .location-page-page--city) .mobile-page-hero .mobile-page-hero__wash {
+    background: linear-gradient(180deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,.34) 34%, rgba(255,255,255,.08) 49%, rgba(255,255,255,0) 58%);
+  }
+
+  :is(.new-hero-root, .location-page-page--city) .mobile-page-hero .mobile-page-hero__copy {
+    width: 100%;
+    max-width: none;
+    padding: 94px 22px 0;
+    margin: 0;
+    transform: none;
+  }
+
+  :is(.new-hero-root, .location-page-page--city) .mobile-page-hero .mobile-page-hero__title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 10vw, 40px);
+    font-weight: 400;
+    letter-spacing: -.04em;
+    line-height: 1.02;
+    margin: 0;
+  }
+
+  .mobile-page-hero .mobile-page-hero__title span {
+    margin-top: 6px;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  :is(.new-hero-root, .location-page-page--city) .mobile-page-hero .mobile-page-hero__description {
+    max-width: 355px;
+    margin: 14px 0 0;
+    font-size: var(--text-hero-size);
+    line-height: var(--text-hero-leading);
+  }
+
+  :is(.new-hero-root, .location-page-page--city) .mobile-page-hero .hero__actions {
+    margin-top: 16px;
+  }
+
+  .mobile-page-hero .hero__actions .button--secondary {
+    min-width: 0;
+    background: rgba(255,255,255,.92);
+  }
+
+}
+
+@media (hover: none), (pointer: coarse) {
+  a, button, summary, label { -webkit-tap-highlight-color: transparent; }
+}

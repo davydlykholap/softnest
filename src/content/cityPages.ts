@@ -67,7 +67,7 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Do you clean condos in Mississauga?",
@@ -75,15 +75,15 @@ export const cityPages: Record<string, CityPageCopy> = {
       },
       {
         "question": "How long until it's dry?",
-        "answer": "Most sofas dry within six to eight hours. Carpet drying depends on the material, moisture, airflow and room conditions. We use drying passes and air movers where appropriate and explain the expected timing on site. Wait until the fabric is fully dry before use."
+        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Mississauga do you cover?",
@@ -153,7 +153,7 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "What should I arrange for a downtown condo appointment?",
@@ -161,19 +161,19 @@ export const cityPages: Record<string, CityPageCopy> = {
       },
       {
         "question": "Can I sit on my sofa the same evening?",
-        "answer": "Often, yes, if the upholstery has fully dried. Most sofas dry within six to eight hours, but thick cushions, limited airflow and humidity can extend that. We explain the expected timing on site; wait until the fabric is fully dry before sitting on it."
+        "answer": "Often, yes, once the fabric is completely dry. Most sofas dry in about six to eight hours, but thick cushions or a humid room can take longer. Tell us if you need the sofa that evening so we can help you plan the appointment and drying time."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "Can you clean a sofa and mattress in the same visit?",
-        "answer": "Often, yes. Include photos and sizes of both items with your quote request so we can allow enough time. Photos are optional."
+        "answer": "Often, yes. Tell us the sofa and mattress sizes and what you'd like cleaned so we can allow enough time and confirm a total price. Photos are welcome if you'd like to send them. We'll also help you plan time for both items to dry."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Toronto do you cover?",
@@ -243,27 +243,27 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Can you quote whole-house carpet cleaning from photos?",
-        "answer": "Yes. Send photos of each carpeted room plus approximate room dimensions and stair count. We'll confirm the work and your final price before booking. Photos are optional."
+        "answer": "Yes. Photos can help, but you can also call or text us with the number of rooms, approximate sizes and any stairs. We'll help you work out what needs cleaning and confirm the total price before booking."
       },
       {
         "question": "Do you clean large sectionals?",
-        "answer": "Yes — sectionals with chaise are everyday work for us. Pricing is by seat count, so tell us the seat count; a full sectional photo is optional."
+        "answer": "Yes, including sectionals with a chaise. Tell us the number of seats and any separate pieces you'd like cleaned. If you're unsure how to count them, describe the layout or send a photo if you'd like. We'll help work it out and confirm the total price."
       },
       {
         "question": "How long until it's dry?",
-        "answer": "Most sofas dry within six to eight hours. Carpet drying depends on the material, moisture, airflow and room conditions. We use drying passes and air movers where appropriate and explain the expected timing on site. Wait until the fabric is fully dry before use."
+        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Brampton do you cover?",
@@ -333,11 +333,11 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Do you handle delicate upholstery fabrics?",
-        "answer": "Yes. We identify the fabric on site first and adjust the method — lower moisture, softer agitation, fabric-appropriate chemistry — for linen-look weaves, bouclé, velvet and similar materials."
+        "answer": "We can clean many delicate fabrics, but the right method depends on the material and condition. Tell us about your furniture and any care label. We'll check and test the fabric before cleaning, and discuss the options if it needs a different approach."
       },
       {
         "question": "Do you clean condos in Etobicoke?",
@@ -345,15 +345,15 @@ export const cityPages: Record<string, CityPageCopy> = {
       },
       {
         "question": "How long until it's dry?",
-        "answer": "Most sofas dry within six to eight hours. Carpet drying depends on the material, moisture, airflow and room conditions. We use drying passes and air movers where appropriate and explain the expected timing on site. Wait until the fabric is fully dry before use."
+        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Etobicoke do you cover?",
@@ -423,11 +423,11 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Is your method safe for expensive upholstery?",
-        "answer": "Suitability depends on the fabric and construction, rather than its price. We check the care information, assess the material and test an appropriate method before cleaning. If a piece cannot be treated safely with the available method, we explain that before proceeding."
+        "answer": "We'll check the fabric, care label and condition, then test a suitable method before cleaning. Tell us about any delicate materials or previous treatments when you get in touch. If the furniture needs a different approach, we'll explain the options before you decide."
       },
       {
         "question": "Do you clean condos in Burlington?",
@@ -435,15 +435,15 @@ export const cityPages: Record<string, CityPageCopy> = {
       },
       {
         "question": "How long until it's dry?",
-        "answer": "Most sofas dry within six to eight hours. Carpet drying depends on the material, moisture, airflow and room conditions. We use drying passes and air movers where appropriate and explain the expected timing on site. Wait until the fabric is fully dry before use."
+        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Burlington do you cover?",
@@ -512,11 +512,11 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "We just moved into a new build — when should the carpet be cleaned?",
-        "answer": "Choose the timing based on the carpet condition and any work still underway. Send room photos and let us know about construction or renovation dust. We can advise whether cleaning is useful now or should follow the remaining dusty work; new carpet does not automatically need a deep clean. Photos are optional."
+        "question": "When should I clean the carpet in a new home?",
+        "answer": "Tell us about the carpet's condition and any construction or decorating still underway. We'll help you decide whether cleaning would be useful now or better left until the dusty work is finished. You can describe the rooms by phone or text; photos are optional."
       },
       {
         "question": "Do you clean condos in Vaughan?",
@@ -524,15 +524,15 @@ export const cityPages: Record<string, CityPageCopy> = {
       },
       {
         "question": "How long until it's dry?",
-        "answer": "Most sofas dry within six to eight hours. Carpet drying depends on the material, moisture, airflow and room conditions. We use drying passes and air movers where appropriate and explain the expected timing on site. Wait until the fabric is fully dry before use."
+        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Vaughan do you cover?",
@@ -602,23 +602,23 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "When should I schedule carpet cleaning around a move?",
-        "answer": "Tell us your move date and whether painting, flooring or other dusty work will still be happening. We can discuss a practical appointment time and the drying period to allow before furniture is placed back or rooms are used. A newly installed carpet does not automatically need deep cleaning."
+        "answer": "Tell us your move date and whether painting or other dusty work is still happening. We'll help you choose a time that fits around the work and leaves enough drying time before furniture goes back. If the carpet is newly installed, we'll discuss whether it needs cleaning at all."
       },
       {
         "question": "How long until it's dry?",
-        "answer": "Most sofas dry within six to eight hours. Carpet drying depends on the material, moisture, airflow and room conditions. We use drying passes and air movers where appropriate and explain the expected timing on site. Wait until the fabric is fully dry before use."
+        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Milton do you cover?",
@@ -689,27 +689,27 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Can old carpet with years of buildup actually be cleaned?",
-        "answer": "Yes, older carpet can often be cleaned and look fresher. We check the material, backing and condition and can try to improve difficult marks or worn-looking areas. Complete mark removal or restoration is not promised. Describe your concerns by phone, message or the optional form; photos are optional too."
+        "answer": "Yes. Removing built-up dirt can often make older carpet look fresher. Show us the stains or worn-looking areas and tell us about any products you've tried so we can choose a treatment. Permanent wear or colour changes may still show, but we can try to improve the overall appearance and explain what to expect before starting."
       },
       {
         "question": "Can you remove dust and pet dander from carpet?",
-        "answer": "Suitable extraction can remove trapped soil and some dust and pet dander from carpet and upholstery. Results depend on the material and condition. Cleaning is not a guarantee of allergy relief, and we explain what the treatment can realistically address."
+        "answer": "Cleaning helps lift trapped dirt, dust and pet dander from carpet and fabric furniture. Tell us which rooms or pieces your pets use most so we can plan the cleaning around the areas that need attention. We'll explain the method and the drying time before we start."
       },
       {
         "question": "How long until it's dry?",
-        "answer": "Most sofas dry within six to eight hours. Carpet drying depends on the material, moisture, airflow and room conditions. We use drying passes and air movers where appropriate and explain the expected timing on site. Wait until the fabric is fully dry before use."
+        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Hamilton do you cover?",
@@ -779,7 +779,7 @@ export const cityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call, message us on Instagram or Facebook, or use the quote form if you prefer. The form and photos are optional. Tell us your city or postal code and what needs cleaning. We confirm the work and final price, tax included, before booking."
+        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "What should I arrange for an Oakville condo appointment?",
@@ -787,15 +787,15 @@ export const cityPages: Record<string, CityPageCopy> = {
       },
       {
         "question": "How long until it's dry?",
-        "answer": "Most sofas dry within six to eight hours. Carpet drying depends on the material, moisture, airflow and room conditions. We use drying passes and air movers where appropriate and explain the expected timing on site. Wait until the fabric is fully dry before use."
+        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
       },
       {
         "question": "Can you get pet stains and odour out?",
-        "answer": "Often, yes. We assess the affected material and choose a suitable treatment, which may include enzyme products before cleaning. We can also try to improve older or repeated accidents that have soaked into padding or backing. Complete stain or odour removal is not promised."
+        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
       },
       {
         "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment applied after cleaning to suitable materials. It can help resist some spills and make prompt cleanup easier, but it does not prevent every stain. We check compatibility and explain application and drying requirements before you decide."
+        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
       },
       {
         "question": "Which parts of Oakville do you cover?",

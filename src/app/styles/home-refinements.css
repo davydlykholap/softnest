@@ -235,12 +235,20 @@
   transform: translateY(-50%);
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 :is(.gallery-section-v2, .review-carousel) .gallery-carousel-arrow:hover {
   transform: translateY(-50%) scale(1.04);
 }
 
+.gallery-section-v2 .gallery-carousel-arrow:hover {
+  color: var(--gallery-forest);
+  background: #fff;
+}
+}
+
 .gallery-section-v2 .gallery-carousel-arrow,
-.gallery-section-v2 .gallery-carousel-arrow:is(:hover, :active, :focus-visible) {
+.gallery-section-v2 .gallery-carousel-arrow:is(:active, :focus-visible) {
   color: var(--gallery-forest);
   background: #fff;
 }
@@ -460,9 +468,15 @@
   transition: background 180ms ease;
 }
 
-.home-video-fallback:hover::after,
 .home-video-fallback:focus-visible::after {
   background: rgba(10, 35, 27, .2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.home-video-fallback:hover::after {
+  background: rgba(10, 35, 27, .2);
+}
 }
 
 .home-video-fallback img {
@@ -721,119 +735,10 @@
 
 }
 
-/* Approved full-screen mobile hero composition. */
+/* Mobile hero composition is shared with city pages in mobile-hero.css. */
 @media (max-width: 640px) {
-    .new-hero-root .site-shell {
-        padding: 0 0 24px;
-    }
-
-    .new-hero-root .hero {
-        width: 100%;
-        min-height: 100svh;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    .new-hero-root .hero__photo,
-    .new-hero-root .hero__wash {
-        border-radius: 0;
-    }
-
-    .new-hero-root .hero__photo img {
-        object-position: center;
-    }
-
-    .new-hero-root .hero__wash {
-        background: linear-gradient(
-            180deg,
-            rgba(255,255,255,.55) 0%,
-            rgba(255,255,255,.34) 34%,
-            rgba(255,255,255,.08) 49%,
-            rgba(255,255,255,0) 58%
-        );
-    }
-
-    .new-hero-root .hero__content {
-        width: 100%;
-        max-width: none;
-        padding: 94px 22px 0;
-        margin: 0;
-    }
-
-    .new-hero-root .hero__eyebrow {
-        margin-bottom: 11px;
-        font-size: 12px;
-        letter-spacing: .045em;
-    }
-
-    .new-hero-root .hero__eyebrow-line {
-        margin-bottom: 10px;
-    }
-
-    .new-hero-root .hero__title {
-        font-size: clamp(36px, 10vw, 40px);
-        line-height: 1.02;
-    }
-
-    .new-hero-root .hero__description {
-        max-width: 355px;
-        margin-top: 14px;
-        font-size: var(--text-hero-size);
-        line-height: var(--text-hero-leading);
-    }
-
-    .new-hero-root .hero__actions {
-        width: 100%;
-        flex-direction: row;
-        align-items: stretch;
-        gap: 9px;
-        margin-top: 16px;
-    }
-
-    .new-hero-root .hero__actions .button {
-        width: auto;
-        min-width: 0;
-        min-height: 50px;
-        flex: 1 1 0;
-        gap: 7px;
-        padding: 0 10px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0;
-        text-rendering: auto;
-        transform: none;
-        will-change: auto;
-        backface-visibility: visible;
-        white-space: nowrap;
-    }
-
-    .new-hero-root .hero-action-buttons .button--primary.quote-cta {
-        min-width: 0;
-        min-height: 50px;
-        padding-inline: 10px;
-        box-shadow: 0 10px 24px rgba(177,128,22,.22);
-    }
-
-    .new-hero-root .hero__actions .button--secondary {
-        min-width: 0;
-        background: rgba(255,255,255,.92);
-    }
-
-    .new-hero-root .hero__actions .button svg {
-        width: 17px;
-        height: 17px;
-    }
-
-    .new-hero-root .hero__actions .google-g-icon {
-        width: 27px;
-        height: 27px;
-    }
-
-    .new-hero-root .journey-card {
-        margin-top: 24px;
-    }
+    .new-hero-root .site-shell { padding: 0 0 24px; }
+    .new-hero-root .journey-card { margin-top: 24px; }
 }
 
 
@@ -847,8 +752,11 @@
     transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .google-review-card:hover {
     text-decoration: none;
+}
 }
 
 .google-review-card:focus-visible {
@@ -1068,11 +976,19 @@
   transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 }
 
-.home-service-card:hover,
 .home-service-card:focus-visible {
   border-color: rgba(7, 84, 59, .28);
   box-shadow: 0 18px 38px rgba(16, 50, 37, .12);
   transform: translateY(-5px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.home-service-card:hover {
+  border-color: rgba(7, 84, 59, .28);
+  box-shadow: 0 18px 38px rgba(16, 50, 37, .12);
+  transform: translateY(-5px);
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1480,5 +1396,25 @@
     overflow: hidden;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 6;
+  }
+}
+
+/* Keep the full before/after photo clear at either end of the comparison. */
+.gallery-section-v2 .gallery-divider__grip {
+  z-index: 5;
+  pointer-events: none;
+}
+
+.gallery-section-v2 .gallery-compare-card[data-at-edge="true"] :is(.gallery-divider, .gallery-divider__grip) {
+  opacity: 0;
+}
+
+@media (max-width: 700px) {
+  .gallery-section-v2 .gallery-carousel-shell {
+    margin-bottom: 60px;
+  }
+
+  .gallery-section-v2 .gallery-carousel-arrow {
+    top: calc(100% + 30px);
   }
 }

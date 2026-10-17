@@ -43,8 +43,8 @@ test("every approved city-service URL is exported, self-canonical and discoverab
       const introduction = result.introduction.toLowerCase().replaceAll(city, "[city]");
       expect(introductions.has(introduction), path).toBe(false);
       introductions.add(introduction);
-      expect(result.content, path).toContain("The form and photos are optional");
-      expect(result.content, path).toContain("try to improve");
+      expect(result.content, path).toContain("Photos can help, but you don't have to send any.");
+      expect(result.content, path).toMatch(/(?:try to|best to|often) (?:improve|make)/);
       expect(result.content, path).not.toMatch(/cannot (?:repair|reverse|be cleaned away|be corrected)/i);
       // Guard against accidental content expansion rather than an SEO word minimum.
       expect(result.words, path).toBeLessThan(600);
@@ -138,7 +138,7 @@ for (const width of [390, 1280]) {
     if (width === 390) await expect(page.getByLabel("Request your cleaning quote").getByRole("link")).toBeInViewport();
     await expect(page.getByText("How pricing works.", { exact: true })).toBeVisible();
     await page.getByText("How can I get a quote?", { exact: true }).click();
-    await expect(page.locator("details[open]")).toContainText("List carpeted rooms, stairs and rug dimensions");
+    await expect(page.locator("details[open]")).toContainText("Call or text us");
     const axe = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();
     expect(axe.violations.filter((v) => v.impact === "serious" || v.impact === "critical").map((v) => v.id)).toEqual([]);
     expect(errors).toEqual([]);

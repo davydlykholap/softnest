@@ -192,7 +192,7 @@ export default function DirectorySearch({
           )}
         </div>
       </div>
-      <button type="submit" disabled={!isInteractive}>{submitLabel}</button>
+      <button className="green-button" type="submit" disabled={!isInteractive}>{submitLabel}</button>
       {message ? (
         <p id={messageId} role="status">
           {message}

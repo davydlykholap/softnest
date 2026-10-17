@@ -25,7 +25,7 @@ export default function LocationPage({ location }: { location: Location }) {
       </div>
       <main className="location-page-page location-page-page--city">
         <section
-          className={`location-page-hero ${location.slug === "mississauga" ? "location-page-hero--mississauga" : ""}`.trim()}
+          className={`location-page-hero mobile-page-hero ${location.slug === "mississauga" ? "location-page-hero--mississauga" : ""}`.trim()}
           aria-labelledby="location-page-hero-title"
         >
           <div className="location-page-hero__photo" aria-hidden="true">
@@ -36,12 +36,12 @@ export default function LocationPage({ location }: { location: Location }) {
               <Image src={heroImage} alt="" fill priority sizes="100vw" />
             </picture>
           </div>
-          <div className="location-page-hero__wash" aria-hidden="true" />
-          <div className="location-page-hero__copy">
-            <h1 id="location-page-hero-title">
+          <div className="location-page-hero__wash mobile-page-hero__wash" aria-hidden="true" />
+          <div className="location-page-hero__copy mobile-page-hero__copy">
+            <h1 id="location-page-hero-title" className="mobile-page-hero__title">
               Upholstery, sofa &amp;<br />carpet cleaning<span>in {location.name}</span>
             </h1>
-            <p className="location-page-hero__description">{copy.heroDescription}</p>
+            <p className="location-page-hero__description mobile-page-hero__description">{copy.heroDescription}</p>
             <HeroActionButtons
               quoteHref={quoteHref}
               primaryTone="gold"

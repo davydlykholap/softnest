@@ -3,7 +3,7 @@
 import { responsiveBackground } from "@/lib/responsiveImages";
 
 import { useState } from "react";
-import type { CSSProperties } from "react";
+import type { CSSProperties, PointerEvent } from "react";
 import { GripVerticalIcon } from "@/components/UiIcons";
 
 import useCardCarousel from "@/components/useCardCarousel";
@@ -24,11 +24,19 @@ type HomeResultsCarouselProps = {
 
 function ComparisonCard({ result }: { result: GalleryResult }) {
   const [position, setPosition] = useState(50);
+  const updatePosition = (next: number) => {
+    setPosition(next);
+  };
+  const followPointer = (event: PointerEvent<HTMLInputElement>) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    updatePosition(Math.max(0, Math.min(100, Math.round((event.clientX - bounds.left) / bounds.width * 100))));
+  };
 
   return (
     <article className="gallery-result">
       <div
         className={`gallery-compare-card gallery-compare-card--${result.variant}`}
+        data-at-edge={position === 0 || position === 100 ? "true" : undefined}
         style={{ "--gallery-image": responsiveBackground(result.image) } as CSSProperties}
       >
         <div className="gallery-layer gallery-layer--before" />
@@ -40,18 +48,33 @@ function ComparisonCard({ result }: { result: GalleryResult }) {
           className="gallery-divider"
           style={{ left: `${position}%` }}
           aria-hidden="true"
-        >
-          <span className="gallery-divider__grip">
-            <GripVerticalIcon />
-          </span>
+        />
+        <span className="gallery-divider__grip" style={{ left: `clamp(26px, ${position}%, calc(100% - 26px))` }} aria-hidden="true">
+          <GripVerticalIcon />
         </span>
         <input
           type="range"
-          min={15}
-          max={85}
+          min={0}
+          max={100}
           value={position}
           aria-label={result.label}
-          onChange={(event) => setPosition(Number(event.currentTarget.value))}
+          onChange={(event) => updatePosition(Number(event.currentTarget.value))}
+          onPointerDown={(event) => {
+            if (!event.isPrimary || event.button !== 0) return;
+            event.preventDefault();
+            event.currentTarget.focus({ preventScroll: true });
+            event.currentTarget.setPointerCapture(event.pointerId);
+            followPointer(event);
+          }}
+          onPointerMove={(event) => {
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) followPointer(event);
+          }}
+          onPointerUp={(event) => {
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              followPointer(event);
+              event.currentTarget.releasePointerCapture(event.pointerId);
+            }
+          }}
         />
       </div>
     </article>

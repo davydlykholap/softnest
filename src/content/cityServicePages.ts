@@ -5,6 +5,7 @@ import { cityServiceCoverage, cityServiceProfiles } from "./cityServiceConfig";
 import { customerServiceText } from "./cityServiceCopy";
 import { cityServiceEditorial } from "./cityServiceEditorial";
 import { serviceReading } from "./serviceReading";
+import { servicePreparation } from "./servicePreparation";
 
 // Conditional access guidance, not claims about local jobs or branch offices.
 const cityPlanning: Record<string, string> = {
@@ -30,7 +31,8 @@ export function getCityServicePage(city: string, slug: string) {
 
   const copy = cityServiceEditorial[city]?.[slug];
   const planning = cityPlanning[city];
-  if (!copy || !planning) throw new Error(`Missing reviewed city-service copy: ${city}/${slug}`);
+  const preparation = servicePreparation[slug];
+  if (!copy || !planning || !preparation) throw new Error(`Missing reviewed city-service copy: ${city}/${slug}`);
   const title = `${profile.title} in ${location.name}`;
   const path = `/location/${city}/${slug}/`;
   const firstSentence = copy.introduction.split(/(?<=[.!?])\s/)[0];
@@ -49,10 +51,10 @@ export function getCityServicePage(city: string, slug: string) {
     reading: serviceReading[slug],
     quoteHref: `/quote/?city=${encodeURIComponent(city)}&service=${encodeURIComponent(slug)}`,
     faqs: [
-      { question: "How can I get a quote?", answer: `Call, message us on Instagram or Facebook, or use the quote form. The form and photos are optional. ${profile.quote}` },
+      { question: "How can I get a quote?", answer: `Call or text us, or request a quote through our website. Tell us you're in ${location.name} and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book.` },
       { question: "How long before I can use it again?", answer: customerServiceText(service.drying) },
-      { question: "Can you help with old stains or difficult marks?", answer: customerServiceText(service.limitations) },
-      { question: `How do I book ${profile.title.toLowerCase()} in ${location.name}?`, answer: "Contact us by phone, Instagram or Facebook, or use the quote form if you prefer. Tell us your city or postal code and what needs cleaning. Photos are welcome but optional. We confirm the work, price and available appointment times before booking." },
+      { question: "Can every stain be removed?", answer: customerServiceText(service.limitations) },
+      { question: "What should I do before you arrive?", answer: preparation },
     ],
   };
 }

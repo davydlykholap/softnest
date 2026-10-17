@@ -1,8 +1,41 @@
 /* Shared interaction, header and footer refinements. */
 /* Shared high-visibility quote CTA treatment */
 :root {
-    --quote-cta-background: linear-gradient(135deg, #ebc442 0%, #e6b838 52%, #e2b337 100%);
-    --quote-cta-background-hover: linear-gradient(135deg, #f1ce50 0%, #ecc342 52%, #e7bc40 100%);
+    --quote-cta-background: linear-gradient(135deg, #f3d66b 0%, #efca58 52%, #eac14e 100%);
+    --quote-cta-background-hover: linear-gradient(135deg, #f7df85 0%, #f3d56e 52%, #efcd61 100%);
+    --green-button-background: linear-gradient(135deg, #237e60 0%, #1a7254 52%, #126349 100%);
+    --green-button-background-hover: linear-gradient(135deg, #278364 0%, #218060 52%, #197455 100%);
+    --final-cta-button-height: 56px;
+}
+
+/* Keep quote labels consistent across hero, header, menu and form styles. */
+.quote-cta,
+.mobile-header-quote,
+.green-button {
+    font-family: "Avenir Next", "Segoe UI", Arial, sans-serif !important;
+    font-weight: 750 !important;
+    letter-spacing: .025em !important;
+}
+
+.locations-search > .green-button,
+.locations-simple-support__action.green-button {
+    min-height: var(--final-cta-button-height);
+}
+
+.green-button {
+    background: var(--green-button-background) !important;
+    color: #fff !important;
+}
+
+.green-button:focus-visible {
+    background: var(--green-button-background-hover) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.green-button:hover {
+    background: var(--green-button-background-hover) !important;
+}
 }
 
 .quote-cta {
@@ -39,12 +72,21 @@
     animation: quote-cta-breathe 4.2s ease-in-out infinite;
 }
 
-.quote-cta:hover,
 .quote-cta:focus-visible {
     animation-play-state: paused;
     background: var(--quote-cta-background-hover) !important;
     box-shadow: 0 15px 31px rgba(7,84,59,.34), 0 0 0 5px rgba(20,126,88,.12);
     transform: translateY(-3px) scale(1.025);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.quote-cta:hover {
+    animation-play-state: paused;
+    background: var(--quote-cta-background-hover) !important;
+    box-shadow: 0 15px 31px rgba(7,84,59,.34), 0 0 0 5px rgba(20,126,88,.12);
+    transform: translateY(-3px) scale(1.025);
+}
 }
 
 @keyframes quote-cta-breathe {
@@ -83,8 +125,11 @@
   animation: none !important;
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .hero-action-buttons .quote-cta:hover {
   filter: saturate(1.05) brightness(1.025);
+}
 }
 
 .hero-action-buttons .button--secondary {
@@ -100,7 +145,6 @@
   will-change: transform, box-shadow;
 }
 
-.hero-action-buttons .button--secondary:hover,
 .hero-action-buttons .button--secondary:focus-visible {
   background: rgba(255,255,255,.98);
   border-color: rgba(7,84,59,.72);
@@ -109,6 +153,19 @@
     0 0 0 5px rgba(255,255,255,.78),
     0 0 25px 9px rgba(255,255,255,.42);
   transform: translateY(-3px) scale(1.018);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.hero-action-buttons .button--secondary:hover {
+  background: rgba(255,255,255,.98);
+  border-color: rgba(7,84,59,.72);
+  box-shadow:
+    0 13px 28px rgba(7,84,59,.15),
+    0 0 0 5px rgba(255,255,255,.78),
+    0 0 25px 9px rgba(255,255,255,.42);
+  transform: translateY(-3px) scale(1.018);
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -180,9 +237,12 @@ html {
   margin-top: 2px;
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .footer-service-list a:hover,
 .footer-legal-links a:hover {
   color: #07543b;
+}
 }
 
 .footer-legal-links {
@@ -502,11 +562,14 @@ html {
   transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .social-platform-link:hover {
   transform: translateY(-2px);
   border-color: rgba(7, 84, 59, .24);
   background: #fff;
   box-shadow: 0 9px 20px rgba(17, 42, 33, .12);
+}
 }
 
 .social-platform-link:focus-visible {
@@ -787,14 +850,20 @@ html {
 .review-mobile-heading { display: none; }
 @media (min-width: 721px) {
   .google-review-card { transition: transform 180ms ease; }
+  @media (hover: hover) and (pointer: fine) {
   .google-review-card:hover { transform: translateY(-4px); }
+    }
 }
 @media (prefers-reduced-motion: reduce) {
   .google-review-card { transition: none; }
+  @media (hover: hover) and (pointer: fine) {
   .google-review-card:hover { transform: none; }
+    }
 }
 .review-carousel .gallery-carousel-arrow { width: 50px; height: 50px; transform: translateY(-50%); }
+@media (hover: hover) and (pointer: fine) {
 .review-carousel .gallery-carousel-arrow:hover { transform: translateY(-50%) scale(1.04); }
+}
 .review-carousel .gallery-carousel-arrow:disabled { display: none; }
 @media (max-width: 720px) {
   .review-mobile-heading { display: block; margin: 0; font-family: Georgia, serif; font-size: 34px !important; font-weight: 400; line-height: 1.04; letter-spacing: -.045em; }

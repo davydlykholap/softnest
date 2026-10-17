@@ -1262,5 +1262,45 @@
       "width": 1200,
       "src": "/images/responsive/img-locations-vaughan-1200.webp"
     }
+  ],
+  "/images/mississauga-cleaning-hero-mobile-v2.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-768.webp"
+    },
+    {
+      "width": 941,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-941.webp"
+    }
+  ],
+  "/img/cream-sofa-before-after-reconstructed.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-1536.webp"
+    }
   ]
 }

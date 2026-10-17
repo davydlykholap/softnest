@@ -36,12 +36,23 @@
   stroke-linejoin: round;
 }
 
-.host:is(:hover, :focus-visible, :focus-within) .arrow {
+.host:focus-visible .arrow {
   border-color: #07543b;
   color: #fff;
   background-color: #07543b;
   box-shadow: 0 10px 22px rgba(7, 84, 59, 0.24);
   transform: translate(2px, -2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.host:hover .arrow {
+  border-color: #07543b;
+  color: #fff;
+  background-color: #07543b;
+  box-shadow: 0 10px 22px rgba(7, 84, 59, 0.24);
+  transform: translate(2px, -2px);
+}
 }
 
 @media (prefers-reduced-motion: reduce) {

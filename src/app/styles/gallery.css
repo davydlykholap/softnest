@@ -145,6 +145,7 @@ html:has(.gallery-section-v2:target) {
     flex: 0 0 calc((100% - 78px) / 4);
 }
 
+
 .gallery-compare-card {
     position: relative;
     height: 326px;
@@ -216,7 +217,7 @@ html:has(.gallery-section-v2:target) {
     height: 100%;
     margin: 0;
     cursor: ew-resize;
-    touch-action: none;
+    touch-action: pan-y pinch-zoom;
     opacity: 0;
 }
 
@@ -248,11 +249,14 @@ html:has(.gallery-section-v2:target) {
     stroke-linejoin: round;
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .gallery-carousel-arrow:hover {
     background: var(--gallery-forest);
     box-shadow: 0 12px 25px rgba(7,84,59,.24);
     color: #fff;
     transform: translateY(-2px) scale(1.04);
+}
 }
 
 .gallery-carousel-arrow:focus-visible {
@@ -401,7 +405,9 @@ html:has(.gallery-section-v2:target) {
         font-weight: 700;
         text-transform: uppercase;
     }
+    @media (hover: hover) and (pointer: fine) {
     .mobile-nav a:hover { background: #eff5f1; }
+    }
     .mobile-nav__quote {
         min-height: 50px;
         display: flex;

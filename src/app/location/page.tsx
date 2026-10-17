@@ -121,7 +121,7 @@ export default function LocationsPage() {
               can schedule service in your neighbourhood.
             </p>
             <Link
-              className="locations-pill locations-pill--solid locations-simple-support__action"
+              className="locations-pill locations-pill--solid locations-simple-support__action green-button"
               href="/quote/"
             >
               Ask about your city

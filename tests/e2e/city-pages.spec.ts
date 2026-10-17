@@ -20,7 +20,7 @@ test("city heroes load portrait images on mobile and keep desktop images intact"
   for (const city of ["mississauga", "toronto", "oakville"]) {
     await page.goto(`/location/${city}/`);
     const expectedMobileImage = city === "mississauga"
-      ? /\/images\/responsive\/images-mississauga-cleaning-hero-mobile-\d+\.webp/
+      ? /\/images\/responsive\/images-mississauga-cleaning-hero-mobile-v2-\d+\.webp/
       : /\/images\/responsive\/images-softnest-hero-room-mobile-\d+\.webp/;
 
     await expect(page.locator(".location-page-hero__picture source")).toHaveAttribute("srcset", expectedMobileImage);
@@ -77,7 +77,7 @@ for (const city of cities) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await page.locator("#faq summary").filter({ hasText: "How do I get a quote?" }).click();
     await expect(page.locator("#faq details[open]")).toContainText("final price, tax included");
-    await expect(page.locator("#faq details[open]")).toContainText("The form and photos are optional");
+    await expect(page.locator("#faq details[open]")).toContainText("Call or text us");
     await expect(page.locator("#services article").first().getByRole("heading", { name: "Sofas" })).toBeVisible();
     await expect(page.locator('#services article a[href^="/location/"]')).toHaveCount(3);
 

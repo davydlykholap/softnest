@@ -1,0 +1,13 @@
+// Practical preparation advice for the shared city-service FAQ.
+export const servicePreparation: Record<string, string> = {
+  "upholstery-cleaning": "Remove throws and personal belongings, and clear a path to the furniture. Point out any stains and tell us about products you've already tried. If anything heavy needs moving, let us know beforehand so we can plan it with you.",
+  "sofa-cleaning": "Remove blankets and personal belongings, and leave room for us to reach the sofa. Point out any stains and tell us if you've used cleaning products on them. Let us know beforehand if access is tight or something heavy needs moving.",
+  "leather-upholstery-cleaning": "Remove throws and personal belongings, and clear space around the furniture. Show us any marks, worn areas or colour changes, and tell us about cleaners or conditioners you've used. You don't need to apply anything before we arrive.",
+  "sectional-furniture-cleaning": "Remove blankets and personal belongings, and clear a path around the sectional. Show us any stains, reclining seats or powered controls. You don't need to pull heavy sections apart yourself; let us know if access is tight so we can plan ahead.",
+  "carpet-area-rug-cleaning": "Pick up toys, shoes and other small items from the areas being cleaned. Tell us beforehand if furniture needs moving so we can agree on what can be moved safely. Point out any stains and let us know about products you've already used.",
+  "mattress-cleaning": "Remove the sheets, duvet and mattress cover, and clear a path to the bed. Tell us which side or sides you'd like cleaned and point out any stains. Leave the bedding off afterwards until the mattress is completely dry.",
+  "dining-chair-cleaning": "Clear the seats and move small or fragile items out of the way. Tell us which chairs need cleaning and whether you want the seats, upholstered backs or both cleaned. Point out any food or drink stains when we arrive.",
+  "armchair-cleaning": "Remove blankets and personal belongings, and leave space around the chair. Show us any stains and let us know if the chair reclines or has powered controls. We'll check the chair and explain the cleaning plan before starting.",
+  "stairs-hallways-cleaning": "Clear shoes, toys and other small items from the steps, landings and hallway. Point out any stains and tell us if the stairs are your only route between floors. We'll plan access and drying with you before we start.",
+  "pet-stain-odour-removal": "Show us each affected area, including places where you notice a smell but can't see a stain. Tell us whether accidents have happened more than once and what products you've tried. Plan to keep pets away from the area while we clean and until it has dried.",
+};

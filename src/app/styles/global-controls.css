@@ -41,6 +41,11 @@
         line-height: 1.15 !important;
     }
 
+    .locations-simple-support h2 {
+        font-size: 34px !important;
+        line-height: 1.04 !important;
+    }
+
     .text-xl {
         font-size: 1.05rem !important;
         line-height: 1.25 !important;

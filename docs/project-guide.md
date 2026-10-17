@@ -87,6 +87,12 @@ City/neighbourhood search receives only names, slugs and neighbourhoods. Keep po
 
 ## Homepage and About
 
+The before/after gallery reveals the full image at 0% and 100%, hides its divider/grip at those endpoints, and accepts pointer dragging across the image with vertical page scrolling preserved. At mobile widths (700px and below), gallery navigation arrows stay below the images. Keep gallery navigation separate from comparison dragging.
+
+The homepage and city landing pages share `src/app/styles/mobile-hero.css` for their mobile hero layout. Keep the homepage title and H1 unchanged. Mississauga uses a separate portrait mobile photo; desktop art direction stays independent. Service and city-service heroes keep their own layouts.
+
+Keep decorative hover effects inside `(hover: hover) and (pointer: fine)` media queries. Use `:focus-visible` for keyboard feedback; avoid persistent card highlights from `:focus-within` after touch input. Expanded FAQs and selected form controls still retain their meaningful states.
+
 The homepage page-content document contains historical rows, but normalization keeps only the keys the current homepage calls through `pageText`. When adding a new editable homepage fragment:
 
 1. add/use the key in the template;

@@ -16,10 +16,13 @@
     transform 180ms ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .item:hover {
   border-color: rgba(7, 84, 59, 0.24);
   box-shadow: 0 10px 26px rgba(16, 52, 39, 0.08);
   transform: translateY(-1px);
+}
 }
 
 .item[open] {

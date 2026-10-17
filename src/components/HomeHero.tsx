@@ -6,7 +6,7 @@ import HeroActionButtons from "@/components/HeroActionButtons";
 export default function HomeHero() {
   return (
     <main className="site-shell">
-      <section className="hero" aria-labelledby="home-hero-heading">
+      <section className="hero mobile-page-hero" aria-labelledby="home-hero-heading">
         <div className="hero__photo" aria-hidden="true">
           <picture className="hero__photo-picture">
             <source
@@ -23,14 +23,14 @@ export default function HomeHero() {
             />
           </picture>
         </div>
-        <div className="hero__wash" aria-hidden="true" />
+        <div className="hero__wash mobile-page-hero__wash" aria-hidden="true" />
 
-        <div className="hero__content">
-          <h1 id="home-hero-heading" className="hero__title">
+        <div className="hero__content mobile-page-hero__copy">
+          <h1 id="home-hero-heading" className="hero__title mobile-page-hero__title">
             A Cleaner Home
             <span className="hero__title-line">Feels <em>Better.</em></span>
           </h1>
-          <p className="hero__description">
+          <p className="hero__description mobile-page-hero__description">
             Professional cleaning for the furniture and carpets you live with every
             day—using fabric-safe products, professional equipment, and meticulous
             care to refresh your home’s comfort.

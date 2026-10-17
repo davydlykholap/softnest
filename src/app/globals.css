@@ -218,9 +218,12 @@ body {
     height: 14px;
 }
 
+@media (hover: hover) and (pointer: fine){
+
 .desktop-nav a:hover,
 .header-phone:hover {
     color: var(--forest);
+}
 }
 
 .site-header__actions {
@@ -262,10 +265,13 @@ body {
     transition: transform 180ms ease, background 180ms ease;
 }
 
+@media (hover: hover) and (pointer: fine){
+
 .header-quote:hover,
 .button--primary:hover {
     background: var(--forest-dark);
     transform: translateY(-2px);
+}
 }
 
 .menu-toggle,
@@ -314,10 +320,16 @@ body {
     transition: color 180ms ease;
 }
 
-.desktop-nav__services-trigger:hover,
 .desktop-nav__services-trigger:focus-visible,
 .services-menu--open .desktop-nav__services-trigger {
     color: var(--forest);
+}
+
+@media (hover: hover) and (pointer: fine){
+
+.desktop-nav__services-trigger:hover {
+    color: var(--forest);
+}
 }
 
 .desktop-nav__services-trigger:focus-visible {
@@ -414,10 +426,17 @@ body {
     transition: background 160ms ease, color 160ms ease;
 }
 
-.desktop-nav .services-mega__item:hover,
 .desktop-nav .services-mega__item:focus-visible {
     background: #eff6f1;
     color: var(--forest-dark);
+}
+
+@media (hover: hover) and (pointer: fine){
+
+.desktop-nav .services-mega__item:hover {
+    background: #eff6f1;
+    color: var(--forest-dark);
+}
 }
 
 .desktop-nav .services-mega__item:focus-visible {
@@ -459,8 +478,11 @@ body {
     transition: transform 160ms ease;
 }
 
+@media (hover: hover) and (pointer: fine){
+
 .services-mega__all:hover span {
     transform: translateX(3px);
+}
 }
 
 .mobile-services {
@@ -486,10 +508,17 @@ body {
     text-transform: uppercase;
 }
 
-.mobile-services__trigger:hover,
 .mobile-services__trigger--open {
     background: #eff5f1;
     color: var(--forest);
+}
+
+@media (hover: hover) and (pointer: fine){
+
+.mobile-services__trigger:hover {
+    background: #eff5f1;
+    color: var(--forest);
+}
 }
 
 .mobile-nav .mobile-services__trigger > a {
@@ -525,9 +554,15 @@ body {
     cursor: pointer;
 }
 
-.mobile-services__trigger > button:hover,
 .mobile-services__trigger > button:focus-visible {
     background: rgba(7, 84, 59, .08);
+}
+
+@media (hover: hover) and (pointer: fine){
+
+.mobile-services__trigger > button:hover {
+    background: rgba(7, 84, 59, .08);
+}
 }
 
 .mobile-services__trigger svg {
@@ -767,9 +802,12 @@ body {
     color: var(--forest-dark);
 }
 
+@media (hover: hover) and (pointer: fine){
+
 .button--secondary:hover {
     background: #fff;
     transform: translateY(-2px);
+}
 }
 
 .hero__benefits {
@@ -913,12 +951,19 @@ body {
     text-transform: uppercase;
 }
 
-.google-review-summary a:hover,
 .google-review-summary a:focus-visible,
-.google-review-card a:hover,
 .google-review-card a:focus-visible {
     text-decoration: underline;
     text-underline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine){
+
+.google-review-summary a:hover,
+.google-review-card a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
 }
 
 .google-review-cards {

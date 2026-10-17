@@ -29,7 +29,6 @@
   );
 }
 
-.hero-action-buttons .button--primary.quote-cta:hover,
 .hero-action-buttons .button--primary.quote-cta:focus-visible {
   background: var(--brand-green-dark);
   box-shadow:
@@ -37,6 +36,18 @@
     0 0 0 8px rgba(85, 191, 132, 0.3);
   filter: none;
   transform: translateY(-3px) scale(1.015);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.hero-action-buttons .button--primary.quote-cta:hover {
+  background: var(--brand-green-dark);
+  box-shadow:
+    0 18px 36px rgba(6, 83, 49, 0.4),
+    0 0 0 8px rgba(85, 191, 132, 0.3);
+  filter: none;
+  transform: translateY(-3px) scale(1.015);
+}
 }
 
 .hero-action-buttons .button--primary.quote-cta:focus-visible {
@@ -62,12 +73,21 @@
   );
 }
 
-.hero-action-buttons--gold .button--primary.quote-cta:hover,
 .hero-action-buttons--gold .button--primary.quote-cta:focus-visible {
   background: var(--quote-cta-background-hover);
   box-shadow:
     0 18px 36px rgba(155, 108, 13, 0.34),
     0 0 0 8px rgba(247, 217, 116, 0.34);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.hero-action-buttons--gold .button--primary.quote-cta:hover {
+  background: var(--quote-cta-background-hover);
+  box-shadow:
+    0 18px 36px rgba(155, 108, 13, 0.34),
+    0 0 0 8px rgba(247, 217, 116, 0.34);
+}
 }
 
 .site-header .header-quote {
@@ -83,10 +103,17 @@
   object-fit: contain;
 }
 
-.site-header .header-quote:hover,
 .site-header .header-quote:focus-visible {
   background: var(--quote-cta-background-hover);
   color: #000 !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.site-header .header-quote:hover {
+  background: var(--quote-cta-background-hover);
+  color: #000 !important;
+}
 }
 
 /* Keep the full quote label accessible directly beside the mobile menu. */
@@ -130,10 +157,17 @@
     transition: background 180ms ease, transform 180ms ease;
   }
 
-  .mobile-header-quote:hover,
   .mobile-header-quote:focus-visible {
     background: var(--quote-cta-background-hover);
     transform: translateY(-1px);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+
+  .mobile-header-quote:hover {
+    background: var(--quote-cta-background-hover);
+    transform: translateY(-1px);
+  }
   }
 
   .mobile-header-quote:focus-visible {
@@ -153,4 +187,41 @@
   .mobile-header-quote {
     display: none;
   }
+}
+
+/* Reuse the same mobile action buttons in every hero and the sticky quote bar. */
+@media (max-width: 640px) {
+  .hero-action-buttons {
+    width: 100%;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 9px;
+  }
+
+  .hero-action-buttons .button {
+    width: auto;
+    min-width: 0;
+    min-height: 50px;
+    flex: 1 1 0;
+    gap: 7px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0;
+    text-rendering: auto;
+    transform: none;
+    will-change: auto;
+    backface-visibility: visible;
+    white-space: nowrap;
+  }
+
+  .hero-action-buttons .button--primary.quote-cta {
+    min-width: 0;
+    min-height: 50px;
+    padding-inline: 10px;
+    font-size: 12px;
+    box-shadow: 0 10px 24px rgba(177,128,22,.22);
+  }
+
+  .hero-action-buttons .google-g-icon { width: 27px; height: 27px; }
 }

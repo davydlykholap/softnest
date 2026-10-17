@@ -11,6 +11,7 @@ import "./styles/global-controls.css";
 import "./styles/shared-refinements.css";
 import "./hero-cta.css";
 import "./styles/customer-reviews.css";
+import "./styles/mobile-hero.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url + ""),

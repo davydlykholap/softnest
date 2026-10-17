@@ -68,9 +68,13 @@
 }
 
 
+@media (hover: hover) and (pointer: fine) {
+
+
 .locations-pill:hover,
 .locations-phone-pill:hover {
     transform: translateY(-2px);
+}
 }
 
 .locations-pill--solid {
@@ -80,9 +84,12 @@
     box-shadow: 0 10px 22px rgba(7,84,59,.2);
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .locations-pill--solid:hover {
     background: var(--brand-green-dark);
     box-shadow: 0 13px 26px rgba(7,84,59,.26);
+}
 }
 
 .locations-pill--outline {
@@ -134,9 +141,13 @@
 }
 
 
+@media (hover: hover) and (pointer: fine) {
+
+
 .locations-search > button:hover {
-    background: var(--locations-green-dark);
+    background: var(--green-button-background-hover);
     transform: translateY(-2px);
+}
 }
 
 .locations-search > p {
@@ -153,10 +164,19 @@
 }
 
 
-.locations-city-card:hover,
 .locations-city-card:focus-visible {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(22,48,38,.14);
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+
+.locations-city-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(22,48,38,.14);
+}
 }
 
 .locations-city-card:focus-visible {
@@ -174,8 +194,11 @@
     transition: transform 500ms ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .locations-city-card:hover > img {
     transform: scale(1.035);
+}
 }
 
 
@@ -1408,8 +1431,11 @@
     transition: background 180ms ease, transform 180ms ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
+
 .locations-search__toggle:hover {
     background: #edf4f0;
+}
 }
 
 .locations-search__toggle > span {
@@ -1494,16 +1520,30 @@
     white-space: nowrap;
 }
 
-.locations-search__option:hover,
 .locations-search__option--active {
     color: #fff;
-    background: var(--locations-green);
+    background: var(--green-button-background);
     transform: translateX(2px);
 }
 
-.locations-search__option:hover small,
+@media (hover: hover) and (pointer: fine) {
+
+.locations-search__option:hover {
+    color: #fff;
+    background: var(--green-button-background);
+    transform: translateX(2px);
+}
+}
+
 .locations-search__option--active small {
-    color: rgba(255, 255, 255, .72);
+    color: #fff;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.locations-search__option:hover small {
+    color: #fff;
+}
 }
 
 .locations-search__empty {
@@ -1669,7 +1709,7 @@
     margin: 0 auto;
     color: #18251f;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.75rem, 4.8vw, 4.65rem);
+    font-size: clamp(44px, 4vw, 58px);
     font-weight: 400;
     letter-spacing: -.045em;
     line-height: 1.08;
@@ -1712,7 +1752,7 @@
 
     .locations-simple-support h2 {
         max-width: 340px;
-        font-size: clamp(2.35rem, 10.5vw, 3rem);
+        font-size: 34px;
     }
 
     .locations-simple-support h2 + .locations-kicker-line {

@@ -92,11 +92,19 @@
   transition: background-color 180ms ease, color 180ms ease, padding 180ms ease;
 }
 
-.question:hover,
 .question[aria-expanded="true"] {
   padding-left: 16px;
   background: #eaf3ee;
   color: var(--faq-forest);
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+.question:hover {
+  padding-left: 16px;
+  background: #eaf3ee;
+  color: var(--faq-forest);
+}
 }
 
 .question:focus-visible {
