@@ -6,6 +6,7 @@ import testimonials from './generated/testimonials.json';
 import type { GalleryResult } from '@/components/HomeResultsCarousel';
 import { siteConfig } from '@/lib/site';
 import { optimizedLocalImage } from '@/lib/optimizedLocalImage';
+import { selectLocationReviews } from '@/lib/locationReviews';
 
 export const homeContent = home;
 export function getGoogleReviews() {
@@ -62,18 +63,6 @@ export function getTestimonials(options: TestimonialOptions = {}) {
     return normalizedTestimonials.filter((testimonial) => testimonial.featured);
   }
 
-  const candidates = normalizedTestimonials
-    .filter((testimonial) => testimonial.locationPageFeatured)
-    .filter(
-      (testimonial) =>
-        testimonial.locations.length === 0 ||
-        testimonial.locations.includes(options.location!),
-    )
-    .sort((left, right) => {
-      const leftIsLocal = left.locations.includes(options.location!);
-      const rightIsLocal = right.locations.includes(options.location!);
-      return Number(rightIsLocal) - Number(leftIsLocal);
-    });
-
-  return candidates.slice(0, options.limit ?? 3);
+  const candidates = selectLocationReviews(normalizedTestimonials, options.location);
+  return options.limit === undefined ? candidates : candidates.slice(0, options.limit);
 }

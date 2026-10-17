@@ -1,4 +1,9 @@
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+
+const testimonials: { name: string; publicationStatus: string; locations: string[] }[] = JSON.parse(
+  readFileSync("src/content/generated/testimonials.json", "utf8"),
+);
 
 const cities = ["Mississauga", "Toronto", "Brampton", "Oakville", "Etobicoke", "Burlington", "Vaughan", "Milton", "Hamilton"];
 
@@ -51,12 +56,16 @@ for (const city of cities) {
       await expect(page.locator("#home-faq-answer")).toBeVisible();
     }
 
-    const isMississauga = city === "Mississauga";
-    await expect(page.locator("#location-reviews-heading")).toHaveText(isMississauga ? "What Mississauga customers say" : "What our customers say");
-    const authors = await page.locator("#reviews .google-review-card__author:visible").allTextContents();
-    expect(authors.map((name) => name.trim()).sort()).toEqual(
-      (isMississauga ? ["Davyd", "Andrii Франчук", "Volo L"] : ["Karen Jan", "Kathleen Costello", "Utsav Kohli"]).sort(),
+    const localReviews = testimonials.filter((review) =>
+      review.publicationStatus === "approved" && (review.locations as string[]).includes(slug),
     );
+    if (localReviews.length) {
+      await expect(page.locator("#location-reviews-heading")).toHaveText(`What ${city} customers say`);
+      const authors = await page.locator("#reviews .google-review-card__author:visible").allTextContents();
+      expect(authors.map((name) => name.trim()).sort()).toEqual(localReviews.map((review) => review.name).sort());
+    } else {
+      await expect(page.locator("#reviews")).toHaveCount(0);
+    }
   });
 
   test(`mobile ${city} FAQs, static services and quote links work`, async ({ page }) => {
