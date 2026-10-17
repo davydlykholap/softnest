@@ -32,7 +32,7 @@ export default function AnalyticsEvents({ citySlugs }: { citySlugs: string[] }) 
       }
 
       const host = url.hostname.replace(/^www\./, "").toLowerCase();
-      if (host === "maps.app.goo.gl" || host === "google.com" || host === "maps.google.com") {
+      if (host === "g.page" || host === "maps.app.goo.gl" || host === "google.com" || host === "maps.google.com") {
         trackOutboundLink("google_reviews");
       } else if (host === "instagram.com") {
         trackOutboundLink("instagram");

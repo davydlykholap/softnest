@@ -1,0 +1,41 @@
+.page {
+  flex: 1;
+  min-height: 100svh;
+  padding: 40px 20px 28px;
+  background: radial-gradient(ellipse at top, #e5eee5, transparent 65%), #f6f3ec;
+  color: #1a2820;
+  font-family: var(--text-sans);
+}
+
+.shell { width: min(100%, 460px); margin: 0 auto; }
+.brand { display: flex; align-items: center; justify-content: center; gap: 10px; width: fit-content; margin: 0 auto; color: #174b3a; text-decoration: none; }
+.brand img { width: 56px; height: 56px; object-fit: contain; }
+.brand strong { display: block; font: 700 27px/1.1 Georgia, serif; }
+.brand small { display: block; margin-top: 3px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; }
+.intro { margin: 32px 0 25px; text-align: center; }
+.eyebrow { margin: 0 0 12px; color: #42634d; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.intro h1 { margin: 0; color: #174b3a; font: 400 clamp(32px, 8vw, 42px)/1.13 Georgia, serif; letter-spacing: -.035em; }
+.intro > p:last-child { max-width: 310px; margin: 16px auto 0; color: #526057; font-size: 15px; line-height: 1.5; }
+.actions { display: grid; gap: 11px; }
+.action { display: grid; grid-template-columns: 27px minmax(0, 1fr) 16px; align-items: center; gap: 12px; min-height: 82px; padding: 17px 19px; border: 1px solid #dce3d9; border-radius: 16px; background: #fffdfa; color: #174b3a; text-decoration: none; transition: background .15s, border-color .15s; }
+.action strong { display: block; font-size: 16px; line-height: 1.35; font-weight: 650; }
+.action small { display: block; margin-top: 4px; color: #58665c; font-size: 12px; line-height: 1.5; }
+.icon { width: 26px; height: 26px; font-size: 29px; line-height: 26px; text-align: center; }
+.primary { min-height: 96px; margin-bottom: 3px; background: #174b3a; border-color: #174b3a; color: #fff; box-shadow: 0 8px 22px #174b3a16; }
+.primary small { color: #e0ece3; }
+.primary .icon { color: #f6dc9f; font-size: 34px; }
+.action:hover { background: #edf3eb; border-color: #7d9984; }
+.primary:hover { background: #0f352b; border-color: #0f352b; }
+.page a:focus-visible { outline: 3px solid #bf6849; outline-offset: 4px; }
+.footer { margin-top: 27px; text-align: center; font-size: 13px; }
+.footer a { color: #174b3a; text-underline-offset: 4px; }
+.footer p { margin: 19px 0 7px; color: #58665c; font-size: 11px; }
+.footer > a:last-child { font-size: 11px; color: #58665c; }
+@media (max-width: 360px) {
+  .page { padding: 26px 16px; }
+  .action { padding: 16px 14px; gap: 9px; }
+  .action strong { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .action { transition: none; }
+}
