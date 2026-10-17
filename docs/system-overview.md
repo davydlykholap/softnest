@@ -106,7 +106,7 @@ Each selected category stores an array of quote entries rather than one shared a
 
 This boundary is intentional: a future backend can replace the transport without redesigning the form.
 
-The form also offers a separate photo-quote choice through Instagram/Facebook. Messaging customers do not need to submit the form first. Form customers can provide requested photos during follow-up; the static website has no upload storage. Validated origin city remains separate from an edited service location.
+The quote page proceeds directly from its heading to the form fields, without a separate contact-method block or service-context notice. Service links silently preselect a matching item where one is defined. Photos remain optional and the static website has no upload storage. Validated origin city remains separate from an edited service location.
 
 The existing Google tag configures SoftNest GA4 web stream `G-CM48WEXDDQ` on the production hostname only. `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID` can override it at build time (use `off` to disable). Tracking errors are isolated from successful submissions. `photo_quote_click` records only channel and validated city, and is not a lead conversion.
 

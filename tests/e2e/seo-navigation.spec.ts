@@ -66,19 +66,17 @@ test("every service offers relevant services and an accurate coverage directory"
   }
 });
 
-test("phone, messaging and the optional form are independent quote options", async ({ page }) => {
-  await page.goto("/quote/?city=etobicoke");
-  await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
-  const photoChoice = page.getByRole("complementary", { name: "Choose how to get in touch" });
-  await expect(photoChoice).toContainText("The form below and photos are optional");
-  await expect(photoChoice.locator('a[href^="tel:"]')).toBeVisible();
-  const instagram = photoChoice.getByRole("link", { name: "Instagram", exact: true });
-  await instagram.evaluate((link) => link.addEventListener("click", (event) => event.preventDefault()));
-  await instagram.click();
-  const events = await page.evaluate(() => window.dataLayer);
-  expect(events).toContainEqual(["event", "photo_quote_click", { channel: "instagram", source_city: "etobicoke" }]);
-  expect(JSON.stringify(events)).not.toContain("generate_lead");
-  await expect(page.getByRole("textbox", { name: "Your name" })).toHaveValue("");
+test("quote page preselects the item without a contact block or service notice", async ({ page }) => {
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/quote/?city=etobicoke&service=sofa-cleaning");
+    await expect(page.locator(".quote-page-photo-choice, .quote-page-service-context")).toHaveCount(0);
+    await expect(page.locator("main")).not.toContainText("Choose how to get in touch");
+    await expect(page.locator("main")).not.toContainText("Your request:");
+    await expect(page.getByRole("button", { name: "Sofa or couch", exact: true })).toHaveAttribute("aria-pressed", "true");
+    await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue("Etobicoke");
+    await expect(page.getByRole("textbox", { name: "Your name" })).toHaveValue("");
+  }
 });
 
 test("successful quote retains its origin separately from an edited city and counts one lead", async ({ page }) => {

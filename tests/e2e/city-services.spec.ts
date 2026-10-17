@@ -103,7 +103,8 @@ test("stairs prefill selects the correct carpet subtype; general treatments let 
   await expect(page.getByRole("button", { name: "Carpet or rug", exact: true })).toHaveAttribute("aria-pressed", "true");
   await expect(page.getByRole("combobox", { name: "What type? for carpet / rug 1" })).toContainText("Stairs / landing");
   await page.goto("/quote/?city=milton&service=pet-stain-odour-removal");
-  await expect(page.locator(".quote-page-service-context")).toContainText("Pet Stain & Odour Treatment");
+  await expect(page.locator(".quote-page-service-context")).toHaveCount(0);
+  await expect(page.locator('input[name="requested_service"]')).toHaveValue("pet-stain-odour-removal");
   await expect(page.locator('button[aria-pressed="true"]')).toHaveCount(0);
   await page.goto("/quote/?city=oakville&service=constructor");
   await expect(page.locator(".quote-page-service-context")).toHaveCount(0);

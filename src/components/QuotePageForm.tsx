@@ -13,7 +13,7 @@ import {
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { cityServiceProfiles } from "@/content/cityServiceConfig";
-import { cityFromUrl, trackEvent, trackQuoteConversion } from "@/lib/analytics";
+import { trackEvent, trackQuoteConversion } from "@/lib/analytics";
 import { integrations } from "@/lib/integrations";
 import { useHydrated } from "@/lib/useHydrated";
 import { submitQuote } from "@/domain/quote";
@@ -28,8 +28,6 @@ import {
   type QuoteEntry,
 } from "@/components/quote/quoteRequest";
 
-const instagramUrl = siteConfig.instagramUrl;
-const facebookUrl = siteConfig.facebookUrl;
 const lastQuoteStorageKey = "softnest_last_quote_submission";
 function growNotes(textarea: HTMLTextAreaElement) {
   textarea.style.height = "auto";
@@ -56,10 +54,6 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
   const initialCategory = serviceOptions.find((option) => option.id === initialProfile?.category)?.id;
   const isInteractive = useHydrated();
   const router = useRouter();
-  const trackPhotoQuote = (channel: "instagram" | "facebook") => {
-    const sourceCity = cityFromUrl(new URL(window.location.href), cities.map((city) => city.slug));
-    trackEvent("photo_quote_click", { channel, ...(sourceCity ? { source_city: sourceCity } : {}) });
-  };
   const [customerType, setCustomerType] = useState<"Individual" | "Business">("Individual");
   const [{ selected, activeDetailId }, setSelectionState] = useState({
     selected: initialCategory ? [initialCategory] : [] as string[],
@@ -409,26 +403,11 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
 
       <div className="quote-page-form__heading">
         <h1>Let’s refresh your space.</h1>
-        {initialProfile ? <p className="quote-page-service-context">Your request: <strong>{initialProfile.title}</strong>. You can adjust the items below.</p> : null}
         <p>
           {customerType === "Business"
             ? "Tell us about the furniture and carpets in your business space. We’ll recommend a practical cleaning plan and follow up with a clear quote."
             : "Tell us about the furniture and carpets you’d like refreshed. We’ll recommend fabric-safe care and follow up with a clear quote."}
         </p>
-        <aside className="quote-page-photo-choice" aria-labelledby="photo-quote-heading">
-          <h2 id="photo-quote-heading">Choose how to get in touch</h2>
-          <p>
-            Call <a href={siteConfig.phoneHref}>{siteConfig.displayPhone}</a> or message us through{" "}
-            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackPhotoQuote("instagram")}>
-              Instagram
-            </a>{" "}
-            or{" "}
-            <a href={facebookUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackPhotoQuote("facebook")}>
-              Facebook
-            </a>. Tell us your city or postal code and what needs cleaning. Photos are welcome if you want to share them.
-          </p>
-          <p>The form below and photos are optional. Choose whichever way of contacting us suits you.</p>
-        </aside>
       </div>
 
       <QuoteContactFields

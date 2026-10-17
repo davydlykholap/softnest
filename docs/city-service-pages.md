@@ -31,7 +31,7 @@ These are composed pages, not 90 manually maintained documents and not runtime A
 
 ## Quote handoff
 
-All quote links on a local service page carry `?city=<slug>&service=<slug>`. The existing city input remains editable. Specific service profiles preselect the corresponding item category, and carpeted stairs also preselect the stairs/landing subtype. General upholstery, leather and pet treatment retain a visible service context without guessing which furniture item the customer owns. Category presentation and user changes remain authoritative for the requested items.
+All quote links on a local service page carry `?city=<slug>&service=<slug>`. The existing city input remains editable. Specific service profiles preselect the corresponding item category, and carpeted stairs also preselect the stairs/landing subtype. Preselection does not add a service notice or contact-method block above the form. General upholstery, leather and pet treatment retain the requested service only in the submission data without guessing which furniture item the customer owns. Category presentation and user changes remain authoritative for the requested items.
 
 The payload retains a validated `requested_service` and the original city-service `landing_page`, separately from the customer's editable service location and selected items. Unknown service query values are ignored. No new external submission service or tracking destination is added.
 
