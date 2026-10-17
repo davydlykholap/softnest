@@ -18,6 +18,7 @@ type GoogleReviewCarouselProps = {
   mobileReviews?: GoogleReview[];
   variant?: "compact" | "city";
   googleProfileUrl: string;
+  sampleSize?: number;
 };
 
 export default function GoogleReviewCarousel({
@@ -25,9 +26,11 @@ export default function GoogleReviewCarousel({
   mobileReviews = reviews,
   variant = "compact",
   googleProfileUrl,
+  sampleSize,
 }: GoogleReviewCarouselProps) {
-  const [orderedReviews, setOrderedReviews] = useState(reviews);
-  const { trackRef, index, step, maxIndex, previous, next, onKeyDown, onTouchStart, onTouchEnd } = useCardCarousel(reviews.length);
+  const reviewCount = Math.min(sampleSize ?? reviews.length, reviews.length);
+  const [orderedReviews, setOrderedReviews] = useState(() => reviews.slice(0, reviewCount));
+  const { trackRef, index, step, maxIndex, previous, next, onKeyDown, onTouchStart, onTouchEnd } = useCardCarousel(reviewCount);
 
   useEffect(() => {
     const shuffled = [...reviews];
@@ -35,8 +38,8 @@ export default function GoogleReviewCarousel({
       const other = Math.floor(Math.random() * (index + 1));
       [shuffled[index], shuffled[other]] = [shuffled[other], shuffled[index]];
     }
-    startTransition(() => setOrderedReviews(shuffled));
-  }, [reviews]);
+    startTransition(() => setOrderedReviews(shuffled.slice(0, reviewCount)));
+  }, [reviews, reviewCount]);
 
   function renderCards(items: GoogleReview[], mobile = false) {
     return items.map((review) => {
@@ -93,7 +96,7 @@ export default function GoogleReviewCarousel({
         </div>
       </div>
       <div className={styles.mobile}>
-        <div className={`google-review-cards ${styles.mobileTrack}`} aria-label="Recent Google reviews">{renderCards(mobileReviews, true)}</div>
+        <div className={`google-review-cards ${styles.mobileTrack}`} aria-label="Recent Google reviews">{renderCards(sampleSize === undefined ? mobileReviews : orderedReviews, true)}</div>
         <a className={styles.allReviews} href={googleProfileUrl} target="_blank" rel="noopener noreferrer">Read all reviews <span aria-hidden="true">→</span></a>
       </div>
     </>

@@ -51,7 +51,7 @@ test("home and city pages share the same customer reviews section", async ({ pag
     const section = page.locator("#reviews.customer-reviews");
     await expect(section).toBeVisible();
     await expect(section.locator(".customer-reviews__heading h2")).toHaveText(
-      path === "/" ? "What our customers say" : "What Mississauga customers say",
+      "What our customers say",
       { useInnerText: true },
     );
     await expect(section.locator(".customer-reviews__heading > p")).toContainText("after professional upholstery");

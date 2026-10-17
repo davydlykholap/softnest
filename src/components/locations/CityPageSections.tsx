@@ -92,7 +92,7 @@ export default function CityPageSections({ location, copy }: { location: Locatio
         </div>
       </section>
 
-      <LocationReviews location={location} />
+      <LocationReviews />
 
       <section className={styles.coverage} aria-labelledby="city-coverage-heading">
         <div className={styles.coverageCopy}>

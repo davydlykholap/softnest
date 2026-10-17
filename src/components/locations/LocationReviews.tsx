@@ -1,21 +1,17 @@
 import CustomerReviewsSection from "@/components/CustomerReviewsSection";
-import { getTestimonials } from "@/content/pages";
-import type { Location } from "@/content/locations";
+import { getGoogleReviews } from "@/content/pages";
 
-export default function LocationReviews({ location }: { location: Location }) {
-  const reviews = getTestimonials({ location: location.slug });
+export default function LocationReviews() {
+  const reviews = getGoogleReviews();
   if (reviews.length === 0) return null;
 
   return (
     <CustomerReviewsSection
-      heading={`What ${location.name} customers say`}
-      description={`Feedback from ${location.name} customers after professional upholstery and carpet cleaning appointments.`}
+      heading="What our customers say"
+      description="Feedback from SoftNest customers across our service area after professional upholstery and carpet cleaning appointments."
       headingId="location-reviews-heading"
-      reviews={reviews.map((review) => ({
-        initial: review.name.trim().charAt(0).toUpperCase(),
-        name: review.name,
-        text: review.text,
-      }))}
+      reviews={reviews}
+      sampleSize={3}
     />
   );
 }

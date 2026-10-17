@@ -14,6 +14,7 @@ type CustomerReviewsSectionProps = {
   reviews: CustomerReview[];
   headingId?: string;
   compactDesktop?: boolean;
+  sampleSize?: number;
 };
 
 export default function CustomerReviewsSection({
@@ -22,6 +23,7 @@ export default function CustomerReviewsSection({
   reviews,
   headingId = "customer-reviews-heading",
   compactDesktop = false,
+  sampleSize,
 }: CustomerReviewsSectionProps) {
   if (reviews.length === 0) return null;
 
@@ -54,6 +56,7 @@ export default function CustomerReviewsSection({
       </div>
       <GoogleReviewCarousel
         reviews={reviews}
+        sampleSize={sampleSize}
         variant="city"
         googleProfileUrl={siteConfig.googleProfileUrl}
       />
