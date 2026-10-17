@@ -1,5 +1,10 @@
 import { expect, test } from "@playwright/test";
 
+// Keep synthetic browser checks independent of third-party analytics loading.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ status: 200, body: "" }));
+});
+
 test("neighbourhood search reaches its city on desktop and mobile", async ({ page }) => {
   for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 844 });
@@ -29,7 +34,7 @@ test("city CTA events and explicit quote prefills keep city context without cust
   await page.locator('a[href^="tel:"]').first().click({ force: true });
   const callEvents = await page.evaluate(() => window.dataLayer);
   expect(callEvents).toContainEqual(["event", "click_to_call", { event_category: "contact", event_label: "phone", source_city: "toronto" }]);
-  await page.locator(".hero-action-buttons").getByRole("link", { name: /Get a free/ }).click();
+  await page.locator(".location-page-hero .hero-action-buttons").getByRole("link", { name: /Get a Quote/ }).click();
   await expect(page).toHaveURL(/\/quote\/\?city=toronto$/);
   expect(await page.evaluate(() => window.dataLayer)).toContainEqual(["event", "quote_click", { source_city: "toronto" }]);
   await page.goto("/quote/?city=toronto");

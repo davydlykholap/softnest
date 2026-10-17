@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { useState, useSyncExternalStore } from "react";
 import { ChevronDownIcon } from "@/components/UiIcons";

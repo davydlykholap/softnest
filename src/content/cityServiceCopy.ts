@@ -3,6 +3,8 @@ import "server-only";
 // Reviewed plain-language versions of known CMS phrases. If an editor changes a
 // source phrase, render the new CMS text until its wording has been reviewed too.
 const customerWording = new Map<string, string>([
+  ["Deep cleaning for sofas and couches affected by everyday soil, body oils, spills, stains and odours.", "Sofa and couch cleaning for everyday dirt, body oils, spills and odours. We check the fabric and condition before choosing a cleaning method."],
+  ["Careful cleaning for upholstered dining chair seats, backs and suitable bench seating.", "Cleaning for suitable fabric dining chairs and benches, with the seats and backs in your quote checked before treatment."],
   ["Fabric-appropriate deep cleaning for frequently used upholstered furniture, with stain treatment, extraction and professional drying included.", "Deep cleaning for upholstered furniture, with stain treatment and drying support. We check the fabric and choose a suitable cleaning method before starting."],
   ["Careful cleaning for suitable leather furniture, followed by a moisturizing conditioning treatment and protective solution to support the finish and everyday care.", "Cleaning and conditioning for suitable leather furniture, with a protective treatment. We check the leather and its condition before starting."],
   ["Detailed cleaning for large sectionals, loveseats, recliners, ottomans and other upholstered furniture.", "Cleaning for large sectionals, loveseats, recliners and ottomans. We check the fabric and confirm which sections and cushions are included."],
@@ -42,6 +44,10 @@ const customerWording = new Map<string, string>([
   ["Contamination-depth discussion", "Discussing how deeply the pet accident may have soaked in"],
   ["Suitable targeted pre-treatment", "Applying a suitable treatment to the affected spots"],
   ["Cleaning and extraction", "Cleaning and removal of loosened dirt and moisture"],
+  ["Many upholstery items dry in approximately six to eight hours. Fabric type, humidity, airflow, cushion density and soil level can change the timing.", "Many fabric furniture items dry in about six to eight hours. Material, room humidity, airflow, thick cushions and the amount of cleaning needed can change the timing."],
+  ["Age, permanent dye loss, fibre damage, wear, heat damage and previous cleaning products can limit improvement. We explain realistic expectations before work begins.", "Most suitable fabric furniture and everyday marks can be cleaned. We can also assess old stains, wear or colour changes and try to improve the appearance. Complete removal or restoration is not promised."],
+  ["Cleaning and conditioning cannot repair cracking, peeling or delamination, deep scratches, permanent dye loss, worn finish, cuts or other physical damage. Some stains and colour changes may be permanent.", "We can clean most suitable leather furniture and assess worn, cracked, peeling or marked areas. We can try to improve the overall appearance, without promising complete mark removal, repair or restoration."],
+  ["Surface cleaning cannot always reach contamination that has entered deep foam, carpet underlay, wood or subfloor. Severe or repeated contamination may require replacement of affected materials.", "Pet stains and odours can often be improved with suitable treatment. We assess how deeply the accident has soaked in and can try to improve older or repeated problems. Complete stain or odour removal is not promised."],
 ]);
 
 export function customerServiceText(text: string) {

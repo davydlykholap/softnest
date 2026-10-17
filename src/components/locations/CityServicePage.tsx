@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
+import Link from "next/link";
 import HeroActionButtons from "@/components/HeroActionButtons";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import SiteHeader from "@/components/SiteHeader";
@@ -42,7 +43,7 @@ export default function CityServicePage({ content }: { content: CityServicePageC
             <h2 id="included-heading">What’s included</h2>
             <ul className={styles.included}>{content.included.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className={styles.pricing}><strong>How pricing works.</strong> {content.pricing}</p>
-            <p>{content.localDetail}</p>
+            <p>{content.localDetail}{content.reading ? <> {content.reading.before}<Link href={content.reading.href}>{content.reading.label}</Link>{content.reading.after}</> : null}</p>
           </div>
           <div className={styles.local}>
             <h2>Your {location.name} visit</h2>
@@ -58,7 +59,7 @@ export default function CityServicePage({ content }: { content: CityServicePageC
       <DirectoryFinalCta
         id="quote-cta"
         title="Show us what needs cleaning."
-        description="Tell us about the item or area and any stains or odours. We'll confirm the scope and price before cleaning."
+        description="Tell us about the item or area and any stains or odours. We'll confirm the work and price before cleaning."
         action={{ href: quoteHref, label: "Get a quote" }}
         image="/images/softnest-hero-room.webp"
         imageAlt="Bright living room with a deep green sofa"

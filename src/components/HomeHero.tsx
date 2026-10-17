@@ -1,5 +1,6 @@
 import { homeContent, pageText } from "@/content/pages";
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
+import { responsiveImageSet } from "@/lib/responsiveImages";
 import HeroActionButtons from "@/components/HeroActionButtons";
 
 export default function HomeHero() {
@@ -10,7 +11,8 @@ export default function HomeHero() {
           <picture className="hero__photo-picture">
             <source
               media="(max-width: 640px)"
-              srcSet="/images/softnest-hero-room-mobile.webp"
+              srcSet={responsiveImageSet("/images/softnest-hero-room-mobile.webp") ?? "/images/softnest-hero-room-mobile.webp"}
+              sizes="100vw"
             />
             <Image
               src="/images/softnest-hero-room.webp"

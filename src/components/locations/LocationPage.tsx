@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
+import { responsiveImageSet } from "@/lib/responsiveImages";
 import HeroActionButtons from "@/components/HeroActionButtons";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -30,7 +31,7 @@ export default function LocationPage({ location }: { location: Location }) {
           <div className="location-page-hero__photo" aria-hidden="true">
             <picture className="location-page-hero__picture">
               {heroImageMobile ? (
-                <source media="(max-width: 640px)" srcSet={heroImageMobile} />
+                <source media="(max-width: 640px)" srcSet={responsiveImageSet(heroImageMobile) ?? heroImageMobile} sizes="100vw" />
               ) : null}
               <Image src={heroImage} alt="" fill priority sizes="100vw" />
             </picture>
@@ -44,7 +45,7 @@ export default function LocationPage({ location }: { location: Location }) {
             <HeroActionButtons
               quoteHref={quoteHref}
               primaryTone="gold"
-              quoteAriaLabel={`Get a free upholstery and carpet cleaning quote in ${location.name}`}
+              quoteAriaLabel={`Get a Quote for upholstery and carpet cleaning in ${location.name}`}
             />
           </div>
         </section>

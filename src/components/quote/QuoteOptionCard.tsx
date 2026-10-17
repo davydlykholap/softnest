@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import { memo } from "react";
 import { businessQuantityQuestions, isPlusChoice } from "./quoteAnswers";
 import { QuoteSelect } from "./QuoteSelect";

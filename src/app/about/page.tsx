@@ -92,11 +92,11 @@ export default function AboutPage() {
                 hard-to-reach areas where practical.
               </p>
               <p>
-                We also believe in being clear about what cleaning can and
-                cannot change. Soil and many stains can often be improved, but
-                permanent wear, dye loss, cracking and physical damage cannot
-                be reversed by cleaning. We would rather explain that honestly
-                than promise a result the material cannot support.
+                Most suitable furniture and carpets can be cleaned, including
+                many items with old or difficult marks. We assess the material
+                and can try to improve its appearance, even when wear, colour
+                changes or damage are involved. We explain what is realistic
+                before starting; complete removal or restoration is not promised.
               </p>
               <p className={styles.closing}>
                 Our goal is simple: treat every home and every item with care,

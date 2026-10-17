@@ -1,5 +1,10 @@
 import { expect, test } from "@playwright/test";
 
+// Keep synthetic browser checks independent of third-party analytics loading.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ status: 200, body: "" }));
+});
+
 for (const width of [402, 1440]) {
   test(`comparison sliders leave gallery navigation to the buttons at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 827 });

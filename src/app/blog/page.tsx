@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import BlogExplorer, {
   type BlogListingPost,
 } from "@/components/blog/BlogExplorer";

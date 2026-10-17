@@ -1,5 +1,7 @@
 "use client";
 
+import { responsiveBackground } from "@/lib/responsiveImages";
+
 import { useState } from "react";
 import type { CSSProperties } from "react";
 import { GripVerticalIcon } from "@/components/UiIcons";
@@ -27,7 +29,7 @@ function ComparisonCard({ result }: { result: GalleryResult }) {
     <article className="gallery-result">
       <div
         className={`gallery-compare-card gallery-compare-card--${result.variant}`}
-        style={{ "--gallery-image": `url("${result.image}")` } as CSSProperties}
+        style={{ "--gallery-image": responsiveBackground(result.image) } as CSSProperties}
       >
         <div className="gallery-layer gallery-layer--before" />
         <div

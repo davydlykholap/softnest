@@ -1,6 +1,11 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
+// Keep synthetic browser checks independent of third-party analytics loading.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ status: 200, body: "" }));
+});
+
 const representativeRoutes = [
   ["home", "/"],
   ["services", "/services/"],

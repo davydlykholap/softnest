@@ -1,21 +1,21 @@
 import FaqAccordion from "@/components/FaqAccordion";
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import ServiceResultCompare from "@/components/ServiceResultCompare";
 import type { Service } from "@/content/services";
 import { getProjects, getTestimonials } from "@/content/pages";
 import styles from "@/app/services/service-page.module.css";
 
 const inspectionNotes: Record<string, string> = {
-  "upholstery-cleaning": "We first identify the fabric, backing, cushion construction and existing wear. That assessment guides the products, moisture level and extraction method used on each piece.",
+  "upholstery-cleaning": "We check the fabric, backing, cushions and existing wear first. These checks guide the cleaning products, moisture level and method used on each piece.",
   "sofa-cleaning": "We look closely at high-contact areas such as armrests, headrests, seat cushions and seams, then check removable cushions and hidden test areas before cleaning begins.",
   "leather-upholstery-cleaning": "Leather type and finish condition matter. We check for cracking, peeling, worn colour and previous products so cleaning and conditioning are limited to surfaces that can be treated safely.",
-  "sectional-furniture-cleaning": "We confirm the number of sections, removable cushions, recliners and attached pieces before work begins. This keeps the quoted scope clear and allows each accessible area to be cleaned methodically.",
-  "carpet-area-rug-cleaning": "Fibre type, backing, edge construction and installation all affect how carpet or a rug should be cleaned. Delicate or unstable rugs may need specialist off-site care instead.",
-  "mattress-cleaning": "We assess the mattress surface, padding, staining and requested sides before selecting a controlled-moisture treatment. Deep discoloration can remain even when removable soil has been extracted.",
+  "sectional-furniture-cleaning": "We count the sections, removable cushions, recliners and attached pieces before work begins. This makes the agreed work clear and helps us give each reachable area the attention it needs.",
+  "carpet-area-rug-cleaning": "The material, backing, edges and how carpet is fitted all affect how it should be cleaned. Delicate rugs or those with an unstable backing may need specialist care away from your home.",
+  "mattress-cleaning": "We check the mattress surface, padding, stains and the sides you want cleaned before choosing a treatment with carefully controlled moisture. Deep colour changes may remain after dirt has been removed.",
   "dining-chair-cleaning": "Chair sets can vary more than they appear to. We inspect each seat and back for fabric condition, food dye, edge wear and differences in padding before confirming the cleaning approach.",
   "armchair-cleaning": "We inspect the fabric, seams, cushions and any reclining mechanism first. Special care is taken around moving parts and the high-contact areas that usually hold the most body oils and soil.",
   "stairs-hallways-cleaning": "We review the number of steps, risers, landings and connected hallways, paying particular attention to worn edges, flattened pile and transitions into other flooring.",
-  "pet-stain-odour-removal": "A visible mark does not always show how far contamination has travelled. We discuss the likely depth in fabric, foam, carpet backing or underlay before recommending a realistic treatment scope.",
+  "pet-stain-odour-removal": "A small visible mark can hide a deeper pet accident. We discuss how far it may have soaked into fabric, foam, carpet backing or underlay before explaining what treatment can reasonably reach.",
 };
 
 function lowerFirst(value: string) {
@@ -88,8 +88,8 @@ export default function ServiceDetailPanel({
           <NoteHeading>When this service may be a good fit</NoteHeading>
           <p>
             Homeowners commonly contact us about {naturalList(service.concerns)}.
-            Photos help us understand the item and concern before we confirm the
-            recommended service.
+            If you would like to share photos, they can help us understand the item
+            and recommend a service. Photos are optional.
           </p>
         </div>
       </section>
@@ -136,9 +136,9 @@ export default function ServiceDetailPanel({
         <div className={styles.expectationsHeading}>
           <SectionHeading id="expectations-heading">What to expect before you book</SectionHeading>
           <p>
-            Send a few clear photos and describe the item, material if known, and
-            the main stains, odours or areas of concern. We use that information to
-            confirm the likely scope and explain anything that needs an on-site check.
+            Call, message us or use the quote form to describe the item and any
+            stains or odours. The form and photos are optional. We confirm the
+            work and price with you and explain anything that needs an on-site check.
           </p>
         </div>
         <div className={styles.expectationsCopy}>

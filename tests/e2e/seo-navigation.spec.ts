@@ -66,11 +66,12 @@ test("every service offers relevant services and an accurate coverage directory"
   }
 });
 
-test("photo quote is an independent option and its click is not counted as a lead", async ({ page }) => {
+test("phone, messaging and the optional form are independent quote options", async ({ page }) => {
   await page.goto("/quote/?city=etobicoke");
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
-  const photoChoice = page.getByRole("complementary", { name: "Prefer a photo quote?" });
-  await expect(photoChoice).toContainText("No form is needed for this option");
+  const photoChoice = page.getByRole("complementary", { name: "Choose how to get in touch" });
+  await expect(photoChoice).toContainText("The form below and photos are optional");
+  await expect(photoChoice.locator('a[href^="tel:"]')).toBeVisible();
   const instagram = photoChoice.getByRole("link", { name: "Instagram", exact: true });
   await instagram.evaluate((link) => link.addEventListener("click", (event) => event.preventDefault()));
   await instagram.click();
@@ -89,7 +90,7 @@ test("successful quote retains its origin separately from an edited city and cou
     await route.fulfill({ status: 200, json: { success: true } });
   });
   await page.goto("/location/milton/");
-  await page.locator(".location-page-hero .hero-action-buttons").getByRole("link", { name: /Get a free/ }).click();
+  await page.locator(".location-page-hero .hero-action-buttons").getByRole("link", { name: /Get a Quote/ }).click();
   await expect(page.getByRole("textbox", { name: "Service city or postal code" })).toHaveValue("Milton");
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
   await fillSofaQuote(page);

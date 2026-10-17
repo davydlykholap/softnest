@@ -4,7 +4,7 @@ import CardArrow, {
   cardArrowHostClassName,
   cardPanelClassName,
 } from "@/components/CardArrow";
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import Link from "next/link";
 import finalCtaStyles from "./DirectoryFinalCta.module.css";
 import "@/app/styles/locations-hub.css";
@@ -110,9 +110,10 @@ export function DirectoryCard({
 }: DirectoryCardProps) {
   return (
     <Link
+      prefetch={false}
       className={`locations-city-card ${cardArrowHostClassName} ${className}`.trim()}
       href={href}
-      aria-label={ariaLabel}
+      aria-label={`${title}${subtitle ? ` ${subtitle}` : ""}. ${ariaLabel}`}
     >
       <Image
         src={image}

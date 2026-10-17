@@ -1,5 +1,7 @@
 "use client";
 
+import { responsiveBackground } from "@/lib/responsiveImages";
+
 import { useState, type CSSProperties } from "react";
 import { GripVerticalIcon } from "@/components/UiIcons";
 import styles from "@/app/services/service-page.module.css";
@@ -21,7 +23,7 @@ export default function ServiceResultCompare({
 }: ServiceResultCompareProps) {
   const [position, setPosition] = useState(50);
   const compareStyle: CompareStyle = {
-    "--service-result-image": `url("${image}")`,
+    "--service-result-image": responsiveBackground(image),
   };
 
   return (

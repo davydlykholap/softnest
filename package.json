@@ -16,6 +16,7 @@
     "content:verify": "node --test scripts/content/normalize.test.mjs",
     "test:unit": "playwright test tests/marketing-attribution.spec.ts tests/images.spec.ts tests/quote-request.spec.ts tests/location-search.spec.ts tests/location-reviews.spec.ts --reporter=line",
     "verify:export": "node scripts/verify-export.mjs",
+    "images:generate": "node scripts/generate-responsive-images.mjs",
     "prepare:export": "node scripts/prepare-export.mjs",
     "predev": "npm run content:sync",
     "prebuild": "npm run content:sync",

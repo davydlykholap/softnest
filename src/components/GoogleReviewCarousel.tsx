@@ -50,7 +50,7 @@ export default function GoogleReviewCarousel({
           href={googleProfileUrl}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Open SoftNest Fabric Care on Google Maps to read ${review.name}'s review`}
+          title={`Read ${review.name}'s review on Google Maps`}
         >
           <span className="google-review-card__quote-mark" aria-hidden="true">“</span>
           <div className="google-review-card__top">

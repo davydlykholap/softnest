@@ -1,13 +1,13 @@
 import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import ArticleBody from "@/components/blog/ArticleBody";
-import { getPost, getPosts } from "@/content/posts";
+import { getPost, getPosts, getReadingSuggestions } from "@/content/posts";
 import { blogImageUrl } from "@/sanity/image";
 import styles from "@/app/blog/blog.module.css";
 import { getService } from "@/content/services";
@@ -58,7 +58,6 @@ function formatDate(value: string) {
 
 export default async function BlogArticlePage({ params }: Props) {
   const { slug } = await params;
-  const posts = getPosts();
   const post = getPost(slug);
   if (!post) notFound();
 
@@ -105,7 +104,7 @@ export default async function BlogArticlePage({ params }: Props) {
               className={styles.related}
               aria-label="Related cleaning services"
             >
-              <p>Professional help for your furniture</p>
+              <p>Related cleaning services</p>
               {related.map((service) => (
                 <Link key={service.slug} href={serviceUrl(service.slug)}>
                   {service.name} →
@@ -118,9 +117,7 @@ export default async function BlogArticlePage({ params }: Props) {
             aria-label="More fabric care articles"
           >
             <p>Keep reading</p>
-            {posts
-              .filter((other) => other._id !== post._id)
-              .slice(0, 2)
+            {getReadingSuggestions(post)
               .map((other) => (
                 <Link key={other._id} href={blogUrl(other.slug)}>
                   {other.title} →

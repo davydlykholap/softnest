@@ -30,7 +30,7 @@ export default function QuoteThankYouPage() {
                 contact you to discuss the item, condition, and next steps.
               </p>
               <p className="quote-page-photo-channels">
-                You can send your photos through{" "}
+                Photos are optional. If you would like to share any, you can use{" "}
                 <a
                   href={siteConfig.instagramUrl}
                   target="_blank"

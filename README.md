@@ -35,6 +35,8 @@ npm run test:e2e:built
 
 `npm run test:e2e` runs the production build/check first and then executes the Chromium smoke and accessibility suite. CI/deployment runs the rendered checks automatically after the static export is built.
 
+After changing local WebP photos, run `npm run images:generate` and commit the new files under `public/images/responsive/` together with `src/lib/responsiveImages.json`. `ResponsiveImage` uses these derivatives for responsive delivery on static hosting; originals are preserved. The image tests validate every derivative and its mobile payload.
+
 After a Sanity schema change:
 
 ```bash

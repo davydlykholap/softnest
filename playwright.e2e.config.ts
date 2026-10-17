@@ -1,8 +1,8 @@
 import { defineConfig } from "@playwright/test";
 
 const serveCommand = process.platform === "win32"
-  ? "python -m http.server 4173 --directory out"
-  : "python3 -m http.server 4173 --directory out";
+  ? "python scripts/serve-export.py"
+  : "python3 scripts/serve-export.py";
 
 export default defineConfig({
   testDir: "./tests/e2e",

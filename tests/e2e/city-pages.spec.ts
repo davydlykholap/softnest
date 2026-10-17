@@ -1,6 +1,11 @@
 import { expect, test } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
+// Keep synthetic browser checks independent of third-party analytics loading.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ status: 200, body: "" }));
+});
+
 const testimonials: { name: string; publicationStatus: string; locations: string[] }[] = JSON.parse(
   readFileSync("src/content/generated/testimonials.json", "utf8"),
 );
@@ -15,12 +20,12 @@ test("city heroes load portrait images on mobile and keep desktop images intact"
   for (const city of ["mississauga", "toronto", "oakville"]) {
     await page.goto(`/location/${city}/`);
     const expectedMobileImage = city === "mississauga"
-      ? "/images/mississauga-cleaning-hero-mobile.webp"
-      : "/images/softnest-hero-room-mobile.webp";
+      ? /\/images\/responsive\/images-mississauga-cleaning-hero-mobile-\d+\.webp/
+      : /\/images\/responsive\/images-softnest-hero-room-mobile-\d+\.webp/;
 
     await expect(page.locator(".location-page-hero__picture source")).toHaveAttribute("srcset", expectedMobileImage);
     const image = page.locator(".location-page-hero__picture img");
-    await expect.poll(() => image.evaluate((element: HTMLImageElement) => new URL(element.currentSrc).pathname)).toBe(expectedMobileImage);
+    await expect.poll(() => image.evaluate((element: HTMLImageElement) => new URL(element.currentSrc).pathname)).toMatch(expectedMobileImage);
     const isPortrait = await image.evaluate((element: HTMLImageElement) => element.naturalHeight > element.naturalWidth);
     expect(isPortrait).toBe(true);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -30,7 +35,7 @@ test("city heroes load portrait images on mobile and keep desktop images intact"
   await page.goto("/location/mississauga/");
   const desktopImage = page.locator(".location-page-hero__picture img");
   await expect.poll(() => desktopImage.evaluate((element: HTMLImageElement) => new URL(element.currentSrc).pathname))
-    .toBe("/images/mississauga-cleaning-hero-v2.webp");
+    .toMatch(/\/images\/responsive\/images-mississauga-cleaning-hero-v2-\d+\.webp/);
 });
 
 for (const city of cities) {
@@ -71,7 +76,8 @@ for (const city of cities) {
     await page.goto(`/location/${slug}/`);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await page.locator("#faq summary").filter({ hasText: "How do I get a quote?" }).click();
-    await expect(page.locator("#faq details[open]")).toContainText("one final price, tax included");
+    await expect(page.locator("#faq details[open]")).toContainText("final price, tax included");
+    await expect(page.locator("#faq details[open]")).toContainText("The form and photos are optional");
     await expect(page.locator("#services article").first().getByRole("heading", { name: "Sofas" })).toBeVisible();
     await expect(page.locator('#services article a[href^="/location/"]')).toHaveCount(3);
 

@@ -14,6 +14,7 @@
 .included { padding: 0; list-style: none; display: grid; gap: 12px; margin: 0 0 24px; font-size: var(--text-body-size); }
 .included li::before { content: "✓"; color: var(--location-page-green); margin-right: 12px; }
 .details p { margin: 0; }
+.details p a { color: var(--location-page-green); text-decoration: underline; text-underline-offset: .15em; }
 .details .pricing { margin-bottom: 20px; }
 .local { background: var(--surface-soft); border-radius: 28px; padding: 32px; }
 .local .coverage { margin-top: 20px; }

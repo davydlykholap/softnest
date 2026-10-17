@@ -44,3 +44,31 @@ export function getPost(slug: string): Post | undefined {
 export function getRelatedPosts(serviceSlug: string): Post[] {
   return posts.filter((post) => post.relatedServices?.includes(serviceSlug));
 }
+
+// Editorial next steps by topic, rather than the same two newest posts everywhere.
+const readingTopics: Record<string, string[]> = {
+  "how-to-remove-stain-from-couch": ["why-did-my-couch-stain-come-back-after-cleaning", "what-cleaning-solution-can-i-use-on-my-couch"],
+  "why-did-my-couch-stain-come-back-after-cleaning": ["how-to-remove-stain-from-couch", "how-long-does-a-couch-take-to-dry-after-cleaning"],
+  "what-cleaning-solution-can-i-use-on-my-couch": ["how-to-remove-stain-from-couch", "how-to-choose-an-upholstery-cleaning-company"],
+  "why-sofa-armrests-get-dirty-faster": ["how-to-know-when-your-sofa-needs-professional-cleaning", "how-to-remove-stain-from-couch"],
+  "does-vacuuming-clean-carpet": ["how-often-should-office-carpets-be-cleaned", "how-to-choose-an-upholstery-cleaning-company"],
+  "how-often-should-office-carpets-be-cleaned": ["does-vacuuming-clean-carpet", "how-to-choose-an-upholstery-cleaning-company"],
+  "how-to-remove-pet-urine-smell-from-couch": ["why-did-my-couch-stain-come-back-after-cleaning", "how-long-does-a-couch-take-to-dry-after-cleaning"],
+  "how-long-does-a-couch-take-to-dry-after-cleaning": ["what-to-expect-when-softnest-cleans-your-sofa", "why-did-my-couch-stain-come-back-after-cleaning"],
+  "how-to-know-when-your-sofa-needs-professional-cleaning": ["why-sofa-armrests-get-dirty-faster", "what-to-expect-when-softnest-cleans-your-sofa"],
+  "upholstery-cleaning-prices-toronto": ["how-to-choose-an-upholstery-cleaning-company", "what-to-expect-when-softnest-cleans-your-sofa"],
+  "what-to-expect-when-softnest-cleans-your-sofa": ["how-long-does-a-couch-take-to-dry-after-cleaning", "fears-about-hiring-a-sofa-cleaner"],
+  "fears-about-hiring-a-sofa-cleaner": ["how-to-choose-an-upholstery-cleaning-company", "what-to-expect-when-softnest-cleans-your-sofa"],
+  "how-to-choose-an-upholstery-cleaning-company": ["upholstery-cleaning-prices-toronto", "what-to-expect-when-softnest-cleans-your-sofa"],
+};
+
+export function getReadingSuggestions(post: Post): Post[] {
+  const curated = (readingTopics[post.slug] ?? []).map(getPost)
+    .filter((item): item is Post => Boolean(item && item._id !== post._id));
+  const candidates = posts.filter((item) => item._id !== post._id &&
+    !curated.some((selected) => selected._id === item._id));
+  const overlap = (item: Post) => item.relatedServices?.filter((slug) =>
+    post.relatedServices?.includes(slug)).length ?? 0;
+  candidates.sort((a, b) => overlap(b) - overlap(a));
+  return [...curated, ...candidates].slice(0, 2);
+}

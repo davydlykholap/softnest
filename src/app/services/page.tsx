@@ -1,7 +1,7 @@
 import { jsonLd } from "@/seo/structuredData";
 import { siteConfig } from "@/lib/site";
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import Link from "next/link";
 import {
   DirectoryCard,

@@ -25,7 +25,7 @@ function HeaderActions({ quoteHref }: { quoteHref: string }) {
         </svg>
         <span>{siteConfig.displayPhone}</span>
       </a>
-      <Link className="header-quote quote-cta" href={quoteHref}>
+      <Link prefetch={false} className="header-quote quote-cta" href={quoteHref}>
         
         {siteConfig.quoteLabel}
       </Link>
@@ -36,7 +36,7 @@ function HeaderActions({ quoteHref }: { quoteHref: string }) {
 export default function SiteHeader({ current, quoteHref = "/quote/" }: SiteHeaderProps) {
   return (
     <header className="site-header">
-      <Link href="/" className="brand" aria-label="SoftNest Fabric Care home">
+      <Link prefetch={false} href="/" className="brand" aria-label="SoftNest Fabric Care home">
         <span className="brand__mark">
           <Image
             src="/img/logo/header_logo.webp"
@@ -47,7 +47,7 @@ export default function SiteHeader({ current, quoteHref = "/quote/" }: SiteHeade
           />
         </span>
         <span className="brand__name">
-          <strong>SoftNest</strong>
+          <strong>SoftNest</strong>{" "}
           <small>Fabric Care</small>
         </span>
       </Link>

@@ -1,0 +1,1266 @@
+{
+  "/images/mississauga-cleaning-hero-mobile.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-480.webp"
+    },
+    {
+      "width": 720,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-720.webp"
+    }
+  ],
+  "/images/mississauga-cleaning-hero-v2.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-v2-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-v2-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-v2-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-v2-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-v2-1600.webp"
+    },
+    {
+      "width": 1672,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-v2-1672.webp"
+    }
+  ],
+  "/images/softnest-hero-room-mobile.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-softnest-hero-room-mobile-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-softnest-hero-room-mobile-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-softnest-hero-room-mobile-768.webp"
+    },
+    {
+      "width": 941,
+      "src": "/images/responsive/images-softnest-hero-room-mobile-941.webp"
+    }
+  ],
+  "/images/softnest-hero-room.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-softnest-hero-room-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-softnest-hero-room-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-softnest-hero-room-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-softnest-hero-room-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/images-softnest-hero-room-1600.webp"
+    },
+    {
+      "width": 1736,
+      "src": "/images/responsive/images-softnest-hero-room-1736.webp"
+    }
+  ],
+  "/images/services/armchair.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-armchair-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-armchair-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-armchair-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-armchair-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-armchair-1536.webp"
+    }
+  ],
+  "/images/services/carpet-rug.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-carpet-rug-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-carpet-rug-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-carpet-rug-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-carpet-rug-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-carpet-rug-1536.webp"
+    }
+  ],
+  "/images/services/dining-chairs.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-dining-chairs-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-dining-chairs-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-dining-chairs-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-dining-chairs-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-dining-chairs-1536.webp"
+    }
+  ],
+  "/images/services/leather.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-leather-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-leather-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-leather-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-leather-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-leather-1536.webp"
+    }
+  ],
+  "/images/services/mattress.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-mattress-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-mattress-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-mattress-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-mattress-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-mattress-1536.webp"
+    }
+  ],
+  "/images/services/pet-stain.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-pet-stain-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-pet-stain-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-pet-stain-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-pet-stain-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-pet-stain-1536.webp"
+    }
+  ],
+  "/images/services/sectional.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-sectional-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-sectional-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-sectional-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-sectional-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-sectional-1536.webp"
+    }
+  ],
+  "/images/services/services-hero-equipment.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-services-hero-equipment-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-services-hero-equipment-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-services-hero-equipment-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-services-hero-equipment-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-services-hero-equipment-1536.webp"
+    }
+  ],
+  "/images/services/sofa.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-sofa-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-sofa-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-sofa-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-sofa-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-sofa-1536.webp"
+    }
+  ],
+  "/images/services/stairs.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-stairs-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-stairs-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-stairs-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-stairs-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-stairs-1536.webp"
+    }
+  ],
+  "/images/services/upholstery.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-services-upholstery-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-services-upholstery-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-services-upholstery-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-services-upholstery-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-services-upholstery-1536.webp"
+    }
+  ],
+  "/images/quote-options/armchair.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-quote-options-armchair-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-quote-options-armchair-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/images-quote-options-armchair-640.webp"
+    }
+  ],
+  "/images/quote-options/dining-chairs.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-quote-options-dining-chairs-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-quote-options-dining-chairs-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/images-quote-options-dining-chairs-640.webp"
+    }
+  ],
+  "/images/quote-options/mattress.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-quote-options-mattress-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-quote-options-mattress-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/images-quote-options-mattress-640.webp"
+    }
+  ],
+  "/images/quote-options/other-furniture.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-quote-options-other-furniture-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-quote-options-other-furniture-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/images-quote-options-other-furniture-640.webp"
+    }
+  ],
+  "/images/quote-options/rug.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-quote-options-rug-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-quote-options-rug-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/images-quote-options-rug-640.webp"
+    }
+  ],
+  "/images/quote-options/sectional.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-quote-options-sectional-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-quote-options-sectional-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/images-quote-options-sectional-640.webp"
+    }
+  ],
+  "/images/quote-options/sofa.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-quote-options-sofa-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-quote-options-sofa-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/images-quote-options-sofa-640.webp"
+    }
+  ],
+  "/images/blog/fears-about-hiring-a-sofa-cleaner.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-fears-about-hiring-a-sofa-cleaner-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-fears-about-hiring-a-sofa-cleaner-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-fears-about-hiring-a-sofa-cleaner-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-fears-about-hiring-a-sofa-cleaner-1200.webp"
+    },
+    {
+      "width": 1440,
+      "src": "/images/responsive/images-blog-fears-about-hiring-a-sofa-cleaner-1440.webp"
+    }
+  ],
+  "/images/blog/journal-dog-hero.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-journal-dog-hero-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-journal-dog-hero-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-journal-dog-hero-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-journal-dog-hero-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/images-blog-journal-dog-hero-1600.webp"
+    },
+    {
+      "width": 1774,
+      "src": "/images/responsive/images-blog-journal-dog-hero-1774.webp"
+    }
+  ],
+  "/images/blog/softnest-sofa-cleaning-preparation.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-softnest-sofa-cleaning-preparation-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-softnest-sofa-cleaning-preparation-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-softnest-sofa-cleaning-preparation-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-softnest-sofa-cleaning-preparation-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-blog-softnest-sofa-cleaning-preparation-1536.webp"
+    }
+  ],
+  "/images/blog/upholstery-cleaning-prices-toronto.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-upholstery-cleaning-prices-toronto-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-upholstery-cleaning-prices-toronto-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-upholstery-cleaning-prices-toronto-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-upholstery-cleaning-prices-toronto-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/images-blog-upholstery-cleaning-prices-toronto-1600.webp"
+    },
+    {
+      "width": 1672,
+      "src": "/images/responsive/images-blog-upholstery-cleaning-prices-toronto-1672.webp"
+    }
+  ],
+  "/images/blog/how-to-remove-stain-from-couch/blotting-a-couch-spill.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-blotting-a-couch-spill-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-blotting-a-couch-spill-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-blotting-a-couch-spill-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-blotting-a-couch-spill-1200.webp"
+    },
+    {
+      "width": 1440,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-blotting-a-couch-spill-1440.webp"
+    }
+  ],
+  "/images/blog/how-to-remove-stain-from-couch/controlled-sofa-extraction.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-controlled-sofa-extraction-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-controlled-sofa-extraction-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-controlled-sofa-extraction-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-controlled-sofa-extraction-1200.webp"
+    },
+    {
+      "width": 1440,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-controlled-sofa-extraction-1440.webp"
+    }
+  ],
+  "/images/blog/how-to-remove-stain-from-couch/sofa-fabric-after-drying.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-sofa-fabric-after-drying-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-sofa-fabric-after-drying-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-sofa-fabric-after-drying-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-sofa-fabric-after-drying-1200.webp"
+    },
+    {
+      "width": 1440,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-sofa-fabric-after-drying-1440.webp"
+    }
+  ],
+  "/images/blog/how-to-remove-stain-from-couch/upholstery-cleaning-care-label.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-cleaning-care-label-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-cleaning-care-label-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-cleaning-care-label-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-cleaning-care-label-1200.webp"
+    },
+    {
+      "width": 1440,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-cleaning-care-label-1440.webp"
+    }
+  ],
+  "/images/blog/how-to-remove-stain-from-couch/upholstery-extraction-close-up.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-extraction-close-up-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-extraction-close-up-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-extraction-close-up-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-extraction-close-up-1200.webp"
+    },
+    {
+      "width": 1440,
+      "src": "/images/responsive/images-blog-how-to-remove-stain-from-couch-upholstery-extraction-close-up-1440.webp"
+    }
+  ],
+  "/img/before_after_carpet_cleaning.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-before_after_carpet_cleaning-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-before_after_carpet_cleaning-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-before_after_carpet_cleaning-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-before_after_carpet_cleaning-1200.webp"
+    },
+    {
+      "width": 1448,
+      "src": "/images/responsive/img-before_after_carpet_cleaning-1448.webp"
+    }
+  ],
+  "/img/carpet_staircase.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-carpet_staircase-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-carpet_staircase-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-carpet_staircase-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-carpet_staircase-1200.webp"
+    },
+    {
+      "width": 1448,
+      "src": "/images/responsive/img-carpet_staircase-1448.webp"
+    }
+  ],
+  "/img/dining_chairs.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-dining_chairs-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-dining_chairs-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-dining_chairs-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-dining_chairs-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-dining_chairs-1536.webp"
+    }
+  ],
+  "/img/faq_machine.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-faq_machine-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-faq_machine-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-faq_machine-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-faq_machine-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/img-faq_machine-1600.webp"
+    },
+    {
+      "width": 1774,
+      "src": "/images/responsive/img-faq_machine-1774.webp"
+    }
+  ],
+  "/img/gallery-leaves.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-gallery-leaves-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-gallery-leaves-480.webp"
+    },
+    {
+      "width": 600,
+      "src": "/images/responsive/img-gallery-leaves-600.webp"
+    }
+  ],
+  "/img/gray_sofa_stain.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-gray_sofa_stain-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-gray_sofa_stain-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-gray_sofa_stain-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-gray_sofa_stain-1200.webp"
+    },
+    {
+      "width": 1535,
+      "src": "/images/responsive/img-gray_sofa_stain-1535.webp"
+    }
+  ],
+  "/img/health.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-health-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-health-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-health-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-health-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-health-1536.webp"
+    }
+  ],
+  "/img/matress_cleaning.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-matress_cleaning-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-matress_cleaning-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-matress_cleaning-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-matress_cleaning-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-matress_cleaning-1536.webp"
+    }
+  ],
+  "/img/rug_2.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-rug_2-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-rug_2-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-rug_2-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-rug_2-1200.webp"
+    },
+    {
+      "width": 1535,
+      "src": "/images/responsive/img-rug_2-1535.webp"
+    }
+  ],
+  "/img/sectional.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-sectional-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-sectional-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-sectional-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-sectional-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-sectional-1536.webp"
+    }
+  ],
+  "/img/sectional_1.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-sectional_1-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-sectional_1-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-sectional_1-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-sectional_1-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-sectional_1-1536.webp"
+    }
+  ],
+  "/img/sectional_3.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-sectional_3-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-sectional_3-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-sectional_3-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-sectional_3-1200.webp"
+    },
+    {
+      "width": 1537,
+      "src": "/images/responsive/img-sectional_3-1537.webp"
+    }
+  ],
+  "/img/sectional_furniture.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-sectional_furniture-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-sectional_furniture-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-sectional_furniture-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-sectional_furniture-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/img-sectional_furniture-1600.webp"
+    },
+    {
+      "width": 1804,
+      "src": "/images/responsive/img-sectional_furniture-1804.webp"
+    }
+  ],
+  "/img/sectional_sofa.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-sectional_sofa-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-sectional_sofa-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-sectional_sofa-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-sectional_sofa-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/img-sectional_sofa-1600.webp"
+    },
+    {
+      "width": 1672,
+      "src": "/images/responsive/img-sectional_sofa-1672.webp"
+    }
+  ],
+  "/img/sofa.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-sofa-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-sofa-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-sofa-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-sofa-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/img-sofa-1600.webp"
+    },
+    {
+      "width": 1672,
+      "src": "/images/responsive/img-sofa-1672.webp"
+    }
+  ],
+  "/img/mississauga/phone-frame.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-mississauga-phone-frame-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-mississauga-phone-frame-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-mississauga-phone-frame-768.webp"
+    },
+    {
+      "width": 1023,
+      "src": "/images/responsive/img-mississauga-phone-frame-1023.webp"
+    }
+  ],
+  "/img/mississauga/service-area-map.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-mississauga-service-area-map-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-mississauga-service-area-map-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-mississauga-service-area-map-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-mississauga-service-area-map-1200.webp"
+    },
+    {
+      "width": 1448,
+      "src": "/images/responsive/img-mississauga-service-area-map-1448.webp"
+    }
+  ],
+  "/img/logo/logo.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-logo-logo-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-logo-logo-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/img-logo-logo-640.webp"
+    }
+  ],
+  "/img/logo/logo1.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-logo-logo1-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-logo-logo1-480.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/responsive/img-logo-logo1-640.webp"
+    }
+  ],
+  "/img/locations/brampton.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-brampton-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-brampton-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-brampton-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-brampton-1200.webp"
+    }
+  ],
+  "/img/locations/burlington.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-burlington-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-burlington-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-burlington-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-burlington-1200.webp"
+    }
+  ],
+  "/img/locations/etobicoke.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-etobicoke-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-etobicoke-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-etobicoke-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-etobicoke-1200.webp"
+    }
+  ],
+  "/img/locations/hamilton.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-hamilton-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-hamilton-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-hamilton-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-hamilton-1200.webp"
+    }
+  ],
+  "/img/locations/location-hero-map-labelled.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-location-hero-map-labelled-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-location-hero-map-labelled-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-location-hero-map-labelled-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-location-hero-map-labelled-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/img-locations-location-hero-map-labelled-1600.webp"
+    }
+  ],
+  "/img/locations/location-hero-map-nine-cities.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-location-hero-map-nine-cities-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-location-hero-map-nine-cities-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-location-hero-map-nine-cities-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-location-hero-map-nine-cities-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/img-locations-location-hero-map-nine-cities-1600.webp"
+    }
+  ],
+  "/img/locations/location-hero-map.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-location-hero-map-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-location-hero-map-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-location-hero-map-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-location-hero-map-1200.webp"
+    },
+    {
+      "width": 1600,
+      "src": "/images/responsive/img-locations-location-hero-map-1600.webp"
+    }
+  ],
+  "/img/locations/milton.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-milton-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-milton-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-milton-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-milton-1200.webp"
+    }
+  ],
+  "/img/locations/mississauga.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-mississauga-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-mississauga-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-mississauga-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-mississauga-1200.webp"
+    }
+  ],
+  "/img/locations/oakville.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-oakville-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-oakville-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-oakville-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-oakville-1200.webp"
+    }
+  ],
+  "/img/locations/toronto.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-toronto-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-toronto-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-toronto-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-toronto-1200.webp"
+    }
+  ],
+  "/img/locations/vaughan.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-locations-vaughan-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-locations-vaughan-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-locations-vaughan-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-locations-vaughan-1200.webp"
+    }
+  ]
+}

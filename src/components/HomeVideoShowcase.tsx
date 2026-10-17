@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import { integrations } from "@/lib/integrations";
 import { siteConfig } from "@/lib/site";
 

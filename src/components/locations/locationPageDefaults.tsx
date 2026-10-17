@@ -89,8 +89,8 @@ export function FeatureIcon({ name }: { name: string }) {
 export const defaultProcessSteps = [
   {
     icon: "camera",
-    title: "Send photos",
-    description: "Show the full item or carpeted area and include close-ups of stains or concerns.",
+    title: "Tell us what needs cleaning",
+    description: "Call, message us or use the form. Photos of the item and any marks are optional.",
   },
   {
     icon: "estimate",
@@ -127,8 +127,8 @@ export const defaultQuickBenefits = [
   },
   {
     icon: "camera",
-    title: "Free photo estimates",
-    description: "Send full-item photos and close-ups before booking.",
+    title: "Free estimates",
+    description: "Choose phone, messaging or the form. Share photos only if you want to.",
   },
 ];
 

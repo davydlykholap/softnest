@@ -13,7 +13,7 @@ type HeroActionButtonsProps = {
 
 export default function HeroActionButtons({
   quoteHref = "/quote/",
-  quoteAriaLabel = "Get an upholstery and carpet cleaning quote",
+  quoteAriaLabel = "Get a Quote for upholstery and carpet cleaning",
   primaryTone = "green",
   showReviews = true,
 }: HeroActionButtonsProps) {

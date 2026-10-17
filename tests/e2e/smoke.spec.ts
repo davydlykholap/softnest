@@ -1,5 +1,10 @@
 import { expect, test, type Page } from "@playwright/test";
 
+// Keep synthetic browser checks independent of third-party analytics loading.
+test.beforeEach(async ({ page }) => {
+  await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ status: 200, body: "" }));
+});
+
 async function chooseQuoteOption(page: Page, label: string, option: string) {
   const control = page.getByRole("combobox", { name: label });
   await control.click();

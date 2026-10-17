@@ -25,7 +25,7 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
             <p className="text-sm text-stone-700 leading-relaxed mt-4">
               Professional upholstery and carpet cleaning across the Greater Toronto Area.
             </p>
-            <Link className="footer-location-all" href="/about/">
+            <Link prefetch={false} className="footer-location-all" href="/about/">
               About SoftNest
             </Link>
             <div className="footer-social-block">
@@ -36,10 +36,10 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
 
           <div className="site-footer__mobile-brand">
             <div className="site-footer__mobile-brand-row">
-              <Link className="site-footer__mobile-logo" href="/" aria-label="SoftNest Fabric Care home">
+              <Link prefetch={false} className="site-footer__mobile-logo" href="/" aria-label="SoftNest Fabric Care home">
                 <Image src="/img/logo/header_logo.webp" alt="" width={64} height={64} />
                 <span>
-                  <strong>SoftNest</strong>
+                  <strong>SoftNest</strong>{" "}
                   <small>Fabric Care</small>
                 </span>
               </Link>
@@ -84,13 +84,13 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
           <ul className="footer-service-list space-y-2 text-sm text-stone-700">
             {navigationServices.map((service) => (
               <li key={service.slug}>
-                <Link href={`/services/${service.slug}/`}>
+                <Link prefetch={false} href={`/services/${service.slug}/`}>
                   {service.menuLabel}
                 </Link>
               </li>
             ))}
           </ul>
-          <Link className="footer-location-all" href="/services/">
+          <Link prefetch={false} className="footer-location-all" href="/services/">
             View all services
           </Link>
         </div>
@@ -100,10 +100,10 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
             Company
           </h3>
           <ul className="footer-service-list space-y-2 text-sm text-stone-700">
-            <li><Link href="/about/">About SoftNest</Link></li>
-            <li><Link href="/#results">Our Results</Link></li>
-            <li><Link href="/blog/">Care Journal</Link></li>
-            <li><Link href={quoteHref}>Get a quote</Link></li>
+            <li><Link prefetch={false} href="/about/">About SoftNest</Link></li>
+            <li><Link prefetch={false} href="/#results">Our Results</Link></li>
+            <li><Link prefetch={false} href="/blog/">Care Journal</Link></li>
+            <li><Link prefetch={false} href={quoteHref}>Get a quote</Link></li>
           </ul>
         </div>
         <div className="footer-desktop-nav-column">
@@ -113,13 +113,13 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
           <ul className="footer-location-list text-sm text-stone-700">
             {footerLocations.map((location) => (
               <li key={location.slug}>
-                <Link href={`/location/${location.slug}/`}>
+                <Link prefetch={false} href={`/location/${location.slug}/`}>
                   {location.name}
                 </Link>
               </li>
             ))}
           </ul>
-          <Link className="footer-location-all" href="/location/">
+          <Link prefetch={false} className="footer-location-all" href="/location/">
             View all locations
           </Link>
         </div>
@@ -131,13 +131,13 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
               <ul className="footer-service-list text-sm text-stone-700">
                 {navigationServices.map((service) => (
                   <li key={service.slug}>
-                    <Link href={`/services/${service.slug}/`}>
+                    <Link prefetch={false} href={`/services/${service.slug}/`}>
                       {service.menuLabel}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <Link className="footer-location-all" href="/services/">
+              <Link prefetch={false} className="footer-location-all" href="/services/">
                 View all services
               </Link>
             </div>
@@ -149,13 +149,13 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
               <ul className="footer-location-list text-sm text-stone-700">
                 {footerLocations.map((location) => (
                   <li key={location.slug}>
-                    <Link href={`/location/${location.slug}/`}>
+                    <Link prefetch={false} href={`/location/${location.slug}/`}>
                       {location.name}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <Link className="footer-location-all" href="/location/">
+              <Link prefetch={false} className="footer-location-all" href="/location/">
                 View all locations
               </Link>
             </div>
@@ -211,11 +211,11 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
       <div className="site-footer__bottom max-w-6xl mx-auto mt-10 pt-6 border-t border-forestGreen/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-stone-500">
         <p>© 2026 {siteConfig.name}<span className="site-footer__rights">. All rights reserved.</span></p>
         <p className="footer-legal-links">
-          <Link href="/privacy/">Privacy</Link>
+          <Link prefetch={false} href="/privacy/">Privacy</Link>
           <span aria-hidden="true">|</span>
-          <Link href="/terms/">Terms</Link>
+          <Link prefetch={false} href="/terms/">Terms</Link>
           <span aria-hidden="true">|</span>
-          <Link href="/about/">About SoftNest</Link>
+          <Link prefetch={false} href="/about/">About SoftNest</Link>
         </p>
       </div>
     </footer>

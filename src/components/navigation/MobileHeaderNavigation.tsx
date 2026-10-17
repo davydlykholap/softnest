@@ -23,7 +23,7 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
   return (
     <>
       <div className="mobile-header-actions">
-        <Link
+        <Link prefetch={false}
           className="mobile-header-quote"
           href={quoteHref}
           onClick={() => {
@@ -62,7 +62,7 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
               mobileServicesOpen ? "mobile-services__trigger--open" : ""
             }`}
           >
-            <Link
+            <Link prefetch={false}
               href="/services/"
               onClick={() => {
                 setOpen(false);
@@ -90,7 +90,7 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
             }`}
           >
             {mobileServices.map((service) => (
-              <Link
+              <Link prefetch={false}
                 href={`/services/${service.slug}/`}
                 key={service.slug}
                 onClick={() => {
@@ -101,7 +101,7 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
                 <span>{service.menuLabel}</span>
               </Link>
             ))}
-            <Link
+            <Link prefetch={false}
               className="mobile-services__all"
               href="/services/"
               onClick={() => {
@@ -116,13 +116,13 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
         </div>
 
         <div className="mobile-nav__primary">
-          <Link href="/location/" onClick={() => setOpen(false)}>
+          <Link prefetch={false} href="/location/" onClick={() => setOpen(false)}>
             Locations
           </Link>
-          <Link href="/blog/" onClick={() => setOpen(false)}>
+          <Link prefetch={false} href="/blog/" onClick={() => setOpen(false)}>
             Blog
           </Link>
-          <Link href="/about/" onClick={() => setOpen(false)}>
+          <Link prefetch={false} href="/about/" onClick={() => setOpen(false)}>
             About SoftNest
           </Link>
         </div>
@@ -135,7 +135,7 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
             </svg>
             {siteConfig.displayPhone}
           </a>
-          <Link
+          <Link prefetch={false}
             className="mobile-nav__quote quote-cta"
             href={quoteHref}
             onClick={() => setOpen(false)}

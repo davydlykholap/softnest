@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import Link from "next/link";
 import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
@@ -49,7 +49,7 @@ export default function CityPageSections({ location, copy }: { location: Locatio
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
                 {service ? (
-                  <Link className={styles.serviceLink} href={getCityServicePage(location.slug, service.slug)?.path ?? `/services/${service.slug}/`}>
+                  <Link prefetch={false} className={styles.serviceLink} href={getCityServicePage(location.slug, service.slug)?.path ?? `/services/${service.slug}/`}>
                     {item.title === "Area rugs" ? "Explore carpet and area rug cleaning" : `Explore ${service.name.toLowerCase()}`}
                     <span aria-hidden="true"> →</span>
                   </Link>
@@ -63,7 +63,7 @@ export default function CityPageSections({ location, copy }: { location: Locatio
           <div className={styles.moreCopy}>
             <p>{copy.more}</p>
             <ul className={styles.relatedLinks} aria-label="More cleaning services">
-              {additionalServices.map((service) => <li key={service.slug}><Link href={getCityServicePage(location.slug, service.slug)?.path ?? `/services/${service.slug}/`}>{service.name}</Link></li>)}
+              {additionalServices.map((service) => <li key={service.slug}><Link prefetch={false} href={getCityServicePage(location.slug, service.slug)?.path ?? `/services/${service.slug}/`}>{service.name}</Link></li>)}
             </ul>
           </div>
           <div className={styles.moreActions}>
@@ -74,7 +74,7 @@ export default function CityPageSections({ location, copy }: { location: Locatio
 
       {localServices.length > 0 ? <nav className={styles.localDirectory} aria-label={`Cleaning services in ${location.name}`}>
         <h2>Find your service in {location.name}</h2>
-        <ul>{localServices.map((page) => <li key={page.path}><Link href={page.path}>{page.profile.title}</Link></li>)}</ul>
+        <ul>{localServices.map((page) => <li key={page.path}><Link prefetch={false} href={page.path}>{page.profile.title}</Link></li>)}</ul>
       </nav> : null}
 
       <section className={styles.why} aria-labelledby="city-why-heading">
@@ -105,9 +105,9 @@ export default function CityPageSections({ location, copy }: { location: Locatio
           <p className={styles.nearby}>
             Looking outside {location.name}?{" "}
             {nearbyLocations.slice(0, 3).map((nearby, index) => nearby ? (
-              <span key={nearby.slug}>{index > 0 ? ", " : ""}<Link href={`/location/${nearby.slug}/`}>{nearby.name}</Link></span>
+              <span key={nearby.slug}>{index > 0 ? ", " : ""}<Link prefetch={false} href={`/location/${nearby.slug}/`}>{nearby.name}</Link></span>
             ) : null)}
-            {" — or "}<Link href="/location/">view all service areas</Link>.
+            {" — or "}<Link prefetch={false} href="/location/">view all service areas</Link>.
           </p>
         </div>
         <div className={`softnest-map ${styles.map}`}>

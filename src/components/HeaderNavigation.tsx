@@ -182,7 +182,7 @@ export default function HeaderNavigation({
           ref={servicesRef}
           onMouseLeave={scheduleServicesClose}
         >
-          <Link
+          <Link prefetch={false}
             ref={servicesTriggerRef}
             href="/services/"
             className={`desktop-nav__services-trigger ${
@@ -225,7 +225,7 @@ export default function HeaderNavigation({
             <h2 className="services-mega__heading">Services</h2>
             <div className="services-mega__list">
               {menuServices.map((service) => (
-                <Link
+                <Link prefetch={false}
                   href={`/services/${service.slug}/`}
                   className="services-mega__item"
                   key={service.slug}
@@ -242,7 +242,7 @@ export default function HeaderNavigation({
               ))}
             </div>
             <div className="services-mega__footer">
-              <Link
+              <Link prefetch={false}
                 className="services-mega__all"
                 href="/services/"
                 onClick={() => setServicesOpen(false)}
@@ -253,14 +253,14 @@ export default function HeaderNavigation({
           </div>
         </div>
 
-        <Link
+        <Link prefetch={false}
           href="/location/"
           className={current === "locations" ? "is-active" : undefined}
         >
           Locations
         </Link>
         {navigation.map((item) => (
-          <Link
+          <Link prefetch={false}
             href={item.href}
             key={item.label}
             className={

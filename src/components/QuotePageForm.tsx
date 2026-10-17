@@ -416,18 +416,18 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
             : "Tell us about the furniture and carpets you’d like refreshed. We’ll recommend fabric-safe care and follow up with a clear quote."}
         </p>
         <aside className="quote-page-photo-choice" aria-labelledby="photo-quote-heading">
-          <h2 id="photo-quote-heading">Prefer a photo quote?</h2>
+          <h2 id="photo-quote-heading">Choose how to get in touch</h2>
           <p>
-            Message full-item photos and stain close-ups through{" "}
+            Call <a href={siteConfig.phoneHref}>{siteConfig.displayPhone}</a> or message us through{" "}
             <a href={instagramUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackPhotoQuote("instagram")}>
               Instagram
             </a>{" "}
             or{" "}
             <a href={facebookUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackPhotoQuote("facebook")}>
               Facebook
-            </a>. Include your city or postal code and everything you want cleaned. No form is needed for this option.
+            </a>. Tell us your city or postal code and what needs cleaning. Photos are welcome if you want to share them.
           </p>
-          <p>Prefer a form? Continue below. If we need photos, we’ll explain what to send when we follow up.</p>
+          <p>The form below and photos are optional. Choose whichever way of contacting us suits you.</p>
         </aside>
       </div>
 

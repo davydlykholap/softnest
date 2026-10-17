@@ -20,7 +20,7 @@ export default function TermsPage() {
       <main className={styles.page}>
         <article className={styles.shell}>
           <h1>Terms of Service</h1>
-          <p className={styles.updated}>Last updated: August 6, 2026</p>
+          <p className={styles.updated}>Last updated: October 17, 2026</p>
 
           <p>
             
@@ -30,8 +30,9 @@ export default function TermsPage() {
 
           <h2>Estimates and final scope</h2>
           <p>
-            Photo estimates are based on the information, images, dimensions and
-            item counts supplied by the customer. We may revise or decline an
+            Estimates are based on the information, dimensions and item counts
+            supplied by the customer. The website form and photos are optional;
+            you can also contact us by phone or message. We may revise or decline an
             estimate if the actual size, material, construction, condition,
             contamination, access or requested scope differs from what was
             provided. Work begins only after the service scope and price are
@@ -43,13 +44,14 @@ export default function TermsPage() {
             We aim to provide thorough professional cleaning, but no specific
             stain, odour or appearance result is guaranteed. Age, wear, dye loss,
             fibre damage, heat, contamination depth, prior products and hidden
-            conditions may limit improvement. Cleaning cannot reverse permanent
-            damage or restore worn material to new condition.
+            conditions may affect the result. We can assess difficult marks or
+            damaged areas and try to improve their appearance. Complete removal,
+            repair or restoration to original condition is not promised.
           </p>
 
           <h2>Customer responsibilities</h2>
           <ul>
-            <li>Provide accurate item counts, photos and material concerns.</li>
+            <li>Provide accurate item counts and material concerns. Photos are optional.</li>
             <li>
               Disclose known damage, previous treatments, pet contamination,
               delicate materials and other relevant conditions.
