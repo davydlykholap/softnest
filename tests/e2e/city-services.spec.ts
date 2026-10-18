@@ -23,10 +23,12 @@ test("every approved city-service URL is exported, self-canonical and discoverab
       const result = await page.evaluate(({ html }) => {
         const doc = new DOMParser().parseFromString(html, "text/html");
         const main = doc.querySelector("main")!;
+        const editorial = main.cloneNode(true) as HTMLElement;
+        editorial.querySelectorAll("#local-work, #reviews").forEach(section => section.remove());
         return { title: doc.title, description: doc.querySelector('meta[name="description"]')?.getAttribute("content"),
           canonical: doc.querySelector('link[rel="canonical"]')?.getAttribute("href"),
           h1Count: doc.querySelectorAll("h1").length, robots: doc.querySelector('meta[name="robots"]')?.getAttribute("content"),
-          words: (main.textContent ?? "").trim().split(/\s+/).length,
+          words: (editorial.textContent ?? "").trim().split(/\s+/).length,
           introduction: main.querySelector("section p")?.textContent ?? "",
           content: main.textContent ?? "",
           schemas: [...doc.querySelectorAll('script[type="application/ld+json"]')].map((script) => JSON.parse(script.textContent ?? "{}")),
@@ -46,7 +48,7 @@ test("every approved city-service URL is exported, self-canonical and discoverab
       expect(result.content, path).toContain("Photos can help, but you don't have to send any.");
       expect(result.content, path).toMatch(/(?:try to|best to|often) (?:improve|make)/);
       expect(result.content, path).not.toMatch(/cannot (?:repair|reverse|be cleaned away|be corrected)/i);
-      // Guard against accidental content expansion rather than an SEO word minimum.
+      // Guard authored template copy; published jobs/reviews can grow independently.
       expect(result.words, path).toBeLessThan(600);
       const schema = result.schemas.find((item) => item["@type"] === "Service");
       expect(schema?.url).toBe(`https://softnestcare.ca${path}`);

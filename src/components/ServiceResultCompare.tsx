@@ -9,12 +9,18 @@ type ServiceResultCompareProps = {
   image: string;
   label: string;
   variant: "paired" | "single";
+  before?: string;
+  after?: string;
+  eager?: boolean;
 };
 
 export default function ServiceResultCompare({
   image,
   label,
   variant,
+  before,
+  after,
+  eager = false,
 }: ServiceResultCompareProps) {
   const [position, setPosition] = useState(50);
   if (variant === "single") return <div className={styles.resultCompare}>
@@ -23,13 +29,13 @@ export default function ServiceResultCompare({
 
   return (
     <div
-      className={`${styles.resultCompare} ${styles[`resultCompare${variant === "paired" ? "Paired" : "Single"}`]}`}
+      className={`${styles.resultCompare} ${before && after ? "" : styles.resultComparePaired}`}
     >
-      <div className={`${styles.resultLayer} ${styles.resultLayerBefore}`}><Image src={image} alt={label} fill sizes="(max-width: 760px) 90vw, 45vw" /></div>
+      <div className={`${styles.resultLayer} ${styles.resultLayerBefore}`}><Image src={before || image} alt={label} fill loading={eager ? "eager" : "lazy"} sizes="(max-width: 760px) 90vw, 80vw" style={before ? {objectFit:"cover"} : undefined} /></div>
       <div
         className={`${styles.resultLayer} ${styles.resultLayerAfter}`}
         style={{ clipPath: `inset(0 0 0 ${position}%)` }}
-      ><Image src={image} alt="" fill sizes="(max-width: 760px) 90vw, 45vw" /></div>
+      ><Image src={after || image} alt="" fill loading={eager ? "eager" : "lazy"} sizes="(max-width: 760px) 90vw, 80vw" style={after ? {objectFit:"cover"} : undefined} /></div>
       <span className={`${styles.resultLabel} ${styles.resultLabelBefore}`} aria-hidden="true">Before</span>
       <span className={`${styles.resultLabel} ${styles.resultLabelAfter}`} aria-hidden="true">After</span>
       <span

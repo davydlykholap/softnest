@@ -1,35 +1,90 @@
 import { expect, test } from "@playwright/test";
-import { readFileSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 
-const projects: { _id: string; publicationStatus: string; services: string[]; locations: string[] }[] = JSON.parse(readFileSync("src/content/generated/projects.json", "utf8"));
+type Project = { slug: string; title: string; media?: {type:string}[]; _id: string; publicationStatus: string; sourceType: string; image: string; imageNote?: string; variant: string; services: string[]; locations: string[] };
+const projects: Project[] = JSON.parse(readFileSync("src/content/generated/projects.json", "utf8"));
+const locations: { slug: string; name: string; pageEnabled: boolean; status: string; indexInSearch: boolean }[] = JSON.parse(readFileSync("src/content/generated/locations.json", "utf8"));
 const reviews: { name: string; publicationStatus: string; services: string[]; locations: string[] }[] = JSON.parse(readFileSync("src/content/generated/testimonials.json", "utf8"));
 
 test.beforeEach(async ({ page }) => {
   await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ status: 200, body: "" }));
 });
 
-test("Our Work filters documented projects and supports comparison controls", async ({ page }) => {
-  await page.goto("/our-work/");
-  const cards = page.locator("[data-project-id]");
-  await expect(cards).toHaveCount(projects.filter((project) => project.publicationStatus === "approved").length);
-  await page.getByLabel("Area", { exact: true }).selectOption("oakville");
-  const oakville = projects.filter((project) => project.publicationStatus === "approved" && project.locations.includes("oakville"));
-  await expect(cards).toHaveCount(oakville.length);
-  expect(await cards.evaluateAll((items) => items.map((item) => item.getAttribute("data-project-id")))).toEqual(oakville.map((project) => project._id));
-  await page.getByLabel("Service", { exact: true }).selectOption("sofa-cleaning");
-  await expect(cards).toHaveCount(1);
-  await page.getByRole("button", { name: "Clear filters" }).click();
-  await expect(cards).toHaveCount(projects.length);
-  const slider = page.getByRole("slider").first();
-  await slider.focus();
-  await slider.press("Home");
-  await expect(slider).toHaveValue("0");
-  await slider.press("End");
-  await expect(slider).toHaveValue("100");
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://softnestcare.ca/our-work/");
-  const schemas = await page.locator('script[type="application/ld+json"]').allTextContents();
-  const collection = schemas.map((value) => JSON.parse(value)).find((item) => item["@type"] === "CollectionPage");
-  expect(collection.mainEntity.itemListElement).toHaveLength(projects.length);
+test("city-grouped overview is photo-led, linked and responsive", async ({ page }) => {
+  const errors: string[] = [];
+  page.on("pageerror", error => errors.push(error.message));
+  const cities = locations.filter(city => city.pageEnabled && city.status !== "not-served");
+  for (const width of [320,390,1280]) {
+    await page.setViewportSize({width,height:900});
+    await page.goto("/our-work/");
+    await expect(page.getByRole("heading",{level:1})).toBeVisible();
+    await expect(page.locator("[data-work-city]")).toHaveCount(cities.length);
+    await expect(page.getByLabel("Browse by city")).toHaveCount(0);
+    await expect(page.getByRole("slider")).toHaveCount(0);
+    await expect(page.locator("[data-project-id] p")).toHaveCount(0);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    for(const city of cities) {
+      const section = page.locator(`[data-work-city="${city.slug}"]`);
+      const matching = projects.filter(project => project.locations.includes(city.slug)).slice(0,6);
+      await expect(section.locator("[data-project-id]")).toHaveCount(matching.length);
+      await expect(section.getByRole("link",{name:`View all ${city.name} projects →`})).toHaveAttribute("href",`/our-work/${city.slug}/`);
+      const ids = await section.locator("[data-project-id]").evaluateAll(items => items.map(item => item.getAttribute("data-project-id")));
+      expect(ids).toEqual(matching.map(item => item._id));
+      if(!matching.length) {
+        const message=section.getByText("No projects published yet.",{exact:true});
+        await expect(message).toBeVisible();
+        const centered=await message.evaluate(element => {
+          const parent=element.parentElement!.getBoundingClientRect();
+          const text=element.getBoundingClientRect();
+          return Math.abs((parent.top+parent.bottom)/2-(text.top+text.bottom)/2)<3;
+        });
+        expect(centered).toBe(true);
+      }
+    }
+    if(projects.length) {
+      const image = page.locator("[data-project-id] img").first();
+      await expect.poll(() => image.evaluate((element:HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
+    }
+    if(process.env.SOFTNEST_QA_DIR) {
+      mkdirSync(process.env.SOFTNEST_QA_DIR,{recursive:true});
+      await page.screenshot({path:join(process.env.SOFTNEST_QA_DIR,`our-work-${width}.png`),fullPage:true});
+    }
+  }
+  expect(errors).toEqual([]);
+});
+
+test("city gallery opens a permanent project with comparison and city context", async ({page}) => {
+  test.skip(!projects.length,"No approved projects");
+  const project = projects[0];
+  const city = project.locations[0];
+  await page.goto(`/our-work/${city}/`);
+  await expect(page.locator("[data-project-id]")).toHaveCount(projects.filter(item => item.locations.includes(city)).length);
+  await expect(page.getByRole("slider")).toHaveCount(0);
+  await page.locator(`[data-project-id="${project._id}"] a`).click();
+  await expect(page).toHaveURL(new RegExp(`/our-work/projects/${project.slug}/$`));
+  await expect(page.getByRole("heading",{level:1})).toHaveText(project.title);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href",`https://softnestcare.ca/our-work/projects/${project.slug}/`);
+  if(project.variant === "paired") {
+    const slider = page.getByRole("slider").first();
+    await slider.focus(); await slider.press("Home"); await expect(slider).toHaveValue("0");
+    await slider.press("End"); await expect(slider).toHaveValue("100");
+  }
+  const quotes = await page.locator('a[href^="/quote/"]').evaluateAll(items => items.map(item => item.getAttribute("href")));
+  expect(quotes.every(href => href === `/quote/?city=${city}`)).toBe(true);
+  for(const width of [320,390,1280]) {
+    await page.setViewportSize({width,height:900});
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    if(process.env.SOFTNEST_QA_DIR) await page.screenshot({path:join(process.env.SOFTNEST_QA_DIR,`work-project-${width}.png`),fullPage:true});
+  }
+  await page.getByRole("link",{name:/More work in/}).click();
+  await expect(page).toHaveURL(new RegExp(`/our-work/${city}/$`));
+  await page.goto(`/our-work/${city}/?service=${project.services[0]}`);
+  await expect(page.locator("[data-project-id]")).toHaveCount(projects.filter(item => item.locations.includes(city) && item.services.includes(project.services[0])).length);
+  await page.getByRole("button",{name:"Clear filters"}).click();
+  await expect(page).toHaveURL(new RegExp(`/our-work/${city}/$`));
+  await page.goBack();
+  await expect(page).toHaveURL(/service=/);
 });
 
 test("city service evidence matches both city and service, with no unrelated fallback", async ({ page }) => {
@@ -38,9 +93,17 @@ test("city service evidence matches both city and service, with no unrelated fal
     const matches = projects.filter((item) => item.publicationStatus === "approved" && item.locations.includes(city) && item.services.includes(service));
     const matchingReviews = reviews.filter((item) => item.publicationStatus === "approved" && item.locations.includes(city) && item.services.includes(service));
     const section = page.locator(`[data-local-evidence="${city}"]`);
-    await expect(section).toHaveCount(matches.length || matchingReviews.length ? 1 : 0);
-    if (matches.length) await expect(section.locator("[data-project-id]")).toHaveAttribute("data-project-id", matches[0]._id);
-    if (matchingReviews.length) await expect(section.locator("[data-review-author]")).toHaveAttribute("data-review-author", matchingReviews[0].name);
+    await expect(section).toHaveCount(matches.length ? 1 : 0);
+    if (matches.length) {
+      await expect(section.locator("[data-project-id]")).toHaveCount(Math.min(2, matches.length));
+      await expect(section.locator("[data-project-id]").first()).toHaveAttribute("data-project-id", matches[0]._id);
+      await expect(section.getByRole("link", { name: new RegExp(`View .* cleaning results`) })).toHaveAttribute("href", `/our-work/${city}/?service=${service}`);
+    }
+    await expect(page.locator("#reviews")).toHaveCount(matchingReviews.length ? 1 : 0);
+    if (matchingReviews.length) {
+      const authors = await page.locator("#reviews .google-review-card__author:visible").allTextContents();
+      expect(authors.every(name => matchingReviews.some(review => review.name === name.trim()))).toBe(true);
+    }
   }
 });
 
@@ -82,47 +145,50 @@ test("Our Work is reachable from desktop and mobile navigation without overflow"
   }
 });
 
-test("Oakville work page contains only the documented appointment and its photo disclosure", async ({ page }) => {
-  await page.goto("/our-work/oakville/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("Oakville");
-  await expect(page.locator("[data-project-id]")).toHaveCount(1);
-  await expect(page.locator("[data-project-id]")).toHaveAttribute("data-project-id", "cleaning-project-cream-sofa-reconstructed");
-  await expect(page.getByText(/before view is a recreation based on a separate photo/i)).toBeVisible();
-  await expect(page.getByRole("img", { name: /original after photo with a recreated before view/i })).toBeVisible();
-  await expect(page.locator("link[rel=canonical]")).toHaveAttribute("href", "https://softnestcare.ca/our-work/oakville/");
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /index/);
-  await expect(page.getByRole("link", { name: "Oakville service area page" })).toHaveAttribute("href", "/location/oakville/");
-  const markup = (await page.locator('script[type="application/ld+json"]').allTextContents()).map(text => JSON.parse(text));
-  const collection = markup.find(obj => obj["@type"] === "CollectionPage");
-  expect(collection.mainEntity.itemListElement).toHaveLength(1);
-  expect(collection.mainEntity.itemListElement[0].item.contentUrl).toContain("oakville-cream-sofa-cleaning-before-after.webp");
-});
+for (const location of locations.filter(location => location.pageEnabled && location.status !== "not-served")) {
+  test(`${location.name} gallery matches published work, indexing and city quote context`, async ({ page }) => {
+    const matching = projects.filter(project => project.locations.includes(location.slug));
+    const displayed = matching.length ? matching : projects.slice(0, 1);
+    await page.goto(`/location/${location.slug}/`);
+    await expect(page.locator("#local-work")).toHaveCount(1);
+    await expect(page.locator("#reviews")).toHaveCount(1);
+    await expect(page.locator("#local-work [data-project-id]")).toHaveCount(Math.min(2, displayed.length));
+    if (displayed.length) {
+      const image = page.locator("#local-work img").first();
+      await expect(image).toBeVisible();
+      await expect.poll(() => image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBe(true);
+    }
+    await page.getByRole("link", { name: `View ${location.name} cleaning results →`, exact: true }).click();
+    await expect(page).toHaveURL(new RegExp(`/our-work/${location.slug}/$`));
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(location.name);
+    await expect(page.locator("[data-project-id]")).toHaveCount(matching.length);
+    const actualIds = await page.locator("[data-project-id]").evaluateAll(items => items.map(item => item.getAttribute("data-project-id")));
+    expect(actualIds).toEqual(matching.map(project => project._id));
+    await expect(page.getByRole("navigation", { name: "Breadcrumb" })).toHaveCount(0);
+    await expect(page.getByLabel("Browse by city")).toHaveCount(0);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://softnestcare.ca/our-work/${location.slug}/`);
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", matching.length && location.indexInSearch ? /^index/ : /noindex/);
+    const quotes = await page.locator('a[href^="/quote/"]').evaluateAll(links => links.map(link => link.getAttribute("href")));
+    expect(quotes.every(href => href === `/quote/?city=${location.slug}`)).toBe(true);
+    if (!matching.length) await expect(page.getByText("No projects published yet.",{exact:true})).toBeVisible();
+    const markup = (await page.locator('script[type="application/ld+json"]').allTextContents()).map(text => JSON.parse(text));
+    const collection = markup.find(obj => obj["@type"] === "CollectionPage");
+    if (matching.length) expect(collection.mainEntity.itemListElement).toHaveLength(matching.length);
+    else expect(collection).toBeUndefined();
+    await page.getByRole("link",{name:"← Back to Our Work",exact:true}).click();
+    await expect(page).toHaveURL(new RegExp(`/our-work/#work-${location.slug}-heading$`));
+    await expect(page.locator(`[data-work-city="${location.slug}"]`)).toBeVisible();
+    await expect(page.getByLabel("Browse by city")).toHaveCount(0);
+  });
+}
 
-test("Cities without documented jobs have connected noindex pages but no invented work", async ({ page }) => {
-  await page.goto("/location/milton/");
-  await expect(page.getByRole("link", { name: /View Milton cleaning results/ })).toHaveAttribute("href", "/our-work/milton/");
-  await page.getByRole("link", { name: /View Milton cleaning results/ }).click();
-  await expect(page).toHaveURL(/\/our-work\/milton\/$/);
-  await expect(page.locator("[data-project-id]")).toHaveCount(0);
-  await expect(page.getByRole("heading", { name: /More local photos are coming/ })).toBeVisible();
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
-  await expect(page.locator("link[rel=canonical]")).toHaveAttribute("href", "https://softnestcare.ca/our-work/milton/");
-  await page.getByRole("link", { name: "Oakville (1)" }).click();
-  await expect(page).toHaveURL(/\/our-work\/oakville\/$/);
-});
-
-test("Our Work uses crawlable named images, excludes AI illustrations, and lists real city images in sitemap", async ({ page }) => {
-  await page.goto("/our-work/");
-  await expect(page.locator("[data-project-id]")).toHaveCount(1);
-  await expect(page.locator('[data-project-id] img[src*="oakville-cream-sofa-cleaning-before-after"]').first()).toBeVisible();
-  const slider = page.getByRole("slider").first();
-  await slider.fill("85");
-  await expect(slider).toHaveValue("85");
+test("sitemap includes project pages and only populated indexable cities", async ({page}) => {
   const response = await page.request.get("/sitemap.xml");
   expect(response.ok()).toBe(true);
   const xml = await response.text();
-  expect(xml).toContain("https://softnestcare.ca/our-work/oakville/");
-  expect(xml).not.toContain("https://softnestcare.ca/our-work/milton/");
-  expect(xml).toContain("oakville-cream-sofa-cleaning-before-after.webp");
-  expect(xml).not.toContain("/img/staircase_dirt.webp");
+  for(const city of locations) {
+    const indexed = city.pageEnabled && city.status !== "not-served" && city.indexInSearch && projects.some(project => project.locations.includes(city.slug));
+    expect(xml.includes(`https://softnestcare.ca/our-work/${city.slug}/`)).toBe(Boolean(indexed));
+  }
+  for(const project of projects) expect(xml).toContain(`https://softnestcare.ca/our-work/projects/${project.slug}/`);
 });

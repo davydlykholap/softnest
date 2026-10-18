@@ -1,66 +1,42 @@
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import HeroActionButtons from "@/components/HeroActionButtons";
-import WorkGallery from "@/components/WorkGallery";
-import WorkAreaLinks from "@/components/WorkAreaLinks";
+import WorkCityRail from "@/components/WorkCityRail";
+import WorkProjectCard from "@/components/WorkProjectCard";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
-import { getWorkProjects } from "@/content/work";
+import { getWorkProjects, workPageCopy } from "@/content/work";
 import { locations } from "@/content/locations";
-import { services } from "@/content/services";
+import { workProjectHref } from "@/lib/workUrls";
 import { pageMetadata } from "@/seo/metadata";
 import { jsonLd } from "@/seo/structuredData";
 import { absoluteUrl, organizationId } from "@/lib/site";
 import styles from "./page.module.css";
 import "@/app/styles/location-page.css";
 
-export const metadata = pageMetadata({
-  title: "Our Work | Before & After Cleaning Results | SoftNest",
-  description: "Explore documented SoftNest cleaning projects, with clear before-and-after photo context. Browse completed appointments by service and city.",
-  path: "/our-work/",
-});
+export const metadata = pageMetadata({ title:"Our Work | Cleaning Projects by City | SoftNest", description:"Explore SoftNest upholstery and carpet cleaning projects by city. Open an appointment to see its photos, videos and cleaning story.", path:"/our-work/" });
 
 export default function OurWorkPage() {
   const projects = getWorkProjects();
-  const galleryServices = services.filter((service) => projects.some((project) => project.services.includes(service.slug)))
-    .map(({ slug, name }) => ({ slug, name }));
-  const galleryLocations = locations.filter((location) => projects.some((project) => project.locations.includes(location.slug)))
-    .map(({ slug, name }) => ({ slug, name }));
-  const schema = {
-    "@context": "https://schema.org", "@type": "CollectionPage", "@id": absoluteUrl("/our-work/#collection"),
-    name: "SoftNest before and after cleaning results", url: absoluteUrl("/our-work/"),
-    about: { "@id": organizationId },
-    mainEntity: { "@type": "ItemList", itemListElement: projects.map((project, index) => ({
-      "@type": "ListItem", position: index + 1, url: absoluteUrl(`/our-work/#${project.id}`),
-      item: { "@type": "ImageObject", contentUrl: absoluteUrl(project.image), caption: project.label, description: project.imageNote || project.label },
-    })) },
-  };
-  const crumbs = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
-    { "@type": "ListItem", position: 2, name: "Our Work", item: absoluteUrl("/our-work/") },
-  ] };
-
+  const groups = locations.map(city => ({ city, projects: projects.filter(project => project.locations.includes(city.slug)).slice(0, 6) }))
+    .sort((a,b) => Number(b.projects.length > 0) - Number(a.projects.length > 0));
+  const schema = { "@context":"https://schema.org", "@type":"CollectionPage", "@id":absoluteUrl("/our-work/#collection"), name:"SoftNest cleaning projects by city", url:absoluteUrl("/our-work/"), about:{ "@id":organizationId }, mainEntity:{ "@type":"ItemList", itemListElement:groups.flatMap(group => group.projects).map((project,index) => ({ "@type":"ListItem", position:index+1, url:absoluteUrl(workProjectHref(project)), name:project.title })) } };
   return <>
     <div className="new-hero-root location-page-header"><SiteHeader current="work" /></div>
-    <main className={`location-page-page ${styles.page}`}>
+    <main id="main-content" className={`location-page-page ${styles.page}`}>
       <div className={styles.shell}>
         <header className={styles.intro}>
-          <h1>Before &amp; after<br /><span>cleaning results.</span></h1>
-          <div>
-            <p>Browse cleaning results and choose a city to explore our completed projects. Use the comparison slider to see the details.</p>
-            <HeroActionButtons primaryTone="gold" showReviews={false} />
-          </div>
+          <div><h1>{workPageCopy.heading} <span>{workPageCopy.headingAccent}</span></h1><p>{workPageCopy.description}</p></div>
         </header>
-        <WorkAreaLinks />
-        <WorkGallery projects={projects} services={galleryServices} locations={galleryLocations} />
-        <section className={styles.note} aria-labelledby="your-results-heading">
-          <h2>What about your furniture?</h2>
-          <p>Results depend on the material, condition and type of stain. Tell us what you want cleaned and we can discuss what may improve. Find your <Link href="/services/">cleaning service</Link> or check our <Link href="/location/">service areas</Link>.</p>
-        </section>
+        {groups.map(({city,projects:preview},groupIndex) => <section key={city.slug} className={styles.citySection} data-work-city={city.slug} aria-labelledby={`work-${city.slug}-heading`}>
+          <div className={styles.cityHeading}><h2 id={`work-${city.slug}-heading`}>{city.name}</h2><Link href={`/our-work/${city.slug}/`}>View all {city.name} projects →</Link></div>
+          {preview.length ? <WorkCityRail city={city.slug} count={preview.length}>{preview.map((project,index) => <WorkProjectCard key={project.id} project={project} eager={groupIndex === 0 && index < 3} />)}</WorkCityRail>
+            : <div className={styles.cityEmpty}><p>{workPageCopy.emptyCityDescription.replaceAll("{{city}}",city.name)}</p></div>}
+        </section>)}
+        {!groups.length ? <p className={styles.emptyCity}>New cleaning projects are coming. <Link href="/services/">Explore our services.</Link></p> : null}
       </div>
-      <DirectoryFinalCta id="quote-cta" title="Ask about your cleaning." description="Call, text or use the form. Photos are optional, and we confirm a tax-inclusive price before booking." action={{ href: "/quote/", label: "Get a Quote" }} image="/images/softnest-hero-room.webp" imageAlt="Bright living room with a green sofa" />
+      <DirectoryFinalCta id="quote-cta" title="Ask about your cleaning." description="Tell us what needs attention. We confirm the price before booking." action={{href:"/quote/",label:"Get a Quote"}} image="/images/softnest-hero-room.webp" imageAlt="Bright living room with a green sofa" />
     </main>
     <SiteFooter />
-    {[schema, crumbs].map((item, index) => <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(item) }} />)}
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(schema)}} />
   </>;
 }

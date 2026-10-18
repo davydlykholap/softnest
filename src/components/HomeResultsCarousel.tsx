@@ -16,7 +16,6 @@ export type GalleryResult = {
   location: string;
   service: string;
   label: string;
-  imageNote?: string;
 };
 
 type HomeResultsCarouselProps = {
@@ -78,7 +77,6 @@ function ComparisonCard({ result }: { result: GalleryResult }) {
           }}
         />
       </div>
-      {result.imageNote ? <p className="gallery-photo-note">{result.imageNote}</p> : null}
     </article>
   );
 }

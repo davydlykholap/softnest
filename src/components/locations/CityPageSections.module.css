@@ -184,9 +184,3 @@
 .localDirectory h2 { font-size: 28px; margin-bottom: 20px; }
 .localDirectory ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 24px; list-style: none; padding: 0; }
 .localDirectory a { color: #245b42; text-underline-offset: 4px; font-size: 16px; }
-
-.workDirectory { width:var(--location-page-content-width);margin:0 auto 55px;border-top:1px solid var(--surface-line);padding:35px 0; }
-.workDirectory h2 {font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;font-weight:400;font-size:clamp(30px,3vw,42px);margin:0 0 12px;color:var(--brand-green);}
-.workDirectory p {max-width:700px;line-height:1.6;color:#52655a;margin:0 0 16px;}
-.workDirectory a {color:var(--brand-green);text-underline-offset:4px;}
-.workDirectory a:focus-visible {outline:3px solid var(--brand-green);outline-offset:4px;}

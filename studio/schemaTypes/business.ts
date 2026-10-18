@@ -4,6 +4,8 @@ import {
   defineType,
   type FieldDefinition,
 } from "sanity";
+import workPageDefaults from "../../src/content/workPageDefaults.json";
+import { workVideoEmbed } from "../../src/lib/workUrls";
 
 const label = (name: string) =>
   name.replace(/([A-Z])/g, " $1").replace(/^./, (value) => value.toUpperCase());
@@ -211,6 +213,15 @@ const doc = (
         }
       : {}),
   });
+
+const projectDocument = (fields:FieldDefinition[]) => defineType({
+  ...doc("cleaningProject","Projects",fields,{title:"title",subtitle:"category"}),
+  groups:[{name:"details",title:"Project details",default:true},{name:"media",title:"Photos & videos"},{name:"story",title:"Description & story"},{name:"publishing",title:"Publishing"}],
+  fields:fields.map(field => ({...field, group:
+    ["imageUpload","image","variant","media","label"].includes(field.name) ? "media" :
+    ["introduction","fabric","problem","treatment","result"].includes(field.name) ? "story" :
+    ["sourceType","imageNote","publicationStatus","featured","order"].includes(field.name) ? "publishing" : "details"})),
+});
 
 export const businessTypes = [
   doc("siteSettings", "Business settings", [
@@ -442,7 +453,7 @@ export const businessTypes = [
     }),
   ], { title: "name", subtitle: "slug.current" }),
 
-  doc("faq", "Common questions", [
+  doc("faq", "FAQs", [
     ...faqFields,
     order,
     flag("onHomepage"),
@@ -482,13 +493,14 @@ export const businessTypes = [
     refs("locations", "location"),
   ], { title: "name", subtitle: "source" }),
 
-  doc("cleaningProject", "Cleaning results", [
+  projectDocument([
     text("title", true),
-    text("category", true),
-    text("location", true),
-    text("service", true),
-    text("label", true),
-    media(),
+    defineField({ name: "slug", title: "Project address", type: "slug", options: { source: "title", maxLength: 100 }, description: "Generate once, then keep this address unchanged. Existing projects without one retain their original automatic address.", validation: rule => rule.custom(value => !value?.current || /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.current) || "Use lowercase words separated by hyphens.") }),
+    defineField({...text("category",true),title:"Item cleaned",description:"For example: cream sofa, mattress or dining chairs."}),
+    defineField({ name: "location", title: "Legacy location label", type: "string", readOnly: true, hidden: true, description: "The website derives the city label from Actual appointment city." }),
+    defineField({...text("service",true),title:"Service display name",description:"Short readable name, such as Sofa cleaning. Choose the matching service pages under Services as well."}),
+    defineField({...text("label",true),title:"Image description",description:"Describe the cover image for visitors using screen readers."}),
+    defineField({ ...media(), title:"Cover image", description:"The image shown in project galleries. Add the other photos and videos below.", validation: rule => rule.custom((value, context) => context.document?.publicationStatus !== "approved" || Boolean(value?.asset || context.document?.image) || "Add a photo before approving this appointment.") }),
     legacyImage,
     defineField({
       name: "sourceType",
@@ -500,10 +512,11 @@ export const businessTypes = [
         { title: "Real job — recreated before view", value: "reconstructed-before" },
         { title: "Illustrative image (not a real appointment)", value: "ai-generated" },
       ], layout: "radio" },
-      validation: rule => rule.required(),
+      validation: rule => rule.required().custom((value, context) => value !== "ai-generated" || context.document?.publicationStatus !== "approved" || "Illustrations cannot be approved as customer work. Choose Withheld."),
     }),
     defineField({
       name: "variant",
+      title: "Cover image layout",
       type: "string",
       initialValue: "single",
       options: {
@@ -516,15 +529,28 @@ export const businessTypes = [
       description:
         "Paired means the original image already contains a side-by-side before/after comparison.",
     }),
-    text("fabric"),
-    defineField({ name: "imageNote", title: "Photo context", type: "text", description: "Explain any reconstruction or editing that affects how the comparison should be read. Displayed with the photo on Our Work." }),
-    text("problem", false, true),
-    text("treatment", false, true),
-    text("result", false, true),
-    defineField({ name: "date", type: "date" }),
-    refs("services", "service"),
+    defineField({...text("fabric"),title:"Material / fabric"}),
+    defineField({ name: "imageNote", title: "Photo context", type: "text", description: "Internal source context retained with the project record. This is not a gallery caption.", validation: rule => rule.custom((value, context) => context.document?.publicationStatus !== "approved" || context.document?.sourceType !== "reconstructed-before" || Boolean(value?.trim()) || "Explain the recreated before view before approving this job.") }),
+    defineField({...text("introduction",false,true),title:"Project description",description:"Describe the appointment in your own words. Shown on the project page, never below gallery covers."}),
+    defineField({ name: "media", title: "Additional photos & videos", type: "array", description: "Drag items into story order. The cover image appears first automatically, so do not add it again here. Stories and media are optional.", of: [
+      defineArrayMember({ name: "projectPhoto", title: "Photo", type: "object", fields: [defineField({ ...media("photo"), validation: rule => rule.required() })], preview: { select: { title: "photo.alt", media: "photo" } } }),
+      defineArrayMember({ name: "projectComparison", title: "Before & after comparison", type: "object", fields: [text("label", true), defineField({ ...media("before"), validation: rule => rule.required() }), defineField({ ...media("after"), validation: rule => rule.required() })], preview: { select: { title: "label", media: "after" } } }),
+      defineArrayMember({ name: "projectVideo", title: "Video", type: "object", fields: [
+        text("title", true),
+        defineField({ name: "file", title: "Upload video", type: "file", options: { accept: "video/mp4,video/webm" } }),
+        defineField({ name: "url", title: "Or YouTube / Vimeo link", type: "url", validation: rule => rule.custom(value => !value || Boolean(workVideoEmbed(value)) || "Use an HTTPS YouTube watch/shorts link or public Vimeo video link.") }),
+        media("poster"),
+        defineField({ name:"captions", title:"Captions for uploaded video", type:"file", options:{accept:".vtt,text/vtt"}, description:"Optional English WebVTT captions. YouTube/Vimeo captions are managed on that platform." }),
+        defineField({ ...text("transcript", false, true), description: "Describe the action or transcribe speech. Include captions in uploaded videos when there is speech." }),
+      ], validation: rule => rule.custom(value => Boolean(value?.file) !== Boolean(value?.url) || "Choose one video upload or provider link."), preview: { select: { title: "title" } } }),
+    ] }),
+    defineField({...text("problem",false,true),title:"Before cleaning",description:"What needed attention when you arrived?"}),
+    defineField({...text("treatment",false,true),title:"What we did",description:"Describe the cleaning and any areas needing extra attention."}),
+    defineField({...text("result",false,true),title:"The result",description:"Explain the outcome, including any marks that remained."}),
+    defineField({ name: "date", title:"Appointment date", type: "date" }),
+    defineField({ ...refs("services", "service"), validation: rule => rule.unique().custom((value, context) => context.document?.publicationStatus !== "approved" || Boolean(value?.length) || "Assign at least one service before approving this job.") }),
     defineField({
-      name: "locations", title: "Actual appointment city", type: "array",
+      name: "locations", title: "City", type: "array",
       description: "Choose the city where this job really happened. This controls city galleries and location-page evidence.",
       of: [defineArrayMember({ type: "reference", to: [{ type: "location" }] })],
       validation: rule => rule.custom((value, context) => {
@@ -533,23 +559,33 @@ export const businessTypes = [
         return true;
       }),
     }),
-    order,
-    flag("featured"),
+    defineField({...order,description:"Lower numbers appear first in this city's project preview."}),
+    defineField({...flag("featured"),title:"Feature on homepage",description:"Include this approved appointment in the homepage results gallery."}),
     defineField({
       name: "publicationStatus",
-      title: "Publication status",
+      title: "Website approval",
+      description: "Choose Approved for website, then Publish. The website updates after its build succeeds. Publishing a hidden project keeps it off the website.",
       type: "string",
       initialValue: "pending",
       options: {
         list: [
-          { title: "Pending review", value: "pending" },
+          { title: "Awaiting approval", value: "pending" },
           { title: "Approved for website", value: "approved" },
-          { title: "Withheld", value: "withheld" },
+          { title: "Hidden from website", value: "withheld" },
         ],
         layout: "radio",
       },
     }),
-  ], { title: "title", subtitle: "location" }),
+  ]),
+
+  defineType({
+    ...doc("workPage", "Our Work page", [
+      text("heading", true), text("headingAccent", true), text("description", true, true),
+      defineField({ ...text("cityDescription", true, true), description: "Use {{city}} for the city name. Shown on galleries with local projects." }),
+      defineField({ ...text("emptyCityDescription", true, true), title:"Empty city message", description: "Centered in city sections and galleries with no published projects. Keep it short. Use {{city}} for the city name if needed." }),
+    ], { title: "heading" }),
+    initialValue: workPageDefaults,
+  }),
 
   doc("quoteCategory", "Quote form choices", [
     text("label", true),

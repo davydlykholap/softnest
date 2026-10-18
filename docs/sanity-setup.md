@@ -20,13 +20,21 @@ npm run studio
 
 Open http://localhost:3333 and sign in to the account with access to the saved SoftNest Sanity project/dataset.
 
-The Studio navigation currently exposes:
+The Studio navigation uses the website's plain-language names:
 
-- Business settings and Homepage;
-- Quote form choices;
-- Services, Service areas, City page wording and City service wording;
-- Cleaning results, Customer reviews and Common questions;
-- Blog posts, Authors and Categories.
+- **Pages:** Homepage and Our Work introductions (including the empty-city message).
+- **Services:** cleaning service records and page content.
+- **Locations:** Cities & coverage, City page text, City service page text.
+- **Our Work:** All projects, Projects by city, Awaiting approval, Approved for website and Hidden projects.
+- **Customer Reviews:** customer review records.
+- **Blog:** Articles, Authors and Categories.
+- **FAQs:** reusable questions and answers.
+- **Settings:** Business & contact details and Quote form choices.
+- **Publishing Help:** instructions using the same names as the sidebar.
+
+These are views of existing document types, not separate storage folders or copied records. A project edited through a city or approval view is the same record shown in All projects. Creating through Projects by city prefills that city's reference and starts the project as pending, never automatically approved. Status views intentionally have no Create button; use All projects or Projects by city.
+
+Project field labels include Image description, Cover image, Cover image layout, Before cleaning, What we did, The result and Website approval. Internal field names, document IDs and existing content remain compatible.
 
 The About page is intentionally **not** editable in Sanity today. Its visible content lives in `src/app/about/page.tsx`. An old `page-content-about` document may remain in the dataset from the migration, but builds do not fetch it and Studio no longer presents it as an editing surface.
 
@@ -57,9 +65,9 @@ The core controls are independent:
 
 A not-served area cannot publish a page. An unpublished page cannot be indexable or appear in the footer; content validation enforces those rules.
 
-Every published city uses the shared `LocationPage` template. **City page wording** owns the reviewed search title/description, introduction, service descriptions, reasons to book, neighbourhood coverage, local FAQs and final quote wording. All nine records are seeded.
+Every published city uses the shared `LocationPage` template. **City page text** owns the reviewed search title/description, introduction, service descriptions, reasons to book, neighbourhood coverage, local FAQs and final quote wording. All nine records are seeded.
 
-**City service wording** contains 90 short records: opening description, booking details, visit guidance and one practical FAQ. Service facts, drying and treatment limits remain in **Services**. Coverage and indexability flags remain in **Service areas**. Older local overrides are retained for existing hero/layout data; their old text is superseded by the reviewed wording records.
+**City service page text** contains 90 short records: opening description, booking details, visit guidance and one practical FAQ. Service facts, drying and treatment limits remain in **Services**. Coverage and indexability flags remain in **Cities & coverage**. Older local overrides are retained for existing hero/layout data; their old text is superseded by the reviewed wording records.
 
 Published wording overrides the reviewed code fallback after `content:sync`. Do not edit generated JSON. `npm run content:seed-local-copy -- --dry-run` checks the seed; the command without `--dry-run` creates only missing records and preserves editor changes.
 
@@ -73,7 +81,7 @@ Google rating in Business settings is manually maintained. Verify the source bef
 
 ## Blog editing
 
-Open **Journal ? Blog posts**. Enter the title, excerpt, body, publication date and slug. Optional fields include cover image, separate search title, SEO description, author/categories and related services.
+Open **Blog → Articles**. Enter the title, excerpt, body, publication date and slug. Optional fields include cover image, separate search title, SEO description, author/categories and related services.
 
 Article body images require alternative text. A cover can be used only for listing/social previews by disabling ?Show cover above article.?
 
@@ -144,7 +152,17 @@ These are public identifiers/URLs, not private credentials. Sanity read/write to
 
 ## Our Work and Card
 
-Approved cleaning results populate `/our-work/` automatically after a successful website build. Service/city filters use the assigned references. Material, problem, treatment, result and photo context appear when supplied. Use photo context for any reconstruction/editing that affects how a before/after comparison should be read. A single photo is never converted into a synthetic before view.
+Each approved cleaning appointment is one project with a permanent `/our-work/projects/[slug]/` page. `/our-work/` groups up to six project covers per actual city in manual horizontal rails, with overflow controls only when needed. City galleries at `/our-work/[city]/` use a regular photo grid; every cover opens the project. Project links and cover images exist in the initial HTML. All published cities have a section, with a centered empty-state message when no local projects exist. City pages have a Back to Our Work link returning to their city section; there is no city dropdown. Filters on city galleries become visible when there are more than six projects and multiple services. Existing `?service=` links remain supported. No descriptions appear beneath gallery cards.
+
+In Studio, open Our Work → All projects → Create new. The editor has Project details, Photos & videos, Description & story, and Publishing tabs. Project description is an editable multiline field displayed on the individual project page. Generate Project address once and retain it after publication. Legacy projects without an explicit slug use a stable ID-derived address. Keep the main image as the cover; add any number of optional Photos, Before & after comparisons, and Videos in the ordered Additional photos & videos array. Photos require alt text. Videos accept MP4/WebM uploads or validated YouTube/Vimeo links; optionally upload English WebVTT captions and a poster, and add a transcript. External players are loaded only after pressing Play. Introduction, material, problem, treatment, result and appointment month are optional on the project page. No placeholder story is invented when fields are empty. Normalization rejects duplicate project addresses, unknown media types and unsupported video URLs or file types.
+
+**Pages → Our Work introductions** controls the gallery heading/introduction and the populated/empty city-gallery introductions. Use `{{city}}` for the city name. Until that singleton is published, the website uses reviewed defaults. Cleaning results have a Website preview tab linking to the permanent individual project page. Hosted preview shows deployed content; it does not expose unpublished drafts.
+
+City landing pages show one project section after the introduction and an independent general customer-review carousel after the reasons to book. Reviews are never replaced by newly published projects. City-service pages keep their matching project evidence and matching customer feedback as separate sections. Temporarily, a city without projects shows the first published appointment as a shared visual preview on its location landing page. Its Our Work gallery displays an empty state until actual local projects are published. Project details retain the actual appointment city; references are not reassigned. Only actual local projects affect indexing, image sitemaps and collection structured data. Local projects automatically replace the shared preview as they are published.
+
+The public location label is derived from City, rather than the retired free-text Location field. Approved projects require a photo, at least one service and exactly one city. Recreated before views require internal Photo context in both Studio validation and the website build. If a city is unpublished or all a project's services are retired, the project is withheld until its references are usable again; it is never reassigned to another city.
+
+The homepage retains its eight existing illustrative gallery comparisons alongside featured appointment photos. Those presentation assets are maintained in `src/content/homeGallery.ts`; they do not enter Our Work, city evidence or image sitemaps. Gallery cards have no text beneath the images. Photo context remains in the editorial record rather than being rendered as a card caption.
 
 Card's three main actions go to the quote form, Our Work and Google reviews. Card is a QR/contact utility and remains noindex, follow. Both pages retain the existing website fonts, colours and components.
 
@@ -153,13 +171,13 @@ Deploy the main website source changes before new wording/gallery features becom
 
 ## City galleries, photo authenticity, and image search
 
-Each published service area has a reusable Our Work route at `/our-work/[city]/`. Every city page is connected to its existing `/location/[city]/` page, and the main gallery links to each area. A city with no documented cleaning project is intentionally **noindex** and excluded from the sitemap; the URL still works and explains that new job photos will appear later.
+Each published service area has a reusable Our Work route at `/our-work/[city]/`. Every city page is connected to its existing `/location/[city]/` page, and the main gallery links to every published area. A city with no documented cleaning project is intentionally **noindex** and excluded from the sitemap; the URL still works and explains that new job photos will appear later.
 
-For an actual appointment, use **Proof & answers → Cleaning results → Create new** in Studio:
+For an actual appointment, use **Our Work → All projects → Create new** in Studio:
 
 1. Add a truthful job title, category, visible service description, useful image alt label, and upload the photo.
-2. Choose **Photo authenticity**. Pick *Original photos of a real appointment* for genuine images, or *Real job — recreated before view* only when the appointment was real but the original before photograph is unavailable. Explain reconstructions in **Photo context** so the disclosure is shown publicly.
-3. In **Actual appointment city**, select exactly one verified city reference. The separate **Location** text field must describe the same location. Choose the correct **Services** reference too.
+2. Choose **Photo authenticity**. Pick *Original photos of a real appointment* for genuine images, or *Real job — recreated before view* only when the appointment was real but the original before photograph is unavailable. Explain reconstructions in **Photo context** in the editorial source record.
+3. In **City**, select exactly one verified city reference. The website derives the location label from that city reference. Choose the correct **Services** reference too.
 4. Choose **Paired before/after image** only for an existing side-by-side composite where the left is the before view and the right is the after view. Otherwise use single image.
 5. Change **Publication status** to **Approved for website** and **Publish**; the website rebuild starts automatically after publishing.
 

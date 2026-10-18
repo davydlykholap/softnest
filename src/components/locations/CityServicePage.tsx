@@ -5,6 +5,7 @@ import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import LocalWorkEvidence from "@/components/LocalWorkEvidence";
+import LocationReviews from "./LocationReviews";
 import type { CityServicePageContent } from "@/content/cityServicePages";
 import { absoluteUrl, organizationProvider } from "@/lib/site";
 import { jsonLd } from "@/seo/structuredData";
@@ -58,6 +59,7 @@ export default function CityServicePage({ content }: { content: CityServicePageC
         </section>
       </div>
       <LocalWorkEvidence city={location.slug} cityName={location.name} service={service.slug} />
+      <LocationReviews city={location.slug} cityName={location.name} service={service.slug} />
       <DirectoryFinalCta
         id="quote-cta"
         title="Get a cleaning quote."

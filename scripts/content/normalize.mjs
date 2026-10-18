@@ -1,4 +1,6 @@
 import { createImageUrlBuilder } from "@sanity/image-url";
+import workPageDefaults from "../../src/content/workPageDefaults.json" with { type: "json" };
+import { workSlug, workVideoEmbed } from "../../src/lib/workUrls.ts";
 
 const HOME_COPY_KEYS = [
   "hero-1",
@@ -309,25 +311,79 @@ export function normalizeContent(documents, config) {
       .map(slug),
   };
 
+  const projectSlugs = new Set();
   const projects = ordered("cleaningProject")
     .filter((document) => document.publicationStatus === "approved" && document.sourceType !== "ai-generated")
     .map((document) => {
-      required(document, ["title", "category", "location", "service", "label"]);
+      required(document, ["title", "category", "service", "label"]);
       if (!["camera-original", "reconstructed-before"].includes(document.sourceType)) fail(document, "Approved cleaning work needs verified photographic provenance");
       if (document.sourceType === "reconstructed-before" && !document.imageNote?.trim()) fail(document, "Reconstructed before image requires visible photo context");
       if (!Array.isArray(document.locations) || document.locations.length !== 1) fail(document, "Approved cleaning work needs exactly one actual appointment city");
+      if (!Array.isArray(document.services) || !document.services.length) fail(document, "Approved cleaning work needs at least one service");
+      if (document.date && (!/^\d{4}-\d{2}-\d{2}$/.test(document.date) || !Number.isFinite(Date.parse(document.date)) || new Date(document.date).toISOString().slice(0, 10) !== document.date)) fail(document, "Invalid appointment date");
+      const appointmentCity = references(document, "locations", "location")[0];
+      const projectServices = references(document, "services", "service").filter(service => service.pageEnabled !== false);
       const src = image(document);
       validateUrl(src, document, "cleaning-result image URL");
+      const projectSlug = workSlug(document);
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(projectSlug)) fail(document, "Invalid project slug");
+      if (projectSlugs.has(projectSlug)) fail(document, "Duplicate project slug");
+      projectSlugs.add(projectSlug);
+      const mediaImage = (value) => {
+        if (!value?.asset?._ref) fail(document, "Project media image missing asset");
+        if (!value.alt?.trim()) fail(document, "Project media image needs alt text");
+        return builder.image(value).width(1920).fit("max").auto("format").url();
+      };
+      if (document.media !== undefined && !Array.isArray(document.media)) fail(document, "Invalid project media");
+      const media = (document.media ?? []).map((item, index) => {
+        const id = item._key || `media-${index}`;
+        if (item._type === "projectPhoto") return { id, type: "photo", image: mediaImage(item.photo), alt: item.photo.alt };
+        if (item._type === "projectComparison") {
+          required(item, ["label"]);
+          return { id, type: "comparison", before: mediaImage(item.before), after: mediaImage(item.after), alt: item.label };
+        }
+        if (item._type === "projectVideo") {
+          required(item, ["title"]);
+          if (Boolean(item.file?.asset?._ref) === Boolean(item.url)) fail(document, "Project video needs exactly one upload or provider URL");
+          const embed = item.url ? workVideoEmbed(item.url) : undefined;
+          if (item.url && !embed) fail(document, "Unsupported project video URL");
+          let video;
+          if (item.file?.asset?._ref) {
+            const match = /^file-([a-zA-Z0-9]+)-(mp4|webm)$/.exec(item.file.asset._ref);
+            if (!match) fail(document, "Project video must be MP4 or WebM");
+            video = `https://cdn.sanity.io/files/${config.projectId}/${config.dataset}/${match[1]}.${match[2]}`;
+          }
+          let captions;
+          if(item.captions?.asset?._ref) {
+            const match = /^file-([a-zA-Z0-9]+)-vtt$/.exec(item.captions.asset._ref);
+            if(!match) fail(document,"Project captions must be WebVTT");
+            captions = `https://cdn.sanity.io/files/${config.projectId}/${config.dataset}/${match[1]}.vtt`;
+          }
+          return { id, type: "video", title: item.title, ...(embed ? { embed } : { video }),
+            ...(item.poster?.asset ? { poster: mediaImage(item.poster) } : {}), ...(captions ? {captions} : {}), transcript: item.transcript || "" };
+        }
+        fail(document, "Unsupported project media type");
+      });
       if (!["single", "paired"].includes(document.variant)) {
         fail(document, "Invalid comparison layout");
       }
       return {
         ...document,
+        slug: projectSlug,
+        media,
         image: src,
-        services: references(document, "services", "service").map(slug),
-        locations: references(document, "locations", "location").map(slug),
+        location: appointmentCity.name,
+        services: projectServices.map(slug),
+        locations: [slug(appointmentCity)],
       };
-    });
+    }).filter(project => project.services.length && locations.some(location => location.slug === project.locations[0] && location.pageEnabled && location.status !== "not-served"));
+
+  const workPageDocument = byId.get("work-page");
+  if (workPageDocument) {
+    if (workPageDocument._type !== "workPage") fail(workPageDocument, "Invalid Our Work page type");
+    required(workPageDocument, Object.keys(workPageDefaults));
+  }
+  const workPage = Object.fromEntries(Object.keys(workPageDefaults).map(key => [key, workPageDocument?.[key] ?? workPageDefaults[key]]));
 
   const testimonials = ordered("testimonial")
     .filter((document) => document.publicationStatus === "approved")
@@ -450,5 +506,6 @@ export function normalizeContent(documents, config) {
     quoteCategories,
     posts,
     localCopy,
+    workPage,
   };
 }

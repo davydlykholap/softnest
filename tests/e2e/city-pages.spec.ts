@@ -10,6 +10,7 @@ const testimonials: { name: string; publicationStatus: string; locations: string
   readFileSync("src/content/generated/testimonials.json", "utf8"),
 );
 const home: { heroReviews: { name: string }[] } = JSON.parse(readFileSync("src/content/generated/home.json", "utf8"));
+const projects: { locations: string[] }[] = JSON.parse(readFileSync("src/content/generated/projects.json", "utf8"));
 const reviewAuthors = new Set([...testimonials.map((review) => review.name), ...home.heroReviews.map((review) => review.name)]);
 
 const cities = ["Mississauga", "Toronto", "Brampton", "Oakville", "Etobicoke", "Burlington", "Vaughan", "Milton", "Hamilton"];
@@ -64,20 +65,17 @@ for (const city of cities) {
       await expect(page.locator("#home-faq-answer")).toBeVisible();
     }
 
-    const localReviews = testimonials.filter((review) => review.publicationStatus === "approved" && review.locations.includes(slug));
-    if (localReviews.length) {
-      const evidence = page.locator(`[data-local-evidence="${slug}"]`);
-      await expect(evidence.getByRole("heading", { name: `Our work in ${city}` })).toBeVisible();
-      await expect(evidence.locator("[data-review-author]")).toHaveCount(1);
-      expect(localReviews.map((review) => review.name)).toContain(await evidence.locator("[data-review-author]").getAttribute("data-review-author"));
-      await expect(evidence).toContainText(new RegExp(`${city}.*Google review`));
-    } else {
-      await expect(page.locator("#location-reviews-heading")).toHaveText("What our customers say");
-      await expect(page.locator("#reviews")).toContainText("across our service area");
-      const authors = await page.locator("#reviews .google-review-card__author:visible").allTextContents();
-      expect(authors).toHaveLength(3);
-      expect(authors.every((name) => reviewAuthors.has(name.trim()))).toBe(true);
-    }
+    const evidence = page.locator(`[data-local-evidence="${slug}"]`);
+    const hasLocalWork = projects.some(project => project.locations.includes(slug));
+    await expect(evidence.getByRole("heading", { name: !hasLocalWork && projects.length ? "Our work" : `Our work in ${city}`, exact: true })).toBeVisible();
+    await expect(evidence.locator("[data-review-author]")).toHaveCount(0);
+    const sectionOrder = await page.locator("#local-work, #services, #reviews").evaluateAll(sections => sections.map(section => section.id));
+    expect(sectionOrder).toEqual(["local-work", "services", "reviews"]);
+    await expect(page.locator("#location-reviews-heading")).toHaveText("What our customers say");
+    await expect(page.locator("#reviews")).toContainText("across our service area");
+    const authors = await page.locator("#reviews .google-review-card__author:visible").allTextContents();
+    expect(authors).toHaveLength(3);
+    expect(authors.every((name) => reviewAuthors.has(name.trim()))).toBe(true);
   });
 
   test(`mobile ${city} FAQs, static services and quote links work`, async ({ page }) => {

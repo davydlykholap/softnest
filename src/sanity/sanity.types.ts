@@ -130,11 +130,31 @@ export type QuoteCategory = {
   >;
 };
 
+export type WorkPage = {
+  _id: string;
+  _type: "workPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  heading: string;
+  headingAccent: string;
+  description: string;
+  cityDescription: string;
+  emptyCityDescription: string;
+};
+
 export type SanityImageAssetReference = {
   _ref: string;
   _type: "reference";
   _weak?: boolean;
   [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+};
+
+export type SanityFileAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "sanity.fileAsset";
 };
 
 export type CleaningProject = {
@@ -144,8 +164,9 @@ export type CleaningProject = {
   _updatedAt: string;
   _rev: string;
   title: string;
+  slug?: Slug;
   category: string;
-  location: string;
+  location?: string;
   service: string;
   label: string;
   imageUpload?: {
@@ -162,6 +183,71 @@ export type CleaningProject = {
   variant?: "single" | "paired";
   fabric?: string;
   imageNote?: string;
+  introduction?: string;
+  media?: Array<
+    | {
+        photo: {
+          asset?: SanityImageAssetReference;
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt: string;
+          caption?: string;
+          _type: "image";
+        };
+        _type: "projectPhoto";
+        _key: string;
+      }
+    | {
+        label: string;
+        before: {
+          asset?: SanityImageAssetReference;
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt: string;
+          caption?: string;
+          _type: "image";
+        };
+        after: {
+          asset?: SanityImageAssetReference;
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt: string;
+          caption?: string;
+          _type: "image";
+        };
+        _type: "projectComparison";
+        _key: string;
+      }
+    | {
+        title: string;
+        file?: {
+          asset?: SanityFileAssetReference;
+          media?: unknown;
+          _type: "file";
+        };
+        url?: string;
+        poster?: {
+          asset?: SanityImageAssetReference;
+          media?: unknown;
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt: string;
+          caption?: string;
+          _type: "image";
+        };
+        captions?: {
+          asset?: SanityFileAssetReference;
+          media?: unknown;
+          _type: "file";
+        };
+        transcript?: string;
+        _type: "projectVideo";
+        _key: string;
+      }
+  >;
   problem?: string;
   treatment?: string;
   result?: string;
@@ -195,6 +281,12 @@ export type SanityImageHotspot = {
   y: number;
   height: number;
   width: number;
+};
+
+export type Slug = {
+  _type: "slug";
+  current: string;
+  source?: string;
 };
 
 export type Testimonial = {
@@ -433,12 +525,6 @@ export type Service = {
       _key: string;
     } & ServiceReference
   >;
-};
-
-export type Slug = {
-  _type: "slug";
-  current: string;
-  source?: string;
 };
 
 export type SiteSettings = {
@@ -680,16 +766,18 @@ export type AllSanitySchemaTypes =
   | LocalCityCopy
   | PageContent
   | QuoteCategory
+  | WorkPage
   | SanityImageAssetReference
+  | SanityFileAssetReference
   | CleaningProject
   | SanityImageCrop
   | SanityImageHotspot
+  | Slug
   | Testimonial
   | Faq
   | FaqReference
   | Location
   | Service
-  | Slug
   | SiteSettings
   | Category
   | AuthorReference
@@ -707,7 +795,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../src/sanity/queries.ts
 // Variable: websiteContentQuery
-// Query: *[  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category","localCityCopy","localServiceCopy"] &&  (_type != "pageContent" || _id == "page-content-home")] | order(_id asc)
+// Query: *[  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category","localCityCopy","localServiceCopy","workPage"] &&  (_type != "pageContent" || _id == "page-content-home")] | order(_id asc)
 export type WebsiteContentQueryResult = Array<
   | {
       _id: string;
@@ -732,8 +820,9 @@ export type WebsiteContentQueryResult = Array<
       _updatedAt: string;
       _rev: string;
       title: string;
+      slug?: Slug;
       category: string;
-      location: string;
+      location?: string;
       service: string;
       label: string;
       imageUpload?: {
@@ -750,6 +839,71 @@ export type WebsiteContentQueryResult = Array<
       variant?: "paired" | "single";
       fabric?: string;
       imageNote?: string;
+      introduction?: string;
+      media?: Array<
+        | {
+            label: string;
+            before: {
+              asset?: SanityImageAssetReference;
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt: string;
+              caption?: string;
+              _type: "image";
+            };
+            after: {
+              asset?: SanityImageAssetReference;
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt: string;
+              caption?: string;
+              _type: "image";
+            };
+            _type: "projectComparison";
+            _key: string;
+          }
+        | {
+            photo: {
+              asset?: SanityImageAssetReference;
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt: string;
+              caption?: string;
+              _type: "image";
+            };
+            _type: "projectPhoto";
+            _key: string;
+          }
+        | {
+            title: string;
+            file?: {
+              asset?: SanityFileAssetReference;
+              media?: unknown;
+              _type: "file";
+            };
+            url?: string;
+            poster?: {
+              asset?: SanityImageAssetReference;
+              media?: unknown;
+              hotspot?: SanityImageHotspot;
+              crop?: SanityImageCrop;
+              alt: string;
+              caption?: string;
+              _type: "image";
+            };
+            captions?: {
+              asset?: SanityFileAssetReference;
+              media?: unknown;
+              _type: "file";
+            };
+            transcript?: string;
+            _type: "projectVideo";
+            _key: string;
+          }
+      >;
       problem?: string;
       treatment?: string;
       result?: string;
@@ -1193,12 +1347,24 @@ export type WebsiteContentQueryResult = Array<
         } & LocationReference
       >;
     }
+  | {
+      _id: string;
+      _type: "workPage";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      heading: string;
+      headingAccent: string;
+      description: string;
+      cityDescription: string;
+      emptyCityDescription: string;
+    }
 >;
 
 // Query TypeMap
 declare global {
   interface SanityQueries {
-    '*[\n  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category","localCityCopy","localServiceCopy"] &&\n  (_type != "pageContent" || _id == "page-content-home")\n] | order(_id asc)': WebsiteContentQueryResult;
+    '*[\n  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category","localCityCopy","localServiceCopy","workPage"] &&\n  (_type != "pageContent" || _id == "page-content-home")\n] | order(_id asc)': WebsiteContentQueryResult;
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

@@ -7,6 +7,7 @@ import type { GalleryResult } from '@/components/HomeResultsCarousel';
 import { siteConfig } from '@/lib/site';
 import { optimizedLocalImage } from '@/lib/optimizedLocalImage';
 import { selectLocationReviews } from '@/lib/locationReviews';
+import { homeGalleryExamples } from '@/content/homeGallery';
 
 export const homeContent = home;
 export function getGoogleReviews() {
@@ -35,18 +36,18 @@ export function pageText(copy: {key:string;text:string}[], key:string, city?:str
   const values:Record<string,string>={phone:siteConfig.displayPhone,business:siteConfig.name,quote:siteConfig.quoteLabel,city:city||''};
   return entry.text.replace(/\{\{(phone|business|quote|city)\}\}/g,(_,name:string)=>values[name]);
 }
-export function getProjects(filters: { service?: string; location?: string } = {}): GalleryResult[] {
-  return projects
-    .filter((project) =>
-      (filters.service || filters.location || project.featured) &&
-      (!filters.service || (project.services as string[]).includes(filters.service)) &&
-      (!filters.location || (project.locations as string[]).includes(filters.location)),
-    )
-    .map((project) => ({
-      ...project,
-      image: optimizedLocalImage(project.image),
-      variant: project.variant as GalleryResult["variant"],
-    }));
+export function getHomeGalleryResults(): GalleryResult[] {
+  const appointments = projects.filter(project => project.featured).map(project => ({
+    image: project.image,
+    category: project.category,
+    location: project.location,
+    service: project.service,
+    label: project.label,
+    variant: project.variant as GalleryResult["variant"],
+  }));
+  return [...homeGalleryExamples, ...appointments].map(project => ({
+    ...project, image: optimizedLocalImage(project.image),
+  }));
 }
 type TestimonialOptions = {
   location?: string;

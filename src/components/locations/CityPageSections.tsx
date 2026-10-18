@@ -3,7 +3,7 @@ import Link from "next/link";
 import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import LocalWorkEvidence from "@/components/LocalWorkEvidence";
-import { getWorkProjects } from "@/content/work";
+import LocationReviews from "./LocationReviews";
 import HeroActionButtons from "@/components/HeroActionButtons";
 import type { CityPageCopy } from "@/content/cityPages";
 import type { Location } from "@/content/locations";
@@ -30,6 +30,8 @@ export default function CityPageSections({ location, copy }: { location: Locatio
           ))}
         </div>
       </section>
+
+      <LocalWorkEvidence city={location.slug} cityName={location.name} showPreview />
 
       <section className={styles.services} id="services" aria-label="What we clean">
         {copy.services.map((item) => {
@@ -93,14 +95,7 @@ export default function CityPageSections({ location, copy }: { location: Locatio
         </div>
       </section>
 
-      <LocalWorkEvidence city={location.slug} cityName={location.name} fallbackReviews />
-      <section className={styles.workDirectory} aria-label={"Cleaning results in " + location.name}>
-        <h2>Our cleaning work in {location.name}</h2>
-        <p>{getWorkProjects({city:location.slug}).length > 0
-          ? "See documented cleaning appointments and photo details from this city."
-          : "We will add local photos as we document completed appointments. We never label work from another city as a local result."}</p>
-        <Link prefetch={false} href={"/our-work/" + location.slug + "/"}>View {location.name} cleaning results →</Link>
-      </section>
+      <LocationReviews />
 
       <section className={styles.coverage} aria-labelledby="city-coverage-heading">
         <div className={styles.coverageCopy}>

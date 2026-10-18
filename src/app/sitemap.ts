@@ -6,6 +6,7 @@ import { getPosts } from "@/content/posts";
 import { cityServicePages } from "@/content/cityServicePages";
 import { getWorkProjects } from "@/content/work";
 import { absoluteUrl } from "@/lib/site";
+import { workProjectHref } from "@/lib/workUrls";
 
 export const dynamic = "force-static";
 
@@ -17,6 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteUrl}/` },
     { url: `${siteUrl}/about/` },
     { url: `${siteUrl}/our-work/`, images: getWorkProjects().map(project => absoluteUrl(project.image)) },
+    ...getWorkProjects().map(project => ({ url:absoluteUrl(workProjectHref(project)), images:[absoluteUrl(project.image), ...project.media.flatMap(item => item.type === "photo" ? [item.image] : item.type === "comparison" ? [item.before,item.after] : [])] })),
     ...locations.filter(location => location.indexInSearch && getWorkProjects({ city: location.slug }).length > 0).map(location => ({
       url: siteUrl + "/our-work/" + location.slug + "/", images: getWorkProjects({city:location.slug}).map(project => absoluteUrl(project.image)),
     })),

@@ -1,65 +1,49 @@
 "use client";
 
-import { useState } from "react";
+import { useSyncExternalStore } from "react";
 import Link from "next/link";
-import ServiceResultCompare from "@/components/ServiceResultCompare";
-import Image from "@/components/ResponsiveImage";
+import WorkProjectCard from "@/components/WorkProjectCard";
 import type { WorkProject } from "@/content/work";
 import { useHydrated } from "@/lib/useHydrated";
 import styles from "./WorkGallery.module.css";
 
 type Choice = { slug: string; name: string };
+const filterEvent = "softnest-work-filter";
+function subscribe(callback: () => void) {
+  window.addEventListener("popstate", callback);
+  window.addEventListener(filterEvent, callback);
+  return () => { window.removeEventListener("popstate", callback); window.removeEventListener(filterEvent, callback); };
+}
+const snapshot = () => window.location.search;
+const serverSnapshot = () => "";
 
-export default function WorkGallery({ projects, services, locations }: {
-  projects: WorkProject[]; services: Choice[]; locations: Choice[];
-}) {
-  const [service, setService] = useState("");
-  const isInteractive = useHydrated();
-  const [city, setCity] = useState("");
-  const visible = projects.filter((project) => (!service || project.services.includes(service)) &&
-    (!city || project.locations.includes(city)));
-  const reset = () => { setService(""); setCity(""); };
-
+export default function WorkGallery({ projects, services, city }: { projects: WorkProject[]; services: Choice[]; city?: string }) {
+  const search = useSyncExternalStore(subscribe, snapshot, serverSnapshot);
+  const selected = new URLSearchParams(search).get("service") || "";
+  const service = services.some(item => item.slug === selected) ? selected : "";
+  const interactive = useHydrated();
+  const visible = projects.filter(project => !service || project.services.includes(service));
+  function setService(value: string) {
+    const url = new URL(window.location.href);
+    if (value) url.searchParams.set("service", value);
+    else url.searchParams.delete("service");
+    window.history.pushState(null, "", url);
+    window.dispatchEvent(new Event(filterEvent));
+  }
   return <section className={styles.section} aria-label="Cleaning results">
-    <div className={styles.filters}>
-      <label>Service<select aria-label="Service" disabled={!isInteractive} value={service} onChange={(event) => setService(event.target.value)}>
+    {(projects.length > 6 && services.length > 1) || service ? <div className={styles.filters}>
+      {services.length > 1 ? <label>Service<select disabled={!interactive} value={service} onChange={event => setService(event.target.value)}>
         <option value="">All services</option>
-        {services.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
-      </select></label>
-      {locations.length > 0 ? <label>Area<select aria-label="Area" disabled={!isInteractive} value={city} onChange={(event) => setCity(event.target.value)}>
-        <option value="">All areas</option>
-        {locations.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
+        {services.map(item => <option key={item.slug} value={item.slug}>{item.name}</option>)}
       </select></label> : null}
-      <p role="status">{visible.length} {visible.length === 1 ? "result" : "results"}</p>
-      {service || city ? <button type="button" onClick={reset}>Clear filters</button> : null}
-    </div>
-    {visible.length === 0 ? <div className={styles.empty}>
-      <h2>No photos for this selection yet.</h2>
-      <p>You can still ask about cleaning in your area, or view the other results.</p>
-      <button type="button" onClick={reset}>Show all results</button>
-      <Link href="/quote/">Ask for a quote</Link>
-    </div> : <div className={styles.grid}>
-      {visible.map((project) => <article className={styles.project} key={project.id} id={project.id} data-project-id={project.id}>
-        <div className={styles.media}>
-          {project.variant === "paired" ? <ServiceResultCompare image={project.image} label={project.label} variant={project.variant} />
-            : <Image src={project.image} alt={project.label} fill sizes="(max-width: 760px) 90vw, 45vw" />}
-        </div>
-        <div className={styles.caption}>
-          <h2>{project.category}</h2>
-          <p>{project.service}{project.location ? ` · ${project.location}` : ""}</p>
-          {project.imageNote ? <p className={styles.imageNote}>{project.imageNote}</p> : null}
-          {project.fabric || project.problem || project.treatment || project.result ? <dl>
-            {project.fabric ? <div><dt>Material</dt><dd>{project.fabric}</dd></div> : null}
-            {project.problem ? <div><dt>Before cleaning</dt><dd>{project.problem}</dd></div> : null}
-            {project.treatment ? <div><dt>The work</dt><dd>{project.treatment}</dd></div> : null}
-            {project.result ? <div><dt>The result</dt><dd>{project.result}</dd></div> : null}
-          </dl> : null}
-          <div className={styles.links}>
-            {services.filter((item) => project.services.includes(item.slug)).map((item) =>
-              <Link key={item.slug} href={`/services/${item.slug}/`}>{item.name}</Link>)}
-          </div>
-        </div>
-      </article>)}
+      {service ? <button type="button" onClick={() => setService("")}>Clear filters</button> : null}
+    </div> : null}
+    {visible.length ? <div className={styles.grid}>
+      {visible.map((project, index) => <WorkProjectCard key={project.id} project={project} eager={index < 3} />)}
+    </div> : <div className={styles.empty}>
+      <h2>No projects for this selection yet.</h2>
+      <button type="button" onClick={() => setService("")}>Show all results</button>
+      <Link href={`/quote/${city ? `?city=${encodeURIComponent(city)}` : ""}`}>Ask for a quote</Link>
     </div>}
   </section>;
 }

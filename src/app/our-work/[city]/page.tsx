@@ -3,16 +3,15 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import HeroActionButtons from "@/components/HeroActionButtons";
 import WorkGallery from "@/components/WorkGallery";
-import WorkAreaLinks from "@/components/WorkAreaLinks";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
-import { getWorkProjects } from "@/content/work";
+import { getWorkProjects, workPageCopy } from "@/content/work";
 import { getLocation, locations } from "@/content/locations";
 import { services } from "@/content/services";
 import { pageMetadata } from "@/seo/metadata";
 import { jsonLd } from "@/seo/structuredData";
 import { absoluteUrl, organizationId } from "@/lib/site";
+import { workProjectHref } from "@/lib/workUrls";
 import styles from "../page.module.css";
 import "@/app/styles/location-page.css";
 
@@ -40,10 +39,11 @@ export default async function CityWorkPage({ params }: Props) {
   const { city } = await params;
   const location = getLocation(city);
   if (!location) notFound();
-  const projects = getWorkProjects({ city });
+  const projects = getWorkProjects({city});
   const availableServices = services.filter(service => projects.some(project => project.services.includes(service.slug)))
     .map(({ slug, name }) => ({ slug, name }));
   const url = "/our-work/" + location.slug + "/";
+  const quoteHref = `/quote/?city=${encodeURIComponent(city)}`;
   const schema = {
     "@context": "https://schema.org", "@type": "CollectionPage",
     "@id": absoluteUrl(url + "#collection"), url: absoluteUrl(url),
@@ -53,7 +53,7 @@ export default async function CityWorkPage({ params }: Props) {
       "@type": "ItemList", numberOfItems: projects.length,
       itemListElement: projects.map((project, index) => ({
         "@type": "ListItem", position: index + 1,
-        url: absoluteUrl(url + "#" + project.id),
+        url: absoluteUrl(workProjectHref(project)),
         item: { "@type": "ImageObject", contentUrl: absoluteUrl(project.image),
           caption: project.label, description: project.imageNote || project.label },
       })),
@@ -68,37 +68,27 @@ export default async function CityWorkPage({ params }: Props) {
     ],
   };
   return <>
-    <div className="new-hero-root location-page-header"><SiteHeader current="work" /></div>
-    <main className={"location-page-page " + styles.page}>
+    <div className="new-hero-root location-page-header"><SiteHeader current="work" quoteHref={quoteHref} /></div>
+    <main id="main-content" className={"location-page-page " + styles.page}>
       <div className={styles.shell}>
-        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/our-work/">Our Work</Link><span aria-hidden="true"> / </span><span>{location.name}</span>
-        </nav>
+        <Link className={styles.back} href={`/our-work/#work-${city}-heading`}>← Back to Our Work</Link>
         <header className={styles.intro}>
-          <h1>Cleaning work<br /><span>in {location.name}.</span></h1>
           <div>
-            <p>Explore our cleaning projects in {location.name}, with before-and-after photos and details about each job.</p>
-            <HeroActionButtons primaryTone="gold" showReviews={false} quoteHref={"/quote/?city=" + encodeURIComponent(city)} />
+            <h1>Our Work<br /><span>in {location.name}.</span></h1>
+            {projects.length ? <p>{workPageCopy.cityDescription.replaceAll("{{city}}",location.name)}</p> : null}
           </div>
         </header>
-        <WorkAreaLinks activeCity={city} />
         {projects.length ? (
-          <WorkGallery projects={projects} services={availableServices} locations={[]} />
+          <WorkGallery projects={projects} services={availableServices} city={city} />
         ) : (
-          <section className={styles.emptyCity} aria-labelledby="no-city-work">
-            <h2 id="no-city-work">More local photos are coming.</h2>
-            <p>We haven’t added local project photos for {location.name} yet. New cleaning results will appear here as they’re published.</p>
-            <p><Link href="/our-work/">See our documented work</Link> or visit our <Link href={"/location/" + city + "/"}>{location.name} cleaning services</Link> page.</p>
+          <section className={styles.cityEmpty} aria-label={`${location.name} projects`}>
+            <p>{workPageCopy.emptyCityDescription.replaceAll("{{city}}",location.name)}</p>
           </section>
         )}
-        <section className={styles.note}>
-          <h2>Cleaning in {location.name}?</h2>
-          <p>Visit our <Link href={"/location/" + city + "/"}>{location.name} service area page</Link> for cleaning options and coverage. Every gallery project is assigned to its actual appointment location through our content studio.</p>
-        </section>
       </div>
       <DirectoryFinalCta id="quote-cta" title={"Ask about cleaning in " + location.name + "."} description="Tell us about the material and condition. Photos are optional, and we confirm the price before booking." action={{ href: "/quote/?city=" + encodeURIComponent(city), label: "Get a Quote" }} image="/images/softnest-hero-room.webp" imageAlt="Living room with a green sofa" />
     </main>
-    <SiteFooter />
+    <SiteFooter quoteHref={quoteHref} />
     {projects.length ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} /> : null}
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(crumbs) }} />
   </>;

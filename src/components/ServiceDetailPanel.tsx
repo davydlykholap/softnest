@@ -108,7 +108,6 @@ export default function ServiceDetailPanel({
               <strong>{project.category} · {project.service}</strong>
               <span>{project.location}</span>
             </div>
-            {project.imageNote ? <p>{project.imageNote}</p> : null}
             <p><Link href="/our-work/">See more before-and-after results</Link></p>
           </div>
           <div className={styles.resultFeatureMedia}>

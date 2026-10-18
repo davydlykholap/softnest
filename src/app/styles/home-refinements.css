@@ -1422,4 +1422,3 @@
 /* A single documented appointment should occupy a balanced, readable gallery card. */
 .gallery-section-v2 .gallery-grid-v2:has(> .gallery-result:only-child) { justify-content: center; }
 .gallery-section-v2 .gallery-result:only-child { flex: 0 1 min(100%, 480px); }
-.gallery-section-v2 .gallery-photo-note { max-width: 480px; margin: 14px 3px 0; color: #52655a; font-size: 13px; line-height: 1.5; }

@@ -1,5 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+const projects: {slug:string}[] = JSON.parse(readFileSync("src/content/generated/projects.json","utf8"));
 
 // Keep synthetic browser checks independent of third-party analytics loading.
 test.beforeEach(async ({ page }) => {
@@ -18,6 +20,9 @@ const representativeRoutes = [
   ["blog", "/blog/"],
   ["about", "/about/"],
   ["Our Work", "/our-work/"],
+  ["Oakville work gallery", "/our-work/oakville/"],
+  ["Milton work gallery", "/our-work/milton/"],
+  ...projects.slice(0,1).map(project => ["Work project",`/our-work/projects/${project.slug}/`] as const),
   ["Card", "/card/"],
 ] as const;
 

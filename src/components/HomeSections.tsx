@@ -1,6 +1,6 @@
 import { siteConfig } from "@/lib/site";
 import { pageText } from "@/content/pages";
-import { homeContent, getProjects } from "@/content/pages";
+import { homeContent, getHomeGalleryResults } from "@/content/pages";
 import { homeFaqs } from "@/content/homeFaqs";
 import { getService } from "@/content/services";
 import { DirectoryCard, DirectoryFinalCta } from "@/components/DirectoryHubSections";
@@ -11,7 +11,7 @@ import HomeVideoShowcase from "@/components/HomeVideoShowcase";
 
 const homeServices = homeContent.featuredServices.map(getService).filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
 
-const galleryResults = getProjects();
+const galleryResults = getHomeGalleryResults();
 
 export default function HomeSections() {
   return (

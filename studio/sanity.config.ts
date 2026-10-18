@@ -3,8 +3,9 @@ import { structureTool } from "sanity/structure";
 import { dataset, projectId } from "./env";
 import { schemaTypes } from "./schemaTypes";
 import { defaultDocumentNode, structure } from "./structure";
+import { projectInCityTemplate } from "./projectTemplates";
 
-const singletonTypes = new Set(["siteSettings", "pageContent"]);
+const singletonTypes = new Set(["siteSettings", "pageContent", "workPage"]);
 
 export default defineConfig({
   name: "softnest",
@@ -18,8 +19,9 @@ export default defineConfig({
     }),
   ],
   document: {
-    newDocumentOptions: (options) =>
-      options.filter((item) => !singletonTypes.has(item.templateId)),
+    newDocumentOptions: (options, {creationContext}) =>
+      options.filter((item) => !singletonTypes.has(item.templateId) &&
+        (item.templateId !== projectInCityTemplate.id || creationContext.type !== "global")),
     actions: (actions, context) =>
       singletonTypes.has(context.schemaType)
         ? actions.filter(
@@ -30,5 +32,5 @@ export default defineConfig({
           )
         : actions,
   },
-  schema: { types: schemaTypes },
+  schema: { types: schemaTypes, templates:previous => [...previous,projectInCityTemplate] },
 });

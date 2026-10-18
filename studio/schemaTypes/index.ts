@@ -48,7 +48,7 @@ const category = defineType({
 });
 const post = defineType({
   name: "post",
-  title: "Blog post",
+  title: "Article",
   type: "document",
   fields: [
     defineField({

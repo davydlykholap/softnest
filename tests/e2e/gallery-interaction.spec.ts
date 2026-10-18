@@ -1,4 +1,7 @@
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+
+const featuredAppointments = JSON.parse(readFileSync("src/content/generated/projects.json", "utf8")).filter((project: { featured: boolean }) => project.featured).length;
 
 // Keep synthetic browser checks independent of third-party analytics loading.
 test.beforeEach(async ({ page }) => {
@@ -9,11 +12,13 @@ for (const width of [402, 1440]) {
   test(`comparison sliders leave gallery navigation to the buttons at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 827 });
     await page.goto("/");
-    const hasCarouselArrows = await page.getByRole("button", { name: "Show next cleaning results" }).count() > 0;
-    await expect(page.locator(".gallery-photo-note")).toContainText(/before view is a recreation based on a separate photo/i);
+    await expect(page.locator("#gallery-track .gallery-result")).toHaveCount(8 + featuredAppointments);
+    await expect(page.locator("#gallery-track .gallery-result > p")).toHaveCount(0);
+    await expect(page.locator("#results")).not.toContainText("This is a real sofa cleaning appointment");
     const track = page.locator("#gallery-track");
     const slider = track.getByRole("slider").first();
     await slider.scrollIntoViewIfNeeded();
+    await expect(page.getByRole("button", { name: "Show next cleaning results" })).toBeVisible();
     const initialTransform = await track.evaluate((element) => element.style.transform);
     const initialValue = await slider.inputValue();
 
@@ -36,10 +41,6 @@ for (const width of [402, 1440]) {
     expect(await track.evaluate((element) => element.style.transform)).toBe(initialTransform);
     expect(await page.locator("#gallery-carousel").evaluate((element) => element.scrollLeft)).toBe(0);
 
-    if (!hasCarouselArrows) {
-      await expect(track.locator(".gallery-result")).toHaveCount(1);
-      return;
-    }
     await page.getByRole("button", { name: "Show next cleaning results" }).click();
     await expect(page.getByRole("button", { name: "Show next cleaning results" })).toHaveCSS("color", "rgb(7, 84, 59)");
     await expect(page.getByRole("button", { name: "Show next cleaning results" })).toHaveCSS("background-color", "rgb(255, 255, 255)");

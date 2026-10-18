@@ -280,3 +280,95 @@ test("AI illustrations never become documented work and real jobs require verifi
   item.sourceType = undefined;
   assert.throws(() => normalizeContent(documents, config), /photographic provenance/);
 });
+
+function approvedProjectFixture(documents) {
+  const original = documents.find(document => document._type === "cleaningProject");
+  const city = documents.find(document => document._type === "location" && document.slug.current === "oakville");
+  const service = documents.find(document => document._type === "service" && document.slug.current === "mattress-cleaning");
+  return { ...structuredClone(original), _id: "project-publishing-fixture", publicationStatus: "approved", sourceType: "camera-original", locations: [{ _ref: city._id }], services: [{ _ref: service._id }], location: "Wrong city label" };
+}
+
+test("publishing multiple new appointments grows the portfolio and derives the actual city label", () => {
+  const documents = seed();
+  const project = approvedProjectFixture(documents);
+  const snapshot = normalizeContent([...documents, project, { ...project, _id: "another-real-job" }], config);
+  assert.equal(snapshot.projects.length, 2);
+  assert.ok(snapshot.projects.every(item => item.location === "Oakville"));
+  assert.equal(snapshot.projects[0].sourceType, "camera-original");
+});
+
+test("an approved project needs a service and a valid optional appointment date", () => {
+  const documents = seed();
+  const project = approvedProjectFixture(documents);
+  assert.throws(() => normalizeContent([...documents, { ...project, services: [] }], config), /at least one service/);
+  assert.throws(() => normalizeContent([...documents, { ...project, date: "2026-02-30" }], config), /appointment date/);
+  const snapshot = normalizeContent([...documents, { ...project, date: "2026-10-18" }], config);
+  assert.equal(snapshot.projects[0].date, "2026-10-18");
+});
+
+test("work assigned to an unpublished city or only retired services is withheld", () => {
+  const documents = seed();
+  const project = approvedProjectFixture(documents);
+  const service = documents.find(document => document._id === project.services[0]._ref);
+  service.pageEnabled = false;
+  assert.equal(normalizeContent([...documents, project], config).projects.length, 0);
+  service.pageEnabled = true;
+  const city = documents.find(document => document._id === project.locations[0]._ref);
+  city.pageEnabled = false;
+  city.indexInSearch = false;
+  city.showInFooter = false;
+  assert.equal(normalizeContent([...documents, project], config).projects.length, 0);
+});
+
+test("Our Work copy has defaults and accepts a complete published singleton", () => {
+  const documents = seed();
+  const defaults = normalizeContent(documents, config).workPage;
+  assert.ok(defaults.cityDescription.includes("{{city}}"));
+  const copy = { _id: "work-page", _type: "workPage", ...defaults, heading: "Our latest work" };
+  assert.equal(normalizeContent([...documents, copy], config).workPage.heading, "Our latest work");
+  assert.throws(() => normalizeContent([...documents, { ...copy, description: "" }], config), /Missing description/);
+});
+
+test("project addresses stay stable for legacy jobs and duplicate or invalid slugs fail", () => {
+  const documents = seed();
+  const project = approvedProjectFixture(documents);
+  const normalized = normalizeContent([...documents,project],config).projects[0];
+  assert.equal(normalized.slug,"project-publishing-fixture");
+  assert.equal(normalizeContent([...documents,{...project,title:"A renamed appointment"}],config).projects[0].slug,normalized.slug);
+  assert.throws(() => normalizeContent([...documents,{...project,slug:{current:"../milton"}}],config),/Invalid project slug/);
+  assert.throws(() => normalizeContent([...documents,{...project,slug:{current:"milton-sofa"}},{...project,_id:"another-job",slug:{current:"milton-sofa"}}],config),/Duplicate project slug/);
+});
+
+test("a project preserves ordered photos, comparisons and safe videos", () => {
+  const documents = seed();
+  const project = approvedProjectFixture(documents);
+  const photo = {asset:{_ref:"image-1234567890abcdef-1200x900-jpg"},alt:"Cream sofa after cleaning"};
+  project.media = [
+    {_key:"after",_type:"projectPhoto",photo},
+    {_key:"compare",_type:"projectComparison",label:"Sofa before and after",before:photo,after:photo},
+    {_key:"video",_type:"projectVideo",title:"Cleaning in progress",url:"https://youtu.be/abcdefghijk"},
+    {_key:"upload",_type:"projectVideo",title:"Detail video",file:{asset:{_ref:"file-123abc-mp4"}},poster:photo,transcript:"Cleaning the sofa armrest."},
+  ];
+  const {media} = normalizeContent([...documents,project],config).projects[0];
+  assert.deepEqual(media.map(item => item.id),["after","compare","video","upload"]);
+  assert.deepEqual(media.map(item => item.type),["photo","comparison","video","video"]);
+  assert.match(media[0].image,/^https:\/\/cdn.sanity.io\/images\//);
+  assert.equal(media[2].embed,"https://www.youtube-nocookie.com/embed/abcdefghijk");
+  assert.equal(media[3].video,`https://cdn.sanity.io/files/${config.projectId}/${config.dataset}/123abc.mp4`);
+  assert.equal(media[3].transcript,"Cleaning the sofa armrest.");
+});
+
+test("invalid media cannot become a published player or inaccessible photo", () => {
+  const documents = seed();
+  const project = approvedProjectFixture(documents);
+  for(const url of ["javascript:alert(1)","https://youtube.com.evil.test/watch?v=abcdefghijk","https://example.com/embed","https://youtube.com/watch?v=../bad","https://user@youtu.be/abcdefghijk"]) {
+    project.media = [{_type:"projectVideo",title:"Video",url}];
+    assert.throws(() => normalizeContent([...documents,project],config),/Unsupported project video/);
+  }
+  project.media = [{_type:"projectPhoto",photo:{asset:{_ref:"image-1234567890abcdef-1200x900-jpg"}}}];
+  assert.throws(() => normalizeContent([...documents,project],config),/alt text/);
+  project.media = [{_type:"projectVideo",title:"Video",file:{asset:{_ref:"file-123-html"}}}];
+  assert.throws(() => normalizeContent([...documents,project],config),/MP4 or WebM/);
+  project.media = [{_type:"projectVideo",title:"Video",url:"https://vimeo.com/12345",file:{asset:{_ref:"file-123-mp4"}}}];
+  assert.throws(() => normalizeContent([...documents,project],config),/exactly one/);
+});

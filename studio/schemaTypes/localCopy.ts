@@ -11,7 +11,7 @@ const rows = (name: string, title: string, fields: ReturnType<typeof defineField
 });
 
 export const localCityCopy = defineType({
-  name: "localCityCopy", title: "City page copy", type: "document",
+  name: "localCityCopy", title: "City page text", type: "document",
   fields: [
     city,
     text("metaTitle", "Search title"), text("metaDescription", "Search description", true),
@@ -29,11 +29,11 @@ export const localCityCopy = defineType({
     text("coverage", "Service area introduction", true), text("coverageClosing", "Service area closing", true),
     text("ctaTitle", "Final quote heading"), text("ctaDescription", "Final quote description", true),
   ],
-  preview: { select: { title: "city.name" }, prepare: ({ title }) => ({ title, subtitle: "City page copy" }) },
+  preview: { select: { title: "city.name" }, prepare: ({ title }) => ({ title, subtitle: "City page text" }) },
 });
 
 export const localServiceCopy = defineType({
-  name: "localServiceCopy", title: "City service copy", type: "document",
+  name: "localServiceCopy", title: "City service page text", type: "document",
   fields: [
     city,
     defineField({ name: "service", title: "Service", type: "reference", to: [{ type: "service" }], validation: (rule) => rule.required() }),

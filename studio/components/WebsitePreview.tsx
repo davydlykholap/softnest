@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useDocumentValues } from "sanity";
+import { workProjectHref, workSlug } from "../../src/lib/workUrls";
 
 type PreviewDocument = {
   _type?: string;
   slug?: { current?: string };
   key?: string;
+  _id?: string;
+  locations?: { _ref: string }[];
 };
 
 type Props = {
@@ -13,6 +17,7 @@ type Props = {
 const productionBase = (
   process.env.SANITY_STUDIO_WEBSITE_URL || "https://softnestcare.ca"
 ).replace(/\/$/, "");
+const cityPreviewFields = ["slug"];
 
 function documentPath(document: PreviewDocument) {
   if (document._type === "post")
@@ -23,17 +28,22 @@ function documentPath(document: PreviewDocument) {
     return document.slug?.current ? `/location/${document.slug.current}/` : null;
   if (document._type === "pageContent")
     return document.key === "about" ? "/about/" : "/";
+  if (document._type === "workPage") return "/our-work/";
   return null;
 }
 
 export function WebsitePreview({ document }: Props) {
   const [revision, setRevision] = useState(0);
   const current = document.displayed;
+  const city = useDocumentValues<{ slug?: { current?: string } }>(current.locations?.[0]?._ref || "unassigned-location", cityPreviewFields);
+  const citySlug = city.value?.slug?.current;
   const local =
     typeof window !== "undefined" &&
     ["localhost", "127.0.0.1"].includes(window.location.hostname);
   const base = local ? "http://localhost:3000" : productionBase;
-  const path = documentPath(current);
+  const path = current._type === "cleaningProject"
+    ? current._id ? workProjectHref({slug:workSlug({...current,_id:current._id})}) : `/our-work/${citySlug ? `${citySlug}/` : ""}`
+    : documentPath(current);
 
   if (!path) {
     return (
