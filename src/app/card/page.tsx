@@ -1,60 +1,61 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronRightIcon, GlobeIcon, MessageIcon, PhoneIcon, PhotoIcon } from "@/components/UiIcons";
 import { siteConfig } from "@/lib/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Thank you for choosing SoftNest | SoftNest Fabric Care",
-  description: "Share your experience, request a cleaning quote, or get in touch with SoftNest Fabric Care.",
+  title: "Contact & Cleaning Quotes | SoftNest Fabric Care",
+  description: "Request a free cleaning quote, see before-and-after results, read Google reviews or call SoftNest Fabric Care.",
   alternates: { canonical: "/card/" },
   robots: { index: false, follow: true },
 };
 
 export default function CardPage() {
-  return (
-    <main className={styles.page}>
-      <div className={styles.shell}>
-        <Link href="/" className={styles.brand} aria-label="SoftNest Fabric Care home">
-          <Image src="/img/logo/header_logo.webp" alt="" width={64} height={64} priority />
-          <span><strong>SoftNest</strong><small>Fabric Care</small></span>
+  return <main className={`${styles.page} new-hero-root`}>
+    <div className={styles.shell}>
+      <Link href="/" className={`brand ${styles.brand}`} aria-label="SoftNest Fabric Care home">
+        <Image src="/img/logo/header_logo.webp" alt="" width={80} height={80} priority />
+        <span className="brand__name"><strong>SoftNest</strong><small>Fabric Care</small></span>
+      </Link>
+      <header className={styles.intro}>
+        <h1>Upholstery &amp; carpet cleaning.</h1>
+        <p>For homes across the GTA and Hamilton.</p>
+      </header>
+      <nav className={styles.actions} aria-label="Quotes, cleaning results and reviews">
+        <Link href="/quote/" className={`${styles.action} ${styles.primary} quote-cta`}>
+          <span className={styles.icon}><MessageIcon /></span>
+          <span><strong>Get a free quote</strong><small>Tell us what needs cleaning. Photos are optional.</small></span>
+          <ChevronRightIcon className={styles.arrow} />
         </Link>
-
-        <header className={styles.intro}>
-          <p className={styles.eyebrow}>A little care goes a long way</p>
-          <h1>Thank you for<br />choosing SoftNest.</h1>
-          <p>How did we do? We’d love to hear about your experience.</p>
-        </header>
-
-        <nav className={styles.actions} aria-label="Review and contact SoftNest">
-          <a href="https://g.page/r/Cd_RH59XuU1QEBM/review" className={`${styles.action} ${styles.primary}`}>
-            <span className={styles.icon} aria-hidden="true">☆</span>
-            <span><strong>Leave a Google review</strong><small>Your feedback means a lot to our team.</small></span>
-            <span aria-hidden="true">↗</span>
-          </a>
-          <Link href="/quote/" className={styles.action}>
-            <span className={styles.icon} aria-hidden="true">＋</span>
-            <span><strong>Get a cleaning quote</strong><small>Tell us what needs a little care.</small></span>
-            <span aria-hidden="true">→</span>
-          </Link>
-          <Link href="/" className={styles.action}>
-            <span className={styles.icon} aria-hidden="true">⌂</span>
-            <span><strong>Visit our website</strong><small>Explore our services and cleaning results.</small></span>
-            <span aria-hidden="true">→</span>
-          </Link>
-          <a href={siteConfig.phoneHref} className={styles.action}>
-            <svg className={styles.icon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="m7 3 3 5-2 2a15 15 0 0 0 6 6l2-2 5 3v3c0 1-1 2-2 1C9 20 4 15 3 5c0-1 1-2 2-2Z" /></svg>
-            <span><strong>Call us</strong><small>{siteConfig.displayPhone}</small></span>
-            <span aria-hidden="true">↗</span>
-          </a>
-        </nav>
-
-        <footer className={styles.footer}>
-          <a href={siteConfig.instagramUrl}>Follow our work on Instagram <span aria-hidden="true">↗</span></a>
-          <p>Upholstery &amp; carpet cleaning across the GTA</p>
-          <Link href="/privacy/">Privacy policy</Link>
-        </footer>
-      </div>
-    </main>
-  );
+        <Link href="/our-work/" className={styles.action}>
+          <span className={styles.icon}><PhotoIcon /></span>
+          <span><strong>See our work</strong><small>Before-and-after cleaning results.</small></span>
+          <ChevronRightIcon className={styles.arrow} />
+        </Link>
+        <a href={siteConfig.googleProfileUrl} className={styles.action}>
+          <span className={styles.icon}><Image src="/img/google-g-official.svg" alt="" width={32} height={32} /></span>
+          <span><strong>Google reviews</strong><small>Read what our customers say.</small></span>
+          <ChevronRightIcon className={styles.arrow} />
+        </a>
+      </nav>
+      <section className={styles.contact} aria-label="Call or text SoftNest">
+        <PhoneIcon className={styles.phoneIcon} />
+        <div>
+          <a className={styles.phone} href={siteConfig.phoneHref}>{siteConfig.displayPhone}</a>
+          <p><a href={siteConfig.phoneHref}>Call</a> or <a href={`sms:${siteConfig.phoneHref.slice(4)}`}>text us</a>. We are happy to help.</p>
+        </div>
+      </section>
+      <footer className={styles.footer}>
+        <Link className={styles.website} href="/"><GlobeIcon />softnestcare.ca</Link>
+        <p>Thank you for supporting our family business.</p>
+        <div className={styles.footerLinks}>
+          <a href="https://g.page/r/Cd_RH59XuU1QEBM/review">Leave a Google review</a>
+          <a href={siteConfig.instagramUrl}>Instagram</a>
+          <Link href="/privacy/">Privacy</Link>
+        </div>
+      </footer>
+    </div>
+  </main>;
 }

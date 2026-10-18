@@ -5,7 +5,7 @@ import HeaderNavigation from "@/components/HeaderNavigation";
 import { navigationServices } from "@/content/services";
 
 type SiteHeaderProps = {
-  current?: "blog" | "locations" | "services";
+  current?: "blog" | "locations" | "services" | "work";
   quoteHref?: string;
 };
 

@@ -1,0 +1,17 @@
+.page:global(.location-page-page) { padding-top: 160px; }
+.shell { width: var(--location-page-content-width); margin: 0 auto; }
+.intro { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 64px; padding: 20px 0 48px; }
+.intro h1 { margin: 0; font-family: var(--location-page-serif); font-size: var(--page-hero-font-size); line-height: var(--page-hero-line-height); font-weight: 400; letter-spacing: -.045em; }
+.intro h1 span { color: var(--location-page-green); }
+.intro p { margin: 0 0 26px; max-width: 520px; color: var(--location-page-muted); font-size: var(--text-hero-size); line-height: var(--text-hero-leading); }
+.note { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; padding: 32px 0 64px; border-top: 1px solid var(--surface-line); }
+.note h2 { margin: 0; font-family: var(--location-page-serif); font-size: clamp(34px, 3vw, 46px); font-weight: 400; line-height: 1.1; letter-spacing: -.035em; }
+.note p { margin: 0; font-size: var(--text-body-size); line-height: var(--text-body-leading); color: var(--location-page-muted); }
+.note a { color: var(--brand-green); text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 760px) {
+  .page:global(.location-page-page) { padding-top: var(--mobile-hero-title-top); }
+  .intro, .note { grid-template-columns: 1fr; gap: 24px; }
+  .intro { padding-top: 0; padding-bottom: 32px; }
+  .intro h1 { font-size: 42px; }
+  .note { padding-bottom: 40px; }
+}

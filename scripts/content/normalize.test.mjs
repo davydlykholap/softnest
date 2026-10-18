@@ -230,3 +230,30 @@ test("a not-served area cannot accidentally publish a landing page", () => {
     /not-served area cannot have a published page/,
   );
 });
+
+const localServiceFixture = (documents) => ({
+  _id: "local-service-test", _type: "localServiceCopy",
+  city: { _ref: documents.find((item) => item._type === "location")._id },
+  service: { _ref: documents.find((item) => item._type === "service")._id },
+  introduction: "An edited opening.", bookingNote: "Details to include.", visit: "Planning the appointment.",
+  question: { question: "A practical question?", answer: "An edited answer." },
+});
+
+test("published local wording is included in the website content snapshot", () => {
+  const documents = seed();
+  const copy = localServiceFixture(documents);
+  const city = documents.find((item) => item._id === copy.city._ref).slug.current;
+  const service = documents.find((item) => item._id === copy.service._ref).slug.current;
+  const snapshot = normalizeContent([...documents, copy], config);
+  assert.equal(snapshot.localCopy.services[city][service].introduction, copy.introduction);
+  assert.deepEqual(snapshot.localCopy.services[city][service].question, copy.question);
+});
+
+test("broken, incomplete and duplicate local wording cannot replace a working build", () => {
+  const documents = seed();
+  const copy = localServiceFixture(documents);
+  assert.throws(() => normalizeContent([...documents, { ...copy, city: { _ref: "missing" } }], config), /invalid local service copy reference/);
+  assert.throws(() => normalizeContent([...documents, { ...copy, visit: "" }], config), /Missing visit/);
+  assert.throws(() => normalizeContent([...documents, { ...copy, question: undefined }], config), /Missing practical question/);
+  assert.throws(() => normalizeContent([...documents, copy, { ...copy, _id: "duplicate-local-copy" }], config), /Duplicate city service copy/);
+});

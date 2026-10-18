@@ -1,12 +1,13 @@
 import { jsonLd } from "@/seo/structuredData";
 import type { Metadata } from "next";
+import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { organizationId, siteConfig } from "@/lib/site";
 import styles from "./about-page.module.css";
 
 export const metadata: Metadata = {
-  title: "About | SoftNest Fabric Care",
+  title: "About Our Family Cleaning Business | SoftNest Fabric Care",
   description:
     "Learn about SoftNest Fabric Care, our detail-focused approach to upholstery and carpet cleaning, professional equipment and service across the GTA.",
   alternates: { canonical: "/about/" },
@@ -71,12 +72,12 @@ export default function AboutPage() {
             </h1>
             <p>
               SoftNest Fabric Care is a family-run upholstery and carpet
-              cleaning company serving homes across the Greater Toronto Area.
+              cleaning company serving homes across the Greater Toronto Area and Hamilton.
             </p>
           </header>
 
           <section className={styles.story} aria-labelledby="our-approach">
-            <h2 id="our-approach">A careful, straightforward approach</h2>
+            <h2 id="our-approach">How we work</h2>
             <div className={styles.storyCopy}>
               <p>
                 We focus on the furniture and soft surfaces people live with
@@ -86,10 +87,9 @@ export default function AboutPage() {
                 that need attention.
               </p>
               <p>
-                From there, we choose the products, equipment and cleaning
-                process that make sense for the work. We take our time with the
-                confirmed scope and pay attention to the details and
-                hard-to-reach areas where practical.
+                We explain the cleaning method and the areas included before
+                starting. You receive a quote with tax included, and any extra
+                items or treatments are discussed with you first.
               </p>
               <p>
                 Most suitable furniture and carpets can be cleaned, including
@@ -99,9 +99,8 @@ export default function AboutPage() {
                 before starting; complete removal or restoration is not promised.
               </p>
               <p className={styles.closing}>
-                Our goal is simple: treat every home and every item with care,
-                communicate clearly and leave the work feeling properly
-                finished.
+                You can call, text or use the quote form. Photos are optional.
+                See examples of completed cleaning on our <Link href="/our-work/">Our Work page</Link>.
               </p>
             </div>
           </section>

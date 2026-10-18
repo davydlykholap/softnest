@@ -6,6 +6,7 @@
     "dev": "sanity dev",
     "build": "sanity build",
     "deploy": "sanity deploy",
+    "register": "sanity deploy --external --url https://studio.softnestcare.ca --yes",
     "typecheck": "tsc --noEmit",
     "import:content": "sanity exec scripts/import-content.mjs --with-user-token",
     "typegen": "sanity schema extract --enforce-required-fields --force && sanity typegen generate"

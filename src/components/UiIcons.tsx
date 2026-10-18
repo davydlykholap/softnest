@@ -34,6 +34,34 @@ export function ChevronDownIcon({ className }: IconProps) {
   );
 }
 
+export function MessageIcon({ className }: IconProps) {
+  return <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path {...common} d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-5.5a9 9 0 0 1-.9-4A8.5 8.5 0 0 1 12.5 3H13a8.5 8.5 0 0 1 8 8v.5Z" />
+    <path {...common} d="M8 11.5h.01M12.5 11.5h.01M17 11.5h.01" />
+  </svg>;
+}
+
+export function PhoneIcon({ className }: IconProps) {
+  return <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path {...common} d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z" />
+  </svg>;
+}
+
+export function GlobeIcon({ className }: IconProps) {
+  return <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <circle {...common} cx="12" cy="12" r="9" />
+    <path {...common} d="M3 12h18M12 3c2.4 2.5 3.5 5.5 3.5 9S14.4 18.5 12 21c-2.4-2.5-3.5-5.5-3.5-9S9.6 5.5 12 3Z" />
+  </svg>;
+}
+
+export function PhotoIcon({ className }: IconProps) {
+  return <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <rect {...common} x="3" y="3" width="18" height="18" rx="3" />
+    <circle {...common} cx="8" cy="8" r="1.5" />
+    <path {...common} d="m21 15-5-5L5 21" />
+  </svg>;
+}
+
 export function GripVerticalIcon({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">

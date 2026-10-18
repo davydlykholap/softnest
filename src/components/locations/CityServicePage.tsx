@@ -4,6 +4,7 @@ import HeroActionButtons from "@/components/HeroActionButtons";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import LocalWorkEvidence from "@/components/LocalWorkEvidence";
 import type { CityServicePageContent } from "@/content/cityServicePages";
 import { absoluteUrl, organizationProvider } from "@/lib/site";
 import { jsonLd } from "@/seo/structuredData";
@@ -56,10 +57,11 @@ export default function CityServicePage({ content }: { content: CityServicePageC
           <div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div>
         </section>
       </div>
+      <LocalWorkEvidence city={location.slug} cityName={location.name} service={service.slug} />
       <DirectoryFinalCta
         id="quote-cta"
-        title="Show us what needs cleaning."
-        description="Tell us about the item or area and any stains or odours. We'll confirm the work and price before cleaning."
+        title="Get a cleaning quote."
+        description="Call, text or use the form. Tell us what needs attention and we will discuss the work with you."
         action={{ href: quoteHref, label: "Get a quote" }}
         image="/images/softnest-hero-room.webp"
         imageAlt="Bright living room with a deep green sofa"

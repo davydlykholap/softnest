@@ -1,0 +1,33 @@
+.section { padding: 12px 0 56px; }
+.filters { display: flex; flex-wrap: wrap; align-items: end; gap: 20px; padding: 24px 0 32px; border-top: 1px solid var(--surface-line); }
+.filters label { display: grid; gap: 8px; min-width: 210px; font-size: 14px; color: var(--brand-green); font-weight: 650; }
+.filters select { appearance: auto; min-height: 48px; padding: 10px 36px 10px 15px; border: 1px solid var(--surface-line); border-radius: 14px; background: white; color: #15221c; font: inherit; font-weight: 400; }
+.filters p { margin: 0 auto 12px 0; font-size: 15px; color: #5d6a63; }
+.filters button, .empty button { min-height: 44px; padding: 8px 4px; background: transparent; border: 0; color: var(--brand-green); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 32px; }
+.project { min-width: 0; scroll-margin-top: 125px; }
+.media { position: relative; aspect-ratio: 1.4; overflow: hidden; border-radius: 26px; background: var(--surface-soft); }
+.media > div { aspect-ratio: auto; width: 100%; height: 100%; border-radius: inherit; }
+.media > img { object-fit: cover; }
+.caption { padding-top: 18px; }
+.caption h2 { font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: 30px; line-height: 1.15; letter-spacing: -.025em; font-weight: 400; margin: 0 0 8px; color: var(--brand-green); }
+.caption p { margin: 0; color: #5d6a63; font-size: var(--text-body-size); }
+.caption .imageNote { margin-top: 12px; font-size: 14px; line-height: 1.5; }
+.caption dl { margin: 18px 0; display: grid; gap: 12px; font-size: 15px; }
+.caption dt { font-weight: 650; color: #273b30; }
+.caption dd { margin: 3px 0 0; color: #5d6a63; line-height: 1.55; }
+.links { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 14px; }
+.links a, .empty a { color: var(--brand-green); font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
+.empty { padding: 48px 0; }
+.empty h2 { font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: 32px; font-weight: 400; margin: 0 0 16px; }
+.empty p { color: #5d6a63; }
+.empty a { margin-left: 24px; }
+.section :is(a, button, select):focus-visible { outline: 3px solid var(--brand-green); outline-offset: 5px; }
+@media (max-width: 760px) {
+  .filters { gap: 16px; }
+  .filters label { min-width: 0; flex: 1 1 140px; }
+  .filters select { width: 100%; }
+  .filters p { flex-basis: 50%; margin-bottom: 0; }
+  .grid { grid-template-columns: 1fr; gap: 36px; }
+  .caption h2 { font-size: 28px; }
+}

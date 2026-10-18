@@ -24,6 +24,7 @@ export const iconBySlug: Record<string, ServiceIconName> = {
 };
 
 export const navigation = [
+  { label: "Our Work", href: "/our-work/" },
   { label: "Blog", href: "/blog/" },
   { label: "About Us", href: "/about/" },
 ] as const;

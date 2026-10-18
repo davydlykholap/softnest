@@ -9,7 +9,7 @@ One route (`src/app/location/[city]/[service]/page.tsx`) and one server-rendered
 - Sanity continues to own the service facts: summary, included work, drying guidance, limitations and related services. It also supplies location lifecycle and indexability flags.
 - `src/content/cityServiceConfig.ts` owns the reviewed website coverage and service-specific quote prompts/public labels. `"all"` enables the configured service profiles for that city. Replace it with an explicit slug list to restrict a city, or `[]` to disable its service pages.
 - This coverage was explicitly expanded to all current services/cities at the user's request. The legacy Sanity `availableServices` references contain only four initially seeded services per city and do not control these new pages. Do not silently revert the website coverage to that seed list.
-- `src/content/cityServiceEditorial.ts` owns a reviewed introduction and booking note for each of the 90 combinations. `cityServicePages.ts` adds conditional city access guidance and composes the pages. Active, enabled, indexable city records and enabled service records are required. Unknown combinations return 404; missing authored content fails the build.
+- Studio's **City service wording** documents own the published introduction, booking note, visit guidance and practical question for each of the 90 combinations. `cityServiceEditorial.ts` retains reviewed fallbacks for seed/local recovery builds. `cityServicePages.ts` composes the published wording with shared service facts. Active, enabled, indexable city records and enabled service records are required. Unknown combinations return 404; missing authored content fails the build.
 - A new service requires its own factual profile. A new city requires local guidance and a coverage entry. This prevents new records from automatically publishing generic local pages without review.
 - Generated JSON snapshots must not be edited by hand. Content sync will replace them, while these reviewed configuration modules survive sync.
 
@@ -27,7 +27,9 @@ Customers can call, message through Instagram or Facebook, or choose the website
 
 The city-service design uses the existing `HeroActionButtons` component and shared city-page colours, fonts, sizing and surface tokens. There are no eyebrow labels, visible breadcrumb row or extra bottom navigation row. Shared header/footer navigation and the links from city/service hubs remain the browsing paths. The structured breadcrumb hierarchy still describes the real route structure.
 
-These are composed pages, not 90 manually maintained documents and not runtime AI-generated copy. Metadata uniqueness alone does not guarantee rankings; add genuine local evidence when available and refine pages using Search Console and lead results.
+These pages combine short editorial records with shared service facts; they are not runtime AI-generated copy. Metadata uniqueness alone does not guarantee rankings; add genuine local evidence when available and refine pages using Search Console and lead results.
+
+The October 18 content review also rewrote all nine city hubs in `cityPages.ts`. Use short, plain sentences and answer useful customer questions. Do not invent local jobs, building policies or neighbourhood traits to distinguish pages. Shared prices, drying facts and treatment limits should remain consistent; the local service template uses concise reviewed summaries and falls back to changed CMS wording until it is reviewed. Its fourth FAQ now answers a question chosen for that service and city instead of repeating the same preparation answer across cities. Repetition measurements are editorial checks, not Google thresholds.
 
 ## Quote handoff
 
@@ -42,3 +44,11 @@ Run `npm run check` and `npm run test:e2e:built`. The city-service browser suite
 It also checks that introductions remain distinct after removing the city name, that optional contact wording is present, and that the pages retain their concise content budget. The word budget is a layout safeguard, not a Google word-count recommendation.
 
 After deployment, inspect representative URLs and the sitemap in Search Console, then verify real analytics receipt. Indexing and ranking are not guaranteed by deployment or sitemap inclusion.
+
+## Studio wording and local evidence
+
+The October 18 pass seeds nine `localCityCopy` and 90 `localServiceCopy` documents using `npm run content:seed-local-copy`. Seeding creates missing records and preserves existing edits. Normalization rejects missing references, incomplete wording and duplicate city/service records. Draft preview listens for these types too.
+
+City pages show a city-assigned project and review where available. City/service pages require both assignments to match. Missing proof is omitted; an unassigned project is never labelled as local evidence. Vaughan currently retains clearly identified service-area reviews because no approved Vaughan review/project is assigned.
+
+Our Work lists approved projects and supports city/service filters. Actual material, problem, treatment and result fields appear only when entered. Photo context is shown when a comparison needs an explanation. A single photo is shown as a single photo, without a simulated before view. The homepage gallery is unchanged.

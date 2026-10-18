@@ -4,6 +4,7 @@ import { responsiveBackground } from "@/lib/responsiveImages";
 
 import { useState, type CSSProperties } from "react";
 import { GripVerticalIcon } from "@/components/UiIcons";
+import Image from "@/components/ResponsiveImage";
 import styles from "@/app/services/service-page.module.css";
 
 type ServiceResultCompareProps = {
@@ -26,6 +27,10 @@ export default function ServiceResultCompare({
     "--service-result-image": responsiveBackground(image),
   };
 
+  if (variant === "single") return <div className={styles.resultCompare}>
+    <Image src={image} alt={label} fill sizes="(max-width: 760px) 90vw, 45vw" style={{ objectFit: "cover" }} />
+  </div>;
+
   return (
     <div
       className={`${styles.resultCompare} ${styles[`resultCompare${variant === "paired" ? "Paired" : "Single"}`]}`}
@@ -36,6 +41,8 @@ export default function ServiceResultCompare({
         className={`${styles.resultLayer} ${styles.resultLayerAfter}`}
         style={{ clipPath: `inset(0 0 0 ${position}%)` }}
       />
+      <span className={`${styles.resultLabel} ${styles.resultLabelBefore}`} aria-hidden="true">Before</span>
+      <span className={`${styles.resultLabel} ${styles.resultLabelAfter}`} aria-hidden="true">After</span>
       <span
         className={styles.resultDivider}
         style={{ left: `${position}%` }}
@@ -47,8 +54,8 @@ export default function ServiceResultCompare({
       </span>
       <input
         type="range"
-        min={15}
-        max={85}
+        min={0}
+        max={100}
         value={position}
         aria-label={label}
         onChange={(event) => setPosition(Number(event.currentTarget.value))}

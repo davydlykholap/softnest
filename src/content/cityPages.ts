@@ -1,4 +1,5 @@
 import type { LocationFaq } from "@/content/locations";
+import localCopy from "@/content/generated/localCopy.json";
 
 export type CityPageCopy = {
   metaTitle: string;
@@ -17,77 +18,83 @@ export type CityPageCopy = {
   ctaDescription: string;
 };
 
-// Reviewed city copy stays outside generated CMS snapshots so content:sync
-// cannot replace the approved page text during deployment.
-export const cityPages: Record<string, CityPageCopy> = {
+// Reviewed fallback copy keeps local/seed builds complete. Published Studio
+// wording overrides it after validation in content:sync.
+// Use plain language and useful questions, not city-name swaps or invented
+// local claims. Shared quote terms stay consistent across service areas.
+export const reviewedCityPages: Record<string, CityPageCopy> = {
   "mississauga": {
     "metaTitle": "Upholstery & Carpet Cleaning Mississauga | Sofa & Rug | SoftNest",
-    "metaDescription": "Sofa, upholstery and carpet cleaning in Mississauga homes and condos, including Port Credit and Streetsville. Free quotes with a confirmed tax-inclusive price.",
-    "heroDescription": "Professional sofa, upholstery, carpet and area rug cleaning in Mississauga. Plan one item or several rooms, with a free quote and clear expectations before booking.",
+    "metaDescription": "Sofa, upholstery and carpet cleaning in Mississauga, from City Centre condos to Streetsville homes. Suitable area rugs too. Request a free quote.",
+    "heroDescription": "In-home sofa, upholstery and carpet cleaning across Mississauga. From one chair to furniture and rugs together, choose the items that need attention.",
     "introductionParagraphs": [
-      "SoftNest Fabric Care cleans sofas, upholstery, carpets and suitable area rugs across Mississauga, from City Centre condos to homes in Port Credit and Streetsville. Tell us which items or rooms need attention and what you would like to improve.",
-      "For condo visits, include parking instructions and any elevator reservation requirements. For larger requests, list all the furniture, carpeted rooms and stairs together so we can confirm all the work and plan the appointment."
+      "Our Mississauga coverage includes City Centre, Port Credit, Streetsville and Clarkson. We clean fabric furniture, carpets and suitable rugs where they are used, so there is no need to transport a sofa or chair.",
+      "For a condo, tell us about loading access and elevator reservations. For a house, identify the floors where cleaning is needed. Those details help us plan the visit without leaving access questions until arrival."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "Refresh a loveseat, couch or sectional without guessing which treatment suits the fabric. We assess the material and condition, discuss visible marks and clean the agreed accessible areas. Share a full-item photo and seat count, along with any care label and condo access details. Photos are optional."
+        "description": "A loveseat, sofa bed or sectional can be cleaned as part of the visit. Tell us about the seating layout and any loose cushions. We inspect the upholstery before treating spills, marks and dirt on the agreed surfaces."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Request carpet cleaning for rooms, hallways and stairs in your Mississauga home or condo. Photos, room dimensions and stair counts help us prepare an accurate quote. We explain realistic results for traffic marks and stains, plus how airflow and room conditions affect drying. Photos are optional."
+        "description": "Choose the carpeted rooms, halls and stairs you want cleaned. Approximate measurements help with the quote. Let us know if furniture covers part of the floor so we can discuss what is reachable."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Include an area rug with your furniture or carpet request by sharing its dimensions, photos and care label. We check its material and backing before confirming whether in-home cleaning is suitable. Rugs needing a different specialist treatment are discussed before work begins. Photos are optional."
+        "description": "A rug beneath the coffee table may need different care from the fitted carpet nearby. We check the fibre and backing, look for unstable colour and confirm whether it can be cleaned in your home."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "Chairs, mattresses and pet stain treatment are also available. Mention these when you first get in touch so the appointment allows for more than the sofa.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "In-home service.",
+        "description": "We come to the Mississauga address you provide. List the room and floor for each item, especially when furniture is spread through the home."
       },
       {
-        "title": "Planned around your building.",
-        "description": "For City Centre, Square One-area and Port Credit condos, share parking instructions and elevator reservations before booking. We plan the appointment around the access details you provide."
+        "title": "Building details considered.",
+        "description": "In City Centre or Port Credit, check your condo rules for loading, parking and elevator use. We discuss those arrangements with you before booking."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Several items, one request.",
+        "description": "Furniture, rugs and fitted carpets can be assessed together. Different materials still get separate checks before cleaning."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "A clear total.",
+        "description": "We confirm the final price, including tax. Optional treatment and any additional items are discussed before you agree to them."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "Do you clean condos in Mississauga?",
-        "answer": "Yes. For condos in City Centre, the Square One area and Port Credit, share parking instructions and elevator-booking details with your request. We confirm the arrangements so the appointment fits your building's rules."
+        "question": "Can you clean furniture in City Centre condos?",
+        "answer": "Yes, with suitable access. Ask management about visitor parking, loading and elevator bookings, and tell us the rules. We confirm the arrangements before setting the visit."
       },
       {
-        "question": "How long until it's dry?",
-        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
+        "question": "Do I need to take my sofa apart?",
+        "answer": "No. Remove personal belongings and leave space to reach the piece. Tell us if cushions detach or parts recline, but don't move heavy sections without discussing it with us."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "Can a rug be included with carpet cleaning?",
+        "answer": "Often. Give us its size and any care information. We check it separately because the backing, dyes and fibre can differ from the carpet underneath."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "How do I prepare rooms with furniture in them?",
+        "answer": "Pick up small items and identify the floor areas you want cleaned. Tell us if heavy furniture needs moving so we can agree what is practical and safe."
       },
       {
-        "question": "Which parts of Mississauga do you cover?",
-        "answer": "We serve Mississauga, including City Centre, Port Credit, Streetsville, Clarkson and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "How long will upholstery stay damp?",
+        "answer": "Most fabric seating dries in about six to eight hours. Thick cushions and humid rooms may need longer. Keep it uncovered and wait until it is completely dry before use."
+      },
+      {
+        "question": "Is my Mississauga neighbourhood covered?",
+        "answer": "We serve the areas listed below, including Meadowvale, Erin Mills, Cooksville and Mineola. If your address is elsewhere in Mississauga, send your postal code so we can check it."
       }
     ],
     "neighbourhoods": [
@@ -100,84 +107,84 @@ export const cityPages: Record<string, CityPageCopy> = {
       "Cooksville",
       "Mineola"
     ],
-    "coverage": "Sofa, carpet, rug and upholstery cleaning throughout Mississauga — houses, condos, townhouses and apartments.",
-    "coverageClosing": "Elsewhere in Mississauga? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your home in Mississauga?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "Fresh care, with your visit planned."
+    "coverage": "Furniture and carpet cleaning is available across these Mississauga neighbourhoods, in houses and multi-unit buildings.",
+    "coverageClosing": "Have parking or entry instructions for your address? Include them when arranging the visit.",
+    "ctaTitle": "Tell us what needs cleaning.",
+    "ctaDescription": "Contact us for a free Mississauga quote. Describe the furniture, rooms or rugs; we'll discuss the work and available appointments.",
+    "introductionHeading": "A visit planned for your home."
   },
   "toronto": {
     "metaTitle": "Upholstery & Carpet Cleaning Toronto | Sofa & Rug | SoftNest",
-    "metaDescription": "Sofa, couch, upholstery and carpet cleaning in Toronto homes and condos. Plan loading and elevator access and request a free tax-inclusive quote.",
-    "heroDescription": "Sofa, couch, upholstery and carpet cleaning for Toronto homes, condos and apartments. Tell us about your items and building access for a free quote and a well-planned visit.",
+    "metaDescription": "Upholstery, sofa and carpet cleaning in Toronto homes and condos. Plan building access, carpeted rooms and drying time. Get a free quote from SoftNest.",
+    "heroDescription": "Sofa and carpet cleaning for Toronto apartments, condos and houses. Arrange the cleaning and drying time around your building rules and the rooms you use.",
     "introductionParagraphs": [
-      "SoftNest Fabric Care provides in-home sofa, upholstery and carpet cleaning across Toronto, including North York, Scarborough, the Annex and the Beaches. We help with a single item or several pieces and carpeted areas in the same request.",
-      "For downtown condos and apartments, share loading instructions, parking and any elevator booking or service-hour restrictions. Confirming access and the complete work in advance helps us plan an appointment that fits your home and building."
+      "SoftNest serves Toronto, including Downtown, North York, Scarborough, the Annex and the Beaches. We clean upholstery, fitted carpet and suitable area rugs, whether the request is for one couch or several items.",
+      "If your building only allows service visits at certain hours, tell us before booking. An elevator slot is one part of the plan; the furniture and floors also need time to dry after the cleaning is finished."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "Compact loveseats, everyday couches and larger sectionals can all be assessed for cleaning. Share a full photo, the seat count and any stains or odours that concern you. We check the material and condition, then explain the treatment and its limits before starting. Photos are optional."
+        "description": "We clean apartment couches, sofa beds and larger seating. Fixed cushions and removable covers are checked before treatment. Tell us whether you want the whole accessible piece cleaned or have a particular spill or odour to address."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Include carpeted bedrooms, living rooms, hallways and stairs in your Toronto request. Approximate dimensions and photos help define the work. Tell us about building access and any furniture covering the carpet so we can confirm the areas to be cleaned. Photos are optional."
+        "description": "You can request bedrooms, living spaces and connecting carpeted areas. Identify anything that must remain accessible during the work. We explain how to plan room use while the carpet dries."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Have a rug under the coffee table or in a bedroom? Share its dimensions, both sides where practical, and the care label. Fibre, backing and dye stability affect whether an in-home treatment is suitable; we confirm the approach before cleaning."
+        "description": "Cleaning a rug in a furnished room requires access to it. Tell us the rug size and what sits on top. We assess the material and discuss any moving needed before deciding on the work."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "Need a mattress or recliner cleaned as well? Mention it before booking, particularly if you need the bed or seating later that day.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "Building hours checked.",
+        "description": "Tell us about loading-dock times, elevator reservations and service restrictions. We can discuss whether the requested work fits those arrangements."
       },
       {
-        "title": "Condo access planned ahead.",
-        "description": "Downtown parking, loading areas and elevator reservations can affect the visit. Share your building rules with your request so we can confirm the arrangements before arriving."
+        "title": "Useful drying advice.",
+        "description": "We explain how airflow, cushion thickness and room conditions affect drying, rather than promising every item will be ready at one fixed time."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Furniture assessed in place.",
+        "description": "Material, care labels and existing condition guide the method. You do not need to choose a cleaning technique yourself."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "Contact without a form.",
+        "description": "A phone call or text is fine. Describe the items and address, and we will confirm a tax-inclusive price before booking."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "What should I arrange for a downtown condo appointment?",
-        "answer": "Check whether your building needs an elevator reservation or a loading-dock time slot. Share those details and the parking instructions with your quote request and we'll plan the visit around them."
+        "question": "Can you work within a condo elevator time slot?",
+        "answer": "Tell us the available slot and the items to be cleaned before reserving it. We need to consider loading, access and the work itself before agreeing on a time."
       },
       {
-        "question": "Can I sit on my sofa the same evening?",
-        "answer": "Often, yes, once the fabric is completely dry. Most sofas dry in about six to eight hours, but thick cushions or a humid room can take longer. Tell us if you need the sofa that evening so we can help you plan the appointment and drying time."
+        "question": "Can I use one room while another carpet dries?",
+        "answer": "Tell us which rooms and routes you need. We can discuss the order of work, but cleaned carpet should be allowed to dry before normal use."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "Does a sofa bed need special preparation?",
+        "answer": "Remove bedding and belongings. Tell us whether you want the upholstered seating, the mattress or both assessed; they are separate parts of the request."
       },
       {
-        "question": "Can you clean a sofa and mattress in the same visit?",
-        "answer": "Often, yes. Tell us the sofa and mattress sizes and what you'd like cleaned so we can allow enough time and confirm a total price. Photos are welcome if you'd like to send them. We'll also help you plan time for both items to dry."
+        "question": "Do you cover North York and Scarborough?",
+        "answer": "Yes. They are part of our Toronto coverage, along with the neighbourhoods below. Include your postal code and building access information when asking about an appointment."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "What if my loading area is far from the unit?",
+        "answer": "Explain the route, including elevators and any stairs. Distance and building restrictions can affect access, so we check the arrangements before confirming the visit."
       },
       {
-        "question": "Which parts of Toronto do you cover?",
-        "answer": "We serve Toronto, including Downtown, Annex, Leslieville, Beaches and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "Is the furniture ready as soon as cleaning ends?",
+        "answer": "No. Most sofas need about six to eight hours to dry, and some take longer. Leave cushions uncovered and use the furniture only once it is fully dry."
       }
     ],
     "neighbourhoods": [
@@ -190,84 +197,84 @@ export const cityPages: Record<string, CityPageCopy> = {
       "East York",
       "Liberty Village"
     ],
-    "coverage": "Sofa, couch, carpet, rug and upholstery cleaning throughout Toronto — houses, condos, townhouses and apartments.",
-    "coverageClosing": "Elsewhere in Toronto? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your home in Toronto?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "Straightforward care for city homes."
+    "coverage": "Toronto coverage includes the areas below. We visit houses, apartments, condos and townhouses.",
+    "coverageClosing": "For a Toronto booking, the postal code helps identify the address; your building instructions help us plan access.",
+    "ctaTitle": "Book cleaning around your day.",
+    "ctaDescription": "Tell us what needs cleaning and any building time limits. We'll help you plan a Toronto appointment and explain the total price.",
+    "introductionHeading": "Plan the work and the time."
   },
   "brampton": {
     "metaTitle": "Upholstery & Carpet Cleaning Brampton | Sofa & Rug | SoftNest",
-    "metaDescription": "Sofa, sectional, upholstery and carpet cleaning in Brampton. Include rooms, stairs and furniture in one request for a free tax-inclusive quote.",
-    "heroDescription": "Refresh sofas, sectionals, carpets and suitable rugs in your Brampton home. Include everything you want cleaned in one request for a free quote and a clearly planned visit.",
+    "metaDescription": "Carpet, sofa and upholstery cleaning in Brampton. Include rooms, staircases and furniture in one quote. Serving Bramalea, Heart Lake and nearby areas.",
+    "heroDescription": "Carpet and upholstery cleaning in Brampton, from a single sofa to rooms and stairs. Get a quote based on the areas and items you actually need cleaned.",
     "introductionParagraphs": [
-      "SoftNest Fabric Care provides sofa, upholstery and carpet cleaning across Brampton, including Bramalea, Heart Lake, Springdale and Mount Pleasant. From one well-used couch to several rooms, we help you plan the work around the items that need attention.",
-      "Tell us the items, room sizes and any carpeted stairs. Photos are optional. Tell us about spills, pet accidents or access concerns so the quote covers your request and we can explain what cleaning may improve."
+      "We clean sofas, sectionals, carpets and suitable rugs across Brampton, including Bramalea, Heart Lake, Springdale and Castlemore. Let us know if you want one room done or cleaning across several floors.",
+      "A useful quote separates room carpet, stair flights and furniture. Describe the sizes and main concerns for each. You can do this by phone or text; there is no need to measure every cushion or send photos of everything."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "A family-room sectional, living-room sofa or loveseat can be included in your Brampton appointment. Share the complete piece, including a chaise, and note any stains or odours. We inspect the material and accessible cushions before confirming treatment and realistic results."
+        "description": "For a family-room sofa or sectional, include the chaise, ottoman and any extra cushions you want cleaned. We assess the fabric and treat everyday soil and suitable stains on the surfaces in your quote."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Book carpet cleaning for bedrooms, basements, hallways and stairs. Photos, dimensions and stair counts help us quote the areas you need. We address treatable soil and explain where wear may remain visible, along with drying and after-care guidance. Photos are optional."
+        "description": "Stair flights, landings and rooms are counted separately so the work is clear. Let us know about basement access and carpet under furniture. We can discuss which areas are practical to clean."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Add a rug to your request with its dimensions, photos and care label. We assess its material and backing before recommending in-home cleaning. If a rug needs specialist care, we explain the limitation rather than applying the same method to every item. Photos are optional."
+        "description": "Loose rugs are quoted by size and checked for cleaning suitability. A stain on the rug may need different treatment from one on the sofa, even if both came from the same spill."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "Dining chairs and mattresses can go on the same list. If pets have affected more than one item, identify each spot so treatment is considered separately.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "Room-by-room quoting.",
+        "description": "List each carpeted room and hallway instead of describing only the number of storeys. Add stairs and landings to complete the picture."
       },
       {
-        "title": "A clear plan for the whole home.",
-        "description": "Include sofas, carpeted rooms, stairs, chairs and mattresses in the same request. Photos and room dimensions let us confirm the items, timing and combined quote before booking. Photos are optional."
+        "title": "Sectionals counted properly.",
+        "description": "A chaise, corner section and ottoman change the size of the job. Describe the full seating arrangement before requesting a price."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Treatment where needed.",
+        "description": "Show us heavy-use areas and spills. We assess stains individually and explain when repeated accidents or wear may limit improvement."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "Changes agreed first.",
+        "description": "The confirmed price includes tax. If another room or item is added, we discuss the new total before doing that work."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "Can you quote whole-house carpet cleaning from photos?",
-        "answer": "Yes. Photos can help, but you can also call or text us with the number of rooms, approximate sizes and any stairs. We'll help you work out what needs cleaning and confirm the total price before booking."
+        "question": "How should I count carpeted stairs?",
+        "answer": "Count the steps in each flight and note the landings separately. Include the hallway at the top or bottom if you want it cleaned too."
       },
       {
-        "question": "Do you clean large sectionals?",
-        "answer": "Yes, including sectionals with a chaise. Tell us the number of seats and any separate pieces you'd like cleaned. If you're unsure how to count them, describe the layout or send a photo if you'd like. We'll help work it out and confirm the total price."
+        "question": "Can I book a sectional and the basement carpet?",
+        "answer": "Yes. Describe the sectional layout, carpeted rooms and access to the basement. We can quote them together and allow time for both."
       },
       {
-        "question": "How long until it's dry?",
-        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
+        "question": "Are photos needed for a larger job?",
+        "answer": "They can help show room layouts and furniture sizes, but they are optional. A list of items, approximate dimensions and a stair count is a useful starting point."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "Do I need to empty every room?",
+        "answer": "Pick up loose belongings first. Tell us about beds, sofas or other heavy furniture covering carpet so we can agree on moving and reachable areas."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "What about stains that keep coming back?",
+        "answer": "Tell us where the mark returns and whether it is from repeated spills or pet accidents. We can investigate and try treatment, but deeper contamination may not be fully removable."
       },
       {
-        "question": "Which parts of Brampton do you cover?",
-        "answer": "We serve Brampton, including Bramalea, Heart Lake, Springdale, Castlemore and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "Can you quote just one room?",
+        "answer": "Yes. Tell us the room size, what is on the carpet and your Brampton postal code. We'll confirm the work, price and appointment availability."
       }
     ],
     "neighbourhoods": [
@@ -280,84 +287,84 @@ export const cityPages: Record<string, CityPageCopy> = {
       "Downtown Brampton",
       "Sandringham"
     ],
-    "coverage": "Sofa, carpet, rug and upholstery cleaning throughout Brampton — detached homes, townhouses, semis and apartments.",
-    "coverageClosing": "Elsewhere in Brampton? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your home in Brampton?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "Plan the furniture and floors together."
+    "coverage": "Our Brampton service area includes the neighbourhoods below. Requests can include carpet cleaning, furniture or a mix of both.",
+    "coverageClosing": "Not sure how to describe a larger job? Start with the rooms and floors, and we can work through the item list with you.",
+    "ctaTitle": "Get a quote for your list.",
+    "ctaDescription": "Send the Brampton address and the rooms or furniture you want cleaned. We'll confirm what is included and the price before you book.",
+    "introductionHeading": "Start with the full list."
   },
   "etobicoke": {
     "metaTitle": "Upholstery & Carpet Cleaning Etobicoke | Sofa & Rug | SoftNest",
-    "metaDescription": "Sofa, upholstery and carpet cleaning for Etobicoke houses, apartments and condos. Discuss parking and access, and request a free tax-inclusive quote.",
-    "heroDescription": "Professional sofa, upholstery, carpet and area rug cleaning for Etobicoke houses, apartments and condos. Share what needs cleaning and your access details so we can plan the visit with you.",
+    "metaDescription": "Sofa, upholstery and carpet cleaning in Etobicoke, from Mimico and Long Branch to the Kingsway. Help with condo access and delicate fabrics. Free quotes.",
+    "heroDescription": "Upholstery and carpet cleaning for Etobicoke condos, apartments and houses. We clean sofas, chairs and rugs, with building access arranged before the visit.",
     "introductionParagraphs": [
-      "SoftNest Fabric Care serves Etobicoke, including Mimico, the Kingsway, Islington, Alderwood and Long Branch. We clean everyday furniture and suitable carpets and rugs, whether you need one couch refreshed or several items treated in the same appointment.",
-      "For apartments and condos, a little planning makes the visit easier. Tell us about parking, elevators, stairs and building time restrictions when requesting your quote. We confirm the work and access arrangements before booking, so you know what to prepare."
+      "We serve Etobicoke homes in Mimico, the Kingsway, Islington, Alderwood and Long Branch, among other areas. A small apartment sofa and a large sectional need different amounts of work; tell us what you own and what needs attention.",
+      "If your building has visitor parking, elevator bookings or contractor requirements, check those before choosing a date. We need to know how to reach your unit and whether the building limits service hours."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "From a compact apartment sofa to a larger living-room sectional, the cleaning method depends on the furniture in front of us. Share a full-item photo, the seat count and any care label. Point out spills, body-oil buildup or pet accidents so we can discuss realistic treatment and results. Photos are optional."
+        "description": "A sofa can have removable seat covers, fixed cushions and different fabrics on the same piece. We check those details before cleaning. Tell us about food spills, body oils or previous spot cleaners so we can focus on the problem."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "We clean suitable carpets in Etobicoke bedrooms, living rooms, hallways and stairs. Share room sizes, stair counts and photos to help us understand the work needed. We explain expected drying conditions and any limitations before you plan to use the area again. Photos are optional."
+        "description": "We clean fitted carpet in rooms, connecting hallways and stairs. Identify the areas you want done and anything covering them. In an apartment, it also helps to know which rooms must stay usable while the carpet dries."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Area rugs need a check of their material, dyes and backing before cleaning. Include dimensions, photos and a care label where available. We confirm suitability before recommending an in-home treatment and explain when specialist care would be more appropriate. Photos are optional."
+        "description": "Wool, mixed fibres and dyed patterns need more than a quick surface check. We look at the rug's condition and backing before deciding on in-home cleaning. If it needs specialist care, we'll explain why."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "An armchair, recliner or dining set can be added to the appointment. Mention powered controls or a different fabric so each piece gets the right assessment.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "Access discussed early.",
+        "description": "For condos and apartments, we work from the parking, entry and elevator information you provide. Tell us about documents the building asks contractors to supply."
       },
       {
-        "title": "Care for delicate upholstery.",
-        "description": "Linen-look weaves, bouclé and velvet are assessed before treatment. Moisture, agitation and products are selected for the material and condition rather than the neighbourhood or price of the furniture."
+        "title": "A fabric check first.",
+        "description": "Boucle, velvet and linen-look upholstery can need different care. We inspect and test the material rather than choosing a method from its appearance alone."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Clear treatment limits.",
+        "description": "Cleaning can improve dirt and many stains. We explain when faded colour, worn fabric or earlier treatment may affect the result."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "Your choice of contact.",
+        "description": "Describe the job by phone, text or the form. A photo can help with a difficult fabric, but it is optional."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "Do you handle delicate upholstery fabrics?",
-        "answer": "We can clean many delicate fabrics, but the right method depends on the material and condition. Tell us about your furniture and any care label. We'll check and test the fabric before cleaning, and discuss the options if it needs a different approach."
+        "question": "What should I check with my condo management?",
+        "answer": "Ask about parking, loading access, elevator reservations and permitted service hours. If contractor documents are required, tell us before booking so we can confirm whether those requirements can be met."
       },
       {
-        "question": "Do you clean condos in Etobicoke?",
-        "answer": "Yes, subject to confirming the work and suitable access. Include parking and loading instructions, your floor, elevator reservation requirements and building restrictions. If your building needs contractor documents, tell us before booking so we can confirm whether we can meet its requirements."
+        "question": "Can you clean velvet or boucle upholstery?",
+        "answer": "Often, but the fabric and its condition need checking first. A care label can help. We test a suitable approach and explain any concerns before treating the piece."
       },
       {
-        "question": "How long until it's dry?",
-        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
+        "question": "Can you reach an apartment without an elevator?",
+        "answer": "Tell us the floor, number of stairs and entrance arrangements. We'll check access with you before agreeing on the appointment; don't assume every staircase or entrance will work."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "Should I treat the stain before you arrive?",
+        "answer": "Avoid trying another product just before the visit. Tell us what was spilled and which cleaners you've used. Mixing treatments or rubbing the fabric can make the mark harder to assess."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "Can I use the sofa that evening?",
+        "answer": "Most sofas take about six to eight hours to dry, sometimes longer with thick cushions or poor airflow. Tell us if timing matters and wait until the fabric is fully dry."
       },
       {
-        "question": "Which parts of Etobicoke do you cover?",
-        "answer": "We serve Etobicoke, including Kingsway, Islington, Mimico, New Toronto and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "Do you cover both north and south Etobicoke?",
+        "answer": "Coverage includes Rexdale and Humber Heights as well as Mimico, New Toronto and Long Branch. Send your postal code if you are unsure whether your address is covered."
       }
     ],
     "neighbourhoods": [
@@ -370,84 +377,84 @@ export const cityPages: Record<string, CityPageCopy> = {
       "Rexdale",
       "Humber Heights"
     ],
-    "coverage": "Sofa, carpet, rug and upholstery cleaning throughout Etobicoke — houses, condos, townhouses and apartments.",
-    "coverageClosing": "Elsewhere in Etobicoke? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your space in Etobicoke?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "Cleaning planned around your home."
+    "coverage": "We provide in-home cleaning across the Etobicoke areas listed here, including houses as well as multi-unit buildings.",
+    "coverageClosing": "When checking an Etobicoke address, include your unit and access arrangements if relevant.",
+    "ctaTitle": "Arrange your Etobicoke visit.",
+    "ctaDescription": "Call or message with the furniture or rooms you need cleaned. We'll discuss access and a total price, including tax.",
+    "introductionHeading": "Cleaning that fits your building."
   },
   "burlington": {
     "metaTitle": "Upholstery & Carpet Cleaning Burlington | Sofa & Rug | SoftNest",
-    "metaDescription": "Sofa, upholstery, carpet and area rug cleaning in Burlington, including Millcroft and the Orchard. Request a free quote with a confirmed tax-inclusive price.",
-    "heroDescription": "Professional sofa, upholstery, carpet and area rug cleaning across Burlington. Refresh one favourite piece or plan several items together, with clear advice and a free quote.",
+    "metaDescription": "Sofa, carpet and area rug cleaning in Burlington, including Aldershot, Roseland and Millcroft. Practical drying advice and free tax-inclusive quotes.",
+    "heroDescription": "Sofa, carpet and rug cleaning in Burlington. Clean the furniture you use most, with practical advice on stains, preparation and when it can be used again.",
     "introductionParagraphs": [
-      "SoftNest Fabric Care cleans upholstery and carpets in Burlington homes and condos, including downtown, Millcroft, the Orchard and Roseland. Tell us whether you need a couch refreshed, carpeted rooms cleaned or several items included in one visit.",
-      "Photos, sizes and a short description of stains or odours help us understand your request. We confirm the work and discuss access, material suitability and expected results before booking."
+      "SoftNest provides upholstery and carpet cleaning in Burlington, including downtown, Aldershot, Roseland, Millcroft and the Orchard. Sofas, upholstered chairs and suitable rugs can be included in the same visit.",
+      "Think about which seating and rooms you will need afterwards. A clean item still needs drying time. Tell us if the sofa is your only seating or a bedroom needs to be ready that evening."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "Loveseats, sofas and sectionals need care suited to their material and condition. Share a full photo of each piece, the seat count and any care label. We assess stains and high-use areas before choosing treatment and explain what can realistically improve. Photos are optional."
+        "description": "Seat fronts, arms and headrests can show dirt before the rest of a couch. We check these areas and treat ordinary spots before cleaning. Let us know whether a mark is a recent spill or an older problem."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Include rooms, hallways and carpeted stairs in your Burlington quote request. Approximate dimensions and photos help us understand the work needed. We discuss stains, accessible areas and drying conditions so you know how to prepare for the visit. Photos are optional."
+        "description": "We clean carpeted rooms, hallways and stairs, including busy paths between rooms. Furniture movement is discussed first. Once the work is done, we explain how to help the carpet dry before returning to normal use."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Suitable rugs can be assessed alongside your furniture or fitted carpets. Share dimensions, care information and photos showing the surface and backing. We confirm whether in-home cleaning is appropriate before the work is agreed. Photos are optional."
+        "description": "The size, pile and backing of a rug affect the cleaning plan. Share what you know about it; a missing label does not mean you need to guess the fibre. We inspect it before treatment."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "We also clean upholstered dining chairs, recliners and mattress surfaces. If you need a whole dining set ready for a meal or gathering, discuss the date and drying time before booking.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "Use planned after cleaning.",
+        "description": "We talk through when you need the rooms or seating again. Drying depends on the material and conditions, so there is no guaranteed ready-by time."
       },
       {
-        "title": "The method follows the material.",
-        "description": "Care labels and on-site checks guide the approach for everyday fabrics and delicate upholstery. We explain suitability and limitations before starting your Burlington appointment."
+        "title": "Care around existing wear.",
+        "description": "A worn arm or flattened carpet may remain visible after dirt is removed. We explain the difference between a clean surface and repaired material."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Rugs checked separately.",
+        "description": "A loose rug can have different dyes and backing from fitted carpet. We check whether in-home treatment is appropriate."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "A free quote to start.",
+        "description": "Call, text or fill in the form. We give you the total with tax included before you decide on the appointment."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "Is your method safe for expensive upholstery?",
-        "answer": "We'll check the fabric, care label and condition, then test a suitable method before cleaning. Tell us about any delicate materials or previous treatments when you get in touch. If the furniture needs a different approach, we'll explain the options before you decide."
+        "question": "Can I book before guests come over?",
+        "answer": "Yes, but leave time for full drying rather than booking immediately before visitors arrive. Tell us the items and date so we can discuss a practical schedule."
       },
       {
-        "question": "Do you clean condos in Burlington?",
-        "answer": "Yes. Share your parking and elevator-booking details with the quote request and we'll plan around your building's rules."
+        "question": "How can I help a sofa dry?",
+        "answer": "Keep it uncovered and allow airflow around the cushions. Most sofas take about six to eight hours; thick padding or humidity can extend that. Wait until fully dry before use."
       },
       {
-        "question": "How long until it's dry?",
-        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
+        "question": "Will carpet cleaning remove flattened walkways?",
+        "answer": "It removes dirt and can improve appearance, but worn or crushed fibres may still look different. We check the carpet and explain what is realistic before cleaning."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "What if a rug has no care label?",
+        "answer": "Tell us what you know about its material and history. We still assess its fibres, colour and backing before recommending in-home cleaning or a different type of care."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "Can you clean upholstered dining-chair backs?",
+        "answer": "Yes, where the fabric is suitable. Tell us whether you want seats, backs or both, and include any bench seating or different chairs in the set."
       },
       {
-        "question": "Which parts of Burlington do you cover?",
-        "answer": "We serve Burlington, including Downtown Burlington, Aldershot, Roseland, Millcroft and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "Do Burlington condo visits need advance arrangements?",
+        "answer": "Check your building's parking and elevator rules. Tell us about reservations and service hours before booking so we can plan the visit with you."
       }
     ],
     "neighbourhoods": [
@@ -459,84 +466,84 @@ export const cityPages: Record<string, CityPageCopy> = {
       "Headon Forest",
       "Tansley"
     ],
-    "coverage": "Sofa, carpet, rug and upholstery cleaning throughout Burlington — houses, condos, townhouses and apartments.",
-    "coverageClosing": "Elsewhere in Burlington? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your home in Burlington?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "A fresh start for everyday spaces."
+    "coverage": "We visit Burlington houses, condos and apartments in the neighbourhoods listed here.",
+    "coverageClosing": "For another part of Burlington, contact us with your postal code and the items you need cleaned.",
+    "ctaTitle": "Plan your Burlington cleaning.",
+    "ctaDescription": "Tell us what needs attention and when you need the space back in use. We can discuss a date, drying and a free quote.",
+    "introductionHeading": "Keep everyday furniture in use."
   },
   "vaughan": {
     "metaTitle": "Upholstery & Carpet Cleaning Vaughan | Sofa & Rug | SoftNest",
-    "metaDescription": "Sofa, sectional and carpet cleaning in Vaughan, including Woodbridge, Maple and Kleinburg. Plan your visit and request a free tax-inclusive quote.",
-    "heroDescription": "Sofa, sectional, upholstery and carpet cleaning for Vaughan homes and condos. Plan the items you need cleaned together, with a free quote and clear expectations before the visit.",
+    "metaDescription": "Upholstery, sectional and carpet cleaning in Vaughan, including Woodbridge, Maple and Kleinburg. Different fabrics checked individually. Free quotes.",
+    "heroDescription": "Upholstery, sectional and carpet cleaning across Vaughan. Bring your furniture list together and get clear advice for each material, stain and room.",
     "introductionParagraphs": [
-      "SoftNest Fabric Care provides upholstery and carpet cleaning across Vaughan, including Woodbridge, Maple, Kleinburg and Vellore Village. List your furniture, carpeted rooms and stairs together so we can confirm the complete work before booking.",
-      "If you are moving or finishing renovations, tell us about any dusty work still underway. For condos, include parking and elevator details. We discuss practical timing, access and drying so the appointment fits the space."
+      "We serve Vaughan homes in Woodbridge, Maple, Kleinburg, Vellore Village and other areas below. You can request a sectional, several upholstered pieces or carpets on their own. Tell us what is fabric and what is leather.",
+      "If furniture was bought at different times, its materials and condition may vary. We assess each piece before cleaning. A label or an optional photo can help us prepare, but you don't need to identify the fabric yourself."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "Request cleaning for a living-room sofa, a sectional or several upholstered pieces. Share a complete photo and seat count for each item. We inspect the material and existing wear, assess stains and explain the proposed treatment before starting. Photos are optional."
+        "description": "Large sofas and sectionals are quoted by their full layout, including chaises and ottomans. Different cushion fabrics, reclining seats and visible wear are checked before we clean the agreed surfaces."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Carpeted bedrooms, basements, hallways and stairs can be quoted together for your Vaughan home. Include approximate dimensions and photos of marks or heavy-use areas. We explain what is treatable and provide drying guidance for the rooms being cleaned. Photos are optional."
+        "description": "For carpet in bedrooms, basements and on stairs, list the areas individually. Tell us if painting, sanding or other work is still happening so cleaning is not followed by another round of dust."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Include photos, dimensions and any care label for an area rug you want assessed. The material, dyes and backing determine whether in-home cleaning is suitable. We confirm the approach before including the rug in the agreed work. Photos are optional."
+        "description": "Include loose rugs as separate items with their approximate sizes. Hand-finished details, colour and backing can affect suitability. We will explain the approach before including a rug in the visit."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "A leather chair, upholstered bench or mattress needs its own assessment. Mention mixed materials and extra pieces when you contact us so the quote describes the whole job.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "Each material checked.",
+        "description": "We look at the fabric or leather on each item. Pieces in the same room do not automatically receive the same products or method."
       },
       {
-        "title": "Practical move-in planning.",
-        "description": "After moving or renovating, arrange cleaning around the remaining work. Send photos of carpeted rooms and upholstered items so we can confirm the work and a suitable appointment. Photos are optional."
+        "title": "Whole seating layouts included.",
+        "description": "Chaises, corner units and ottomans are easy to miss in a seat count. Tell us about them before the quote is confirmed."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Work timed sensibly.",
+        "description": "If you are renovating, discuss any dusty work still ahead. Cleaning is easier to plan when the rooms are ready and there is time for drying."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "Limits discussed openly.",
+        "description": "We can try to improve old stains and marked areas. Permanent colour change or wear may remain, and we explain that before starting."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "When should I clean the carpet in a new home?",
-        "answer": "Tell us about the carpet's condition and any construction or decorating still underway. We'll help you decide whether cleaning would be useful now or better left until the dusty work is finished. You can describe the rooms by phone or text; photos are optional."
+        "question": "Can fabric and leather furniture be cleaned in one visit?",
+        "answer": "Often, yes. Identify the material of each piece when you get in touch. Leather cleaning and conditioning are different from fabric cleaning, so we assess and price them separately."
       },
       {
-        "question": "Do you clean condos in Vaughan?",
-        "answer": "Yes. Share your parking and elevator-booking details with the quote request and we'll plan around your building's rules."
+        "question": "Does an ottoman count as part of the sectional?",
+        "answer": "Tell us about it explicitly. A matching ottoman, extra chaise or loose cushions should appear in the request so we can include the work in your quote."
       },
       {
-        "question": "How long until it's dry?",
-        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
+        "question": "Should I book carpet cleaning during renovations?",
+        "answer": "Wait until sanding, painting and other dusty work is finished where possible. Tell us what remains to be done and when the rooms need to be used."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "Do all items dry at the same rate?",
+        "answer": "No. Fabric thickness, padding and airflow matter. Most sofas take about six to eight hours; leather products have their own settling time. We explain the advice for each item."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "Can you treat a stain left by another cleaner?",
+        "answer": "We can assess it. Tell us which products or services were used and how the mark changed. Previous treatment can affect what is safe and how much improvement is possible."
       },
       {
-        "question": "Which parts of Vaughan do you cover?",
-        "answer": "We serve Vaughan, including Woodbridge, Maple, Kleinburg, Concord and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "Is the price confirmed before the appointment?",
+        "answer": "Yes. Describe the pieces and rooms, and we confirm the final price including tax before booking. Photos can help but you can request a quote without them."
       }
     ],
     "neighbourhoods": [
@@ -549,80 +556,80 @@ export const cityPages: Record<string, CityPageCopy> = {
       "Thornhill (Vaughan side)",
       "Patterson"
     ],
-    "coverage": "Sofa, carpet, rug and upholstery cleaning throughout Vaughan — houses, condos, townhouses and apartments.",
-    "coverageClosing": "Elsewhere in Vaughan? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your home in Vaughan?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "Furniture and carpet care, clearly planned."
+    "coverage": "Vaughan coverage includes these neighbourhoods. Furniture, carpet and rug requests can be discussed together.",
+    "coverageClosing": "For Thornhill, check that the address is on the Vaughan side, or send your postal code for us to confirm coverage.",
+    "ctaTitle": "Ask about your Vaughan furniture.",
+    "ctaDescription": "List the pieces and materials you want cleaned. We'll explain the work, discuss access and give you a tax-inclusive quote.",
+    "introductionHeading": "Different pieces, different care."
   },
   "milton": {
     "metaTitle": "Upholstery & Carpet Cleaning Milton | Sofa & Rug | SoftNest",
-    "metaDescription": "Sofa, upholstery and carpet cleaning in Milton. Plan furniture, room and stair cleaning together, with free quotes and a confirmed tax-inclusive price.",
-    "heroDescription": "Refresh well-used sofas, sectionals, carpets and area rugs with professional cleaning in Milton. Request a free quote for your home, townhouse or condo.",
+    "metaDescription": "Upholstery, sofa and carpet cleaning in Milton, including Beaty, Ford and Old Milton. Book one item or several rooms. Free quotes with tax included.",
+    "heroDescription": "Sofa, upholstery and carpet cleaning in Milton. Get help with a stained couch, carpeted stairs or several rooms before a move.",
     "introductionParagraphs": [
-      "Everyday spills, pet accidents and busy family life can leave furniture and carpets needing more than routine vacuuming. SoftNest Fabric Care provides upholstery and carpet cleaning across Milton, including Old Milton, Beaty, Clarke, Dempsey, Ford and Harrison.",
-      "Whether you need one couch cleaned or want to plan several rooms together, we confirm the items and areas before booking. Moving in or finishing renovations? Let us know your schedule so we can discuss cleaning after dusty work is complete and allow time for drying."
+      "SoftNest cleans furniture, fitted carpets and suitable area rugs in Milton, including Old Milton, Beaty, Clarke, Ford and Harrison. You can book a single piece or put furniture and carpet cleaning in the same request.",
+      "Moving in or having work done? Schedule cleaning after painting, sanding and other dusty work. Leave time for carpets and cushions to dry before moving furniture back or using the room."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "We clean sofas, loveseats and sectionals, paying attention to armrests, seat cushions and other areas where daily use leaves marks. Share a full photo of each piece, including the chaise, and point out stains or odours. We assess the material and can try to improve difficult or older marks, without promising complete removal. Photos are optional."
+        "description": "Armrests, seat cushions and a chaise can collect dirt at different rates. We check the whole sofa, treat spots and clean the surfaces included in your quote. Old marks can be treated too, although full removal isn't guaranteed."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Include bedrooms, basement carpets, hallways and carpeted stairs in your Milton request. Room dimensions, photos and stair counts help us understand the work. We explain the cleaning approach and expected drying conditions before you plan to use the area again. Photos are optional."
+        "description": "Bedrooms, basement rooms, hallways and carpeted stairs can be cleaned together. Tell us the room sizes and number of steps. We pay attention to busy paths and explain where flattened or worn carpet may still look different."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Want a rug cleaned during the same visit? Share its size, photos of both sides where practical, and the care label. We check the material and backing before confirming whether it is suitable for in-home treatment. Photos are optional."
+        "description": "A loose rug needs its own assessment, even when it sits on fitted carpet. Its fibres, colours and backing affect how we clean it. Let us know its size and whether there is a care label."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "Need the dining chairs or a mattress cleaned as well? Add them to your list before booking so there is enough time for the whole visit.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "A complete room list.",
+        "description": "Include stairs, landings and basement rooms when asking for carpet cleaning. This helps avoid leaving part of the job out of the quote."
       },
       {
-        "title": "Cleaning around your move.",
-        "description": "Share your move-in date or renovation schedule along with room and furniture photos. We can discuss timing so the clean follows dusty work and allows time for drying. Photos are optional."
+        "title": "Help with moving dates.",
+        "description": "Tell us when the keys arrive and when the rooms need to be ready. We can discuss cleaning and drying around your schedule."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Attention to everyday marks.",
+        "description": "Point out drink spills, dark armrests or pet accidents. We choose treatment for the fabric and explain what may remain."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "A price before booking.",
+        "description": "Your total includes tax. If you add another item, we discuss the extra work and price before cleaning it."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "When should I schedule carpet cleaning around a move?",
-        "answer": "Tell us your move date and whether painting or other dusty work is still happening. We'll help you choose a time that fits around the work and leaves enough drying time before furniture goes back. If the carpet is newly installed, we'll discuss whether it needs cleaning at all."
+        "question": "Should carpets be cleaned before or after moving?",
+        "answer": "After dusty work and before furniture fills the rooms is often practical. Tell us your dates and which rooms will be empty. Freshly installed carpet may not need cleaning."
       },
       {
-        "question": "How long until it's dry?",
-        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
+        "question": "Can you clean basement carpet and the stairs together?",
+        "answer": "Yes. Count the steps and landings as well as the basement rooms. Mention a separate entrance or a narrow staircase so we can plan how to reach the carpet."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "How much drying time should I leave?",
+        "answer": "Most sofas need about six to eight hours and most carpets about four to eight. Thick materials or a humid basement can take longer. Use them only when fully dry."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "What if a pet stain has been there for months?",
+        "answer": "Tell us where it is and what you've already tried. We can assess and treat older marks, but accidents that soaked into padding or carpet backing may leave some staining or smell."
       },
       {
-        "question": "Which parts of Milton do you cover?",
-        "answer": "We serve Milton, including Old Milton, Beaty, Clarke, Dempsey and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "Do I need to send photos of every room?",
+        "answer": "No. Room sizes, a stair count and a description are enough to start. If you want to send photos, a wide view and a close-up of the main concern are useful."
       }
     ],
     "neighbourhoods": [
@@ -636,84 +643,84 @@ export const cityPages: Record<string, CityPageCopy> = {
       "Timberlea",
       "Dorset Park"
     ],
-    "coverage": "Sofa, carpet, rug and upholstery cleaning throughout Milton — houses, townhouses, semis and condos.",
-    "coverageClosing": "Elsewhere in Milton? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your home in Milton?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "Cleaning for the rooms you use every day."
+    "coverage": "Our Milton coverage includes the neighbourhoods below. Cleaning takes place in your home; there is no need to bring furniture to us.",
+    "coverageClosing": "For another Milton address, ask us to check your postal code and available dates.",
+    "ctaTitle": "Need cleaning in Milton?",
+    "ctaDescription": "Tell us the items, rooms and date you have in mind. We'll help you put the visit together and give you a free quote.",
+    "introductionHeading": "One couch or several rooms."
   },
   "hamilton": {
     "metaTitle": "Upholstery & Carpet Cleaning Hamilton | Sofa & Rug | SoftNest",
-    "metaDescription": "Sofa, upholstery and carpet cleaning in Hamilton homes, apartments and condos. Explain your cleaning needs and request a free tax-inclusive quote.",
-    "heroDescription": "Professional sofa, upholstery and carpet cleaning in Hamilton homes, apartments and condos. Tell us what needs attention for a free quote and clear guidance before booking.",
+    "metaDescription": "Sofa, upholstery and carpet cleaning in Hamilton, including Dundas, Ancaster, Stoney Creek and Waterdown. In-home service with free quotes.",
+    "heroDescription": "In-home upholstery and carpet cleaning in Hamilton. Tell us about the furniture, floor levels and entry route so the visit can be planned before arrival.",
     "introductionParagraphs": [
-      "SoftNest Fabric Care offers sofa, upholstery and carpet cleaning in Hamilton. Include the furniture, carpeted rooms and suitable rugs you want assessed so we can confirm the work and appointment availability for your address.",
-      "Tell us about stairs, parking or building access. Photos and care labels are welcome if you wish. We discuss what can reasonably be improved and explain drying expectations before you plan to use the cleaned items again."
+      "SoftNest covers Hamilton addresses in Dundas, Ancaster, Westdale, Stoney Creek, Waterdown and the other areas below. We clean sofas, chairs, fitted carpets and suitable rugs, including requests across more than one floor.",
+      "Describe exterior steps, basement entrances and any stairs between the door and the items. If you live in an apartment or condo, include entry and elevator requirements. We check these details with your address before arranging the appointment."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "Request cleaning for sofas, loveseats and sectionals, from a single piece to several items in one appointment. Share full-item photos and any stain or odour concerns. We check the upholstery and condition before choosing a method and explaining its limits. Photos are optional."
+        "description": "We clean reachable upholstery on sofas and sectionals, checking the fabric and existing marks first. Tell us which room the piece is in and whether there is enough space around it to work."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Include carpeted rooms, hallways and stairs in your Hamilton request. Photos, dimensions and stair counts help define the work. We assess treatable marks and existing wear, then provide drying and after-care advice for the cleaned areas. Photos are optional."
+        "description": "Rooms, staircases and halls can be included in one carpet request. Count steps and landings separately, and identify narrow routes that need to stay clear. We discuss access during cleaning and while the carpet dries."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Area rugs need a material and backing check before treatment. Share their dimensions, photos and care labels where available. We confirm whether in-home cleaning is suitable and explain when another specialist approach would be needed. Photos are optional."
+        "description": "A rug on a hard floor or under furniture needs an assessment of its own. Let us know its dimensions and condition. We check the backing and colours before recommending cleaning in your home."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "You can also request dining chairs, an armchair or a mattress. Include the floor for each item and tell us about pet accidents that need extra attention.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "The entrance checked.",
+        "description": "Outside steps and separate basement doors can affect access. Explain the route when asking for a quote so we can discuss it early."
       },
       {
-        "title": "Honest about older carpet.",
-        "description": "Embedded soil may be treatable while worn fibres and colour loss remain. We assess the carpet first and explain the likely improvement rather than promising to make every older surface look new."
+        "title": "All floors considered.",
+        "description": "List rooms and pieces by floor. That helps us plan the visit and identify stairs or hallways that also need cleaning."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Advice for older marks.",
+        "description": "Tell us the age of a stain and anything used on it. We can assess treatment without promising that worn or discoloured areas will look new."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "No transport needed.",
+        "description": "Furniture cleaning takes place at your home. For rugs that need another kind of specialist care, we explain the limits before booking."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "Can old carpet with years of buildup actually be cleaned?",
-        "answer": "Yes. Removing built-up dirt can often make older carpet look fresher. Show us the stains or worn-looking areas and tell us about any products you've tried so we can choose a treatment. Permanent wear or colour changes may still show, but we can try to improve the overall appearance and explain what to expect before starting."
+        "question": "Can you clean a room reached through a basement entrance?",
+        "answer": "Explain the entrance, steps and room layout first. We check access before agreeing on the job; a photo is useful if you want to show a tight route."
       },
       {
-        "question": "Can you remove dust and pet dander from carpet?",
-        "answer": "Cleaning helps lift trapped dirt, dust and pet dander from carpet and fabric furniture. Tell us which rooms or pieces your pets use most so we can plan the cleaning around the areas that need attention. We'll explain the method and the drying time before we start."
+        "question": "What should I tell you about exterior stairs?",
+        "answer": "Give the approximate step count and describe the path from parking to the door. Mention narrow passages or shared entrances so we can discuss access."
       },
       {
-        "question": "How long until it's dry?",
-        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
+        "question": "Can you include a hallway between rooms?",
+        "answer": "Yes. List it separately with an approximate length and width. Include connecting stairs and landings if you want those cleaned too."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "What if the carpet is old but still usable?",
+        "answer": "We can clean suitable older carpet and try to improve stains. Worn edges, flattened fibres or permanent colour changes may remain. We assess the condition before starting."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "When can carpeted stairs be used again?",
+        "answer": "They often need about four to eight hours to dry. If they are the only route between floors, tell us beforehand so we can discuss safe access and timing."
       },
       {
-        "question": "Which parts of Hamilton do you cover?",
-        "answer": "We serve Hamilton, including Dundas, Ancaster, Westdale, Durand and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "Do you serve Waterdown and Binbrook?",
+        "answer": "They are included in our listed Hamilton coverage. Send the postal code and a description of the job so we can confirm the address and available appointments."
       }
     ],
     "neighbourhoods": [
@@ -726,80 +733,80 @@ export const cityPages: Record<string, CityPageCopy> = {
       "Waterdown",
       "Binbrook"
     ],
-    "coverage": "Sofa, carpet, rug and upholstery cleaning throughout Hamilton — houses, condos, townhouses and apartments.",
-    "coverageClosing": "Elsewhere in Hamilton? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your home in Hamilton?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "Care for the furniture you live with."
+    "coverage": "We offer in-home cleaning in the Hamilton areas below. The postal code and entrance details help us check each request.",
+    "coverageClosing": "If your Hamilton address is not listed, contact us to ask about coverage before planning the visit.",
+    "ctaTitle": "Check your Hamilton appointment.",
+    "ctaDescription": "Call, text or use the form with your address and item list. We'll discuss access and confirm a free quote with tax included.",
+    "introductionHeading": "Know the rooms and the route."
   },
   "oakville": {
     "metaTitle": "Upholstery & Carpet Cleaning Oakville | Sofa & Rug | SoftNest",
-    "metaDescription": "Upholstery, sofa and carpet cleaning across Oakville, from Bronte to Glen Abbey and Joshua Creek. Request a free quote with a confirmed tax-inclusive price.",
-    "heroDescription": "Bring a fresher feel to your sofas, chairs, carpets and area rugs. Professional cleaning across Oakville, with care matched to the material and clear expectations before work begins.",
+    "metaDescription": "Sofa, carpet and upholstery cleaning in Oakville, including Bronte, Glen Abbey and Joshua Creek. Furniture sets and suitable rugs. Free tax-inclusive quotes.",
+    "heroDescription": "Professional sofa, carpet and upholstery cleaning in Oakville. Book a couch, dining set or suitable rug, or have several pieces cleaned together.",
     "introductionParagraphs": [
-      "SoftNest Fabric Care offers upholstery, sofa and carpet cleaning across Oakville, including Bronte, Glen Abbey, River Oaks and Joshua Creek. We help with everyday furniture in houses, townhouses and condos, from a favourite couch to a dining-chair set or sectional.",
-      "Tell us about spills, visible marks, pet odours or general buildup. We assess what can reasonably be improved, explain the proposed work and confirm the work before cleaning. You do not need to identify the fabric yourself; a photo of the care label helps us prepare."
+      "SoftNest provides in-home cleaning across Oakville, including Bronte, Glen Abbey, River Oaks and Joshua Creek. We work on sofas, chairs, carpets and suitable rugs. A favourite chair can be booked on its own or with other items.",
+      "Matching furniture does not always mean matching fabric. Seat covers, cushions and chair backs may need different care. We inspect the items, explain the cleaning plan and check the price with you before starting."
     ],
     "services": [
       {
         "title": "Sofas",
         "slug": "sofa-cleaning",
-        "description": "We clean loveseats, sofas and sectionals, including the accessible cushions and high-use areas agreed in your quote. Share a photo of the whole piece and close-ups of any concerns. Material and condition guide the treatment. We can try to improve old stains, wear or colour changes, without promising complete removal or restoration. Photos are optional."
+        "description": "We clean the agreed sofa surfaces, including accessible cushions and well-used arms. Point out the areas that bother you most. Cleaning can improve old marks, but it won't always restore worn fabric or lost colour."
       },
       {
         "title": "Carpets",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Ask about carpet cleaning for bedrooms, living rooms, hallways and stairs in your Oakville home. Room sizes and stair counts help us quote the complete work. We discuss stains, access and expected drying conditions so you can plan around the visit."
+        "description": "Carpet cleaning can cover a whole room or the accessible areas around furniture. Let us know which you want. We treat spots and clean busy paths, with drying advice for the pile and room conditions."
       },
       {
         "title": "Area rugs",
         "slug": "carpet-area-rug-cleaning",
-        "description": "Tell us your rug dimensions when requesting a quote. Care labels and photos are optional. We check the material, dyes and backing before recommending in-home cleaning. Some delicate or unstable rugs require specialist off-site care instead."
+        "description": "Tell us whether the rug is wool, synthetic or unknown, and whether it has a care label. We check the dyes and backing too. Rugs that need specialist off-site treatment are discussed before booking."
       }
     ],
-    "more": "You can also ask about chairs, mattresses and pet stain or odour treatment. Include all the items and concerns in one request so we can confirm suitability, the complete work and appointment time.",
+    "more": "Dining-chair seats, upholstered backs and benches can be quoted as a set. Leather furniture and mattresses are separate services; include them if you want one appointment for several items.",
     "advantages": [
       {
-        "title": "Care suited to the material.",
-        "description": "We assess the fabric, condition and care information before choosing a treatment for each item."
+        "title": "Each piece checked.",
+        "description": "We look at fabric, trim and condition, including differences between pieces in a matching set. A single method may not suit everything."
       },
       {
-        "title": "One trip, everything planned.",
-        "description": "Sofas, carpets, suitable rugs, chairs and mattresses can be included in one request. We confirm the work and appointment time before booking."
+        "title": "Seats and backs defined.",
+        "description": "Your quote identifies the parts to be cleaned. Loose cushions, ottomans and upholstered chair backs should be included when you describe the job."
       },
       {
-        "title": "Realistic advice on results.",
-        "description": "We explain which marks may improve and where wear, lost colour or spills deep in the material may limit the result."
+        "title": "Optional protection explained.",
+        "description": "After cleaning, some fabrics can receive a protective treatment. We check suitability and explain what it can and cannot do."
       },
       {
-        "title": "Clear quotes and pricing.",
-        "description": "The agreed quote includes tax. Any additional items or treatments are discussed and agreed with you before work begins."
+        "title": "No price guessing.",
+        "description": "Ask for a free quote before deciding. The agreed total includes tax, and extra items are priced with your approval."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or request a quote through our website. Tell us your city and what you'd like cleaned. Photos can help, but you don't have to send any. We'll confirm the final price, tax included, before you book."
+        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
-        "question": "What should I arrange for an Oakville condo appointment?",
-        "answer": "Include parking instructions, entry arrangements and any building rules with your request. Check whether your building requires an elevator reservation or documents from contractors, and tell us before booking so we can confirm whether the arrangements can be met."
+        "question": "Can a sofa and dining chairs be cleaned together?",
+        "answer": "Yes. Give us the sofa size, chair count and whether the chair backs are upholstered. Mention any bench or ottoman separately so the quote covers everything you want cleaned."
       },
       {
-        "question": "How long until it's dry?",
-        "answer": "Most sofas dry in about six to eight hours. Carpet drying depends on the material, room conditions and how much cleaning is needed. We'll explain the expected timing and how to help the area dry. Wait until the fabric or carpet is fully dry before using it."
+        "question": "What if I do not know the fabric type?",
+        "answer": "You don't need to identify it yourself. We check the material and care information. If you have a label, you can describe it or send a photo, but photos aren't required."
       },
       {
-        "question": "Can you get pet stains and odour out?",
-        "answer": "We can usually remove pet stains and odours. Older or repeated accidents may have soaked into cushions or carpet backing, so they can need more attention. Show us the affected areas and tell us about any products you've tried. We'll choose a suitable treatment and do our best to improve the stain and smell, without promising complete removal."
+        "question": "Will cleaning fix worn areas on my sofa?",
+        "answer": "Dirt and stains may improve, while wear, faded colour and damaged fibres can still show. We assess the area and explain what treatment is worth trying without promising restoration."
       },
       {
-        "question": "What is fabric protection?",
-        "answer": "Fabric protection is an optional treatment we can apply after cleaning if it suits the material. It can make some spills easier to clean up, but doesn't make fabric stain-proof. Ask us about it when you book and we'll check whether it's right for your furniture."
+        "question": "Is fabric protection worth adding?",
+        "answer": "It can make some spills easier to clean up on suitable fabrics. It doesn't make furniture stain-proof or replace routine care. Ask us to check whether it suits your piece."
       },
       {
-        "question": "Which parts of Oakville do you cover?",
-        "answer": "We serve Oakville, including Old Oakville, Bronte, Glen Abbey, Clearview and the other areas listed below. Send your postal code, the items you need cleaned and access details so we can confirm coverage and an appointment."
+        "question": "What needs arranging for an Oakville condo?",
+        "answer": "Check parking, entry instructions and any elevator booking. Tell us about contractor paperwork or service-hour rules before choosing the appointment so we can confirm the arrangements."
       }
     ],
     "neighbourhoods": [
@@ -812,10 +819,17 @@ export const cityPages: Record<string, CityPageCopy> = {
       "Palermo",
       "Joshua Creek"
     ],
-    "coverage": "Sofa, carpet, rug and upholstery cleaning throughout Oakville — houses, townhouses, condos and apartments.",
-    "coverageClosing": "Elsewhere in Oakville? Send your postal code and access details so we can confirm coverage and appointment availability.",
-    "ctaTitle": "Ready to refresh your home in Oakville?",
-    "ctaDescription": "Call, message us or request a free quote through the form. Photos are optional. We confirm the work and a tax-inclusive price before booking.",
-    "introductionHeading": "Practical care for well-used furniture."
+    "coverage": "Oakville appointments are available for houses, townhouses, apartments and condos in the areas below.",
+    "coverageClosing": "Outside these neighbourhoods but still in Oakville? Share your postal code when you contact us.",
+    "ctaTitle": "Get an Oakville cleaning quote.",
+    "ctaDescription": "Tell us which pieces or carpeted areas need attention. You can call, text or use the form, with or without photos.",
+    "introductionHeading": "Care for the furniture you have."
   }
+};
+
+// Published Studio edits take precedence; the reviewed copy remains a fallback
+// for a new dataset until its local-page records have been created.
+export const cityPages: Record<string, CityPageCopy> = {
+  ...reviewedCityPages,
+  ...localCopy.cities as Record<string, CityPageCopy>,
 };

@@ -17,6 +17,8 @@ const representativeRoutes = [
   ["quote", "/quote/"],
   ["blog", "/blog/"],
   ["about", "/about/"],
+  ["Our Work", "/our-work/"],
+  ["Card", "/card/"],
 ] as const;
 
 for (const [name, route] of representativeRoutes) {

@@ -7,7 +7,7 @@ import { MobileHeaderNavigation } from "@/components/navigation/MobileHeaderNavi
 import { ServiceIcon, iconBySlug, mobileServiceSlugs, navigation, type NavigationService } from "@/components/navigation/navigationData";
 
 type HeaderNavigationProps = {
-  current?: "blog" | "locations" | "services";
+  current?: "blog" | "locations" | "services" | "work";
   actions: ReactNode;
   services: NavigationService[];
   quoteHref: string;
@@ -264,10 +264,12 @@ export default function HeaderNavigation({
             href={item.href}
             key={item.label}
             className={
-              current === "blog" && item.href === "/blog/"
+              (current === "blog" && item.href === "/blog/") ||
+              (current === "work" && item.href === "/our-work/")
                 ? "is-active"
                 : undefined
             }
+            aria-current={current === "work" && item.href === "/our-work/" ? "page" : undefined}
           >
             {item.label}
           </Link>

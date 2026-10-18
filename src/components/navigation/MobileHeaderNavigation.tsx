@@ -122,6 +122,9 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
           <Link prefetch={false} href="/blog/" onClick={() => setOpen(false)}>
             Blog
           </Link>
+          <Link prefetch={false} href="/our-work/" onClick={() => setOpen(false)}>
+            Our Work
+          </Link>
           <Link prefetch={false} href="/about/" onClick={() => setOpen(false)}>
             About SoftNest
           </Link>

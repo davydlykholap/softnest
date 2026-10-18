@@ -2,7 +2,7 @@ import Image from "@/components/ResponsiveImage";
 import Link from "next/link";
 import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
-import LocationReviews from "@/components/locations/LocationReviews";
+import LocalWorkEvidence from "@/components/LocalWorkEvidence";
 import HeroActionButtons from "@/components/HeroActionButtons";
 import type { CityPageCopy } from "@/content/cityPages";
 import type { Location } from "@/content/locations";
@@ -92,7 +92,7 @@ export default function CityPageSections({ location, copy }: { location: Locatio
         </div>
       </section>
 
-      <LocationReviews />
+      <LocalWorkEvidence city={location.slug} cityName={location.name} fallbackReviews />
 
       <section className={styles.coverage} aria-labelledby="city-coverage-heading">
         <div className={styles.coverageCopy}>

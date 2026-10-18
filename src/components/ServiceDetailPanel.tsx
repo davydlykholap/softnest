@@ -1,8 +1,10 @@
 import FaqAccordion from "@/components/FaqAccordion";
 import Image from "@/components/ResponsiveImage";
 import ServiceResultCompare from "@/components/ServiceResultCompare";
+import Link from "next/link";
 import type { Service } from "@/content/services";
-import { getProjects, getTestimonials } from "@/content/pages";
+import { getTestimonials } from "@/content/pages";
+import { getWorkProjects } from "@/content/work";
 import styles from "@/app/services/service-page.module.css";
 
 const inspectionNotes: Record<string, string> = {
@@ -36,7 +38,7 @@ export default function ServiceDetailPanel({
   service: Service;
   headingLevel?: 1 | 2;
 }) {
-  const project = getProjects({ service: service.slug })[0];
+  const project = getWorkProjects({ service: service.slug })[0];
   const review = getTestimonials().find((item) =>
     (item.services as string[]).includes(service.slug),
   );
@@ -74,12 +76,10 @@ export default function ServiceDetailPanel({
           <article>
             <NoteHeading>What the cleaning includes</NoteHeading>
             <p>
-              The confirmed service can include {naturalList(service.included)}.
+              Your cleaning can include {naturalList(service.included)}.
             </p>
             <p>
-              We review the item with you before starting, confirm which accessible
-              surfaces are included and adjust the approach when the material or
-              condition calls for extra care.
+              We confirm the areas to be cleaned and explain the method before starting.
             </p>
           </article>
         </div>
@@ -87,9 +87,8 @@ export default function ServiceDetailPanel({
         <div className={styles.examplesNote}>
           <NoteHeading>When this service may be a good fit</NoteHeading>
           <p>
-            Homeowners commonly contact us about {naturalList(service.concerns)}.
-            If you would like to share photos, they can help us understand the item
-            and recommend a service. Photos are optional.
+            Ask us about {naturalList(service.concerns)}. You can describe the
+            problem by phone or text. Photos are welcome but optional.
           </p>
         </div>
       </section>
@@ -103,12 +102,14 @@ export default function ServiceDetailPanel({
               <span>Difference.</span>
             </SectionHeading>
             <p className={styles.resultFeatureDescription}>
-              A real SoftNest cleaning result from {project.location}.
+              {project.location ? `A SoftNest cleaning result from ${project.location}.` : "An example of our cleaning work."}
             </p>
             <div className={styles.resultFeatureMeta}>
               <strong>{project.category} · {project.service}</strong>
               <span>{project.location}</span>
             </div>
+            {project.imageNote ? <p>{project.imageNote}</p> : null}
+            <p><Link href="/our-work/">See more before-and-after results</Link></p>
           </div>
           <div className={styles.resultFeatureMedia}>
             <ServiceResultCompare

@@ -1,5 +1,6 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
 import { businessTypes } from './business';
+import { localCityCopy, localServiceCopy } from './localCopy';
 
 const image = (name: string, title: string) =>
   defineField({
@@ -160,4 +161,4 @@ const post = defineType({
   ],
 });
 
-export const schemaTypes = [post, author, category, ...businessTypes];
+export const schemaTypes = [post, author, category, ...businessTypes, localCityCopy, localServiceCopy];

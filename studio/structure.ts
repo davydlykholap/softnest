@@ -4,6 +4,7 @@ import type {
   StructureResolver,
 } from "sanity/structure";
 import { WebsitePreview } from "./components/WebsitePreview";
+import { PublishingGuide } from "./components/PublishingGuide";
 
 const previewTypes = new Set(["post", "service", "location", "pageContent"]);
 
@@ -34,6 +35,7 @@ export const structure: StructureResolver = (S) =>
   S.list()
     .title("SoftNest")
     .items([
+      S.listItem().title("Publishing help").child(S.component(PublishingGuide).title("Publishing help")),
       S.listItem()
         .title("Website")
         .child(
@@ -54,6 +56,8 @@ export const structure: StructureResolver = (S) =>
             .items([
               S.documentTypeListItem("service").title("Services"),
               S.documentTypeListItem("location").title("Service areas"),
+              S.documentTypeListItem("localCityCopy").title("City page wording"),
+              S.documentTypeListItem("localServiceCopy").title("City service wording"),
             ]),
         ),
       S.listItem()

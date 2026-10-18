@@ -101,7 +101,7 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
           </h3>
           <ul className="footer-service-list space-y-2 text-sm text-stone-700">
             <li><Link prefetch={false} href="/about/">About SoftNest</Link></li>
-            <li><Link prefetch={false} href="/#results">Our Results</Link></li>
+            <li><Link prefetch={false} href="/our-work/">Our Work</Link></li>
             <li><Link prefetch={false} href="/blog/">Care Journal</Link></li>
             <li><Link prefetch={false} href={quoteHref}>Get a quote</Link></li>
           </ul>

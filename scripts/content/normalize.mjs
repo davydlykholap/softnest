@@ -386,6 +386,46 @@ export function normalizeContent(documents, config) {
         right.publishedAt.localeCompare(left.publishedAt),
     );
 
+  const localCopy = { cities: {}, services: {} };
+  for (const document of ordered("localCityCopy")) {
+    const location = byId.get(document.city?._ref);
+    if (location?._type !== "location") fail(document, "Missing or invalid city copy reference");
+    const city = slug(location);
+    if (localCopy.cities[city]) fail(document, "Duplicate city copy");
+    const keys = ["metaTitle", "metaDescription", "heroDescription", "introductionHeading", "more", "coverage", "coverageClosing", "ctaTitle", "ctaDescription"];
+    required(document, keys);
+    if (!Array.isArray(document.introductionParagraphs) || !document.introductionParagraphs.length ||
+      document.introductionParagraphs.some((item) => typeof item !== "string" || !item.trim())) fail(document, "Missing introduction paragraphs");
+    if (!Array.isArray(document.neighbourhoods) || !document.neighbourhoods.length ||
+      document.neighbourhoods.some((item) => typeof item !== "string" || !item.trim())) fail(document, "Missing neighbourhoods");
+    for (const [key, fields, count] of [["services", ["title", "slug", "description"], 3], ["advantages", ["title", "description"], 4], ["faqs", ["question", "answer"], undefined]]) {
+      if (!Array.isArray(document[key]) || !document[key].length || (count && document[key].length !== count)) fail(document, `Invalid ${key} copy`);
+      for (const row of document[key]) required(row, fields);
+    }
+    for (const item of document.services) {
+      if (!services.some((service) => service.slug === item.slug)) fail(document, "Unknown service in city copy");
+    }
+    if (document.faqs.length < 3 || document.faqs.length > 10) fail(document, "City copy requires 3–10 FAQs");
+    if (document.introductionParagraphs.length > 3) fail(document, "City copy allows up to three introduction paragraphs");
+    localCopy.cities[city] = Object.fromEntries([...keys, "introductionParagraphs", "services", "advantages", "faqs", "neighbourhoods"].map((key) => [key, document[key]]));
+  }
+  for (const document of ordered("localServiceCopy")) {
+    const location = byId.get(document.city?._ref);
+    const service = byId.get(document.service?._ref);
+    if (location?._type !== "location" || service?._type !== "service") fail(document, "Missing or invalid local service copy reference");
+    const city = slug(location);
+    const serviceSlug = slug(service);
+    required(document, ["introduction", "bookingNote", "visit"]);
+    if (!document.question) fail(document, "Missing practical question");
+    required(document.question, ["question", "answer"]);
+    localCopy.services[city] ??= {};
+    if (localCopy.services[city][serviceSlug]) fail(document, "Duplicate city service copy");
+    localCopy.services[city][serviceSlug] = {
+      introduction: document.introduction, bookingNote: document.bookingNote, visit: document.visit,
+      question: { question: document.question.question, answer: document.question.answer },
+    };
+  }
+
   return {
     settings: {
       ...settings,
@@ -406,5 +446,6 @@ export function normalizeContent(documents, config) {
     faqs: ordered("faq").filter((document) => document.onHomepage).map(faq),
     quoteCategories,
     posts,
+    localCopy,
   };
 }

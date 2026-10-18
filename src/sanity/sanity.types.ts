@@ -15,11 +15,71 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type LocationReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "location";
+};
+
 export type ServiceReference = {
   _ref: string;
   _type: "reference";
   _weak?: boolean;
   [internalGroqTypeReferenceTo]?: "service";
+};
+
+export type LocalServiceCopy = {
+  _id: string;
+  _type: "localServiceCopy";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  city: LocationReference;
+  service: ServiceReference;
+  introduction: string;
+  bookingNote: string;
+  visit: string;
+  question: {
+    question: string;
+    answer: string;
+  };
+};
+
+export type LocalCityCopy = {
+  _id: string;
+  _type: "localCityCopy";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  city: LocationReference;
+  metaTitle: string;
+  metaDescription: string;
+  heroDescription: string;
+  introductionHeading: string;
+  introductionParagraphs: Array<string>;
+  services: Array<{
+    title: string;
+    slug: string;
+    description: string;
+    _key: string;
+  }>;
+  more: string;
+  advantages: Array<{
+    title: string;
+    description: string;
+    _key: string;
+  }>;
+  faqs: Array<{
+    question: string;
+    answer: string;
+    _key: string;
+  }>;
+  neighbourhoods: Array<string>;
+  coverage: string;
+  coverageClosing: string;
+  ctaTitle: string;
+  ctaDescription: string;
 };
 
 export type PageContent = {
@@ -77,13 +137,6 @@ export type SanityImageAssetReference = {
   [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
 };
 
-export type LocationReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "location";
-};
-
 export type CleaningProject = {
   _id: string;
   _type: "cleaningProject";
@@ -107,6 +160,7 @@ export type CleaningProject = {
   image?: string;
   variant?: "single" | "paired";
   fabric?: string;
+  imageNote?: string;
   problem?: string;
   treatment?: string;
   result?: string;
@@ -619,11 +673,13 @@ export type Geopoint = {
 };
 
 export type AllSanitySchemaTypes =
+  | LocationReference
   | ServiceReference
+  | LocalServiceCopy
+  | LocalCityCopy
   | PageContent
   | QuoteCategory
   | SanityImageAssetReference
-  | LocationReference
   | CleaningProject
   | SanityImageCrop
   | SanityImageHotspot
@@ -650,7 +706,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../src/sanity/queries.ts
 // Variable: websiteContentQuery
-// Query: *[  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category"] &&  (_type != "pageContent" || _id == "page-content-home")] | order(_id asc)
+// Query: *[  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category","localCityCopy","localServiceCopy"] &&  (_type != "pageContent" || _id == "page-content-home")] | order(_id asc)
 export type WebsiteContentQueryResult = Array<
   | {
       _id: string;
@@ -691,6 +747,7 @@ export type WebsiteContentQueryResult = Array<
       image?: string;
       variant?: "paired" | "single";
       fabric?: string;
+      imageNote?: string;
       problem?: string;
       treatment?: string;
       result?: string;
@@ -730,6 +787,57 @@ export type WebsiteContentQueryResult = Array<
           _key: string;
         } & LocationReference
       >;
+    }
+  | {
+      _id: string;
+      _type: "localCityCopy";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      city: LocationReference;
+      metaTitle: string;
+      metaDescription: string;
+      heroDescription: string;
+      introductionHeading: string;
+      introductionParagraphs: Array<string>;
+      services: Array<{
+        title: string;
+        slug: string;
+        description: string;
+        _key: string;
+      }>;
+      more: string;
+      advantages: Array<{
+        title: string;
+        description: string;
+        _key: string;
+      }>;
+      faqs: Array<{
+        question: string;
+        answer: string;
+        _key: string;
+      }>;
+      neighbourhoods: Array<string>;
+      coverage: string;
+      coverageClosing: string;
+      ctaTitle: string;
+      ctaDescription: string;
+    }
+  | {
+      _id: string;
+      _type: "localServiceCopy";
+      _createdAt: string;
+      _updatedAt: string;
+      _rev: string;
+      city: LocationReference;
+      service: ServiceReference;
+      introduction: string;
+      bookingNote: string;
+      visit: string;
+      question: {
+        question: string;
+        answer: string;
+      };
     }
   | {
       _id: string;
@@ -1088,7 +1196,7 @@ export type WebsiteContentQueryResult = Array<
 // Query TypeMap
 declare global {
   interface SanityQueries {
-    '*[\n  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category"] &&\n  (_type != "pageContent" || _id == "page-content-home")\n] | order(_id asc)': WebsiteContentQueryResult;
+    '*[\n  _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category","localCityCopy","localServiceCopy"] &&\n  (_type != "pageContent" || _id == "page-content-home")\n] | order(_id asc)': WebsiteContentQueryResult;
   }
 }
 // Lets @sanity/client releases that predate the global registry read it too

@@ -15,5 +15,5 @@ config.dataset=process.env.SANITY_DATASET||config.dataset;
 const client=createClient({...config,apiVersion:'2026-09-01',useCdn:false,token});
 let timer;let syncing=false;let pending=false;
 async function refresh(){if(syncing){pending=true;return}syncing=true;try{await sync()}catch(e){console.error(e.message)}finally{syncing=false;if(pending){pending=false;void refresh()}}}
-const listener=client.listen('*[_type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category"]]',{}, {includeResult:false,visibility:'query'}).subscribe({next:()=>{clearTimeout(timer);timer=setTimeout(refresh,900)},error:()=>console.error('Preview connection lost. Restart npm run preview to reconnect.')});
+const listener=client.listen('*[_type in ["siteSettings","service","location","localCityCopy","localServiceCopy","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category"]]',{}, {includeResult:false,visibility:'query'}).subscribe({next:()=>{clearTimeout(timer);timer=setTimeout(refresh,900)},error:()=>console.error('Preview connection lost. Restart npm run preview to reconnect.')});
 const stop=()=>{clearTimeout(timer);listener.unsubscribe();server.kill();};process.on('SIGINT',stop);process.on('SIGTERM',stop);server.on('exit',()=>{listener.unsubscribe();process.exit()});

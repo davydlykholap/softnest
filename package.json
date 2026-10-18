@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "studio": "npm run dev --prefix studio",
-    "studio:deploy": "npm run deploy --prefix studio",
+    "studio:deploy": "npm run studio:check && node scripts/prepare-studio.mjs && node scripts/deploy-studio.mjs && npm run register --prefix studio",
+    "content:seed-local-copy": "node scripts/content/seed-local-copy.mjs",
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint .",

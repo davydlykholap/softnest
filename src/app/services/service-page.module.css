@@ -345,14 +345,9 @@
   background-position: right center;
 }
 
-.resultCompareSingle .resultLayer {
-  background-position: center;
-  background-size: cover;
-}
-
-.resultCompareSingle .resultLayerBefore {
-  filter: sepia(.35) saturate(.7) brightness(.78);
-}
+.resultLabel { position: absolute; z-index: 2; top: 14px; padding: 5px 10px; border-radius: 999px; color: #fff; background: #15221cd9; font-family: var(--text-sans); font-size: 12px; line-height: 1.4; pointer-events: none; }
+.resultLabelBefore { left: 14px; }
+.resultLabelAfter { right: 14px; }
 
 .resultDivider {
   position: absolute;

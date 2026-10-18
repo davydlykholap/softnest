@@ -1,6 +1,14 @@
 # Editing and publishing SoftNest
 
-This document describes the current Sanity editor and publishing workflow as of 2026-10-02.
+This document describes the current Sanity editor and publishing workflow as of 2026-10-18.
+
+## Hosted Studio
+
+Open **https://studio.softnestcare.ca** and sign in with the existing Sanity project account. Editing requires Sanity authentication and project permission. No API token is embedded in its assets.
+
+Studio is hosted separately in `davydlykholap/softnest-studio` on GitHub Pages. Namecheap has a `studio` CNAME to `davydlykholap.github.io`. The exact Studio origin is allowed in Sanity CORS with credentials. Studio has a noindex tag and robots exclusion.
+
+To update Studio code/schema, run `npm run studio:deploy` from the root. It validates/builds Studio, prepares the static SPA fallback and publishes only compiled public assets through the saved GitHub credentials. It does not deploy the main website. The external Sanity application is registered in `studio/sanity.cli.ts`.
 
 ## Start the editor
 
@@ -16,7 +24,7 @@ The Studio navigation currently exposes:
 
 - Business settings and Homepage;
 - Quote form choices;
-- Services and Service areas;
+- Services, Service areas, City page wording and City service wording;
 - Cleaning results, Customer reviews and Common questions;
 - Blog posts, Authors and Categories.
 
@@ -49,11 +57,11 @@ The core controls are independent:
 
 A not-served area cannot publish a page. An unpublished page cannot be indexable or appear in the footer; content validation enforces those rules.
 
-Every published city uses the same shared `LocationPage` template. **Local page overrides** are optional. Most cities can rely on shared defaults; fill the override object only when there is accurate city-specific hero/map/benefit/service/FAQ/copy content worth maintaining.
+Every published city uses the shared `LocationPage` template. **City page wording** owns the reviewed search title/description, introduction, service descriptions, reasons to book, neighbourhood coverage, local FAQs and final quote wording. All nine records are seeded.
 
-The former `expanded` checkbox is retired and ignored even if an older record still contains it. The existence of valid local override content is what matters now.
+**City service wording** contains 90 short records: opening description, booking details, visit guidance and one practical FAQ. Service facts, drying and treatment limits remain in **Services**. Coverage and indexability flags remain in **Service areas**. Older local overrides are retained for existing hero/layout data; their old text is superseded by the reviewed wording records.
 
-The FAQ list inside local overrides is displayed in Studio as **Local FAQs**. Its underlying Sanity field name is still `mississaugaFaqs` solely to preserve existing production data without a risky migration; treat it as generic local content.
+Published wording overrides the reviewed code fallback after `content:sync`. Do not edit generated JSON. `npm run content:seed-local-copy -- --dry-run` checks the seed; the command without `--dry-run` creates only missing records and preserves editor changes.
 
 ## Reviews and cleaning results
 
@@ -93,7 +101,7 @@ Edit ? Publish in Sanity ? GitHub Pages build ? validated static site
 
 `npm run check` uses **published** Sanity data. If validation/build fails, the current deployed website remains in place.
 
-A Sanity webhook can trigger `.github/workflows/deploy-pages.yml` through the `sanity-content-published` repository-dispatch event. Configure it with `scripts/content/configure-webhook.mjs`. The setup script requires local tokens; those values must never be bundled into the site.
+No publishing webhook was configured when checked on October 18. Use **Publishing help** in Studio to open the deployment workflow after publishing. A Sanity webhook can trigger `.github/workflows/deploy-pages.yml` using workflow dispatch. Configure it with `scripts/content/configure-webhook.mjs`. The setup script requires local tokens; those values must never be bundled into the site.
 
 If the webhook is not operational, run the **Deploy SoftNest to GitHub Pages** workflow manually after publishing.
 
@@ -131,3 +139,11 @@ Public browser/build settings are documented in `.env.example` and centralized i
 - optional `NEXT_PUBLIC_YOUTUBE_URL`.
 
 These are public identifiers/URLs, not private credentials. Sanity read/write tokens and the GitHub workflow token are private and must remain unprefixed/local or in the appropriate platform secret storage.
+
+## Our Work and Card
+
+Approved cleaning results populate `/our-work/` automatically after a successful website build. Service/city filters use the assigned references. Material, problem, treatment, result and photo context appear when supplied. Use photo context for any reconstruction/editing that affects how a before/after comparison should be read. A single photo is never converted into a synthetic before view.
+
+Card's three main actions go to the quote form, Our Work and Google reviews. Card is a QR/contact utility and remains noindex, follow. Both pages retain the existing website fonts, colours and components.
+
+Deploy the main website source changes before new wording/gallery features become visible publicly. The hosted Studio is a separate deployment. Homepage copy/layout is deferred to a later pass.

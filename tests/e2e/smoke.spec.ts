@@ -48,10 +48,10 @@ test("homepage and desktop navigation work", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Professional Care");
 });
 
-test("home and city pages share the same customer reviews section", async ({ page }) => {
+test("homepage customer reviews work on mobile and desktop", async ({ page }) => {
   await page.setViewportSize({ width: 402, height: 827 });
 
-  for (const path of ["/", "/location/mississauga/"]) {
+  for (const path of ["/"]) {
     await page.goto(path);
     const section = page.locator("#reviews.customer-reviews");
     await expect(section).toBeVisible();

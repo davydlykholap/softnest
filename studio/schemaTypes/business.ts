@@ -505,6 +505,7 @@ export const businessTypes = [
         "Paired means the original image already contains a side-by-side before/after comparison.",
     }),
     text("fabric"),
+    defineField({ name: "imageNote", title: "Photo context", type: "text", description: "Explain any reconstruction or editing that affects how the comparison should be read. Displayed with the photo on Our Work." }),
     text("problem", false, true),
     text("treatment", false, true),
     text("result", false, true),
