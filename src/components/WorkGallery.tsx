@@ -26,10 +26,10 @@ export default function WorkGallery({ projects, services, locations }: {
         <option value="">All services</option>
         {services.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
       </select></label>
-      <label>Area<select aria-label="Area" disabled={!isInteractive} value={city} onChange={(event) => setCity(event.target.value)}>
+      {locations.length > 0 ? <label>Area<select aria-label="Area" disabled={!isInteractive} value={city} onChange={(event) => setCity(event.target.value)}>
         <option value="">All areas</option>
         {locations.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
-      </select></label>
+      </select></label> : null}
       <p role="status">{visible.length} {visible.length === 1 ? "result" : "results"}</p>
       {service || city ? <button type="button" onClick={reset}>Clear filters</button> : null}
     </div>

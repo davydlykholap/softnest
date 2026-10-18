@@ -2233,25 +2233,22 @@
     "image": "/img/sectional_3.webp",
     "variant": "paired",
     "category": "Sofa",
-    "location": "Mississauga, ON",
+    "location": "AI-generated illustration — no appointment city",
     "service": "Pet stains & odour removal",
     "label": "Compare sofa before and after cleaning",
     "title": "Sofa — Pet stains & odour removal",
     "order": 0,
-    "featured": true,
-    "publicationStatus": "approved",
+    "featured": false,
+    "publicationStatus": "withheld",
     "services": [
       {
         "_type": "reference",
         "_ref": "service-sofa-cleaning"
       }
     ],
-    "locations": [
-      {
-        "_type": "reference",
-        "_ref": "location-mississauga"
-      }
-    ]
+    "locations": [],
+    "sourceType": "ai-generated",
+    "imageNote": "AI-generated illustration, not a photograph from a documented SoftNest job."
   },
   {
     "_id": "cleaning-project-home-2",
@@ -2259,25 +2256,22 @@
     "image": "/img/sectional_1.webp",
     "variant": "paired",
     "category": "Sectional Sofa",
-    "location": "Oakville, ON",
+    "location": "AI-generated illustration — no appointment city",
     "service": "Deep cleaning",
     "label": "Compare sectional sofa before and after cleaning",
     "title": "Sectional Sofa — Deep cleaning",
     "order": 1,
-    "featured": true,
-    "publicationStatus": "approved",
+    "featured": false,
+    "publicationStatus": "withheld",
     "services": [
       {
         "_type": "reference",
         "_ref": "service-sectional-furniture-cleaning"
       }
     ],
-    "locations": [
-      {
-        "_type": "reference",
-        "_ref": "location-oakville"
-      }
-    ]
+    "locations": [],
+    "sourceType": "ai-generated",
+    "imageNote": "AI-generated illustration, not a photograph from a documented SoftNest job."
   },
   {
     "_id": "cleaning-project-home-3",
@@ -2285,25 +2279,22 @@
     "image": "/img/matress_cleaning.webp",
     "variant": "paired",
     "category": "Mattress",
-    "location": "Toronto, ON",
+    "location": "AI-generated illustration — no appointment city",
     "service": "Stain & odour removal",
     "label": "Compare mattress before and after cleaning",
     "title": "Mattress — Stain & odour removal",
     "order": 2,
-    "featured": true,
-    "publicationStatus": "approved",
+    "featured": false,
+    "publicationStatus": "withheld",
     "services": [
       {
         "_type": "reference",
         "_ref": "service-mattress-cleaning"
       }
     ],
-    "locations": [
-      {
-        "_type": "reference",
-        "_ref": "location-toronto"
-      }
-    ]
+    "locations": [],
+    "sourceType": "ai-generated",
+    "imageNote": "AI-generated illustration, not a photograph from a documented SoftNest job."
   },
   {
     "_id": "cleaning-project-home-4",
@@ -2311,25 +2302,22 @@
     "image": "/img/before_after_carpet_cleaning.webp",
     "variant": "paired",
     "category": "Carpet",
-    "location": "Brampton, ON",
+    "location": "AI-generated illustration — no appointment city",
     "service": "Deep carpet cleaning",
     "label": "Compare carpet before and after cleaning",
     "title": "Carpet — Deep carpet cleaning",
     "order": 3,
-    "featured": true,
-    "publicationStatus": "approved",
+    "featured": false,
+    "publicationStatus": "withheld",
     "services": [
       {
         "_type": "reference",
         "_ref": "service-carpet-area-rug-cleaning"
       }
     ],
-    "locations": [
-      {
-        "_type": "reference",
-        "_ref": "location-brampton"
-      }
-    ]
+    "locations": [],
+    "sourceType": "ai-generated",
+    "imageNote": "AI-generated illustration, not a photograph from a documented SoftNest job."
   },
   {
     "_id": "cleaning-project-home-5",
@@ -2337,20 +2325,22 @@
     "image": "/img/gray_sofa_stain.png",
     "variant": "paired",
     "category": "Sofa",
-    "location": "GTA, ON",
+    "location": "AI-generated illustration — no appointment city",
     "service": "Stain treatment",
     "label": "Compare stained sofa before and after cleaning",
     "title": "Sofa — Stain treatment",
     "order": 4,
-    "featured": true,
-    "publicationStatus": "approved",
+    "featured": false,
+    "publicationStatus": "withheld",
     "services": [
       {
         "_type": "reference",
         "_ref": "service-sofa-cleaning"
       }
     ],
-    "locations": []
+    "locations": [],
+    "sourceType": "ai-generated",
+    "imageNote": "AI-generated illustration, not a photograph from a documented SoftNest job."
   },
   {
     "_id": "cleaning-project-home-6",
@@ -2358,20 +2348,22 @@
     "image": "/img/dining_chairs.webp",
     "variant": "paired",
     "category": "Dining Chairs",
-    "location": "GTA, ON",
+    "location": "AI-generated illustration — no appointment city",
     "service": "Upholstery cleaning",
     "label": "Compare dining chairs before and after cleaning",
     "title": "Dining Chairs — Upholstery cleaning",
     "order": 5,
-    "featured": true,
-    "publicationStatus": "approved",
+    "featured": false,
+    "publicationStatus": "withheld",
     "services": [
       {
         "_type": "reference",
         "_ref": "service-dining-chair-cleaning"
       }
     ],
-    "locations": []
+    "locations": [],
+    "sourceType": "ai-generated",
+    "imageNote": "AI-generated illustration, not a photograph from a documented SoftNest job."
   },
   {
     "_id": "cleaning-project-home-7",
@@ -2379,20 +2371,22 @@
     "image": "/img/sectional.png",
     "variant": "paired",
     "category": "Sectional",
-    "location": "GTA, ON",
+    "location": "AI-generated illustration — no appointment city",
     "service": "Full sectional cleaning",
     "label": "Compare sectional before and after cleaning",
     "title": "Sectional — Full sectional cleaning",
     "order": 6,
-    "featured": true,
-    "publicationStatus": "approved",
+    "featured": false,
+    "publicationStatus": "withheld",
     "services": [
       {
         "_type": "reference",
         "_ref": "service-sectional-furniture-cleaning"
       }
     ],
-    "locations": []
+    "locations": [],
+    "sourceType": "ai-generated",
+    "imageNote": "AI-generated illustration, not a photograph from a documented SoftNest job."
   },
   {
     "_id": "cleaning-project-home-8",
@@ -2400,20 +2394,22 @@
     "image": "/img/sectional_sofa.png",
     "variant": "paired",
     "category": "Sectional Sofa",
-    "location": "GTA, ON",
+    "location": "AI-generated illustration — no appointment city",
     "service": "Deep fabric cleaning",
     "label": "Compare sectional sofa before and after deep cleaning",
     "title": "Sectional Sofa — Deep fabric cleaning",
     "order": 7,
-    "featured": true,
-    "publicationStatus": "approved",
+    "featured": false,
+    "publicationStatus": "withheld",
     "services": [
       {
         "_type": "reference",
         "_ref": "service-sectional-furniture-cleaning"
       }
     ],
-    "locations": []
+    "locations": [],
+    "sourceType": "ai-generated",
+    "imageNote": "AI-generated illustration, not a photograph from a documented SoftNest job."
   },
   {
     "_id": "quote-category-1",

@@ -310,9 +310,12 @@ export function normalizeContent(documents, config) {
   };
 
   const projects = ordered("cleaningProject")
-    .filter((document) => document.publicationStatus === "approved")
+    .filter((document) => document.publicationStatus === "approved" && document.sourceType !== "ai-generated")
     .map((document) => {
       required(document, ["title", "category", "location", "service", "label"]);
+      if (!["camera-original", "reconstructed-before"].includes(document.sourceType)) fail(document, "Approved cleaning work needs verified photographic provenance");
+      if (document.sourceType === "reconstructed-before" && !document.imageNote?.trim()) fail(document, "Reconstructed before image requires visible photo context");
+      if (!Array.isArray(document.locations) || document.locations.length !== 1) fail(document, "Approved cleaning work needs exactly one actual appointment city");
       const src = image(document);
       validateUrl(src, document, "cleaning-result image URL");
       if (!["single", "paired"].includes(document.variant)) {

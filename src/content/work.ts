@@ -14,6 +14,7 @@ export type WorkProject = {
   services: string[];
   label: string;
   imageNote?: string;
+  sourceType: "camera-original" | "reconstructed-before";
   fabric?: string;
   problem?: string;
   treatment?: string;
@@ -21,12 +22,13 @@ export type WorkProject = {
 };
 
 type ProjectRecord = (typeof projects)[number] & {
-  fabric?: string; problem?: string; treatment?: string; result?: string; imageNote?: string;
+  fabric?: string; problem?: string; treatment?: string; result?: string; imageNote?: string; sourceType?: string;
 };
 
 export function getWorkProjects(filters: { city?: string; service?: string } = {}): WorkProject[] {
   return (projects as ProjectRecord[])
     .filter((project) => project.publicationStatus === "approved" &&
+      (project.sourceType === "camera-original" || project.sourceType === "reconstructed-before") &&
       (!filters.city || (project.locations as string[]).includes(filters.city)) &&
       (!filters.service || (project.services as string[]).includes(filters.service)))
     .map((project) => ({
@@ -40,6 +42,7 @@ export function getWorkProjects(filters: { city?: string; service?: string } = {
       services: project.services,
       label: project.label,
       imageNote: project.imageNote,
+      sourceType: project.sourceType as WorkProject["sourceType"],
       fabric: project.fabric,
       problem: project.problem,
       treatment: project.treatment,

@@ -4,6 +4,8 @@ import { locations } from "@/content/locations";
 import { services } from "@/content/services";
 import { getPosts } from "@/content/posts";
 import { cityServicePages } from "@/content/cityServicePages";
+import { getWorkProjects } from "@/content/work";
+import { absoluteUrl } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -14,7 +16,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     { url: `${siteUrl}/` },
     { url: `${siteUrl}/about/` },
-    { url: `${siteUrl}/our-work/` },
+    { url: `${siteUrl}/our-work/`, images: getWorkProjects().map(project => absoluteUrl(project.image)) },
+    ...locations.filter(location => location.indexInSearch && getWorkProjects({ city: location.slug }).length > 0).map(location => ({
+      url: siteUrl + "/our-work/" + location.slug + "/", images: getWorkProjects({city:location.slug}).map(project => absoluteUrl(project.image)),
+    })),
     { url: `${siteUrl}/blog/` },
     ...posts.map(post => ({url: `${siteUrl}/blog/${post.slug}/`})),
     { url: `${siteUrl}/services/` },

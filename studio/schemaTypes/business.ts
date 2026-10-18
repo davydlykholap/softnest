@@ -491,6 +491,18 @@ export const businessTypes = [
     media(),
     legacyImage,
     defineField({
+      name: "sourceType",
+      title: "Photo authenticity",
+      type: "string",
+      description: "Required. Only documented customer appointments should be approved as Our Work. Disclose any reconstructed before view in Photo context.",
+      options: { list: [
+        { title: "Original photos of a real appointment", value: "camera-original" },
+        { title: "Real job — AI-reconstructed before image", value: "reconstructed-before" },
+        { title: "AI illustration (not a real appointment)", value: "ai-generated" },
+      ], layout: "radio" },
+      validation: rule => rule.required(),
+    }),
+    defineField({
       name: "variant",
       type: "string",
       initialValue: "single",
@@ -511,7 +523,16 @@ export const businessTypes = [
     text("result", false, true),
     defineField({ name: "date", type: "date" }),
     refs("services", "service"),
-    refs("locations", "location"),
+    defineField({
+      name: "locations", title: "Actual appointment city", type: "array",
+      description: "Choose the city where this job really happened. This controls city galleries and location-page evidence.",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "location" }] })],
+      validation: rule => rule.custom((value, context) => {
+        const record = context.document;
+        if (record?.publicationStatus === "approved" && (record.sourceType === "camera-original" || record.sourceType === "reconstructed-before") && value?.length !== 1) return "Approved customer work requires exactly one real appointment city.";
+        return true;
+      }),
+    }),
     order,
     flag("featured"),
     defineField({

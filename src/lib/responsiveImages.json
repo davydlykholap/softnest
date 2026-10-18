@@ -1,4 +1,22 @@
 {
+  "/images/mississauga-cleaning-hero-mobile-v2.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-768.webp"
+    },
+    {
+      "width": 941,
+      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-941.webp"
+    }
+  ],
   "/images/mississauga-cleaning-hero-mobile.webp": [
     {
       "width": 240,
@@ -695,6 +713,28 @@
       "src": "/images/responsive/img-dining_chairs-1536.webp"
     }
   ],
+  "/img/dining_chairs_new.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-dining_chairs_new-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-dining_chairs_new-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-dining_chairs_new-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-dining_chairs_new-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-dining_chairs_new-1536.webp"
+    }
+  ],
   "/img/faq_machine.webp": [
     {
       "width": 240,
@@ -757,6 +797,28 @@
       "src": "/images/responsive/img-gray_sofa_stain-1535.webp"
     }
   ],
+  "/img/hallway.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-hallway-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-hallway-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-hallway-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-hallway-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-hallway-1536.webp"
+    }
+  ],
   "/img/health.webp": [
     {
       "width": 240,
@@ -799,6 +861,28 @@
     {
       "width": 1536,
       "src": "/images/responsive/img-matress_cleaning-1536.webp"
+    }
+  ],
+  "/img/oakville-cream-sofa-cleaning-before-after.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-oakville-cream-sofa-cleaning-before-after-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-oakville-cream-sofa-cleaning-before-after-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-oakville-cream-sofa-cleaning-before-after-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-oakville-cream-sofa-cleaning-before-after-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-oakville-cream-sofa-cleaning-before-after-1536.webp"
     }
   ],
   "/img/rug_2.webp": [
@@ -965,6 +1049,28 @@
     {
       "width": 1672,
       "src": "/images/responsive/img-sofa-1672.webp"
+    }
+  ],
+  "/img/staircase_dirt.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/img-staircase_dirt-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/img-staircase_dirt-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/img-staircase_dirt-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/img-staircase_dirt-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/img-staircase_dirt-1536.webp"
     }
   ],
   "/img/mississauga/phone-frame.webp": [
@@ -1261,46 +1367,6 @@
     {
       "width": 1200,
       "src": "/images/responsive/img-locations-vaughan-1200.webp"
-    }
-  ],
-  "/images/mississauga-cleaning-hero-mobile-v2.webp": [
-    {
-      "width": 240,
-      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-240.webp"
-    },
-    {
-      "width": 480,
-      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-480.webp"
-    },
-    {
-      "width": 768,
-      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-768.webp"
-    },
-    {
-      "width": 941,
-      "src": "/images/responsive/images-mississauga-cleaning-hero-mobile-v2-941.webp"
-    }
-  ],
-  "/img/cream-sofa-before-after-reconstructed.webp": [
-    {
-      "width": 240,
-      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-240.webp"
-    },
-    {
-      "width": 480,
-      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-480.webp"
-    },
-    {
-      "width": 768,
-      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-768.webp"
-    },
-    {
-      "width": 1200,
-      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-1200.webp"
-    },
-    {
-      "width": 1536,
-      "src": "/images/responsive/img-cream-sofa-before-after-reconstructed-1536.webp"
     }
   ]
 }

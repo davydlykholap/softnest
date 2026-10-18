@@ -15,3 +15,10 @@
   .intro h1 { font-size: 42px; }
   .note { padding-bottom: 40px; }
 }
+
+.breadcrumb { display:flex;gap:8px;align-items:center;margin:0 0 18px;color:#516457;font-size:14px; }
+.breadcrumb a, .emptyCity a { color:var(--brand-green);text-underline-offset:4px; }
+.emptyCity { padding:36px 0 64px; border-top:1px solid var(--surface-line); }
+.emptyCity h2 { font-family:var(--location-page-serif);font-size:clamp(30px,3vw,42px);font-weight:400;margin:0 0 16px; }
+.emptyCity p { max-width:740px;font-size:var(--text-body-size);line-height:var(--text-body-leading);color:var(--location-page-muted); }
+.emptyCity a:focus-visible, .breadcrumb a:focus-visible {outline:3px solid var(--brand-green);outline-offset:4px;}

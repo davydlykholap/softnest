@@ -9,7 +9,8 @@ for (const width of [402, 1440]) {
   test(`comparison sliders leave gallery navigation to the buttons at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 827 });
     await page.goto("/");
-    await expect(page.getByRole("button", { name: "Show next cleaning results" })).toBeVisible();
+    const hasCarouselArrows = await page.getByRole("button", { name: "Show next cleaning results" }).count() > 0;
+    await expect(page.locator(".gallery-photo-note")).toContainText(/before view was reconstructed with AI/i);
     const track = page.locator("#gallery-track");
     const slider = track.getByRole("slider").first();
     await slider.scrollIntoViewIfNeeded();
@@ -35,6 +36,10 @@ for (const width of [402, 1440]) {
     expect(await track.evaluate((element) => element.style.transform)).toBe(initialTransform);
     expect(await page.locator("#gallery-carousel").evaluate((element) => element.scrollLeft)).toBe(0);
 
+    if (!hasCarouselArrows) {
+      await expect(track.locator(".gallery-result")).toHaveCount(1);
+      return;
+    }
     await page.getByRole("button", { name: "Show next cleaning results" }).click();
     await expect(page.getByRole("button", { name: "Show next cleaning results" })).toHaveCSS("color", "rgb(7, 84, 59)");
     await expect(page.getByRole("button", { name: "Show next cleaning results" })).toHaveCSS("background-color", "rgb(255, 255, 255)");
@@ -68,6 +73,7 @@ test("touch comparison reaches both edges with fixed bottom arrows and a clear p
   const slider = card.getByRole("slider");
   const previous = page.getByRole("button", { name: "Show previous cleaning results" });
   const next = page.getByRole("button", { name: "Show next cleaning results" });
+  const hasCarouselArrows = (await next.count()) > 0;
   const client = await context.newCDPSession(page);
   const touch = (type: "touchStart" | "touchMove" | "touchEnd", percentage = 50) => client.send("Input.dispatchTouchEvent", {
     type,
@@ -77,9 +83,9 @@ test("touch comparison reaches both edges with fixed bottom arrows and a clear p
     // Start on the divider well away from its circular grip.
     await touch("touchStart");
     await touch("touchMove", 20);
-    expect((await previous.boundingBox())!.y).toBeGreaterThan(box.y + box.height);
+    if (hasCarouselArrows) expect((await previous.boundingBox())!.y).toBeGreaterThan(box.y + box.height);
     await touch("touchMove", 28);
-    expect((await previous.boundingBox())!.y).toBeGreaterThan(box.y + box.height);
+    if (hasCarouselArrows) expect((await previous.boundingBox())!.y).toBeGreaterThan(box.y + box.height);
     await touch("touchMove", -2);
     await expect(slider).toHaveValue("0");
     await expect(card.locator(".gallery-layer--after")).toHaveCSS("clip-path", "inset(0px 0px 0px 0%)");
@@ -87,7 +93,7 @@ test("touch comparison reaches both edges with fixed bottom arrows and a clear p
     await touch("touchMove", 50);
     await expect(card.locator(".gallery-divider__grip")).toHaveCSS("opacity", "1");
     await touch("touchMove", 80);
-    expect((await next.boundingBox())!.y).toBeGreaterThan(box.y + box.height);
+    if (hasCarouselArrows) expect((await next.boundingBox())!.y).toBeGreaterThan(box.y + box.height);
     await touch("touchMove", 102);
     await expect(slider).toHaveValue("100");
     await expect(card.locator(".gallery-divider__grip")).toHaveCSS("opacity", "0");
@@ -95,10 +101,12 @@ test("touch comparison reaches both edges with fixed bottom arrows and a clear p
     await touch("touchMove", 50);
     await touch("touchEnd");
     await expect(card.locator(".gallery-divider__grip")).toHaveCSS("opacity", "1");
-    await next.tap();
-    await expect(page.locator("#gallery-carousel")).toHaveAttribute("aria-label", /showing item 2 of/);
-    await previous.tap();
-    await expect(page.locator("#gallery-carousel")).toHaveAttribute("aria-label", /showing item 1 of/);
+    if (hasCarouselArrows) {
+      await next.tap();
+      await expect(page.locator("#gallery-carousel")).toHaveAttribute("aria-label", /showing item 2 of/);
+      await previous.tap();
+      await expect(page.locator("#gallery-carousel")).toHaveAttribute("aria-label", /showing item 1 of/);
+    } else await expect(page.locator("#gallery-carousel")).toHaveAttribute("aria-label", /showing item 1 of 1/);
   } finally {
     await context.close();
   }

@@ -146,7 +146,7 @@ test("unapproved results and reviews never appear in the public snapshot", () =>
   ).publicationStatus = "pending";
   const result = normalizeContent(documents, config);
   assert.equal(result.testimonials.length, 6);
-  assert.equal(result.projects.length, 7);
+  assert.equal(result.projects.length, 0);
 });
 
 test("an article image without alt text fails validation", () => {
@@ -256,4 +256,27 @@ test("broken, incomplete and duplicate local wording cannot replace a working bu
   assert.throws(() => normalizeContent([...documents, { ...copy, visit: "" }], config), /Missing visit/);
   assert.throws(() => normalizeContent([...documents, { ...copy, question: undefined }], config), /Missing practical question/);
   assert.throws(() => normalizeContent([...documents, copy, { ...copy, _id: "duplicate-local-copy" }], config), /Duplicate city service copy/);
+});
+
+test("AI illustrations never become documented work and real jobs require verified cities", () => {
+  const documents = seed();
+  const item = documents.find((document) => document._type === "cleaningProject");
+  const city = documents.find((document) => document._type === "location" && document.slug.current === "oakville");
+  item.publicationStatus = "approved";
+  item.sourceType = "ai-generated";
+  assert.equal(normalizeContent(documents, config).projects.length, 0);
+  item.sourceType = "camera-original";
+  item.location = "Oakville, ON";
+  item.locations = [{ _type: "reference", _ref: city._id }];
+  assert.equal(normalizeContent(documents, config).projects.length, 1);
+  item.locations = [];
+  assert.throws(() => normalizeContent(documents, config), /appointment city/);
+  item.locations = [{ _type: "reference", _ref: city._id }];
+  item.sourceType = "reconstructed-before";
+  delete item.imageNote;
+  assert.throws(() => normalizeContent(documents, config), /photo context/);
+  item.imageNote = "AI reconstructed before view; after photo is original.";
+  assert.equal(normalizeContent(documents, config).projects.length, 1);
+  item.sourceType = undefined;
+  assert.throws(() => normalizeContent(documents, config), /photographic provenance/);
 });

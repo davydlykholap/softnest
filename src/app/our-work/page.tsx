@@ -3,6 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import HeroActionButtons from "@/components/HeroActionButtons";
 import WorkGallery from "@/components/WorkGallery";
+import WorkAreaLinks from "@/components/WorkAreaLinks";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import { getWorkProjects } from "@/content/work";
 import { locations } from "@/content/locations";
@@ -15,7 +16,7 @@ import "@/app/styles/location-page.css";
 
 export const metadata = pageMetadata({
   title: "Our Work | Before & After Cleaning Results | SoftNest",
-  description: "See SoftNest sofa, sectional, carpet and mattress cleaning results. Browse before-and-after photos by service and area, then request a free quote.",
+  description: "Explore documented SoftNest cleaning projects, with clear before-and-after photo context. Browse completed appointments by service and city.",
   path: "/our-work/",
 });
 
@@ -31,7 +32,7 @@ export default function OurWorkPage() {
     about: { "@id": organizationId },
     mainEntity: { "@type": "ItemList", itemListElement: projects.map((project, index) => ({
       "@type": "ListItem", position: index + 1, url: absoluteUrl(`/our-work/#${project.id}`),
-      item: { "@type": "ImageObject", contentUrl: absoluteUrl(project.image), caption: project.label },
+      item: { "@type": "ImageObject", contentUrl: absoluteUrl(project.image), caption: project.label, description: project.imageNote || project.label },
     })) },
   };
   const crumbs = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
@@ -46,10 +47,11 @@ export default function OurWorkPage() {
         <header className={styles.intro}>
           <h1>Before &amp; after<br /><span>cleaning results.</span></h1>
           <div>
-            <p>See examples of our sofa, sectional, carpet and mattress cleaning. Move the slider on a photo to compare the before and after.</p>
+            <p>Browse documented customer cleaning projects. Any AI-reconstructed view is disclosed beside the photo. Select a city to see its actual jobs.</p>
             <HeroActionButtons primaryTone="gold" showReviews={false} />
           </div>
         </header>
+        <WorkAreaLinks />
         <WorkGallery projects={projects} services={galleryServices} locations={galleryLocations} />
         <section className={styles.note} aria-labelledby="your-results-heading">
           <h2>What about your furniture?</h2>

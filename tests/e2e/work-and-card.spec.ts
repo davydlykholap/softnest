@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
   await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ status: 200, body: "" }));
 });
 
-test("Our Work filters published projects and handles an empty combination", async ({ page }) => {
+test("Our Work filters documented projects and supports comparison controls", async ({ page }) => {
   await page.goto("/our-work/");
   const cards = page.locator("[data-project-id]");
   await expect(cards).toHaveCount(projects.filter((project) => project.publicationStatus === "approved").length);
@@ -16,9 +16,9 @@ test("Our Work filters published projects and handles an empty combination", asy
   const oakville = projects.filter((project) => project.publicationStatus === "approved" && project.locations.includes("oakville"));
   await expect(cards).toHaveCount(oakville.length);
   expect(await cards.evaluateAll((items) => items.map((item) => item.getAttribute("data-project-id")))).toEqual(oakville.map((project) => project._id));
-  await page.getByLabel("Service", { exact: true }).selectOption("mattress-cleaning");
-  await expect(page.getByRole("heading", { name: "No photos for this selection yet." })).toBeVisible();
-  await page.getByRole("button", { name: "Show all results" }).click();
+  await page.getByLabel("Service", { exact: true }).selectOption("sofa-cleaning");
+  await expect(cards).toHaveCount(1);
+  await page.getByRole("button", { name: "Clear filters" }).click();
   await expect(cards).toHaveCount(projects.length);
   const slider = page.getByRole("slider").first();
   await slider.focus();
@@ -80,4 +80,49 @@ test("Our Work is reachable from desktop and mobile navigation without overflow"
       expect(fits).toBe(true);
     }
   }
+});
+
+test("Oakville work page contains only the documented appointment and its photo disclosure", async ({ page }) => {
+  await page.goto("/our-work/oakville/");
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("Oakville");
+  await expect(page.locator("[data-project-id]")).toHaveCount(1);
+  await expect(page.locator("[data-project-id]")).toHaveAttribute("data-project-id", "cleaning-project-cream-sofa-reconstructed");
+  await expect(page.getByText(/before view was reconstructed with AI/i)).toBeVisible();
+  await expect(page.getByRole("img", { name: /original after photo with an AI-reconstructed before view/i })).toBeVisible();
+  await expect(page.locator("link[rel=canonical]")).toHaveAttribute("href", "https://softnestcare.ca/our-work/oakville/");
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /index/);
+  await expect(page.getByRole("link", { name: "Oakville service area page" })).toHaveAttribute("href", "/location/oakville/");
+  const markup = (await page.locator('script[type="application/ld+json"]').allTextContents()).map(text => JSON.parse(text));
+  const collection = markup.find(obj => obj["@type"] === "CollectionPage");
+  expect(collection.mainEntity.itemListElement).toHaveLength(1);
+  expect(collection.mainEntity.itemListElement[0].item.contentUrl).toContain("oakville-cream-sofa-cleaning-before-after.webp");
+});
+
+test("Cities without documented jobs have connected noindex pages but no invented work", async ({ page }) => {
+  await page.goto("/location/milton/");
+  await expect(page.getByRole("link", { name: /View Milton cleaning results/ })).toHaveAttribute("href", "/our-work/milton/");
+  await page.getByRole("link", { name: /View Milton cleaning results/ }).click();
+  await expect(page).toHaveURL(/\/our-work\/milton\/$/);
+  await expect(page.locator("[data-project-id]")).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: /More local photos are coming/ })).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+  await expect(page.locator("link[rel=canonical]")).toHaveAttribute("href", "https://softnestcare.ca/our-work/milton/");
+  await page.getByRole("link", { name: "Oakville (1)" }).click();
+  await expect(page).toHaveURL(/\/our-work\/oakville\/$/);
+});
+
+test("Our Work uses crawlable named images, excludes AI illustrations, and lists real city images in sitemap", async ({ page }) => {
+  await page.goto("/our-work/");
+  await expect(page.locator("[data-project-id]")).toHaveCount(1);
+  await expect(page.locator('[data-project-id] img[src*="oakville-cream-sofa-cleaning-before-after"]').first()).toBeVisible();
+  const slider = page.getByRole("slider").first();
+  await slider.fill("85");
+  await expect(slider).toHaveValue("85");
+  const response = await page.request.get("/sitemap.xml");
+  expect(response.ok()).toBe(true);
+  const xml = await response.text();
+  expect(xml).toContain("https://softnestcare.ca/our-work/oakville/");
+  expect(xml).not.toContain("https://softnestcare.ca/our-work/milton/");
+  expect(xml).toContain("oakville-cream-sofa-cleaning-before-after.webp");
+  expect(xml).not.toContain("/img/staircase_dirt.webp");
 });

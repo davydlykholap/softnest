@@ -15,17 +15,18 @@ export default function LocalWorkEvidence({ city, cityName, service, fallbackRev
   return <section className={styles.section} aria-labelledby="local-work-heading" data-local-evidence={city}>
     <div className={styles.heading}>
       <h2 id="local-work-heading">{service ? "From a local appointment" : `Our work in ${cityName}`}</h2>
-      <Link href="/our-work/">See more cleaning results</Link>
+      <Link href={"/our-work/" + city + "/"}>See cleaning results in {cityName}</Link>
     </div>
     <div className={styles.content}>
       {project ? <article className={styles.project} data-project-id={project.id}>
-        <Link href={`/our-work/#${project.id}`} aria-label={`See ${project.category.toLowerCase()} cleaning in ${cityName}`}>
+        <Link href={"/our-work/" + city + "/#" + project.id} aria-label={`See ${project.category.toLowerCase()} cleaning in ${cityName}`}>
           <div className={styles.image}>
             <Image src={project.image} alt={project.label} fill sizes="(max-width: 760px) 90vw, 45vw" />
           </div>
           <h3>{project.category} cleaning</h3>
         </Link>
         <p>{project.service} · {project.location}</p>
+        {project.imageNote ? <p>{project.imageNote}</p> : null}
         {project.result ? <p>{project.result}</p> : null}
       </article> : null}
       {review ? <figure className={styles.review} data-review-author={review.name}>

@@ -158,6 +158,7 @@ export type CleaningProject = {
     _type: "image";
   };
   image?: string;
+  sourceType: "camera-original" | "reconstructed-before" | "ai-generated";
   variant?: "single" | "paired";
   fabric?: string;
   imageNote?: string;
@@ -745,6 +746,7 @@ export type WebsiteContentQueryResult = Array<
         _type: "image";
       };
       image?: string;
+      sourceType: "ai-generated" | "camera-original" | "reconstructed-before";
       variant?: "paired" | "single";
       fabric?: string;
       imageNote?: string;

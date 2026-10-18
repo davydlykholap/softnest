@@ -147,3 +147,22 @@ Approved cleaning results populate `/our-work/` automatically after a successful
 Card's three main actions go to the quote form, Our Work and Google reviews. Card is a QR/contact utility and remains noindex, follow. Both pages retain the existing website fonts, colours and components.
 
 Deploy the main website source changes before new wording/gallery features become visible publicly. The hosted Studio is a separate deployment. Homepage copy/layout is deferred to a later pass.
+
+
+## City galleries, photo authenticity, and image search
+
+Each published service area has a reusable Our Work route at `/our-work/[city]/`. Every city page is connected to its existing `/location/[city]/` page, and the main gallery links to each area. A city with no documented cleaning project is intentionally **noindex** and excluded from the sitemap; the URL still works and explains that new job photos will appear later.
+
+For an actual appointment, use **Proof & answers → Cleaning results → Create new** in Studio:
+
+1. Add a truthful job title, category, visible service description, useful image alt label, and upload the photo.
+2. Choose **Photo authenticity**. Pick *Original photos of a real appointment* for genuine images, or *Real job — AI-reconstructed before image* only when the appointment was real but the original before photograph is unavailable. Explain reconstructions in **Photo context** so the disclosure is shown publicly.
+3. In **Actual appointment city**, select exactly one verified city reference. The separate **Location** text field must describe the same location. Choose the correct **Services** reference too.
+4. Choose **Paired before/after image** only for an existing side-by-side composite where the left is the before view and the right is the after view. Otherwise use single image.
+5. Change **Publication status** to **Approved for website** and **Publish**; then run the GitHub Pages deployment workflow until the automated publishing webhook is enabled.
+
+Only approved customer jobs with an explicit authentic/reconstructed-photo source and one actual city become public. AI illustrations are retained in Studio as withheld records; they never appear as completed appointments or evidence on a location page. Do not assign cities to AI illustrations. The Oakville cream-sofa example is an actual cleaning appointment with an AI-reconstructed *before* and an original *after*, and its displayed caption discloses this.
+
+Images used in search should have short, descriptive and accurate file names such as `oakville-cream-sofa-cleaning-before-after.webp`; avoid pretending an illustration is a real local job. Google image search also considers surrounding page text, crawlable HTML image elements, alt text and performance. The website includes only documented work imagery in the city image sitemaps. Sanity uploads are served on its image CDN; Studio does not currently provide a guaranteed custom filename for the resulting asset URL. Do not promise a filename conversion for images uploaded through Sanity. When a stable descriptive local filename is important, upload and deploy that asset through the website repository and select it using an appropriate migration/update.
+
+The webhook requires a token with Sanity project webhook-management access and a GitHub Actions workflow token. Neither should be included in the public editor bundle or committed to Git. Until configured, Publish in Studio does **not** by itself deploy the website.
