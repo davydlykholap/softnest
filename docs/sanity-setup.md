@@ -101,9 +101,11 @@ Edit ? Publish in Sanity ? GitHub Pages build ? validated static site
 
 `npm run check` uses **published** Sanity data. If validation/build fails, the current deployed website remains in place.
 
-No publishing webhook was configured when checked on October 18. Use **Publishing help** in Studio to open the deployment workflow after publishing. A Sanity webhook can trigger `.github/workflows/deploy-pages.yml` using workflow dispatch. Configure it with `scripts/content/configure-webhook.mjs`. The setup script requires local tokens; those values must never be bundled into the site.
+A Sanity publication webhook is now active and verified (October 18, 2026). Pressing **Publish** in Studio (not saving drafts) automatically triggers the **Deploy SoftNest to GitHub Pages** workflow. The published site updates after the validated build completes, usually a few minutes later. A test published-content mutation returned HTTP 204 at the webhook and created GitHub workflow run 39167378759.
 
-If the webhook is not operational, run the **Deploy SoftNest to GitHub Pages** workflow manually after publishing.
+For security, the webhook's GitHub authorization is stored in Sanity webhook configuration, never in site code, the repository, or Studio assets. The current credential has wider GitHub access than needed; replace it with a dedicated fine-grained token limited to the SoftNest repository with Actions: write. The existing credential may expire or be revoked, in which case publishing will need reconnection.
+
+To replace the credentials, set private SANITY_WEBHOOK_MANAGEMENT_TOKEN and GITHUB_WORKFLOW_TOKEN and run `node scripts/content/configure-webhook.mjs`. If the webhook fails, use Publishing help in Studio to run the deployment workflow manually. Check Sanity webhook attempt logs for HTTP errors.
 
 ## Schema changes
 
@@ -156,13 +158,13 @@ Each published service area has a reusable Our Work route at `/our-work/[city]/`
 For an actual appointment, use **Proof & answers → Cleaning results → Create new** in Studio:
 
 1. Add a truthful job title, category, visible service description, useful image alt label, and upload the photo.
-2. Choose **Photo authenticity**. Pick *Original photos of a real appointment* for genuine images, or *Real job — AI-reconstructed before image* only when the appointment was real but the original before photograph is unavailable. Explain reconstructions in **Photo context** so the disclosure is shown publicly.
+2. Choose **Photo authenticity**. Pick *Original photos of a real appointment* for genuine images, or *Real job — recreated before view* only when the appointment was real but the original before photograph is unavailable. Explain reconstructions in **Photo context** so the disclosure is shown publicly.
 3. In **Actual appointment city**, select exactly one verified city reference. The separate **Location** text field must describe the same location. Choose the correct **Services** reference too.
 4. Choose **Paired before/after image** only for an existing side-by-side composite where the left is the before view and the right is the after view. Otherwise use single image.
-5. Change **Publication status** to **Approved for website** and **Publish**; then run the GitHub Pages deployment workflow until the automated publishing webhook is enabled.
+5. Change **Publication status** to **Approved for website** and **Publish**; the website rebuild starts automatically after publishing.
 
 Only approved customer jobs with an explicit authentic/reconstructed-photo source and one actual city become public. AI illustrations are retained in Studio as withheld records; they never appear as completed appointments or evidence on a location page. Do not assign cities to AI illustrations. The Oakville cream-sofa example is an actual cleaning appointment with an AI-reconstructed *before* and an original *after*, and its displayed caption discloses this.
 
 Images used in search should have short, descriptive and accurate file names such as `oakville-cream-sofa-cleaning-before-after.webp`; avoid pretending an illustration is a real local job. Google image search also considers surrounding page text, crawlable HTML image elements, alt text and performance. The website includes only documented work imagery in the city image sitemaps. Sanity uploads are served on its image CDN; Studio does not currently provide a guaranteed custom filename for the resulting asset URL. Do not promise a filename conversion for images uploaded through Sanity. When a stable descriptive local filename is important, upload and deploy that asset through the website repository and select it using an appropriate migration/update.
 
-The webhook requires a token with Sanity project webhook-management access and a GitHub Actions workflow token. Neither should be included in the public editor bundle or committed to Git. Until configured, Publish in Studio does **not** by itself deploy the website.
+The webhook requires a token with Sanity project webhook-management access and a GitHub Actions workflow token. Neither should be included in the public editor bundle or committed to Git. The webhook is active; manual deployment is only a fallback for failed delivery.

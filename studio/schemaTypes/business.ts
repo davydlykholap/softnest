@@ -497,8 +497,8 @@ export const businessTypes = [
       description: "Required. Only documented customer appointments should be approved as Our Work. Disclose any reconstructed before view in Photo context.",
       options: { list: [
         { title: "Original photos of a real appointment", value: "camera-original" },
-        { title: "Real job — AI-reconstructed before image", value: "reconstructed-before" },
-        { title: "AI illustration (not a real appointment)", value: "ai-generated" },
+        { title: "Real job — recreated before view", value: "reconstructed-before" },
+        { title: "Illustrative image (not a real appointment)", value: "ai-generated" },
       ], layout: "radio" },
       validation: rule => rule.required(),
     }),

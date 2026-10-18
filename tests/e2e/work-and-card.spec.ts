@@ -87,8 +87,8 @@ test("Oakville work page contains only the documented appointment and its photo 
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Oakville");
   await expect(page.locator("[data-project-id]")).toHaveCount(1);
   await expect(page.locator("[data-project-id]")).toHaveAttribute("data-project-id", "cleaning-project-cream-sofa-reconstructed");
-  await expect(page.getByText(/before view was reconstructed with AI/i)).toBeVisible();
-  await expect(page.getByRole("img", { name: /original after photo with an AI-reconstructed before view/i })).toBeVisible();
+  await expect(page.getByText(/before view is a recreation based on a separate photo/i)).toBeVisible();
+  await expect(page.getByRole("img", { name: /original after photo with a recreated before view/i })).toBeVisible();
   await expect(page.locator("link[rel=canonical]")).toHaveAttribute("href", "https://softnestcare.ca/our-work/oakville/");
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /index/);
   await expect(page.getByRole("link", { name: "Oakville service area page" })).toHaveAttribute("href", "/location/oakville/");

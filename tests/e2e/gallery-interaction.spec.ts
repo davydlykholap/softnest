@@ -10,7 +10,7 @@ for (const width of [402, 1440]) {
     await page.setViewportSize({ width, height: 827 });
     await page.goto("/");
     const hasCarouselArrows = await page.getByRole("button", { name: "Show next cleaning results" }).count() > 0;
-    await expect(page.locator(".gallery-photo-note")).toContainText(/before view was reconstructed with AI/i);
+    await expect(page.locator(".gallery-photo-note")).toContainText(/before view is a recreation based on a separate photo/i);
     const track = page.locator("#gallery-track");
     const slider = track.getByRole("slider").first();
     await slider.scrollIntoViewIfNeeded();

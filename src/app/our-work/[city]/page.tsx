@@ -77,7 +77,7 @@ export default async function CityWorkPage({ params }: Props) {
         <header className={styles.intro}>
           <h1>Cleaning work<br /><span>in {location.name}.</span></h1>
           <div>
-            <p>See documented upholstery and carpet cleaning from {location.name}. We show original job photography and clearly explain when a comparison includes a reconstructed view.</p>
+            <p>Explore our cleaning projects in {location.name}, with before-and-after photos and details about each job.</p>
             <HeroActionButtons primaryTone="gold" showReviews={false} quoteHref={"/quote/?city=" + encodeURIComponent(city)} />
           </div>
         </header>
@@ -87,7 +87,7 @@ export default async function CityWorkPage({ params }: Props) {
         ) : (
           <section className={styles.emptyCity} aria-labelledby="no-city-work">
             <h2 id="no-city-work">More local photos are coming.</h2>
-            <p>We haven’t published a documented cleaning project from {location.name} yet. We’d rather leave this gallery empty than show work from another city or an AI-generated example as a local appointment.</p>
+            <p>We haven’t added local project photos for {location.name} yet. New cleaning results will appear here as they’re published.</p>
             <p><Link href="/our-work/">See our documented work</Link> or visit our <Link href={"/location/" + city + "/"}>{location.name} cleaning services</Link> page.</p>
           </section>
         )}

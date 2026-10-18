@@ -47,7 +47,7 @@ export default function OurWorkPage() {
         <header className={styles.intro}>
           <h1>Before &amp; after<br /><span>cleaning results.</span></h1>
           <div>
-            <p>Browse documented customer cleaning projects. Any AI-reconstructed view is disclosed beside the photo. Select a city to see its actual jobs.</p>
+            <p>Browse cleaning results and choose a city to explore our completed projects. Use the comparison slider to see the details.</p>
             <HeroActionButtons primaryTone="gold" showReviews={false} />
           </div>
         </header>

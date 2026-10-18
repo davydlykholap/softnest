@@ -20,7 +20,7 @@ export default function HomeSections() {
     <div className="gallery-intro">
       <div className="gallery-intro__copy">
         <h2 id="gallery-heading"><span className="gallery-heading__line gallery-heading__line--primary">See The</span>{" "}<span className="gallery-heading__line">Difference.</span></h2>
-        <p className="gallery-description">Documented cleaning photos from our appointments. When a before view has been reconstructed, we explain that beside the image.</p>
+        <p className="gallery-description">Take a closer look at the difference a professional cleaning can make.</p>
       </div>
       <div className="gallery-intro__aside">
         <div className="gallery-social" aria-label="SoftNest social media">

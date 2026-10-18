@@ -3,14 +3,14 @@ export function PublishingGuide() {
     <h2>Publish a website change</h2>
     <ol>
       <li>Edit the content and press <strong>Publish</strong> to save the public version in Sanity.</li>
-      <li>Open the website deployment workflow below. Choose <strong>Run workflow</strong> on the main branch.</li>
-      <li>Wait for the green success mark, then check the website.</li>
+      <li>Sanity automatically starts the GitHub Pages build after you publish. You do not need to open GitHub.</li>
+      <li>Allow a few minutes for validation and deployment, then check the public website.</li>
     </ol>
-    <p><a href="https://github.com/davydlykholap/softnest/actions/workflows/deploy-pages.yml" target="_blank" rel="noreferrer">Open website deployment</a></p>
-    <p>Publishing in Studio saves the content. It appears on the website after a successful build. If a build fails, the current website stays online.</p>
+    <p>If the automatic build does not start, <a href="https://github.com/davydlykholap/softnest/actions/workflows/deploy-pages.yml" target="_blank" rel="noreferrer">open deployment status or run it manually</a>.</p>
+    <p>Published changes go live after a successful build. Saving a draft does not start deployment. If a build fails, the currently deployed website stays online.</p>
     <h3>Where to edit</h3>
     <p><strong>Services &amp; areas:</strong> service details, city page wording, city service wording and coverage settings.</p>
-    <p><strong>Proof &amp; answers:</strong> to add a documented cleaning job, choose photo authenticity, assign its actual appointment city and service, upload the photo, and select Approved for website. Disclose an AI-reconstructed before image in Photo context. AI illustrations do not count as customer work.</p>
+    <p><strong>Proof &amp; answers:</strong> to add a documented cleaning job, choose photo authenticity, assign its actual appointment city and service, upload the photo, and select Approved for website. Clearly describe any recreated comparison in Photo context. Illustrations are not treated as completed customer jobs.</p>
     <p><strong>Journal:</strong> blog posts, authors and categories. The Card and Our Work introductions are maintained in the website code.</p>
   </div>;
 }
