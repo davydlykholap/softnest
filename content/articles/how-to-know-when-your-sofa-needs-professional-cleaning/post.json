@@ -1,0 +1,628 @@
+{
+  "_createdAt": "2026-09-29T17:57:07Z",
+  "_id": "post-how-to-know-when-your-sofa-needs-professional-cleaning",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
+  "_type": "post",
+  "_updatedAt": "2026-10-17T20:05:46Z",
+  "author": {
+    "_ref": "author-softnest",
+    "_type": "reference"
+  },
+  "body": [
+    {
+      "_key": "sofa-signs-1",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-1-text",
+          "_type": "span",
+          "marks": [],
+          "text": "A sofa can look clean at first glance while still holding dust, body oils, food residue, pet hair and dirt deep inside the upholstery."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-2",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-2-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Because sofas are used every day, changes usually happen gradually. You may not notice how much the fabric has changed until you compare a high-use seat or armrest with an area that is rarely touched."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-3",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-3-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Here are a few signs that it may be time to have your sofa professionally cleaned."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-4",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-4-text",
+          "_type": "span",
+          "marks": [],
+          "text": "1. The Fabric Looks Darker in High-Use Areas"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "sofa-signs-5",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-5-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Seats, armrests and the front edge of a sofa usually collect the most dirt."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-6",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-6-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Over time, these areas can become noticeably darker than the rest of the furniture. Regular vacuuming can remove loose debris, but it usually cannot remove the soil and oils that have worked their way into the upholstery."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-7",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-7-text",
+          "_type": "span",
+          "marks": [],
+          "text": "A professional deep cleaning can help remove this buildup and restore a cleaner, more even appearance."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-8",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-8-text",
+          "_type": "span",
+          "marks": [],
+          "text": "2. There Are Visible Spots or Stains"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "sofa-signs-9",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-9-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Coffee, food, drinks, children and pets can all leave marks on upholstered furniture."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-10",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-10-text",
+          "_type": "span",
+          "marks": [],
+          "text": "The sooner a stain is treated correctly, the better the chances of improving it. Using random household cleaning products can sometimes make the problem harder to correct later, especially on delicate fabrics."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-11",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-11-text",
+          "_type": "span",
+          "marks": [],
+          "text": "If you are unsure what caused a stain, it is usually safer to have the fabric inspected before applying strong cleaning products."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-12-text",
+          "_type": "span",
+          "marks": [],
+          "text": "3. The Sofa Has Developed an Odour"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "sofa-signs-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-13-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Fabric furniture can absorb odours from everyday use, pets, cooking and spills."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-14-text",
+          "_type": "span",
+          "marks": [],
+          "text": "If the sofa still smells after vacuuming and airing out the room, the source of the odour may be deeper in the upholstery or cushion."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-15",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-15-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional upholstery cleaning uses extraction to remove contamination and cleaning solution from the fabric rather than simply covering the smell with fragrance."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-16-text",
+          "_type": "span",
+          "marks": [],
+          "text": "4. You Have Pets"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "sofa-signs-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-17-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Pet hair is only the part you can see."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-18-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Furniture in homes with cats or dogs may also collect oils, dirt and odours over time. Pet accidents can sometimes travel below the surface material into the padding, which may require more specialized treatment than standard surface cleaning."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-19-text",
+          "_type": "span",
+          "marks": [],
+          "text": "5. The Sofa Hasn't Been Deep Cleaned in a Long Time"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "sofa-signs-20",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-20-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Even furniture without major stains benefits from occasional professional cleaning."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-21",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-21-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Regular deep cleaning helps remove the gradual buildup that normal household maintenance cannot always reach."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-22",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-22-text",
+          "_type": "span",
+          "marks": [],
+          "text": "How frequently a sofa should be cleaned depends on how much it is used, the colour and type of fabric, whether there are pets or children in the home, and other household conditions."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-23",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-23-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional Sofa Cleaning in Mississauga"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "sofa-signs-24",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-24-text",
+          "_type": "span",
+          "marks": [],
+          "text": "If your furniture is showing any of these signs, a professional cleaning may be worth considering."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-25",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-25-prefix",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care provides "
+        },
+        {
+          "_key": "sofa-signs-25-strong",
+          "_type": "span",
+          "marks": [
+            "strong"
+          ],
+          "text": "professional sofa cleaning in Mississauga"
+        },
+        {
+          "_key": "sofa-signs-25-suffix",
+          "_type": "span",
+          "marks": [],
+          "text": " for sofas, couches, sectionals, loveseats, armchairs and other upholstered furniture."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-26",
+      "_type": "block",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s81",
+          "text": "Our upholstery service includes stain treatment where needed, deep cleaning with professional extraction equipment, a thorough rinse, deodorizing and sanitizing. We clean all accessible upholstered areas agreed for the visit, including both sides of removable cushions where suitable, and use air movers while we work to help with drying.",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "mississauga-service-link",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "mississauga-service-prefix",
+          "_type": "span",
+          "marks": [],
+          "text": "For more information about our local service, visit our "
+        },
+        {
+          "_key": "mississauga-service-anchor",
+          "_type": "span",
+          "marks": [
+            "mississauga-page"
+          ],
+          "text": "Sofa & Upholstery Cleaning in Mississauga"
+        },
+        {
+          "_key": "mississauga-service-suffix",
+          "_type": "span",
+          "marks": [],
+          "text": " page."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "mississauga-page",
+          "_type": "link",
+          "href": "/location/mississauga/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-28",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-28-text",
+          "_type": "span",
+          "marks": [],
+          "text": "Need Upholstery Cleaning?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "sofa-signs-29",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-29-text",
+          "_type": "span",
+          "marks": [],
+          "text": "For an accurate quote, tell us the furniture type and number of seats by phone, message or the optional website form. You can share photos if you would like to; they are optional too."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "sofa-signs-30",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "sofa-signs-30-text",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care provides professional upholstery and fabric cleaning throughout Mississauga and surrounding areas of the GTA."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "If your sofa is ready for attention, our "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "Oakville sofa cleaning"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": " and "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "Milton sofa cleaning"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": " pages explain what we check, what is included and how to get a quote."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/oakville/sofa-cleaning/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/milton/sofa-cleaning/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-83",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s82",
+          "text": "Is cleaning still worth considering on an older sofa?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-85",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s84",
+          "text": "The useful question is what is making the sofa look tired. Everyday soil and body oils can respond to cleaning. A worn seam, flattened cushion or faded patch is a different concern and should be pointed out before you book.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-90",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l87",
+          "href": "/blog/what-to-expect-when-softnest-cleans-your-sofa/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s86",
+          "text": "You can ask us to assess the material and discuss what improvement is realistic. If you're weighing cleaning against repair or replacement, tell us what you hope to change. A clear expectation is more useful than a promise that an older sofa will look new. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s88",
+          "text": "appointment guide",
+          "marks": [
+            "l87"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s89",
+          "text": " explains the inspection and cleaning process.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "_key": "categories-0",
+      "_ref": "category-upholstery-care",
+      "_type": "reference"
+    },
+    {
+      "_key": "categories-1",
+      "_ref": "category-sofa-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "A well-used light sofa with subtle marks on the favourite seat and armrest.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-283443153da4304c4550192c309f708ab45e4e9a-1536x1024-webp"
+    }
+  },
+  "excerpt": "Spot signs of sofa soil, odours and everyday buildup, understand cleaning limits and see what SoftNest includes in an upholstery-cleaning visit.",
+  "order": 8,
+  "publishedAt": "2026-09-18T12:00:00Z",
+  "relatedServices": [
+    {
+      "_key": "relatedServices-0",
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-1",
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Spot signs of sofa soil, odours and everyday buildup, understand cleaning limits and see what SoftNest includes in an upholstery-cleaning visit.",
+  "seoTitle": "Signs Your Sofa Needs Professional Cleaning | SoftNest",
+  "showCover": true,
+  "slug": {
+    "_type": "slug",
+    "current": "how-to-know-when-your-sofa-needs-professional-cleaning"
+  },
+  "title": "How to Know When Your Sofa Needs Professional Cleaning"
+}

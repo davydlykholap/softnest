@@ -1,0 +1,494 @@
+{
+  "_id": "post-stains-or-odours-after-professional-cleaning",
+  "_type": "post",
+  "slug": {
+    "_type": "slug",
+    "current": "stains-or-odours-after-professional-cleaning"
+  },
+  "title": "Stains or Odours After Cleaning? Here's What to Do",
+  "publishedAt": "2026-10-24T22:00:00Z",
+  "author": {
+    "_type": "reference",
+    "_ref": "author-softnest"
+  },
+  "categories": [
+    {
+      "_type": "reference",
+      "_ref": "category-our-process"
+    }
+  ],
+  "relatedServices": [
+    {
+      "_type": "reference",
+      "_ref": "service-sofa-cleaning"
+    },
+    {
+      "_type": "reference",
+      "_ref": "service-upholstery-cleaning"
+    },
+    {
+      "_type": "reference",
+      "_ref": "service-pet-stain-odour-removal"
+    },
+    {
+      "_type": "reference",
+      "_ref": "service-carpet-area-rug-cleaning"
+    }
+  ],
+  "order": 16,
+  "body": [
+    {
+      "_type": "block",
+      "_key": "editorial-478",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s477",
+          "text": "If a mark or smell concerns you after professional upholstery or carpet cleaning, get in touch with the cleaner rather than immediately adding another product. What you notice, when it appeared and whether the area is fully dry can help explain the next step.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-480",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s479",
+          "text": "After a SoftNest appointment, you can call or message us to talk through a concern. You don't need to diagnose the problem yourself. We'll review what you're seeing or smelling with you and discuss what happens next.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-482",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s481",
+          "text": "First, check whether the area is still drying",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-484",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s483",
+          "text": "Damp fabric can look darker, and cushion edges or seams may dry more slowly than the middle. The appearance during drying isn't always the final result. Use the estimate and aftercare advice we gave you for the item.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-486",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s485",
+          "text": "Most sofas take around six to eight hours to dry, and most carpets around four to eight hours, sometimes longer depending on conditions. If an area is staying damp beyond the estimate, contact us and describe where it is. Don't cover it with a throw or use a hair dryer or strong heat to speed things up.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-488",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s487",
+          "text": "If a stain becomes visible again",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-490",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s489",
+          "text": "A returning mark can have more than one cause. Moisture may carry material towards the surface during drying, previous cleaning-product residue may still affect the area, or a colour or texture change may become more noticeable as the fabric dries.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-495",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l492",
+          "href": "/blog/why-did-my-couch-stain-come-back-after-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s491",
+          "text": "That is why it helps to look at the shape, colour and feel instead of treating every mark the same way. Our guide to ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s493",
+          "text": "why couch stains come back",
+          "marks": [
+            "l492"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s494",
+          "text": " explains wicking and other possibilities. Let us know what changed before applying more cleaner.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-497",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s496",
+          "text": "If an odour remains",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-499",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s498",
+          "text": "Tell us whether the odour is in the area treated, whether it changed after drying and whether there have been repeated spills or pet accidents. An odour source can sometimes be below the accessible upholstery or carpet, which affects what another treatment may reach.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-504",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l501",
+          "href": "/blog/how-to-remove-pet-urine-smell-from-couch/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s500",
+          "text": "Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s502",
+          "text": "pet-odour guide",
+          "marks": [
+            "l501"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s503",
+          "text": " explains why surface appearance and deeper contamination can tell different stories. Deodorizing and sanitizing are included in our upholstery clean, but the outcome for a particular accident still depends on its depth, history and the material.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-506",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s505",
+          "text": "What to send or tell SoftNest",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-508",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s507",
+          "text": "Which item or area was cleaned and when.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-510",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s509",
+          "text": "What concerns you: a mark, smell, damp patch or change in feel.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-512",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s511",
+          "text": "Whether the area is fully dry and when you first noticed the concern.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-514",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s513",
+          "text": "Whether anything has been applied or spilled there since the visit.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-516",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s515",
+          "text": "A photo if convenient; it is optional.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-518",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s517",
+          "text": "A description is enough to start the conversation. If you've already tried another product, tell us which one so we can take that into account.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-520",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s519",
+          "text": "How we discuss the next step",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-522",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s521",
+          "text": "We review the concern with you in the context of the material, the work agreed and the original condition. Depending on what remains, we can discuss whether another assessment or treatment makes sense and clarify the proposed work before anything further is arranged.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-524",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s523",
+          "text": "Cleaning and restoration are different things. Everyday soil may improve while existing wear, colour loss or damage remains. We aim to explain those distinctions clearly rather than promising that every concern can be fixed with another cleaning pass.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-526",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s525",
+          "text": "Keep the aftercare advice handy",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-528",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s527",
+          "text": "Leave upholstery uncovered, keep people and pets away until the area is ready to use and follow the airflow advice given for your home. If you're unsure, ask us. The goal is a clear next step and a useful conversation, not leaving you to experiment with the furniture.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-538",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l529",
+          "href": "/card/"
+        },
+        {
+          "_type": "link",
+          "_key": "l532",
+          "href": "/quote/"
+        },
+        {
+          "_type": "link",
+          "_key": "l535",
+          "href": "/blog/what-is-included-in-sofa-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s530",
+          "text": "Contact SoftNest about your cleaning",
+          "marks": [
+            "l529"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s531",
+          "text": ". For a new appointment, ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s533",
+          "text": "request a written quote",
+          "marks": [
+            "l532"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s534",
+          "text": " or read ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s536",
+          "text": "what our sofa cleaning includes",
+          "marks": [
+            "l535"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s537",
+          "text": ".",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "showCover": true,
+  "seoTitle": "Stains or Odours After Cleaning? | SoftNest",
+  "seoDescription": "Have a concern after upholstery or carpet cleaning? Learn what to check during drying, what details to share and how to contact SoftNest.",
+  "excerpt": "Have a concern after upholstery or carpet cleaning? Learn what to check during drying, what details to share and how to contact SoftNest.",
+  "coverImage": {
+    "_type": "image",
+    "alt": "A phone and dry towel beside sofa upholstery, illustrating cleaning follow-up.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-4abf6df3671e5ba0d2759b059a9db077cac3d05c-1536x1024-webp"
+    }
+  }
+}

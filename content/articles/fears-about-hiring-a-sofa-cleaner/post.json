@@ -1,0 +1,570 @@
+{
+  "_createdAt": "2026-10-12T22:54:33Z",
+  "_id": "post-fears-about-hiring-a-sofa-cleaner",
+  "_rev": "xZzrI3Ys4FDi8GrmNPRlkk",
+  "_type": "post",
+  "_updatedAt": "2026-10-17T20:17:39Z",
+  "author": {
+    "_ref": "author-softnest",
+    "_type": "reference"
+  },
+  "body": [
+    {
+      "_type": "block",
+      "_key": "editorial-259",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s258",
+          "text": "Booking sofa cleaning should feel straightforward. You want to know what's included, what you'll pay and how the visit will fit around your day. It's completely reasonable to ask those questions before inviting a cleaning service into your home.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-261",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s260",
+          "text": "Here's how booking works at SoftNest Fabric Care, from the first message to using your sofa again.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-263",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s262",
+          "text": "Can I ask for a quote without booking?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-268",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l265",
+          "href": "/quote/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s264",
+          "text": "Yes. Call, text or use our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s266",
+          "text": "quote form",
+          "marks": [
+            "l265"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s267",
+          "text": " with your city and what you'd like cleaned. We'll discuss the furniture, condition and next steps, then confirm a written price. An appointment is arranged only after the work, price and availability are agreed.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-270",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s269",
+          "text": "Photos are welcome if you'd like to share them, but they're optional. You don't need to find a care label or know how to count a corner sectional before getting in touch. Describe the layout and we'll clarify anything needed.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-272",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s271",
+          "text": "What does the price cover?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-274",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s273",
+          "text": "Our upholstery cleaning includes stain treatment where needed, deep cleaning with professional extraction equipment, a thorough rinse, deodorizing and sanitizing. We clean all accessible upholstered areas agreed for the visit, including both sides of removable cushions where suitable, and use air movers while we work to help with drying.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-282",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l276",
+          "href": "/blog/upholstery-cleaning-prices-toronto/"
+        },
+        {
+          "_type": "link",
+          "_key": "l279",
+          "href": "/blog/what-is-included-in-sofa-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s275",
+          "text": "We confirm the written total, including tax, before booking. Mention extra furniture, pet accidents or other concerns early so the quote reflects the work you want. Parking is confirmed with you. See ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s277",
+          "text": "our quote guide",
+          "marks": [
+            "l276"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s278",
+          "text": " and ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s280",
+          "text": "what's included",
+          "marks": [
+            "l279"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s281",
+          "text": " for more detail.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-284",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s283",
+          "text": "Do I need to do anything before you arrive?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-286",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s285",
+          "text": "Clear small belongings and fragile items from the work area and leave a route to the furniture. There's no need to apply a stain remover first. We clarify furniture movement with you if it is needed.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-291",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l288",
+          "href": "/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s287",
+          "text": "Please arrange access to a sink with hot water or another suitable water supply. If your building needs an elevator booking or has service-hour rules, tell us before the appointment. You can stay home or agree access with us if you'll be out. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s289",
+          "text": "preparation guide",
+          "marks": [
+            "l288"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s290",
+          "text": " keeps all of this in one place.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-293",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s292",
+          "text": "How will I know when you're coming?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-295",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s294",
+          "text": "We'll remind you the day before your appointment and text around 20–30 minutes before arriving. If access or your plans change, contact us so we can discuss it rather than leaving the details until arrival.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-297",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s296",
+          "text": "How do you choose the cleaning method?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-299",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s298",
+          "text": "We look at the fabric, construction, care information, existing wear and marks before choosing the approach. We also ask what has already been used on the furniture. A home cleaning attempt isn't something to hide; it helps us understand what we're working with.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-304",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l301",
+          "href": "/blog/what-to-expect-when-softnest-cleans-your-sofa/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s300",
+          "text": "We explain the plan and any concerns before starting. Not every fabric suits the same product or amount of moisture. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s302",
+          "text": "sofa-cleaning process",
+          "marks": [
+            "l301"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s303",
+          "text": " explains the steps in everyday language.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-306",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s305",
+          "text": "Will the sofa look new afterwards?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-308",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s307",
+          "text": "Cleaning can improve everyday soil, body oils and many common marks. The result still depends on the fabric, the stain and its history. Worn areas, changed colour or contamination below the accessible material may remain visible or need another approach.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-310",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s309",
+          "text": "We discuss what is realistic rather than promising the same outcome for every sofa. The final appearance should be judged after the upholstery dries, not only while it is damp.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-312",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s311",
+          "text": "When can I use the sofa again?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-314",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s313",
+          "text": "Most sofas take about six to eight hours to dry, sometimes longer with thick cushions, high humidity or limited airflow. Air movers help while we're working, and we'll explain how to keep air moving afterwards. Wait until the upholstery is fully dry before sitting on it or putting throws back.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-316",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s315",
+          "text": "What if I have a question after cleaning?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-318",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s317",
+          "text": "Call or message us and describe what you're noticing. If it's a mark or odour, tell us whether the sofa is fully dry and whether the concern is in the area we treated. Photos can help if you want to send them.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-323",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l320",
+          "href": "/blog/stains-or-odours-after-professional-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s319",
+          "text": "We'll review the concern with you and discuss the next step. Read ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s321",
+          "text": "what to do about stains or odours after cleaning",
+          "marks": [
+            "l320"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s322",
+          "text": " if you're unsure where to start.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-325",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s324",
+          "text": "Ready to talk through your furniture?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-333",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l327",
+          "href": "/quote/"
+        },
+        {
+          "_type": "link",
+          "_key": "l330",
+          "href": "/location/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s326",
+          "text": "SoftNest provides sofa, upholstery and carpet cleaning across the GTA and Hamilton. You can ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s328",
+          "text": "request a written quote",
+          "marks": [
+            "l327"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s329",
+          "text": " or ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s331",
+          "text": "check your service area",
+          "marks": [
+            "l330"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s332",
+          "text": " without needing to know every technical detail first.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "_key": "fabric-care",
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "A welcoming living room prepared for a careful upholstery-cleaning visit.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-832296ee9a4ea819d0680784eb2854baea607289-1536x1024-webp"
+    }
+  },
+  "excerpt": "Get clear answers about SoftNest sofa-cleaning quotes, included work, arrival messages, home preparation, drying and questions after your visit.",
+  "publishedAt": "2026-10-12T16:00:00-04:00",
+  "relatedServices": [
+    {
+      "_key": "sofa",
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Get clear answers about SoftNest sofa-cleaning quotes, included work, arrival messages, home preparation, drying and questions after your visit.",
+  "seoTitle": "Questions Before Booking Sofa Cleaning | SoftNest",
+  "showCover": true,
+  "slug": {
+    "_type": "slug",
+    "current": "fears-about-hiring-a-sofa-cleaner"
+  },
+  "title": "Your Questions Before Booking Sofa Cleaning with SoftNest"
+}

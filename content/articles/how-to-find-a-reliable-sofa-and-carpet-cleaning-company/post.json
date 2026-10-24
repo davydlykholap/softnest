@@ -1,1101 +1,516 @@
 {
+  "_createdAt": "2026-10-24T22:05:10Z",
   "_id": "post-how-to-find-a-reliable-sofa-and-carpet-cleaning-company",
+  "_rev": "MW31l6IMkd951Zwc8ZnLS3",
   "_type": "post",
-  "title": "How to Find a Reliable Sofa and Carpet Cleaning Company in Oakville, Milton, Burlington & Mississauga",
-  "seoTitle": "Choosing a Sofa & Carpet Cleaner | SoftNest Fabric Care",
+  "_updatedAt": "2026-10-24T22:06:19Z",
+  "author": {
+    "_ref": "author-softnest",
+    "_type": "reference"
+  },
+  "body": [
+    {
+      "_type": "block",
+      "_key": "editorial-194",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s193",
+          "text": "Looking for a sofa and carpet cleaning company in Oakville, Milton, Burlington or Mississauga? Start with a few practical questions: what is included, what will it cost, how will the cleaner care for your home, and what happens after the visit?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-196",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s195",
+          "text": "You don't need to know the name of your fabric or the right cleaning method before you ask. A useful conversation should help you understand the job and decide whether the service fits your needs.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-198",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s197",
+          "text": "Compare the written quote and the work it covers",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-200",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s199",
+          "text": "Two quotes for sofa cleaning can cover different surfaces and treatments. Check the item list, accessible backs and sides, removable cushions, ordinary stain treatment, rinsing and drying assistance. Ask whether the total includes tax and clarify parking before the appointment.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-205",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l202",
+          "href": "/blog/upholstery-cleaning-prices-toronto/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s201",
+          "text": "At SoftNest, we provide written quotes rather than a fixed online price list. We confirm the agreed work and tax-inclusive total before booking. Photos are optional; you can describe the furniture by phone or message. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s203",
+          "text": "pricing and quote guide",
+          "marks": [
+            "l202"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s204",
+          "text": " explains what information helps.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-207",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s206",
+          "text": "Ask how your material will be assessed",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-209",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s208",
+          "text": "A light-coloured sectional, a wool rug and a delicate upholstered chair can need different care. The cleaner should consider the material, construction, care instructions, existing condition and previous products before choosing an approach.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-211",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s210",
+          "text": "Mention old marks, loose seams, colour changes and any attempt to clean them. That helps the technician distinguish everyday soil from concerns that cleaning may not fully change. You should understand the likely improvement before work begins.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-213",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s212",
+          "text": "Check the practical details for your home",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-215",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s214",
+          "text": "For a house, think about the route to the furniture and whether stairs or tight spaces affect access. In a condo, check parking, loading, elevator arrangements and building service hours. Clarify which furniture can be moved rather than assuming every piece will be shifted.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-220",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l217",
+          "href": "/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s216",
+          "text": "SoftNest confirms parking and any furniture movement with you. We ask for access to a sink with hot water or another suitable water supply. We'll send a reminder the day before and text around 20–30 minutes before arriving. See ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s218",
+          "text": "how to prepare for the visit",
+          "marks": [
+            "l217"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s219",
+          "text": " for a simple checklist.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-222",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s221",
+          "text": "Look for realistic answers about stains and drying",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-224",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s223",
+          "text": "Included stain treatment isn't a promise that every mark will vanish. Worn fibres, changed colour and deeper contamination can affect the outcome. Ask what the cleaner expects to improve and how the result should be judged after drying.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-226",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s225",
+          "text": "Most sofas we clean take around six to eight hours to dry; most carpets take around four to eight hours. The material, padding, humidity and airflow can extend those estimates. We use air movers while working to help with drying and explain when the area is ready to use.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-228",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s227",
+          "text": "Read reviews and know how to follow up",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-230",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s229",
+          "text": "Look for details about communication, care inside the home, the agreed price and the result after drying. Independent reviews and genuine job documentation are useful alongside the company's own explanation of its service.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-235",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l232",
+          "href": "/blog/stains-or-odours-after-professional-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s231",
+          "text": "Before booking, make sure you know how to reach the company afterwards. If something concerns you after a SoftNest clean, call or message us so we can review it with you. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s233",
+          "text": "follow-up guide",
+          "marks": [
+            "l232"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s234",
+          "text": " explains the first steps.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-237",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s236",
+          "text": "A quick checklist before you book",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-239",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s238",
+          "text": "Is the furniture and carpet area list clear?",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-241",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s240",
+          "text": "Is the total price, including tax, confirmed in writing?",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-243",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s242",
+          "text": "Are the included treatment and accessible surfaces explained?",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-245",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s244",
+          "text": "Have access, parking and any movement been discussed?",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-247",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s246",
+          "text": "Do you understand the drying estimate and realistic result?",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-249",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s248",
+          "text": "Do you know how to contact the cleaner after the visit?",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-257",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l251",
+          "href": "/location/"
+        },
+        {
+          "_type": "link",
+          "_key": "l254",
+          "href": "/quote/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s250",
+          "text": "SoftNest provides upholstery and carpet cleaning across Oakville, Milton, Burlington, Mississauga and other GTA and Hamilton communities. ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s252",
+          "text": "Find your service area",
+          "marks": [
+            "l251"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s253",
+          "text": " or ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s255",
+          "text": "request a written quote",
+          "marks": [
+            "l254"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s256",
+          "text": " when you're ready.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "Upholstery and carpet-cleaning tools neatly arranged on floor protection in a living room.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-0881c02f00b295e7a97e4dff8fa34171c989602f-1536x1024-webp"
+    }
+  },
+  "excerpt": "Compare sofa and carpet cleaners in Oakville, Milton, Burlington and Mississauga with clear checks for quotes, inclusions, access and drying.",
+  "order": 13,
+  "publishedAt": "2026-10-24T22:05:10.134Z",
+  "relatedServices": [
+    {
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_ref": "service-carpet-area-rug-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Compare sofa and carpet cleaners in Oakville, Milton, Burlington and Mississauga with clear checks for quotes, inclusions, access and drying.",
+  "seoTitle": "Choosing a Sofa & Carpet Cleaner in Halton and Peel",
+  "showCover": true,
   "slug": {
     "_type": "slug",
     "current": "how-to-find-a-reliable-sofa-and-carpet-cleaning-company"
   },
-  "excerpt": "Learn what to look for when choosing a sofa and carpet cleaning company in Oakville, Milton, Burlington and Mississauga, from fabric care to clear pricing.",
-  "seoDescription": "Learn what to look for when choosing a sofa and carpet cleaning company in Oakville, Milton, Burlington and Mississauga, from fabric care to clear pricing.",
-  "publishedAt": "2026-10-24T22:05:10.134Z",
-  "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
-  },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-fabric-care"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-sofa-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-upholstery-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-carpet-area-rug-cleaning"
-    }
-  ],
-  "body": [
-    {
-      "_type": "block",
-      "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Your sofa is where you relax after a long day, your kids watch movies, and your pets curl up for a nap. Your carpets and area rugs are part of what makes your home feel comfortable.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-1",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Over time, though, everyday use leaves behind dirt, spills, body oils, pet hair, and stains that regular vacuuming can't always remove.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-2",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "When it's time for a deeper clean, finding the right company can feel overwhelming. There are plenty of upholstery and carpet cleaning services in Oakville, Milton, Burlington, and Mississauga, but how do you know which one to trust?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-3",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "After all, you're inviting someone into your home and trusting them with furniture that may have cost thousands of dollars.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-4",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Here's what to look for, what to avoid, and how to make sure your furniture gets the attention it deserves.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-5",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "1. Choose a Company That Understands Different Fabrics",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Not every sofa can be cleaned the same way.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-7",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A standard polyester sectional, a delicate linen sofa, and a wool area rug can require very different cleaning methods.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-8",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "One of the biggest concerns homeowners have is that a cleaner might use the wrong products or too much moisture, leaving behind water marks, shrinkage, discolouration, or other damage.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-9",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "That's why a professional cleaner should assess the material and its condition before deciding how to clean it.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-10",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "At SoftNest Fabric Care, we pay close attention to the fabric, its condition, and any existing stains or previous cleaning attempts. Our goal is to choose an appropriate cleaning approach rather than treating every piece of furniture the same way.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-11",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If a material requires special care or we believe there's a risk of damage, we'd rather explain that upfront than promise results we can't safely deliver.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-12",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "2. Don't Choose Based on the Lowest Price Alone",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-13",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "It's tempting to go with the cheapest quote, especially when several companies offer what sounds like the same service.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-14",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "But not all upholstery cleaning services include the same amount of work.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-15",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Some companies may advertise a low starting price and charge extra for stain treatment, cushions, or additional cleaning steps.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Before booking, ask what's included in the quote.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Does the company clean the seating areas only, or does the service also cover the back, sides, armrests, and removable cushions where appropriate?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Will they treat stains? Is rinsing included? Are there additional charges you should know about?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "At SoftNest Fabric Care, we aim to make our pricing straightforward. We typically ask for a few details about your furniture, including the size, number of seats, and photos when possible, so we can provide an accurate quote before your appointment.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-20",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Our cleaning process can include pre-treatment, stain treatment where needed, deep extraction cleaning, rinsing, and attention to the different areas of your upholstery.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-21",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "We believe good cleaning takes time, proper equipment, and attention to detail.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-22",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "3. Ask How They'll Protect Your Home",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-23",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "This is something homeowners sometimes forget to ask about.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-24",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional cleaning isn't just about the sofa or carpet. It's also about taking care of the space around it.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-25",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Cleaning equipment can be heavy. Hoses need to be moved through the home, and cleaning solutions and moisture need to be handled carefully.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-26",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Nobody wants a beautifully cleaned sofa but scratched flooring, wet furniture legs, or damage to a nearby coffee table.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-27",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "At SoftNest Fabric Care, we take care when bringing equipment into your home and working around your belongings.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-28",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "We use protective coverings where needed to help protect floors, tables, and surrounding surfaces. We also pay attention to how our hoses and equipment are positioned so we can work carefully around your furniture.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-29",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "We want you to feel comfortable having us in your home from the moment we arrive until the cleaning is complete.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-30",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "4. Be Careful With Companies That Promise to Remove Every Stain",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-31",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Coffee, wine, food, pet accidents, and everyday dirt can leave noticeable marks on upholstery and carpets.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-32",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Many stains can be treated successfully, but not every stain can be completely removed.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-33",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Sometimes what looks like a stain is actually permanent discolouration caused by bleach, household cleaning products, sun exposure, or damage to the fabric itself.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-34",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A trustworthy cleaning company should be able to explain the difference.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-35",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "At SoftNest Fabric Care, we always aim for the best possible cleaning results, but we also believe in being realistic.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-36",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If a stain has permanently changed the colour of a fabric, cleaning may improve the overall appearance without restoring the original colour.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-37",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "We'd rather be upfront about that than make promises just to secure a booking.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-38",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "5. Ask About Drying Time",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-39",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Another common concern is whether the sofa or carpet will stay wet for too long.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-40",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Excessive moisture can lead to longer drying times and, in some circumstances, unwanted odours or other problems.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-41",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional cleaning should involve appropriate moisture control and effective extraction.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-42",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "At SoftNest Fabric Care, we use professional extraction equipment to remove cleaning solution, moisture, and loosened dirt from suitable fabrics.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-43",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Drying time depends on the material, cleaning method, room temperature, humidity, and airflow.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-44",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "We'll explain what to expect after the cleaning and how to help your furniture dry properly.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-45",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "6. Look for Attention to Detail, Not Just Fast Service",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-46",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A sofa can look simple, but cleaning it thoroughly involves more than making a few passes over the seat cushions.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-47",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Armrests collect body oils. Back cushions gather dust. Seams and corners can hold crumbs, pet hair, and dirt. The sides and back of the sofa may need attention too.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-48",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "At SoftNest Fabric Care, we focus on thorough cleaning rather than rushing through an appointment.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-49",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "For upholstery, we pay attention to accessible fabric surfaces, including seating areas, backrests, armrests, sides, and cushions, as appropriate for the furniture.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-50",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "We also take the time to work on problem areas and treat stains where possible.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-51",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Whether we're cleaning a small loveseat or a large sectional, our goal is to deliver careful, consistent work.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-52",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "7. Check Reviews and Ask the Right Questions",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-53",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Before booking any carpet or upholstery cleaning company, spend a few minutes checking its online reviews.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-54",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Look beyond the overall star rating. Read what customers say about communication, punctuality, care for their homes, and the final cleaning results.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-55",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "You can also ask a few simple questions:",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-56",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Have you cleaned this type of fabric before?",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-57",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What's included in the price?",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-58",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "How do you protect floors and nearby furniture?",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-59",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "How long will the cleaning take?",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-60",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What should I expect from stain removal?",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-61",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "How long will the furniture take to dry?",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-62",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A reliable company should be comfortable answering these questions.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-63",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional Sofa and Carpet Cleaning Near You",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-64",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If you're looking for professional upholstery or carpet cleaning in Oakville, Milton, Burlington, or Mississauga, SoftNest Fabric Care would be happy to help.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-65",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "We provide cleaning services for sofas, loveseats, sectionals, upholstered chairs, carpets, and area rugs, subject to the material and its cleaning requirements.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-66",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Whether you have a family sofa that needs refreshing, a light-coloured sectional with everyday stains, or a carpet that's seen years of foot traffic, we'll help you understand the available cleaning options.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-67",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Our approach is simple: communicate clearly, respect your home, use appropriate professional cleaning methods, and take the time to do the job properly.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-68",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Ready to Refresh Your Sofa or Carpets?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-69",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Getting a quote is easy.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-70",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Just send SoftNest Fabric Care a few photos of the furniture or carpet you'd like cleaned, along with your location and a short description of any stains or concerns.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-71",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "We'll review the details, explain what we can do, and provide a quote before scheduling your appointment.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-72",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "SoftNest Fabric Care — Professional Upholstery & Carpet Cleaning in Oakville, Milton, Burlington, Mississauga and surrounding GTA areas.",
-          "marks": [
-            "strong"
-          ]
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-73",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Because your furniture deserves more than a quick surface clean.",
-          "marks": []
-        }
-      ]
-    }
-  ],
-  "order": 13,
-  "showCover": true,
-  "coverImage": {
-    "_type": "image",
-    "asset": {
-      "_type": "reference",
-      "_ref": "image-0dce9fd5f1942d28d0d9f7ce86d1b58f5e90bb7f-1536x1024-webp"
-    },
-    "alt": "Two cleaning technicians extract dirt from a cream sectional sofa and a carpet, with protective coverings over nearby floors and furniture.",
-    "width": 1536,
-    "height": 1024
-  }
+  "title": "Choosing a Sofa and Carpet Cleaner in Oakville, Milton, Burlington and Mississauga"
 }

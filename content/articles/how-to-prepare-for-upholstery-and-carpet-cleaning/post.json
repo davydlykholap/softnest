@@ -1,0 +1,520 @@
+{
+  "_id": "post-how-to-prepare-for-upholstery-and-carpet-cleaning",
+  "_type": "post",
+  "slug": {
+    "_type": "slug",
+    "current": "how-to-prepare-for-upholstery-and-carpet-cleaning"
+  },
+  "title": "How to Prepare for Sofa and Carpet Cleaning",
+  "publishedAt": "2026-10-24T22:00:00Z",
+  "author": {
+    "_type": "reference",
+    "_ref": "author-softnest"
+  },
+  "categories": [
+    {
+      "_type": "reference",
+      "_ref": "category-our-process"
+    }
+  ],
+  "relatedServices": [
+    {
+      "_type": "reference",
+      "_ref": "service-sofa-cleaning"
+    },
+    {
+      "_type": "reference",
+      "_ref": "service-upholstery-cleaning"
+    },
+    {
+      "_type": "reference",
+      "_ref": "service-carpet-area-rug-cleaning"
+    },
+    {
+      "_type": "reference",
+      "_ref": "service-stairs-hallways-cleaning"
+    }
+  ],
+  "order": 15,
+  "body": [
+    {
+      "_type": "block",
+      "_key": "editorial-413",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s412",
+          "text": "You don't need to clean the house before the cleaner arrives. A clear route, a few practical access details and room for the furniture to dry are the main things that help an upholstery or carpet-cleaning appointment run smoothly.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-415",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s414",
+          "text": "Here's how to prepare for a SoftNest visit, whether we're cleaning a sofa, a sectional or carpeted areas in your home.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-417",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s416",
+          "text": "Before the appointment: confirm the items and access",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-419",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s418",
+          "text": "Check that the furniture and carpet areas you want cleaned are listed in the written quote. Mention separate chairs, ottomans, decorative pillows, stairs and landings rather than assuming they're part of another item.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-421",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s420",
+          "text": "Tell us about parking, entry arrangements and any building rules. We confirm parking with you. For a condo, let us know about service elevators, loading access or permitted service hours before the appointment. We also clarify furniture movement if it's needed; there's no need to start lifting heavy pieces yourself.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-423",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s422",
+          "text": "Clear small belongings and leave a route to the work area",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-425",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s424",
+          "text": "Put away throws, toys, loose objects and fragile items near the furniture or carpet. Keep a clear route from the entrance to the areas being cleaned so equipment and hoses can be positioned carefully.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-427",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s426",
+          "text": "If you have loose cushions or pillows you want cleaned, leave them available and point them out. A removable cover shouldn't be taken off and washed just because it has a zip; follow the furniture care instructions and discuss it with us first.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-429",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s428",
+          "text": "Don't pre-treat the stains",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-431",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s430",
+          "text": "There's no need to add a spot remover before we arrive. If you've already tried something, tell us what it was and roughly when you used it. A photo of the product label can help, but a description is fine.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-436",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l433",
+          "href": "/blog/what-to-expect-when-softnest-cleans-your-sofa/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s432",
+          "text": "Point out areas that concern you, even if you don't know what caused them. Mention pet accidents, returning stains, colour changes, loose seams or previous water rings. That helps us assess the material and choose the approach. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s434",
+          "text": "sofa-cleaning process guide",
+          "marks": [
+            "l433"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s435",
+          "text": " explains the checks we make.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-438",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s437",
+          "text": "Arrange water access and a plan for the home",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-440",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s439",
+          "text": "Please provide access to a sink with hot water or another suitable water supply. If access is unusual, tell us beforehand so we can discuss the setup.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-442",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s441",
+          "text": "You can stay home while we work or arrange access with us if you'll be out. The important part is agreeing how we enter, which areas are being cleaned and how to reach you if a question comes up. Keep children and pets away from the work area and off damp upholstery or carpet until it is ready to use.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-444",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s443",
+          "text": "Expect a reminder and a message before arrival",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-446",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s445",
+          "text": "We'll remind you the day before the appointment and text around 20–30 minutes before arriving. Let us know if access or your plans change so we can discuss it before reaching the property.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-448",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s447",
+          "text": "Many sofa cleans take around one to two hours, although larger pieces, extra items and more involved treatment can take longer. Ask about your planned visit if timing is important, and leave space afterwards for drying.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-450",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s449",
+          "text": "Plan for drying after the clean",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-452",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s451",
+          "text": "Most sofas take around six to eight hours to dry; most carpets take around four to eight hours. The material, padding, humidity and airflow can extend those estimates. We use air movers while working and explain the drying plan before we leave.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-457",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l454",
+          "href": "/blog/how-long-does-a-couch-take-to-dry-after-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s453",
+          "text": "Keep upholstery uncovered, follow our cushion-positioning advice and avoid replacing throws or walking furniture back across damp areas until advised. Use gentle room airflow rather than concentrated heat. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s455",
+          "text": "sofa drying guide",
+          "marks": [
+            "l454"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s456",
+          "text": " has more detail.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-459",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s458",
+          "text": "A simple appointment checklist",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-461",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s460",
+          "text": "Check the quoted items and areas.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-463",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s462",
+          "text": "Confirm parking, entry and any building arrangements.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-465",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s464",
+          "text": "Clear small belongings and a route to the work area.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-467",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s466",
+          "text": "Arrange access to a suitable water supply.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-469",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s468",
+          "text": "Tell us about stains, previous products and any sensitivities.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-471",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s470",
+          "text": "Agree access if you'll be out and leave time for drying.",
+          "marks": []
+        }
+      ],
+      "listItem": "bullet",
+      "level": 1
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-476",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l473",
+          "href": "/quote/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s472",
+          "text": "If you're still planning the visit, ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s474",
+          "text": "request a written quote",
+          "marks": [
+            "l473"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s475",
+          "text": " for upholstery or carpet cleaning in the GTA and Hamilton. Photos are welcome, but optional.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "showCover": true,
+  "seoTitle": "Prepare for Sofa & Carpet Cleaning | SoftNest",
+  "seoDescription": "Prepare for a SoftNest cleaning visit with simple advice on access, parking, water supply, furniture, pets, arrival messages and drying.",
+  "excerpt": "Prepare for a SoftNest cleaning visit with simple advice on access, parking, water supply, furniture, pets, arrival messages and drying.",
+  "coverImage": {
+    "_type": "image",
+    "alt": "A living room with a clear route to the sofa and small belongings put aside.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-ab0effa864d7dae459c84fa0f8d1cc41d0077d28-1536x1024-webp"
+    }
+  }
+}

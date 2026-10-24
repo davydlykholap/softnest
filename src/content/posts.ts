@@ -57,9 +57,14 @@ const readingTopics: Record<string, string[]> = {
   "how-long-does-a-couch-take-to-dry-after-cleaning": ["what-to-expect-when-softnest-cleans-your-sofa", "why-did-my-couch-stain-come-back-after-cleaning"],
   "how-to-know-when-your-sofa-needs-professional-cleaning": ["why-sofa-armrests-get-dirty-faster", "what-to-expect-when-softnest-cleans-your-sofa"],
   "upholstery-cleaning-prices-toronto": ["how-to-choose-an-upholstery-cleaning-company", "what-to-expect-when-softnest-cleans-your-sofa"],
-  "what-to-expect-when-softnest-cleans-your-sofa": ["how-long-does-a-couch-take-to-dry-after-cleaning", "fears-about-hiring-a-sofa-cleaner"],
+  "what-to-expect-when-softnest-cleans-your-sofa": ["how-to-prepare-for-upholstery-and-carpet-cleaning", "what-is-included-in-sofa-cleaning"],
   "fears-about-hiring-a-sofa-cleaner": ["how-to-choose-an-upholstery-cleaning-company", "what-to-expect-when-softnest-cleans-your-sofa"],
   "how-to-choose-an-upholstery-cleaning-company": ["upholstery-cleaning-prices-toronto", "what-to-expect-when-softnest-cleans-your-sofa"],
+  "how-to-find-a-reliable-sofa-and-carpet-cleaning-company": ["how-to-choose-an-upholstery-cleaning-company", "how-to-prepare-for-upholstery-and-carpet-cleaning"],
+  "what-is-included-in-sofa-cleaning": ["upholstery-cleaning-prices-toronto", "how-to-prepare-for-upholstery-and-carpet-cleaning"],
+  "how-to-prepare-for-upholstery-and-carpet-cleaning": ["what-to-expect-when-softnest-cleans-your-sofa", "how-long-does-a-couch-take-to-dry-after-cleaning"],
+  "stains-or-odours-after-professional-cleaning": ["why-did-my-couch-stain-come-back-after-cleaning", "how-to-remove-pet-urine-smell-from-couch"],
+  "what-to-expect-from-professional-carpet-cleaning": ["does-vacuuming-clean-carpet", "how-to-prepare-for-upholstery-and-carpet-cleaning"],
 };
 
 export function getReadingSuggestions(post: Post): Post[] {

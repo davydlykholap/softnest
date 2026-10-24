@@ -2,7 +2,7 @@
 
 Last updated: 2026-10-24
 
-The October 24 dependency upgrades and new sofa/carpet-cleaner guide are prepared locally. The guide is published in Sanity; the public website still needs a successful deployment of the upgraded code because the previous deployment was blocked by dependency advisories.
+The October 24 refresh updates the dependency trees and the booking/care article library. Eighteen articles are published in Sanity: fourteen revised guides and four new guides covering service inclusions, appointment preparation, cleaning follow-up and residential carpet cleaning. Website publication still follows the validated GitHub Pages deployment workflow.
 
 The shared city-service system, quote context and GA4 configuration are deployed. The October 17 refinements add reviewed copy for every city-service combination, contextual article links, topic-based reading recommendations and responsive local photo delivery. The homepage title, H1, hero copy and design are preserved. Production analytics receipt remains a separate account-side verification.
 
@@ -15,7 +15,7 @@ This is the authoritative handoff for the production website. Read it before str
 - Sanity Studio in `studio/` manages public structured content.
 - Every normal dev/build first reads published Sanity content, validates it, and writes a generated snapshot under `src/content/generated/`.
 - React consumes that snapshot; public pages do not issue independent runtime Sanity requests.
-- The current catalog contains 10 services, 9 service areas and 14 published Sanity blog articles.
+- The current catalog contains 10 services, 9 service areas and 18 published Sanity blog articles.
 - Services, city routes and blog articles are generated at build time with `generateStaticParams()`.
 - One shared city-service route generates 90 concise pages (10 services × 9 active cities), with local/service hub links, sitemap entries and quote context. See `city-service-pages.md` for coverage controls and content ownership.
 - Supabase is intentionally not connected. Private leads/jobs remain a future system.
@@ -67,6 +67,10 @@ Both residential and business requests collect a service city or postal code. Ev
 Local service pages also pass a validated `service` query parameter. The form retains this context, preselects an item category where the match is unambiguous and preserves the original city-service landing URL in the submission. Customers can still change the service location and requested items. General upholstery, leather and pet treatment do not guess an item category.
 
 Customers may request a photo quote directly through Instagram/Facebook without first completing the form. The detailed form remains available for residential and business requests; any needed photos can be requested during follow-up. Photo-channel clicks emit `photo_quote_click`, never `generate_lead`. Direct photo uploads are not offered.
+
+The quote page now explains written, tax-inclusive quotes, optional photos and payment after service; extra notes are optional. Service pages link to preparation and follow-up guidance and explain the day-before reminder and text around 20–30 minutes before arrival. Parking and any furniture movement are clarified with the customer. Published follow-up wording invites contact without adding a fixed deadline or unconfirmed remedy.
+
+All eighteen blog covers are AI-generated editorial illustrations with visible captions, separate from actual project evidence. Original WebP covers and the prompt set are archived under `content/articles/` and `content/editorial/2026-10-24/`. Existing article addresses are preserved. No team-profile section or invented case studies were added. See the editorial README for the reviewed content and guarded publication process.
 
 A selected quote category can contain multiple independently configured entries. For example, one request can include a 2-seat sofa and a separate 3-seat sofa. Question choices use compact, shared-styled dropdowns; additional pieces/groups are added only when needed, so the common single-item path stays short. Item questions are type-aware: rugs collect dimensions/material/pile, wall-to-wall carpet can use dimensions or square footage, stairs collect stair/landing counts, and other furniture branches into the relevant size/description fields.
 

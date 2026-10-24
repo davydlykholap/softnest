@@ -1,0 +1,514 @@
+{
+  "_id": "post-what-is-included-in-sofa-cleaning",
+  "_type": "post",
+  "slug": {
+    "_type": "slug",
+    "current": "what-is-included-in-sofa-cleaning"
+  },
+  "title": "What's Included in Sofa Cleaning at SoftNest?",
+  "publishedAt": "2026-10-24T22:00:00Z",
+  "author": {
+    "_type": "reference",
+    "_ref": "author-softnest"
+  },
+  "categories": [
+    {
+      "_type": "reference",
+      "_ref": "category-our-process"
+    }
+  ],
+  "relatedServices": [
+    {
+      "_type": "reference",
+      "_ref": "service-sofa-cleaning"
+    },
+    {
+      "_type": "reference",
+      "_ref": "service-upholstery-cleaning"
+    },
+    {
+      "_type": "reference",
+      "_ref": "service-sectional-furniture-cleaning"
+    }
+  ],
+  "order": 14,
+  "body": [
+    {
+      "_type": "block",
+      "_key": "editorial-346",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s345",
+          "text": "When you book sofa cleaning, it helps to know exactly what the visit covers. At SoftNest Fabric Care, we confirm the furniture, accessible surfaces and written total before booking, so you can decide with a clear picture of the work.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-348",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s347",
+          "text": "Our upholstery clean includes stain treatment where needed, deep cleaning with professional extraction equipment, a thorough rinse, deodorizing and sanitizing. We clean all accessible upholstered areas agreed for the visit, including both sides of removable cushions where suitable, and use air movers while we work to help with drying.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-350",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s349",
+          "text": "Which parts of the sofa do you clean?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-352",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s351",
+          "text": "The agreed clean covers accessible upholstered areas such as seats, backrests, armrests, sides, backs and the fabric around and beneath removable cushions. Both sides of removable cushions are included where the material can be cleaned safely.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-354",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s353",
+          "text": "Access matters. If a sofa sits tightly against a wall or a piece is heavy, tell us before the appointment. We clarify any movement needed rather than assuming you can lift it yourself. Mention a chaise, recliner, separate ottoman or decorative pillows when requesting the quote so the full item list is clear.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-356",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s355",
+          "text": "Inspection and dry-soil removal come first",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-358",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s357",
+          "text": "We check the material, construction, condition and areas of concern before choosing products and a method. The care label helps, and the condition of the upholstery matters too. Tell us about previous cleaning attempts, loose seams or colour changes you've noticed.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-360",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s359",
+          "text": "Vacuuming accessible areas removes loose dirt, hair and debris before the wet-cleaning stages. Heavily used arms and favourite seats may need more attention than lightly used panels. We adjust handling and agitation to the material rather than using the same approach on every piece.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-362",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s361",
+          "text": "Stain treatment, extraction and rinsing",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-364",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s363",
+          "text": "Stain treatment is included where needed. We assess the marks and use suitable products and handling to try to improve them. A thorough clean also recovers loosened soil and cleaning solution with professional extraction equipment and rinsing appropriate to the upholstery.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-369",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l366",
+          "href": "/blog/how-to-remove-stain-from-couch/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s365",
+          "text": "Included treatment isn't a guarantee that every mark will disappear. Older spills, previous products, colour changes and wear can affect the final appearance. We explain what is realistic before starting. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s367",
+          "text": "stain-removal guide",
+          "marks": [
+            "l366"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s368",
+          "text": " explains why the cause and fabric both matter.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-371",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s370",
+          "text": "Deodorizing, sanitizing and drying assistance",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-373",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s372",
+          "text": "Deodorizing and sanitizing are included, with products and handling selected for the material. Please mention sensitivities, pets or particular product concerns before the visit so we can discuss the approach with you.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-378",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l375",
+          "href": "/blog/how-long-does-a-couch-take-to-dry-after-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s374",
+          "text": "We use air movers while we work to help the upholstery begin drying. Most sofas take around six to eight hours to dry, although thick cushions and room conditions can make it longer. We'll explain how to position cushions and keep air moving. See ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s376",
+          "text": "how long a couch takes to dry",
+          "marks": [
+            "l375"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s377",
+          "text": " for practical aftercare.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-380",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s379",
+          "text": "How do I know what my quote covers?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-382",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s381",
+          "text": "List the furniture and any additional pieces you'd like cleaned. Describe the size or layout, plus marks, odours or access concerns. Photos are helpful if you'd like to send them, but they're optional.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-384",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s383",
+          "text": "We provide a written total with tax included before booking. Parking and any furniture movement are clarified with you. If the requested items or treatment change, discuss the revised work before going ahead. Payment is collected after the service is complete.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-386",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s385",
+          "text": "Planning a sofa-cleaning visit in the GTA?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-397",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l388",
+          "href": "/quote/"
+        },
+        {
+          "_type": "link",
+          "_key": "l391",
+          "href": "/location/"
+        },
+        {
+          "_type": "link",
+          "_key": "l394",
+          "href": "/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s387",
+          "text": "SoftNest cleans sofas, sectionals and other suitable upholstered furniture across the GTA and Hamilton. ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s389",
+          "text": "Request a written quote",
+          "marks": [
+            "l388"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s390",
+          "text": " or ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s392",
+          "text": "find your service area",
+          "marks": [
+            "l391"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s393",
+          "text": ". Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s395",
+          "text": "preparation guide",
+          "marks": [
+            "l394"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s396",
+          "text": " explains what to arrange before we arrive.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-399",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s398",
+          "text": "Frequently Asked Questions",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-401",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s400",
+          "text": "Are both sides of removable cushions included?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-403",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s402",
+          "text": "Yes, where they are accessible and the material is suitable. Tell us about unusual cushions or construction when asking for the quote.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-405",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s404",
+          "text": "Are stains included in the clean?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-407",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s406",
+          "text": "Stain treatment is included where needed. The result depends on the fabric, the mark and its history, so complete removal isn't guaranteed.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-409",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s408",
+          "text": "Is the sofa dry when you leave?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-411",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s410",
+          "text": "Not necessarily. Air movers help while we work, but the furniture usually needs further drying time. Wait until it is fully dry before using it.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "showCover": true,
+  "seoTitle": "What's Included in Sofa Cleaning? | SoftNest",
+  "seoDescription": "See what's included in SoftNest sofa cleaning: accessible upholstery and cushions, stain treatment, extraction, rinsing, deodorizing and drying support.",
+  "excerpt": "See what's included in SoftNest sofa cleaning: accessible upholstery and cushions, stain treatment, extraction, rinsing, deodorizing and drying support.",
+  "coverImage": {
+    "_type": "image",
+    "alt": "A sofa with removable cushions lifted to show accessible upholstery surfaces.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-1d2776bb2b95af89b82fe996703483992f79c0ea-1536x1024-webp"
+    }
+  }
+}

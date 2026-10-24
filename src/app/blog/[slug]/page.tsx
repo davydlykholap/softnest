@@ -87,6 +87,7 @@ export default async function BlogArticlePage({ params }: Props) {
           ) : null}
           <p className={styles.intro}>{post.excerpt}</p>
           {cover && post.showCover !== false ? (
+            <figure className={styles.coverFigure}>
             <Image
               className={styles.cover}
               src={cover}
@@ -95,6 +96,8 @@ export default async function BlogArticlePage({ params }: Props) {
               height={800}
               unoptimized
             />
+            {post.coverImage?.caption ? <figcaption>{post.coverImage.caption}</figcaption> : null}
+            </figure>
           ) : null}
           <div className={styles.body}>
             <ArticleBody body={post.body} />

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon, GlobeIcon, MessageIcon, PhoneIcon, PhotoIcon } from "@/components/UiIcons";
+import { ChevronRightIcon, GlobeIcon, InstagramIcon, MessageIcon, PhoneIcon } from "@/components/UiIcons";
 import { siteConfig } from "@/lib/site";
 import styles from "./page.module.css";
 
@@ -29,11 +29,11 @@ export default function CardPage() {
           <span><strong>Get a free quote</strong><small>Tell us what needs cleaning. Photos are optional.</small></span>
           <ChevronRightIcon className={styles.arrow} />
         </Link>
-        <Link href="/our-work/" className={styles.action}>
-          <span className={styles.icon}><PhotoIcon /></span>
-          <span><strong>See our work</strong><small>Before-and-after cleaning results.</small></span>
+        <a href={siteConfig.instagramUrl} className={styles.action}>
+          <span className={styles.icon}><InstagramIcon /></span>
+          <span><strong>See our work</strong><small>Before-and-after cleaning results on Instagram.</small></span>
           <ChevronRightIcon className={styles.arrow} />
-        </Link>
+        </a>
         <a href={siteConfig.googleProfileUrl} className={styles.action}>
           <span className={styles.icon}><Image src="/img/google-g-official.svg" alt="" width={32} height={32} /></span>
           <span><strong>Google reviews</strong><small>Read what our customers say.</small></span>

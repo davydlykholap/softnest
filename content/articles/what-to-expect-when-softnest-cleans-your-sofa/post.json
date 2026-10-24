@@ -1,329 +1,528 @@
 {
+  "_createdAt": "2026-10-11T20:22:02Z",
   "_id": "post-what-to-expect-when-softnest-cleans-your-sofa",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
   "_type": "post",
-  "title": "What to Expect When SoftNest Cleans Your Sofa",
-  "seoTitle": "What to Expect When SoftNest Cleans Your Sofa | SoftNest",
+  "_updatedAt": "2026-10-17T20:05:46Z",
+  "author": {
+    "_ref": "author-softnest",
+    "_type": "reference"
+  },
+  "body": [
+    {
+      "_key": "text-0",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-0",
+          "_type": "span",
+          "marks": [],
+          "text": "A sofa-cleaning appointment involves more than a quick pass over the seats. At SoftNest Fabric Care, we prepare the space, assess the upholstery and clean the areas we can safely reach, including the places you rarely see. Here is what to expect when we visit your home in the Greater Toronto Area."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-173",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s172",
+          "text": "Before your appointment",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-175",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s174",
+          "text": "We start with a written quote for the items and areas you want cleaned, with tax included. Tell us about the layout, any stains or pet odour and products already used. Photos are optional. We clarify parking and any furniture movement with you before the visit.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-180",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l177",
+          "href": "/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s176",
+          "text": "We'll remind you the day before your appointment and text around 20–30 minutes before arriving. Please arrange access to a sink with hot water or another suitable water supply. You can stay while we work or make an access plan with us if you'll be out. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s178",
+          "text": "preparation checklist",
+          "marks": [
+            "l177"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s179",
+          "text": " covers the practical details.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "text-1",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-1",
+          "_type": "span",
+          "marks": [],
+          "text": "1. We protect your home and inspect the fabric"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-2",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-2",
+          "_type": "span",
+          "marks": [],
+          "text": "We arrive prepared for the appointment and protect the floors before setting up. Waterproof protection helps contain moisture, with soft padding underneath to reduce the risk of scratches."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-3",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-3",
+          "_type": "span",
+          "marks": [],
+          "text": "Before choosing products or equipment, we inspect the sofa and test the upholstery as needed. The care label is useful, but it is only one part of the assessment. Fabric, colour stability, construction, existing damage and any previous cleaning attempts all help us choose an appropriate method."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-4",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-4",
+          "_type": "span",
+          "marks": [],
+          "text": "2. We open up the sofa and remove dry soil"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-5",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-5",
+          "_type": "span",
+          "marks": [],
+          "text": "We remove cushions where possible and open up the sofa to reach the frame, edges and hidden areas. We vacuum thoroughly to remove dust, hair and loose debris before applying any cleaning solution. Where the fabric allows, a motorized turbo brush helps lift embedded dry soil; delicate materials receive gentler handling."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-6",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-6",
+          "_type": "span",
+          "marks": [],
+          "text": "The areas we clean can include seats, armrests, sides, the back, spaces under the cushions and both sides of removable cushions. Access, upholstery construction and fabric suitability determine what can safely be cleaned."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-7",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-7",
+          "_type": "span",
+          "marks": [],
+          "text": "3. We match the solution and agitation to your sofa"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-8",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-8",
+          "_type": "span",
+          "marks": [],
+          "text": "We carry more than 20 professional products for different fabrics and cleaning needs. We select a suitable solution rather than treating every sofa the same, then apply it evenly to the areas being cleaned."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-9",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-9",
+          "_type": "span",
+          "marks": [],
+          "text": "Appropriate agitation helps loosen embedded dirt. A soft horsehair brush may be used to work the solution through the fibres when suitable. More delicate upholstery needs a gentler approach, and we adjust the products, moisture and handling accordingly."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-10",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-10",
+          "_type": "span",
+          "marks": [],
+          "text": "4. We rinse thoroughly and treat remaining stains"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-11",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-11",
+          "_type": "span",
+          "marks": [],
+          "text": "For upholstery suited to hot-water extraction, we rinse the fabric and recover loosened soil, residue and cleaning solution. Fabrics that need another method are handled accordingly."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-12",
+          "_type": "span",
+          "marks": [],
+          "text": "We check for remaining stains and treat them individually with appropriate stain-removal products. High-use areas such as seats and armrests may need an additional cleaning pass. We balance thorough soil removal with controlled moisture rather than repeatedly soaking the sofa."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-13",
+          "_type": "span",
+          "marks": [],
+          "text": "Most suitable furniture and everyday marks can be cleaned. We can also assess old stains, colour changes or worn areas and try to improve the overall appearance. We explain what is realistic before starting; complete removal or restoration is not promised."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-14",
+          "_type": "span",
+          "marks": [],
+          "text": "5. We assist drying and check the result"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-15",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-15",
+          "_type": "span",
+          "marks": [],
+          "text": "As suitable sections are cleaned, air movers help them dry while we continue working. Before finishing, we inspect the whole sofa again and touch up areas that need extra attention where it is safe to do so."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-16",
+          "_type": "span",
+          "marks": [],
+          "text": "Many sofas take around six to eight hours to dry, but thick cushions, fabric, room temperature, humidity and airflow can change that estimate. We explain what to expect for your furniture and how to help it dry. Wait until the upholstery is fully dry before using it."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-17",
+          "_type": "span",
+          "marks": [],
+          "text": "6. We explain any finishing treatment and aftercare"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-18",
+          "_type": "span",
+          "marks": [],
+          "text": "On suitable white or light-coloured upholstery, we may use a fabric-appropriate brightening treatment to address dullness. This is assessed for the individual sofa and is not part of every appointment."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "span-19",
+          "_type": "span",
+          "marks": [],
+          "text": "Our goal is a thorough clean, including accessible hidden areas, with care suited to your furniture. For a quote, call, message us or use the optional form with the seat count and any concerns. Photos of the sofa or care label are optional; details of earlier products are helpful too."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "For local visit planning, see "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "upholstery cleaning in Oakville"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": " or "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "Etobicoke upholstery cleaning"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": ". Each page explains the included work, access details and drying advice."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/oakville/upholstery-cleaning/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/etobicoke/upholstery-cleaning/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-182",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s181",
+          "text": "What's included, and what happens afterwards?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-187",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l184",
+          "href": "/blog/what-is-included-in-sofa-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s183",
+          "text": "The agreed upholstery clean includes stain treatment where needed, professional extraction, a thorough rinse, deodorizing and sanitizing. We clean accessible upholstered areas, including both sides of removable cushions where suitable, and use air movers while we work. See ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s185",
+          "text": "the full inclusions guide",
+          "marks": [
+            "l184"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s186",
+          "text": " if you're planning several pieces.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-192",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l189",
+          "href": "/blog/stains-or-odours-after-professional-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s188",
+          "text": "We review the work and explain drying and aftercare. Payment is collected after the service. If a mark or smell concerns you once the furniture is dry, contact us so we can review it with you and discuss the next step. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s190",
+          "text": "after-cleaning guide",
+          "marks": [
+            "l189"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s191",
+          "text": " explains what information helps.",
+          "marks": []
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "_ref": "category-our-process",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "A gloved hand using an upholstery extraction tool on a sofa with floor protection nearby.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-771f5aee090cffcb2d049d78dca394283b4fc91b-1536x1024-webp"
+    }
+  },
+  "excerpt": "From your written quote and arrival message to extraction, rinsing and drying, see how a SoftNest sofa-cleaning appointment works.",
+  "order": 12,
+  "publishedAt": "2026-10-11T16:00:00Z",
+  "relatedServices": [
+    {
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "From your written quote and arrival message to extraction, rinsing and drying, see how a SoftNest sofa-cleaning appointment works.",
+  "seoTitle": "What to Expect from SoftNest Sofa Cleaning",
+  "showCover": true,
   "slug": {
     "_type": "slug",
     "current": "what-to-expect-when-softnest-cleans-your-sofa"
   },
-  "excerpt": "See how SoftNest prepares, inspects, cleans and dries your sofa, from protecting your floors to fabric testing, stain treatment and the final inspection.",
-  "seoDescription": "See how SoftNest prepares, inspects, cleans and dries your sofa, from protecting your floors to fabric testing, stain treatment and the final inspection.",
-  "publishedAt": "2026-10-11T16:00:00Z",
-  "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
-  },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-our-process"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-sofa-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-upholstery-cleaning"
-    }
-  ],
-  "body": [
-    {
-      "_type": "block",
-      "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-0",
-          "text": "A sofa-cleaning appointment involves more than a quick pass over the seats. At SoftNest Fabric Care, we prepare the space, assess the upholstery and clean the areas we can safely reach, including the places you rarely see. Here is what to expect when we visit your home in the Greater Toronto Area.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-1",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-1",
-          "text": "1. We protect your home and inspect the fabric",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-2",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-2",
-          "text": "We arrive prepared for the appointment and protect the floors before setting up. Waterproof protection helps contain moisture, with soft padding underneath to reduce the risk of scratches.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-3",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-3",
-          "text": "Before choosing products or equipment, we inspect the sofa and test the upholstery as needed. The care label is useful, but it is only one part of the assessment. Fabric, colour stability, construction, existing damage and any previous cleaning attempts all help us choose an appropriate method.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-4",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-4",
-          "text": "2. We open up the sofa and remove dry soil",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-5",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-5",
-          "text": "We remove cushions where possible and open up the sofa to reach the frame, edges and hidden areas. We vacuum thoroughly to remove dust, hair and loose debris before applying any cleaning solution. Where the fabric allows, a motorized turbo brush helps lift embedded dry soil; delicate materials receive gentler handling.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-6",
-          "text": "The areas we clean can include seats, armrests, sides, the back, spaces under the cushions and both sides of removable cushions. Access, upholstery construction and fabric suitability determine what can safely be cleaned.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-7",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-7",
-          "text": "3. We match the solution and agitation to your sofa",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-8",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-8",
-          "text": "We carry more than 20 professional products for different fabrics and cleaning needs. We select a suitable solution rather than treating every sofa the same, then apply it evenly to the areas being cleaned.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-9",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-9",
-          "text": "Appropriate agitation helps loosen embedded dirt. A soft horsehair brush may be used to work the solution through the fibres when suitable. More delicate upholstery needs a gentler approach, and we adjust the products, moisture and handling accordingly.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-10",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-10",
-          "text": "4. We rinse thoroughly and treat remaining stains",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-11",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-11",
-          "text": "For upholstery suited to hot-water extraction, we rinse the fabric and recover loosened soil, residue and cleaning solution. Fabrics that need another method are handled accordingly.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-12",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-12",
-          "text": "We check for remaining stains and treat them individually with appropriate stain-removal products. High-use areas such as seats and armrests may need an additional cleaning pass. We balance thorough soil removal with controlled moisture rather than repeatedly soaking the sofa.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-13",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-13",
-          "text": "Some stains, colour loss and wear are permanent. We explain the limitations we identify; cleaning cannot repair damaged fibres or guarantee that every mark will disappear.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-14",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-14",
-          "text": "5. We assist drying and check the result",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-15",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-15",
-          "text": "As suitable sections are cleaned, air movers help them dry while we continue working. Before finishing, we inspect the whole sofa again and touch up areas that need extra attention where it is safe to do so.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-16",
-          "text": "Many sofas take around six to eight hours to dry, but thick cushions, fabric, room temperature, humidity and airflow can change that estimate. We explain what to expect for your furniture and how to help it dry. Wait until the upholstery is fully dry before using it.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-17",
-          "text": "6. We explain any finishing treatment and aftercare",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-18",
-          "text": "On suitable white or light-coloured upholstery, we may use a fabric-appropriate brightening treatment to address dullness. This is assessed for the individual sofa and is not part of every appointment.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "span-19",
-          "text": "Our goal is a thorough clean, including accessible hidden areas, with care suited to the furniture in front of us. If you want a quote, send clear photos of the whole sofa, the seat count and any areas of concern. A photo of the care label and details of products already used are helpful too.",
-          "marks": []
-        }
-      ]
-    }
-  ],
-  "order": 12,
-  "showCover": false,
-  "coverImage": {
-    "_type": "image",
-    "_key": "cover",
-    "asset": {
-      "_type": "reference",
-      "_ref": "image-cbc1d4faa546298229dd213640b6c302ae95505d-1536x1024-webp"
-    },
-    "alt": "A technician lifting one sofa seat cushion, with two seats in place, floor protection and a compact blue air mover beside the sofa.",
-    "width": 1536,
-    "height": 1024,
-    "localPath": "/images/blog/softnest-sofa-cleaning-preparation.webp"
-  }
+  "title": "What to Expect When SoftNest Cleans Your Sofa"
 }

@@ -140,6 +140,16 @@ export default function ServiceDetailPanel({
             stains or odours. The form and photos are optional. We confirm the
             work and price with you and explain anything that needs an on-site check.
           </p>
+          <p>
+            Your written quote includes tax, and payment is collected after the service.
+            We confirm parking and any furniture movement with you. You’ll receive
+            a reminder the day before and a text around 20–30 minutes before we arrive.
+          </p>
+          <p>
+            <Link href="/blog/upholstery-cleaning-prices-toronto/">Written quotes</Link>
+            {" · "}<Link href="/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/">Preparing for your visit</Link>
+            {" · "}<Link href="/blog/stains-or-odours-after-professional-cleaning/">Questions after cleaning</Link>
+          </p>
         </div>
         <div className={styles.expectationsCopy}>
           <div>

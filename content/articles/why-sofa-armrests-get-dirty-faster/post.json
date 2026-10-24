@@ -1,501 +1,633 @@
 {
+  "_createdAt": "2026-09-18T18:47:39Z",
   "_id": "post-why-sofa-armrests-get-dirty-faster",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
   "_type": "post",
-  "title": "Why Do Sofa Armrests Get Dirty Faster?",
-  "seoTitle": "Why Sofa Armrests Get Dirty Faster | SoftNest",
-  "slug": {
-    "_type": "slug",
-    "current": "why-sofa-armrests-get-dirty-faster"
-  },
-  "excerpt": "Learn why sofa armrests darken faster than the rest of the couch, what the buildup contains, and how to clean them without leaving a patchy result.",
-  "seoDescription": "Learn why sofa armrests darken faster than the rest of the couch, what the buildup contains, and how to clean them without leaving a patchy result.",
-  "publishedAt": "2026-09-10T12:00:00Z",
+  "_updatedAt": "2026-10-17T20:05:46Z",
   "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
+    "_ref": "author-softnest",
+    "_type": "reference"
   },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-fabric-care"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-sofa-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-upholstery-cleaning"
-    }
-  ],
   "body": [
     {
-      "_type": "block",
       "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-0-span",
-          "text": "Sofa armrests are touched more than almost any other part of the furniture. Hands, forearms, sleeves and bare skin repeatedly contact the same narrow area, so it often looks darker or feels slightly greasy while the seat and back still appear clean.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Sofa armrests are touched more than almost any other part of the furniture. Hands, forearms, sleeves and bare skin repeatedly contact the same narrow area, so it often looks darker or feels slightly greasy while the seat and back still appear clean."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-1",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-1-span",
-          "text": "That colour change is not always a single stain. It is usually a gradual layer of body oil, hand cream, dust and everyday residue that has bonded to the fibres. Understanding that difference helps explain why a quick wipe rarely produces an even result.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "That colour change is not always a single stain. It is usually a gradual layer of body oil, hand cream, dust and everyday residue that has bonded to the fibres. Understanding that difference helps explain why a quick wipe rarely produces an even result."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-2",
-      "style": "h2",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-2-span",
-          "text": "What Builds Up on Sofa Armrests?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "What Builds Up on Sofa Armrests?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h2"
     },
     {
-      "_type": "block",
       "_key": "text-3",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-3-span",
-          "text": "Skin naturally transfers oil and perspiration. Moisturizer, hair products, food residue and soil from clothing can add to it. Once that slightly oily film is present, airborne dust sticks to the fabric more readily. The armrest slowly becomes darker than the surrounding upholstery.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Skin naturally transfers oil and perspiration. Moisturizer, hair products, food residue and soil from clothing can add to it. Once that slightly oily film is present, airborne dust sticks to the fabric more readily. The armrest slowly becomes darker than the surrounding upholstery."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-4",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-4-span",
-          "text": "The effect is especially noticeable on light fabrics and on the front edge of an arm, where hands tend to rest. A household with children, pets or frequent guests may see the change sooner, but even carefully used furniture develops high-contact areas over time.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "The effect is especially noticeable on light fabrics and on the front edge of an arm, where hands tend to rest. A household with children, pets or frequent guests may see the change sooner, but even carefully used furniture develops high-contact areas over time."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-5",
-      "style": "h2",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-5-span",
-          "text": "Why Vacuuming Helps—but Does Not Remove the Dark Area",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Why Vacuuming Helps—but Does Not Remove the Dark Area"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h2"
     },
     {
-      "_type": "block",
       "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-6-span",
-          "text": "Vacuuming is useful for crumbs, pet hair and loose dust. It should be part of regular sofa care. A vacuum does not, however, dissolve the oily film holding fine soil to the fibres. The arm can remain dark even after the surface debris is gone.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Vacuuming is useful for crumbs, pet hair and loose dust. It should be part of regular sofa care. A vacuum does not, however, dissolve the oily film holding fine soil to the fibres. The arm can remain dark even after the surface debris is gone."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-7",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-7-span",
-          "text": "This is why an armrest may look cleaner immediately after vacuuming but still appear dull beside the seat cushion. The remaining problem is bonded soil, not simply material sitting on top of the fabric.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "This is why an armrest may look cleaner immediately after vacuuming but still appear dull beside the seat cushion. The remaining problem is bonded soil, not simply material sitting on top of the fabric."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-8",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-8-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Why Spot-Cleaning One Small Patch Can Look Uneven"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-9",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-9-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Treating only the darkest point can create a clean spot surrounded by gradual buildup. Too much cleaner may also leave a ring, residue or a different texture. On some fabrics, aggressive rubbing can disturb the nap and make the treated area reflect light differently."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-10",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-10-span-0",
+          "_type": "span",
+          "marks": [],
+          "text": "Before using any liquid product, check the furniture care label and test an inconspicuous area. Our "
+        },
+        {
+          "_key": "text-10-span-1",
+          "_type": "span",
+          "marks": [
+            "text-10-link"
+          ],
+          "text": "guide to choosing a couch cleaner"
+        },
+        {
+          "_key": "text-10-span-2",
+          "_type": "span",
+          "marks": [],
+          "text": " explains why the fabric code and the ability to rinse the product matter."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "text-10-link",
+          "_type": "link",
+          "href": "/blog/what-cleaning-solution-can-i-use-on-my-couch/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_key": "text-11",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-11-span",
+          "_type": "span",
+          "marks": [],
+          "text": "How to Slow Down Armrest Buildup"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-12-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Vacuum the arms and seams regularly with an upholstery attachment."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-13-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Wipe hands after applying lotion, handling food or working with oily products."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-14-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Wash removable arm covers according to their care instructions."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-15",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-15-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Rotate how the sofa is used when practical so one seat does not receive all the contact."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-16-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Arrange professional cleaning before the armrests become heavily compacted with soil."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-17-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Avoid covering an arm with a towel that transfers dye or traps moisture. A washable, colourfast arm cover made for the furniture is a better option when extra protection is needed."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-18-span",
+          "_type": "span",
+          "marks": [],
+          "text": "How Professionals Clean High-Contact Areas"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-19-span",
+          "_type": "span",
+          "marks": [],
+          "text": "During upholstery cleaning, armrests and headrests usually need more attention than lightly used panels. We inspect the fabric, choose an appropriate pre-treatment, allow time for the buildup to loosen, gently agitate where the material permits, and then rinse and extract the released soil."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-20",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-20-span",
+          "_type": "span",
+          "marks": [],
+          "text": "The aim is an even overall result, which is why the surrounding panel may be cleaned alongside the dark area. We can also assess old marks, colour changes and worn areas and try to improve the appearance. Complete removal or restoration is not promised."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-21",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-21-span",
+          "_type": "span",
+          "marks": [],
+          "text": "When Is It Time to Have the Sofa Cleaned?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-22",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-22-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Consider a professional assessment when the arms feel tacky, look distinctly darker, hold an odour or no longer improve with vacuuming. It is also wise to stop experimenting if a home treatment creates a ring, fading or a rough patch."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-23",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-23-span",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care cleans sofas and upholstered furniture in Mississauga and across the Greater Toronto Area. Photos of the full sofa, the armrest and the care label help us understand the fabric and recommend a sensible next step."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "For local help with well-used seating, see "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "sofa cleaning in Oakville"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": " or "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "sofa cleaning in Etobicoke"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": ". The service details explain how arms, cushions and other agreed areas are assessed."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/oakville/sofa-cleaning/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/etobicoke/sofa-cleaning/"
+        }
+      ],
+      "style": "normal"
     },
     {
       "_type": "block",
-      "_key": "text-8",
+      "_key": "editorial-28",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "_key": "text-8-span",
-          "text": "Why Spot-Cleaning One Small Patch Can Look Uneven",
+          "_key": "s27",
+          "text": "Is extra attention to the armrests included?",
           "marks": []
         }
       ]
     },
     {
       "_type": "block",
-      "_key": "text-9",
+      "_key": "editorial-30",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "_key": "text-9-span",
-          "text": "Treating only the darkest point can create a clean spot surrounded by gradual buildup. Too much cleaner may also leave a ring, residue or a different texture. On some fabrics, aggressive rubbing can disturb the nap and make the treated area reflect light differently.",
+          "_key": "s29",
+          "text": "Tell us about the darker arms, favourite seat or headrest when you ask for your quote. Our upholstery service includes stain treatment where needed and attention to the accessible areas agreed for cleaning. We confirm the work and written price before booking, rather than leaving the details until we're in your living room.",
           "marks": []
         }
       ]
     },
     {
       "_type": "block",
-      "_key": "text-10",
+      "_key": "editorial-35",
       "style": "normal",
       "markDefs": [
         {
           "_type": "link",
-          "_key": "text-10-link",
-          "href": "/blog/what-cleaning-solution-can-i-use-on-my-couch/"
+          "_key": "l32",
+          "href": "/blog/what-is-included-in-sofa-cleaning/"
         }
       ],
       "children": [
         {
           "_type": "span",
-          "_key": "text-10-span-0",
-          "text": "Before using any liquid product, check the furniture care label and test an inconspicuous area. Our ",
+          "_key": "s31",
+          "text": "Both sides of removable cushions are included where accessible and suitable for the material. An extra armchair, loose pillow or another item should be listed separately so the quote covers what you actually want cleaned. Read ",
           "marks": []
         },
         {
           "_type": "span",
-          "_key": "text-10-span-1",
-          "text": "guide to choosing a couch cleaner",
+          "_key": "s33",
+          "text": "what's included in sofa cleaning",
           "marks": [
-            "text-10-link"
+            "l32"
           ]
         },
         {
           "_type": "span",
-          "_key": "text-10-span-2",
-          "text": " explains why the fabric code and the ability to rinse the product matter.",
+          "_key": "s34",
+          "text": " for the full picture.",
           "marks": []
         }
       ]
     },
     {
-      "_type": "block",
-      "_key": "text-11",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-11-span",
-          "text": "How to Slow Down Armrest Buildup",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-12",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-12-span",
-          "text": "Vacuum the arms and seams regularly with an upholstery attachment.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-13",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-13-span",
-          "text": "Wipe hands after applying lotion, handling food or working with oily products.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-14",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-14-span",
-          "text": "Wash removable arm covers according to their care instructions.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-15",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-15-span",
-          "text": "Rotate how the sofa is used when practical so one seat does not receive all the contact.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-16-span",
-          "text": "Arrange professional cleaning before the armrests become heavily compacted with soil.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-17-span",
-          "text": "Avoid covering an arm with a towel that transfers dye or traps moisture. A washable, colourfast arm cover made for the furniture is a better option when extra protection is needed.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-18-span",
-          "text": "How Professionals Clean High-Contact Areas",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-19-span",
-          "text": "During upholstery cleaning, armrests and headrests usually need more attention than lightly used panels. We inspect the fabric, choose an appropriate pre-treatment, allow time for the buildup to loosen, gently agitate where the material permits, and then rinse and extract the released soil.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-20",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-20-span",
-          "text": "The objective is an even overall result—not an unnaturally bright patch. That is why the surrounding panel may be cleaned along with the visibly dark area. Old dye loss, wear or permanent fibre damage can remain after the removable soil is gone, so realistic expectations still matter.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-21",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-21-span",
-          "text": "When Is It Time to Have the Sofa Cleaned?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-22",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-22-span",
-          "text": "Consider a professional assessment when the arms feel tacky, look distinctly darker, hold an odour or no longer improve with vacuuming. It is also wise to stop experimenting if a home treatment creates a ring, fading or a rough patch.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-23",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-23-span",
-          "text": "SoftNest Fabric Care cleans sofas and upholstered furniture in Mississauga and across the Greater Toronto Area. Photos of the full sofa, the armrest and the care label help us understand the fabric and recommend a sensible next step.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
       "_key": "text-24",
-      "style": "h2",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-24-span",
-          "text": "Frequently Asked Questions",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Frequently Asked Questions"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h2"
     },
     {
-      "_type": "block",
       "_key": "text-25",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-25-span",
-          "text": "Why is one sofa arm dirtier than the other?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Why is one sofa arm dirtier than the other?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-26",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-26-span",
-          "text": "That is usually the side used most often or the side beside a walkway, table or favourite seat. Repeated contact concentrates body oils and soil in that area.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "That is usually the side used most often or the side beside a walkway, table or favourite seat. Repeated contact concentrates body oils and soil in that area."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-27",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-27-span",
-          "text": "Can I use dish soap on a greasy armrest?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Can I use dish soap on a greasy armrest?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-28",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-28-span",
-          "text": "Dish soap is not suitable for every upholstery fabric and can be difficult to rinse from a cushion. Follow the furniture and product instructions, test first and avoid saturating the arm.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Dish soap is not suitable for every upholstery fabric and can be difficult to rinse from a cushion. Follow the furniture and product instructions, test first and avoid saturating the arm."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-29",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-29-span",
-          "text": "Does a dark armrest always mean it is dirty?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Does a dark armrest always mean it is dirty?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-30",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-30-span",
-          "text": "Not always. Wear, dye loss and a changed fabric nap can also look dark. Cleaning removes soil; it cannot always reverse permanent material changes.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Dark areas can include soil, wear, colour changes or a change in the direction of the fibres. Cleaning often improves the appearance. We can assess difficult areas and try to improve them, without promising complete removal or restoration."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     }
   ],
+  "categories": [
+    {
+      "_key": "categories-0",
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "Subtle everyday soil on the high-contact edge of a beige sofa armrest.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-012b7c8feb5eca8b526962a004c1d3c1d364b63c-1536x1024-webp"
+    }
+  },
+  "excerpt": "Dark sofa armrests can hold body oils and everyday soil. Learn why vacuuming has limits and how professional upholstery cleaning treats these areas.",
   "order": 3,
-  "showCover": false
+  "publishedAt": "2026-09-10T12:00:00Z",
+  "relatedServices": [
+    {
+      "_key": "relatedServices-0",
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-1",
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Dark sofa armrests can hold body oils and everyday soil. Learn why vacuuming has limits and how professional upholstery cleaning treats these areas.",
+  "seoTitle": "Why Sofa Armrests Get Dirty Faster | SoftNest",
+  "showCover": true,
+  "slug": {
+    "_type": "slug",
+    "current": "why-sofa-armrests-get-dirty-faster"
+  },
+  "title": "Why Do Sofa Armrests Get Dirty Faster?"
 }

@@ -1,575 +1,708 @@
 {
+  "_createdAt": "2026-09-18T18:47:39Z",
   "_id": "post-how-long-does-a-couch-take-to-dry-after-cleaning",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
   "_type": "post",
-  "title": "How Long Does a Couch Take to Dry After Cleaning?",
-  "seoTitle": "How Long Does a Couch Take to Dry After Cleaning? | SoftNest",
-  "slug": {
-    "_type": "slug",
-    "current": "how-long-does-a-couch-take-to-dry-after-cleaning"
-  },
-  "excerpt": "Most professionally cleaned couches dry the same day, but fabric, cushions and room conditions matter. Learn what affects drying and how to help safely.",
-  "seoDescription": "Most professionally cleaned couches dry the same day, but fabric, cushions and room conditions matter. Learn what affects drying and how to help safely.",
-  "publishedAt": "2026-09-14T12:00:00Z",
+  "_updatedAt": "2026-10-17T20:05:46Z",
   "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
+    "_ref": "author-softnest",
+    "_type": "reference"
   },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-fabric-care"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-sofa-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-upholstery-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-sectional-furniture-cleaning"
-    }
-  ],
   "body": [
     {
-      "_type": "block",
       "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
           "_type": "span",
-          "_key": "text-0-span",
-          "text": "Many professionally cleaned couches dry later the same day, but there is no single drying time that applies to every sofa. Fabric thickness, cushion construction, the amount of soil, the cleaning method, airflow, temperature and humidity all affect how quickly moisture leaves the upholstery.",
+          "_key": "s71",
+          "text": "Most sofas we clean take about six to eight hours to dry. Thick cushions, the fabric, humidity and airflow can make it longer, so treat that as a planning estimate rather than a guaranteed ready-by time. We explain what to expect for your furniture before we leave.",
           "marks": []
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-1",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-1-span",
-          "text": "A responsible estimate is therefore a range explained after inspection, not a promise based only on the size of the couch.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "A responsible estimate is therefore a range explained after inspection, not a promise based only on the size of the couch."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-2",
-      "style": "h2",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-2-span",
-          "text": "What Affects Upholstery Drying Time?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "What Affects Upholstery Drying Time?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h2"
     },
     {
-      "_type": "block",
       "_key": "text-3",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-3-span",
-          "text": "Fabric and cushion construction",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Fabric and cushion construction"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-4",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-4-span",
-          "text": "A thin synthetic fabric may release moisture faster than a dense natural fibre or a heavily padded cushion. Fixed seats, tufting, piping and layered materials can also slow airflow through parts of the furniture.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "A thin synthetic fabric may release moisture faster than a dense natural fibre or a heavily padded cushion. Fixed seats, tufting, piping and layered materials can also slow airflow through parts of the furniture."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-5",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-5-span",
-          "text": "How much cleaning the sofa needs",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "How much cleaning the sofa needs"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-6-span",
-          "text": "Heavily soiled arms, old spots or contamination below the surface may require additional treatment and rinsing. The aim is still controlled moisture, but a more involved cleaning can take longer to dry than a light maintenance service.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Heavily soiled arms, old spots or contamination below the surface may require additional treatment and rinsing. The aim is still controlled moisture, but a more involved cleaning can take longer to dry than a light maintenance service."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-7",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-7-span",
-          "text": "Room conditions",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Room conditions"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-8",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-8-span",
-          "text": "Warm, dry moving air supports evaporation. High humidity, a cold room and closed windows with little air movement slow it down. Basement furniture often dries differently from a sofa in a bright, well-ventilated room.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Warm, dry moving air supports evaporation. High humidity, a cold room and closed windows with little air movement slow it down. Basement furniture often dries differently from a sofa in a bright, well-ventilated room."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-9",
-      "style": "h2",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-9-span",
-          "text": "Why Professional Extraction Matters",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Why Professional Extraction Matters"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h2"
     },
     {
-      "_type": "block",
       "_key": "text-10",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-10-span",
-          "text": "Cleaning solution loosens contamination; extraction removes that solution along with suspended soil and moisture. Multiple dry extraction passes can recover more liquid without adding more water. This helps shorten drying time and reduces the amount left inside the fabric.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Cleaning solution loosens contamination; extraction removes that solution along with suspended soil and moisture. Multiple dry extraction passes can recover more liquid without adding more water. This helps shorten drying time and reduces the amount left inside the fabric."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-11",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-11-span",
-          "text": "Faster is not the only goal. The upholstery must also be rinsed adequately so that loosened soil and cleaner are not left behind. Good cleaning balances treatment, rinsing, recovery and fabric safety.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Faster is not the only goal. The upholstery must also be rinsed adequately so that loosened soil and cleaner are not left behind. Good cleaning balances treatment, rinsing, recovery and fabric safety."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-12-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Why We Use Air Movers"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-13-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Air movers keep dry air passing over damp upholstery. They can speed evaporation and help different parts of the sofa dry more evenly. Drying also gives the cleaner a chance to inspect the result as the true colour returns and any remaining spot becomes easier to see."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-14-span-0",
+          "_type": "span",
+          "marks": [],
+          "text": "This final inspection matters because wet fabric often looks darker and can temporarily hide a water mark or returning stain. Our "
+        },
+        {
+          "_key": "text-14-span-1",
+          "_type": "span",
+          "marks": [
+            "text-14-link"
+          ],
+          "text": "guide to couch-stain wicking"
+        },
+        {
+          "_key": "text-14-span-2",
+          "_type": "span",
+          "marks": [],
+          "text": " explains why some marks become visible again during drying."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "text-14-link",
+          "_type": "link",
+          "href": "/blog/why-did-my-couch-stain-come-back-after-cleaning/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_key": "text-15",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-15-span",
+          "_type": "span",
+          "marks": [],
+          "text": "How to Help Your Couch Dry Safely"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-16-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Keep ceiling fans or room fans running when it is safe to do so."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-17-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Use heating, air conditioning or a dehumidifier to maintain comfortable, dry indoor air."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-18-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Leave removable cushions positioned as the cleaner recommends so air can reach more surfaces."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-19-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Keep people, pets, blankets and protective covers off the upholstery until it is dry."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-20",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-20-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Avoid placing damp cushions directly against wood, metal or another fabric that could transfer colour."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-21",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-21-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Do not use a hair dryer, space heater or other concentrated heat source on the fabric. Excessive heat can affect fibres, dyes, backing or foam and can create a safety risk."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-22",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-22-span",
+          "_type": "span",
+          "marks": [],
+          "text": "How Can You Tell Whether the Sofa Is Dry?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-23",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-23-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Check more than the centre of the seat. Feel the seams, piping, front edge, arms and the underside of removable cushions. The upholstery should feel consistent with the surrounding room—not cool or damp in isolated areas—and should not release moisture onto a clean dry towel pressed gently against it."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-24",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-24-span",
+          "_type": "span",
+          "marks": [],
+          "text": "If one area remains damp much longer than expected, contact the cleaner rather than covering it or using strong heat. The cause may be limited airflow, deeper treatment or moisture retained in a cushion layer."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-25",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-25-span",
+          "_type": "span",
+          "marks": [],
+          "text": "When Can You Sit on the Couch Again?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-26",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-26-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Wait until the upholstery is fully dry. Sitting too soon compresses damp layers, slows airflow and can transfer colour from clothing. It may also disturb the fabric nap or leave temporary pressure marks."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-27",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-27-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional Sofa Cleaning in the GTA"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-28",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-28-span",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care cleans sofas, sectionals and upholstered furniture in Mississauga and across the Greater Toronto Area. We use controlled cleaning and extraction, assist drying where appropriate, and explain what to expect before we leave."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "Planning your own visit? Our "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "Milton sofa cleaning"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": " and "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "Etobicoke sofa cleaning"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": " pages explain drying and the details that help us plan your appointment."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/milton/sofa-cleaning/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/etobicoke/sofa-cleaning/"
+        }
+      ],
+      "style": "normal"
     },
     {
       "_type": "block",
-      "_key": "text-12",
+      "_key": "editorial-73",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "_key": "text-12-span",
-          "text": "Why We Use Air Movers",
+          "_key": "s72",
+          "text": "Cleaning time and drying time are different",
           "marks": []
         }
       ]
     },
     {
       "_type": "block",
-      "_key": "text-13",
+      "_key": "editorial-75",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "_key": "text-13-span",
-          "text": "Air movers keep dry air passing over damp upholstery. They can speed evaporation and help different parts of the sofa dry more evenly. Drying also gives the cleaner a chance to inspect the result as the true colour returns and any remaining spot becomes easier to see.",
+          "_key": "s74",
+          "text": "Many sofa appointments take around one to two hours for the cleaning itself. A larger sectional, extra items or more involved treatment can take longer. The sofa still needs time to dry after we finish, so leave a comfortable gap before guests arrive or you need the seating again.",
           "marks": []
         }
       ]
     },
     {
       "_type": "block",
-      "_key": "text-14",
+      "_key": "editorial-80",
       "style": "normal",
       "markDefs": [
         {
           "_type": "link",
-          "_key": "text-14-link",
-          "href": "/blog/why-did-my-couch-stain-come-back-after-cleaning/"
+          "_key": "l77",
+          "href": "/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/"
         }
       ],
       "children": [
         {
           "_type": "span",
-          "_key": "text-14-span-0",
-          "text": "This final inspection matters because wet fabric often looks darker and can temporarily hide a water mark or returning stain. Our ",
+          "_key": "s76",
+          "text": "We use air movers while we work to help with drying; that isn't a promise that the cushions will be dry when we leave. Our ",
           "marks": []
         },
         {
           "_type": "span",
-          "_key": "text-14-span-1",
-          "text": "guide to couch-stain wicking",
+          "_key": "s78",
+          "text": "preparation guide",
           "marks": [
-            "text-14-link"
+            "l77"
           ]
         },
         {
           "_type": "span",
-          "_key": "text-14-span-2",
-          "text": " explains why some marks become visible again during drying.",
+          "_key": "s79",
+          "text": " explains what to arrange before the visit. If the sofa is still damp beyond the estimate we gave you, contact us and describe which areas remain damp rather than covering them or applying strong heat.",
           "marks": []
         }
       ]
     },
     {
-      "_type": "block",
-      "_key": "text-15",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-15-span",
-          "text": "How to Help Your Couch Dry Safely",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-16-span",
-          "text": "Keep ceiling fans or room fans running when it is safe to do so.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-17-span",
-          "text": "Use heating, air conditioning or a dehumidifier to maintain comfortable, dry indoor air.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-18-span",
-          "text": "Leave removable cushions positioned as the cleaner recommends so air can reach more surfaces.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-19-span",
-          "text": "Keep people, pets, blankets and protective covers off the upholstery until it is dry.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-20",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-20-span",
-          "text": "Avoid placing damp cushions directly against wood, metal or another fabric that could transfer colour.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-21",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-21-span",
-          "text": "Do not use a hair dryer, space heater or other concentrated heat source on the fabric. Excessive heat can affect fibres, dyes, backing or foam and can create a safety risk.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-22",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-22-span",
-          "text": "How Can You Tell Whether the Sofa Is Dry?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-23",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-23-span",
-          "text": "Check more than the centre of the seat. Feel the seams, piping, front edge, arms and the underside of removable cushions. The upholstery should feel consistent with the surrounding room—not cool or damp in isolated areas—and should not release moisture onto a clean dry towel pressed gently against it.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-24",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-24-span",
-          "text": "If one area remains damp much longer than expected, contact the cleaner rather than covering it or using strong heat. The cause may be limited airflow, deeper treatment or moisture retained in a cushion layer.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-25",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-25-span",
-          "text": "When Can You Sit on the Couch Again?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-26",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-26-span",
-          "text": "Wait until the upholstery is fully dry. Sitting too soon compresses damp layers, slows airflow and can transfer colour from clothing. It may also disturb the fabric nap or leave temporary pressure marks.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-27",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-27-span",
-          "text": "Professional Sofa Cleaning in the GTA",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-28",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-28-span",
-          "text": "SoftNest Fabric Care cleans sofas, sectionals and upholstered furniture in Mississauga and across the Greater Toronto Area. We use controlled cleaning and extraction, assist drying where appropriate, and explain what to expect before we leave.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
       "_key": "text-29",
-      "style": "h2",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-29-span",
-          "text": "Frequently Asked Questions",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Frequently Asked Questions"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h2"
     },
     {
-      "_type": "block",
       "_key": "text-30",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-30-span",
-          "text": "Can I open the windows after couch cleaning?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Can I open the windows after couch cleaning?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-31",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-31-span",
-          "text": "Yes when outdoor air is reasonably dry and weather conditions are suitable. On humid or rainy days, air conditioning or a dehumidifier may be more effective.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Yes when outdoor air is reasonably dry and weather conditions are suitable. On humid or rainy days, air conditioning or a dehumidifier may be more effective."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-32",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-32-span",
-          "text": "Why does my couch feel cool after cleaning?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Why does my couch feel cool after cleaning?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-33",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-33-span",
-          "text": "Evaporation can make damp fabric feel cooler than the room. Check seams and cushion edges and allow more drying time before use.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Evaporation can make damp fabric feel cooler than the room. Check seams and cushion edges and allow more drying time before use."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-34",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-34-span",
-          "text": "Is it normal for different cushions to dry at different speeds?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Is it normal for different cushions to dry at different speeds?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-35",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-35-span",
-          "text": "Yes. Cushion thickness, construction, treatment level and airflow can vary. Position cushions as instructed and keep air moving around them.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Yes. Cushion thickness, construction, treatment level and airflow can vary. Position cushions as instructed and keep air moving around them."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     }
   ],
+  "categories": [
+    {
+      "_key": "categories-0",
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "excerpt": "Most sofas take about six to eight hours to dry after cleaning. Learn what can extend drying, how to help airflow and when to contact SoftNest.",
   "order": 7,
-  "showCover": false
+  "publishedAt": "2026-09-14T12:00:00Z",
+  "relatedServices": [
+    {
+      "_key": "relatedServices-0",
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-1",
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-2",
+      "_ref": "service-sectional-furniture-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Most sofas take about six to eight hours to dry after cleaning. Learn what can extend drying, how to help airflow and when to contact SoftNest.",
+  "seoTitle": "How Long Does a Couch Take to Dry? | SoftNest",
+  "showCover": true,
+  "slug": {
+    "_type": "slug",
+    "current": "how-long-does-a-couch-take-to-dry-after-cleaning"
+  },
+  "title": "How Long Does a Couch Take to Dry After Cleaning?",
+  "coverImage": {
+    "_type": "image",
+    "alt": "Sofa cushions positioned for airflow with an air mover nearby.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-839074c65d4369dbf50c256439cac4b952094418-1536x1024-webp"
+    }
+  }
 }

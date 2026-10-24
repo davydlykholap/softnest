@@ -1,943 +1,1075 @@
 {
+  "_createdAt": "2026-09-10T21:54:35Z",
   "_id": "post-what-cleaning-solution-can-i-use-on-my-couch",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
   "_type": "post",
-  "title": "What Cleaning Solution Can I Use on My Couch?",
-  "seoTitle": "What Cleaning Solution Can I Use on My Couch? | SoftNest",
+  "_updatedAt": "2026-10-17T20:05:46Z",
+  "author": {
+    "_ref": "author-softnest",
+    "_type": "reference"
+  },
+  "body": [
+    {
+      "_key": "text-0",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "There is no single cleaning solution that is safe for every couch. The right choice depends on the upholstery fibre, the manufacturer's cleaning code, the type of stain, and whether the product can be removed properly afterward."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-1",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A cleaner that works well on a durable synthetic sectional may damage linen, viscose, wool, velvet, or unstable dyes. Before using any product, start with the couch and the stain—not the claims on the front of the bottle."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-2",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Start With the Couch's Cleaning Code"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-3",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Look for the manufacturer's care label underneath a cushion or on the bottom of the furniture. Common upholstery cleaning codes include:"
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-4",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "W: A water-based cleaning method may be used."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-5",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "S: A water-free solvent cleaning method is indicated."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-6",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "WS or SW: Either water-based or solvent-based cleaning may be permitted."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-7",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "X: Liquid cleaning products should not be used; vacuuming or professional care is generally recommended."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-8",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "The code describes a general cleaning method. It does not confirm that every product in that category is safe, and it does not tell you how much moisture the cushion can handle."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-9",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why the Upholstery Fabric Matters"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-10",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Couches may be upholstered with polyester, nylon, olefin, cotton, linen, wool, rayon, viscose, or a blend of several fibres. Their dyes, backing, weave, and surface texture can also respond differently to moisture, chemistry, and agitation."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-11",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Durable synthetic fabrics are often easier to spot clean than natural or regenerated fibres. Cotton, linen, wool, rayon, viscose, and delicate velvet may be more prone to browning, water marks, colour movement, shrinkage, or texture changes."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Appearance alone is not enough to identify a safe product. Two beige couches can look similar while requiring completely different cleaning methods."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Match the Cleaner to the Type of Stain"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Coffee, grease, urine, ink, makeup, food, blood, adhesive, and rust are chemically different problems. A product designed for oily soil may not be suitable for a protein-based stain, ink, or mineral discoloration."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-15",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "The cleaner must be suitable for both the stain and the upholstery underneath it. If a treatment removes the stain but fades the dye or damages the texture, it has not produced a successful result."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Are Common Household Cleaners Safe for Couches?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Dish soap"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Dish soap can loosen grease, but it is not automatically safe for every upholstery fabric. It is also easy to use too much. Unlike a plate, a sofa cushion cannot be rinsed thoroughly under running water, so detergent may remain in the fibres and attract new soil."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Vinegar and baking soda"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-20",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "These ingredients are popular in DIY cleaning advice, but natural does not mean universally safe. Vinegar is acidic and baking soda is alkaline. Either product can affect sensitive fibres, dyes, or finishes, and combining them does not create a universal upholstery cleaner."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-21",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Hydrogen peroxide"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-22",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Peroxide-based products can help with some stains, but they can also lighten upholstery dye. Suitability depends on the fabric, concentration, contact time, and type of stain. A result shown on another couch does not prove the product is safe for yours."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-23",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Enzyme cleaners"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-24",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Enzyme products can help break down some organic contamination, including certain pet accidents. Check that the product is approved for your upholstery and remember that urine may have reached the batting or foam. Surface spraying may not address deeper contamination or odour."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-25",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Carpet-cleaning solution"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-26",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Use a carpet cleaner on a sofa only when the product and machine are specifically approved for upholstery and the furniture's care instructions permit that method. Carpet and upholstery can have very different fibres, dyes, backing, and moisture limits."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-27",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why Stronger Cleaner Is Not Always Better"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-28",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Cleaning products are designed to work at a particular concentration. Making a solution stronger than the label recommends can increase the risk of residue, colour change, and fibre damage without improving the result."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-29",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "If a careful first treatment does not help, the mark may need a different approach or a professional assessment of colour changes and fabric condition. A professional can try to improve its appearance without promising complete removal or restoration. Scrubbing harder or adding stronger products can damage the surrounding fabric."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-30",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Test Every New Product First"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-31",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Apply a small amount in a hidden area, following the product directions, and let it dry completely. Check the test spot for colour transfer, fading, browning, a water mark, stiffness, or a change in texture."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-32",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A hidden test cannot guarantee that every part of the furniture will react in the same way, but it can reveal an obvious problem before you treat a visible seat or arm."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-33",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Do Not Mix Couch Cleaning Products"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-34",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Layering different cleaners makes the chemistry less predictable and can create a safety risk. It also leaves a professional cleaner dealing with the original stain plus several unknown residues. If one careful treatment is not working, stop before trying another product."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-35",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Remember That the Cleaner Must Be Removed"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-36",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Applying a cleaning solution is only part of the process. Once the product loosens contamination, the soil, cleaner, and moisture still need to leave the upholstery."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-37",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Heavy spraying followed by surface wiping can leave detergent and contamination inside the fabric or cushion. Professional upholstery cleaning uses controlled rinsing and extraction to recover those materials rather than allowing them to dry in place."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-38",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A Simple Checklist Before Cleaning Your Couch"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-39",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Read the furniture's care label and cleaning code."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-40",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Identify the upholstery fibre if possible."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-41",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Consider what caused the stain and how deeply it may have soaked in."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-42",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Confirm that the product is intended for the permitted upholstery-cleaning method."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-43",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Follow the stated dilution and safety directions."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-44",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Test a hidden area and let it dry completely."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-45",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Use as little product and moisture as the task requires."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-46",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Have a safe way to remove loosened soil and cleaner afterward."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-47",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "When to Call a Professional Upholstery Cleaner"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-48",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional advice is worth considering when the fabric is delicate or unknown, the furniture has an X code, the stain has reached the foam, several products have already been used, or the treated area is changing colour or texture."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-49",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care provides couch and upholstery cleaning in Mississauga and throughout the Greater Toronto Area. Call, message us or use the optional form to describe the mark and any products used. Photos of the stain and care label are optional and can help us recommend a next step."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "If you would prefer an assessment before trying another product, see "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "upholstery cleaning in Etobicoke"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": " or "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "Milton upholstery cleaning"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": " for the checks and treatment included in a visit."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/etobicoke/upholstery-cleaning/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/milton/upholstery-cleaning/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-19",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s18",
+          "text": "No care label? You can still ask for advice",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-21",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s20",
+          "text": "If the label is missing or hard to understand, you don't have to guess. Tell us about the sofa, the stain and any product already used. A care label or product photo is helpful when available, but it isn't a condition of asking for a quote.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-26",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l23",
+          "href": "/blog/what-is-included-in-sofa-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s22",
+          "text": "At SoftNest, we assess the material and condition before choosing the cleaning approach. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s24",
+          "text": "sofa cleaning inclusions",
+          "marks": [
+            "l23"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s25",
+          "text": " explain the treatment, extraction, rinsing and drying support that make up the agreed service. If you have a sensitivity or a particular concern about products, mention it before the appointment so we can discuss it with you.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "text-50",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Frequently Asked Questions"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-51",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "What is the safest cleaner for a fabric couch?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-52",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "No single cleaner is safest for every couch. Follow the manufacturer's care instructions, choose a product intended for that cleaning method, and test it in a hidden area."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-53",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "What does W mean on a couch-cleaning tag?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-54",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "W means a water-based cleaning method may be used. It does not mean every water-based product is safe or that the upholstery should be soaked."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-55",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Can I use dish soap on my couch?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-56",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Dish soap is not suitable for every fabric and can leave residue when too much is used. Check the furniture and product instructions before applying it."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-57",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Is vinegar safe for upholstery?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-58",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Not for every material. Acidic products and moisture can affect sensitive fibres and dyes, so follow the manufacturer's advice and test first."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-59",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Can hydrogen peroxide remove couch stains?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-60",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "It can help with certain stains, but it may also lighten the upholstery dye. Do not treat it as a universal stain remover."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-61",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "What if my couch has no cleaning tag?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-62",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Use extra caution if you cannot identify the fabric or its care instructions. For delicate, expensive, or heavily stained furniture, a professional assessment is safer than experimenting."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    }
+  ],
+  "categories": [
+    {
+      "_key": "categories-0",
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "An unbranded cleaning bottle and towels beside a sofa care label.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-cf62b92434c5cce9788740b2ab931a8598998b9a-1536x1024-webp"
+    }
+  },
+  "excerpt": "Choose upholstery products with care. Understand fabric labels, hidden-area tests and residue before trying a cleaning solution on your couch.",
+  "order": 2,
+  "publishedAt": "2026-09-07T12:00:00Z",
+  "relatedServices": [
+    {
+      "_key": "relatedServices-0",
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-1",
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Choose upholstery products with care. Understand fabric labels, hidden-area tests and residue before trying a cleaning solution on your couch.",
+  "seoTitle": "What Cleaner Can I Use on My Couch? | SoftNest",
+  "showCover": true,
   "slug": {
     "_type": "slug",
     "current": "what-cleaning-solution-can-i-use-on-my-couch"
   },
-  "excerpt": "Choose a couch cleaning solution based on the fabric, cleaning code, and type of stain—and learn which common products require extra care.",
-  "seoDescription": "Choose a couch cleaning solution based on the fabric, cleaning code, and type of stain—and learn which common products require extra care.",
-  "publishedAt": "2026-09-07T12:00:00Z",
-  "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
-  },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-fabric-care"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-sofa-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-upholstery-cleaning"
-    }
-  ],
-  "body": [
-    {
-      "_type": "block",
-      "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "There is no single cleaning solution that is safe for every couch. The right choice depends on the upholstery fibre, the manufacturer's cleaning code, the type of stain, and whether the product can be removed properly afterward.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-1",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A cleaner that works well on a durable synthetic sectional may damage linen, viscose, wool, velvet, or unstable dyes. Before using any product, start with the couch and the stain—not the claims on the front of the bottle.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-2",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Start With the Couch's Cleaning Code",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-3",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Look for the manufacturer's care label underneath a cushion or on the bottom of the furniture. Common upholstery cleaning codes include:",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-4",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "W: A water-based cleaning method may be used.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-5",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "S: A water-free solvent cleaning method is indicated.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "WS or SW: Either water-based or solvent-based cleaning may be permitted.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-7",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "X: Liquid cleaning products should not be used; vacuuming or professional care is generally recommended.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-8",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "The code describes a general cleaning method. It does not confirm that every product in that category is safe, and it does not tell you how much moisture the cushion can handle.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-9",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why the Upholstery Fabric Matters",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-10",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Couches may be upholstered with polyester, nylon, olefin, cotton, linen, wool, rayon, viscose, or a blend of several fibres. Their dyes, backing, weave, and surface texture can also respond differently to moisture, chemistry, and agitation.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-11",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Durable synthetic fabrics are often easier to spot clean than natural or regenerated fibres. Cotton, linen, wool, rayon, viscose, and delicate velvet may be more prone to browning, water marks, colour movement, shrinkage, or texture changes.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-12",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Appearance alone is not enough to identify a safe product. Two beige couches can look similar while requiring completely different cleaning methods.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-13",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Match the Cleaner to the Type of Stain",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-14",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Coffee, grease, urine, ink, makeup, food, blood, adhesive, and rust are chemically different problems. A product designed for oily soil may not be suitable for a protein-based stain, ink, or mineral discoloration.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-15",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "The cleaner must be suitable for both the stain and the upholstery underneath it. If a treatment removes the stain but fades the dye or damages the texture, it has not produced a successful result.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Are Common Household Cleaners Safe for Couches?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Dish soap",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Dish soap can loosen grease, but it is not automatically safe for every upholstery fabric. It is also easy to use too much. Unlike a plate, a sofa cushion cannot be rinsed thoroughly under running water, so detergent may remain in the fibres and attract new soil.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Vinegar and baking soda",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-20",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "These ingredients are popular in DIY cleaning advice, but natural does not mean universally safe. Vinegar is acidic and baking soda is alkaline. Either product can affect sensitive fibres, dyes, or finishes, and combining them does not create a universal upholstery cleaner.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-21",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Hydrogen peroxide",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-22",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Peroxide-based products can help with some stains, but they can also lighten upholstery dye. Suitability depends on the fabric, concentration, contact time, and type of stain. A result shown on another couch does not prove the product is safe for yours.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-23",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Enzyme cleaners",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-24",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Enzyme products can help break down some organic contamination, including certain pet accidents. Check that the product is approved for your upholstery and remember that urine may have reached the batting or foam. Surface spraying may not address deeper contamination or odour.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-25",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Carpet-cleaning solution",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-26",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Use a carpet cleaner on a sofa only when the product and machine are specifically approved for upholstery and the furniture's care instructions permit that method. Carpet and upholstery can have very different fibres, dyes, backing, and moisture limits.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-27",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why Stronger Cleaner Is Not Always Better",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-28",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Cleaning products are designed to work at a particular concentration. Making a solution stronger than the label recommends can increase the risk of residue, colour change, and fibre damage without improving the result.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-29",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If a careful first treatment does not help, the stain may need different chemistry—or the visible mark may be dye loss or permanent damage rather than removable soil. Scrubbing harder and adding stronger products can damage the surrounding fabric.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-30",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Test Every New Product First",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-31",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Apply a small amount in a hidden area, following the product directions, and let it dry completely. Check the test spot for colour transfer, fading, browning, a water mark, stiffness, or a change in texture.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-32",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A hidden test cannot guarantee that every part of the furniture will react in the same way, but it can reveal an obvious problem before you treat a visible seat or arm.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-33",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Do Not Mix Couch Cleaning Products",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-34",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Layering different cleaners makes the chemistry less predictable and can create a safety risk. It also leaves a professional cleaner dealing with the original stain plus several unknown residues. If one careful treatment is not working, stop before trying another product.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-35",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Remember That the Cleaner Must Be Removed",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-36",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Applying a cleaning solution is only part of the process. Once the product loosens contamination, the soil, cleaner, and moisture still need to leave the upholstery.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-37",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Heavy spraying followed by surface wiping can leave detergent and contamination inside the fabric or cushion. Professional upholstery cleaning uses controlled rinsing and extraction to recover those materials rather than allowing them to dry in place.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-38",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A Simple Checklist Before Cleaning Your Couch",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-39",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Read the furniture's care label and cleaning code.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-40",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Identify the upholstery fibre if possible.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-41",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Consider what caused the stain and how deeply it may have soaked in.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-42",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Confirm that the product is intended for the permitted upholstery-cleaning method.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-43",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Follow the stated dilution and safety directions.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-44",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Test a hidden area and let it dry completely.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-45",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Use as little product and moisture as the task requires.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-46",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Have a safe way to remove loosened soil and cleaner afterward.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-47",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "When to Call a Professional Upholstery Cleaner",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-48",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional advice is worth considering when the fabric is delicate or unknown, the furniture has an X code, the stain has reached the foam, several products have already been used, or the treated area is changing colour or texture.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-49",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "SoftNest Fabric Care provides couch and upholstery cleaning in Mississauga and throughout the Greater Toronto Area. Send us a photo of the stain and care label, along with the names of any products used, so we can recommend a sensible next step.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-50",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Frequently Asked Questions",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-51",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What is the safest cleaner for a fabric couch?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-52",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "No single cleaner is safest for every couch. Follow the manufacturer's care instructions, choose a product intended for that cleaning method, and test it in a hidden area.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-53",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What does W mean on a couch-cleaning tag?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-54",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "W means a water-based cleaning method may be used. It does not mean every water-based product is safe or that the upholstery should be soaked.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-55",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Can I use dish soap on my couch?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-56",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Dish soap is not suitable for every fabric and can leave residue when too much is used. Check the furniture and product instructions before applying it.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-57",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Is vinegar safe for upholstery?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-58",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Not for every material. Acidic products and moisture can affect sensitive fibres and dyes, so follow the manufacturer's advice and test first.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-59",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Can hydrogen peroxide remove couch stains?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-60",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "It can help with certain stains, but it may also lighten the upholstery dye. Do not treat it as a universal stain remover.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-61",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What if my couch has no cleaning tag?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-62",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Use extra caution if you cannot identify the fabric or its care instructions. For delicate, expensive, or heavily stained furniture, a professional assessment is safer than experimenting.",
-          "marks": []
-        }
-      ]
-    }
-  ],
-  "order": 2,
-  "showCover": false
+  "title": "What Cleaning Solution Can I Use on My Couch?"
 }

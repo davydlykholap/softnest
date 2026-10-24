@@ -1,1091 +1,1229 @@
 {
+  "_createdAt": "2026-09-07T20:16:53Z",
   "_id": "post-how-to-remove-stain-from-couch",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
   "_type": "post",
-  "title": "How to Remove a Stain from a Couch Without Making It Worse",
-  "seoTitle": "How to Remove a Stain from a Couch Without Making It Worse | SoftNest",
+  "_updatedAt": "2026-10-17T20:05:46Z",
+  "author": {
+    "_ref": "author-softnest",
+    "_type": "reference"
+  },
+  "body": [
+    {
+      "_key": "text-0",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "When something spills on the couch, it is tempting to reach for the nearest cleaner and start scrubbing. That can spread the stain, push it deeper into the cushion, or leave a ring after the fabric dries."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-1",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "The safest response is usually simple: remove as much of the spill as you can, check the furniture's care instructions, and use as little moisture as possible. This guide explains what to do, what to avoid, and when a professional upholstery cleaner may be the safer choice."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-2",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "What to Do First When Something Spills on Your Couch"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-3",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "1. Remove solids carefully"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-4",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "If the spill contains food, mud, or another solid material, lift it away with a spoon or dull edge. Work gently so you do not press it farther into the upholstery."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-5",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "2. Blot the liquid—do not scrub"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-6",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Press a clean white towel onto the wet area, lift it, and repeat with a dry section of the towel. Blotting helps transfer moisture out of the fabric. Scrubbing can spread the spill and may change the texture of velvet, chenille, and other delicate upholstery."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "image-7",
+      "_type": "image",
+      "alt": "A hand gently blotting a spill on a light sofa with a white towel.",
+      "asset": {
+        "_ref": "image-bce912d51e18f3046837aa2c217869df6f3d4388-1440x1080-webp",
+        "_type": "reference"
+      },
+      "caption": "Blot gently with a clean white towel instead of rubbing the spill into surrounding fibres.",
+      "height": 1080,
+      "width": 1440
+    },
+    {
+      "_key": "text-8",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "3. Check the upholstery cleaning code"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-9",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Look underneath a seat cushion or on the bottom of the furniture for the manufacturer's care label. Common upholstery cleaning codes include:"
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-10",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "W: A water-based cleaning method may be used."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-11",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "S: A water-free solvent cleaning method is indicated."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "WS or SW: Either water-based or solvent-based cleaning may be permitted."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "X: Do not use liquid spot-cleaning products; vacuuming or professional care is usually recommended."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A W code does not mean the fabric can be soaked or that every water-based cleaner is safe. The label is a starting point, not a complete cleaning plan."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "image-15",
+      "_type": "image",
+      "alt": "An upholstery care label showing W, S, WS and X cleaning codes.",
+      "asset": {
+        "_ref": "image-fc6afb1e247cc329f51b64c82d21591e71129bf4-1440x1080-webp",
+        "_type": "reference"
+      },
+      "caption": "Check the furniture manufacturer’s care instructions before choosing a cleaning method.",
+      "height": 1080,
+      "width": 1440
+    },
+    {
+      "_key": "text-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "4. Test before treating a visible area"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "If the care instructions allow the product you plan to use, test a small amount in a hidden area. Let it dry completely before checking for colour transfer, fading, browning, water marks, or a change in texture."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "5. Use as little product and moisture as possible"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "More cleaner does not mean more cleaning. Upholstery has layers beneath the visible fabric, including backing, batting, and foam. Too much liquid can carry the spill into those layers and make it harder to remove."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-20",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A Safe, Simple Method for a Small Couch Stain"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-21",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "If the stain is small, fresh, and on upholstery that permits water-based spot cleaning, follow the product and furniture manufacturer's instructions. A careful process usually looks like this:"
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-22",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Blot up as much of the spill as possible with a clean white towel."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-23",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Test the approved cleaning product in a hidden area and allow the test spot to dry."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-24",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Apply a small amount to a towel rather than pouring or spraying it heavily onto the couch."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-25",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Work from the outside edge of the stain toward the centre to limit spreading."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-26",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Blot away loosened soil and moisture with clean sections of the towel."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-27",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Let the area dry fully before deciding whether it needs more treatment."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-28",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "This approach is deliberately conservative. If the stain is not improving, repeated applications can add moisture and residue without solving the problem."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-29",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Common Couch-Stain Cleaning Mistakes"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-30",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Scrubbing too hard"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-31",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Aggressive rubbing can move contamination into nearby fibres and disturb the fabric's surface. A small spot may become a larger, lighter, darker, or rougher-looking area."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-32",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Soaking the cushion"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-33",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A stain that begins near the surface can travel into the backing, batting, or foam when too much liquid is added. The top may look clean while the deeper material remains contaminated."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-34",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Mixing several cleaning products"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-35",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "When one product does not work, adding vinegar, peroxide, dish soap, or another stain remover can create an unpredictable mixture. It may also make later professional treatment more difficult. Never mix household cleaners unless their labels clearly say it is safe."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-36",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Judging the result while the fabric is wet"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-37",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Wet upholstery often looks darker and can hide the outline of a stain. Wait until the area is completely dry before deciding whether the treatment worked."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-38",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why Cleaner Alone Does Not Remove a Stain"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-39",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A cleaning solution can loosen oily or sticky contamination, but the loosened material still needs to leave the fabric. Wiping the surface with a towel removes some moisture, yet it may not recover what has moved deeper into the upholstery."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-40",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional upholstery cleaning combines the right treatment with controlled rinsing and extraction. An extraction tool delivers a measured amount of solution and immediately recovers moisture, residue, and suspended soil."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "image-41",
+      "_type": "image",
+      "alt": "Close view of moisture and foam being recovered through a transparent upholstery extraction tool.",
+      "asset": {
+        "_ref": "image-f21101f96d3f955f480a53595552cd3c5b5e61e4-1440x1080-webp",
+        "_type": "reference"
+      },
+      "caption": "Extraction recovers moisture and suspended soil through the cleaning tool.",
+      "height": 1080,
+      "width": 1440
+    },
+    {
+      "_key": "text-42",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Extraction can improve many everyday stains. We can also assess bleaching, dye changes or damaged areas and try to improve the overall appearance. Complete mark removal or restoration to original condition is not promised."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-43",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "When to Stop Cleaning a Couch Stain Yourself"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-44",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Stop adding products and consider professional advice if:"
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-45",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "the care label has an X code, or you cannot identify the fabric;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-46",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "the upholstery contains wool, linen, cotton, rayon, viscose, or another sensitive fibre;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-47",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "the colour transfers to your towel or the fabric begins to fade;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-48",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "the texture changes, a ring appears, or the stained area becomes larger;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-49",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "the spill has reached the cushion foam or has a persistent odour;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-50",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "you have already used several products; or"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-51",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "the furniture is valuable and the result is difficult to test safely."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-52",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "If you contact a cleaner, explain what caused the stain, when it happened, and which products you used. That information can help them choose a safer treatment."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "image-53",
+      "_type": "image",
+      "alt": "An upholstery extraction tool being used across a light-coloured sofa cushion.",
+      "asset": {
+        "_ref": "image-e2e298b61de181df2d3f2cdf81889ed5a7da270f-1440x810-webp",
+        "_type": "reference"
+      },
+      "caption": "Professional cleaning combines an appropriate treatment with controlled rinsing and moisture recovery.",
+      "height": 810,
+      "width": 1440
+    },
+    {
+      "_key": "text-54",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "How to Prevent Water Rings and Returning Stains"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-55",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Use moisture only where the care instructions permit it, avoid saturating the cushion, and dry the area promptly with good airflow. Do not apply more cleaner simply because the fabric still looks different while wet."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-56",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "If a mark disappears and returns after drying, contamination or residue may be moving back to the surface. Our guide to why couch stains come back explains wicking, water rings, and the safest next steps."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "image-57",
+      "_type": "image",
+      "alt": "Close view of the seat cushion and woven fabric of a light-coloured sofa.",
+      "asset": {
+        "_ref": "image-cfc9984de6ab6b09a3166419b281d561c06a35d8-1440x1080-webp",
+        "_type": "reference"
+      },
+      "caption": "Assess the fabric once it is completely dry, including any changes in colour or texture.",
+      "height": 1080,
+      "width": 1440
+    },
+    {
+      "_key": "text-58",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional Couch Stain Removal in Mississauga and the GTA"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-59",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care provides sofa cleaning, upholstery cleaning and stain treatment in Mississauga and across the Greater Toronto Area. Call, message us or use the optional quote form and tell us what has already been applied. Photos of the stain or care label are welcome if you wish."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-60",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Sometimes a careful home treatment is reasonable. In other cases, the best way to protect the fabric is to stop adding products until the upholstery can be assessed."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "For help with a difficult mark, see "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "sofa cleaning in Oakville"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": " or "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "Etobicoke sofa cleaning"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": ". These pages explain the included treatment, drying and how we assess older stains."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/oakville/sofa-cleaning/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/etobicoke/sofa-cleaning/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-1",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s0",
+          "text": "Not sure what to do next? You can ask before booking",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-3",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2",
+          "text": "You don't need to identify the fabric or find the perfect cleaning product before contacting us. Tell us what happened, roughly when it happened and what you've already tried. Everyday spills happen, and that information helps us plan the next step.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-8",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l5",
+          "href": "/blog/what-is-included-in-sofa-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s4",
+          "text": "A wide photo and a close-up can help if you'd like to send them, but photos are optional. We can also talk through the furniture and the mark by phone or message. See ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s6",
+          "text": "what our sofa cleaning includes",
+          "marks": [
+            "l5"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s7",
+          "text": " before deciding whether to book.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "text-61",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Frequently Asked Questions"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-62",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Should I scrub a stain on my couch?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-63",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "No. Blot with a clean white towel instead. Scrubbing can spread the stain and damage or distort the surface of some fabrics."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-64",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Can I use dish soap on a couch?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-65",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Only if the furniture and product instructions support that method. Dish soap can leave residue when it is used too heavily or not rinsed out properly."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-66",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why did the stain get bigger after I cleaned it?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-67",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Excess moisture may have spread contamination beyond the original spot or created a water ring. Let the area dry before applying anything else."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-68",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "How long should a couch take to dry?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-69",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Drying time depends on the fabric, cushion construction, humidity, airflow, and amount of moisture used. Keep the area ventilated and avoid sitting on it until it is completely dry."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-70",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Can every couch stain be removed?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-71",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Many everyday stains respond well to suitable treatment. We can assess older marks, bleaching, dye changes or damaged areas and try to improve the appearance. Complete removal or restoration is not promised."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-72",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "What should I tell a professional cleaner?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-73",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Share what caused the stain, how old it is, which products were used, and whether the appearance changed after your cleaning attempt."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    }
+  ],
+  "categories": [
+    {
+      "_key": "categories-0",
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "A white towel gently blotting a coffee spill on beige sofa upholstery.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-596b311ab0a4752522c42692ac5cf6563d9b128a-1536x1024-webp"
+    }
+  },
+  "excerpt": "Blot a couch spill safely, avoid common fabric-cleaning mistakes and learn when to ask SoftNest for upholstery stain advice in the GTA.",
+  "order": 0,
+  "publishedAt": "2026-09-07T12:00:00Z",
+  "relatedServices": [
+    {
+      "_key": "relatedServices-0",
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-1",
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Blot a couch spill safely, avoid common fabric-cleaning mistakes and learn when to ask SoftNest for upholstery stain advice in the GTA.",
+  "seoTitle": "How to Remove a Stain from a Couch | SoftNest",
+  "showCover": true,
   "slug": {
     "_type": "slug",
     "current": "how-to-remove-stain-from-couch"
   },
-  "excerpt": "Learn how to remove a couch stain safely, avoid water rings and fabric damage, and know when to call a professional upholstery cleaner.",
-  "seoDescription": "Learn how to remove a couch stain safely, avoid water rings and fabric damage, and know when to call a professional upholstery cleaner.",
-  "publishedAt": "2026-09-07T12:00:00Z",
-  "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
-  },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-fabric-care"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-sofa-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-upholstery-cleaning"
-    }
-  ],
-  "body": [
-    {
-      "_type": "block",
-      "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "When something spills on the couch, it is tempting to reach for the nearest cleaner and start scrubbing. That can spread the stain, push it deeper into the cushion, or leave a ring after the fabric dries.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-1",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "The safest response is usually simple: remove as much of the spill as you can, check the furniture's care instructions, and use as little moisture as possible. This guide explains what to do, what to avoid, and when a professional upholstery cleaner may be the safer choice.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-2",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What to Do First When Something Spills on Your Couch",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-3",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "1. Remove solids carefully",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-4",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If the spill contains food, mud, or another solid material, lift it away with a spoon or dull edge. Work gently so you do not press it farther into the upholstery.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-5",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "2. Blot the liquid—do not scrub",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Press a clean white towel onto the wet area, lift it, and repeat with a dry section of the towel. Blotting helps transfer moisture out of the fabric. Scrubbing can spread the spill and may change the texture of velvet, chenille, and other delicate upholstery.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "image",
-      "_key": "image-7",
-      "localPath": "/images/blog/how-to-remove-stain-from-couch/blotting-a-couch-spill.webp",
-      "alt": "A hand gently blotting a spill on a light sofa with a white towel.",
-      "caption": "Blot gently with a clean white towel instead of rubbing the spill into surrounding fibres.",
-      "width": 1440,
-      "height": 1080
-    },
-    {
-      "_type": "block",
-      "_key": "text-8",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "3. Check the upholstery cleaning code",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-9",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Look underneath a seat cushion or on the bottom of the furniture for the manufacturer's care label. Common upholstery cleaning codes include:",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-10",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "W: A water-based cleaning method may be used.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-11",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "S: A water-free solvent cleaning method is indicated.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-12",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "WS or SW: Either water-based or solvent-based cleaning may be permitted.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-13",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "X: Do not use liquid spot-cleaning products; vacuuming or professional care is usually recommended.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-14",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A W code does not mean the fabric can be soaked or that every water-based cleaner is safe. The label is a starting point, not a complete cleaning plan.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "image",
-      "_key": "image-15",
-      "localPath": "/images/blog/how-to-remove-stain-from-couch/upholstery-cleaning-care-label.webp",
-      "alt": "An upholstery care label showing W, S, WS and X cleaning codes.",
-      "caption": "Check the furniture manufacturer’s care instructions before choosing a cleaning method.",
-      "width": 1440,
-      "height": 1080
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "4. Test before treating a visible area",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If the care instructions allow the product you plan to use, test a small amount in a hidden area. Let it dry completely before checking for colour transfer, fading, browning, water marks, or a change in texture.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "5. Use as little product and moisture as possible",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "More cleaner does not mean more cleaning. Upholstery has layers beneath the visible fabric, including backing, batting, and foam. Too much liquid can carry the spill into those layers and make it harder to remove.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-20",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A Safe, Simple Method for a Small Couch Stain",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-21",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If the stain is small, fresh, and on upholstery that permits water-based spot cleaning, follow the product and furniture manufacturer's instructions. A careful process usually looks like this:",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-22",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Blot up as much of the spill as possible with a clean white towel.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-23",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Test the approved cleaning product in a hidden area and allow the test spot to dry.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-24",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Apply a small amount to a towel rather than pouring or spraying it heavily onto the couch.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-25",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Work from the outside edge of the stain toward the centre to limit spreading.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-26",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Blot away loosened soil and moisture with clean sections of the towel.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-27",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Let the area dry fully before deciding whether it needs more treatment.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-28",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "This approach is deliberately conservative. If the stain is not improving, repeated applications can add moisture and residue without solving the problem.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-29",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Common Couch-Stain Cleaning Mistakes",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-30",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Scrubbing too hard",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-31",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Aggressive rubbing can move contamination into nearby fibres and disturb the fabric's surface. A small spot may become a larger, lighter, darker, or rougher-looking area.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-32",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Soaking the cushion",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-33",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A stain that begins near the surface can travel into the backing, batting, or foam when too much liquid is added. The top may look clean while the deeper material remains contaminated.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-34",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Mixing several cleaning products",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-35",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "When one product does not work, adding vinegar, peroxide, dish soap, or another stain remover can create an unpredictable mixture. It may also make later professional treatment more difficult. Never mix household cleaners unless their labels clearly say it is safe.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-36",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Judging the result while the fabric is wet",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-37",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Wet upholstery often looks darker and can hide the outline of a stain. Wait until the area is completely dry before deciding whether the treatment worked.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-38",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why Cleaner Alone Does Not Remove a Stain",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-39",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A cleaning solution can loosen oily or sticky contamination, but the loosened material still needs to leave the fabric. Wiping the surface with a towel removes some moisture, yet it may not recover what has moved deeper into the upholstery.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-40",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional upholstery cleaning combines the right treatment with controlled rinsing and extraction. An extraction tool delivers a measured amount of solution and immediately recovers moisture, residue, and suspended soil.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "image",
-      "_key": "image-41",
-      "localPath": "/images/blog/how-to-remove-stain-from-couch/upholstery-extraction-close-up.webp",
-      "alt": "Close view of moisture and foam being recovered through a transparent upholstery extraction tool.",
-      "caption": "Extraction recovers moisture and suspended soil through the cleaning tool.",
-      "width": 1440,
-      "height": 1080
-    },
-    {
-      "_type": "block",
-      "_key": "text-42",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Extraction is not a promise that every stain will disappear. Bleaching, dye loss, and permanent fibre damage are changes to the material itself and cannot always be corrected through cleaning.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-43",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "When to Stop Cleaning a Couch Stain Yourself",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-44",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Stop adding products and consider professional advice if:",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-45",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "the care label has an X code, or you cannot identify the fabric;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-46",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "the upholstery contains wool, linen, cotton, rayon, viscose, or another sensitive fibre;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-47",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "the colour transfers to your towel or the fabric begins to fade;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-48",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "the texture changes, a ring appears, or the stained area becomes larger;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-49",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "the spill has reached the cushion foam or has a persistent odour;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-50",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "you have already used several products; or",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-51",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "the furniture is valuable and the result is difficult to test safely.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-52",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If you contact a cleaner, explain what caused the stain, when it happened, and which products you used. That information can help them choose a safer treatment.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "image",
-      "_key": "image-53",
-      "localPath": "/images/blog/how-to-remove-stain-from-couch/controlled-sofa-extraction.webp",
-      "alt": "An upholstery extraction tool being used across a light-coloured sofa cushion.",
-      "caption": "Professional cleaning combines an appropriate treatment with controlled rinsing and moisture recovery.",
-      "width": 1440,
-      "height": 810
-    },
-    {
-      "_type": "block",
-      "_key": "text-54",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "How to Prevent Water Rings and Returning Stains",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-55",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Use moisture only where the care instructions permit it, avoid saturating the cushion, and dry the area promptly with good airflow. Do not apply more cleaner simply because the fabric still looks different while wet.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-56",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If a mark disappears and returns after drying, contamination or residue may be moving back to the surface. Our guide to why couch stains come back explains wicking, water rings, and the safest next steps.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "image",
-      "_key": "image-57",
-      "localPath": "/images/blog/how-to-remove-stain-from-couch/sofa-fabric-after-drying.webp",
-      "alt": "Close view of the seat cushion and woven fabric of a light-coloured sofa.",
-      "caption": "Assess the fabric once it is completely dry, including any changes in colour or texture.",
-      "width": 1440,
-      "height": 1080
-    },
-    {
-      "_type": "block",
-      "_key": "text-58",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional Couch Stain Removal in Mississauga and the GTA",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-59",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "SoftNest Fabric Care provides sofa cleaning, upholstery cleaning, and stain treatment in Mississauga and across the Greater Toronto Area. Send us a photo of the stain and the furniture's care label, if available, and tell us what has already been applied.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-60",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Sometimes a careful home treatment is reasonable. In other cases, the best way to protect the fabric is to stop adding products until the upholstery can be assessed.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-61",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Frequently Asked Questions",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-62",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Should I scrub a stain on my couch?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-63",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "No. Blot with a clean white towel instead. Scrubbing can spread the stain and damage or distort the surface of some fabrics.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-64",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Can I use dish soap on a couch?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-65",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Only if the furniture and product instructions support that method. Dish soap can leave residue when it is used too heavily or not rinsed out properly.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-66",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why did the stain get bigger after I cleaned it?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-67",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Excess moisture may have spread contamination beyond the original spot or created a water ring. Let the area dry before applying anything else.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-68",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "How long should a couch take to dry?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-69",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Drying time depends on the fabric, cushion construction, humidity, airflow, and amount of moisture used. Keep the area ventilated and avoid sitting on it until it is completely dry.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-70",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Can every couch stain be removed?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-71",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "No. Many stains can be improved, but bleaching, dye loss, and permanent fibre damage cannot always be reversed by cleaning.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-72",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What should I tell a professional cleaner?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-73",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Share what caused the stain, how old it is, which products were used, and whether the appearance changed after your cleaning attempt.",
-          "marks": []
-        }
-      ]
-    }
-  ],
-  "order": 0,
-  "coverImage": {
-    "_type": "image",
-    "_key": "image-53",
-    "localPath": "/images/blog/how-to-remove-stain-from-couch/controlled-sofa-extraction.webp",
-    "alt": "An upholstery extraction tool being used across a light-coloured sofa cushion.",
-    "caption": "Professional cleaning combines an appropriate treatment with controlled rinsing and moisture recovery.",
-    "width": 1440,
-    "height": 810
-  },
-  "showCover": false
+  "title": "How to Remove a Stain from a Couch Without Making It Worse"
 }

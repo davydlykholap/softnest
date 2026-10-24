@@ -60,7 +60,10 @@ test("complete migration preserves catalogs and all published articles", () => {
   const content = normalizeContent(seed(), config);
   assert.equal(content.services.length, 10);
   assert.equal(content.locations.length, 9);
-  assert.equal(content.posts.length, 13);
+  assert.deepEqual(
+    content.posts.map(post => post._id).sort(),
+    seed().filter(document => document._type === "post").map(document => document._id).sort(),
+  );
   assert.deepEqual(
     content.posts.find((post) => post.slug === "what-to-expect-when-softnest-cleans-your-sofa").categories,
     ["Our Process"],

@@ -62,6 +62,15 @@ export function PhotoIcon({ className }: IconProps) {
   </svg>;
 }
 
+export function InstagramIcon({ className }: IconProps) {
+  return <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path
+      fill="currentColor"
+      d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.3A2.7 2.7 0 0 0 4.3 7v10A2.7 2.7 0 0 0 7 19.7h10a2.7 2.7 0 0 0 2.7-2.7V7A2.7 2.7 0 0 0 17 4.3H7Zm10.1 1.55a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7.15A4.85 4.85 0 1 1 7.15 12 4.85 4.85 0 0 1 12 7.15Zm0 2.3A2.55 2.55 0 1 0 14.55 12 2.55 2.55 0 0 0 12 9.45Z"
+    />
+  </svg>;
+}
+
 export function GripVerticalIcon({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" aria-hidden="true" focusable="false">

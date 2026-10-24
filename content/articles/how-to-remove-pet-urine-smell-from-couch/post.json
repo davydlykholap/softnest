@@ -1,585 +1,732 @@
 {
+  "_createdAt": "2026-09-18T18:47:39Z",
   "_id": "post-how-to-remove-pet-urine-smell-from-couch",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
   "_type": "post",
-  "title": "How to Remove Pet Urine Smell from a Couch",
-  "seoTitle": "How to Remove Pet Urine Smell from a Couch | SoftNest",
-  "slug": {
-    "_type": "slug",
-    "current": "how-to-remove-pet-urine-smell-from-couch"
-  },
-  "excerpt": "Learn what to do after a pet accident on a couch, why urine odour returns, and when contamination inside the cushion needs professional treatment.",
-  "seoDescription": "Learn what to do after a pet accident on a couch, why urine odour returns, and when contamination inside the cushion needs professional treatment.",
-  "publishedAt": "2026-09-12T12:00:00Z",
+  "_updatedAt": "2026-10-17T20:05:46Z",
   "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
+    "_ref": "author-softnest",
+    "_type": "reference"
   },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-fabric-care"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-pet-stain-odour-removal"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-sofa-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-upholstery-cleaning"
-    }
-  ],
   "body": [
     {
-      "_type": "block",
       "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-0-span",
-          "text": "A pet accident on a sofa can travel farther than the visible wet spot. Urine may pass through the face fabric into the backing, batting and cushion foam. Cleaning only the surface can improve the appearance while leaving the source of the odour deeper inside.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "A pet accident on a sofa can travel farther than the visible wet spot. Urine may pass through the face fabric into the backing, batting and cushion foam. Cleaning only the surface can improve the appearance while leaving the source of the odour deeper inside."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-1",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-1-span",
-          "text": "The best response is prompt and controlled: absorb what you can, avoid spreading the liquid, check the furniture care instructions and resist the urge to cover the area with several different products.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "The best response is prompt and controlled: absorb what you can, avoid spreading the liquid, check the furniture care instructions and resist the urge to cover the area with several different products."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-2",
-      "style": "h2",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-2-span",
-          "text": "What to Do Right After the Accident",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "What to Do Right After the Accident"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h2"
     },
     {
-      "_type": "block",
       "_key": "text-3",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-3-span",
-          "text": "Remove any washable cover only if the manufacturer says it can be removed and cleaned separately.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Remove any washable cover only if the manufacturer says it can be removed and cleaned separately."
         }
       ],
+      "level": 1,
       "listItem": "bullet",
-      "level": 1
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-4",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-4-span",
-          "text": "Press clean white towels onto the wet area and replace them as they absorb moisture.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Press clean white towels onto the wet area and replace them as they absorb moisture."
         }
       ],
+      "level": 1,
       "listItem": "bullet",
-      "level": 1
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-5",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-5-span",
-          "text": "Blot from the outside toward the centre instead of rubbing across the fabric.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Blot from the outside toward the centre instead of rubbing across the fabric."
         }
       ],
+      "level": 1,
       "listItem": "bullet",
-      "level": 1
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-6-span",
-          "text": "Check the upholstery care label before applying a liquid treatment.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Check the upholstery care label before applying a liquid treatment."
         }
       ],
+      "level": 1,
       "listItem": "bullet",
-      "level": 1
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-7",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-7-span",
-          "text": "Keep pets and people off the cushion while it dries.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Keep pets and people off the cushion while it dries."
         }
       ],
+      "level": 1,
       "listItem": "bullet",
-      "level": 1
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-8",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-8-span",
-          "text": "Do not press so hard that you drive more liquid into the foam. If the accident is large, the cushion feels wet below the surface or the urine reached a fixed seat, professional advice is usually more useful than repeated surface spraying.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Do not press so hard that you drive more liquid into the foam. If the accident is large, the cushion feels wet below the surface or the urine reached a fixed seat, professional advice is usually more useful than repeated surface spraying."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-9",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-9-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Why the Urine Smell Comes Back"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-10",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-10-span",
+          "_type": "span",
+          "marks": [],
+          "text": "The top fabric often dries first. Contamination that remains in the inner layers can continue producing odour, especially when humidity rises or the cushion is compressed during use. Fragrance may temporarily cover the smell without removing its source."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-11",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-11-span-0",
+          "_type": "span",
+          "marks": [],
+          "text": "A returning odour can also mean the treated area was not rinsed and extracted. Cleaner, urine residue and moisture may all remain in the cushion. This is similar to a visible "
+        },
+        {
+          "_key": "text-11-span-1",
+          "_type": "span",
+          "marks": [
+            "text-11-link"
+          ],
+          "text": "stain that reappears after drying"
+        },
+        {
+          "_key": "text-11-span-2",
+          "_type": "span",
+          "marks": [],
+          "text": ", although odour treatment may need to reach deeper layers."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "text-11-link",
+          "_type": "link",
+          "href": "/blog/why-did-my-couch-stain-come-back-after-cleaning/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_key": "text-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-12-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Why More Product Is Not Always Better"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-13-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Pouring enzyme cleaner or deodorizer into a cushion can make it wetter without guaranteeing contact with every contaminated area. The product still needs to be suitable for the upholstery and used at the correct concentration. Excess residue can leave the fabric stiff, sticky or prone to resoiling."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-14-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Do not mix household cleaners. Besides creating unpredictable reactions, multiple products make it harder to determine what is inside the fabric when professional treatment becomes necessary."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-15",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-15-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Can an Enzyme Cleaner Remove Couch Urine?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-16-span",
+          "_type": "span",
+          "marks": [],
+          "text": "An upholstery-approved enzyme product can help with some organic contamination when used exactly as directed. It is not automatically safe for every fibre or dye, and a small surface application may not reach urine in the foam. Test a hidden area and follow both the furniture and product instructions."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-17-span",
+          "_type": "span",
+          "marks": [],
+          "text": "If the sofa has an X cleaning code, the fabric is delicate or unknown, or colour transfers onto a white towel, stop before applying a water-based treatment."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-18-span",
+          "_type": "span",
+          "marks": [],
+          "text": "What Professional Pet-Odour Treatment Involves"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-19-span",
+          "_type": "span",
+          "marks": [],
+          "text": "The first step is assessing how far the accident travelled. Treatment may include a urine-specific product, appropriate dwell time, controlled rinsing and extraction, and additional attention to the cushion interior where access is possible."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-20",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-20-span",
+          "_type": "span",
+          "marks": [],
+          "text": "No responsible cleaner should promise that every odour can be removed without seeing the furniture. Repeated accidents, inaccessible cushion cores, sensitive fabric and contamination that reached wood or other structural material can limit the result. In severe cases, replacing the cushion insert may be more practical than repeatedly wetting it."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-21",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-21-span",
+          "_type": "span",
+          "marks": [],
+          "text": "When to Call for Help"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-22",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-22-span",
+          "_type": "span",
+          "marks": [],
+          "text": "the odour returns after the sofa dries;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-23",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-23-span",
+          "_type": "span",
+          "marks": [],
+          "text": "the cushion is wet or contaminated below the surface;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-24",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-24-span",
+          "_type": "span",
+          "marks": [],
+          "text": "several products have already been applied;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-25",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-25-span",
+          "_type": "span",
+          "marks": [],
+          "text": "a water ring, colour change or stiff patch is developing;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-26",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-26-span",
+          "_type": "span",
+          "marks": [],
+          "text": "the sofa has repeated accidents in the same area."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-27",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-27-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Pet Stain and Odour Treatment in the GTA"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-28",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-28-span",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care provides pet stain and odour treatment for sofas and upholstery in Mississauga and across the Greater Toronto Area. Call, message us or use the optional form to describe when the accident happened and which products were used. Photos of the affected area or care label are optional."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "For an assessment near you, see "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "pet stain and odour treatment in Oakville"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": " or "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "Etobicoke pet stain treatment"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": ". Describe the accident history so we can discuss a suitable approach."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/oakville/pet-stain-odour-removal/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/etobicoke/pet-stain-odour-removal/"
+        }
+      ],
+      "style": "normal"
     },
     {
       "_type": "block",
-      "_key": "text-9",
+      "_key": "editorial-47",
       "style": "h2",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "_key": "text-9-span",
-          "text": "Why the Urine Smell Comes Back",
+          "_key": "s46",
+          "text": "What to tell us before we quote pet-odour treatment",
           "marks": []
         }
       ]
     },
     {
       "_type": "block",
-      "_key": "text-10",
+      "_key": "editorial-49",
       "style": "normal",
       "markDefs": [],
       "children": [
         {
           "_type": "span",
-          "_key": "text-10-span",
-          "text": "The top fabric often dries first. Contamination that remains in the inner layers can continue producing odour, especially when humidity rises or the cushion is compressed during use. Fragrance may temporarily cover the smell without removing its source.",
+          "_key": "s48",
+          "text": "Let us know whether it was one recent accident or a repeated problem, whether the cushions come off and which products you've tried. There's no need to feel awkward about it. The history helps us understand whether the concern is near the surface or may involve the padding below it.",
           "marks": []
         }
       ]
     },
     {
       "_type": "block",
-      "_key": "text-11",
+      "_key": "editorial-51",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s50",
+          "text": "Our upholstery clean includes deodorizing and sanitizing, with the products and handling chosen for the material. That doesn't tell us how deeply a particular accident has reached. We discuss any additional treatment needed and confirm the agreed work and written total before booking.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-56",
       "style": "normal",
       "markDefs": [
         {
           "_type": "link",
-          "_key": "text-11-link",
-          "href": "/blog/why-did-my-couch-stain-come-back-after-cleaning/"
+          "_key": "l53",
+          "href": "/blog/stains-or-odours-after-professional-cleaning/"
         }
       ],
       "children": [
         {
           "_type": "span",
-          "_key": "text-11-span-0",
-          "text": "A returning odour can also mean the treated area was not rinsed and extracted. Cleaner, urine residue and moisture may all remain in the cushion. This is similar to a visible ",
+          "_key": "s52",
+          "text": "After the appointment, let the item dry before judging the final smell. If something still concerns you, ",
           "marks": []
         },
         {
           "_type": "span",
-          "_key": "text-11-span-1",
-          "text": "stain that reappears after drying",
+          "_key": "s54",
+          "text": "contact us about the result",
           "marks": [
-            "text-11-link"
+            "l53"
           ]
         },
         {
           "_type": "span",
-          "_key": "text-11-span-2",
-          "text": ", although odour treatment may need to reach deeper layers.",
+          "_key": "s55",
+          "text": " so we can review it with you.",
           "marks": []
         }
       ]
     },
     {
-      "_type": "block",
-      "_key": "text-12",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-12-span",
-          "text": "Why More Product Is Not Always Better",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-13",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-13-span",
-          "text": "Pouring enzyme cleaner or deodorizer into a cushion can make it wetter without guaranteeing contact with every contaminated area. The product still needs to be suitable for the upholstery and used at the correct concentration. Excess residue can leave the fabric stiff, sticky or prone to resoiling.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-14",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-14-span",
-          "text": "Do not mix household cleaners. Besides creating unpredictable reactions, multiple products make it harder to determine what is inside the fabric when professional treatment becomes necessary.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-15",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-15-span",
-          "text": "Can an Enzyme Cleaner Remove Couch Urine?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-16-span",
-          "text": "An upholstery-approved enzyme product can help with some organic contamination when used exactly as directed. It is not automatically safe for every fibre or dye, and a small surface application may not reach urine in the foam. Test a hidden area and follow both the furniture and product instructions.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-17-span",
-          "text": "If the sofa has an X cleaning code, the fabric is delicate or unknown, or colour transfers onto a white towel, stop before applying a water-based treatment.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-18-span",
-          "text": "What Professional Pet-Odour Treatment Involves",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-19-span",
-          "text": "The first step is assessing how far the accident travelled. Treatment may include a urine-specific product, appropriate dwell time, controlled rinsing and extraction, and additional attention to the cushion interior where access is possible.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-20",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-20-span",
-          "text": "No responsible cleaner should promise that every odour can be removed without seeing the furniture. Repeated accidents, inaccessible cushion cores, sensitive fabric and contamination that reached wood or other structural material can limit the result. In severe cases, replacing the cushion insert may be more practical than repeatedly wetting it.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-21",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-21-span",
-          "text": "When to Call for Help",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-22",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-22-span",
-          "text": "the odour returns after the sofa dries;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-23",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-23-span",
-          "text": "the cushion is wet or contaminated below the surface;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-24",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-24-span",
-          "text": "several products have already been applied;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-25",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-25-span",
-          "text": "a water ring, colour change or stiff patch is developing;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-26",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-26-span",
-          "text": "the sofa has repeated accidents in the same area.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-27",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-27-span",
-          "text": "Pet Stain and Odour Treatment in the GTA",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-28",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-28-span",
-          "text": "SoftNest Fabric Care provides pet stain and odour treatment for sofas and upholstery in Mississauga and across the Greater Toronto Area. Send photos of the affected area and care label, describe when the accident happened, and list any products already used. That information helps us set realistic expectations before the visit.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
       "_key": "text-29",
-      "style": "h2",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-29-span",
-          "text": "Frequently Asked Questions",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Frequently Asked Questions"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h2"
     },
     {
-      "_type": "block",
       "_key": "text-30",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-30-span",
-          "text": "Will the urine smell disappear when the couch dries?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Will the urine smell disappear when the couch dries?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-31",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-31-span",
-          "text": "Surface moisture may dry while urine residue remains in the cushion. If the source is still present, the odour can return with humidity or use.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Surface moisture may dry while urine residue remains in the cushion. If the source is still present, the odour can return with humidity or use."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-32",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-32-span",
-          "text": "Can baking soda remove pet urine from a sofa?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Can baking soda remove pet urine from a sofa?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-33",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-33-span",
-          "text": "Baking soda may absorb some surface odour, but it does not reliably remove contamination inside a cushion and is not appropriate for every material. Follow the furniture care instructions.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Baking soda may absorb some surface odour, but it does not reliably remove contamination inside a cushion and is not appropriate for every material. Follow the furniture care instructions."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     },
     {
-      "_type": "block",
       "_key": "text-34",
-      "style": "h3",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-34-span",
-          "text": "Can an old pet urine stain still be treated?",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Can an old pet urine stain still be treated?"
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "h3"
     },
     {
-      "_type": "block",
       "_key": "text-35",
-      "style": "normal",
-      "markDefs": [],
+      "_type": "block",
       "children": [
         {
-          "_type": "span",
           "_key": "text-35-span",
-          "text": "Often it can be improved, but age, previous products, dye change and depth all affect the outcome. Permanent discolouration or inaccessible contamination may remain.",
-          "marks": []
+          "_type": "span",
+          "marks": [],
+          "text": "Often, yes. We assess the age, depth, colour changes and previous products, then choose a suitable treatment to try to improve the stain and odour. Complete removal is not promised, especially when the source has soaked deeply into padding."
         }
-      ]
+      ],
+      "markDefs": [],
+      "style": "normal"
     }
   ],
+  "categories": [
+    {
+      "_key": "categories-0",
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "A dog resting on a floor mat beside a sofa and neatly arranged cleaning supplies.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-37842f8ea48f22c655fd782ef506fb170f47b94d-1536x1024-webp"
+    }
+  },
+  "excerpt": "Learn what to do after a pet accident on a sofa, why odours can return and how fabric and contamination depth affect upholstery treatment.",
   "order": 5,
-  "showCover": false
+  "publishedAt": "2026-09-12T12:00:00Z",
+  "relatedServices": [
+    {
+      "_key": "relatedServices-0",
+      "_ref": "service-pet-stain-odour-removal",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-1",
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-2",
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Learn what to do after a pet accident on a sofa, why odours can return and how fabric and contamination depth affect upholstery treatment.",
+  "seoTitle": "Pet Urine Smell in a Couch: What to Do | SoftNest",
+  "showCover": true,
+  "slug": {
+    "_type": "slug",
+    "current": "how-to-remove-pet-urine-smell-from-couch"
+  },
+  "title": "How to Remove Pet Urine Smell from a Couch"
 }

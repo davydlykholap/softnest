@@ -1,545 +1,696 @@
 {
+  "_createdAt": "2026-09-18T18:47:39Z",
   "_id": "post-does-vacuuming-clean-carpet",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
   "_type": "post",
-  "title": "Does Vacuuming Really Clean Carpet?",
-  "seoTitle": "Does Vacuuming Clean Carpet? What It Leaves Behind | SoftNest",
+  "_updatedAt": "2026-10-17T20:05:46Z",
+  "author": {
+    "_ref": "author-softnest",
+    "_type": "reference"
+  },
+  "body": [
+    {
+      "_key": "text-0",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-0-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Regular vacuuming is the most important routine step for carpet care. It picks up crumbs, hair, grit and loose dust before they work farther into the pile. But a carpet can be thoroughly vacuumed and still hold oily residue, compacted soil and odour deeper in the fibres."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-1",
+      "_type": "block",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s36",
+          "text": "Vacuuming and professional carpet cleaning do different jobs. A suitable vacuum can remove a great deal of dry soil, including particles below the surface. Professional cleaning addresses suitable spots, oily buildup and residues that dry vacuuming alone may leave behind.",
+          "marks": []
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-2",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-2-span",
+          "_type": "span",
+          "marks": [],
+          "text": "What a Vacuum Removes Well"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-3",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-3-span",
+          "_type": "span",
+          "marks": [],
+          "text": "loose dust and dry soil near the surface;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-4",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-4-span",
+          "_type": "span",
+          "marks": [],
+          "text": "crumbs, lint and much of the visible pet hair;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-5",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-5-span",
+          "_type": "span",
+          "marks": [],
+          "text": "grit before it settles into traffic lanes;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-6",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-6-span",
+          "_type": "span",
+          "marks": [],
+          "text": "debris along open, accessible areas of the carpet."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-7",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-7-span",
+          "_type": "span",
+          "marks": [],
+          "text": "A well-maintained vacuum, slow overlapping passes and the correct height setting all improve recovery. Edges, stairs and areas under furniture may need a crevice or upholstery tool rather than the main floor head."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-8",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-8-span",
+          "_type": "span",
+          "marks": [],
+          "text": "What Vacuuming Commonly Leaves Behind"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-9",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-9-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Fine particles can settle near the base of the pile, especially where feet repeatedly press them down. Body oils, cooking residue, tracked-in moisture and old spotting products can bind soil to the fibres. Once the contamination is sticky or embedded, airflow alone may not lift it."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-10",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-10-span",
+          "_type": "span",
+          "marks": [],
+          "text": "That remaining material can make carpet look grey, feel less soft or develop an odour even when no obvious debris is visible. High-traffic paths usually change first because they receive both more soil and more physical wear."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-11",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-11-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Why Traffic Lanes Stay Dark After Vacuuming"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-12-span",
+          "_type": "span",
+          "marks": [],
+          "text": "A traffic lane can hold embedded soil alongside flattened, worn or faded fibres. Deep cleaning often improves its appearance by removing the buildup. We can assess difficult areas and try to improve them, without promising restoration to the original condition."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-13-span",
+          "_type": "span",
+          "marks": [],
+          "text": "This is why the best time to clean is before the path becomes extremely dark. Waiting until the difference is dramatic can make it harder to separate soil from wear and may limit how even the final appearance can be."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-14-span",
+          "_type": "span",
+          "marks": [],
+          "text": "What Professional Carpet Cleaning Adds"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-15",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-15-span",
+          "_type": "span",
+          "marks": [],
+          "text": "A professional process begins with inspection and dry-soil removal. Spots and traffic areas are treated according to their condition, the carpet is agitated when appropriate, and controlled rinsing and extraction recover loosened soil, cleaning solution and moisture."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-16-span",
+          "_type": "span",
+          "marks": [],
+          "text": "The word “professional” does not mean soaking the carpet. The cleaning method, chemistry and moisture level should match the fibre, construction and installation. Drying conditions are part of the plan as well."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-17-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Signs That Vacuuming Is No Longer Enough"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-18-span",
+          "_type": "span",
+          "marks": [],
+          "text": "traffic lanes remain dull immediately after vacuuming;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-19-span",
+          "_type": "span",
+          "marks": [],
+          "text": "the carpet feels sticky, stiff or less soft than before;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-20",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-20-span",
+          "_type": "span",
+          "marks": [],
+          "text": "spots return or attract soil quickly;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-21",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-21-span",
+          "_type": "span",
+          "marks": [],
+          "text": "odours remain after the room has been aired out;"
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-22",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-22-span",
+          "_type": "span",
+          "marks": [],
+          "text": "the carpet has gone a long time without a deeper clean."
+        }
+      ],
+      "level": 1,
+      "listItem": "bullet",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-23",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-23-span",
+          "_type": "span",
+          "marks": [],
+          "text": "How to Keep Carpet Cleaner Between Appointments"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-24",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-24-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Vacuum busy areas more frequently than rooms that are rarely used. Use entrance mats, remove outdoor footwear when practical, and blot fresh spills rather than scrubbing them into a wider area. Empty or replace vacuum filters and bags as recommended so airflow remains effective."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-25",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-25-span",
+          "_type": "span",
+          "marks": [],
+          "text": "If you use a spot cleaner, follow the carpet and product instructions and apply as little as the task requires. Residue left after repeated spraying can make the area soil faster."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-26",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-26-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Carpet Cleaning in Mississauga and the GTA"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-27",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-27-span",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care provides carpet, area rug, stair and hallway cleaning across Mississauga and the Greater Toronto Area. Call, message us or use the optional quote form with approximate dimensions and any stain or odour concerns. Photos are welcome if you want to share them."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "Planning a home carpet clean? See our "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "carpet cleaning in Milton"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": ", "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "Oakville carpet and rug cleaning"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": " or "
+        },
+        {
+          "_key": "local-5",
+          "_type": "span",
+          "marks": [
+            "local-5"
+          ],
+          "text": "Brampton carpet cleaning"
+        },
+        {
+          "_key": "local-6",
+          "_type": "span",
+          "marks": [],
+          "text": " details for what is included and how to plan the visit."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/milton/carpet-area-rug-cleaning/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/oakville/carpet-area-rug-cleaning/"
+        },
+        {
+          "_key": "local-5",
+          "_type": "link",
+          "href": "/location/brampton/carpet-area-rug-cleaning/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-38",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s37",
+          "text": "Planning your first professional carpet clean",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-40",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s39",
+          "text": "Start with the rooms or areas you'd like cleaned, approximate sizes and any concerns about spots, pets or busy walkways. List stairs and landings separately. We also clarify furniture movement and parking with you before the visit.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-45",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l42",
+          "href": "/blog/what-to-expect-from-professional-carpet-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s41",
+          "text": "Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s43",
+          "text": "residential carpet cleaning guide",
+          "marks": [
+            "l42"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s44",
+          "text": " walks through the appointment, from checking the material to rinsing, extraction and drying. You can request a written quote without committing to an appointment.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "text-28",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-28-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Frequently Asked Questions"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-29",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-29-span",
+          "_type": "span",
+          "marks": [],
+          "text": "How often should carpet be vacuumed?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-30",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-30-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Busy entrances, family rooms and pet areas may need several passes each week, while lower-use rooms may need less. The right schedule depends on traffic, occupants and how quickly dry soil appears."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-31",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-31-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Can professional cleaning remove every dark traffic lane?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-32",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-32-span",
+          "_type": "span",
+          "marks": [],
+          "text": "It can remove embedded soil and often improve the overall appearance. We assess fading, flattened fibres or worn areas and can try to improve them, without promising restoration to their original condition."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-33",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-33-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Should carpet be vacuumed before professional cleaning?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-34",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text-34-span",
+          "_type": "span",
+          "marks": [],
+          "text": "Removing loose items and obvious debris is helpful. Ask your cleaner whether they want you to vacuum first, because the planned service may already include dry-soil removal."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    }
+  ],
+  "categories": [
+    {
+      "_key": "categories-0",
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "A vacuum floor head moving across fitted carpet in a living room.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-3b2bdc85d673f9c2b8de6d06ee717167f70e6929-1536x1024-webp"
+    }
+  },
+  "excerpt": "See what vacuuming removes, what it can leave behind and when professional carpet cleaning can help with traffic lanes, spots and residues.",
+  "order": 4,
+  "publishedAt": "2026-09-11T12:00:00Z",
+  "relatedServices": [
+    {
+      "_key": "relatedServices-0",
+      "_ref": "service-carpet-area-rug-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-1",
+      "_ref": "service-stairs-hallways-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "See what vacuuming removes, what it can leave behind and when professional carpet cleaning can help with traffic lanes, spots and residues.",
+  "seoTitle": "Does Vacuuming Really Clean Carpet? | SoftNest",
+  "showCover": true,
   "slug": {
     "_type": "slug",
     "current": "does-vacuuming-clean-carpet"
   },
-  "excerpt": "Vacuuming removes loose surface soil, but deeper residue can remain. Learn what regular vacuuming does well and when carpet needs professional cleaning.",
-  "seoDescription": "Vacuuming removes loose surface soil, but deeper residue can remain. Learn what regular vacuuming does well and when carpet needs professional cleaning.",
-  "publishedAt": "2026-09-11T12:00:00Z",
-  "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
-  },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-fabric-care"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-carpet-area-rug-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-stairs-hallways-cleaning"
-    }
-  ],
-  "body": [
-    {
-      "_type": "block",
-      "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-0-span",
-          "text": "Regular vacuuming is the most important routine step for carpet care. It picks up crumbs, hair, grit and loose dust before they work farther into the pile. But a carpet can be thoroughly vacuumed and still hold oily residue, compacted soil and odour deeper in the fibres.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-1",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-1-span",
-          "text": "The useful distinction is maintenance versus restorative cleaning. A vacuum maintains the surface. Professional carpet cleaning is intended to release and recover material that ordinary dry vacuuming cannot remove.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-2",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-2-span",
-          "text": "What a Vacuum Removes Well",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-3",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-3-span",
-          "text": "loose dust and dry soil near the surface;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-4",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-4-span",
-          "text": "crumbs, lint and much of the visible pet hair;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-5",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-5-span",
-          "text": "grit before it settles into traffic lanes;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-6-span",
-          "text": "debris along open, accessible areas of the carpet.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-7",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-7-span",
-          "text": "A well-maintained vacuum, slow overlapping passes and the correct height setting all improve recovery. Edges, stairs and areas under furniture may need a crevice or upholstery tool rather than the main floor head.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-8",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-8-span",
-          "text": "What Vacuuming Commonly Leaves Behind",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-9",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-9-span",
-          "text": "Fine particles can settle near the base of the pile, especially where feet repeatedly press them down. Body oils, cooking residue, tracked-in moisture and old spotting products can bind soil to the fibres. Once the contamination is sticky or embedded, airflow alone may not lift it.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-10",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-10-span",
-          "text": "That remaining material can make carpet look grey, feel less soft or develop an odour even when no obvious debris is visible. High-traffic paths usually change first because they receive both more soil and more physical wear.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-11",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-11-span",
-          "text": "Why Traffic Lanes Stay Dark After Vacuuming",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-12",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-12-span",
-          "text": "A traffic lane can contain removable soil and permanent wear at the same time. Deep cleaning may improve the colour substantially by removing residue, but it cannot rebuild fibres that have been crushed, abraded or faded.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-13",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-13-span",
-          "text": "This is why the best time to clean is before the path becomes extremely dark. Waiting until the difference is dramatic can make it harder to separate soil from wear and may limit how even the final appearance can be.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-14",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-14-span",
-          "text": "What Professional Carpet Cleaning Adds",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-15",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-15-span",
-          "text": "A professional process begins with inspection and dry-soil removal. Spots and traffic areas are treated according to their condition, the carpet is agitated when appropriate, and controlled rinsing and extraction recover loosened soil, cleaning solution and moisture.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-16-span",
-          "text": "The word “professional” does not mean soaking the carpet. The cleaning method, chemistry and moisture level should match the fibre, construction and installation. Drying conditions are part of the plan as well.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-17-span",
-          "text": "Signs That Vacuuming Is No Longer Enough",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-18-span",
-          "text": "traffic lanes remain dull immediately after vacuuming;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-19-span",
-          "text": "the carpet feels sticky, stiff or less soft than before;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-20",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-20-span",
-          "text": "spots return or attract soil quickly;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-21",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-21-span",
-          "text": "odours remain after the room has been aired out;",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-22",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-22-span",
-          "text": "the carpet has gone a long time without a deeper clean.",
-          "marks": []
-        }
-      ],
-      "listItem": "bullet",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-23",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-23-span",
-          "text": "How to Keep Carpet Cleaner Between Appointments",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-24",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-24-span",
-          "text": "Vacuum busy areas more frequently than rooms that are rarely used. Use entrance mats, remove outdoor footwear when practical, and blot fresh spills rather than scrubbing them into a wider area. Empty or replace vacuum filters and bags as recommended so airflow remains effective.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-25",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-25-span",
-          "text": "If you use a spot cleaner, follow the carpet and product instructions and apply as little as the task requires. Residue left after repeated spraying can make the area soil faster.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-26",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-26-span",
-          "text": "Carpet Cleaning in Mississauga and the GTA",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-27",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-27-span",
-          "text": "SoftNest Fabric Care provides carpet, area rug, stair and hallway cleaning across Mississauga and the Greater Toronto Area. For an estimate, send clear photos plus the approximate room or hallway dimensions and tell us about any stains, odours or previous treatments.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-28",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-28-span",
-          "text": "Frequently Asked Questions",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-29",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-29-span",
-          "text": "How often should carpet be vacuumed?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-30",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-30-span",
-          "text": "Busy entrances, family rooms and pet areas may need several passes each week, while lower-use rooms may need less. The right schedule depends on traffic, occupants and how quickly dry soil appears.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-31",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-31-span",
-          "text": "Can professional cleaning remove every dark traffic lane?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-32",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-32-span",
-          "text": "It can remove embedded soil, but permanent wear, fading and crushed fibres may remain. An inspection helps distinguish contamination from damage.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-33",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-33-span",
-          "text": "Should carpet be vacuumed before professional cleaning?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-34",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text-34-span",
-          "text": "Removing loose items and obvious debris is helpful. Ask your cleaner whether they want you to vacuum first, because the planned service may already include dry-soil removal.",
-          "marks": []
-        }
-      ]
-    }
-  ],
-  "order": 4,
-  "showCover": false
+  "title": "Does Vacuuming Really Clean Carpet?"
 }

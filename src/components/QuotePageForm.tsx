@@ -277,11 +277,6 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
       }, 0);
       return;
     }
-    if (!notes) {
-      setError("Please enter any additional details, or write “None”.");
-      formElement.querySelector<HTMLTextAreaElement>('[name="notes"]')?.focus();
-      return;
-    }
     if (customerType === "Business" && !String(formData.get("service_frequency") ?? "")) {
       setError("Please select a service frequency.");
       formElement.querySelector<HTMLElement>('[data-quote-select-name="service_frequency"]')?.focus();
@@ -408,6 +403,12 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
             ? "Tell us about the furniture and carpets in your business space. We’ll recommend a practical cleaning plan and follow up with a clear quote."
             : "Tell us about the furniture and carpets you’d like refreshed. We’ll recommend fabric-safe care and follow up with a clear quote."}
         </p>
+        <p>
+          We confirm the work and a written total, including tax, before booking.
+          Photos are optional. Payment is collected after the service.
+          {" "}<Link href="/blog/upholstery-cleaning-prices-toronto/">How our quotes work</Link>
+          {" · "}<Link href="/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/">Plan your visit</Link>
+        </p>
       </div>
 
       <QuoteContactFields
@@ -447,7 +448,7 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
       </fieldset>
 
       <label className="quote-page-field quote-page-field--notes">
-        <span>Anything else we should know?</span>
+        <span>Anything else we should know? (optional)</span>
         <textarea
           disabled={!isInteractive}
           name="notes"
@@ -457,7 +458,6 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
             ? "Access details, preferred timing, cleaning concerns..."
             : "Stains, pet odour, access notes, preferred timing..."}
           onInput={(event) => growNotes(event.currentTarget)}
-          required
         />
       </label>
 

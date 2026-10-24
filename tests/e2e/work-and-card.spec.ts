@@ -107,7 +107,8 @@ test("city service evidence matches both city and service, with no unrelated fal
   }
 });
 
-test("Card uses working quote, gallery, review and phone links on a white page", async ({ page }) => {
+test("Card uses working quote, Instagram, review and phone links on a white page", async ({ page }) => {
+  const { instagramUrl } = JSON.parse(readFileSync("src/content/generated/settings.json", "utf8"));
   for (const width of [320, 390, 1280]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/card/");
@@ -115,13 +116,14 @@ test("Card uses working quote, gallery, review and phone links on a white page",
     expect(await page.locator("main").evaluate((element) => getComputedStyle(element).backgroundColor)).toBe("rgb(255, 255, 255)");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await expect(page.getByRole("link", { name: /Get a free quote/ })).toHaveAttribute("href", "/quote/");
-    await expect(page.getByRole("link", { name: /See our work/ })).toHaveAttribute("href", "/our-work/");
+    await expect(page.getByRole("link", { name: /See our work/ })).toHaveAttribute("href", instagramUrl);
     await expect(page.getByRole("link", { name: /Google reviews Read/ })).toHaveAttribute("href", /^https:\/\//);
     await expect(page.getByRole("link", { name: "text us", exact: true })).toHaveAttribute("href", /^sms:\+?\d+$/);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex.*follow/);
   }
+  await page.route(instagramUrl, (route) => route.fulfill({ contentType: "text/html", body: "SoftNest Instagram" }));
   await page.getByRole("link", { name: /See our work/ }).click();
-  await expect(page).toHaveURL(/\/our-work\/$/);
+  await expect(page).toHaveURL(instagramUrl);
 });
 
 test("Our Work is reachable from desktop and mobile navigation without overflow", async ({ page }) => {

@@ -1,777 +1,909 @@
 {
+  "_createdAt": "2026-09-07T20:16:53Z",
   "_id": "post-why-did-my-couch-stain-come-back-after-cleaning",
+  "_rev": "Ss630KOMiaKbGsD7dmSYWe",
   "_type": "post",
-  "title": "Why Did My Couch Stain Come Back After Cleaning?",
-  "seoTitle": "Why Did My Couch Stain Come Back After Cleaning? | SoftNest",
+  "_updatedAt": "2026-10-17T20:05:46Z",
+  "author": {
+    "_ref": "author-softnest",
+    "_type": "reference"
+  },
+  "body": [
+    {
+      "_key": "text-0",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A couch stain can look completely gone while the fabric is wet, only to reappear several hours later. This often happens because moisture or dissolved contamination remains beneath the surface and travels upward as the upholstery dries."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-1",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional cleaners call this movement wicking. However, a returning mark is not always the original stain. Detergent residue, a water ring, browning, or permanent colour damage can look similar, so it is important to understand the cause before treating the area again."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-2",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why Couch Stains Reappear After Drying"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-3",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A sofa cushion contains more than the fabric you can see. Beneath the surface there may be backing, batting, foam, and other absorbent materials. If a spill reaches those layers, cleaning only the top may improve the appearance without removing all of the contamination."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-4",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "While the fabric is wet, the stain may be difficult to see. As moisture evaporates, dissolved material can move toward the surface and settle there. The final result should therefore be judged only after the upholstery is fully dry."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-5",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "What Is Wicking in Upholstery?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-6",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Wicking is the movement of moisture through a material. In upholstery, it can carry dissolved soil or residue from deeper layers back into the visible fabric during drying."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-7",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "For example, a drink may soak through the face fabric and into the cushion. A home cleaning attempt removes the visible mark but leaves some of the spill below. As the cushion dries, that remaining material moves upward and the stain becomes visible again."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-8",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Wicking is more likely when a cushion is heavily soaked, the contamination has penetrated deeply, or the upholstery dries slowly."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-9",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why the Returning Stain May Look Bigger"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-10",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Adding cleaner and water increases the wet area around the original spill. Moisture can spread sideways through the fabric or absorbent layers before it moves back toward the surface. When everything dries, the new mark may cover a wider area than the original stain."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-11",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Circular scrubbing can make this worse by moving contamination beyond the original edge. A visible ring may form where moisture or residue collected as the area dried."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-12",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Other Reasons a Mark Returns"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-13",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Cleaning-product residue"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-14",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Detergent left in the fibres can make the area feel stiff, sticky, or different from the surrounding fabric. Residue may also attract soil, causing the cleaned spot to become dirty again more quickly."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-15",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A water ring"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-16",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A water ring is an outline left by uneven wetting or drying. It may contain moved soil, dissolved material from the upholstery, or cleaning residue. Although it can resemble wicking, the treatment may be different."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-17",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Cellulosic browning"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-18",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Natural and cellulosic fibres can sometimes develop yellow or brown discoloration after excessive moisture, unsuitable chemistry, or slow drying. This is more common in materials such as cotton, linen, rayon, and viscose."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-19",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Colour loss or fabric damage"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-20",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A lighter patch, changed texture or rough surface may indicate a change to the material rather than leftover soil. Have the area assessed before applying more products. A suitable treatment may improve the appearance, although complete removal or restoration is not promised."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-21",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Does Slow Drying Make Stains More Likely to Return?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-22",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Slow drying gives moisture more time to move through the cushion and carry dissolved material with it. Heavy saturation, high humidity, poor ventilation, and limited airflow can all extend the drying time."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-23",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Faster drying does not replace proper cleaning, but controlled moisture and good airflow reduce the opportunity for wicking. Professional cleaners may use air movers and additional extraction passes to remove moisture without adding more water."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-24",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "What to Do When a Couch Stain Comes Back"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-25",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Let the upholstery dry completely. A damp area may look darker even when it is clean."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-26",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Do not immediately add another product. More chemistry and moisture can make the cause harder to identify."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-27",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Look at the mark's shape, colour, and texture. Note whether it is larger, lighter, darker, sticky, stiff, or ring-shaped."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-28",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Write down what was spilled and every product used on the area."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-29",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Check the furniture's cleaning code before attempting another treatment."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-30",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Stop if colour transfers to a towel or the fabric changes in texture or appearance."
+        }
+      ],
+      "level": 1,
+      "listItem": "number",
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-31",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Can You Clean the Returning Stain Again Yourself?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-32",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A second careful attempt may be reasonable when the care label permits the method, the fabric is a durable synthetic, the original spill was small, and no colour or texture change is present. Test first and avoid soaking the cushion."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-33",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional assessment is safer when the stain is large, has reached the foam, keeps returning, has a strong odour, or appears on delicate or valuable upholstery. It is also wise to stop if several products have already been applied."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-34",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "How Professional Upholstery Cleaning Addresses Wicking"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-35",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "A professional cleaner first considers the fabric, cushion construction, type of contamination, and previous cleaning attempts. The goal is to loosen the right material without creating unnecessary moisture or damaging the upholstery."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-36",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Controlled rinsing and extraction can recover dissolved soil, cleaning residue and moisture from below the surface. Extra extraction passes and airflow can help the cushion dry more evenly. Deeper contamination may need more than one treatment. Colour changes can also be assessed for possible improvement, without promising restoration."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-37",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Couch-Stain Help in Mississauga and the GTA"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-38",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "SoftNest Fabric Care cleans sofas and upholstery throughout Mississauga and the Greater Toronto Area. If a stain has returned, call, message us or use the optional form to describe it and list any products used. Photos of the mark and care label are optional and can help us assess the cause."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "softnest-local-booking",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "local-0",
+          "_type": "span",
+          "marks": [],
+          "text": "For help with a returning mark, see "
+        },
+        {
+          "_key": "local-1",
+          "_type": "span",
+          "marks": [
+            "local-1"
+          ],
+          "text": "sofa cleaning in Milton"
+        },
+        {
+          "_key": "local-2",
+          "_type": "span",
+          "marks": [],
+          "text": " or "
+        },
+        {
+          "_key": "local-3",
+          "_type": "span",
+          "marks": [
+            "local-3"
+          ],
+          "text": "upholstery cleaning in Oakville"
+        },
+        {
+          "_key": "local-4",
+          "_type": "span",
+          "marks": [],
+          "text": ". Tell us what has already been used so we can assess the next treatment."
+        }
+      ],
+      "markDefs": [
+        {
+          "_key": "local-1",
+          "_type": "link",
+          "href": "/location/milton/sofa-cleaning/"
+        },
+        {
+          "_key": "local-3",
+          "_type": "link",
+          "href": "/location/oakville/upholstery-cleaning/"
+        }
+      ],
+      "style": "normal"
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-10",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s9",
+          "text": "If the stain returned after a SoftNest appointment",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-12",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s11",
+          "text": "Get in touch and tell us when the mark became visible and whether the upholstery is fully dry. You can send a photo if that is convenient, but a description is fine too. Keep the area uncovered and avoid adding another spot remover while we discuss what you're seeing.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "editorial-17",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_type": "link",
+          "_key": "l14",
+          "href": "/blog/stains-or-odours-after-professional-cleaning/"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s13",
+          "text": "A returning mark deserves a look at the cause. Wicking, residue and changes in the fabric can need different next steps. Our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s15",
+          "text": "guide to stains or odours after professional cleaning",
+          "marks": [
+            "l14"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s16",
+          "text": " explains what to check and how to contact us.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_key": "text-39",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Frequently Asked Questions"
+        }
+      ],
+      "markDefs": [],
+      "style": "h2"
+    },
+    {
+      "_key": "text-40",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why did my couch stain disappear and then come back?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-41",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Some contamination may have remained below the surface and moved upward as the cushion dried. This process is commonly called wicking."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-42",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why did a ring appear after I cleaned my sofa?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-43",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Uneven wetting, excess moisture, moved soil, or detergent residue can collect around the edge of the treated area and leave a visible ring."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-44",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Should I clean the stain again immediately?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-45",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "No. Let the area dry fully and identify any colour or texture change before adding more cleaner or moisture."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-46",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Why does the cleaned area feel stiff or sticky?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-47",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Cleaning-product residue may remain in the fibres. Adding more detergent can make the problem worse."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-48",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Can professional cleaning remove a stain that keeps returning?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-49",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Professional rinsing and extraction often improve stains caused by remaining soil or residue. Bleaching, dye changes or damaged areas can also be assessed for possible improvement, without promising complete removal or restoration."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    },
+    {
+      "_key": "text-50",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "How can I help prevent wicking?"
+        }
+      ],
+      "markDefs": [],
+      "style": "h3"
+    },
+    {
+      "_key": "text-51",
+      "_type": "block",
+      "children": [
+        {
+          "_key": "text",
+          "_type": "span",
+          "marks": [],
+          "text": "Avoid soaking the cushion, remove as much contamination and moisture as possible, and provide good airflow while the upholstery dries."
+        }
+      ],
+      "markDefs": [],
+      "style": "normal"
+    }
+  ],
+  "categories": [
+    {
+      "_key": "categories-0",
+      "_ref": "category-fabric-care",
+      "_type": "reference"
+    }
+  ],
+  "coverImage": {
+    "_type": "image",
+    "alt": "A faint water ring visible on a woven sofa cushion beside a folded towel.",
+    "caption": "AI-generated editorial illustration; not a photograph of a SoftNest appointment.",
+    "width": 1536,
+    "height": 1024,
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-6dc3aca7f754e9c79cffda48ce86874c5dab78da-1536x1024-webp"
+    }
+  },
+  "excerpt": "Learn why couch stains return after drying, how wicking differs from residue, and what to do before adding another upholstery cleaner.",
+  "order": 1,
+  "publishedAt": "2026-09-07T12:00:00Z",
+  "relatedServices": [
+    {
+      "_key": "relatedServices-0",
+      "_ref": "service-sofa-cleaning",
+      "_type": "reference"
+    },
+    {
+      "_key": "relatedServices-1",
+      "_ref": "service-upholstery-cleaning",
+      "_type": "reference"
+    }
+  ],
+  "seoDescription": "Learn why couch stains return after drying, how wicking differs from residue, and what to do before adding another upholstery cleaner.",
+  "seoTitle": "Why Couch Stains Come Back After Cleaning | SoftNest",
+  "showCover": true,
   "slug": {
     "_type": "slug",
     "current": "why-did-my-couch-stain-come-back-after-cleaning"
   },
-  "excerpt": "Learn why couch stains can return after drying, how wicking and detergent residue affect upholstery, and what to do before cleaning the spot again.",
-  "seoDescription": "Learn why couch stains can return after drying, how wicking and detergent residue affect upholstery, and what to do before cleaning the spot again.",
-  "publishedAt": "2026-09-07T12:00:00Z",
-  "author": {
-    "_type": "reference",
-    "_ref": "author-softnest"
-  },
-  "categories": [
-    {
-      "_type": "reference",
-      "_ref": "category-fabric-care"
-    }
-  ],
-  "relatedServices": [
-    {
-      "_type": "reference",
-      "_ref": "service-sofa-cleaning"
-    },
-    {
-      "_type": "reference",
-      "_ref": "service-upholstery-cleaning"
-    }
-  ],
-  "body": [
-    {
-      "_type": "block",
-      "_key": "text-0",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A couch stain can look completely gone while the fabric is wet, only to reappear several hours later. This often happens because moisture or dissolved contamination remains beneath the surface and travels upward as the upholstery dries.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-1",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional cleaners call this movement wicking. However, a returning mark is not always the original stain. Detergent residue, a water ring, browning, or permanent colour damage can look similar, so it is important to understand the cause before treating the area again.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-2",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why Couch Stains Reappear After Drying",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-3",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A sofa cushion contains more than the fabric you can see. Beneath the surface there may be backing, batting, foam, and other absorbent materials. If a spill reaches those layers, cleaning only the top may improve the appearance without removing all of the contamination.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-4",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "While the fabric is wet, the stain may be difficult to see. As moisture evaporates, dissolved material can move toward the surface and settle there. The final result should therefore be judged only after the upholstery is fully dry.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-5",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What Is Wicking in Upholstery?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-6",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Wicking is the movement of moisture through a material. In upholstery, it can carry dissolved soil or residue from deeper layers back into the visible fabric during drying.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-7",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "For example, a drink may soak through the face fabric and into the cushion. A home cleaning attempt removes the visible mark but leaves some of the spill below. As the cushion dries, that remaining material moves upward and the stain becomes visible again.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-8",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Wicking is more likely when a cushion is heavily soaked, the contamination has penetrated deeply, or the upholstery dries slowly.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-9",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why the Returning Stain May Look Bigger",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-10",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Adding cleaner and water increases the wet area around the original spill. Moisture can spread sideways through the fabric or absorbent layers before it moves back toward the surface. When everything dries, the new mark may cover a wider area than the original stain.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-11",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Circular scrubbing can make this worse by moving contamination beyond the original edge. A visible ring may form where moisture or residue collected as the area dried.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-12",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Other Reasons a Mark Returns",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-13",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Cleaning-product residue",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-14",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Detergent left in the fibres can make the area feel stiff, sticky, or different from the surrounding fabric. Residue may also attract soil, causing the cleaned spot to become dirty again more quickly.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-15",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A water ring",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-16",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A water ring is an outline left by uneven wetting or drying. It may contain moved soil, dissolved material from the upholstery, or cleaning residue. Although it can resemble wicking, the treatment may be different.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-17",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Cellulosic browning",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-18",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Natural and cellulosic fibres can sometimes develop yellow or brown discoloration after excessive moisture, unsuitable chemistry, or slow drying. This is more common in materials such as cotton, linen, rayon, and viscose.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-19",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Colour loss or fabric damage",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-20",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "If a cleaner affects the dye or fibre, the remaining mark may not be a stain at all. A lighter patch, changed texture, or rough surface can indicate permanent material damage rather than contamination that can be washed away.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-21",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Does Slow Drying Make Stains More Likely to Return?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-22",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Slow drying gives moisture more time to move through the cushion and carry dissolved material with it. Heavy saturation, high humidity, poor ventilation, and limited airflow can all extend the drying time.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-23",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Faster drying does not replace proper cleaning, but controlled moisture and good airflow reduce the opportunity for wicking. Professional cleaners may use air movers and additional extraction passes to remove moisture without adding more water.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-24",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "What to Do When a Couch Stain Comes Back",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-25",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Let the upholstery dry completely. A damp area may look darker even when it is clean.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-26",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Do not immediately add another product. More chemistry and moisture can make the cause harder to identify.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-27",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Look at the mark's shape, colour, and texture. Note whether it is larger, lighter, darker, sticky, stiff, or ring-shaped.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-28",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Write down what was spilled and every product used on the area.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-29",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Check the furniture's cleaning code before attempting another treatment.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-30",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Stop if colour transfers to a towel or the fabric changes in texture or appearance.",
-          "marks": []
-        }
-      ],
-      "listItem": "number",
-      "level": 1
-    },
-    {
-      "_type": "block",
-      "_key": "text-31",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Can You Clean the Returning Stain Again Yourself?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-32",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A second careful attempt may be reasonable when the care label permits the method, the fabric is a durable synthetic, the original spill was small, and no colour or texture change is present. Test first and avoid soaking the cushion.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-33",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional assessment is safer when the stain is large, has reached the foam, keeps returning, has a strong odour, or appears on delicate or valuable upholstery. It is also wise to stop if several products have already been applied.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-34",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "How Professional Upholstery Cleaning Addresses Wicking",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-35",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "A professional cleaner first considers the fabric, cushion construction, type of contamination, and previous cleaning attempts. The goal is to loosen the right material without creating unnecessary moisture or damaging the upholstery.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-36",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Controlled rinsing and extraction can recover dissolved soil, cleaning residue, and moisture from below the surface. Additional dry extraction passes and airflow may then help the cushion dry more evenly. Deep contamination can still require more than one treatment, and permanent colour loss cannot be restored through cleaning alone.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-37",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Couch-Stain Help in Mississauga and the GTA",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-38",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "SoftNest Fabric Care cleans sofas and upholstery throughout Mississauga and the Greater Toronto Area. If a stain has returned, send us a clear photo, a photo of the care label, and a list of any products already used. Those details help us assess whether the problem is likely to be wicking, residue, a water mark, or fabric damage.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-39",
-      "style": "h2",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Frequently Asked Questions",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-40",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why did my couch stain disappear and then come back?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-41",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Some contamination may have remained below the surface and moved upward as the cushion dried. This process is commonly called wicking.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-42",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why did a ring appear after I cleaned my sofa?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-43",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Uneven wetting, excess moisture, moved soil, or detergent residue can collect around the edge of the treated area and leave a visible ring.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-44",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Should I clean the stain again immediately?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-45",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "No. Let the area dry fully and identify any colour or texture change before adding more cleaner or moisture.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-46",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Why does the cleaned area feel stiff or sticky?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-47",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Cleaning-product residue may remain in the fibres. Adding more detergent can make the problem worse.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-48",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Can professional cleaning remove a stain that keeps returning?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-49",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Professional rinsing and extraction can often improve stains caused by remaining soil or residue. Bleaching, dye loss, and permanent fibre damage may not be removable.",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-50",
-      "style": "h3",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "How can I help prevent wicking?",
-          "marks": []
-        }
-      ]
-    },
-    {
-      "_type": "block",
-      "_key": "text-51",
-      "style": "normal",
-      "markDefs": [],
-      "children": [
-        {
-          "_type": "span",
-          "_key": "text",
-          "text": "Avoid soaking the cushion, remove as much contamination and moisture as possible, and provide good airflow while the upholstery dries.",
-          "marks": []
-        }
-      ]
-    }
-  ],
-  "order": 1,
-  "showCover": false
+  "title": "Why Did My Couch Stain Come Back After Cleaning?"
 }

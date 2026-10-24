@@ -92,6 +92,8 @@ test("successful quote retains its origin separately from an edited city and cou
   await expect(page.getByRole("textbox", { name: "Service city", exact: true })).toHaveValue("Milton");
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
   await fillSofaQuote(page);
+  // An inquiry with nothing extra to add must not require typing “None”.
+  await page.getByRole("textbox", { name: "Anything else we should know?" }).fill("");
   await page.getByRole("textbox", { name: "Postal code (optional)", exact: true }).fill("l6h 1a1");
   await page.getByRole("button", { name: "Get my quote" }).click();
   await expect(page).toHaveURL(/\/quote\/thank-you\/$/);
