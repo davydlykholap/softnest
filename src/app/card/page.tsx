@@ -17,7 +17,7 @@ export default function CardPage() {
     <div className={styles.shell}>
       <Link href="/" className={`brand ${styles.brand}`} aria-label="SoftNest Fabric Care home">
         <Image src="/img/logo/header_logo.webp" alt="" width={80} height={80} priority />
-        <span className="brand__name"><strong>SoftNest</strong><small>Fabric Care</small></span>
+        <span className="brand__name"><strong>SoftNest</strong>{" "}<small>Fabric Care</small></span>
       </Link>
       <header className={styles.intro}>
         <h1>Upholstery &amp; carpet cleaning.</h1>

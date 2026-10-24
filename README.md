@@ -55,4 +55,4 @@ Start with [`docs/README.md`](docs/README.md). `docs/current-state.md` is the au
 
 ### Runtime and dependency checks
 
-Use Node.js 24.16.0 (`.nvmrc`) and npm 11.14.1 for local and CI installs. Run `npm ci`, `npm ci --prefix studio`, and `npm run audit:dependencies`. The audit gate preserves temporary, exact-version exceptions for two unpatched CLI/lint advisories; it blocks new moderate-or-higher findings, critical findings, changed versions, and expired exceptions. Review `dependency-audit-exceptions.json` weekly.
+Use Node.js 24.22.1 (`.nvmrc`) and npm 11.21.1 for local and CI installs. Run `npm ci`, `npm ci --prefix studio`, and `npm run audit:dependencies`. Both dependency trees have zero reported vulnerabilities as of October 24, 2026. The audit gate blocks moderate-or-higher findings; `dependency-audit-exceptions.json` is empty. ESLint stays on the latest 9.x release and TypeScript on 6.0.x because the current lint plugins do not support their newer major versions.

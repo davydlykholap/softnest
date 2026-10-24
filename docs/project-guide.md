@@ -140,7 +140,7 @@ Run the smallest relevant checks while editing, then the full gate before comple
 
 ## Dependency changes
 
-Prefer small patch/minor updates with a concrete reason. Keep `next` and `eslint-config-next` on compatible versions. Run `npm run audit:dependencies` after dependency work. CI blocks new moderate-or-higher advisories and expired exceptions. `dependency-audit-exceptions.json` records exact advisory URLs, package versions, scope, reasons, and expiry for unpatched build-tool dependencies. Raw `npm audit` still reports these advisories.
+Prefer small patch/minor updates with a concrete reason. Keep `next` and `eslint-config-next` on compatible versions. Run `npm run audit:dependencies` after dependency work. CI blocks new moderate-or-higher advisories and expired exceptions. `dependency-audit-exceptions.json` is empty after the October 24, 2026 upgrades. Any future exception must record an exact advisory URL, package version, scope, reason and expiry.
 
 ## Documentation rule
 

@@ -21,7 +21,7 @@ jobs:
           cache: npm
           cache-dependency-path: studio/package-lock.json
       - name: Use pinned npm version
-        run: npm install --global npm@11.14.1
+        run: npm install --global npm@11.21.1
 
       - run: npm ci --prefix studio
       - name: Export production dataset and assets
