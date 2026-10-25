@@ -147,8 +147,6 @@ export default function ServiceDetailPanel({
           </p>
           <p>
             <Link href="/blog/upholstery-cleaning-prices-toronto/">Written quotes</Link>
-            {" · "}<Link href="/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/">Preparing for your visit</Link>
-            {" · "}<Link href="/blog/stains-or-odours-after-professional-cleaning/">Questions after cleaning</Link>
           </p>
         </div>
         <div className={styles.expectationsCopy}>

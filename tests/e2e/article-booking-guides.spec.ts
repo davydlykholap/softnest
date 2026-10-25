@@ -26,12 +26,15 @@ test("every article keeps its canonical address, cover disclosure and useful con
   }
 });
 
-test("new booking guides and quote details fit mobile and desktop", async ({ page }) => {
+test("published booking guides and quote details fit mobile and desktop", async ({ page }) => {
   await page.route("https://www.googletagmanager.com/**", route => route.fulfill({ body: "" }));
+  const guideSlugs = ["what-is-included-in-sofa-cleaning", "how-to-prepare-for-upholstery-and-carpet-cleaning"];
+  const paths = ["/blog/", ...posts.filter(post => guideSlugs.includes(post.slug)).map(post => `/blog/${post.slug}/`), "/quote/"];
   for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const path of ["/blog/what-is-included-in-sofa-cleaning/", "/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/", "/quote/"]) {
-      await page.goto(path);
+    for (const path of paths) {
+      const response = await page.goto(path);
+      expect(response?.status(), path).toBe(200);
       await expect(page.locator("h1")).toBeVisible();
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${width}: ${path}`).toBe(true);
     }

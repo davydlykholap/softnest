@@ -407,7 +407,6 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
           We confirm the work and a written total, including tax, before booking.
           Photos are optional. Payment is collected after the service.
           {" "}<Link href="/blog/upholstery-cleaning-prices-toronto/">How our quotes work</Link>
-          {" · "}<Link href="/blog/how-to-prepare-for-upholstery-and-carpet-cleaning/">Plan your visit</Link>
         </p>
       </div>
 
