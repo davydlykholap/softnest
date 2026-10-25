@@ -14,7 +14,7 @@ export const integrations = {
   ),
   web3formsAccessKey:
     publicValue(process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY) ||
-    "c204f6bb-0402-4dfe-8981-fc5080ce3ac4",
+    "1737d97d-e43d-4e5b-aa87-6f01ebb2c5e5",
   homeVideoUrl: publicValue(process.env.NEXT_PUBLIC_HOME_VIDEO_URL),
   youtubeUrl: publicValue(process.env.NEXT_PUBLIC_YOUTUBE_URL),
 };

@@ -150,6 +150,8 @@ Public browser/build settings are documented in `.env.example` and centralized i
 
 These are public identifiers/URLs, not private credentials. Sanity read/write tokens and the GitHub workflow token are private and must remain unprefixed/local or in the appropriate platform secret storage.
 
+The deployed quote form uses the public Web3Forms key in `src/lib/integrations.ts`, supplied for `softnestfabriccare@gmail.com`. The deployment workflow deliberately does not override it with a GitHub variable, so an older variable cannot silently restore the previous recipient. `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` remains an optional local build override. Web3Forms controls the recipient associated with each key; changing the public contact email does not change form delivery.
+
 ## Our Work and Card
 
 Each approved cleaning appointment is one project with a permanent `/our-work/projects/[slug]/` page. `/our-work/` groups up to six project covers per actual city in manual horizontal rails, with overflow controls only when needed. City galleries at `/our-work/[city]/` use a regular photo grid; every cover opens the project. Project links and cover images exist in the initial HTML. All published cities have a section, with a centered empty-state message when no local projects exist. City pages have a Back to Our Work link returning to their city section; there is no city dropdown. Filters on city galleries become visible when there are more than six projects and multiple services. Existing `?service=` links remain supported. No descriptions appear beneath gallery cards.
