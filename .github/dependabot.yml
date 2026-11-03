@@ -8,7 +8,21 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # Next's ESLint plugins currently declare support through ESLint 9.
+      - dependency-name: eslint
+        update-types: ["version-update:semver-major"]
+      # typescript-eslint requires the TypeScript 6 JavaScript API.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      # Keep Node declarations aligned with the pinned Node 24 runtime.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: npm
     directory: /studio
     schedule:
       interval: weekly
+    ignore:
+      # Keep Studio type generation aligned with the website's TS 6 toolchain.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]

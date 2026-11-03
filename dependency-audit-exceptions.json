@@ -1,3 +1,12 @@
 {
-  "exceptions": []
+  "exceptions": [
+    {
+      "package": "minimatch",
+      "advisory": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+      "targets": ["website"],
+      "versions": ["3.1.5"],
+      "expires": "2026-12-02",
+      "reason": "Legacy ESLint plugins require the callable v3 API and consume repository-controlled lint patterns. v3.1.5 has no firstPhasePreProcess or optimizationLevel path described by this advisory, despite npm's broad <11.0.1 range. Modern minimatch consumers are overridden to patched 11.0.4. Recheck upstream plugin support before expiry; do not override v3 to the incompatible named-export API."
+    }
+  ]
 }

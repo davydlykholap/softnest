@@ -21,7 +21,13 @@ test("every article keeps its canonical address, cover disclosure and useful con
       await expect.poll(() => page.locator("article > figure img").evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
     }
     const body = await page.locator("article").innerText();
-    expect(body).not.toMatch(/48[-– ]?hours?|refund/i);
+    expect(body).not.toMatch(/refund/i);
+    if (post.slug === "professional-upholstery-chair-cleaning-milton-oakville") {
+      await expect(page.locator("article")).toContainText("Some of these products can continue working for up to 48 hours after application");
+      await expect(page.locator("article")).toContainText("complete removal is not always possible");
+    } else {
+      expect(body).not.toMatch(/48[-– ]?hours?/i);
+    }
     expect(await page.locator("article h2").count(), post.slug).toBeGreaterThan(1);
   }
 });
