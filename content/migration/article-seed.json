@@ -12709,5 +12709,168 @@
       "current": "our-process"
     },
     "description": "What to expect from a SoftNest cleaning appointment and how we care for your furniture."
+  },
+  {
+    "_id": "post-professional-upholstery-chair-cleaning-milton-oakville",
+    "_type": "post",
+    "title": "Professional Upholstery & Chair Cleaning in Milton and Oakville",
+    "slug": {
+      "_type": "slug",
+      "current": "professional-upholstery-chair-cleaning-milton-oakville"
+    },
+    "author": {
+      "_type": "reference",
+      "_ref": "author-softnest"
+    },
+    "categories": [
+      {
+        "_key": "fabric-care",
+        "_type": "reference",
+        "_ref": "category-fabric-care"
+      }
+    ],
+    "publishedAt": "2026-11-02T22:00:00-05:00",
+    "order": -1,
+    "excerpt": "Professional sofa and chair cleaning in Milton and Oakville, with targeted stain treatments and care selected for delicate and textured upholstery.",
+    "seoTitle": "Upholstery & Chair Cleaning in Milton & Oakville | SoftNest",
+    "seoDescription": "Professional sofa and chair cleaning in Milton and Oakville, with targeted stain treatments and care selected for delicate and textured upholstery.",
+    "showCover": true,
+    "coverImage": {
+      "_type": "image",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Before-and-after comparison of a cream textured armchair, with visible seat stains on the left and a cleaner appearance on the right.",
+      "caption": "A textured armchair before cleaning (left) and after cleaning (right).",
+      "asset": {
+        "_type": "reference",
+        "_ref": "image-56b1d58799d4d4ef3c43fe2e65d0842441cc19c9-1536x1024-webp"
+      }
+    },
+    "body": [
+      {
+        "_key": "text-0",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "span-0",
+            "_type": "span",
+            "marks": [],
+            "text": "At SoftNest Fabric Care, we provide professional upholstery cleaning in Milton, Oakville and surrounding areas, helping restore the appearance of sofas, armchairs and other upholstered furniture."
+          }
+        ]
+      },
+      {
+        "_key": "text-1",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "span-1",
+            "_type": "span",
+            "marks": [],
+            "text": "Targeted Treatment for Stains and Discoloration"
+          }
+        ]
+      },
+      {
+        "_key": "text-2",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "span-2",
+            "_type": "span",
+            "marks": [],
+            "text": "For stubborn organic stains and discoloration, we use specialized oxygen-based stain treatments. Some of these products can continue working for up to 48 hours after application, gradually improving the appearance of certain stains. Results depend on the stain and the fabric; complete removal is not always possible."
+          }
+        ]
+      },
+      {
+        "_key": "text-3",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "span-3",
+            "_type": "span",
+            "marks": [],
+            "text": "Care Selected for Your Upholstery"
+          }
+        ]
+      },
+      {
+        "_key": "text-4",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "span-4",
+            "_type": "span",
+            "marks": [],
+            "text": "We carefully select our cleaning methods based on the fabric type and condition, with special attention to delicate and textured upholstery."
+          }
+        ]
+      },
+      {
+        "_key": "text-5",
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_key": "span-5",
+            "_type": "span",
+            "marks": [],
+            "text": "Sofa and Chair Cleaning in Milton and Oakville"
+          }
+        ]
+      },
+      {
+        "_key": "text-6",
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [
+          {
+            "_key": "estimate",
+            "_type": "link",
+            "href": "/quote/"
+          }
+        ],
+        "children": [
+          {
+            "_key": "cta-start",
+            "_type": "span",
+            "marks": [],
+            "text": "Looking for professional sofa or chair cleaning in Milton or Oakville? "
+          },
+          {
+            "_key": "cta-link",
+            "_type": "span",
+            "marks": [
+              "estimate"
+            ],
+            "text": "Contact SoftNest Fabric Care for a free estimate."
+          }
+        ]
+      }
+    ],
+    "relatedServices": [
+      {
+        "_key": "service-0",
+        "_type": "reference",
+        "_ref": "service-sofa-cleaning"
+      },
+      {
+        "_key": "service-1",
+        "_type": "reference",
+        "_ref": "service-upholstery-cleaning"
+      }
+    ]
   }
 ]
