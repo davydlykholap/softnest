@@ -23,7 +23,7 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-      - run: npm install --global npm@11.21.1
+      - run: npm install --global npm@12.2.2
       - run: npm ci
       - name: Validate selected application
         env:

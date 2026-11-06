@@ -21,7 +21,7 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
       - name: Use pinned npm version
-        run: npm install --global npm@11.21.1
+        run: npm install --global npm@12.2.2
 
       - run: npm ci
       - name: Audit dependencies

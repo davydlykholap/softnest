@@ -12,7 +12,7 @@ Namecheap manages DNS. Studio and SF0 publish compiled assets to separate hostin
 
 ## Start
 
-Use Node **24.22.1** (.nvmrc) and npm **11.21.1** (packageManager).
+Use Node **26.13.0** (.nvmrc) and npm **12.2.2** (packageManager).
 
 ```sh
 npm ci
