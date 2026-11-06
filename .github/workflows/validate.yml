@@ -1,4 +1,4 @@
-name: Validate website and editor
+name: Validate SoftNest workspace
 on:
   pull_request:
   workflow_dispatch:
@@ -15,24 +15,20 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            studio/package-lock.json
+          cache-dependency-path: package-lock.json
       - name: Use pinned npm version
         run: npm install --global npm@11.21.1
 
       - run: npm ci
-      - run: npm ci --prefix studio
       - name: Audit dependencies
         run: npm run audit:dependencies
       - run: npm run content:types
-      - run: npm run studio:check
       - run: npm run check
         env:
           CONTENT_SOURCE: sanity
           SANITY_PROJECT_ID: ${{ vars.SANITY_PROJECT_ID }}
           SANITY_DATASET: ${{ vars.SANITY_DATASET }}
       - name: Install Chromium for browser checks
-        run: npx playwright install --with-deps chromium
+        run: npm exec --workspace @softnest/website -- playwright install --with-deps chromium
       - name: Run browser smoke and accessibility checks
         run: npm run test:e2e:built

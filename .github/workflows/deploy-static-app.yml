@@ -1,0 +1,43 @@
+name: Publish Studio or SF0
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: Application to publish
+        required: true
+        type: choice
+        options: [studio, sf0]
+permissions:
+  contents: read
+concurrency:
+  group: static-publish-${{ inputs.app }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm install --global npm@11.21.1
+      - run: npm ci
+      - name: Validate selected application
+        env:
+          APP: ${{ inputs.app }}
+        run: npm run "check:$APP"
+      - name: Publish compiled assets
+        env:
+          APP: ${{ inputs.app }}
+          GITHUB_TOKEN: ${{ secrets.STATIC_PAGES_DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$GITHUB_TOKEN" ]; then
+            echo 'Configure STATIC_PAGES_DEPLOY_TOKEN for the compiled hosting repository, or publish locally with npm run studio:deploy / sf0:deploy.'
+            exit 1
+          fi
+          git config --global user.name 'SoftNest deployment'
+          git config --global user.email 'deployment@users.noreply.github.com'
+          node tools/deploy-pages.mjs "$APP"

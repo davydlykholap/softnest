@@ -1,0 +1,80 @@
+Sofa arms that look darker than the rest of the fabric, marks on a favourite chair and dull dining seats can all raise the same question: will professional cleaning help? The answer depends on what caused the change and how the upholstery can safely be treated.
+
+SoftNest Fabric Care provides upholstery and chair cleaning in Milton and Oakville, with methods selected for the material and targeted treatment for suitable stains. This guide explains what we assess, what happens during cleaning and how to plan a visit.
+
+## When professional upholstery cleaning can help
+
+Vacuuming removes loose dust, crumbs and hair, but it may leave oily buildup, spill residue and marks from everyday use. A professional assessment helps distinguish removable soil from wear or a permanent colour change.
+
+Consider asking about cleaning when you notice:
+
+- Darker armrests, headrests or seat edges that remain after vacuuming.
+- Food and drink marks on upholstered dining chairs or living-room seating.
+- Uneven soiling across a sofa or a chair that gets frequent use.
+- Old spots that have not improved with the care recommended by the furniture maker.
+
+Tell us about previous spot cleaners, even if they did not work. That history helps us assess the mark and avoid treating an already affected area without understanding what has been applied.
+
+## Why delicate and textured fabrics need individual care
+
+A cream textured armchair and a smooth synthetic sofa can need different products, handling and moisture levels. We inspect the upholstery, consider the manufacturer's care instructions and test as needed before choosing a cleaning method.
+
+Fabric texture alone does not identify its fibre content or cleaning requirements. A care label is useful, but we also consider colour stability, cushion construction, existing damage and the condition of the fabric. The goal is to clean the piece while respecting those limits.
+
+For background, [La-Z-Boy's upholstery care guidance](https://content.la-z-boy.com/content/CustomerCare/fabric-and-leather-care/) explains why the cleaning code and pretesting matter. Follow the instructions for your own furniture; a product or method suitable for another sofa may not suit yours.
+
+## What happens during sofa and chair cleaning?
+
+### Inspection and dry-soil removal
+
+We discuss the areas you want cleaned and any stains that concern you. After assessing the fabric and protecting the work area, we remove loose soil with suitable vacuuming. Seams, edges and spaces under removable cushions can hold debris that is easy to miss during everyday care.
+
+### Cleaning selected for the upholstery
+
+We choose the solution and handling for the fabric. Where hot-water extraction is suitable, rinsing and extraction recover loosened soil and cleaning solution. Other materials may need a different approach. Accessible areas and both sides of removable cushions are cleaned where agreed and suitable for the item.
+
+### Targeted stain treatment and drying support
+
+Remaining marks are assessed individually. Additional treatment may help, but repeatedly soaking or scrubbing a spot is not the answer for every fabric. We use air movers where appropriate while we work and explain drying and aftercare before leaving. Our [sofa-cleaning appointment guide](/blog/what-to-expect-when-softnest-cleans-your-sofa/) covers the process in more detail.
+
+## Can oxygen-based treatments remove every stain?
+
+No. For certain organic stains and discolouration, we may select a professional oxygen-based treatment after assessing the fabric and the mark. This is a targeted treatment, rather than a product used on every piece of furniture.
+
+Some of these products can continue working for up to 48 hours after application. That timing applies only to the appropriate treatment; it is not the drying time for every sofa or a promise that a stain will disappear. If we use a continuing-action treatment, we explain when to assess the result and any product-specific aftercare.
+
+The original colour, age of the stain, earlier cleaning attempts and changes to the fibres can all affect the outcome. Results vary, and complete removal is not always possible. Cleaning cannot reverse worn fibres or lost dye.
+
+Avoid adding household peroxide, bleach or another spot cleaner while waiting for the result. Contact us first if an area still concerns you once the recommended assessment period has passed. For a mark that disappears and returns during drying, see [why a couch stain can come back after cleaning](/blog/why-did-my-couch-stain-come-back-after-cleaning/).
+
+## How to prepare for an upholstery-cleaning visit
+
+Start with the items you want cleaned: a sofa, sectional, armchair, dining chairs or a combination. Tell us your city, the approximate size or seat count and any particular stains or odours. Photos and a care-label picture are helpful when available, but they are optional.
+
+Before the visit, remove blankets, toys and personal items from the furniture and clear a practical route to the work area. We clarify parking, access, water supply and any furniture movement with you in advance. We confirm the agreed work and written price before booking, so you can plan for the appointment.
+
+## Drying and aftercare: when can you use the furniture?
+
+Many sofas we clean take around six to eight hours to dry, but that is a planning estimate. Thick padding, fabric, room temperature, humidity and airflow can make drying take longer. We explain what to expect for your furniture.
+
+Keep air moving as advised and leave the upholstery uncovered until it is fully dry. Check seams, cushion edges and other slower-drying areas before sitting down. Avoid concentrated heat or putting blankets back onto damp seating. Our [couch-drying guide](/blog/how-long-does-a-couch-take-to-dry-after-cleaning/) explains what affects drying and when to contact us.
+
+## Frequently Asked Questions
+
+### Can you clean just one armchair or a set of dining chairs?
+
+Tell us which pieces you want cleaned when requesting an estimate. We confirm the scope, fabric suitability and price before booking. See our [armchair and recliner cleaning](/services/armchair-cleaning/) and [dining chair cleaning](/services/dining-chair-cleaning/) pages for those services.
+
+### Will my chair look exactly like the before-and-after photo?
+
+The cover photo shows one textured armchair before and after cleaning. It illustrates an individual result, rather than a promise for every chair. Fabric, soil, stain history and wear affect how much the appearance can improve.
+
+### Should I try another stain remover before the appointment?
+
+If a mark has resisted earlier attempts or you are unsure what the fabric allows, ask us before applying another product. Tell us what has already been used. For a fresh spill, follow your furniture manufacturer's instructions and avoid saturating or aggressively rubbing the upholstery.
+
+## Request upholstery cleaning in Milton or Oakville
+
+For local service details, visit [upholstery cleaning in Milton](/location/milton/upholstery-cleaning/) or [upholstery cleaning in Oakville](/location/oakville/upholstery-cleaning/). We can discuss sofas, armchairs and other upholstered pieces together so the estimate reflects the items you actually want cleaned.
+
+[Request a free upholstery-cleaning estimate](/quote/) with your city, furniture details and any concerns. We'll help you understand the suitable approach, likely limitations and next step before you book.

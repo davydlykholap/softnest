@@ -16,8 +16,8 @@
 .env
 .env.local
 .env.*.local
-/studio/dist/
-/studio/.sanity/
+**/dist/
+**/.sanity/
 *.tsbuildinfo
 
 # Operating System files
@@ -41,17 +41,17 @@ yarn-error.log*
 .vscode/
 
 # Build artifacts
-/.next/
-/out/
-/test-results/
-/playwright-report/
-/backups/
+**/.next/
+**/out/
+**/test-results/
+**/playwright-report/
+**/backups/
 /softnest.zip
 /.next-dev*.log
 
 # Local design reviews and visual QA captures
 /.codex/audit/
-/artifacts/
+**/artifacts/
 /audit/
 /design/
 /design-qa.md
@@ -60,13 +60,13 @@ yarn-error.log*
 /src*.zip
 
 # Editorial originals and private migration backups stay local.
-/content/inbox/
-/content/backups/
+**/content/inbox/
+**/content/backups/
 
 # Rebuilt from Sanity (or an explicit local seed preview).
-/src/content/generated/
-/studio/schema.json
-/studio/*.log
+apps/website/src/content/generated/
+apps/studio/schema.json
+apps/studio/*.log
 
 # Authentication tokens must never be committed.
 .env.*

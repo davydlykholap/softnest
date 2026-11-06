@@ -1,0 +1,11 @@
+{
+  "name": "@softnest/content",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./project.json": "./src/project.json",
+    "./work-urls": "./src/work-urls.ts",
+    "./work-page-defaults.json": "./src/work-page-defaults.json"
+  }
+}

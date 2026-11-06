@@ -1,0 +1,26 @@
+{
+  "website": {
+    "domain": "softnestcare.ca",
+    "source": "apps/website",
+    "output": "apps/website/out",
+    "repository": "davydlykholap/softnest",
+    "deployment": "github-actions",
+    "workflow": "deploy-pages.yml"
+  },
+  "studio": {
+    "domain": "studio.softnestcare.ca",
+    "source": "apps/studio",
+    "output": "apps/studio/dist",
+    "repository": "davydlykholap/softnest-studio",
+    "description": "SoftNest Content Studio hosting",
+    "deployment": "compiled-pages-branch"
+  },
+  "sf0": {
+    "domain": "sf0.softnestcare.ca",
+    "source": "apps/sf0",
+    "output": "apps/sf0/dist",
+    "repository": "davydlykholap/softnest-sf0",
+    "description": "SoftNest SF0 hosting",
+    "deployment": "compiled-pages-branch"
+  }
+}

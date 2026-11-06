@@ -1,0 +1,60 @@
+{
+  "name": "@softnest/website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "content:seed-local-copy": "node scripts/content/seed-local-copy.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "eslint .",
+    "check": "npm run content:sync && eslint . && npm run content:verify && npm run test:unit && next build && npm run prepare:export && npm run verify:export",
+    "content:sync": "node scripts/content/sync.mjs",
+    "content:seed": "node scripts/content/run-seed.mjs",
+    "content:import:check": "node scripts/content/import.mjs --dry-run",
+    "content:import": "node scripts/content/import.mjs",
+    "content:verify": "node --test scripts/content/normalize.test.mjs",
+    "test:unit": "playwright test tests/marketing-attribution.spec.ts tests/images.spec.ts tests/quote-request.spec.ts tests/location-search.spec.ts tests/location-reviews.spec.ts --reporter=line",
+    "verify:export": "node scripts/verify-export.mjs",
+    "images:generate": "node scripts/generate-responsive-images.mjs",
+    "images:restore-blog": "node scripts/content/restore-blog-images.mjs",
+    "prepare:export": "node scripts/prepare-export.mjs",
+    "predev": "npm run content:sync",
+    "prebuild": "npm run content:sync",
+    "prelint": "npm run content:sync",
+    "preview": "node scripts/content/preview.mjs",
+    "content:repair-ids": "node scripts/content/repair-ids.mjs",
+    "content:publish-reviews": "node scripts/content/publish-reviews.mjs",
+    "test:e2e:built": "playwright test -c playwright.e2e.config.ts",
+    "test:e2e": "npm run check && npm run test:e2e:built",
+    "test:a11y:built": "playwright test tests/e2e/accessibility.spec.ts -c playwright.e2e.config.ts"
+  },
+  "dependencies": {
+    "@portabletext/react": "^8.0.1",
+    "@sanity/client": "^8.11.0",
+    "@sanity/image-url": "^2.1.1",
+    "groq": "^6.21.0",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "@softnest/content": "1.0.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.3",
+    "sharp": "0.35.5",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24.22.1 <25",
+    "npm": ">=11.21.1 <12"
+  },
+  "packageManager": "npm@11.21.1"
+}

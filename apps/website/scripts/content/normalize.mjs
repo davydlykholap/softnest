@@ -1,0 +1,532 @@
+import { createImageUrlBuilder } from "@sanity/image-url";
+import imageAliases from "../../src/lib/imageAliases.json" with { type: "json" };
+import workPageDefaults from "@softnest/content/work-page-defaults.json" with { type: "json" };
+import { workSlug, workVideoEmbed } from "@softnest/content/work-urls";
+
+const HOME_COPY_KEYS = [
+  "hero-1",
+  "hero-7",
+  "hero-8",
+  "hero-9",
+  "hero-10",
+  "hero-11",
+  "hero-12",
+  "hero-21",
+  "hero-22",
+  "sections-28",
+  "sections-36",
+  "sections-37",
+  "sections-38",
+  "sections-96",
+  "sections-97",
+];
+const EXPANDED_LOCATION_COPY_KEYS = [
+  "page-2",
+  "page-3",
+  "page-4",
+  "page-16",
+  "page-23",
+];
+
+// Saved CMS documents and migration snapshots can still contain previous image
+// URLs. Translate exact values without rewriting article text or live documents.
+function canonicalImagePaths(value) {
+  if (typeof value === "string") {
+    if (imageAliases[value]) return imageAliases[value];
+    const origin = "https://softnestcare.ca";
+    if (value.startsWith(origin + "/")) {
+      const replacement = imageAliases[value.slice(origin.length)];
+      if (replacement) return origin + replacement;
+    }
+    return value;
+  }
+  if (Array.isArray(value)) return value.map(canonicalImagePaths);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, canonicalImagePaths(item)]));
+  }
+  return value;
+}
+
+export function normalizeContent(documents, config) {
+  if (!Array.isArray(documents)) throw new Error("Content query did not return documents.");
+  documents = canonicalImagePaths(documents);
+
+  const byId = new Map(documents.map((document) => [document._id, document]));
+  if (byId.size !== documents.length) throw new Error("Duplicate content IDs.");
+
+  const builder = createImageUrlBuilder(config);
+
+  const fail = (document, message) => {
+    throw new Error(`${document?._id || "Content"}: ${message}`);
+  };
+
+  const required = (document, keys) => {
+    for (const key of keys) {
+      if (typeof document[key] !== "string" || !document[key].trim()) {
+        fail(document, `Missing ${key}`);
+      }
+    }
+  };
+
+  const ordered = (type) =>
+    documents
+      .filter((document) => document._type === type)
+      .sort(
+        (left, right) =>
+          (left.order ?? 0) - (right.order ?? 0) ||
+          left._id.localeCompare(right._id),
+      );
+
+  const references = (document, field, type) =>
+    (document[field] ?? []).map((reference) => {
+      const target = byId.get(reference._ref);
+      if (!target || target._type !== type) {
+        fail(document, `Broken ${field} reference: ${reference._ref}`);
+      }
+      return target;
+    });
+
+  const image = (document) =>
+    document.imageUpload?.asset
+      ? builder.image(document.imageUpload).width(1440).fit("max").auto("format").url()
+      : document.image;
+
+  const validateUrl = (value, document, label = "image/link URL") => {
+    if (typeof value !== "string" || !/^(\/(?!\/)|https:\/\/)/.test(value)) {
+      fail(document, `Invalid ${label}`);
+    }
+  };
+
+  const faq = (document) => {
+    required(document, ["question", "answer"]);
+    const relatedService = document.relatedService?._ref
+      ? byId.get(document.relatedService._ref)
+      : undefined;
+    if (document.relatedService && (!relatedService || relatedService._type !== "service")) {
+      fail(document, "Broken FAQ service reference");
+    }
+    return {
+      question: document.question,
+      answer: document.answer,
+      ...(relatedService && relatedService.pageEnabled !== false
+        ? { link: { href: `/services/${slug(relatedService)}/`, label: `Learn more about ${relatedService.name.toLowerCase()}` } }
+        : {}),
+    };
+  };
+
+  const slug = (document) => {
+    const value = document.slug?.current;
+    if (
+      typeof value !== "string" ||
+      !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value)
+    ) {
+      fail(document, "Invalid slug");
+    }
+    return value;
+  };
+
+  const validateCopy = (document, copy, requiredKeys) => {
+    if (!Array.isArray(copy) || !copy.length) fail(document, "Missing page copy");
+
+    const seen = new Set();
+    for (const item of copy) {
+      required(item, ["key", "text"]);
+      if (seen.has(item.key)) fail(document, `Duplicate page-copy key: ${item.key}`);
+      seen.add(item.key);
+    }
+
+    for (const key of requiredKeys) {
+      if (!seen.has(key)) fail(document, `Missing page-copy key: ${key}`);
+    }
+  };
+
+  for (const type of ["service", "location", "post"]) {
+    const seen = new Set();
+    for (const document of ordered(type)) {
+      const value = slug(document);
+      if (seen.has(value)) fail(document, "Duplicate slug");
+      seen.add(value);
+    }
+  }
+
+  const settings = byId.get("siteSettings");
+  if (!settings) {
+    throw new Error(
+      "Business settings are missing. Import the migration before using Sanity mode.",
+    );
+  }
+  required(settings, [
+    "name",
+    "alternateName",
+    "phone",
+    "displayPhone",
+    "email",
+    "url",
+    "quoteLabel",
+    "googleProfileUrl",
+    "instagramUrl",
+    "facebookUrl",
+    "defaultTitle",
+    "defaultDescription",
+  ]);
+  if (!/^\+?[\d ()-]{10,20}$/.test(settings.phone)) fail(settings, "Invalid phone");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(settings.email)) {
+    fail(settings, "Invalid email");
+  }
+  for (const key of ["url", "googleProfileUrl", "instagramUrl", "facebookUrl"]) {
+    if (!/^https:\/\//.test(settings[key])) fail(settings, `Invalid ${key}`);
+  }
+
+  const services = ordered("service").map((document) => {
+    required(document, [
+      "name",
+      "menuLabel",
+      "shortName",
+      "metaTitle",
+      "metaDescription",
+      "heroDescription",
+      "summary",
+      "drying",
+      "limitations",
+    ]);
+    for (const key of ["concerns", "included", "serviceType"]) {
+      if (!Array.isArray(document[key]) || !document[key].length) {
+        fail(document, `Missing ${key}`);
+      }
+    }
+    const src = image(document);
+    validateUrl(src, document, "service image URL");
+    const alt = document.imageUpload?.alt || document.imageAlt;
+    if (!alt) fail(document, "Missing image description");
+
+    const publicService = { ...document };
+    for (const key of [
+      "heroTitle",
+      "heroProofs",
+      "process",
+      "includedHeading",
+      "processHeading",
+      "afterCareEyebrow",
+      "afterCareHeading",
+    ]) delete publicService[key];
+
+    return {
+      ...publicService,
+      id: document._id,
+      slug: slug(document),
+      image: src,
+      imageAlt: alt,
+      faq: [
+        ...(document.faq ?? []),
+        ...references(document, "sharedFaqs", "faq"),
+      ].map(faq),
+      relatedServices: references(document, "relatedServices", "service")
+        .filter((service) => service.pageEnabled !== false)
+        .map(slug),
+    };
+  });
+
+  const locations = ordered("location").map((document) => {
+    required(document, ["name", "shortDescription", "introduction", "mapQuery"]);
+    if (!["active", "limited", "not-served"].includes(document.status)) {
+      fail(document, "Missing service status");
+    }
+    if (document.pageEnabled && document.status === "not-served") {
+      fail(document, "A not-served area cannot have a published page");
+    }
+    if (document.indexInSearch && !document.pageEnabled) {
+      fail(document, "Search indexing requires a published location page");
+    }
+    if (document.showInFooter && !document.pageEnabled) {
+      fail(document, "Footer visibility requires a published location page");
+    }
+
+    const src = image(document);
+    const alt = document.imageUpload?.alt || document.imageAlt;
+    if (document.pageEnabled) {
+      validateUrl(src, document, "location image URL");
+      if (!alt) fail(document, "Published location page is missing image description");
+      if (!Array.isArray(document.availableServices) || !document.availableServices.length) {
+        fail(document, "Published location page needs at least one available service");
+      }
+    }
+
+    const localOverrides = document.expandedContent;
+    if (localOverrides) {
+      for (const key of [
+        "quickBenefits",
+        "services",
+        "processSteps",
+        "localAdvantages",
+        "mississaugaFaqs",
+        "copy",
+      ]) {
+        if (!Array.isArray(localOverrides[key]) || !localOverrides[key].length) {
+          fail(document, `Local override section ${key} missing`);
+        }
+      }
+      validateUrl(localOverrides.heroImage, document, "local hero image URL");
+      if (localOverrides.mapImage) {
+        validateUrl(localOverrides.mapImage, document, "local map image URL");
+      }
+      validateCopy(document, localOverrides.copy, EXPANDED_LOCATION_COPY_KEYS);
+      for (const item of localOverrides.services) {
+        if (!services.some((service) => service.slug === item.slug && service.pageEnabled !== false)) {
+          fail(document, `Unknown local override service ${item.slug}`);
+        }
+      }
+    }
+
+    const publicLocation = { ...document };
+    delete publicLocation.expanded;
+
+    return {
+      ...publicLocation,
+      id: document._id,
+      slug: slug(document),
+      image: src,
+      imageAlt: alt,
+      localConsiderations: document.localConsiderations || "",
+      neighbourhoods: document.neighbourhoods || [],
+      faq: [
+        ...(document.faq ?? []),
+        ...references(document, "sharedFaqs", "faq"),
+      ].map(faq),
+      availableServices: references(document, "availableServices", "service")
+        .filter((service) => service.pageEnabled !== false)
+        .map(slug),
+      nearbyLocations: references(document, "nearbyLocations", "location")
+        .filter(
+          (location) => location.pageEnabled && location.status !== "not-served",
+        )
+        .map(slug),
+      ...(localOverrides
+        ? {
+            expandedContent: {
+              ...localOverrides,
+              mississaugaFaqs: localOverrides.mississaugaFaqs.map(faq),
+              services: localOverrides.services.map((service) => ({
+                ...service,
+                image: image(service),
+                alt: service.imageUpload?.alt || service.alt,
+              })),
+              resultExamples: (localOverrides.resultExamples ?? []).map((result) => ({
+                ...result,
+                image: image(result),
+                alt: result.imageUpload?.alt || result.alt,
+              })),
+            },
+          }
+        : {}),
+    };
+  });
+
+  const homePage = byId.get("page-content-home");
+  if (!homePage) throw new Error("Missing home page content");
+  validateCopy(homePage, homePage.copy, HOME_COPY_KEYS);
+  const home = {
+    copy: homePage.copy.filter((item) => HOME_COPY_KEYS.includes(item.key)),
+    heroReviews: homePage.heroReviews ?? [],
+    featuredServices: references(homePage, "featuredServices", "service")
+      .filter((service) => service.pageEnabled !== false)
+      .map(slug),
+  };
+
+  const projectSlugs = new Set();
+  const projects = ordered("cleaningProject")
+    .filter((document) => document.publicationStatus === "approved" && document.sourceType !== "ai-generated")
+    .map((document) => {
+      required(document, ["title", "category", "service", "label"]);
+      if (!["camera-original", "reconstructed-before"].includes(document.sourceType)) fail(document, "Approved cleaning work needs verified photographic provenance");
+      if (document.sourceType === "reconstructed-before" && !document.imageNote?.trim()) fail(document, "Reconstructed before image requires visible photo context");
+      if (!Array.isArray(document.locations) || document.locations.length !== 1) fail(document, "Approved cleaning work needs exactly one actual appointment city");
+      if (!Array.isArray(document.services) || !document.services.length) fail(document, "Approved cleaning work needs at least one service");
+      if (document.date && (!/^\d{4}-\d{2}-\d{2}$/.test(document.date) || !Number.isFinite(Date.parse(document.date)) || new Date(document.date).toISOString().slice(0, 10) !== document.date)) fail(document, "Invalid appointment date");
+      const appointmentCity = references(document, "locations", "location")[0];
+      const projectServices = references(document, "services", "service").filter(service => service.pageEnabled !== false);
+      const src = image(document);
+      validateUrl(src, document, "cleaning-result image URL");
+      const projectSlug = workSlug(document);
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(projectSlug)) fail(document, "Invalid project slug");
+      if (projectSlugs.has(projectSlug)) fail(document, "Duplicate project slug");
+      projectSlugs.add(projectSlug);
+      const mediaImage = (value) => {
+        if (!value?.asset?._ref) fail(document, "Project media image missing asset");
+        if (!value.alt?.trim()) fail(document, "Project media image needs alt text");
+        return builder.image(value).width(1920).fit("max").auto("format").url();
+      };
+      if (document.media !== undefined && !Array.isArray(document.media)) fail(document, "Invalid project media");
+      const media = (document.media ?? []).map((item, index) => {
+        const id = item._key || `media-${index}`;
+        if (item._type === "projectPhoto") return { id, type: "photo", image: mediaImage(item.photo), alt: item.photo.alt };
+        if (item._type === "projectComparison") {
+          required(item, ["label"]);
+          return { id, type: "comparison", before: mediaImage(item.before), after: mediaImage(item.after), alt: item.label };
+        }
+        if (item._type === "projectVideo") {
+          required(item, ["title"]);
+          if (Boolean(item.file?.asset?._ref) === Boolean(item.url)) fail(document, "Project video needs exactly one upload or provider URL");
+          const embed = item.url ? workVideoEmbed(item.url) : undefined;
+          if (item.url && !embed) fail(document, "Unsupported project video URL");
+          let video;
+          if (item.file?.asset?._ref) {
+            const match = /^file-([a-zA-Z0-9]+)-(mp4|webm)$/.exec(item.file.asset._ref);
+            if (!match) fail(document, "Project video must be MP4 or WebM");
+            video = `https://cdn.sanity.io/files/${config.projectId}/${config.dataset}/${match[1]}.${match[2]}`;
+          }
+          let captions;
+          if(item.captions?.asset?._ref) {
+            const match = /^file-([a-zA-Z0-9]+)-vtt$/.exec(item.captions.asset._ref);
+            if(!match) fail(document,"Project captions must be WebVTT");
+            captions = `https://cdn.sanity.io/files/${config.projectId}/${config.dataset}/${match[1]}.vtt`;
+          }
+          return { id, type: "video", title: item.title, ...(embed ? { embed } : { video }),
+            ...(item.poster?.asset ? { poster: mediaImage(item.poster) } : {}), ...(captions ? {captions} : {}), transcript: item.transcript || "" };
+        }
+        fail(document, "Unsupported project media type");
+      });
+      if (!["single", "paired"].includes(document.variant)) {
+        fail(document, "Invalid comparison layout");
+      }
+      return {
+        ...document,
+        slug: projectSlug,
+        media,
+        image: src,
+        location: appointmentCity.name,
+        services: projectServices.map(slug),
+        locations: [slug(appointmentCity)],
+      };
+    }).filter(project => project.services.length && locations.some(location => location.slug === project.locations[0] && location.pageEnabled && location.status !== "not-served"));
+
+  const workPageDocument = byId.get("work-page");
+  if (workPageDocument) {
+    if (workPageDocument._type !== "workPage") fail(workPageDocument, "Invalid Our Work page type");
+    required(workPageDocument, Object.keys(workPageDefaults));
+  }
+  const workPage = Object.fromEntries(Object.keys(workPageDefaults).map(key => [key, workPageDocument?.[key] ?? workPageDefaults[key]]));
+
+  const testimonials = ordered("testimonial")
+    .filter((document) => document.publicationStatus === "approved")
+    .map((document) => {
+      required(document, ["name", "text"]);
+      return {
+        ...document,
+        services: references(document, "services", "service").map(slug),
+        locations: references(document, "locations", "location").map(slug),
+      };
+    });
+
+  const quoteCategories = ordered("quoteCategory")
+    .filter((document) => document.enabled)
+    .map((document) => {
+      required(document, ["label"]);
+      return {
+        id: document._id,
+        label: document.label,
+        services: references(document, "services", "service").map(slug),
+      };
+    });
+  if (!quoteCategories.length) throw new Error("At least one quote choice is required.");
+
+  const posts = ordered("post")
+    .map((document) => {
+      required(document, ["title", "excerpt", "publishedAt"]);
+      if (!Number.isFinite(Date.parse(document.publishedAt))) {
+        fail(document, "Invalid publication date");
+      }
+      if (!Array.isArray(document.body) || !document.body.length) {
+        fail(document, "Missing article body");
+      }
+      for (const block of document.body) {
+        if (block._type === "image") {
+          if (!block.alt) fail(document, "Article image missing alternative text");
+          if (!block.asset?._ref && !block.localPath) {
+            fail(document, "Article image missing asset");
+          }
+        } else if (block._type !== "block" || !Array.isArray(block.children)) {
+          fail(document, "Unsupported article block");
+        }
+      }
+      return {
+        ...document,
+        slug: slug(document),
+        author: document.author ? byId.get(document.author._ref)?.name : undefined,
+        categories: references(document, "categories", "category").map(
+          (category) => category.title,
+        ),
+        relatedServices: references(document, "relatedServices", "service")
+          .filter((service) => service.pageEnabled !== false)
+          .map(slug),
+      };
+    })
+    .sort(
+      (left, right) =>
+        (left.order ?? 99) - (right.order ?? 99) ||
+        right.publishedAt.localeCompare(left.publishedAt),
+    );
+
+  const localCopy = { cities: {}, services: {} };
+  for (const document of ordered("localCityCopy")) {
+    const location = byId.get(document.city?._ref);
+    if (location?._type !== "location") fail(document, "Missing or invalid city copy reference");
+    const city = slug(location);
+    if (localCopy.cities[city]) fail(document, "Duplicate city copy");
+    const keys = ["metaTitle", "metaDescription", "heroDescription", "introductionHeading", "more", "coverage", "coverageClosing", "ctaTitle", "ctaDescription"];
+    required(document, keys);
+    if (!Array.isArray(document.introductionParagraphs) || !document.introductionParagraphs.length ||
+      document.introductionParagraphs.some((item) => typeof item !== "string" || !item.trim())) fail(document, "Missing introduction paragraphs");
+    if (!Array.isArray(document.neighbourhoods) || !document.neighbourhoods.length ||
+      document.neighbourhoods.some((item) => typeof item !== "string" || !item.trim())) fail(document, "Missing neighbourhoods");
+    for (const [key, fields, count] of [["services", ["title", "slug", "description"], 3], ["advantages", ["title", "description"], 4], ["faqs", ["question", "answer"], undefined]]) {
+      if (!Array.isArray(document[key]) || !document[key].length || (count && document[key].length !== count)) fail(document, `Invalid ${key} copy`);
+      for (const row of document[key]) required(row, fields);
+    }
+    for (const item of document.services) {
+      if (!services.some((service) => service.slug === item.slug)) fail(document, "Unknown service in city copy");
+    }
+    if (document.faqs.length < 3 || document.faqs.length > 10) fail(document, "City copy requires 3–10 FAQs");
+    if (document.introductionParagraphs.length > 3) fail(document, "City copy allows up to three introduction paragraphs");
+    localCopy.cities[city] = Object.fromEntries([...keys, "introductionParagraphs", "services", "advantages", "faqs", "neighbourhoods"].map((key) => [key, document[key]]));
+  }
+  for (const document of ordered("localServiceCopy")) {
+    const location = byId.get(document.city?._ref);
+    const service = byId.get(document.service?._ref);
+    if (location?._type !== "location" || service?._type !== "service") fail(document, "Missing or invalid local service copy reference");
+    const city = slug(location);
+    const serviceSlug = slug(service);
+    required(document, ["introduction", "bookingNote", "visit"]);
+    if (!document.question) fail(document, "Missing practical question");
+    required(document.question, ["question", "answer"]);
+    localCopy.services[city] ??= {};
+    if (localCopy.services[city][serviceSlug]) fail(document, "Duplicate city service copy");
+    localCopy.services[city][serviceSlug] = {
+      introduction: document.introduction, bookingNote: document.bookingNote, visit: document.visit,
+      question: { question: document.question.question, answer: document.question.answer },
+    };
+  }
+
+  return {
+    settings: {
+      ...settings,
+      areasServed: locations
+        .filter((location) => location.status !== "not-served")
+        .map((location) => location.name),
+      sameAs: [
+        settings.googleProfileUrl,
+        settings.instagramUrl,
+        settings.facebookUrl,
+      ],
+    },
+    services,
+    locations,
+    home,
+    projects,
+    testimonials,
+    faqs: ordered("faq").filter((document) => document.onHomepage).map(faq),
+    quoteCategories,
+    posts,
+    localCopy,
+    workPage,
+  };
+}

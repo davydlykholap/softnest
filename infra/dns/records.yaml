@@ -1,0 +1,39 @@
+domain: softnestcare.ca
+provider: Namecheap
+last_verified: 2026-11-04
+management: manual-advanced-dns
+complete_zone_export: false
+nameservers: [dns1.registrar-servers.com, dns2.registrar-servers.com]
+records:
+  - host: '@'
+    type: A
+    values: [185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153]
+    ttl: Automatic
+    app: website
+    status: observed
+  - host: www
+    type: CNAME
+    value: davydlykholap.github.io
+    ttl: Automatic
+    app: website
+    status: observed
+  - host: studio
+    type: CNAME
+    value: davydlykholap.github.io
+    ttl: Automatic
+    app: studio
+    status: observed
+  - host: sf0
+    type: CNAME
+    value: davydlykholap.github.io
+    ttl: Automatic
+    app: sf0
+    status: observed
+mail:
+  provider: Namecheap email forwarding
+  preserve_existing_mx_and_spf: true
+verification:
+  google_site_verification: existing TXT record; managed in Namecheap
+notes:
+  - DNS records and Pages custom-domain settings are separate.
+  - No cPanel account or hosting IP is required for these Pages sites.
