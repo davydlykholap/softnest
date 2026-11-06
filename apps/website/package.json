@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
-    "@sanity/client": "^8.11.0",
+    "@sanity/client": "^8.14.1",
     "@sanity/image-url": "^2.1.1",
     "groq": "^6.21.0",
     "next": "16.4.3",
