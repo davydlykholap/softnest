@@ -15,7 +15,7 @@ const siteUrl = siteConfig.url + "";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getPosts();
-  return [
+  const entries: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/` },
     { url: `${siteUrl}/about/` },
     { url: `${siteUrl}/our-work/`, images: getWorkProjects().map(project => absoluteUrl(project.image)) },
@@ -43,4 +43,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteUrl}/privacy/` },
     { url: `${siteUrl}/terms/` },
   ];
+  // Next.js inserts image URLs directly into the XML without escaping query separators.
+  return entries.map(entry => entry.images ? {
+    ...entry,
+    images: entry.images.map(image => image.replaceAll("&", "&amp;")),
+  } : entry);
 }
