@@ -5,14 +5,17 @@
 .intro h1 { max-width:950px; margin:0 0 16px; font-family:var(--location-page-serif); font-size:clamp(38px,4.6vw,64px); line-height:1.08; font-weight:400; letter-spacing:-.04em; color:var(--brand-green); }
 .intro p { color:var(--location-page-muted); font-size:16px; }
 .intro a { color:inherit; text-underline-offset:4px; }
-.cover > div, .media > div > div { aspect-ratio:4/3; max-height:750px; }
+.cover { max-width:750px; margin-inline:auto; }
+.cover > div, .media > [data-project-media="comparison"] > div { aspect-ratio:4/3; max-height:560px; }
 .cover > div img { object-fit:cover; }
 .story { max-width:750px; margin:36px auto; }
 .story h2,.videoSection h2 { font-family:var(--location-page-serif); font-size:30px; line-height:1.2; font-weight:400; margin:28px 0 12px; color:var(--brand-green); }
 .story p { white-space:pre-line; font-size:18px; line-height:1.7; color:var(--location-page-muted); }
-.media { display:grid; gap:28px; margin-top:28px; }
+.media { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; gap:20px; max-width:900px; margin:28px auto 0; }
+.media > :not([data-project-media="photo"]) { grid-column:1 / -1; width:100%; max-width:750px; justify-self:center; }
 .photoButton { display:block; padding:0; border:0; width:100%; background:transparent; cursor:zoom-in; }
 .photoButton img { display:block; width:100%; height:auto; border-radius:22px; }
+.media [data-project-media="photo"] .photoButton img { aspect-ratio:4/3; object-fit:contain; background:#f5f4ef; }
 .lightbox { width:95vw; max-width:1800px; max-height:95vh; padding:55px 12px 12px; border:0; border-radius:16px; background:#fff; }
 .lightbox::backdrop { background:#0e1d18dd; }
 .lightbox img { display:block; width:100%; height:auto; max-height:80vh; object-fit:contain; }
@@ -27,4 +30,4 @@
 .services { display:flex; flex-wrap:wrap; gap:20px; padding:32px 0 20px; }
 .services a { color:var(--brand-green); text-underline-offset:4px; }
 .shell :is(a,button,summary,input):focus-visible { outline:3px solid var(--brand-green); outline-offset:5px; }
-@media(max-width:760px) { .page:global(.location-page-page) { padding-top:var(--mobile-hero-title-top); } .intro { margin-top:22px; } .story p { font-size:16px; } .media { gap:20px; } }
+@media(max-width:760px) { .page:global(.location-page-page) { padding-top:var(--mobile-hero-title-top); } .intro { margin-top:22px; } .story p { font-size:16px; } .media { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; } }
