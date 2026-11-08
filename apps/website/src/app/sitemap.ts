@@ -8,6 +8,7 @@ import { cityServicePages } from "@/content/cityServicePages";
 import { getWorkProjects } from "@/content/work";
 import { absoluteUrl } from "@/lib/site";
 import { workProjectHref } from "@softnest/content/work-urls";
+import { escapeXml, indexableVideos, projectImages } from "@/seo/work";
 
 export const dynamic = "force-static";
 
@@ -19,7 +20,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteUrl}/` },
     { url: `${siteUrl}/about/` },
     { url: `${siteUrl}/our-work/`, images: getWorkProjects().map(project => absoluteUrl(project.image)) },
-    ...getWorkProjects().map(project => ({ url:absoluteUrl(workProjectHref(project)), images:[absoluteUrl(project.image), ...project.media.flatMap(item => item.type === "photo" ? [item.image] : item.type === "comparison" ? [item.before,item.after] : [])] })),
+    ...getWorkProjects().map(project => {
+      const videos = indexableVideos(project).map(video => ({
+        title: escapeXml(video.title),
+        description: escapeXml(video.description),
+        thumbnail_loc: escapeXml(video.thumbnail),
+        ...(video.contentUrl ? { content_loc: escapeXml(video.contentUrl) } : {}),
+        ...(video.embedUrl ? { player_loc: escapeXml(video.embedUrl) } : {}),
+        ...(video.uploadDate ? { publication_date: video.uploadDate } : {}),
+      }));
+      return {
+        url: absoluteUrl(workProjectHref(project)),
+        images: projectImages(project),
+        ...(videos.length ? { videos } : {}),
+        ...(project.date ? { lastModified: project.date } : {}),
+      };
+    }),
     ...locations.filter(location => location.indexInSearch && getWorkProjects({ city: location.slug }).length > 0).map(location => ({
       url: siteUrl + "/our-work/" + location.slug + "/", images: getWorkProjects({city:location.slug}).map(project => absoluteUrl(project.image)),
     })),

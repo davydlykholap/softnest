@@ -12,7 +12,8 @@ import { services } from "@/content/services";
 import { workProjectHref } from "@softnest/content/work-urls";
 import { pageMetadata } from "@/seo/metadata";
 import { jsonLd } from "@/seo/structuredData";
-import { absoluteUrl,organizationId } from "@/lib/site";
+import { projectBreadcrumbs, projectDescription, projectSchema, projectTitle } from "@/seo/work";
+import { cityServicePages } from "@/content/cityServicePages";
 import styles from "../project.module.css";
 import "@/app/styles/location-page.css";
 
@@ -23,7 +24,7 @@ export async function generateMetadata({params}:Props):Promise<Metadata> {
   const {slug} = await params;
   const project = getWorkProjects().find(item => item.slug === slug);
   if(!project) return {};
-  return pageMetadata({title:`${project.title} | SoftNest`,description:project.introduction || project.result || `Explore ${project.service.toLowerCase()} in ${project.location}, with photos from this SoftNest appointment.`,path:workProjectHref(project),image:project.image,imageAlt:project.label});
+  return pageMetadata({title:projectTitle(project),description:projectDescription(project),path:workProjectHref(project),image:project.image,imageAlt:project.label});
 }
 export default async function WorkProjectPage({params}:Props) {
   const {slug} = await params;
@@ -31,7 +32,12 @@ export default async function WorkProjectPage({params}:Props) {
   if(!project) notFound();
   const city = project.locations[0];
   const quoteHref = `/quote/?city=${encodeURIComponent(city)}`;
-  const schema = {"@context":"https://schema.org","@type":"CreativeWork","@id":absoluteUrl(workProjectHref(project)),url:absoluteUrl(workProjectHref(project)),name:project.title,description:project.introduction || project.result || project.label,creator:{"@id":organizationId},contentLocation:{"@type":"City",name:project.location},image:[absoluteUrl(project.image),...project.media.flatMap(item => item.type === "photo" ? [absoluteUrl(item.image)] : item.type === "comparison" ? [absoluteUrl(item.before),absoluteUrl(item.after)] : [])]};
+  const schema = projectSchema(project,`/our-work/${city}/`);
+  const crumbs = projectBreadcrumbs(project,city);
+  const serviceLinks = project.services.flatMap(slug => {
+    const page = cityServicePages.find(item => item.location.slug === city && item.service.slug === slug);
+    return page ? [{href:page.path,label:page.title}] : [];
+  });
   return <>
     <div className="new-hero-root location-page-header"><SiteHeader current="work" quoteHref={quoteHref} /></div>
     <main id="main-content" className={`location-page-page ${styles.page}`}>
@@ -54,11 +60,15 @@ export default async function WorkProjectPage({params}:Props) {
             {item.type === "photo" ? <WorkPhoto image={item.image} alt={item.alt} /> : item.type === "comparison" ? <ServiceResultCompare image={item.before} before={item.before} after={item.after} label={item.alt} variant="paired" /> : <WorkVideo item={item} />}
           </div>)}
         </div>
-        <div className={styles.services}>{services.filter(service => project.services.includes(service.slug)).map(service => <Link key={service.slug} href={`/services/${service.slug}/`}>{service.name} →</Link>)}</div>
+        <div className={styles.services}>
+          {serviceLinks.map(link => <Link key={link.href} href={link.href}>{link.label} →</Link>)}
+          {services.filter(service => project.services.includes(service.slug)).map(service => <Link key={service.slug} href={`/services/${service.slug}/`}>{service.name} →</Link>)}
+        </div>
       </article>
       <DirectoryFinalCta id="quote-cta" title="What would you like cleaned?" description="Tell us what needs attention. We confirm the price before booking." action={{href:quoteHref,label:"Get a Quote"}} image="/images/home/softnest-sofa-living-room.webp" imageAlt="Living room with a green sofa" />
     </main>
     <SiteFooter quoteHref={quoteHref} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(schema)}} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(crumbs)}} />
   </>;
 }
