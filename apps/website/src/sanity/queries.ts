@@ -5,4 +5,14 @@ import type {} from '@sanity/client';
 export const websiteContentQuery = defineQuery(`*[
   _type in ["siteSettings","service","location","faq","testimonial","cleaningProject","quoteCategory","pageContent","post","author","category","localCityCopy","localServiceCopy","workPage"] &&
   (_type != "pageContent" || _id == "page-content-home")
-] | order(_id asc)`);
+] | order(_id asc) {
+  ...,
+  _type == "cleaningProject" => {
+    "media": coalesce(media, [])[]{
+      ...,
+      _type == "projectVideo" => {
+        "fileInfo": file.asset->{originalFilename, _createdAt}
+      }
+    }
+  }
+}`);

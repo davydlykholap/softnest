@@ -32,7 +32,7 @@ export type WorkProject = {
 export type WorkMedia =
   | { id: string; type: "photo"; image: string; alt: string }
   | { id: string; type: "comparison"; before: string; after: string; alt: string }
-  | { id: string; type: "video"; title: string; video?: string; embed?: string; poster?: string; captions?: string; transcript?: string };
+  | { id: string; type: "video"; title: string; video?: string; embed?: string; poster?: string; captions?: string; transcript?: string; uploadDate?: string };
 
 type ProjectRecord = (typeof projects)[number] & {
   fabric?: string; problem?: string; treatment?: string; result?: string; imageNote?: string; sourceType?: string;

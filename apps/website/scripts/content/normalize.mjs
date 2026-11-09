@@ -373,6 +373,10 @@ export function normalizeContent(documents, config) {
             const match = /^file-([a-zA-Z0-9]+)-(mp4|webm)$/.exec(item.file.asset._ref);
             if (!match) fail(document, "Project video must be MP4 or WebM");
             video = `https://cdn.sanity.io/files/${config.projectId}/${config.dataset}/${match[1]}.${match[2]}`;
+            const filename = item.fileInfo?.originalFilename;
+            if (typeof filename === "string" && /^[a-z0-9][a-z0-9-]*\.(mp4|webm)$/.test(filename) && filename.endsWith(`.${match[2]}`)) {
+              video += `/${filename}`;
+            }
           }
           let captions;
           if(item.captions?.asset?._ref) {
@@ -380,7 +384,9 @@ export function normalizeContent(documents, config) {
             if(!match) fail(document,"Project captions must be WebVTT");
             captions = `https://cdn.sanity.io/files/${config.projectId}/${config.dataset}/${match[1]}.vtt`;
           }
+          const uploadDate = video && item.fileInfo?._createdAt;
           return { id, type: "video", title: item.title, ...(embed ? { embed } : { video }),
+            ...(uploadDate ? { uploadDate } : {}),
             ...(item.poster?.asset ? { poster: mediaImage(item.poster) } : {}), ...(captions ? {captions} : {}), transcript: item.transcript || "" };
         }
         fail(document, "Unsupported project media type");

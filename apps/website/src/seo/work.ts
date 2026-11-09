@@ -32,7 +32,7 @@ export function indexableVideos(project: WorkProject) {
       thumbnail: absoluteUrl(item.poster),
       contentUrl: item.video ? absoluteUrl(item.video) : undefined,
       embedUrl: item.embed,
-      uploadDate: project.date,
+      uploadDate: item.uploadDate || project.date,
       item,
     }];
   });
