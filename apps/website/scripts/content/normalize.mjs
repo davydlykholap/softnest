@@ -403,7 +403,9 @@ export function normalizeContent(documents, config) {
         services: projectServices.map(slug),
         locations: [slug(appointmentCity)],
       };
-    }).filter(project => project.services.length && locations.some(location => location.slug === project.locations[0] && location.pageEnabled && location.status !== "not-served"));
+    }).filter(project => project.services.length && locations.some(location =>
+      location.slug === project.locations[0] &&
+      (location.workGalleryEnabled === true || (location.pageEnabled && location.status !== "not-served"))));
 
   const workPageDocument = byId.get("work-page");
   if (workPageDocument) {

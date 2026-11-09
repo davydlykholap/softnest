@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import WorkGallery from "@/components/WorkGallery";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import { getWorkProjects, workPageCopy } from "@/content/work";
-import { getLocation, locations } from "@/content/locations";
+import { workLocations } from "@/content/locations";
 import { services } from "@/content/services";
 import { pageMetadata } from "@/seo/metadata";
 import { jsonLd } from "@/seo/structuredData";
@@ -16,11 +16,11 @@ import styles from "../page.module.css";
 import "@/app/styles/location-page.css";
 
 type Props = { params: Promise<{ city: string }> };
-export function generateStaticParams() { return locations.map(({ slug }) => ({ city: slug })); }
+export function generateStaticParams() { return workLocations.map(({ slug }) => ({ city: slug })); }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city } = await params;
-  const location = getLocation(city);
+  const location = workLocations.find(location => location.slug === city);
   if (!location) return {};
   const projects = getWorkProjects({ city });
   return pageMetadata({
@@ -31,19 +31,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     path: "/our-work/" + location.slug + "/",
     image: projects[0]?.image,
     imageAlt: projects[0]?.label,
-    index: location.indexInSearch && projects.length > 0,
+    index: (location.indexInSearch || location.workGalleryEnabled === true) && projects.length > 0,
   });
 }
 
 export default async function CityWorkPage({ params }: Props) {
   const { city } = await params;
-  const location = getLocation(city);
+  const location = workLocations.find(location => location.slug === city);
   if (!location) notFound();
   const projects = getWorkProjects({city});
   const availableServices = services.filter(service => projects.some(project => project.services.includes(service.slug)))
     .map(({ slug, name }) => ({ slug, name }));
   const url = "/our-work/" + location.slug + "/";
-  const quoteHref = `/quote/?city=${encodeURIComponent(city)}`;
+  const quoteHref = location.pageEnabled ? `/quote/?city=${encodeURIComponent(city)}` : "/quote/";
   const schema = {
     "@context": "https://schema.org", "@type": "CollectionPage",
     "@id": absoluteUrl(url + "#collection"), url: absoluteUrl(url),
@@ -55,7 +55,7 @@ export default async function CityWorkPage({ params }: Props) {
         "@type": "ListItem", position: index + 1,
         url: absoluteUrl(workProjectHref(project)),
         item: { "@type": "ImageObject", contentUrl: absoluteUrl(project.image),
-          caption: project.label, description: project.imageNote || project.label },
+          caption: project.label, description: project.sourceType === "reconstructed-before" ? project.imageNote : project.label },
       })),
     },
   };
@@ -86,7 +86,7 @@ export default async function CityWorkPage({ params }: Props) {
           </section>
         )}
       </div>
-      <DirectoryFinalCta id="quote-cta" title={"Ask about cleaning in " + location.name + "."} description="Tell us about the material and condition. Photos are optional, and we confirm the price before booking." action={{ href: "/quote/?city=" + encodeURIComponent(city), label: "Get a Quote" }} image="/images/home/softnest-sofa-living-room.webp" imageAlt="Living room with a green sofa" />
+      <DirectoryFinalCta id="quote-cta" title={location.pageEnabled ? "Ask about cleaning in " + location.name + "." : "Ask about your cleaning."} description="Tell us about the material and condition. Photos are optional, and we confirm the price before booking." action={{ href: quoteHref, label: "Get a Quote" }} image="/images/home/softnest-sofa-living-room.webp" imageAlt="Living room with a green sofa" />
     </main>
     <SiteFooter quoteHref={quoteHref} />
     {projects.length ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(schema) }} /> : null}

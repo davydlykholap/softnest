@@ -359,6 +359,7 @@ export type Location = {
   status: "active" | "limited" | "not-served";
   pageEnabled?: boolean;
   indexInSearch?: boolean;
+  workGalleryEnabled?: boolean;
   showInFooter?: boolean;
   shortDescription: string;
   introduction: string;
@@ -1013,6 +1014,7 @@ export type WebsiteContentQueryResult = Array<
       status: "active" | "limited" | "not-served";
       pageEnabled?: boolean;
       indexInSearch?: boolean;
+      workGalleryEnabled?: boolean;
       showInFooter?: boolean;
       shortDescription: string;
       introduction: string;

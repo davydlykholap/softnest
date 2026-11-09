@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 type Project = { slug: string; title: string; media?: {type:string}[]; _id: string; publicationStatus: string; sourceType: string; image: string; imageNote?: string; variant: string; services: string[]; locations: string[] };
 const projects: Project[] = JSON.parse(readFileSync("src/content/generated/projects.json", "utf8"));
-const locations: { slug: string; name: string; pageEnabled: boolean; status: string; indexInSearch: boolean }[] = JSON.parse(readFileSync("src/content/generated/locations.json", "utf8"));
+const locations: { slug: string; name: string; pageEnabled: boolean; status: string; indexInSearch: boolean; workGalleryEnabled?: boolean }[] = JSON.parse(readFileSync("src/content/generated/locations.json", "utf8"));
 const reviews: { name: string; publicationStatus: string; services: string[]; locations: string[] }[] = JSON.parse(readFileSync("src/content/generated/testimonials.json", "utf8"));
 
 test.beforeEach(async ({ page }) => {
@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }) => {
 test("city-grouped overview is photo-led, linked and responsive", async ({ page }) => {
   const errors: string[] = [];
   page.on("pageerror", error => errors.push(error.message));
-  const cities = locations.filter(city => city.pageEnabled && city.status !== "not-served");
+  const cities = locations.filter(city => city.workGalleryEnabled === true || (city.pageEnabled && city.status !== "not-served"));
   for (const width of [320,390,1280]) {
     await page.setViewportSize({width,height:900});
     await page.goto("/our-work/");
@@ -71,7 +71,8 @@ test("city gallery opens a permanent project with comparison and city context", 
     await slider.press("End"); await expect(slider).toHaveValue("100");
   }
   const quotes = await page.locator('a[href^="/quote/"]').evaluateAll(items => items.map(item => item.getAttribute("href")));
-  expect(quotes.every(href => href === `/quote/?city=${city}`)).toBe(true);
+  const hasLocationPage = locations.some(location => location.slug === city && location.pageEnabled && location.status !== "not-served");
+  expect(quotes.every(href => href === (hasLocationPage ? `/quote/?city=${city}` : "/quote/"))).toBe(true);
   for(const width of [320,390,1280]) {
     await page.setViewportSize({width,height:900});
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
@@ -189,7 +190,8 @@ test("sitemap includes project pages and only populated indexable cities", async
   expect(response.ok()).toBe(true);
   const xml = await response.text();
   for(const city of locations) {
-    const indexed = city.pageEnabled && city.status !== "not-served" && city.indexInSearch && projects.some(project => project.locations.includes(city.slug));
+    const indexed = (city.workGalleryEnabled === true || (city.pageEnabled && city.status !== "not-served" && city.indexInSearch))
+      && projects.some(project => project.locations.includes(city.slug));
     expect(xml.includes(`https://softnestcare.ca/our-work/${city.slug}/`)).toBe(Boolean(indexed));
   }
   for(const project of projects) expect(xml).toContain(`https://softnestcare.ca/our-work/projects/${project.slug}/`);

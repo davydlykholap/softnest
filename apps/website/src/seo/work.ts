@@ -1,4 +1,5 @@
 import type { WorkProject } from "@/content/work";
+import { getLocation } from "@/content/locations";
 import { absoluteUrl, organizationId } from "@/lib/site";
 import { workProjectHref } from "@softnest/content/work-urls";
 
@@ -62,7 +63,9 @@ export function projectSchema(project: WorkProject, cityPath: string) {
       "@type": "Service",
       name: project.service,
       provider: { "@id": organizationId },
-      areaServed: { "@type": "City", name: project.location, containedInPlace: { "@type": "AdministrativeArea", name: "Ontario" } },
+      ...(getLocation(project.locations[0]) ? {
+        areaServed: { "@type": "City", name: project.location, containedInPlace: { "@type": "AdministrativeArea", name: "Ontario" } },
+      } : {}),
     },
     contentLocation: { "@type": "City", name: project.location },
     image: projectImages(project).map(contentUrl => ({ "@type": "ImageObject", contentUrl })),

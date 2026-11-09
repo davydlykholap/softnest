@@ -2,7 +2,7 @@ import "server-only";
 import projects from "@/content/generated/projects.json";
 import testimonials from "@/content/generated/testimonials.json";
 import { optimizedLocalImage } from "@/lib/optimizedLocalImage";
-import { locations } from "@/content/locations";
+import { workLocations } from "@/content/locations";
 import { services } from "@/content/services";
 import workPage from "@/content/generated/workPage.json";
 
@@ -43,7 +43,7 @@ export function getWorkProjects(filters: { city?: string; service?: string } = {
   return (projects as ProjectRecord[])
     .filter((project) => project.publicationStatus === "approved" &&
       (project.sourceType === "camera-original" || project.sourceType === "reconstructed-before") &&
-      project.locations.some(city => locations.some(location => location.slug === city)) &&
+      project.locations.some(city => workLocations.some(location => location.slug === city)) &&
       project.services.some(slug => services.some(service => service.slug === slug)) &&
       (!filters.city || (project.locations as string[]).includes(filters.city)) &&
       (!filters.service || (project.services as string[]).includes(filters.service)))
@@ -54,7 +54,7 @@ export function getWorkProjects(filters: { city?: string; service?: string } = {
       image: optimizedLocalImage(project.image),
       variant: project.variant as WorkProject["variant"],
       category: project.category,
-      location: locations.find(location => location.slug === project.locations[0])?.name || "",
+      location: workLocations.find(location => location.slug === project.locations[0])?.name || "",
       locations: project.locations,
       service: project.service,
       services: project.services.filter(slug => services.some(service => service.slug === slug)),

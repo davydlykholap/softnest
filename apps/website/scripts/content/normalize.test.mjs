@@ -335,6 +335,16 @@ test("work assigned to an unpublished city or only retired services is withheld"
   assert.equal(normalizeContent([...documents, project], config).projects.length, 0);
 });
 
+test("a city can publish documented work without advertising service coverage", () => {
+  const documents = seed();
+  const project = approvedProjectFixture(documents);
+  const city = documents.find(document => document._id === project.locations[0]._ref);
+  Object.assign(city, { pageEnabled: false, indexInSearch: false, showInFooter: false, status: "not-served", workGalleryEnabled: true });
+  const snapshot = normalizeContent([...documents, project], config);
+  assert.equal(snapshot.projects[0].location, city.name);
+  assert.ok(!snapshot.settings.areasServed.includes(city.name));
+});
+
 test("Our Work copy has defaults and accepts a complete published singleton", () => {
   const documents = seed();
   const defaults = normalizeContent(documents, config).workPage;

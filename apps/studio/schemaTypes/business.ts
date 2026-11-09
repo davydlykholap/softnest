@@ -359,6 +359,12 @@ export const businessTypes = [
         "Allows the published location page into the sitemap and search index.",
     }),
     defineField({
+      name: "workGalleryEnabled",
+      title: "Publish Our Work gallery",
+      type: "boolean",
+      description: "Show documented appointments in Our Work independently of the location page and service coverage.",
+    }),
+    defineField({
       name: "showInFooter",
       title: "Show in footer",
       type: "boolean",

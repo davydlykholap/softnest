@@ -8,6 +8,7 @@ import WorkPhoto from "@/components/WorkPhoto";
 import WorkVideo from "@/components/WorkVideo";
 import { DirectoryFinalCta } from "@/components/DirectoryHubSections";
 import { getWorkProjects } from "@/content/work";
+import { getLocation } from "@/content/locations";
 import { services } from "@/content/services";
 import { workProjectHref } from "@softnest/content/work-urls";
 import { pageMetadata } from "@/seo/metadata";
@@ -31,7 +32,7 @@ export default async function WorkProjectPage({params}:Props) {
   const project = getWorkProjects().find(item => item.slug === slug);
   if(!project) notFound();
   const city = project.locations[0];
-  const quoteHref = `/quote/?city=${encodeURIComponent(city)}`;
+  const quoteHref = getLocation(city) ? `/quote/?city=${encodeURIComponent(city)}` : "/quote/";
   const schema = projectSchema(project,`/our-work/${city}/`);
   const crumbs = projectBreadcrumbs(project,city);
   const firstMedia = project.media[0];

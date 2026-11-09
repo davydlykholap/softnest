@@ -14,6 +14,7 @@ export type Location = {
   status: 'active' | 'limited' | 'not-served';
   pageEnabled: boolean;
   indexInSearch: boolean;
+  workGalleryEnabled?: boolean;
   showInFooter: boolean;
   expandedContent?: {
     heroImage: string;
@@ -83,6 +84,9 @@ export const serviceAreas: Location[] = (records as Location[]).map((location) =
 }));
 export const locations = serviceAreas.filter(
   (location) => location.pageEnabled && location.status !== "not-served",
+);
+export const workLocations = serviceAreas.filter(
+  (location) => location.workGalleryEnabled === true || (location.pageEnabled && location.status !== "not-served"),
 );
 export const footerLocations = locations.filter((location) => location.showInFooter);
 export const nearbyLocationSlugs = Object.fromEntries(

@@ -1,6 +1,6 @@
 import { siteConfig } from "@/lib/site";
 import type { MetadataRoute } from "next";
-import { locations } from "@/content/locations";
+import { locations, workLocations } from "@/content/locations";
 import { services } from "@/content/services";
 import { getPosts } from "@/content/posts";
 import { getArticleImage } from "@/components/blog/articleImages";
@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...(project.date ? { lastModified: project.date } : {}),
       };
     }),
-    ...locations.filter(location => location.indexInSearch && getWorkProjects({ city: location.slug }).length > 0).map(location => ({
+    ...workLocations.filter(location => (location.indexInSearch || location.workGalleryEnabled === true) && getWorkProjects({ city: location.slug }).length > 0).map(location => ({
       url: siteUrl + "/our-work/" + location.slug + "/", images: getWorkProjects({city:location.slug}).map(project => absoluteUrl(project.image)),
     })),
     { url: `${siteUrl}/blog/` },
