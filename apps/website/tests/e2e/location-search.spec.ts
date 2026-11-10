@@ -30,6 +30,8 @@ test("postal code inquiry keeps its value without inventing a city attribution",
 
 test("city CTA events and explicit quote prefills keep city context without customer details", async ({ page }) => {
   await page.goto("/location/toronto/");
+  // The page defines gtag after hydration, so wait for it before swapping in the test double.
+  await page.waitForFunction(() => (window.dataLayer?.length ?? 0) >= 2);
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
   await page.locator('a[href^="tel:"]').first().evaluate((element) => element.addEventListener("click", (event) => event.preventDefault()));
   await page.locator('a[href^="tel:"]').first().click({ force: true });
@@ -39,6 +41,8 @@ test("city CTA events and explicit quote prefills keep city context without cust
   await expect(page).toHaveURL(/\/quote\/\?city=toronto$/);
   expect(await page.evaluate(() => window.dataLayer)).toContainEqual(["event", "quote_click", { source_city: "toronto" }]);
   await page.goto("/quote/?city=toronto");
+  // The page defines gtag after hydration, so wait for it before swapping in the test double.
+  await page.waitForFunction(() => (window.dataLayer?.length ?? 0) >= 2);
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
   await expect(page.getByRole("textbox", { name: "Service city", exact: true })).toHaveValue("Toronto");
   await page.getByRole("textbox", { name: "Your name" }).fill("Private Customer");
