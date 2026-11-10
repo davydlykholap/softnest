@@ -6,6 +6,7 @@
 .content { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px; align-items: start; }
 .featured .project { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
 .projectAction { margin-top: 18px; }
+.moreProjects { display:grid; gap:8px; margin:24px 0 0; padding-inline-start:20px; }
 .image { position: relative; aspect-ratio: 1.8; overflow: hidden; border-radius: 26px; background: var(--surface-soft); }
 .image img { object-fit: cover; }
 .project h3 { margin: 16px 0 5px; font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: 26px; font-weight: 400; }

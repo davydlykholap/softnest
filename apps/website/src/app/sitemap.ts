@@ -8,7 +8,7 @@ import { cityServicePages } from "@/content/cityServicePages";
 import { getWorkProjects } from "@/content/work";
 import { absoluteUrl } from "@/lib/site";
 import { workProjectHref } from "@softnest/content/work-urls";
-import { escapeXml, indexableVideos, projectImages } from "@/seo/work";
+import { escapeXml, indexableVideos, portCreditWatchPath, portCreditWatchVideo, projectImages } from "@/seo/work";
 
 export const dynamic = "force-static";
 
@@ -20,7 +20,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteUrl}/` },
     { url: `${siteUrl}/about/` },
     { url: `${siteUrl}/our-work/`, images: getWorkProjects().map(project => absoluteUrl(project.image)) },
-    ...getWorkProjects().map(project => {
+    ...getWorkProjects().flatMap(project => {
+      const watchVideo = portCreditWatchVideo(project);
       const videos = indexableVideos(project).map(video => ({
         title: escapeXml(video.title),
         description: escapeXml(video.description),
@@ -29,12 +30,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...(video.embedUrl ? { player_loc: escapeXml(video.embedUrl) } : {}),
         ...(video.uploadDate ? { publication_date: video.uploadDate } : {}),
       }));
-      return {
+      const projectEntry = {
         url: absoluteUrl(workProjectHref(project)),
         images: projectImages(project),
-        ...(videos.length ? { videos } : {}),
-        ...(project.date ? { lastModified: project.date } : {}),
+        ...(videos.length && !watchVideo ? { videos } : {}),
+        ...(project.updatedAt ? { lastModified: project.updatedAt } : {}),
       };
+      return watchVideo ? [projectEntry, {
+        url: absoluteUrl(portCreditWatchPath),
+        videos,
+        ...(project.updatedAt ? { lastModified: project.updatedAt } : {}),
+      }] : [projectEntry];
     }),
     ...workLocations.filter(location => (location.indexInSearch || location.workGalleryEnabled === true) && getWorkProjects({ city: location.slug }).length > 0).map(location => ({
       url: siteUrl + "/our-work/" + location.slug + "/", images: getWorkProjects({city:location.slug}).map(project => absoluteUrl(project.image)),

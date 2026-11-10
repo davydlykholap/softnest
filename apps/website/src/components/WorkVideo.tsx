@@ -4,10 +4,10 @@ import { useState } from "react";
 import type { WorkMedia } from "@/content/work";
 import styles from "@/app/our-work/projects/project.module.css";
 
-export default function WorkVideo({ item }: { item: Extract<WorkMedia,{type:"video"}> }) {
+export default function WorkVideo({ item, showTitle = true }: { item: Extract<WorkMedia,{type:"video"}>; showTitle?: boolean }) {
   const [playing,setPlaying] = useState(false);
   return <section className={styles.videoSection} aria-label={item.title}>
-    <h2>{item.title}</h2>
+    {showTitle ? <h2>{item.title}</h2> : null}
     {item.video ? <video controls playsInline preload="none" crossOrigin={item.captions ? "anonymous" : undefined} poster={item.poster} aria-label={item.title}>
       <source src={item.video} />
       {item.captions ? <track kind="captions" src={item.captions} srcLang="en" label="English" default /> : null}

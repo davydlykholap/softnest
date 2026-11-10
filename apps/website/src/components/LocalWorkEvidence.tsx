@@ -36,5 +36,12 @@ export default function LocalWorkEvidence({ city, cityName, service, showPreview
         </div>
       </article>)}
     </div> : <p>Local appointment photos are coming. You can <Link href="/our-work/">browse our work across the service area</Link> while we add results from {cityName}.</p>}
+    {service && selection.projects.length > projects.length ? (
+      <ul className={styles.moreProjects} aria-label={`More cleaning projects in ${cityName}`}>
+        {selection.projects.slice(projects.length).map(project => (
+          <li key={project.id}><Link prefetch={false} href={workProjectHref(project)}>{project.title}</Link></li>
+        ))}
+      </ul>
+    ) : null}
   </section>;
 }

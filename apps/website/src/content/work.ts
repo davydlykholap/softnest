@@ -25,6 +25,7 @@ export type WorkProject = {
   treatment?: string;
   result?: string;
   date?: string;
+  updatedAt?: string;
   introduction?: string;
   cardCaption?: string;
   metaDescription?: string;
@@ -74,6 +75,7 @@ export function getWorkProjects(filters: { city?: string; service?: string } = {
       metaDescription: project.metaDescription,
       media: project.media || [],
       date: "date" in project ? String(project.date) : undefined,
+      updatedAt: project._updatedAt,
     }));
 }
 

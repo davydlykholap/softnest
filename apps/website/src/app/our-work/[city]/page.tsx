@@ -23,10 +23,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const location = workLocations.find(location => location.slug === city);
   if (!location) return {};
   const projects = getWorkProjects({ city });
+  const carpetServices = ["carpet-area-rug-cleaning", "stairs-hallways-cleaning"];
+  const hasCarpet = projects.some(project => project.services.some(service => carpetServices.includes(service)));
+  const hasUpholstery = projects.some(project => project.services.some(service => !carpetServices.includes(service) && service !== "pet-stain-odour-removal"));
+  const category = hasCarpet ? (hasUpholstery ? "Upholstery & Carpet " : "Carpet ") : (hasUpholstery ? "Upholstery " : "");
   return pageMetadata({
-    title: "Upholstery & Carpet Cleaning Results in " + location.name + " | SoftNest",
+    title: `${category}Cleaning Results in ${location.name} | SoftNest`,
     description: projects.length
-      ? location.workGalleryIntroduction?.trim() || "Browse documented SoftNest upholstery and carpet cleaning work in " + location.name + ". View the photos, their context and the services used."
+      ? location.workGalleryIntroduction?.trim() || `Browse documented SoftNest ${category.toLowerCase()}cleaning work in ${location.name}. View the photos, videos and services used.`
       : "Explore SoftNest cleaning services in " + location.name + " and see when documented cleaning projects are added to our gallery.",
     path: "/our-work/" + location.slug + "/",
     image: projects[0]?.image,

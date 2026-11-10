@@ -6,6 +6,10 @@
 .intro p { color:var(--location-page-muted); font-size:16px; }
 .intro a { color:inherit; text-underline-offset:4px; }
 .cover { max-width:750px; margin-inline:auto; }
+.watch { max-width:750px; padding-bottom:56px; }
+.watch .intro { margin:0 0 20px; }
+.watch .intro h1 { font-size:clamp(30px,4vw,52px); margin:0; }
+.watchLinks { margin:16px 0 0; }
 .cover > div, .media > [data-project-media="comparison"] > div { aspect-ratio:4/3; max-height:560px; }
 .cover > div img { object-fit:cover; }
 .story { max-width:750px; margin:36px auto; }

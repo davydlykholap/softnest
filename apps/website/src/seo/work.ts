@@ -47,9 +47,30 @@ export function projectImages(project: WorkProject) {
   return [...new Set(images)].map(absoluteUrl);
 }
 
+export const portCreditProjectSlug = "reclining-sofa-cleaning-port-credit-mississauga";
+export const portCreditWatchPath = "/our-work/watch/port-credit-reclining-sofa-cleaning/";
+
+export function portCreditWatchVideo(project: WorkProject) {
+  if (project.slug !== portCreditProjectSlug || project.media.length !== 1) return;
+  const video = indexableVideos(project)[0];
+  return video?.contentUrl && video.uploadDate ? video : undefined;
+}
+
+export function videoSchema(video: ReturnType<typeof indexableVideos>[number]) {
+  return {
+    "@type": "VideoObject",
+    name: video.title,
+    description: video.description,
+    thumbnailUrl: video.thumbnail,
+    ...(video.uploadDate ? { uploadDate: video.uploadDate } : {}),
+    ...(video.contentUrl ? { contentUrl: video.contentUrl } : {}),
+    ...(video.embedUrl ? { embedUrl: video.embedUrl } : {}),
+  };
+}
+
 export function projectSchema(project: WorkProject, cityPath: string) {
   const url = absoluteUrl(workProjectHref(project));
-  const videos = indexableVideos(project);
+  const videos = portCreditWatchVideo(project) ? [] : indexableVideos(project);
   return {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
@@ -71,15 +92,7 @@ export function projectSchema(project: WorkProject, cityPath: string) {
     },
     contentLocation: { "@type": "City", name: project.location },
     image: projectImages(project).map(contentUrl => ({ "@type": "ImageObject", contentUrl })),
-    ...(videos.length ? { video: videos.map(video => ({
-      "@type": "VideoObject",
-      name: video.title,
-      description: video.description,
-      thumbnailUrl: video.thumbnail,
-      ...(video.uploadDate ? { uploadDate: video.uploadDate } : {}),
-      ...(video.contentUrl ? { contentUrl: video.contentUrl } : {}),
-      ...(video.embedUrl ? { embedUrl: video.embedUrl } : {}),
-    })) } : {}),
+    ...(videos.length ? { video: videos.map(videoSchema) } : {}),
   };
 }
 

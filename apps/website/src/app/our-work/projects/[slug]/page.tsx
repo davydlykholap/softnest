@@ -13,7 +13,7 @@ import { services } from "@/content/services";
 import { workProjectHref } from "@softnest/content/work-urls";
 import { pageMetadata } from "@/seo/metadata";
 import { jsonLd } from "@/seo/structuredData";
-import { projectBreadcrumbs, projectDescription, projectSchema, projectTitle } from "@/seo/work";
+import { portCreditWatchPath, portCreditWatchVideo, projectBreadcrumbs, projectDescription, projectSchema, projectTitle } from "@/seo/work";
 import { cityServicePages } from "@/content/cityServicePages";
 import styles from "../project.module.css";
 import "@/app/styles/location-page.css";
@@ -53,6 +53,7 @@ export default async function WorkProjectPage({params}:Props) {
         </header>
         {leadVideo ? <div className={styles.cover} data-project-media="video">
           <WorkVideo item={leadVideo} />
+          {portCreditWatchVideo(project) ? <Link className={styles.back} href={portCreditWatchPath}>Open the video page →</Link> : null}
         </div> : <div className={styles.cover}>
           {project.variant === "paired" ? <ServiceResultCompare image={project.image} label={project.label} variant="paired" eager /> : <WorkPhoto image={project.image} alt={project.label} />}
         </div>}
@@ -71,7 +72,7 @@ export default async function WorkProjectPage({params}:Props) {
           {services.filter(service => project.services.includes(service.slug)).map(service => <Link key={service.slug} href={`/services/${service.slug}/`}>{service.name} →</Link>)}
         </div>
       </article>
-      <DirectoryFinalCta id="quote-cta" title="What would you like cleaned?" description="Tell us what needs attention. We confirm the price before booking." action={{href:quoteHref,label:"Get a Quote"}} image="/images/home/softnest-sofa-living-room.webp" imageAlt="Living room with a green sofa" />
+      <DirectoryFinalCta id="quote-cta" title="What would you like cleaned?" description="Tell us what needs attention. We confirm the price before booking." action={{href:quoteHref,label:"Get a Quote"}} image={leadVideo?.poster || "/images/home/softnest-sofa-living-room.webp"} imageAlt={leadVideo?.poster ? project.label : "Living room with a green sofa"} />
     </main>
     <SiteFooter quoteHref={quoteHref} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(schema)}} />

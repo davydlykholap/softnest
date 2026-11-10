@@ -1,4 +1,4 @@
-import { readFile, readdir, writeFile, mkdir } from "node:fs/promises";
+import { access, readFile, readdir, writeFile, mkdir } from "node:fs/promises";
 import { join, resolve, dirname, sep } from "node:path";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -39,6 +39,29 @@ async function walk(directory, relativeParts = []) {
 }
 
 await walk(exportRoot);
+const oakvilleProject = "/our-work/projects/cream-sofa-and-loveseat-cleaning-oakville/";
+const hasOakvilleProject = await access(join(exportRoot, oakvilleProject.slice(1), "index.html")).then(() => true, error => {
+  if (error.code !== "ENOENT") throw error;
+  return false;
+});
+if (hasOakvilleProject) {
+  const legacyDirectory = join(exportRoot, "our-work", "projects", "cream-sofa-reconstructed");
+  await mkdir(legacyDirectory, { recursive: true });
+  // GitHub Pages serves static files, so use an immediate HTML redirect.
+  const legacyFile = join(legacyDirectory, "index.html");
+  const redirectHtml = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Oakville sofa cleaning project moved | SoftNest</title>
+<link rel="canonical" href="https://softnestcare.ca${oakvilleProject}">
+<meta http-equiv="refresh" content="0;url=${oakvilleProject}">
+</head><body><a href="${oakvilleProject}">View the Oakville sofa and loveseat cleaning project</a></body></html>
+`;
+  try {
+    await writeFile(legacyFile, redirectHtml, { flag: "wx" });
+  } catch (error) {
+    if (error.code !== "EEXIST" || await readFile(legacyFile, "utf8") !== redirectHtml) throw error;
+  }
+}
 // GitHub Pages cannot redirect an image with an HTTP Location header. Preserve
 // previous image URLs as byte-identical copies only in the deployment output.
 const imageAliases = JSON.parse(await readFile("src/lib/imageAliases.json", "utf8"));
