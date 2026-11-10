@@ -22,7 +22,8 @@ test("city-grouped overview is photo-led, linked and responsive", async ({ page 
     await expect(page.locator("[data-work-city]")).toHaveCount(cities.length);
     await expect(page.getByLabel("Browse by city")).toHaveCount(0);
     await expect(page.getByRole("slider")).toHaveCount(0);
-    await expect(page.locator("[data-project-id] p")).toHaveCount(0);
+    const captions = await page.locator("[data-project-id] a").allTextContents();
+    expect(captions.every(caption => caption.trim().length > 0)).toBe(true);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     for(const city of cities) {
       const section = page.locator(`[data-work-city="${city.slug}"]`);

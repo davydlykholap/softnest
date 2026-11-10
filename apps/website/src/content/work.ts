@@ -26,6 +26,8 @@ export type WorkProject = {
   result?: string;
   date?: string;
   introduction?: string;
+  cardCaption?: string;
+  metaDescription?: string;
   media: WorkMedia[];
 };
 
@@ -37,6 +39,8 @@ export type WorkMedia =
 type ProjectRecord = (typeof projects)[number] & {
   fabric?: string; problem?: string; treatment?: string; result?: string; imageNote?: string; sourceType?: string;
   slug: string; introduction?: string; media?: WorkMedia[];
+  cardCaption?: string;
+  metaDescription?: string;
 };
 
 export function getWorkProjects(filters: { city?: string; service?: string } = {}): WorkProject[] {
@@ -66,6 +70,8 @@ export function getWorkProjects(filters: { city?: string; service?: string } = {
       treatment: project.treatment,
       result: project.result,
       introduction: project.introduction,
+      cardCaption: project.cardCaption,
+      metaDescription: project.metaDescription,
       media: project.media || [],
       date: "date" in project ? String(project.date) : undefined,
     }));

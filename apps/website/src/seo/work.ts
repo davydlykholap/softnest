@@ -17,6 +17,8 @@ export function projectTitle(project: WorkProject) {
 }
 
 export function projectDescription(project: WorkProject) {
+  const custom = project.metaDescription?.replace(/\s+/g, " ").trim();
+  if (custom) return custom;
   const text = project.introduction || project.result || "";
   return text
     ? trimText(text, 160)

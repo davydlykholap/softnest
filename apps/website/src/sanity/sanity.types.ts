@@ -184,6 +184,8 @@ export type CleaningProject = {
   fabric?: string;
   imageNote?: string;
   introduction?: string;
+  cardCaption?: string;
+  metaDescription?: string;
   media?: Array<
     | {
         photo: {
@@ -360,6 +362,7 @@ export type Location = {
   pageEnabled?: boolean;
   indexInSearch?: boolean;
   workGalleryEnabled?: boolean;
+  workGalleryIntroduction?: string;
   showInFooter?: boolean;
   shortDescription: string;
   introduction: string;
@@ -841,6 +844,8 @@ export type WebsiteContentQueryResult = Array<
       fabric?: string;
       imageNote?: string;
       introduction?: string;
+      cardCaption?: string;
+      metaDescription?: string;
       media:
         | Array<never>
         | Array<
@@ -1015,6 +1020,7 @@ export type WebsiteContentQueryResult = Array<
       pageEnabled?: boolean;
       indexInSearch?: boolean;
       workGalleryEnabled?: boolean;
+      workGalleryIntroduction?: string;
       showInFooter?: boolean;
       shortDescription: string;
       introduction: string;

@@ -15,6 +15,7 @@ export type Location = {
   pageEnabled: boolean;
   indexInSearch: boolean;
   workGalleryEnabled?: boolean;
+  workGalleryIntroduction?: string;
   showInFooter: boolean;
   expandedContent?: {
     heroImage: string;

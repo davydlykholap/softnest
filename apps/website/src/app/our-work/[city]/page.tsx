@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({
     title: "Cleaning Results in " + location.name + " | Our Work | SoftNest",
     description: projects.length
-      ? "Browse documented SoftNest upholstery and carpet cleaning work in " + location.name + ". View the photos, their context and the services used."
+      ? location.workGalleryIntroduction?.trim() || "Browse documented SoftNest upholstery and carpet cleaning work in " + location.name + ". View the photos, their context and the services used."
       : "Explore SoftNest cleaning services in " + location.name + " and see when documented cleaning projects are added to our gallery.",
     path: "/our-work/" + location.slug + "/",
     image: projects[0]?.image,
@@ -75,7 +75,7 @@ export default async function CityWorkPage({ params }: Props) {
         <header className={styles.intro}>
           <div>
             <h1>Our Work<br /><span>in {location.name}.</span></h1>
-            {projects.length ? <p>{workPageCopy.cityDescription.replaceAll("{{city}}",location.name)}</p> : null}
+            {projects.length ? <p>{location.workGalleryIntroduction?.trim() || workPageCopy.cityDescription.replaceAll("{{city}}",location.name)}</p> : null}
           </div>
         </header>
         {projects.length ? (

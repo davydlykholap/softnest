@@ -219,7 +219,7 @@ const projectDocument = (fields:FieldDefinition[]) => defineType({
   groups:[{name:"details",title:"Project details",default:true},{name:"media",title:"Photos & videos"},{name:"story",title:"Description & story"},{name:"publishing",title:"Publishing"}],
   fields:fields.map(field => ({...field, group:
     ["imageUpload","image","variant","media","label"].includes(field.name) ? "media" :
-    ["introduction","fabric","problem","treatment","result"].includes(field.name) ? "story" :
+    ["introduction","cardCaption","metaDescription","fabric","problem","treatment","result"].includes(field.name) ? "story" :
     ["sourceType","imageNote","publicationStatus","featured","order"].includes(field.name) ? "publishing" : "details"})),
 });
 
@@ -364,6 +364,7 @@ export const businessTypes = [
       type: "boolean",
       description: "Show documented appointments in Our Work independently of the location page and service coverage.",
     }),
+    defineField({ ...text("workGalleryIntroduction", false, true), title: "Our Work gallery introduction", description: "Summarize the documented projects visitors can see in this city gallery." }),
     defineField({
       name: "showInFooter",
       title: "Show in footer",
@@ -538,6 +539,8 @@ export const businessTypes = [
     defineField({...text("fabric"),title:"Material / fabric"}),
     defineField({ name: "imageNote", title: "Photo context", type: "text", description: "Internal source context retained with the project record. This is not a gallery caption.", validation: rule => rule.custom((value, context) => context.document?.publicationStatus !== "approved" || context.document?.sourceType !== "reconstructed-before" || Boolean(value?.trim()) || "Explain the recreated before view before approving this job.") }),
     defineField({...text("introduction",false,true),title:"Project description",description:"Describe the appointment in your own words. Shown on the project page, never below gallery covers."}),
+    defineField({ ...text("cardCaption"), title: "Gallery caption", description: "Short caption below the cover. Defaults to the project title." }),
+    defineField({ ...text("metaDescription"), title: "Search description", description: "A short summary for search results. Defaults to the project description." }),
     defineField({ name: "media", title: "Additional photos & videos", type: "array", description: "Drag items into story order. The cover image appears first automatically, so do not add it again here. Stories and media are optional.", of: [
       defineArrayMember({ name: "projectPhoto", title: "Photo", type: "object", fields: [defineField({ ...media("photo"), validation: rule => rule.required() })], preview: { select: { title: "photo.alt", media: "photo" } } }),
       defineArrayMember({ name: "projectComparison", title: "Before & after comparison", type: "object", fields: [text("label", true), defineField({ ...media("before"), validation: rule => rule.required() }), defineField({ ...media("after"), validation: rule => rule.required() })], preview: { select: { title: "label", media: "after" } } }),

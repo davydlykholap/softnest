@@ -1,10 +1,13 @@
 .section { padding:0 0 56px; }
 .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
 .project { min-width:0; scroll-margin-top:130px; }
+.cardLink { display:block; color:var(--brand-green); text-decoration:none; border-radius:22px 22px 0 0; }
+.caption { display:block; padding:10px 2px 2px; font-size:15px; line-height:1.4; font-weight:600; }
+.cardLink:hover .caption { text-decoration:underline; text-underline-offset:3px; }
 .cover { display:block; position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:22px; background:var(--surface-soft); }
 .cover img { object-fit:cover; transition:transform .2s ease; }
-@media(hover:hover) { .cover:hover img { transform:scale(1.025); } }
-.cover:focus-visible, .rail button:focus-visible, .section :is(a,button,select):focus-visible { outline:3px solid var(--brand-green); outline-offset:5px; }
+@media(hover:hover) { .cardLink:hover img { transform:scale(1.025); } }
+.cardLink:focus-visible, .rail button:focus-visible, .section :is(a,button,select):focus-visible { outline:3px solid var(--brand-green); outline-offset:5px; }
 .rail { position:relative; }
 .track { display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 48px)/3); gap:24px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:6px; padding:6px; margin:-6px; scrollbar-width:thin; scrollbar-color:#b2c5b8 transparent; }
 .track > article { scroll-snap-align:start; }
