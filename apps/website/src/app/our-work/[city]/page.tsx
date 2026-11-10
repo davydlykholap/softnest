@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!location) return {};
   const projects = getWorkProjects({ city });
   return pageMetadata({
-    title: "Cleaning Results in " + location.name + " | Our Work | SoftNest",
+    title: "Upholstery & Carpet Cleaning Results in " + location.name + " | SoftNest",
     description: projects.length
       ? location.workGalleryIntroduction?.trim() || "Browse documented SoftNest upholstery and carpet cleaning work in " + location.name + ". View the photos, their context and the services used."
       : "Explore SoftNest cleaning services in " + location.name + " and see when documented cleaning projects are added to our gallery.",

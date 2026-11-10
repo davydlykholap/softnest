@@ -13,7 +13,7 @@ import { absoluteUrl, organizationId } from "@/lib/site";
 import styles from "./page.module.css";
 import "@/app/styles/location-page.css";
 
-export const metadata = pageMetadata({ title:"Our Work | Cleaning Projects by City | SoftNest", description:"Explore SoftNest upholstery and carpet cleaning projects by city. Open an appointment to see its photos, videos and cleaning story.", path:"/our-work/" });
+export const metadata = pageMetadata({ title:"Sofa, Upholstery & Carpet Cleaning Results by City | SoftNest", description:"See real SoftNest sofa, upholstery and carpet cleaning results in Mississauga, Brampton, Milton, Hamilton, Toronto and more. Photos and videos from real Ontario appointments.", path:"/our-work/" });
 
 export default function OurWorkPage() {
   const projects = getWorkProjects();

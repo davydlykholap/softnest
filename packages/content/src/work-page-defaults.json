@@ -1,7 +1,7 @@
 {
   "heading": "Our",
   "headingAccent": "Work.",
-  "description": "Browse real upholstery and carpet cleaning projects by city. Open a project for photos, videos and details about what we cleaned.",
-  "cityDescription": "Cleaning projects from {{city}}.",
+  "description": "Real sofa, upholstery and carpet cleaning projects from across Ontario, from Mississauga, Brampton and Milton to Hamilton and Toronto. Pick your city to see photos, videos and what we cleaned, and how each result came out.",
+  "cityDescription": "Real upholstery, sofa and carpet cleaning projects from {{city}}, Ontario. Open any project to see the photos, videos and details of what we cleaned.",
   "emptyCityDescription": "No projects published yet."
 }
