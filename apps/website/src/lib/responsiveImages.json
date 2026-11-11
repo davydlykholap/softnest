@@ -223,6 +223,50 @@
       "src": "/images/responsive/images-work-oakville-cream-sofa-cleaning-before-after-1536.webp"
     }
   ],
+  "/images/work/oakville-curved-loveseat-cleaning-before-after.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-work-oakville-curved-loveseat-cleaning-before-after-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-work-oakville-curved-loveseat-cleaning-before-after-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-work-oakville-curved-loveseat-cleaning-before-after-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-work-oakville-curved-loveseat-cleaning-before-after-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-work-oakville-curved-loveseat-cleaning-before-after-1536.webp"
+    }
+  ],
+  "/images/work/oakville-curved-sofa-cleaning-before-after.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-work-oakville-curved-sofa-cleaning-before-after-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-work-oakville-curved-sofa-cleaning-before-after-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-work-oakville-curved-sofa-cleaning-before-after-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-work-oakville-curved-sofa-cleaning-before-after-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-work-oakville-curved-sofa-cleaning-before-after-1536.webp"
+    }
+  ],
   "/images/work/stair-carpet-cleaning-before-after.webp": [
     {
       "width": 240,
@@ -287,6 +331,28 @@
     {
       "width": 1536,
       "src": "/images/responsive/images-work-teal-sectional-sofa-cleaning-before-after-1536.webp"
+    }
+  ],
+  "/images/work/waterdown-sectional-sofa-cleaning-before-after.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-work-waterdown-sectional-sofa-cleaning-before-after-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-work-waterdown-sectional-sofa-cleaning-before-after-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-work-waterdown-sectional-sofa-cleaning-before-after-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-work-waterdown-sectional-sofa-cleaning-before-after-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-work-waterdown-sectional-sofa-cleaning-before-after-1536.webp"
     }
   ],
   "/images/ui/gallery-leaves.webp": [
