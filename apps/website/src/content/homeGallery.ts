@@ -5,8 +5,6 @@ import type { GalleryResult } from "@/components/HomeResultsCarousel";
 export const homeGalleryExamples: GalleryResult[] = [
   ["/images/work/waterdown-sectional-sofa-cleaning-before-after.webp", "Sectional sofa"],
   ["/images/work/patterned-ottoman-cleaning-before-after.webp", "Ottoman"],
-  ["/images/work/oakville-curved-loveseat-cleaning-before-after.webp", "Loveseat"],
-  ["/images/work/oakville-curved-sofa-cleaning-before-after.webp", "Sofa"],
   ["/images/work/grey-sectional-sofa-cleaning-before-after.webp", "Sofa"],
   ["/images/work/teal-sectional-sofa-cleaning-before-after.webp", "Sectional sofa"],
   ["/images/work/mattress-cleaning-before-after.webp", "Mattress"],
