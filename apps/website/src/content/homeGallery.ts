@@ -4,6 +4,7 @@ import type { GalleryResult } from "@/components/HomeResultsCarousel";
 // appointments or city evidence. These are the original homepage assets.
 export const homeGalleryExamples: GalleryResult[] = [
   ["/images/work/waterdown-sectional-sofa-cleaning-before-after.webp", "Sectional sofa"],
+  ["/images/work/patterned-ottoman-cleaning-before-after.webp", "Ottoman"],
   ["/images/work/oakville-curved-loveseat-cleaning-before-after.webp", "Loveseat"],
   ["/images/work/oakville-curved-sofa-cleaning-before-after.webp", "Sofa"],
   ["/images/work/grey-sectional-sofa-cleaning-before-after.webp", "Sofa"],

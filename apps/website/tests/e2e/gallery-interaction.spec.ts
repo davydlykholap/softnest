@@ -2,6 +2,8 @@ import { expect, test } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
 const featuredAppointments = JSON.parse(readFileSync("src/content/generated/projects.json", "utf8")).filter((project: { featured: boolean }) => project.featured).length;
+// Count the curated before-and-after examples from their source so adding one does not need a test edit.
+const galleryExamples = readFileSync("src/content/homeGallery.ts", "utf8").split("\n").filter((line) => /^\s*\["\/images\/work\//.test(line)).length;
 
 // Keep synthetic browser checks independent of third-party analytics loading.
 test.beforeEach(async ({ page }) => {
@@ -12,7 +14,7 @@ for (const width of [402, 1440]) {
   test(`comparison sliders leave gallery navigation to the buttons at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 827 });
     await page.goto("/");
-    await expect(page.locator("#gallery-track .gallery-result")).toHaveCount(8 + featuredAppointments);
+    await expect(page.locator("#gallery-track .gallery-result")).toHaveCount(galleryExamples + featuredAppointments);
     await expect(page.locator("#gallery-track .gallery-result > p")).toHaveCount(0);
     await expect(page.locator("#results")).not.toContainText("This is a real sofa cleaning appointment");
     const track = page.locator("#gallery-track");
