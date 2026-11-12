@@ -34,7 +34,7 @@ export default function CardPage() {
           <span><strong>See our work</strong><small>Before-and-after cleaning results on Instagram.</small></span>
           <ChevronRightIcon className={styles.arrow} />
         </a>
-        <a href={siteConfig.googleProfileUrl} className={styles.action}>
+        <a href={siteConfig.googleReviewsUrl} className={styles.action}>
           <span className={styles.icon}><Image src="/images/brand/google-g.svg" alt="" width={32} height={32} /></span>
           <span><strong>Google reviews</strong><small>Read what our customers say.</small></span>
           <ChevronRightIcon className={styles.arrow} />

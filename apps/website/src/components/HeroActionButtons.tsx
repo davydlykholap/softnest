@@ -2,7 +2,7 @@ import { siteConfig } from "@/lib/site";
 import Image from "next/image";
 import Link from "next/link";
 
-const googleProfileUrl = siteConfig.googleProfileUrl;
+const googleProfileUrl = siteConfig.googleReviewsUrl;
 
 type HeroActionButtonsProps = {
   quoteHref?: string;

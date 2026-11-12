@@ -58,7 +58,7 @@ export default function CustomerReviewsSection({
         reviews={reviews}
         sampleSize={sampleSize}
         variant="city"
-        googleProfileUrl={siteConfig.googleProfileUrl}
+        googleProfileUrl={siteConfig.googleReviewsUrl}
       />
     </section>
   );

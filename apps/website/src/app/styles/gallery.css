@@ -148,7 +148,8 @@ html:has(.gallery-section-v2:target) {
 
 .gallery-compare-card {
     position: relative;
-    height: 326px;
+    /* Each half of the paired photo is 3:4, so the card keeps that ratio and the photos are never stretched. */
+    aspect-ratio: 3 / 4;
     overflow: hidden;
     border-radius: 20px;
     background: #d8d6d0;
@@ -328,9 +329,6 @@ html:has(.gallery-section-v2:target) {
     }
     .gallery-carousel-arrow--prev { left: -9px; }
     .gallery-carousel-arrow--next { right: -9px; }
-    .gallery-compare-card {
-        height: 360px;
-    }
 }
 
 @media (max-width: 1260px) {
