@@ -3,6 +3,7 @@ import type { GalleryResult } from "@/components/HomeResultsCarousel";
 // Presentation examples belong to the homepage gallery, not to documented
 // appointments or city evidence. These are the original homepage assets.
 export const homeGalleryExamples: GalleryResult[] = [
+  ["/images/work/grey-tufted-sofa-armrest-cleaning-before-after.webp", "Sofa armrest"],
   ["/images/work/waterdown-sectional-sofa-cleaning-before-after.webp", "Sectional sofa"],
   ["/images/work/patterned-ottoman-cleaning-before-after.webp", "Ottoman"],
   ["/images/work/grey-sectional-sofa-cleaning-before-after.webp", "Sofa"],
