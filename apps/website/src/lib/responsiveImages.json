@@ -135,6 +135,28 @@
       "src": "/images/responsive/images-work-grey-sectional-sofa-cleaning-comparison-1672.webp"
     }
   ],
+  "/images/work/grey-tufted-sofa-cleaning-before-after.webp": [
+    {
+      "width": 240,
+      "src": "/images/responsive/images-work-grey-tufted-sofa-cleaning-before-after-240.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/responsive/images-work-grey-tufted-sofa-cleaning-before-after-480.webp"
+    },
+    {
+      "width": 768,
+      "src": "/images/responsive/images-work-grey-tufted-sofa-cleaning-before-after-768.webp"
+    },
+    {
+      "width": 1200,
+      "src": "/images/responsive/images-work-grey-tufted-sofa-cleaning-before-after-1200.webp"
+    },
+    {
+      "width": 1536,
+      "src": "/images/responsive/images-work-grey-tufted-sofa-cleaning-before-after-1536.webp"
+    }
+  ],
   "/images/work/hallway-carpet-cleaning-before-after.webp": [
     {
       "width": 240,
