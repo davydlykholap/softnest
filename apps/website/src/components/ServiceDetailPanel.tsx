@@ -4,7 +4,10 @@ import ServiceResultCompare from "@/components/ServiceResultCompare";
 import Link from "next/link";
 import type { Service } from "@/content/services";
 import { getTestimonials } from "@/content/pages";
+import testimonials from "@/content/generated/testimonials.json";
 import { getWorkProjects } from "@/content/work";
+import { workProjectHref } from "@softnest/content/work-urls";
+import { siteConfig } from "@/lib/site";
 import styles from "@/app/services/service-page.module.css";
 
 const inspectionNotes: Record<string, string> = {
@@ -19,6 +22,9 @@ const inspectionNotes: Record<string, string> = {
   "stairs-hallways-cleaning": "We review the number of steps, risers, landings and connected hallways, paying particular attention to worn edges, flattened pile and transitions into other flooring.",
   "pet-stain-odour-removal": "A small visible mark can hide a deeper pet accident. We discuss how far it may have soaked into fabric, foam, carpet backing or underlay before explaining what treatment can reasonably reach.",
 };
+
+// Reviews written by the owner's own accounts should not be featured as customer proof.
+const ownerReviewers = new Set(["Davyd", "Ivan Lykholap"]);
 
 function lowerFirst(value: string) {
   return value.charAt(0).toLowerCase() + value.slice(1);
@@ -42,6 +48,14 @@ export default function ServiceDetailPanel({
   const review = getTestimonials().find((item) =>
     (item.services as string[]).includes(service.slug),
   );
+  const serviceReviews = testimonials.filter((item) =>
+    item.publicationStatus === "approved" && !ownerReviewers.has(item.name) && item.text.length >= 100 && !/$d/.test(item.text) &&
+    (item.services as string[]).includes(service.slug),
+  );
+  const recentWork = getWorkProjects({ service: service.slug })
+    .filter((item, index, all) => all.findIndex((other) => other.location === item.location) === index)
+    .slice(0, 4);
+  
   const HeroHeading = headingLevel === 1 ? "h1" : "h2";
   const SectionHeading = headingLevel === 1 ? "h2" : "h3";
   const NoteHeading = headingLevel === 1 ? "h3" : "h4";
@@ -57,6 +71,11 @@ export default function ServiceDetailPanel({
         <div className={styles.heroCopy}>
           <HeroHeading id="service-heading">{service.name}</HeroHeading>
           <p>{service.heroDescription}</p>
+          <div className={styles.heroActions}>
+            <Link className={styles.heroPrimary} href={`/quote/?service=${encodeURIComponent(service.slug)}`}>Get a free quote</Link>
+            <a className={styles.heroSecondary} href={siteConfig.phoneHref}>Call {siteConfig.displayPhone}</a>
+          </div>
+          <p className={styles.heroTrust}>Free written quote, tax included. Rated {siteConfig.reviewScore} on Google.</p>
         </div>
       </section>
 
@@ -129,6 +148,32 @@ export default function ServiceDetailPanel({
               <footer>{review.name} · Google review</footer>
             </blockquote>
           </div>
+        </section>
+      ) : null}
+
+      {serviceReviews.length > 1 ? (
+        <section className={`${styles.serviceSection} ${styles.reviewsSection}`} aria-labelledby="reviews-heading">
+          <SectionHeading id="reviews-heading">What customers say</SectionHeading>
+          <div className={styles.reviewGrid}>
+            {serviceReviews.filter((item) => item.text !== review?.text || project).slice(0, 3).map((item) => (
+              <blockquote className={styles.reviewCard} key={item._id}>
+                <p>“{item.text.length > 260 ? `${item.text.slice(0, item.text.lastIndexOf(" ", 260))}…` : item.text}”</p>
+                <footer>{item.name} · Google review</footer>
+              </blockquote>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {recentWork.length > 0 ? (
+        <section className={`${styles.serviceSection} ${styles.recentWork}`} aria-labelledby="recent-work-heading">
+          <SectionHeading id="recent-work-heading">Recent {service.name.toLowerCase()} jobs</SectionHeading>
+          <ul>
+            {recentWork.map((item) => (
+              <li key={item.id}><Link href={workProjectHref(item)}>{item.title}</Link></li>
+            ))}
+          </ul>
+          <p><Link href="/our-work/">See all our work</Link></p>
         </section>
       ) : null}
 
