@@ -154,3 +154,6 @@
 .quotePrimary { background:var(--brand-green, #174b3a); color:#fff; }
 .quoteSecondary { border:2px solid var(--brand-green, #174b3a); color:var(--brand-green, #174b3a); }
 @media (max-width:640px) { .quotePrimary, .quoteSecondary { width:100%; } }
+
+.videoFigure { max-width:420px; margin:24px auto; }
+.videoFigure figcaption { margin-top:10px; font-size:14px; color:#5e6e66; }

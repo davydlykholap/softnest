@@ -11,6 +11,9 @@ import { getPost, getPosts, getReadingSuggestions } from "@/content/posts";
 import { blogImageUrl } from "@/sanity/image";
 import styles from "@/app/blog/blog.module.css";
 import { getService } from "@/content/services";
+import WorkVideo from "@/components/WorkVideo";
+import { getArticleVideo } from "@/content/articleVideos";
+import { workProjectHref } from "@softnest/content/work-urls";
 import { blogUrl, serviceUrl, absoluteUrl } from "@/seo/urls";
 import { jsonLd, breadcrumbs } from "@/seo/structuredData";
 
@@ -61,6 +64,7 @@ export default async function BlogArticlePage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
+  const articleVideo = getArticleVideo(post.slug);
   const cover = blogImageUrl(post.coverImage, 1200, post.slug);
   const related =
     post.relatedServices
@@ -98,7 +102,14 @@ export default async function BlogArticlePage({ params }: Props) {
             <p>Need help with this now? Free written quote, tax included.</p>
             {quoteActions}
           </aside>
-          {cover && post.showCover !== false ? (
+          {articleVideo ? (
+            <figure className={styles.videoFigure}>
+              <WorkVideo item={articleVideo.video} showTitle={false} />
+              <figcaption>
+                A SoftNest appointment in {articleVideo.project.location}. <Link href={workProjectHref(articleVideo.project)}>See the full project →</Link>
+              </figcaption>
+            </figure>
+          ) : cover && post.showCover !== false ? (
             <figure className={styles.coverFigure}>
             <Image
               className={styles.cover}
