@@ -46,6 +46,7 @@ export default function ServiceDetailPanel({
 }) {
   const project = getWorkProjects({ service: service.slug })[0];
   const carpetDemo = service.slug === "carpet-area-rug-cleaning";
+  const sofaDemo = service.slug === "sofa-cleaning";
   const review = getTestimonials().find((item) =>
     (item.services as string[]).includes(service.slug),
   );
@@ -141,6 +142,36 @@ export default function ServiceDetailPanel({
             >
               <source src="/videos/carpet-cleaning-demo.mp4" type="video/mp4" />
               <a href="/videos/carpet-cleaning-demo.mp4">Open the carpet cleaning video</a>
+            </video>
+          </div>
+        </section>
+      ) : sofaDemo ? (
+        <section className={styles.resultFeature} aria-labelledby="proof-heading">
+          <div className={styles.resultFeatureCopy}>
+            <span className={styles.resultFeatureRule} aria-hidden="true" />
+            <SectionHeading id="proof-heading">
+              <span>What to expect</span>
+              <span>from our cleaning.</span>
+            </SectionHeading>
+            <p className={styles.resultFeatureDescription}>
+              Watch how a typical sofa appointment goes: we inspect the fabric first,
+              then clean with an extraction tool and go over tough spots twice.
+            </p>
+            <p><Link href="/our-work/">See more cleaning results</Link></p>
+          </div>
+          <div className={styles.resultFeatureMedia}>
+            <video
+              className={styles.carpetDemo}
+              aria-label="How a SoftNest sofa cleaning appointment goes"
+              width={540}
+              height={960}
+              poster="/videos/sofa-cleaning-what-to-expect.jpg"
+              controls
+              playsInline
+              preload="none"
+            >
+              <source src="/videos/sofa-cleaning-what-to-expect.mp4" type="video/mp4" />
+              <a href="/videos/sofa-cleaning-what-to-expect.mp4">Open the sofa cleaning video</a>
             </video>
           </div>
         </section>
