@@ -74,7 +74,8 @@ export default function ServiceDetailPanel({
           <p>{service.heroDescription}</p>
           <div className={styles.heroActions}>
             <Link className={styles.heroPrimary} href={`/quote/?service=${encodeURIComponent(service.slug)}`}>Get a free quote</Link>
-            <a className={styles.heroSecondary} href={siteConfig.phoneHref}>Call {siteConfig.displayPhone}</a>
+            <a className={styles.heroSecondary} href={siteConfig.smsHref}>Text us</a>
+            <a className={styles.heroSecondary} href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </div>
           <p className={styles.heroTrust}>Free written quote, tax included. Rated {siteConfig.reviewScore} on Google.</p>
         </div>

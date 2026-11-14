@@ -19,6 +19,15 @@ export default function AnalyticsEvents({ citySlugs }: { citySlugs: string[] }) 
         return;
       }
 
+      if (rawHref.startsWith("sms:") || rawHref.startsWith("https://wa.me/")) {
+        trackEvent("click_to_message", {
+          event_category: "contact",
+          event_label: rawHref.startsWith("sms:") ? "sms" : "whatsapp",
+          ...(sourceCity ? { source_city: sourceCity } : {}),
+        });
+        return;
+      }
+
       let url: URL;
       try {
         url = new URL(link.href, window.location.href);

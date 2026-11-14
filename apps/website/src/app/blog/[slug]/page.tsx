@@ -75,7 +75,8 @@ export default async function BlogArticlePage({ params }: Props) {
   const quoteActions = (
     <div className={styles.quoteActions}>
       <Link className={styles.quotePrimary} href={quoteHref}>Get a free quote</Link>
-      <a className={styles.quoteSecondary} href={siteConfig.phoneHref}>Call {siteConfig.displayPhone}</a>
+      <a className={styles.quoteSecondary} href={siteConfig.smsHref}>Text us</a>
+      <a className={styles.quoteSecondary} href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
   );
 
