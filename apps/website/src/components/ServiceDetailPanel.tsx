@@ -49,7 +49,7 @@ export default function ServiceDetailPanel({
     (item.services as string[]).includes(service.slug),
   );
   const serviceReviews = testimonials.filter((item) =>
-    item.publicationStatus === "approved" && !ownerReviewers.has(item.name) && item.text.length >= 100 && !/$d/.test(item.text) &&
+    item.publicationStatus === "approved" && !ownerReviewers.has(item.name) && item.text.length >= 100 && !/\$\d/.test(item.text) &&
     (item.services as string[]).includes(service.slug),
   );
   const recentWork = getWorkProjects({ service: service.slug })

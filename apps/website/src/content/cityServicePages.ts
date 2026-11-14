@@ -22,7 +22,11 @@ export function getCityServicePage(city: string, slug: string) {
   }
   const title = `${profile.title} in ${location.name}`;
   const path = `/location/${city}/${slug}/`;
-  const firstSentence = copy.introduction.split(/(?<=[.!?])\s/)[0];
+  const isHamiltonCarpet = city === "hamilton" && slug === "carpet-area-rug-cleaning";
+  const introduction = isHamiltonCarpet
+    ? "We clean fitted carpet in Hamilton bedrooms, basements and hallways, and assess area rugs for in-home cleaning. We check the fibres, backing and condition before choosing a cleaning method. Include stairs and landings in your request if you want them cleaned as well."
+    : copy.introduction;
+  const firstSentence = introduction.split(/(?<=[.!?])\s/)[0];
   const description = firstSentence.length <= 105
     ? `${firstSentence} Get a free quote from SoftNest. Prices include tax.`
     : firstSentence;
@@ -30,9 +34,11 @@ export function getCityServicePage(city: string, slug: string) {
     location, service, profile, title, path,
     metaTitle: `${profile.title} ${location.name} | SoftNest`,
     description,
-    introduction: copy.introduction,
+    introduction,
     included: service.included.map(customerServiceText),
-    pricing: "We provide a written quote for your items and the treatment required, with tax included. Parking and any furniture movement are confirmed with you. Payment is collected after the service.",
+    pricing: isHamiltonCarpet
+      ? "Your quote depends on the size of the carpeted areas or rugs, their condition and the treatment needed. List stairs and landings separately. We confirm a written total with tax included before booking and collect payment after the service."
+      : "We provide a written quote for your items and the treatment required, with tax included. Parking and any furniture movement are confirmed with you. Payment is collected after the service.",
     localDetail: copy.bookingNote,
     planning: copy.visit,
     reading: serviceReading[slug],

@@ -20,6 +20,10 @@ export default function CityPageSections({ location, copy }: { location: Locatio
   const nearbyLocations = location.nearbyLocations.map(getLocation).filter((item) => item?.indexInSearch);
   const additionalServices = ["sectional-furniture-cleaning", "mattress-cleaning", "pet-stain-odour-removal"]
     .map(getService).filter((service) => service !== undefined);
+  const prioritizeCarpet = location.slug === "brampton" || location.slug === "hamilton";
+  const serviceCards = prioritizeCarpet
+    ? copy.services.toSorted((a, b) => Number(b.title === "Carpets") - Number(a.title === "Carpets"))
+    : copy.services;
   return (
     <>
       <section className={styles.introduction} aria-labelledby="city-approach-heading">
@@ -34,8 +38,10 @@ export default function CityPageSections({ location, copy }: { location: Locatio
       <LocalWorkEvidence city={location.slug} cityName={location.name} showPreview />
 
       <section className={styles.services} id="services" aria-label="What we clean">
-        {copy.services.map((item) => {
+        {serviceCards.map((item) => {
           const service = getService(item.slug);
+          const servicePage = getCityServicePage(location.slug, item.slug);
+          const featuredCarpet = prioritizeCarpet && item.title === "Carpets";
           return (
             <article className={styles.service} key={item.title}>
               {service ? (
@@ -49,13 +55,16 @@ export default function CityPageSections({ location, copy }: { location: Locatio
                 </div>
               ) : null}
               <div className={styles.serviceCopy}>
-                <h2>{item.title}</h2>
+                <h2>{featuredCarpet ? `Carpet & Rug Cleaning in ${location.name}` : item.title}</h2>
                 <p>{item.description}</p>
                 {service ? (
-                  <Link prefetch={false} className={styles.serviceLink} href={getCityServicePage(location.slug, service.slug)?.path ?? `/services/${service.slug}/`}>
-                    {item.title === "Area rugs" ? "Explore carpet and area rug cleaning" : `Explore ${service.name.toLowerCase()}`}
+                  <Link prefetch={false} className={styles.serviceLink} href={servicePage?.path ?? `/services/${service.slug}/`}>
+                    {featuredCarpet ? `See carpet cleaning details for ${location.name}` : item.title === "Area rugs" ? "Explore carpet and area rug cleaning" : `Explore ${service.name.toLowerCase()}`}
                     <span aria-hidden="true"> →</span>
                   </Link>
+                ) : null}
+                {featuredCarpet && servicePage ? (
+                  <HeroActionButtons primaryTone="gold" showReviews={false} quoteHref={servicePage.quoteHref} />
                 ) : null}
               </div>
             </article>
