@@ -37,7 +37,7 @@ export default function HomeSections() {
     <div className="home-result-videos">
       {oakvilleVideo?.type === "video" ? <article>
         <h3>Cream Sofa &amp; Loveseat Cleaning · Oakville</h3>
-        <WorkVideo item={oakvilleVideo} showTitle={false} />
+        <WorkVideo item={{ ...oakvilleVideo, poster: "/videos/oakville-sofa-cover.jpg" }} showTitle={false} />
       </article> : null}
       <article>
         <h3>Carpet Cleaning</h3>
