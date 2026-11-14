@@ -714,7 +714,7 @@
 
 .heroActions { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0 12px; }
 .heroPrimary, .heroSecondary { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 24px; border-radius:999px; font-weight:700; text-decoration:none; }
-.heroPrimary { background:var(--brand-green); color:#fff; }
+.heroActions .heroPrimary { background:var(--brand-green); color:#fff; }
 .heroSecondary { border:2px solid var(--brand-green); color:var(--brand-green); }
 .heroTrust { margin:0; color:#485c51; font-size:14px; }
 .reviewsSection { margin-bottom:56px; }

@@ -21,7 +21,7 @@ test("hero descriptions use the same responsive typography across page types", a
       ["/location/mississauga/", ".location-page-hero__description"],
       ["/location/toronto/", ".location-page-hero__description"],
       ["/services/", ".locations-hero__description"],
-      ["/services/sofa-cleaning/", '[class*="heroCopy"] > p:last-child'],
+      ["/services/sofa-cleaning/", '[class*="heroCopy"] > p:first-of-type'],
     ] as const) {
       await page.goto(path);
       const description = page.locator(selector).first();
