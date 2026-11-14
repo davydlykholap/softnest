@@ -7,6 +7,7 @@ import { getTestimonials } from "@/content/pages";
 import testimonials from "@/content/generated/testimonials.json";
 import { getWorkProjects } from "@/content/work";
 import { workProjectHref } from "@softnest/content/work-urls";
+import ServiceVideoSpotlight from "@/components/ServiceVideoSpotlight";
 import { siteConfig } from "@/lib/site";
 import styles from "@/app/services/service-page.module.css";
 
@@ -164,6 +165,8 @@ export default function ServiceDetailPanel({
           </div>
         </section>
       ) : null}
+
+      <ServiceVideoSpotlight service={service.slug} serviceName={service.name} />
 
       {recentWork.length > 0 ? (
         <section className={`${styles.serviceSection} ${styles.recentWork}`} aria-labelledby="recent-work-heading">
