@@ -67,6 +67,14 @@ export default async function BlogArticlePage({ params }: Props) {
       ?.map(getService)
       .filter((service) => service !== undefined) || [];
 
+  const quoteHref = related[0] ? `/quote/?service=${encodeURIComponent(related[0].slug)}` : "/quote/";
+  const quoteActions = (
+    <div className={styles.quoteActions}>
+      <Link className={styles.quotePrimary} href={quoteHref}>Get a free quote</Link>
+      <a className={styles.quoteSecondary} href={siteConfig.phoneHref}>Call {siteConfig.displayPhone}</a>
+    </div>
+  );
+
   return (
     <>
       <div className="new-hero-root">
@@ -86,6 +94,10 @@ export default async function BlogArticlePage({ params }: Props) {
             <p className={styles.meta}>{post.categories.join(" · ")}</p>
           ) : null}
           <p className={styles.intro}>{post.excerpt}</p>
+          <aside className={styles.quoteStrip} aria-label="Get a quote">
+            <p>Need help with this now? Free written quote, tax included.</p>
+            {quoteActions}
+          </aside>
           {cover && post.showCover !== false ? (
             <figure className={styles.coverFigure}>
             <Image
@@ -102,6 +114,11 @@ export default async function BlogArticlePage({ params }: Props) {
           <div className={styles.body}>
             <ArticleBody body={post.body} />
           </div>
+          <aside className={styles.quoteBox} aria-labelledby="article-quote-heading">
+            <h2 id="article-quote-heading">Want it done properly?</h2>
+            <p>Tell us what needs cleaning and what you have already tried. We confirm the work and a written price, with tax included, before we start.</p>
+            {quoteActions}
+          </aside>
           {related.length ? (
             <nav
               className={styles.related}

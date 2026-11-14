@@ -143,3 +143,14 @@
 
 /* Compact journal index: reuses the homepage service-card rhythm while
    keeping article imagery and a denser editorial grid. */
+
+.quoteStrip { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; margin:20px 0 28px; padding:16px 20px; border:1px solid #dce7e0; border-radius:16px; background:#f6f9f7; }
+.quoteStrip p { margin:0; color:#0a4632; font-weight:600; }
+.quoteBox { margin:40px 0; padding:28px; border-radius:22px; background:#f1f6f3; border:1px solid #dce7e0; }
+.quoteBox h2 { margin:0 0 10px; color:#073e2e; }
+.quoteBox p { margin:0 0 16px; }
+.quoteActions { display:flex; flex-wrap:wrap; gap:12px; }
+.quotePrimary, .quoteSecondary { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px; border-radius:999px; font-weight:700; text-decoration:none; }
+.quotePrimary { background:var(--brand-green, #174b3a); color:#fff; }
+.quoteSecondary { border:2px solid var(--brand-green, #174b3a); color:var(--brand-green, #174b3a); }
+@media (max-width:640px) { .quotePrimary, .quoteSecondary { width:100%; } }
