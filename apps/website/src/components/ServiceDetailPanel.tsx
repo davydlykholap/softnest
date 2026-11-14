@@ -7,6 +7,7 @@ import { getTestimonials } from "@/content/pages";
 import testimonials from "@/content/generated/testimonials.json";
 import { getWorkProjects } from "@/content/work";
 import { workProjectHref } from "@softnest/content/work-urls";
+import WorkVideo from "@/components/WorkVideo";
 import { siteConfig } from "@/lib/site";
 import styles from "@/app/services/service-page.module.css";
 
@@ -21,6 +22,12 @@ const inspectionNotes: Record<string, string> = {
   "armchair-cleaning": "We inspect the fabric, seams, cushions and any reclining mechanism first. Special care is taken around moving parts and the high-contact areas that usually hold the most body oils and soil.",
   "stairs-hallways-cleaning": "We review the number of steps, risers, landings and connected hallways, paying particular attention to worn edges, flattened pile and transitions into other flooring.",
   "pet-stain-odour-removal": "A small visible mark can hide a deeper pet accident. We discuss how far it may have soaked into fabric, foam, carpet backing or underlay before explaining what treatment can reasonably reach.",
+};
+
+// Services whose page shows a real appointment video instead of a before-and-after photo.
+const featuredVideoProjects: Record<string, string> = {
+  "dining-chair-cleaning": "tufted-dining-chair-cleaning-residue-mississauga",
+  "mattress-cleaning": "mattress-stain-removal-brampton",
 };
 
 // Reviews written by the owner's own accounts should not be featured as customer proof.
@@ -47,6 +54,10 @@ export default function ServiceDetailPanel({
   const project = getWorkProjects({ service: service.slug })[0];
   const carpetDemo = service.slug === "carpet-area-rug-cleaning";
   const sofaDemo = service.slug === "sofa-cleaning";
+  const featuredVideoProject = featuredVideoProjects[service.slug]
+    ? getWorkProjects({ service: service.slug }).find((item) => item.slug === featuredVideoProjects[service.slug])
+    : undefined;
+  const featuredVideo = featuredVideoProject?.media[0]?.type === "video" ? featuredVideoProject.media[0] : undefined;
   const review = getTestimonials().find((item) =>
     (item.services as string[]).includes(service.slug),
   );
@@ -174,6 +185,23 @@ export default function ServiceDetailPanel({
               <source src="/videos/sofa-cleaning-what-to-expect.mp4" type="video/mp4" />
               <a href="/videos/sofa-cleaning-what-to-expect.mp4">Open the sofa cleaning video</a>
             </video>
+          </div>
+        </section>
+      ) : featuredVideoProject && featuredVideo?.type === "video" ? (
+        <section className={styles.resultFeature} aria-labelledby="proof-heading">
+          <div className={styles.resultFeatureCopy}>
+            <span className={styles.resultFeatureRule} aria-hidden="true" />
+            <SectionHeading id="proof-heading">
+              <span>See it</span>
+              <span>in action.</span>
+            </SectionHeading>
+            <p className={styles.resultFeatureDescription}>
+              A real SoftNest appointment in {featuredVideoProject.location}. We clean with an extraction tool and show what comes out of the fabric.
+            </p>
+            <p><Link href={workProjectHref(featuredVideoProject)}>See the full project</Link></p>
+          </div>
+          <div className={styles.resultFeatureMedia} style={{ maxWidth: 420 }}>
+            <WorkVideo item={featuredVideo} showTitle={false} />
           </div>
         </section>
       ) : project ? (
