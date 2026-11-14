@@ -11,7 +11,9 @@ import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import HomeVideoShowcase from "@/components/HomeVideoShowcase";
 
-const homeServices = homeContent.featuredServices.map(getService).filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
+// Sofas and sectionals share one card; the sectional page stays live and is linked from the sofa page.
+const homeServiceSlugs = homeContent.featuredServices.map((slug) => (slug === "sectional-furniture-cleaning" ? "stairs-hallways-cleaning" : slug));
+const homeServices = Array.from(new Set(homeServiceSlugs)).map(getService).filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
 
 const oakvilleProject = getWorkProjects({ city: "oakville" })
   .find((project) => project.slug === "cream-sofa-and-loveseat-cleaning-oakville");
@@ -67,7 +69,7 @@ export default function HomeSections() {
             href={`/services/${service.slug}/`}
             image={service.image}
             imageAlt={service.imageAlt}
-            title={service.shortName}
+            title={service.slug === "sofa-cleaning" ? "Sofas & Sectionals" : service.shortName}
             ariaLabel={`Learn about ${service.name.toLowerCase()}`}
             className="locations-city-card--location home-service-card"
             key={service.slug}

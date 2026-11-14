@@ -110,8 +110,9 @@ export default function ServiceDetailPanel({
           <NoteHeading>When this service may be a good fit</NoteHeading>
           <p>
             Ask us about {naturalList(service.concerns)}. You can describe the
-            problem by phone or text. Photos are welcome but optional.
+            problem by text or message. Photos are welcome but optional.
           </p>
+          {sofaDemo ? <p>Have a sectional or a large corner sofa? See our <Link href="/services/sectional-furniture-cleaning/">sectional cleaning</Link> page.</p> : null}
         </div>
       </section>
 
