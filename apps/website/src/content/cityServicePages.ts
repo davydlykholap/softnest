@@ -6,6 +6,15 @@ import { customerServiceText } from "./cityServiceCopy";
 import { cityServiceEditorial } from "./cityServiceEditorial";
 import { serviceReading } from "./serviceReading";
 
+// Search wording for the services people look for most; the on-page title stays as reviewed.
+const searchTitles: Record<string, string> = {
+  "carpet-area-rug-cleaning": "Carpet Cleaning",
+  "sofa-cleaning": "Couch & Sofa Cleaning",
+};
+const searchSuffixes: Record<string, string> = {
+  "carpet-area-rug-cleaning": " | Rugs & Stairs",
+};
+
 export function getCityServicePage(city: string, slug: string) {
   const location = getLocation(city);
   const service = getService(slug);
@@ -32,7 +41,9 @@ export function getCityServicePage(city: string, slug: string) {
     : firstSentence;
   return {
     location, service, profile, title, path,
-    metaTitle: `${profile.title} ${location.name} | SoftNest`,
+    metaTitle: searchTitles[slug]
+      ? `${searchTitles[slug]} ${location.name}, ON${searchSuffixes[slug] ?? ""} | SoftNest`
+      : `${profile.title} ${location.name} | SoftNest`,
     description,
     introduction,
     included: service.included.map(customerServiceText),
