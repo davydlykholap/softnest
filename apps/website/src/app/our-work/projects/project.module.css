@@ -35,3 +35,10 @@
 .services a { color:var(--brand-green); text-underline-offset:4px; }
 .shell :is(a,button,summary,input):focus-visible { outline:3px solid var(--brand-green); outline-offset:5px; }
 @media(max-width:760px) { .page:global(.location-page-page) { padding-top:var(--mobile-hero-title-top); } .intro { margin-top:22px; } .story p { font-size:16px; } .media { grid-template-columns:minmax(0,1fr); gap:20px; } .media [data-project-media="photo"] .photoButton img { aspect-ratio:auto; background:transparent; } }
+.extra { max-width:750px; margin:36px auto; }
+.extra h2 { font-family:var(--location-page-serif); font-size:30px; line-height:1.2; font-weight:400; margin:0 0 14px; color:var(--brand-green); }
+.extra details { padding:12px 0; border-bottom:1px solid #d9ddd5; color:var(--brand-green); }
+.extra summary { cursor:pointer; font-size:18px; }
+.extra details p { font-size:17px; line-height:1.65; color:var(--location-page-muted); }
+.extra ul { margin:0; padding-left:20px; font-size:18px; line-height:1.9; }
+.extra a { color:var(--brand-green); text-underline-offset:4px; }

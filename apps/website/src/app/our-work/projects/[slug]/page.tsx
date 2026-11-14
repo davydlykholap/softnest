@@ -15,6 +15,7 @@ import { pageMetadata } from "@/seo/metadata";
 import { jsonLd } from "@/seo/structuredData";
 import { portCreditWatchPath, portCreditWatchVideo, projectBreadcrumbs, projectDescription, projectSchema, projectTitle } from "@/seo/work";
 import { cityServicePages } from "@/content/cityServicePages";
+import { getRelatedPosts } from "@/content/posts";
 import styles from "../project.module.css";
 import "@/app/styles/location-page.css";
 
@@ -42,6 +43,11 @@ export default async function WorkProjectPage({params}:Props) {
     const page = cityServicePages.find(item => item.location.slug === city && item.service.slug === slug);
     return page ? [{href:page.path,label:page.title}] : [];
   });
+  const cityPage = project.services.map(slug => cityServicePages.find(item => item.location.slug === city && item.service.slug === slug)).find(Boolean);
+  const faqs = (cityPage?.faqs ?? []).slice(1);
+  const guides = [...new Map(project.services.flatMap(slug => getRelatedPosts(slug)).map(post => [post.slug, post])).values()].slice(0, 3);
+  const sameCity = getWorkProjects({city}).filter(item => item.id !== project.id);
+  const moreWork = [...sameCity.filter(item => item.services.some(slug => project.services.includes(slug))), ...sameCity].filter((item, index, all) => all.indexOf(item) === index).slice(0, 3);
   return <>
     <div className="new-hero-root location-page-header"><SiteHeader current="work" quoteHref={quoteHref} /></div>
     <main id="main-content" className={`location-page-page ${styles.page}`}>
@@ -67,6 +73,18 @@ export default async function WorkProjectPage({params}:Props) {
             {item.type === "photo" ? <WorkPhoto image={item.image} alt={item.alt} /> : item.type === "comparison" ? <ServiceResultCompare image={item.before} before={item.before} after={item.after} label={item.alt} variant="paired" /> : <WorkVideo item={item} />}
           </div>)}
         </div>
+        {faqs.length ? <section className={styles.extra} aria-labelledby="project-faq">
+          <h2 id="project-faq">{project.service} in {project.location}: common questions</h2>
+          {faqs.map(item => <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>)}
+        </section> : null}
+        {guides.length ? <section className={styles.extra} aria-labelledby="project-guides">
+          <h2 id="project-guides">Helpful guides</h2>
+          <ul>{guides.map(post => <li key={post.slug}><Link href={`/blog/${post.slug}/`}>{post.title}</Link></li>)}</ul>
+        </section> : null}
+        {moreWork.length ? <section className={styles.extra} aria-labelledby="project-more-work">
+          <h2 id="project-more-work">More cleaning work in {project.location}</h2>
+          <ul>{moreWork.map(item => <li key={item.id}><Link href={workProjectHref(item)}>{item.title}</Link></li>)}</ul>
+        </section> : null}
         <div className={styles.services}>
           {serviceLinks.map(link => <Link key={link.href} href={link.href}>{link.label} →</Link>)}
           {services.filter(service => project.services.includes(service.slug)).map(service => <Link key={service.slug} href={`/services/${service.slug}/`}>{service.name} →</Link>)}
