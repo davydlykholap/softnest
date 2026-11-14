@@ -11,9 +11,23 @@ import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import HomeVideoShowcase from "@/components/HomeVideoShowcase";
 
-// Sofas and sectionals share one card; the sectional page stays live and is linked from the sofa page.
-const homeServiceSlugs = homeContent.featuredServices.map((slug) => (slug === "sectional-furniture-cleaning" ? "stairs-hallways-cleaning" : slug));
-const homeServices = Array.from(new Set(homeServiceSlugs)).map(getService).filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
+// The home page shows the four main directions; related services are linked as chips below the cards.
+const homeDirections = [
+  { slug: "sofa-cleaning", title: "Sofas & Upholstery", featured: true },
+  { slug: "carpet-area-rug-cleaning", title: "Carpets, Rugs & Stairs", featured: false },
+  { slug: "mattress-cleaning", title: "Mattresses", featured: false },
+  { slug: "dining-chair-cleaning", title: "Chairs & Armchairs", featured: false },
+].flatMap((item) => {
+  const service = getService(item.slug);
+  return service ? [{ ...item, service }] : [];
+});
+const homeRelatedServices = [
+  { href: "/services/sectional-furniture-cleaning/", label: "Sectionals" },
+  { href: "/services/armchair-cleaning/", label: "Recliners" },
+  { href: "/services/leather-upholstery-cleaning/", label: "Leather" },
+  { href: "/services/stairs-hallways-cleaning/", label: "Stairs & hallways" },
+  { href: "/services/pet-stain-odour-removal/", label: "Pet stains & odours" },
+];
 
 const oakvilleProject = getWorkProjects({ city: "oakville" })
   .find((project) => project.slug === "cream-sofa-and-loveseat-cleaning-oakville");
@@ -63,19 +77,27 @@ export default function HomeSections() {
         <h2 className="home-section-title">{"" + pageText(homeContent.copy, "sections-37") + ""}</h2>
         <p className="home-services-intro">{"" + pageText(homeContent.copy, "sections-38") + ""}</p>
       </div>
-      <div className="home-services-grid">
-        {homeServices.map((service) => (
+      <div className="home-services-grid home-services-grid--directions">
+        {homeDirections.map(({ service, title, featured }) => (
           <DirectoryCard
             href={`/services/${service.slug}/`}
             image={service.image}
             imageAlt={service.imageAlt}
-            title={service.slug === "sofa-cleaning" ? "Sofas & Sectionals" : service.shortName}
+            title={title}
             ariaLabel={`Learn about ${service.name.toLowerCase()}`}
-            className="locations-city-card--location home-service-card"
+            className={`locations-city-card--location home-service-card${featured ? " home-service-card--featured" : ""}`}
             key={service.slug}
           />
         ))}
       </div>
+      <nav className="home-related-services" aria-label="More cleaning services">
+        <span>Also cleaned:</span>
+        <ul>
+          {homeRelatedServices.map((item) => (
+            <li key={item.href}><Link href={item.href}>{item.label}</Link></li>
+          ))}
+        </ul>
+      </nav>
     </div>
   </section>
   <HomeVideoShowcase />

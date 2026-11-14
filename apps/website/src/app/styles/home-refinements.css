@@ -1450,3 +1450,21 @@
 @media (max-width: 640px) {
   .home-result-videos { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Home services: sofas featured on top, three more directions below, related services as chips. */
+.home-services-grid.home-services-grid--directions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.home-services-grid--directions .home-service-card { aspect-ratio: 1.25; }
+.home-services-grid--directions .home-service-card--featured { grid-column: 1 / -1; aspect-ratio: 2.7; }
+@media (max-width: 1023px) {
+  .home-services-grid--directions .home-service-card--featured { aspect-ratio: 2.1; }
+}
+@media (max-width: 639px) {
+  .home-services-grid.home-services-grid--directions { grid-template-columns: 1fr; }
+  .home-services-grid--directions .home-service-card,
+  .home-services-grid--directions .home-service-card--featured { aspect-ratio: 1.4; }
+}
+.home-related-services { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 26px; }
+.home-related-services span { color: var(--home-muted); font-size: 15px; font-weight: 600; }
+.home-related-services ul { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.home-related-services a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 18px; border: 1px solid rgba(7,84,59,.22); border-radius: 999px; color: var(--home-forest); font-size: 15px; font-weight: 600; text-decoration: none; background: #fff; transition: background .2s ease, border-color .2s ease; }
+.home-related-services a:hover, .home-related-services a:focus-visible { background: #eef5f1; border-color: rgba(7,84,59,.45); }
