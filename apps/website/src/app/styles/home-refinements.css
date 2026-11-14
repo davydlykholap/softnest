@@ -1423,3 +1423,30 @@
 /* A single documented appointment should occupy a balanced, readable gallery card. */
 .gallery-section-v2 .gallery-grid-v2:has(> .gallery-result:only-child) { justify-content: center; }
 .gallery-section-v2 .gallery-result:only-child { flex: 0 1 min(100%, 480px); }
+
+.home-result-videos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 5vw, 56px);
+  width: min(100% - 40px, 800px);
+  margin-inline: auto;
+}
+
+.home-result-videos h3 {
+  margin: 0 0 12px;
+  color: var(--brand-green);
+}
+
+.home-result-videos video {
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+}
+
+.home-result-videos-link {
+  margin: 20px 0 0;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .home-result-videos { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1,17 +1,22 @@
 import { siteConfig } from "@/lib/site";
 import { pageText } from "@/content/pages";
-import { homeContent, getHomeGalleryResults } from "@/content/pages";
+import { homeContent } from "@/content/pages";
+import { getWorkProjects } from "@/content/work";
+import Link from "next/link";
 import { homeFaqs } from "@/content/homeFaqs";
 import { getService } from "@/content/services";
 import { DirectoryCard, DirectoryFinalCta } from "@/components/DirectoryHubSections";
-import HomeResultsCarousel from "@/components/HomeResultsCarousel";
+import WorkVideo from "@/components/WorkVideo";
 import HomeFaqExplorer from "@/components/HomeFaqExplorer";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import HomeVideoShowcase from "@/components/HomeVideoShowcase";
 
 const homeServices = homeContent.featuredServices.map(getService).filter((service): service is NonNullable<ReturnType<typeof getService>> => Boolean(service));
 
-const galleryResults = getHomeGalleryResults();
+const oakvilleProject = getWorkProjects({ city: "oakville" })
+  .find((project) => project.slug === "cream-sofa-and-loveseat-cleaning-oakville");
+const oakvilleVideo = oakvilleProject?.media
+  .find((item) => item.type === "video" && item.id === "e645c135d73a");
 
 export default function HomeSections() {
   return (
@@ -29,9 +34,24 @@ export default function HomeSections() {
         </div>
       </div>
     </div>
-    <div className="gallery-stage">
-      <HomeResultsCarousel results={galleryResults} />
+    <div className="home-result-videos">
+      {oakvilleVideo?.type === "video" ? <article>
+        <h3>Cream Sofa &amp; Loveseat Cleaning · Oakville</h3>
+        <WorkVideo item={oakvilleVideo} showTitle={false} />
+      </article> : null}
+      <article>
+        <h3>Carpet Cleaning</h3>
+        <WorkVideo item={{
+          id: "carpet-cleaning-demo",
+          type: "video",
+          title: "SoftNest carpet extraction demonstration",
+          video: "/videos/carpet-cleaning-demo.mp4",
+          poster: "/videos/carpet-cleaning-demo.jpg",
+          transcript: "A technician passes a carpet extraction wand across the carpet, leaving a lighter strip alongside the area ahead of the wand.",
+        }} showTitle={false} />
+      </article>
     </div>
+    <p className="home-result-videos-link"><Link href="/our-work/">View more results →</Link></p>
   </section>
   {/* SECTION 2: SERVICES */}
   <section id="services" className="home-services-section">
