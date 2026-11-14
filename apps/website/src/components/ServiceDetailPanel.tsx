@@ -228,6 +228,37 @@ export default function ServiceDetailPanel({
         </section>
       ) : null}
 
+      {sofaDemo ? (
+        <section className={styles.resultFeature} aria-labelledby="white-sofa-heading">
+          <div className={styles.resultFeatureCopy}>
+            <span className={styles.resultFeatureRule} aria-hidden="true" />
+            <SectionHeading id="white-sofa-heading">
+              <span>A sofa everyone</span>
+              <span>thought was white.</span>
+            </SectionHeading>
+            <p className={styles.resultFeatureDescription}>
+              Light fabric hides how much dirt it holds. Watch the extraction tool
+              pass over the cushions and bring the fabric back to its real colour.
+            </p>
+            <p><Link href="/our-work/">See more cleaning results</Link></p>
+          </div>
+          <div className={styles.resultFeatureMedia}>
+            <video
+              className={styles.carpetDemo}
+              aria-label="A light sofa being cleaned with an extraction tool"
+              width={540}
+              height={960}
+              poster="/videos/sofa-looked-white.jpg"
+              controls
+              playsInline
+              preload="none"
+            >
+              <source src="/videos/sofa-looked-white.mp4" type="video/mp4" />
+              <a href="/videos/sofa-looked-white.mp4">Open the sofa cleaning video</a>
+            </video>
+          </div>
+        </section>
+      ) : null}
 
       {recentWork.length > 0 ? (
         <section className={`${styles.serviceSection} ${styles.recentWork}`} aria-labelledby="recent-work-heading">
