@@ -7,7 +7,6 @@ import { getTestimonials } from "@/content/pages";
 import testimonials from "@/content/generated/testimonials.json";
 import { getWorkProjects } from "@/content/work";
 import { workProjectHref } from "@softnest/content/work-urls";
-import ServiceVideoSpotlight from "@/components/ServiceVideoSpotlight";
 import { siteConfig } from "@/lib/site";
 import styles from "@/app/services/service-page.module.css";
 
@@ -46,6 +45,7 @@ export default function ServiceDetailPanel({
   headingLevel?: 1 | 2;
 }) {
   const project = getWorkProjects({ service: service.slug })[0];
+  const carpetDemo = service.slug === "carpet-area-rug-cleaning";
   const review = getTestimonials().find((item) =>
     (item.services as string[]).includes(service.slug),
   );
@@ -113,7 +113,37 @@ export default function ServiceDetailPanel({
         </div>
       </section>
 
-      {project ? (
+      {carpetDemo ? (
+        <section className={styles.resultFeature} aria-labelledby="proof-heading">
+          <div className={styles.resultFeatureCopy}>
+            <span className={styles.resultFeatureRule} aria-hidden="true" />
+            <SectionHeading id="proof-heading">
+              <span>See the</span>
+              <span>Difference.</span>
+            </SectionHeading>
+            <p className={styles.resultFeatureDescription}>
+              Watch the extractor leave a visibly cleaner strip beside the surrounding carpet.
+              We choose the cleaning solution based on the carpet fibres and condition.
+            </p>
+            <p><Link href="/our-work/">See more cleaning results</Link></p>
+          </div>
+          <div className={styles.resultFeatureMedia}>
+            <video
+              className={styles.carpetDemo}
+              aria-label="SoftNest carpet extraction demonstration"
+              width={540}
+              height={960}
+              poster="/videos/carpet-cleaning-demo.jpg"
+              controls
+              playsInline
+              preload="none"
+            >
+              <source src="/videos/carpet-cleaning-demo.mp4" type="video/mp4" />
+              <a href="/videos/carpet-cleaning-demo.mp4">Open the carpet cleaning video</a>
+            </video>
+          </div>
+        </section>
+      ) : project ? (
         <section className={styles.resultFeature} aria-labelledby="proof-heading">
           <div className={styles.resultFeatureCopy}>
             <span className={styles.resultFeatureRule} aria-hidden="true" />
@@ -166,7 +196,6 @@ export default function ServiceDetailPanel({
         </section>
       ) : null}
 
-      <ServiceVideoSpotlight service={service.slug} serviceName={service.name} />
 
       {recentWork.length > 0 ? (
         <section className={`${styles.serviceSection} ${styles.recentWork}`} aria-labelledby="recent-work-heading">

@@ -313,6 +313,15 @@
   padding-right: clamp(8px, 2.6vw, 34px);
 }
 
+.carpetDemo {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  margin-inline: auto;
+  border-radius: 24px;
+  background: #15221c;
+}
+
 .resultCompare {
   position: relative;
   aspect-ratio: 1.36;
