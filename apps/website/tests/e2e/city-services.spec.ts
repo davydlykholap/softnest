@@ -128,7 +128,7 @@ for (const width of [390, 1280]) {
     await page.goto("/location/oakville/");
     const referenceStyle = await buttonStyle();
     await page.goto("/location/brampton/carpet-area-rug-cleaning/");
-    await expect(page).toHaveTitle("Carpet & Area Rug Cleaning Brampton | SoftNest");
+    await expect(page).toHaveTitle("Carpet Cleaning Brampton, ON | Rugs & Stairs | SoftNest");
     await expect(page.locator("h1")).toContainText("Brampton");
     expect(await buttonStyle()).toEqual(referenceStyle);
     await expect(page.getByRole("navigation", { name: "Breadcrumb", exact: true })).toHaveCount(0);

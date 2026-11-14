@@ -47,7 +47,7 @@ export default function QuoteThankYouPage() {
                   Facebook
                 </a>.
               </p>
-              <a href={siteConfig.phoneHref}>Need us sooner? Call {siteConfig.displayPhone}</a>
+              <a href={siteConfig.smsHref}>Need us sooner? Text us</a>
             </div>
           </div>
         </section>

@@ -156,8 +156,8 @@ export function DirectorySupportSection({
   title,
   description,
   primaryAction,
-  phoneLabel = siteConfig.displayPhone,
-  phoneHref = siteConfig.phoneHref,
+  phoneLabel = "Text us",
+  phoneHref = siteConfig.smsHref,
   card,
   className = "",
 }: DirectorySupportSectionProps) {
@@ -178,7 +178,7 @@ export function DirectorySupportSection({
             {!primaryAction.href.startsWith("/quote") ? <span aria-hidden="true">→</span> : null}
           </Link>
           <a className="locations-phone-pill" href={phoneHref}>
-            <span aria-hidden="true">☎</span>
+            <span aria-hidden="true">✉</span>
             {phoneLabel}
           </a>
         </div>

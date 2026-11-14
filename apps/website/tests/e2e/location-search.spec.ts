@@ -33,10 +33,10 @@ test("city CTA events and explicit quote prefills keep city context without cust
   // The page defines gtag after hydration, so wait for it before swapping in the test double.
   await page.waitForFunction(() => (window.dataLayer?.length ?? 0) >= 2);
   await page.evaluate(() => { window.gtag = (...args) => { (window.dataLayer ??= []).push(args); }; });
-  await page.locator('a[href^="tel:"]').first().evaluate((element) => element.addEventListener("click", (event) => event.preventDefault()));
-  await page.locator('a[href^="tel:"]').first().click({ force: true });
+  await page.locator('a[href^="sms:"]').first().evaluate((element) => element.addEventListener("click", (event) => event.preventDefault()));
+  await page.locator('a[href^="sms:"]').first().click({ force: true });
   const callEvents = await page.evaluate(() => window.dataLayer);
-  expect(callEvents).toContainEqual(["event", "click_to_call", { event_category: "contact", event_label: "phone", source_city: "toronto" }]);
+  expect(callEvents).toContainEqual(["event", "click_to_message", { event_category: "contact", event_label: "sms", source_city: "toronto" }]);
   await page.locator(".location-page-hero .hero-action-buttons").getByRole("link", { name: /Get a Quote/ }).click();
   await expect(page).toHaveURL(/\/quote\/\?city=toronto$/);
   expect(await page.evaluate(() => window.dataLayer)).toContainEqual(["event", "quote_click", { source_city: "toronto" }]);

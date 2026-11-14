@@ -14,7 +14,11 @@ test("every article keeps its canonical address, cover disclosure and useful con
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(post.title);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://softnestcare.ca/blog/${post.slug}/`);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", post.seoDescription);
-    if (post.coverImage?.caption) {
+    // Articles that show one of our appointment videos use it in place of the still cover.
+    const hasVideo = await page.locator("article video").count() > 0;
+    if (hasVideo) {
+      await expect(page.locator("article > figure figcaption")).toContainText("A SoftNest appointment in");
+    } else if (post.coverImage?.caption) {
       await expect(page.locator("article > figure figcaption")).toHaveText(post.coverImage.caption);
       await expect(page.locator("article > figure img")).toHaveAttribute("alt", post.coverImage.alt || "");
       await page.locator("article > figure img").scrollIntoViewIfNeeded();

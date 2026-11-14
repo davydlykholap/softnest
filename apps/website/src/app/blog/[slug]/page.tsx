@@ -99,10 +99,10 @@ export default async function BlogArticlePage({ params }: Props) {
             <p className={styles.meta}>{post.categories.join(" · ")}</p>
           ) : null}
           <p className={styles.intro}>{post.excerpt}</p>
-          <aside className={styles.quoteStrip} aria-label="Get a quote">
+          <div className={styles.quoteStrip}>
             <p>Need help with this now? Free written quote, tax included.</p>
             {quoteActions}
-          </aside>
+          </div>
           {articleVideo ? (
             <figure className={styles.videoFigure}>
               <WorkVideo item={articleVideo.video} showTitle={false} />
@@ -126,11 +126,11 @@ export default async function BlogArticlePage({ params }: Props) {
           <div className={styles.body}>
             <ArticleBody body={post.body} />
           </div>
-          <aside className={styles.quoteBox} aria-labelledby="article-quote-heading">
+          <section className={styles.quoteBox} aria-labelledby="article-quote-heading">
             <h2 id="article-quote-heading">Want it done properly?</h2>
             <p>Tell us what needs cleaning and what you have already tried. We confirm the work and a written price, with tax included, before we start.</p>
             {quoteActions}
-          </aside>
+          </section>
           {related.length ? (
             <nav
               className={styles.related}

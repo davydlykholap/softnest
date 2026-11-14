@@ -42,11 +42,13 @@ test("city heroes load portrait images on mobile and keep desktop images intact"
 for (const city of cities) {
   const slug = city.toLowerCase();
   const featuredCarpet = slug === "brampton" || slug === "hamilton";
+  // Cities with most of their search demand for carpets lead their title with it.
+  const carpetLedTitle = ["hamilton", "brampton", "burlington", "mississauga", "oakville"].includes(slug);
   const carpetHeading = `Carpet & Rug Cleaning in ${city}`;
   test(`${city} FAQs display answers matching their structured data`, async ({ page }) => {
     await page.goto(`/location/${slug}/`);
 
-    await expect(page).toHaveTitle(`Upholstery & Carpet Cleaning ${city} | Sofa & Rug | SoftNest`);
+    await expect(page).toHaveTitle(carpetLedTitle ? `Carpet & Upholstery Cleaning ${city}, ON | SoftNest` : `Upholstery & Carpet Cleaning ${city} | Sofa & Rug | SoftNest`);
     await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", new RegExp(city));
     await expect(page.locator(".location-page-care-band, .location-page-services, .location-page-process")).toHaveCount(0);
     await expect(page.locator("#services h2")).toHaveText(featuredCarpet ? [carpetHeading, "Sofas", "Area rugs", "And more"] : ["Sofas", "Carpets", "Area rugs", "And more"]);

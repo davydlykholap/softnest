@@ -40,11 +40,11 @@ export default function CardPage() {
           <ChevronRightIcon className={styles.arrow} />
         </a>
       </nav>
-      <section className={styles.contact} aria-label="Call or text SoftNest">
+      <section className={styles.contact} aria-label="Text SoftNest">
         <PhoneIcon className={styles.phoneIcon} />
         <div>
-          <a className={styles.phone} href={siteConfig.phoneHref}>{siteConfig.displayPhone}</a>
-          <p><a href={siteConfig.phoneHref}>Call</a> or <a href={`sms:${siteConfig.phoneHref.slice(4)}`}>text us</a>. We are happy to help.</p>
+          <a className={styles.phone} href={siteConfig.smsHref}>{siteConfig.displayPhone}</a>
+          <p><a href={siteConfig.smsHref}>text us</a> or <a href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer">message us on WhatsApp</a>. We are happy to help.</p>
         </div>
       </section>
       <footer className={styles.footer}>

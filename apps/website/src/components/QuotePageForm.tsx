@@ -326,7 +326,7 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
       trackQuoteConversion(() => router.push("/quote/thank-you/"), sourceCity);
     } catch {
       setError(
-        "We couldn’t send the form. Please call or text " + siteConfig.displayPhone + ".",
+        "We couldn’t send the form. Please text us at " + siteConfig.displayPhone + " or message us on WhatsApp.",
       );
     } finally {
       window.clearTimeout(timeout);
@@ -344,7 +344,7 @@ function QuoteForm({ cities, initialService = "" }: { cities: QuoteCity[]; initi
           We received your cleaning details. A SoftNest specialist will contact
           you to discuss the right treatment and next steps.
         </p>
-        <a href={siteConfig.phoneHref}>Need us sooner? Call {siteConfig.displayPhone}</a>
+        <a href={siteConfig.smsHref}>Need us sooner? Text us</a>
       </div>
     );
   }
