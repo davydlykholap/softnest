@@ -30,7 +30,7 @@ const upholstery: Row[] = [
   { label: "Sectional, 5 seats", price: "$199 – $219" },
   { label: "Sectional, 6 seats", price: "$219 – $239" },
   { label: "Sectional, 7 seats", price: "$249 – $269" },
-  { label: "Ottoman", price: "$25 – $30" },
+  { label: "Ottoman", price: "$25 – $30", note: "depends on its size" },
   { label: "Decorative pillow", price: "$5" },
 ];
 
@@ -84,15 +84,20 @@ function PriceTable({ caption, rows }: { caption: string; rows: Row[] }) {
 }
 
 const includedItems = [
-  { title: "Deep cleaning and rinsing", text: "Vacuuming, stain pre-treatment, cleaning with extraction, and a thorough rinse." },
-  { title: "Deodorizing and sanitizing", text: "Your furniture ends up fresh as well as clean." },
-  { title: "Both sides of removable cushions", text: "Plus seams and hard-to-reach areas, so nothing is forgotten." },
+  { title: "Fabric inspection and test", text: "Before we start, we look closely at your fabric and its care label and test in a hidden spot. Then we choose the right cleaning solution for your fabric and your stains from the many we bring with us." },
+  { title: "Thorough vacuuming first", text: "We vacuum the whole piece first, including seams and crevices, so dry dust and crumbs are gone before any moisture touches the fabric." },
+  { title: "UV check for hidden stains", text: "On delicate fabrics, and whenever it helps, we check with a UV light. It shows marks and soil that your eyes cannot see, so we can treat them too and your furniture is truly clean, not only clean-looking." },
+  { title: "Deep cleaning and rinsing", text: "Stain pre-treatment, deep cleaning with professional extraction, and a thorough rinse to take out the loosened dirt and the cleaning solution." },
   { title: "Stain removal", text: "In a standard cleaning we remove the vast majority of stains, and it is included in the price." },
-  { title: "Extra attention to dirty areas", text: "Armrests, headrests and other high-contact or delicate areas get a second pass when needed, and sometimes a third. An extra hour is built into our schedule and price in case the job needs it. If it is needed, we take it, because the result matters more to us than keeping to the schedule. If it is not needed, we simply do not use it." },
+  { title: "The whole piece, not only the seats", text: "We clean both sides of removable cushions, and also the sides, the lower parts and, wherever we can reach, the back. We gently move the furniture a little away from the wall to get there. A special narrow tool lets us work along the seams, and we pay special attention to corners, cushion edges and armrests." },
+  { title: "Deodorizing and sanitizing", text: "We treat the source of an odour, not just the surface, so we are not simply covering it with a fragrance. Sanitizing leaves your furniture fresh as well as clean." },
+  { title: "Extra attention to dirty areas", text: "Armrests, headrests and other high-contact or delicate areas get extra care. If an area is especially dirty, we clean it again from the start, the whole cycle, and this is included. Sometimes it needs a third pass, though two are usually enough. The first extra hour is on us: it is built into our schedule and price in case the job needs it. If it is needed, we take it, because the result matters more to us than keeping to the schedule. If it is not needed, we simply do not use it." },
   { title: "Complimentary drying while we work", text: "Our air movers run the whole time we are in your home, as a small gift from us. The parts we clean first are almost dry by the time we finish. We switch them off when we leave, so the last area we clean is still damp. Full drying usually takes 6–8 hours." },
   { title: "Care for your home", text: "We lay waterproof drop cloths on the floor to protect the area where we work. Our equipment, including the extractor, stands on a soft blanket, so your floor does not get scratched. We change into clean shoes before we come in, and we keep an eye on this every time." },
+  { title: "A repeat visit if stains come back", text: "If deep stains reappear within 48 hours, we come back to treat them. It is included, and you do not pay again." },
+  { title: "An honest price, confirmed first", text: "We confirm the work and the final price in writing before we start, tax included, and you pay only after the service." },
 ];
-const includedChips = ["Deep cleaning", "Deodorizing and sanitizing", "Both sides of cushions", "Stain removal", "Free drying while we work", "Floor protection"];
+const includedChips = ["Fabric inspection", "Vacuuming", "UV check for hidden stains", "Deep cleaning", "The whole piece, even the seams", "Dirtiest areas cleaned twice", "Stain removal", "Deodorizing and sanitizing", "Free drying while we work", "Floor protection"];
 
 const faqs = [
   {
@@ -109,19 +114,19 @@ const faqs = [
   },
   {
     q: "Do you give a discount for several items?",
-    a: "Yes. When you add a second item, we give you a discount, and with a third item the discount is even bigger. Tell us everything you would like cleaned, and we will gladly work out the best price for you.",
+    a: "Yes. When you add a second item, we give you a discount, and with a third item the discount is even bigger. The exact discount depends on what you would like cleaned, so we talk about it directly. Message us with everything you have, and we will gladly work it out together.",
   },
   {
     q: "Is stain removal included?",
-    a: "Yes. In a standard cleaning we remove the vast majority of stains, and it is included in the price. Only rare, stubborn stains that need 2–3 hours of extra work cost about $55 per hour, and we agree that with you before we start.",
+    a: "Yes. In a standard cleaning we remove the vast majority of stains, and it is included in the price. Only rare, stubborn stains that need a lot of extra work go beyond the first extra hour, which is on us. After that it is about $55 per hour, and we always agree it with you first.",
   },
   {
     q: "What if an area needs more than one pass?",
-    a: "We do it. Dirty areas such as armrests and headrests get a second pass when needed, and sometimes a third, although two are usually enough. An extra hour is built into our schedule and price in case the job needs it. If it is needed, we take it, because the result matters more to us than keeping to the schedule. If it is not needed, we simply do not use it.",
+    a: "We do it, without any problem. If an area is especially dirty, such as an armrest or a headrest, we clean it again from the start, the whole cycle, and it is included in the price. The first extra hour is on us, because the result matters more to us than keeping to the schedule. If a stain needs more time than that, we agree it with you first.",
   },
   {
     q: "How long does drying take, and is it included?",
-    a: "Drying with our air movers while we work is complimentary. The parts we clean first are almost dry by the time we finish, and the last area is still damp, because we switch the air movers off when we leave. Full drying usually takes 6–8 hours. If you want it dried faster, extra air-mover time is $55 per hour.",
+    a: "Drying with our air movers while we work is complimentary, and full drying usually takes 6–8 hours. The last area we clean is still damp when we leave, because we switch the air movers off. If you want it dried faster, extra air-mover time is $55 per hour.",
   },
   {
     q: "How can I help you prepare?",
@@ -181,9 +186,10 @@ export default function PricingPage() {
             <p className={`${styles.notice} ${styles.noticeSecondary}`}>
               <strong>The more you clean, the more you save</strong>
               <span>
-                When you add a second item, we give you a discount. With a third item, the
-                discount is even bigger. Just tell us what you have, and we will gladly work out
-                the best price for you.
+                When you add a second item, we give you a discount, and with a third item the
+                discount is even bigger. The exact discount depends on what you would like
+                cleaned, so let us talk about it directly: message us, and we will gladly work
+                it out together.
               </span>
             </p>
             <p className={`${styles.notice} ${styles.noticeSecondary}`}>
@@ -215,11 +221,25 @@ export default function PricingPage() {
             <strong>Included in every price</strong>
             <ul>
               {includedChips.map((chip) => (
-                <li key={chip}><span aria-hidden="true">✓</span> {chip}</li>
+                <li key={chip}>
+                  <span aria-hidden="true">✓</span>
+                  {chip}
+                </li>
               ))}
             </ul>
             <a href="#included">See everything that is included</a>
           </section>
+
+          <nav className={styles.jump} aria-label="Jump to a section">
+            <a href="#upholstery-heading">Sofas</a>
+            <a href="#carpet-heading">Carpet</a>
+            <a href="#chairs-heading">Armchairs and chairs</a>
+            <a href="#mattress-heading">Mattresses</a>
+            <a href="#leather-heading">Leather</a>
+            <a href="#included-heading">What is included</a>
+            <a href="#faq-heading">Questions</a>
+            <a href="#extra-heading">Extras</a>
+          </nav>
 
           <section className={styles.section} aria-labelledby="upholstery-heading">
             <h2 id="upholstery-heading">Sofas</h2>
@@ -283,7 +303,7 @@ export default function PricingPage() {
           <section className={styles.section} aria-labelledby="extra-heading">
             <h2 id="extra-heading">Extras, only if you want or need them</h2>
             <ul className={styles.list}>
-              <li><strong>Rare, stubborn stains</strong> that need 2–3 hours of extra work: about $55 per hour. We always talk to you first and agree before we start. Most jobs never need this.</li>
+              <li><strong>Rare, stubborn stains</strong> that need 2–3 hours of extra work: the first extra hour is on us, and the rest is about $55 per hour. We always talk to you first and agree before we start. Most jobs never need this.</li>
               <li><strong>Extra drying time</strong> with air movers: $55 per hour.</li>
               <li><strong>Whitening treatment</strong> for white and light fabric: dining chair $5, loveseat $20, most other items $30, 7-seat sectional $35.</li>
               <li><strong>Pilling removal:</strong> $15 per seat. A 3-seat sofa is $45.</li>
