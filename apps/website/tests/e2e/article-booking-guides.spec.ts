@@ -26,7 +26,7 @@ test("every article keeps its canonical address, cover disclosure and useful con
     }
     const body = await page.locator("article").innerText();
     expect(body).not.toMatch(/refund/i);
-    if (post.slug === "professional-upholstery-chair-cleaning-milton-oakville") {
+    if (post.slug === "professional-upholstery-chair-cleaning-milton-oakville" || post.slug === "mattress-cleaning-why-regular-cleaning-matters-gta") {
       await expect(page.locator("article")).toContainText("Some of these products can continue working for up to 48 hours after application");
       await expect(page.locator("article")).toContainText("complete removal is not always possible");
     }

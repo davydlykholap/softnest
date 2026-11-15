@@ -93,6 +93,16 @@ export default function ServiceDetailPanel({
         </div>
       </section>
 
+      {sofaDemo ? (
+        <section className={styles.priceStrip} aria-label="Sofa cleaning prices">
+          <p>
+            <strong>Loveseat $89–$109 · Sofa (3 seats) $119–$129</strong>
+            <span>Tax included. Minimum visit $139. Send us a photo and we will confirm your exact price, free of charge.</span>
+          </p>
+          <Link href="/pricing/">See all prices</Link>
+        </section>
+      ) : null}
+
       <section className={`${styles.serviceSection} ${styles.editorialSection}`} aria-labelledby="service-overview-heading">
         <div className={styles.editorialIntro}>
           <SectionHeading id="service-overview-heading">

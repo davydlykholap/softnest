@@ -116,6 +116,9 @@ export function MobileHeaderNavigation({ open, mobileServicesOpen, setOpen, setM
         </div>
 
         <div className="mobile-nav__primary">
+          <Link prefetch={false} href="/pricing/" onClick={() => setOpen(false)}>
+            Pricing
+          </Link>
           <Link prefetch={false} href="/location/" onClick={() => setOpen(false)}>
             Locations
           </Link>

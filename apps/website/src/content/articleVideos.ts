@@ -10,6 +10,7 @@ const articleProjects: Record<string, string> = {
   "how-to-remove-stain-from-couch": "red-stain-removal-sofa-cushion-milton",
   "what-cleaning-solution-can-i-use-on-my-couch": "red-stain-removal-sofa-cushion-milton",
   "why-sofa-armrests-get-dirty-faster": "grey-tufted-sofa-cleaning-milton",
+  "mattress-cleaning-why-regular-cleaning-matters-gta": "mattress-stain-removal-brampton",
   "does-vacuuming-clean-carpet": "grey-carpet-cleaning-hallway-burlington",
   "how-often-to-deep-clean-carpet-at-home": "grey-carpet-cleaning-hallway-burlington",
 };

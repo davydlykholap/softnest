@@ -98,6 +98,10 @@ export default function HomeSections() {
           ))}
         </ul>
       </nav>
+      <div className="home-prices-cta">
+        <Link href="/pricing/">See our prices</Link>
+        <span>Tax included. Send us a photo and we will confirm your exact price, free of charge.</span>
+      </div>
     </div>
   </section>
   <HomeVideoShowcase />

@@ -19,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [
     { url: `${siteUrl}/` },
     { url: `${siteUrl}/about/` },
+    { url: `${siteUrl}/pricing/` },
     { url: `${siteUrl}/our-work/`, images: getWorkProjects().map(project => absoluteUrl(project.image)) },
     ...getWorkProjects().flatMap(project => {
       const watchVideo = portCreditWatchVideo(project);
