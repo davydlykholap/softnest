@@ -269,8 +269,14 @@ export default function PricingPage() {
         </div>
       </main>
       <SiteFooter />
-      {jsonLd(breadcrumbSchema)}
-      {jsonLd(faqSchema)}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }}
+      />
     </>
   );
 }
