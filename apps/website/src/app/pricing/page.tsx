@@ -26,12 +26,11 @@ const upholstery: Row[] = [
   { label: "Sofa (3 seats)", price: "$119 – $129" },
   { label: "Sofa (4 seats)", price: "$159 – $179" },
   { label: "2-seat sofa with chaise", price: "$159 – $179" },
-  { label: "3-seat sofa with chaise", price: "$185 – $199" },
-  { label: "Sectional, 5 seats", price: "$189 – $209" },
-  { label: "Large sectional, 5 seats", price: "$199 – $219" },
+  { label: "3-seat sofa with chaise", price: "$199 – $219" },
+  { label: "Sectional, 5 seats", price: "$199 – $219" },
   { label: "Sectional, 6 seats", price: "$219 – $239" },
   { label: "Sectional, 7 seats", price: "$249 – $269" },
-  { label: "Ottoman", price: "$25" },
+  { label: "Ottoman", price: "$25 – $30" },
   { label: "Decorative pillow", price: "$5" },
 ];
 
