@@ -232,3 +232,20 @@
     width: 100%;
   }
 }
+
+.includedBand { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 28px; padding: 22px 28px; border-radius: 28px; background: #033f2d; color: #fff; }
+.includedBand strong { font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: 24px; font-weight: 500; }
+.includedBand ul { display: flex; flex: 1 1 360px; flex-wrap: wrap; gap: 8px 10px; margin: 0; padding: 0; list-style: none; }
+.includedBand li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.12); font-size: 15px; font-weight: 600; }
+.includedBand li span { color: #f4cf6a; font-weight: 800; }
+.includedBand a { color: #f4cf6a; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.included { margin-top: 28px; padding: clamp(24px, 4vw, 40px); border: 2px solid #07543b; border-radius: 28px; background: #f1f6f3; scroll-margin-top: 140px; }
+.included h2 { margin: 0 0 6px; color: #033f2d; font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: clamp(26px, 3.4vw, 34px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
+.includedLead { margin: 0 0 22px; color: #485c51; font-size: 17px; }
+.includedGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.includedGrid li { display: flex; gap: 14px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 8px 22px rgba(18, 47, 36, .07); }
+.includedGrid li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.includedCheck { flex: 0 0 34px; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #07543b; color: #fff; font-weight: 800; }
+.includedGrid h3 { margin: 0 0 6px; color: #033f2d; font-size: 18px; font-weight: 700; line-height: 1.3; }
+.includedGrid p { margin: 0; color: #55675e; font-size: 15px; line-height: 1.65; }
+@media (max-width: 760px) { .includedGrid { grid-template-columns: 1fr; } .includedBand { padding: 18px 20px; } }

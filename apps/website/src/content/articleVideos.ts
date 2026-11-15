@@ -11,6 +11,7 @@ const articleProjects: Record<string, string> = {
   "what-cleaning-solution-can-i-use-on-my-couch": "red-stain-removal-sofa-cushion-milton",
   "why-sofa-armrests-get-dirty-faster": "grey-tufted-sofa-cleaning-milton",
   "mattress-cleaning-why-regular-cleaning-matters-gta": "mattress-stain-removal-brampton",
+  "uv-light-hidden-stains-linen-sofa-etobicoke": "linen-sofa-uv-stain-inspection-etobicoke",
   "does-vacuuming-clean-carpet": "grey-carpet-cleaning-hallway-burlington",
   "how-often-to-deep-clean-carpet-at-home": "grey-carpet-cleaning-hallway-burlington",
 };

@@ -83,6 +83,17 @@ function PriceTable({ caption, rows }: { caption: string; rows: Row[] }) {
   );
 }
 
+const includedItems = [
+  { title: "Deep cleaning and rinsing", text: "Vacuuming, stain pre-treatment, cleaning with extraction, and a thorough rinse." },
+  { title: "Deodorizing and sanitizing", text: "Your furniture ends up fresh as well as clean." },
+  { title: "Both sides of removable cushions", text: "Plus seams and hard-to-reach areas, so nothing is forgotten." },
+  { title: "Stain removal", text: "In a standard cleaning we remove the vast majority of stains, and it is included in the price." },
+  { title: "Extra attention to dirty areas", text: "Armrests, headrests and other high-contact or delicate areas get a second pass when needed, and sometimes a third. An extra hour is built into our schedule and price in case the job needs it. If it is needed, we take it, because the result matters more to us than keeping to the schedule. If it is not needed, we simply do not use it." },
+  { title: "Complimentary drying while we work", text: "Our air movers run the whole time we are in your home, as a small gift from us. The parts we clean first are almost dry by the time we finish. We switch them off when we leave, so the last area we clean is still damp. Full drying usually takes 6–8 hours." },
+  { title: "Care for your home", text: "We lay waterproof drop cloths on the floor to protect the area where we work. Our equipment, including the extractor, stands on a soft blanket, so your floor does not get scratched. We change into clean shoes before we come in, and we keep an eye on this every time." },
+];
+const includedChips = ["Deep cleaning", "Deodorizing and sanitizing", "Both sides of cushions", "Stain removal", "Free drying while we work", "Floor protection"];
+
 const faqs = [
   {
     q: "Why does the price of the same sofa change?",
@@ -95,6 +106,10 @@ const faqs = [
   {
     q: "What is the minimum visit?",
     a: "$139, tax included. If your item costs less, add another item to get more from the same visit.",
+  },
+  {
+    q: "Do you give a discount for several items?",
+    a: "Yes. When you add a second item, we give you a discount, and with a third item the discount is even bigger. Tell us everything you would like cleaned, and we will gladly work out the best price for you.",
   },
   {
     q: "Is stain removal included?",
@@ -164,6 +179,14 @@ export default function PricingPage() {
               <span>This covers us coming to you with all our equipment. If your item costs less, we would be glad to clean another one in the same visit, so you get the most out of it.</span>
             </p>
             <p className={`${styles.notice} ${styles.noticeSecondary}`}>
+              <strong>The more you clean, the more you save</strong>
+              <span>
+                When you add a second item, we give you a discount. With a third item, the
+                discount is even bigger. Just tell us what you have, and we will gladly work out
+                the best price for you.
+              </span>
+            </p>
+            <p className={`${styles.notice} ${styles.noticeSecondary}`}>
               <strong>A little help from you</strong>
               <span>
                 Please set aside a parking space for our vehicle and let us bring in our
@@ -186,6 +209,16 @@ export default function PricingPage() {
               <a className={styles.secondary} href={siteConfig.smsHref}>Text us</a>
               <a className={styles.secondary} href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
+          </section>
+
+          <section className={styles.includedBand} aria-label="Included in every price">
+            <strong>Included in every price</strong>
+            <ul>
+              {includedChips.map((chip) => (
+                <li key={chip}><span aria-hidden="true">✓</span> {chip}</li>
+              ))}
+            </ul>
+            <a href="#included">See everything that is included</a>
           </section>
 
           <section className={styles.section} aria-labelledby="upholstery-heading">
@@ -221,16 +254,19 @@ export default function PricingPage() {
             <p className={styles.note}>Leather sectionals and other leather pieces: message us and we will give you a price.</p>
           </section>
 
-          <section className={styles.section} aria-labelledby="included-heading">
-            <h2 id="included-heading">What is included</h2>
-            <ul className={styles.list}>
-              <li>Vacuuming, stain pre-treatment, cleaning and extraction, and rinsing.</li>
-              <li>Deodorizing and sanitizing.</li>
-              <li><strong>Care for your home.</strong> We lay waterproof drop cloths on the floor to protect the area where we work. Our equipment, including the extractor, stands on a soft blanket, so your floor never gets scratched. We change into clean shoes before we come in, and we keep an eye on this every time.</li>
-              <li>Both sides of removable cushions, seams and hard-to-reach areas.</li>
-              <li><strong>Extra attention to dirty areas.</strong> Armrests, headrests and other high-contact or delicate areas get the care they need. If an area needs a second pass, we do it, and sometimes a third, though two passes are usually enough. An extra hour is built into our schedule and price in case the job needs it. If it is needed, we take it, because the result matters more to us than keeping to the schedule. If it is not needed, we simply do not use it.</li>
-              <li>Stain removal. In a standard cleaning we remove the vast majority of stains, and this is included in the price.</li>
-              <li><strong>Complimentary drying while we work.</strong> Our air movers run the whole time we are in your home, as a small gift from us. The parts we clean first are almost dry by the time we finish. We switch the air movers off when we leave, so the last area we clean is still damp. Full drying usually takes 6–8 hours.</li>
+          <section className={styles.included} id="included" aria-labelledby="included-heading">
+            <h2 id="included-heading">Everything that is included in your price</h2>
+            <p className={styles.includedLead}>No surprises, and nothing extra to pay for any of this.</p>
+            <ul className={styles.includedGrid}>
+              {includedItems.map((item) => (
+                <li key={item.title}>
+                  <span className={styles.includedCheck} aria-hidden="true">✓</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </section>
 
