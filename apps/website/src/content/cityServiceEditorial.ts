@@ -500,7 +500,7 @@ export const reviewedCityServiceEditorial: Record<string, Record<string, LocalSe
     },
     "sectional-furniture-cleaning": {
       "introduction": "Sectional cleaning in Brampton covers the sections, cushions and extras identified in your quote. We check stains and everyday soil across the seating, including pieces that see more use than the rest.",
-      "bookingNote": "Include corner units, separate ottomans and powered seats. A wide photo is optional, but describe the full layout if you are requesting by phone.",
+      "bookingNote": "Include corner units, separate ottomans and powered seats. A wide photo is optional, but describe the full layout if you are writing to us.",
       "visit": "If some pieces are on another floor, say so before booking. Keep the space around the sectional clear without separating heavy sections yourself.",
       "question": {
         "question": "Is the chaise counted as another seat?",
@@ -650,7 +650,7 @@ export const reviewedCityServiceEditorial: Record<string, Record<string, LocalSe
       "visit": "Keep the area available for drying and pets away from it. The final smell should be judged once the fabric or carpet is fully dry.",
       "question": {
         "question": "What should I do if an odour is still there after drying?",
-        "answer": "Call or text us and describe what remains. We can discuss the affected material and next step. Deeper contamination can limit treatment, so complete odour removal is not guaranteed."
+        "answer": "Text us and describe what remains. We can discuss the affected material and next step. Deeper contamination can limit treatment, so we cannot promise complete odour removal, but we always do our very best and tell you honestly what to expect."
       }
     }
   },

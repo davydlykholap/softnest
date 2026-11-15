@@ -90,7 +90,7 @@ for (const city of cities) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await page.locator("#faq summary").filter({ hasText: "How do I get a quote?" }).click();
     await expect(page.locator("#faq details[open]")).toContainText("final price, tax included");
-    await expect(page.locator("#faq details[open]")).toContainText("Call or text us");
+    await expect(page.locator("#faq details[open]")).toContainText("Text us");
     await expect(page.locator("#services article").first().getByRole("heading", { name: featuredCarpet ? carpetHeading : "Sofas" })).toBeVisible();
     await expect(page.locator('#services article a[href^="/location/"]')).toHaveCount(3);
 

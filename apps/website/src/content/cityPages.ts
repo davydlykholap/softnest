@@ -70,7 +70,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Can you clean furniture in City Centre condos?",
@@ -154,13 +154,13 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
       },
       {
         "title": "Contact without a form.",
-        "description": "A phone call or text is fine. Describe the items and address, and we will confirm a tax-inclusive price before booking."
+        "description": "A text message is perfect. Describe the items and address, and we will confirm a tax-inclusive price before booking."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Can you work within a condo elevator time slot?",
@@ -209,7 +209,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "heroDescription": "Carpet and upholstery cleaning in Brampton, from a single sofa to rooms and stairs. Get a quote based on the areas and items you actually need cleaned.",
     "introductionParagraphs": [
       "We clean sofas, sectionals, carpets and suitable rugs across Brampton, including Bramalea, Heart Lake, Springdale and Castlemore. Let us know if you want one room done or cleaning across several floors.",
-      "A useful quote separates room carpet, stair flights and furniture. Describe the sizes and main concerns for each. You can do this by phone or text; there is no need to measure every cushion or send photos of everything."
+      "A useful quote separates room carpet, stair flights and furniture. Describe the sizes and main concerns for each. You can do this by text; there is no need to measure every cushion or send photos of everything."
     ],
     "services": [
       {
@@ -250,7 +250,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "How should I count carpeted stairs?",
@@ -334,13 +334,13 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
       },
       {
         "title": "Your choice of contact.",
-        "description": "Describe the job by phone, text or the form. A photo can help with a difficult fabric, but it is optional."
+        "description": "Describe the job by text or in the form. A photo can help with a difficult fabric, but it is optional."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "What should I check with my condo management?",
@@ -380,7 +380,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "coverage": "We provide in-home cleaning across the Etobicoke areas listed here, including houses as well as multi-unit buildings.",
     "coverageClosing": "When checking an Etobicoke address, include your unit and access arrangements if relevant.",
     "ctaTitle": "Arrange your Etobicoke visit.",
-    "ctaDescription": "Call or message with the furniture or rooms you need cleaned. We'll discuss access and a total price, including tax.",
+    "ctaDescription": "Message us with the furniture or rooms you need cleaned. We'll discuss access and a total price, including tax.",
     "introductionHeading": "Cleaning that fits your building."
   },
   "burlington": {
@@ -424,13 +424,13 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
       },
       {
         "title": "A free quote to start.",
-        "description": "Call, text or fill in the form. We give you the total with tax included before you decide on the appointment."
+        "description": "Text us or fill in the form. We give you the total with tax included before you decide on the appointment."
       }
     ],
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Can I book before guests come over?",
@@ -519,7 +519,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Can fabric and leather furniture be cleaned in one visit?",
@@ -609,7 +609,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Should carpets be cleaned before or after moving?",
@@ -696,7 +696,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Can you clean a room reached through a basement entrance?",
@@ -736,7 +736,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "coverage": "We offer in-home cleaning in the Hamilton areas below. The postal code and entrance details help us check each request.",
     "coverageClosing": "If your Hamilton address is not listed, contact us to ask about coverage before planning the visit.",
     "ctaTitle": "Check your Hamilton appointment.",
-    "ctaDescription": "Call, text or use the form with your address and item list. We'll discuss access and confirm a free quote with tax included.",
+    "ctaDescription": "Text us or use the form with your address and item list. We'll discuss access and confirm a free quote with tax included.",
     "introductionHeading": "Know the rooms and the route."
   },
   "oakville": {
@@ -786,7 +786,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "faqs": [
       {
         "question": "How do I get a quote?",
-        "answer": "Call or text us, or use the website form. Tell us what needs cleaning and where you are. Photos are optional. We'll confirm the final price, tax included, before you book."
+        "answer": "Text us or use the website form. Tell us what needs cleaning and where you are, and we will be glad to help. Photos are optional. We'll confirm the final price, tax included, before you book."
       },
       {
         "question": "Can a sofa and dining chairs be cleaned together?",
@@ -822,7 +822,7 @@ export const reviewedCityPages: Record<string, CityPageCopy> = {
     "coverage": "Oakville appointments are available for houses, townhouses, apartments and condos in the areas below.",
     "coverageClosing": "Outside these neighbourhoods but still in Oakville? Share your postal code when you contact us.",
     "ctaTitle": "Get an Oakville cleaning quote.",
-    "ctaDescription": "Tell us which pieces or carpeted areas need attention. You can call, text or use the form, with or without photos.",
+    "ctaDescription": "Tell us which pieces or carpeted areas need attention. You can text us or use the form, with or without photos.",
     "introductionHeading": "Care for the furniture you have."
   }
 };

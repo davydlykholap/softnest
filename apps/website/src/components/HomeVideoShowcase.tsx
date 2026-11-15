@@ -30,7 +30,7 @@ export default function HomeVideoShowcase() {
               href={siteConfig.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Watch SoftNest cleaning videos on Instagram"
+              aria-label="Watch on Instagram. Opens our SoftNest cleaning videos in a new tab."
             >
               <Image
                 src="/images/blog/how-to-remove-stain-from-couch/controlled-sofa-extraction.webp"
@@ -44,6 +44,15 @@ export default function HomeVideoShowcase() {
                   <path d="m10 8 6 4-6 4Z" fill="currentColor" stroke="none" />
                 </svg>
               </span>
+              <span className="home-video-fallback__badge">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+                </svg>
+                Watch on Instagram
+                <span aria-hidden="true">↗</span>
+              </span>
             </a>
           )}
         </div>
@@ -53,6 +62,22 @@ export default function HomeVideoShowcase() {
           <p>
             Proven methods and professional extraction equipment, used with care in your home.
           </p>
+          {!videoSrc ? (
+            <p className="home-video-note">
+              Our cleaning videos live on Instagram. Tap the picture and you will go to our
+              Instagram page, where you can watch them and say hello.
+            </p>
+          ) : null}
+          {!videoSrc ? (
+            <a
+              className="home-video-link"
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch on Instagram ↗
+            </a>
+          ) : null}
         </div>
 
       </div>

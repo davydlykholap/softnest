@@ -90,7 +90,7 @@ export const defaultProcessSteps = [
   {
     icon: "camera",
     title: "Tell us what needs cleaning",
-    description: "Call, message us or use the form. Photos of the item and any marks are optional.",
+    description: "Message us or use the form. Photos of the item and any marks are optional.",
   },
   {
     icon: "estimate",

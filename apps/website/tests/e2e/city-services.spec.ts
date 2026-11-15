@@ -140,7 +140,7 @@ for (const width of [390, 1280]) {
     if (width === 390) await expect(page.getByLabel("Request your cleaning quote").getByRole("link")).toBeInViewport();
     await expect(page.getByText("How pricing works.", { exact: true })).toBeVisible();
     await page.getByText("How can I get a quote?", { exact: true }).click();
-    await expect(page.locator("details[open]")).toContainText("Call or text us");
+    await expect(page.locator("details[open]")).toContainText("Text us");
     const axe = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();
     expect(axe.violations.filter((v) => v.impact === "serious" || v.impact === "critical").map((v) => v.id)).toEqual([]);
     expect(errors).toEqual([]);

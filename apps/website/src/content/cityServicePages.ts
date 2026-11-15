@@ -55,7 +55,7 @@ export function getCityServicePage(city: string, slug: string) {
     reading: serviceReading[slug],
     quoteHref: `/quote/?city=${encodeURIComponent(city)}&service=${encodeURIComponent(slug)}`,
     faqs: [
-      { question: "How can I get a quote?", answer: "Call or text us, or use the form. Photos can help, but you don't have to send any. We confirm the work and a tax-inclusive price before booking." },
+      { question: "How can I get a quote?", answer: "Text us or use the form. Photos can help, but you don't have to send any. We confirm the work and a tax-inclusive price before booking." },
       { question: "How long before I can use it again?", answer: customerServiceText(service.drying) },
       { question: "Can every stain be removed?", answer: customerServiceText(service.limitations) },
       copy.question,

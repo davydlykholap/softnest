@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Contact & Cleaning Quotes | SoftNest Fabric Care",
-  description: "Request a free cleaning quote, see before-and-after results, read Google reviews or call SoftNest Fabric Care.",
+  description: "Request a free cleaning quote, see before-and-after results, read Google reviews or text SoftNest Fabric Care.",
   alternates: { canonical: "/card/" },
   robots: { index: false, follow: true },
 };

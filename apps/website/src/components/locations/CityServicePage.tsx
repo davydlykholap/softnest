@@ -67,7 +67,7 @@ export default function CityServicePage({ content }: { content: CityServicePageC
       <DirectoryFinalCta
         id="quote-cta"
         title="Get a cleaning quote."
-        description="Call, text or use the form. Tell us what needs attention and we will discuss the work with you."
+        description="Text us or use the form. Tell us what needs attention and we will discuss the work with you."
         action={{ href: quoteHref, label: "Get a quote" }}
         image="/images/home/softnest-sofa-living-room.webp"
         imageAlt="Bright living room with a deep green sofa"

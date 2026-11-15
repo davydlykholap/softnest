@@ -1475,3 +1475,11 @@
 .home-prices-cta a:hover, .home-prices-cta a:focus-visible { background: var(--quote-cta-background-hover); }
 .home-prices-cta span { color: var(--home-muted); font-size: 15px; }
 @media (max-width: 639px) { .home-prices-cta a { width: 100%; } }
+
+/* Honest label: this video block opens Instagram. */
+.home-video-fallback__badge { position: absolute; z-index: 1; left: 18px; bottom: 18px; display: inline-flex; align-items: center; gap: 9px; padding: 10px 16px; border-radius: 999px; background: rgba(255, 255, 255, .95); box-shadow: 0 10px 24px rgba(12, 42, 32, .22); color: #123c2f; font-size: 15px; font-weight: 700; line-height: 1; }
+.home-video-fallback__badge svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.home-video-note { margin-top: 14px; color: var(--home-muted); font-size: 15px; line-height: 1.6; }
+.home-video-link { display: inline-flex; align-items: center; margin-top: 14px; min-height: 44px; padding: 0 22px; border: 2px solid #123c2f; border-radius: 999px; color: #123c2f; font-weight: 700; text-decoration: none; }
+.home-video-link:hover, .home-video-link:focus-visible { background: #eef5f1; }
+@media (max-width: 640px) { .home-video-fallback__badge { left: 12px; bottom: 12px; padding: 8px 12px; font-size: 13px; } .home-video-link { width: 100%; justify-content: center; } }

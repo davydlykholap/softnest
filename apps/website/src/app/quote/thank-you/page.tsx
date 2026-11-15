@@ -24,7 +24,7 @@ export default function QuoteThankYouPage() {
           <div className="quote-page-card">
             <div className="quote-page-success" role="status">
               <span className="quote-page-success__icon" aria-hidden="true">✓</span>
-              <h1>Thank you.<br />We’ll be in touch soon.</h1>
+              <h1>Thank you, we are so glad you wrote to us.<br />We’ll be in touch soon.</h1>
               <p>
                 We received your cleaning details. A SoftNest specialist will
                 contact you to discuss the item, condition, and next steps.

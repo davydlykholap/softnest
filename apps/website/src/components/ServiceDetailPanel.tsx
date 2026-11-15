@@ -315,7 +315,7 @@ export default function ServiceDetailPanel({
         <div className={styles.expectationsHeading}>
           <SectionHeading id="expectations-heading">What to expect before you book</SectionHeading>
           <p>
-            Call, message us or use the quote form to describe the item and any
+            Message us or use the quote form to describe the item and any
             stains or odours. The form and photos are optional. We confirm the
             work and price with you and explain anything that needs an on-site check.
           </p>

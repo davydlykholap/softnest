@@ -72,7 +72,7 @@ export default function AboutPage() {
             </h1>
             <p>
               SoftNest Fabric Care is a family-run upholstery and carpet
-              cleaning company serving homes across the Greater Toronto Area and Hamilton.
+              cleaning company serving homes across the Greater Toronto Area and Hamilton. We love what we do, and we want every customer to feel like a friend.
             </p>
           </header>
 
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 before starting; complete removal or restoration is not promised.
               </p>
               <p className={styles.closing}>
-                You can call, text or use the quote form. Photos are optional.
+                You can text us or use the quote form. We would love to hear from you. Photos are optional.
                 See examples of completed cleaning on our <Link href="/our-work/">Our Work page</Link>.
               </p>
             </div>
