@@ -23,8 +23,14 @@
 .questions details:first-child { border-top: 1px solid var(--surface-line); }
 .questions summary { cursor: pointer; font-size: var(--text-body-size); font-weight: 600; padding-right: 15px; color: var(--location-page-green); }
 .questions details p { margin: 14px 0 0; }
+.more { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 80px); padding: 40px 0 56px; border-top: 1px solid var(--surface-line); }
+.shell .more h2 { font-size: clamp(26px, 2.6vw, 34px); margin: 0 0 16px; }
+.more ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.more a { display: inline-block; padding: 9px 16px; border: 1px solid var(--surface-line); border-radius: 999px; color: var(--location-page-green); font-size: var(--text-body-size); text-decoration: none; }
+.more a:hover { background: var(--surface-soft); }
 .mobileQuote { display: none; }
 @media (max-width: 760px) {
+  .more { grid-template-columns: 1fr; gap: 28px; padding: 32px 0 40px; }
   .root { padding-bottom: 90px; }
   .page:global(.location-page-page) { padding: var(--mobile-hero-title-top) 0 48px; }
   .hero, .details, .questions { grid-template-columns: 1fr; gap: 28px; }

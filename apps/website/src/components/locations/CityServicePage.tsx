@@ -8,7 +8,7 @@ import LocalWorkEvidence from "@/components/LocalWorkEvidence";
 import ServiceVideoSpotlight from "@/components/ServiceVideoSpotlight";
 import { getWorkProjects } from "@/content/work";
 import LocationReviews from "./LocationReviews";
-import type { CityServicePageContent } from "@/content/cityServicePages";
+import { cityServicePages, type CityServicePageContent } from "@/content/cityServicePages";
 import { absoluteUrl, organizationProvider } from "@/lib/site";
 import { jsonLd } from "@/seo/structuredData";
 import styles from "./CityServicePage.module.css";
@@ -28,6 +28,8 @@ export default function CityServicePage({ content }: { content: CityServicePageC
       { "@type": "ListItem", position: index + 1, name: crumb.name, item: absoluteUrl(crumb.path) }
     )) },
   ];
+  const sameCity = cityServicePages.filter((page) => page.location.slug === location.slug && page.service.slug !== service.slug);
+  const sameService = cityServicePages.filter((page) => page.service.slug === service.slug && page.location.slug !== location.slug);
   const quoteButton = <HeroActionButtons quoteHref={quoteHref} quoteAriaLabel="Get a Quote" primaryTone="gold" showReviews={false} />;
 
   return <div className={styles.root}>
@@ -59,6 +61,16 @@ export default function CityServicePage({ content }: { content: CityServicePageC
           <h2 id="questions-heading">Before you book</h2>
           <div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div>
         </section>
+        {sameCity.length > 0 || sameService.length > 0 ? <section className={styles.more} aria-label="More cleaning services and areas">
+          {sameCity.length > 0 ? <nav aria-labelledby="more-in-city">
+            <h2 id="more-in-city">Also in {location.name}</h2>
+            <ul>{sameCity.map((page) => <li key={page.path}><Link href={page.path}>{page.profile.title}</Link></li>)}</ul>
+          </nav> : null}
+          {sameService.length > 0 ? <nav aria-labelledby="more-nearby">
+            <h2 id="more-nearby">{profile.title} nearby</h2>
+            <ul>{sameService.map((page) => <li key={page.path}><Link href={page.path}>{page.location.name}</Link></li>)}</ul>
+          </nav> : null}
+        </section> : null}
       </div>
       <LocalWorkEvidence city={location.slug} cityName={location.name} service={service.slug} />
       {getWorkProjects({ city: location.slug, service: service.slug }).length === 0
