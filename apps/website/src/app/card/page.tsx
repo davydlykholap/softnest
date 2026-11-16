@@ -30,7 +30,7 @@ export default function CardPage() {
           <ChevronRightIcon className={styles.arrow} />
         </Link>
         <a href={siteConfig.instagramUrl} className={styles.action}>
-          <span className={styles.icon}><InstagramIcon /></span>
+          <span className={`${styles.icon} ${styles.instagramIcon}`}><InstagramIcon /></span>
           <span><strong>See our work</strong><small>Before-and-after cleaning results on Instagram.</small></span>
           <ChevronRightIcon className={styles.arrow} />
         </a>
