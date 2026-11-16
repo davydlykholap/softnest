@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRightIcon, GlobeIcon, InstagramIcon, MessageIcon, PhoneIcon } from "@/components/UiIcons";
+import { ChevronRightIcon, GlobeIcon, MessageIcon, PhoneIcon } from "@/components/UiIcons";
 import { siteConfig } from "@/lib/site";
 import styles from "./page.module.css";
 
@@ -30,7 +30,7 @@ export default function CardPage() {
           <ChevronRightIcon className={styles.arrow} />
         </Link>
         <a href={siteConfig.instagramUrl} className={styles.action}>
-          <span className={`${styles.icon} ${styles.instagramIcon}`}><InstagramIcon /></span>
+          <span className={styles.icon}><Image src="/images/brand/instagram-gradient.svg" alt="" width={32} height={32} /></span>
           <span><strong>See our work</strong><small>Before-and-after cleaning results on Instagram.</small></span>
           <ChevronRightIcon className={styles.arrow} />
         </a>
@@ -56,11 +56,11 @@ export default function CardPage() {
           <Link href="/privacy/">Privacy</Link>
         </div>
         <div className={styles.payment}>
-        <Link href="/pay/" className={styles.action}>
-          <span className={styles.icon} aria-hidden="true">$</span>
-          <span><strong>Pay for your service</strong><small>Copy our email for Interac e-Transfer.</small></span>
-          <ChevronRightIcon className={styles.arrow} />
-        </Link>
+          <Link href="/pay/" className={`${styles.action} ${styles.paymentAction}`}>
+            <span className={styles.icon} aria-hidden="true">$</span>
+            <span><strong>Pay for your service</strong><small>Copy our email for Interac e-Transfer.</small></span>
+            <ChevronRightIcon className={styles.arrow} />
+          </Link>
         </div>
       </footer>
     </div>

@@ -19,7 +19,6 @@
 .action small { display: block; margin-top: 7px; color: #5d6a63; font-size: 15px; line-height: 1.45; }
 .icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--surface-soft); }
 .icon svg { width: 29px; height: 29px; }
-.instagramIcon { background: radial-gradient(circle at 22% 100%, #feda75, #fa7e1e 25%, #d62976 55%, #962fbf 78%, #4f5bd5); color: white; }
 .arrow { width: 22px; height: 22px; }
 .primary { background: var(--quote-cta-background); border-color: #efd471; color: #15221c; box-shadow: 0 12px 25px -16px #b1801650; }
 .primary .icon { background: #ffffffb3; }
@@ -35,11 +34,15 @@
 .footer p { margin: 10px 0 18px; font-size: 14px; }
 .footerLinks { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 20px; font-size: 12px; }
 .payment { margin-top: 24px; text-align: left; }
+.paymentAction { background: #fff2bf; border-color: #cf9c22; color: #302100; }
+.paymentAction .icon { background: #ffcf46; color: #302100; font-size: 28px; font-weight: 700; }
+.paymentAction small { color: #524014; }
 .footerLinks a { color: var(--brand-green); text-underline-offset: 4px; }
 .page a:focus-visible { outline: 3px solid var(--brand-green); outline-offset: 5px; }
 @media (hover: hover) and (pointer: fine) {
   .action:hover { background: var(--surface-soft); border-color: #7d9984; }
   .primary:hover { background: var(--quote-cta-background-hover); border-color: #dfbd50; }
+  .paymentAction:hover { background: #ffe69a; border-color: #a97910; }
 }
 @media (max-width: 480px) {
   .page { padding: 28px 18px 24px; }
