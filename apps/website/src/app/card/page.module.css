@@ -33,6 +33,7 @@
 .website svg { width: 22px; height: 22px; }
 .footer p { margin: 10px 0 18px; font-size: 14px; }
 .footerLinks { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 20px; font-size: 12px; }
+.payment { margin-top: 24px; text-align: left; }
 .footerLinks a { color: var(--brand-green); text-underline-offset: 4px; }
 .page a:focus-visible { outline: 3px solid var(--brand-green); outline-offset: 5px; }
 @media (hover: hover) and (pointer: fine) {
