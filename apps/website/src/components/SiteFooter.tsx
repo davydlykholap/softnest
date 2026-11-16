@@ -111,7 +111,7 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
           <h3 className="font-serif font-bold text-forestGreen text-sm uppercase mb-4">
             Areas we serve
           </h3>
-          <p className="text-sm text-stone-700 leading-relaxed mb-3">The whole GTA, most often in:</p>
+          <p className="text-sm text-stone-700 leading-relaxed mb-3">The whole GTA, including:</p>
           <ul className="footer-location-list text-sm text-stone-700">
             {footerLocations.map((location) => (
               <li key={location.slug}>
@@ -148,7 +148,7 @@ export default function SiteFooter({ quoteHref = "/quote/" }: { quoteHref?: stri
           <details>
             <summary>Areas we serve</summary>
             <div className="footer-mobile-nav__content">
-              <p className="text-sm text-stone-700 leading-relaxed mb-3">The whole GTA, most often in:</p>
+              <p className="text-sm text-stone-700 leading-relaxed mb-3">The whole GTA, including:</p>
               <ul className="footer-location-list text-sm text-stone-700">
                 {footerLocations.map((location) => (
                   <li key={location.slug}>
