@@ -23,10 +23,15 @@ export default function CardPage() {
         <h1>Upholstery &amp; carpet cleaning.</h1>
         <p>For homes across the GTA.</p>
       </header>
-      <nav className={styles.actions} aria-label="Quotes, cleaning results and reviews">
+      <nav className={styles.actions} aria-label="Quotes, payment, cleaning results and reviews">
         <Link href="/quote/" className={`${styles.action} ${styles.primary} quote-cta`}>
           <span className={styles.icon}><MessageIcon /></span>
           <span><strong>Get a free quote</strong><small>Tell us what needs cleaning. Photos are optional.</small></span>
+          <ChevronRightIcon className={styles.arrow} />
+        </Link>
+        <Link href="/pay/" className={styles.action}>
+          <span className={styles.icon} aria-hidden="true">$</span>
+          <span><strong>Pay for your service</strong><small>Copy our email for Interac e-Transfer.</small></span>
           <ChevronRightIcon className={styles.arrow} />
         </Link>
         <a href={siteConfig.instagramUrl} className={styles.action}>
