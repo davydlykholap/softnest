@@ -21,7 +21,7 @@ export default function CardPage() {
       </Link>
       <header className={styles.intro}>
         <h1>Upholstery &amp; carpet cleaning.</h1>
-        <p>For homes across the GTA and Hamilton.</p>
+        <p>For homes across the GTA.</p>
       </header>
       <nav className={styles.actions} aria-label="Quotes, cleaning results and reviews">
         <Link href="/quote/" className={`${styles.action} ${styles.primary} quote-cta`}>

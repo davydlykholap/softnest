@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SoftNest Fabric Care",
     description:
-      "Professional upholstery and carpet cleaning across the Greater Toronto Area and Hamilton.",
+      "Professional upholstery and carpet cleaning across the Greater Toronto Area.",
     url: "/",
   },
 };

@@ -8,7 +8,7 @@ import { locations } from "@/content/locations";
 export const metadata: Metadata = {
   title: "Get a Quote | SoftNest Fabric Care",
   description:
-    "Request a free SoftNest quote for upholstery, sofa, carpet and furniture cleaning across the Greater Toronto Area and Hamilton.",
+    "Request a free SoftNest quote for upholstery, sofa, carpet and furniture cleaning across the Greater Toronto Area.",
   alternates: { canonical: "/quote/" },
   openGraph: {
     title: "Request a Free Cleaning Quote | SoftNest",

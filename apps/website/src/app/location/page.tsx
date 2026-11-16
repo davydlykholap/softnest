@@ -17,7 +17,7 @@ import "@/app/styles/locations-hub.css";
 export const metadata: Metadata = {
   title: "Locations | SoftNest Fabric Care",
   description:
-    "Explore SoftNest upholstery, sofa, sectional, carpet and rug cleaning service areas across the Greater Toronto Area and Hamilton.",
+    "Explore SoftNest upholstery, sofa, sectional, carpet and rug cleaning service areas across the Greater Toronto Area.",
   alternates: { canonical: "/location/" },
   openGraph: {
     title: "SoftNest Cleaning Services Across the GTA",
@@ -62,7 +62,7 @@ export default function LocationsPage() {
             { text: "Professional Care," },
             { text: "Closer to Home.", accent: true },
           ]}
-          description="Explore SoftNest upholstery and carpet cleaning services in your community."
+          description="We clean across the whole GTA and love to be close to home. Find your city below, or message us if you do not see yours."
           mediaLabel="SoftNest GTA service area"
           className="locations-hub-hero--compact"
           media={
