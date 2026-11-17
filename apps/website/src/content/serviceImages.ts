@@ -4,8 +4,8 @@ export const serviceImages: Record<string, { image: string; imageAlt: string }> 
     imageAlt: "Cream upholstered armchair with a green cushion in a bright living room",
   },
   "sofa-cleaning": {
-    image: "/images/services/beige-sectional-sofa.webp",
-    imageAlt: "Clean cream sectional sofa with a chaise in a bright living room",
+    image: "/images/services/sofa.webp",
+    imageAlt: "Grey fabric sofa in a family living room",
   },
   "leather-upholstery-cleaning": {
     image: "/images/services/leather.webp",
