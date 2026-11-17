@@ -1,3 +1,4 @@
+import NextImage from "next/image";
 import Image from "@/components/ResponsiveImage";
 import { integrations } from "@/lib/integrations";
 import { siteConfig } from "@/lib/site";
@@ -39,10 +40,7 @@ export default function HomeVideoShowcase() {
                 sizes="(max-width: 900px) 92vw, 960px"
               />
               <span className="home-video-fallback__action">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m10 8 6 4-6 4Z" fill="currentColor" stroke="none" />
-                </svg>
+                <NextImage src="/images/brand/instagram-gradient.svg" alt="" width={44} height={44} />
               </span>
               <span className="home-video-fallback__badge">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
