@@ -47,13 +47,15 @@ export function getRelatedPosts(serviceSlug: string): Post[] {
 
 // Editorial next steps by topic, rather than the same two newest posts everywhere.
 const readingTopics: Record<string, string[]> = {
+  "carpet-cleaning-brampton-hallway-kitchen-move-in": ["how-often-to-deep-clean-carpet-at-home", "does-vacuuming-clean-carpet"],
+  "how-often-to-deep-clean-carpet-at-home": ["carpet-cleaning-brampton-hallway-kitchen-move-in", "does-vacuuming-clean-carpet"],
   "how-often-to-clean-a-sofa-with-a-dog-or-cat": ["how-often-should-you-clean-a-sofa", "how-to-remove-pet-urine-smell-from-couch"],
   "how-often-should-you-clean-a-sofa": ["how-often-to-clean-a-sofa-with-a-dog-or-cat", "how-to-know-when-your-sofa-needs-professional-cleaning"],
   "how-to-remove-stain-from-couch": ["why-did-my-couch-stain-come-back-after-cleaning", "what-cleaning-solution-can-i-use-on-my-couch"],
   "why-did-my-couch-stain-come-back-after-cleaning": ["how-to-remove-stain-from-couch", "what-to-do-after-sofa-cleaning"],
   "what-cleaning-solution-can-i-use-on-my-couch": ["how-to-remove-stain-from-couch", "how-to-choose-an-upholstery-cleaning-company"],
   "why-sofa-armrests-get-dirty-faster": ["how-to-know-when-your-sofa-needs-professional-cleaning", "how-to-remove-stain-from-couch"],
-  "does-vacuuming-clean-carpet": ["how-often-should-office-carpets-be-cleaned", "how-to-choose-an-upholstery-cleaning-company"],
+  "does-vacuuming-clean-carpet": ["carpet-cleaning-brampton-hallway-kitchen-move-in", "how-often-should-office-carpets-be-cleaned"],
   "how-often-should-office-carpets-be-cleaned": ["does-vacuuming-clean-carpet", "how-to-choose-an-upholstery-cleaning-company"],
   "how-to-remove-pet-urine-smell-from-couch": ["how-urine-odour-treatment-works-on-a-sofa-milton", "how-long-does-a-couch-take-to-dry-after-cleaning"],
   "how-urine-odour-treatment-works-on-a-sofa-milton": ["how-to-remove-pet-urine-smell-from-couch", "how-long-does-a-couch-take-to-dry-after-cleaning"],
