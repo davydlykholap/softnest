@@ -185,7 +185,8 @@
 }
 
 
-.locations-city-card > img {
+.locations-city-card > img,
+.locations-city-card > picture > img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -196,7 +197,8 @@
 
 @media (hover: hover) and (pointer: fine) {
 
-.locations-city-card:hover > img {
+.locations-city-card:hover > img,
+.locations-city-card:hover > picture > img {
     transform: scale(1.035);
 }
 }
@@ -429,7 +431,8 @@
 
     
     
-    .locations-city-card > img {
+    .locations-city-card > img,
+    .locations-city-card > picture > img {
         height: 72%;
     }
 
@@ -1646,7 +1649,8 @@
 }
 
 /* Location cards use a softly rounded title panel with a shallow image overlap. */
-.locations-city-card--location > img {
+.locations-city-card--location > img,
+.locations-city-card--location > picture > img {
     height: calc(100% - 74px);
 }
 

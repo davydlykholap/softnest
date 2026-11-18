@@ -92,6 +92,7 @@ export function DirectoryHero({
 type DirectoryCardProps = {
   href: string;
   image: string;
+  mobileImage?: string;
   imageAlt: string;
   title: string;
   subtitle?: string;
@@ -102,12 +103,23 @@ type DirectoryCardProps = {
 export function DirectoryCard({
   href,
   image,
+  mobileImage,
   imageAlt,
   title,
   subtitle,
   ariaLabel,
   className = "",
 }: DirectoryCardProps) {
+  const cardImage = (
+    <Image
+      src={image}
+      alt={imageAlt}
+      width={900}
+      height={600}
+      sizes={mobileImage ? "(max-width: 1360px) 100vw, 1296px" : "(max-width: 820px) 100vw, (max-width: 1100px) 50vw, 33vw"}
+    />
+  );
+
   return (
     <Link
       prefetch={false}
@@ -115,13 +127,12 @@ export function DirectoryCard({
       href={href}
       aria-label={`${title}${subtitle ? ` ${subtitle}` : ""}. ${ariaLabel}`}
     >
-      <Image
-        src={image}
-        alt={imageAlt}
-        width={900}
-        height={600}
-        sizes="(max-width: 820px) 100vw, (max-width: 1100px) 50vw, 33vw"
-      />
+      {mobileImage ? (
+        <picture>
+          <source media="(max-width: 639px)" srcSet={mobileImage} />
+          {cardImage}
+        </picture>
+      ) : cardImage}
       <div className={`locations-city-card__body ${cardPanelClassName}`}>
         <h3>{title}</h3>
         {subtitle ? <p>{subtitle}</p> : null}

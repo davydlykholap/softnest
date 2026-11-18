@@ -13,7 +13,14 @@ import HomeVideoShowcase from "@/components/HomeVideoShowcase";
 
 // The home page shows the four main directions; related services are linked as chips below the cards.
 const homeDirections = [
-  { slug: "sofa-cleaning", title: "Sofas & Upholstery", featured: true },
+  {
+    slug: "sofa-cleaning",
+    title: "Sofa Cleaning",
+    featured: true,
+    image: "/images/home/home-service-sofa.webp",
+    mobileImage: "/images/home/home-service-sofa-mobile.webp",
+    imageAlt: "Rounded cream sofa with a round cushion in a sunlit living room",
+  },
   { slug: "carpet-area-rug-cleaning", title: "Carpets, Rugs & Stairs", featured: false, image: "/images/home/home-service-carpets.webp", imageAlt: "Patterned rug in a bright room with carpeted stairs" },
   { slug: "mattress-cleaning", title: "Mattresses", featured: false, image: "/images/home/home-service-mattresses.webp", imageAlt: "White quilted mattress beside a green upholstered headboard" },
   { slug: "dining-chair-cleaning", title: "Chairs & Armchairs", featured: false },
@@ -78,10 +85,11 @@ export default function HomeSections() {
         <p className="home-services-intro">{"" + pageText(homeContent.copy, "sections-38") + ""}</p>
       </div>
       <div className="home-services-grid home-services-grid--directions">
-        {homeDirections.map(({ service, title, featured, image, imageAlt }) => (
+        {homeDirections.map(({ service, title, featured, image, mobileImage, imageAlt }) => (
           <DirectoryCard
             href={`/services/${service.slug}/`}
             image={image ?? service.image}
+            mobileImage={mobileImage}
             imageAlt={imageAlt ?? service.imageAlt}
             title={title}
             ariaLabel={`Learn about ${service.name.toLowerCase()}`}
