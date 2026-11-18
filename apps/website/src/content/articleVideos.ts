@@ -13,6 +13,7 @@ const articleProjects: Record<string, string> = {
   "mattress-cleaning-why-regular-cleaning-matters-gta": "mattress-stain-removal-brampton",
   "uv-light-hidden-stains-linen-sofa-etobicoke": "linen-sofa-uv-stain-inspection-etobicoke",
   "how-urine-odour-treatment-works-on-a-sofa-milton": "urine-odour-treatment-sofa-milton",
+  "how-often-to-clean-a-sofa-with-a-dog-or-cat": "dark-grey-sofa-cleaning-with-dog-innisfil",
   "clean-home-comfort-carpets-sofas-family": "carpet-regular-cleaning-milton",
   "does-vacuuming-clean-carpet": "grey-carpet-cleaning-hallway-burlington",
   "how-often-to-deep-clean-carpet-at-home": "grey-carpet-cleaning-hallway-burlington",

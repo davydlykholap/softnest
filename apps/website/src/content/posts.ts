@@ -47,6 +47,8 @@ export function getRelatedPosts(serviceSlug: string): Post[] {
 
 // Editorial next steps by topic, rather than the same two newest posts everywhere.
 const readingTopics: Record<string, string[]> = {
+  "how-often-to-clean-a-sofa-with-a-dog-or-cat": ["how-often-should-you-clean-a-sofa", "how-to-remove-pet-urine-smell-from-couch"],
+  "how-often-should-you-clean-a-sofa": ["how-often-to-clean-a-sofa-with-a-dog-or-cat", "how-to-know-when-your-sofa-needs-professional-cleaning"],
   "how-to-remove-stain-from-couch": ["why-did-my-couch-stain-come-back-after-cleaning", "what-cleaning-solution-can-i-use-on-my-couch"],
   "why-did-my-couch-stain-come-back-after-cleaning": ["how-to-remove-stain-from-couch", "what-to-do-after-sofa-cleaning"],
   "what-cleaning-solution-can-i-use-on-my-couch": ["how-to-remove-stain-from-couch", "how-to-choose-an-upholstery-cleaning-company"],
