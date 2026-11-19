@@ -4,84 +4,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import PricingEstimator from "@/components/PricingEstimator";
 import styles from "./pricing.module.css";
 
 export const metadata: Metadata = {
-  title: "Upholstery & Carpet Cleaning Prices | SoftNest",
+  title: "Upholstery & Carpet Cleaning Prices and Booking | SoftNest",
   description:
-    "SoftNest cleaning prices across the GTA for sofas, carpet, chairs, mattresses and leather. Tax included, minimum visit $139, with a clear explanation of what changes the price.",
+    "SoftNest cleaning prices across the GTA for sofas, carpet, chairs, mattresses and leather. Tax included, minimum visit $139. See your estimate and pick a day and time to book.",
   alternates: { canonical: "/pricing/" },
   openGraph: {
-    title: "Upholstery & Carpet Cleaning Prices | SoftNest",
+    title: "Upholstery & Carpet Cleaning Prices and Booking | SoftNest",
     description:
-      "Clear per-item prices for sofa, mattress, chair, leather and carpet cleaning in the GTA. Tax included.",
+      "Clear per-item prices for sofa, mattress, chair, leather and carpet cleaning in the GTA. Tax included. Pick a day and time to book.",
     url: "/pricing/",
   },
 };
-
-type Row = { label: string; price: string; note?: string };
-
-const upholstery: Row[] = [
-  { label: "Loveseat (2 seats)", price: "$89 – $109" },
-  { label: "Sofa (3 seats)", price: "$119 – $129" },
-  { label: "Sofa (4 seats)", price: "$159 – $179" },
-  { label: "2-seat sofa with chaise", price: "$159 – $179" },
-  { label: "3-seat sofa with chaise", price: "$199 – $219" },
-  { label: "Sectional, 5 seats", price: "$199 – $219" },
-  { label: "Sectional, 6 seats", price: "$219 – $239" },
-  { label: "Sectional, 7 seats", price: "$249 – $269" },
-  { label: "Ottoman", price: "$25 – $30", note: "depends on its size" },
-  { label: "Decorative pillow", price: "$5" },
-];
-
-const leather: Row[] = [
-  { label: "Armchair", price: "$59" },
-  { label: "Loveseat", price: "$109" },
-  { label: "Sofa (3 seats)", price: "$139" },
-];
-
-const chairs: Row[] = [
-  { label: "Armchair", price: "$49" },
-  { label: "Recliner", price: "$59" },
-  { label: "Dining chair, seat only", price: "$10 – $15", note: "depending on how dirty it is" },
-  { label: "Dining chair, seat and back", price: "$20 – $25" },
-  { label: "Fully upholstered chair", price: "$25" },
-];
-
-const mattresses: Row[] = [
-  { label: "Twin (single)", price: "$89", note: "one side" },
-  { label: "Twin XL", price: "$89", note: "one side" },
-  { label: "Double (full)", price: "$99", note: "one side" },
-  { label: "Queen", price: "$109", note: "one side" },
-  { label: "King", price: "$129", note: "one side" },
-  { label: "California King", price: "$129", note: "one side" },];
-
-const carpet: Row[] = [
-  { label: "Room (standard size)", price: "$50" },
-  { label: "Hallway", price: "$25 – $30" },
-  { label: "Landing", price: "$25 – $30" },
-  { label: "Stairs", price: "$5 per step" },
-  { label: "Area rug", price: "$1.50 per sq. ft." },
-];
-
-function PriceTable({ caption, rows }: { caption: string; rows: Row[] }) {
-  return (
-    <table className={styles.table}>
-      <caption>{caption}</caption>
-      <tbody>
-        {rows.map((row) => (
-          <tr key={row.label}>
-            <th scope="row">
-              {row.label}
-              {row.note ? <small>{row.note}</small> : null}
-            </th>
-            <td>{row.price}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-}
 
 const includedItems = [
   { title: "Fabric inspection and test", text: "Before we start, we look closely at your fabric and its care label and test in a hidden spot. Then we choose the right cleaning solution for your fabric and your stains from the many we bring with us." },
@@ -156,7 +93,7 @@ export default function PricingPage() {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${siteConfig.url}/` },
-      { "@type": "ListItem", position: 2, name: "Pricing", item: `${siteConfig.url}/pricing/` },
+      { "@type": "ListItem", position: 2, name: "Prices & booking", item: `${siteConfig.url}/pricing/` },
     ],
   };
   const faqSchema = {
@@ -177,7 +114,7 @@ export default function PricingPage() {
       <main className={styles.page}>
         <div className={styles.shell}>
           <section className={styles.hero} aria-labelledby="pricing-heading">
-            <p className={styles.eyebrow}>Pricing</p>
+            <p className={styles.eyebrow}>Prices &amp; booking</p>
             <h1 id="pricing-heading">Upholstery &amp; Carpet Cleaning Prices</h1>
             <p className={styles.notice}>
               <strong>Minimum visit: $139</strong> (tax included)
@@ -236,42 +173,18 @@ export default function PricingPage() {
             <a href="#chairs-heading">Armchairs and chairs</a>
             <a href="#mattress-heading">Mattresses</a>
             <a href="#leather-heading">Leather</a>
+            <a href="#pick-time">Book a time</a>
             <a href="#included-heading">What is included</a>
             <a href="#faq-heading">Questions</a>
             <a href="#extra-heading">Extras</a>
           </nav>
 
-          <section className={styles.section} aria-labelledby="upholstery-heading">
-            <h2 id="upholstery-heading">Sofas</h2>
-            <p>
-              Price per item. The lower price is for cushions that cannot be removed. The higher
-              price is for cushions that come off and can be flipped, so we clean both sides.
+          <section className={styles.estimator} id="prices" aria-label="Prices and booking">
+            <p className={styles.estimatorIntro}>
+              Add what you would like cleaned to see your estimate, then pick a day and start time at the
+              bottom of this list. We confirm every request by text message.
             </p>
-            <PriceTable caption="Sofa cleaning prices" rows={upholstery} />
-          </section>
-
-          <section className={styles.section} aria-labelledby="carpet-heading">
-            <h2 id="carpet-heading">Carpet</h2>
-            <PriceTable caption="Carpet cleaning prices" rows={carpet} />
-          </section>
-
-          <section className={styles.section} aria-labelledby="chairs-heading">
-            <h2 id="chairs-heading">Armchairs and chairs</h2>
-            <p>Price per item.</p>
-            <PriceTable caption="Armchair and chair cleaning prices" rows={chairs} />
-          </section>
-
-          <section className={styles.section} aria-labelledby="mattress-heading">
-            <h2 id="mattress-heading">Mattresses</h2>
-            <PriceTable caption="Mattress cleaning prices" rows={mattresses} />
-            <p className={styles.note}>Prices are for cleaning one side. Other sizes or both sides: message us and we will give you a price.</p>
-          </section>
-
-          <section className={styles.section} aria-labelledby="leather-heading">
-            <h2 id="leather-heading">Leather</h2>
-            <p>Cleaning and conditioning included.</p>
-            <PriceTable caption="Leather furniture cleaning prices" rows={leather} />
-            <p className={styles.note}>Leather sectionals and other leather pieces: message us and we will give you a price.</p>
+            <PricingEstimator />
           </section>
 
           <section className={styles.included} id="included" aria-labelledby="included-heading">

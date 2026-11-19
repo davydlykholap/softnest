@@ -10,6 +10,18 @@
   margin: 0 auto;
 }
 
+.estimator {
+  margin: 0 0 28px;
+}
+
+.estimatorIntro {
+  max-width: 720px;
+  margin: 0 0 18px;
+  color: #55675e;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
 .hero {
   padding: clamp(30px, 5vw, 56px);
   border: 1px solid rgba(7, 84, 59, 0.12);

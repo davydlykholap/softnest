@@ -1,4 +1,4 @@
-// Numeric copy of the price list on /pricing/. Keep both in sync when a price changes.
+// The price list of /pricing/. Change a price here and the page, the estimate and the booking notes all follow.
 export type BookingItem = {
   id: string;
   label: string;
@@ -13,7 +13,14 @@ export type BookingItem = {
 };
 
 export type BookingGuide = { badge: string; title: string; text: string };
-export type BookingGroup = { id: string; title: string; guide?: BookingGuide[]; items: BookingItem[] };
+export type BookingGroup = {
+  id: string;
+  title: string;
+  lead?: string;
+  guide?: BookingGuide[];
+  note?: string;
+  items: BookingItem[];
+};
 
 export const minimumVisit = 139;
 export const downtownExtra = 30;
@@ -21,7 +28,8 @@ export const downtownExtra = 30;
 export const bookingGroups: BookingGroup[] = [
   {
     id: "upholstery",
-    title: "Sofas and upholstery",
+    title: "Sofas",
+    lead: "Price per item.",
     guide: [
       { badge: "Lower price", title: "Fixed cushions", text: "The cushions cannot be removed." },
       { badge: "Higher price", title: "Removable cushions", text: "We clean both sides of every cushion, and we do it thoroughly." },
@@ -40,17 +48,20 @@ export const bookingGroups: BookingGroup[] = [
     ],
   },
   {
-    id: "leather",
-    title: "Leather",
+    id: "carpet",
+    title: "Carpet",
     items: [
-      { id: "leather-armchair", label: "Leather armchair", min: 59, max: 59 },
-      { id: "leather-loveseat", label: "Leather loveseat", min: 109, max: 109 },
-      { id: "leather-sofa", label: "Leather sofa (3 seats)", min: 139, max: 139 },
+      { id: "room", label: "Room (standard size)", min: 50, max: 50 },
+      { id: "hallway", label: "Hallway", min: 25, max: 30 },
+      { id: "landing", label: "Landing", min: 25, max: 30 },
+      { id: "stairs", label: "Stairs", note: "$5 per step", min: 5, max: 5, unit: "steps", maxQty: 60 },
+      { id: "rug", label: "Area rug", note: "$1.50 per sq. ft.", min: 1.5, max: 1.5, unit: "sq. ft.", step: 10, maxQty: 600 },
     ],
   },
   {
     id: "chairs",
-    title: "Chairs",
+    title: "Armchairs and chairs",
+    lead: "Price per item.",
     items: [
       { id: "armchair", label: "Armchair", min: 49, max: 49 },
       { id: "recliner", label: "Recliner", min: 59, max: 59 },
@@ -60,8 +71,9 @@ export const bookingGroups: BookingGroup[] = [
     ],
   },
   {
-    id: "mattresses",
+    id: "mattress",
     title: "Mattresses",
+    note: "Prices are for cleaning one side. Other sizes or both sides: message us and we will give you a price.",
     items: [
       { id: "twin", label: "Twin (single)", note: "one side", min: 89, max: 89 },
       { id: "twin-xl", label: "Twin XL", note: "one side", min: 89, max: 89 },
@@ -72,14 +84,14 @@ export const bookingGroups: BookingGroup[] = [
     ],
   },
   {
-    id: "carpet",
-    title: "Carpet and rugs",
+    id: "leather",
+    title: "Leather",
+    lead: "Cleaning and conditioning included.",
+    note: "Leather sectionals and other leather pieces: message us and we will give you a price.",
     items: [
-      { id: "room", label: "Room (standard size)", min: 50, max: 50 },
-      { id: "hallway", label: "Hallway", min: 25, max: 30 },
-      { id: "landing", label: "Landing", min: 25, max: 30 },
-      { id: "stairs", label: "Stairs", note: "$5 per step", min: 5, max: 5, unit: "steps", maxQty: 60 },
-      { id: "rug", label: "Area rug", note: "$1.50 per sq. ft.", min: 1.5, max: 1.5, unit: "sq. ft.", step: 10, maxQty: 600 },
+      { id: "leather-armchair", label: "Leather armchair", min: 59, max: 59 },
+      { id: "leather-loveseat", label: "Leather loveseat", min: 109, max: 109 },
+      { id: "leather-sofa", label: "Leather sofa (3 seats)", min: 139, max: 139 },
     ],
   },
 ];

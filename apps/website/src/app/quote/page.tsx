@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import QuotePageForm from "@/components/QuotePageForm";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import styles from "./quote-page.module.css";
 import { locations } from "@/content/locations";
-import { siteConfig } from "@/lib/site";
-
 export const metadata: Metadata = {
   title: "Get a Quote | SoftNest Fabric Care",
   description:
@@ -31,9 +30,9 @@ export default function QuotePage() {
             <QuotePageForm cities={locations.map(({ slug, name }) => ({ slug, name }))} />
           </div>
           <div className={styles.booking}>
-            <h2>Prefer to pick a time yourself?</h2>
-            <p>Choose the day and start time that suits you. We confirm every request by text message.</p>
-            <a href={siteConfig.bookingHref} target="_blank" rel="noopener noreferrer">Request a visit time</a>
+            <h2>Know what you need cleaned?</h2>
+            <p>See the prices, get an estimate and pick the day and start time yourself. We confirm every request by text message.</p>
+            <Link href="/pricing/#prices">Prices &amp; booking</Link>
           </div>
         </section>
       </main>

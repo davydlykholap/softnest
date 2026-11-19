@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { bookingGroups, downtownExtra, minimumVisit, type BookingItem } from "@/content/bookingPrices";
 import { siteConfig } from "@/lib/site";
-import styles from "./book.module.css";
+import styles from "./pricing-estimator.module.css";
 
 const money = (value: number) => `$${Number.isInteger(value) ? value : value.toFixed(2)}`;
 const range = (min: number, max: number) => (min === max ? money(min) : `${money(min)} – ${money(max)}`);
@@ -12,7 +12,7 @@ const priceLabel = (item: BookingItem) => {
   return range(item.min, item.max);
 };
 
-export default function BookingEstimator() {
+export default function PricingEstimator() {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [downtown, setDowntown] = useState(false);
   const [cushion, setCushion] = useState<Record<string, "fixed" | "removable">>({});
@@ -98,8 +98,9 @@ export default function BookingEstimator() {
     <div className={styles.layout}>
       <div className={styles.groups}>
         {bookingGroups.map((group) => (
-          <section key={group.id} className={styles.group} aria-labelledby={`group-${group.id}`}>
-            <h2 id={`group-${group.id}`}>{group.title}</h2>
+          <section key={group.id} className={styles.group} aria-labelledby={`${group.id}-heading`}>
+            <h2 id={`${group.id}-heading`}>{group.title}</h2>
+            {group.lead ? <p className={styles.groupLead}>{group.lead}</p> : null}
             {group.guide ? (
               <div className={styles.guide}>
                 {group.guide.map((tile, index) => (
@@ -165,6 +166,7 @@ export default function BookingEstimator() {
                 );
               })}
             </ul>
+            {group.note ? <p className={styles.groupNote}>{group.note}</p> : null}
           </section>
         ))}
       </div>

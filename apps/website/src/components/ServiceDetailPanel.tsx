@@ -88,7 +88,7 @@ export default function ServiceDetailPanel({
             <Link className={styles.heroPrimary} href={`/quote/?service=${encodeURIComponent(service.slug)}`}>Get a free quote</Link>
             <a className={styles.heroSecondary} href={siteConfig.smsHref}>Text us</a>
             <a className={styles.heroSecondary} href={siteConfig.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a className={`${styles.heroSecondary} ${styles.heroBooking}`} href={siteConfig.bookingHref} target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" /><path d="M16 3v4M8 3v4M3 11h18" /></svg>Request a visit time</a>
+            <Link className={`${styles.heroSecondary} ${styles.heroBooking}`} href="/pricing/#prices"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" /><path d="M16 3v4M8 3v4M3 11h18" /></svg>Prices &amp; booking</Link>
           </div>
           <p className={styles.heroTrust}>Free written quote, tax included. Rated {siteConfig.reviewScore} on Google.</p>
         </div>
