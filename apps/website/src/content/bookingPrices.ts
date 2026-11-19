@@ -24,6 +24,9 @@ export type BookingGroup = {
 
 export const minimumVisit = 139;
 export const downtownExtra = 30;
+// Multi-item discount: the most expensive piece is full price, the second is 20% off,
+// the third and every further piece is 25% off. The final price is always confirmed by SoftNest.
+export const multiItemDiscount = { second: 0.2, thirdAndMore: 0.25 };
 
 export const bookingGroups: BookingGroup[] = [
   {

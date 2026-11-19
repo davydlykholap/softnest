@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { bookingGroups, downtownExtra, minimumVisit, type BookingItem } from "@/content/bookingPrices";
+import { bookingGroups, downtownExtra, minimumVisit, multiItemDiscount, type BookingItem } from "@/content/bookingPrices";
 import { siteConfig } from "@/lib/site";
 import styles from "./pricing-estimator.module.css";
 
@@ -60,8 +60,28 @@ export default function PricingEstimator() {
     });
   };
 
-  const subtotalMin = selected.reduce((sum, item) => sum + lowPrice(item) * (quantities[item.id] ?? 0), 0);
-  const subtotalMax = selected.reduce((sum, item) => sum + highPrice(item) * (quantities[item.id] ?? 0), 0);
+  // Every piece counts as an item; a staircase or an area rug counts as one. The priciest piece is full price.
+  const withDiscount = (price: (item: BookingItem) => number) => {
+    const pieces = selected
+      .flatMap((item) => {
+        const qty = quantities[item.id] ?? 0;
+        return item.unit ? [price(item) * qty] : Array<number>(qty).fill(price(item));
+      })
+      .sort((a, b) => b - a);
+    const full = pieces.reduce((sum, value) => sum + value, 0);
+    const discounted = pieces.reduce((sum, value, index) => {
+      const rate = index === 0 ? 0 : index === 1 ? multiItemDiscount.second : multiItemDiscount.thirdAndMore;
+      return sum + Math.round(value * (1 - rate));
+    }, 0);
+    return { full, discounted };
+  };
+  const low = withDiscount(lowPrice);
+  const high = withDiscount(highPrice);
+  const subtotalMin = low.discounted;
+  const subtotalMax = high.discounted;
+  const savedMin = Math.max(0, Math.round(low.full) - subtotalMin);
+  const savedMax = Math.max(0, Math.round(high.full) - subtotalMax);
+  const hasDiscount = savedMin > 0 || savedMax > 0;
   const extra = downtown ? downtownExtra : 0;
   const totalMin = Math.max(subtotalMin, minimumVisit) + extra;
   const totalMax = Math.max(subtotalMax, minimumVisit) + extra;
@@ -78,6 +98,7 @@ export default function PricingEstimator() {
         "Items:",
         ...selected.map((item) => `- ${lineText(item)}`),
         downtown ? "Downtown Toronto: yes" : "",
+        hasDiscount ? "Multi-item discount (20% second item, 25% third and more) is included in the estimate" : "",
         `Estimate from the website, tax included: ${range(totalMin, totalMax)}`,
       ]
         .filter(Boolean)
@@ -189,10 +210,18 @@ export default function PricingEstimator() {
                 <small>Adds {money(downtownExtra)} (minimum visit {money(minimumVisit + downtownExtra)})</small>
               </span>
             </label>
+            {hasDiscount ? (
+              <p className={styles.saving}>
+                <span>Multi-item discount included</span>
+                <strong>−{range(Math.min(savedMin, savedMax), Math.max(savedMin, savedMax))}</strong>
+                <small>20% off the second item, 25% off the third and any after.</small>
+              </p>
+            ) : null}
             <p className={styles.total}>
               <span>Estimated total, tax included</span>
               <strong>{range(totalMin, totalMax)}</strong>
             </p>
+            <p className={styles.confirmNote}>We confirm the exact amount with you before we start, and a small difference is possible.</p>
             {belowMinimum ? <p className={styles.hint}>The minimum visit is {money(minimumVisit)}. Add another item to get more from the same visit.</p> : null}
           </>
         )}
@@ -200,7 +229,7 @@ export default function PricingEstimator() {
           Next: pick a time
         </a>
         <p className={styles.fine}>
-          This is an estimate before any multi-item discount. We confirm the work and the final price in writing before we start, and you pay only after the service.
+          This is an estimate. The second item is 20% off and the third 25% off, and it is already included. We confirm the work and the final price in writing before we start, and you pay only after the service.
         </p>
       </aside>
     </div>

@@ -313,6 +313,40 @@
   font-weight: 400;
 }
 
+.saving {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border: 1.5px solid #9fcfb5;
+  border-radius: 14px;
+  background: #eaf5ef;
+}
+
+.saving span {
+  color: #07543b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.saving strong {
+  color: #07543b;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.saving small {
+  color: #33463c;
+  font-size: 12.5px;
+}
+
+.confirmNote {
+  margin: -6px 0 14px;
+  color: #55675e;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
 .total {
   display: grid;
   gap: 2px;

@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: "Do you give a discount for several items?",
-    a: "Yes. When you add a second item, we give you a discount, and with a third item the discount is even bigger. The exact discount depends on what you would like cleaned, so we talk about it directly. Message us with everything you have, and we will gladly work it out together.",
+    a: "Yes. We take 20% off the second item and 25% off the third and any further items, and the estimate on this page already includes it. We always confirm the exact price with you in writing before we start, so a small difference is possible. Message us with everything you have, and we will gladly work it out together.",
   },
   {
     q: "Is stain removal included?",
@@ -113,9 +113,39 @@ export default function PricingPage() {
       </div>
       <main className={styles.page}>
         <div className={styles.shell}>
-          <section className={styles.hero} aria-labelledby="pricing-heading">
+          <section className={`${styles.hero} ${styles.heroTop}`} aria-labelledby="pricing-heading">
             <p className={styles.eyebrow}>Prices &amp; booking</p>
             <h1 id="pricing-heading">Upholstery &amp; Carpet Cleaning Prices</h1>
+            <ul className={styles.quickFacts}>
+              <li>Tax included</li>
+              <li>Minimum visit $139</li>
+              <li>2nd item 20% off, 3rd 25% off</li>
+              <li>You pay after the service</li>
+            </ul>
+          </section>
+
+          <nav className={styles.jump} aria-label="Jump to a section">
+            <a href="#upholstery-heading">Sofas</a>
+            <a href="#carpet-heading">Carpet</a>
+            <a href="#chairs-heading">Armchairs and chairs</a>
+            <a href="#mattress-heading">Mattresses</a>
+            <a href="#leather-heading">Leather</a>
+            <a href="#pick-time">Book a time</a>
+            <a href="#included-heading">What is included</a>
+            <a href="#faq-heading">Questions</a>
+            <a href="#extra-heading">Extras</a>
+          </nav>
+
+          <section className={styles.estimator} id="prices" aria-label="Prices and booking">
+            <p className={styles.estimatorIntro}>
+              Add what you would like cleaned to see your estimate with the discount, then pick a day and start
+              time at the bottom. We confirm every request by text message.
+            </p>
+            <PricingEstimator />
+          </section>
+
+          <section className={`${styles.hero} ${styles.goodToKnow}`} aria-labelledby="know-heading">
+            <h2 id="know-heading">Good to know</h2>
             <p className={styles.notice}>
               <strong>Minimum visit: $139</strong> (tax included)
               <span>This covers us coming to you with all our equipment. If your item costs less, we would be glad to clean another one in the same visit, so you get the most out of it.</span>
@@ -123,10 +153,10 @@ export default function PricingPage() {
             <p className={`${styles.notice} ${styles.noticeSecondary}`}>
               <strong>The more you clean, the more you save</strong>
               <span>
-                When you add a second item, we give you a discount, and with a third item the
-                discount is even bigger. The exact discount depends on what you would like
-                cleaned, so let us talk about it directly: message us, and we will gladly work
-                it out together.
+                We take 20% off the second item and 25% off the third and any further items. The
+                estimate above already includes it. We always confirm the exact price with you
+                before we start, so a small difference is possible, and we will gladly work it
+                out together.
               </span>
             </p>
             <p className={`${styles.notice} ${styles.noticeSecondary}`}>
@@ -167,25 +197,6 @@ export default function PricingPage() {
             <a href="#included">See everything that is included</a>
           </section>
 
-          <nav className={styles.jump} aria-label="Jump to a section">
-            <a href="#upholstery-heading">Sofas</a>
-            <a href="#carpet-heading">Carpet</a>
-            <a href="#chairs-heading">Armchairs and chairs</a>
-            <a href="#mattress-heading">Mattresses</a>
-            <a href="#leather-heading">Leather</a>
-            <a href="#pick-time">Book a time</a>
-            <a href="#included-heading">What is included</a>
-            <a href="#faq-heading">Questions</a>
-            <a href="#extra-heading">Extras</a>
-          </nav>
-
-          <section className={styles.estimator} id="prices" aria-label="Prices and booking">
-            <p className={styles.estimatorIntro}>
-              Add what you would like cleaned to see your estimate, then pick a day and start time at the
-              bottom of this list. We confirm every request by text message.
-            </p>
-            <PricingEstimator />
-          </section>
 
           <section className={styles.included} id="included" aria-labelledby="included-heading">
             <h2 id="included-heading">Everything that is included in your price</h2>

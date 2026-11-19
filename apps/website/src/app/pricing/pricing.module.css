@@ -10,6 +10,45 @@
   margin: 0 auto;
 }
 
+.heroTop {
+  padding: clamp(20px, 3.5vw, 32px) clamp(22px, 4vw, 40px);
+  border-radius: 28px;
+}
+
+.heroTop h1 {
+  margin-bottom: 12px;
+}
+
+.quickFacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quickFacts li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eaf5ef;
+  color: #07543b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.goodToKnow {
+  margin-bottom: 28px;
+}
+
+.goodToKnow h2 {
+  margin: 0 0 18px;
+  color: #033f2d;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 500;
+}
+
 .estimator {
   margin: 0 0 28px;
 }
@@ -267,4 +306,12 @@
 .jump { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 10px; margin-top: 20px; }
 .jump a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1px solid rgba(7, 84, 59, .28); border-radius: 999px; background: #fff; color: #033f2d; font-size: 15px; font-weight: 650; text-decoration: none; }
 .jump a:hover, .jump a:focus-visible { background: #eef5f1; border-color: rgba(7, 84, 59, .55); }
+@media (max-width: 700px) {
+  .jump { flex-wrap: nowrap; justify-content: flex-start; margin: 14px -8px 0; padding: 2px 8px 8px; overflow-x: auto; scrollbar-width: none; }
+  .jump::-webkit-scrollbar { display: none; }
+  .jump a { flex: none; min-height: 38px; font-size: 14px; }
+  .heroTop { padding: 20px 20px 22px; }
+  .heroTop h1 { font-size: clamp(30px, 9vw, 40px); }
+  .quickFacts li { padding: 5px 12px; font-size: 13px; }
+}
 .section h2, .faq h2 { scroll-margin-top: 130px; }
