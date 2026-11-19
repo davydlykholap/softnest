@@ -154,6 +154,9 @@
 .quotePrimary { background:var(--quote-cta-background); color:#000; box-shadow:0 8px 18px rgba(177,128,22,.24); }
 .quotePrimary:hover { background:var(--quote-cta-background-hover); }
 .quoteSecondary { border:2px solid var(--brand-green, #174b3a); color:var(--brand-green, #174b3a); }
+.quoteActions .quoteBooking { gap:8px; background:#e6f3ec; border-color:#9fcfb5; color:#0a5a40; }
+.quoteActions .quoteBooking:hover { background:#d3ebdd; border-color:#7fbf9c; }
+.quoteBooking svg { flex:none; }
 @media (max-width:640px) { .quotePrimary, .quoteSecondary { width:100%; } }
 
 .videoFigure { max-width:420px; margin:24px auto; }

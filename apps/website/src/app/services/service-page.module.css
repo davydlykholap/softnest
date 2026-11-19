@@ -726,6 +726,9 @@
 .heroActions .heroPrimary { background:var(--quote-cta-background); color:#000; box-shadow:0 8px 18px rgba(177,128,22,.24); }
 .heroActions .heroPrimary:hover { background:var(--quote-cta-background-hover); }
 .heroSecondary { border:2px solid var(--brand-green); color:var(--brand-green); }
+.heroActions .heroBooking { gap:8px; background:#e6f3ec; border-color:#9fcfb5; color:#0a5a40; }
+.heroActions .heroBooking:hover { background:#d3ebdd; border-color:#7fbf9c; }
+.heroBooking svg { flex:none; }
 .heroTrust { margin:0; color:#485c51; font-size:14px; }
 .reviewsSection { margin-bottom:56px; }
 .reviewGrid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
