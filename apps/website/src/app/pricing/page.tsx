@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     q: "Why is downtown more expensive?",
-    a: "Downtown Toronto and other downtown areas add $40 to the price, so the minimum visit there is $179. A second technician is always needed, and we need an extra hour to prepare and carry the equipment.",
+    a: "Downtown Toronto and other downtown areas add $30 to the price, so the minimum visit there is $169. A second technician is always needed, and we need an extra hour to prepare and carry the equipment.",
   },
   {
     q: "Do you travel outside the GTA?",
@@ -308,7 +308,7 @@ export default function PricingPage() {
               <li><strong>Whitening treatment</strong> for white and light fabric: dining chair $5, loveseat $20, most other items $30, 7-seat sectional $35.</li>
               <li><strong>Pilling removal:</strong> $15 per seat. A 3-seat sofa is $45.</li>
               <li><strong>Urine treatment:</strong> $25 per cushion.</li>
-              <li><strong>Downtown Toronto and other downtown areas:</strong> $40 added to the price (so the minimum visit there is $179). Downtown visits need a second technician and extra time to prepare and carry the equipment. Parking and access for our equipment are essential there, as described at the top of the page.</li>
+              <li><strong>Downtown Toronto and other downtown areas:</strong> $30 added to the price (so the minimum visit there is $169). Downtown visits need a second technician and extra time to prepare and carry the equipment. Parking and access for our equipment are essential there, as described at the top of the page.</li>
               <li><strong>Anything not listed here:</strong> message us and we will give you a price.</li>
             </ul>
           </section>
