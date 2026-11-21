@@ -17,6 +17,7 @@ const articleProjects: Record<string, string> = {
   "clean-home-comfort-carpets-sofas-family": "carpet-regular-cleaning-milton",
   "does-vacuuming-clean-carpet": "grey-carpet-cleaning-hallway-burlington",
   "how-often-to-deep-clean-carpet-at-home": "grey-carpet-cleaning-hallway-burlington",
+  "milky-foam-from-sofa-diy-cleaning-residue-hamilton": "sofa-cleaning-after-diy-products-hamilton",
 };
 
 export function getArticleVideo(articleSlug: string) {
