@@ -24,7 +24,7 @@ const inspectionNotes: Record<string, string> = {
   "pet-stain-odour-removal": "A small visible mark can hide a deeper pet accident. We discuss how far it may have soaked into fabric, foam, carpet backing or underlay before explaining what treatment can reasonably reach.",
 };
 
-// Services whose page shows a real appointment video instead of a before-and-after photo.
+// Services whose page shows a chosen appointment video. Any other service shows the video of its lead project when it has one, and a photo otherwise.
 const featuredVideoProjects: Record<string, string> = {
   "dining-chair-cleaning": "tufted-dining-chair-cleaning-residue-mississauga",
   "mattress-cleaning": "mattress-stain-removal-brampton",
@@ -54,9 +54,9 @@ export default function ServiceDetailPanel({
   const project = getWorkProjects({ service: service.slug })[0];
   const carpetDemo = service.slug === "carpet-area-rug-cleaning";
   const sofaDemo = service.slug === "sofa-cleaning";
-  const featuredVideoProject = featuredVideoProjects[service.slug]
+  const featuredVideoProject = (featuredVideoProjects[service.slug]
     ? getWorkProjects({ service: service.slug }).find((item) => item.slug === featuredVideoProjects[service.slug])
-    : undefined;
+    : undefined) ?? (project?.media[0]?.type === "video" ? project : undefined);
   const featuredVideo = featuredVideoProject?.media[0]?.type === "video" ? featuredVideoProject.media[0] : undefined;
   const review = getTestimonials().find((item) =>
     (item.services as string[]).includes(service.slug),
