@@ -15,7 +15,8 @@ import { pageMetadata } from "@/seo/metadata";
 import { jsonLd } from "@/seo/structuredData";
 import { portCreditWatchPath, portCreditWatchVideo, projectBreadcrumbs, projectDescription, projectSchema, projectTitle } from "@/seo/work";
 import { cityServicePages } from "@/content/cityServicePages";
-import { getRelatedPosts } from "@/content/posts";
+import { getRelatedPosts, getPost } from "@/content/posts";
+import { getArticleSlugsForProject } from "@/content/articleVideos";
 import styles from "../project.module.css";
 import "@/app/styles/location-page.css";
 
@@ -45,7 +46,8 @@ export default async function WorkProjectPage({params}:Props) {
   });
   const cityPage = project.services.map(slug => cityServicePages.find(item => item.location.slug === city && item.service.slug === slug)).find(Boolean);
   const faqs = (cityPage?.faqs ?? []).slice(1);
-  const guides = [...new Map(project.services.flatMap(slug => getRelatedPosts(slug)).map(post => [post.slug, post])).values()].slice(0, 3);
+  const ownArticles = getArticleSlugsForProject(project.slug).flatMap(slug => getPost(slug) ?? []);
+  const guides = [...new Map([...ownArticles, ...project.services.flatMap(slug => getRelatedPosts(slug))].map(post => [post.slug, post])).values()].slice(0, 3);
   const sameCity = getWorkProjects({city}).filter(item => item.id !== project.id);
   const moreWork = [...sameCity.filter(item => item.services.some(slug => project.services.includes(slug))), ...sameCity].filter((item, index, all) => all.indexOf(item) === index).slice(0, 3);
   return <>

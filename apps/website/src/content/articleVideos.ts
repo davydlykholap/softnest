@@ -27,3 +27,8 @@ export function getArticleVideo(articleSlug: string) {
   const video = project?.media[0];
   return project && video?.type === "video" && video.video ? { project, video } : undefined;
 }
+
+// Articles built around this project's video; the project page lists them first.
+export function getArticleSlugsForProject(projectSlug: string) {
+  return Object.entries(articleProjects).filter(([, slug]) => slug === projectSlug).map(([article]) => article);
+}
