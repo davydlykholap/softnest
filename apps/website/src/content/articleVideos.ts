@@ -18,6 +18,7 @@ const articleProjects: Record<string, string> = {
   "does-vacuuming-clean-carpet": "grey-carpet-cleaning-hallway-burlington",
   "how-often-to-deep-clean-carpet-at-home": "grey-carpet-cleaning-hallway-burlington",
   "milky-foam-from-sofa-diy-cleaning-residue-hamilton": "sofa-cleaning-after-diy-products-hamilton",
+  "paint-stain-on-a-sofa-why-it-spreads-and-how-extraction-lifts-it": "paint-stain-removal-dark-grey-sofa-brampton",
 };
 
 export function getArticleVideo(articleSlug: string) {
