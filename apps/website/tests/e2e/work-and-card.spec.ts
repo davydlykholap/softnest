@@ -27,7 +27,7 @@ test("city-grouped overview is photo-led, linked and responsive", async ({ page 
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     for(const city of cities) {
       const section = page.locator(`[data-work-city="${city.slug}"]`);
-      const matching = projects.filter(project => project.locations.includes(city.slug)).slice(0,6);
+      const matching = projects.filter(project => project.locations.includes(city.slug));
       await expect(section.locator("[data-project-id]")).toHaveCount(matching.length);
       await expect(section.getByRole("link",{name:`View all ${city.name} projects →`})).toHaveAttribute("href",`/our-work/${city.slug}/`);
       const ids = await section.locator("[data-project-id]").evaluateAll(items => items.map(item => item.getAttribute("data-project-id")));
