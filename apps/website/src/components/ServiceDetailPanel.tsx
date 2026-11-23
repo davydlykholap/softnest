@@ -58,6 +58,8 @@ export default function ServiceDetailPanel({
     ? getWorkProjects({ service: service.slug }).find((item) => item.slug === featuredVideoProjects[service.slug])
     : undefined) ?? (project?.media[0]?.type === "video" ? project : undefined);
   const featuredVideo = featuredVideoProject?.media[0]?.type === "video" ? featuredVideoProject.media[0] : undefined;
+  const sofaStainProject = sofaDemo ? getWorkProjects({ service: service.slug }).find((item) => item.slug === "paint-stain-removal-dark-grey-sofa-brampton") : undefined;
+  const sofaStainVideo = sofaStainProject?.media[0]?.type === "video" ? sofaStainProject.media[0] : undefined;
   const review = getTestimonials().find((item) =>
     (item.services as string[]).includes(service.slug),
   );
@@ -296,6 +298,26 @@ export default function ServiceDetailPanel({
               <source src="/videos/sofa-looked-white.mp4" type="video/mp4" />
               <a href="/videos/sofa-looked-white.mp4">Open the sofa cleaning video</a>
             </video>
+          </div>
+        </section>
+      ) : null}
+
+      {sofaDemo && sofaStainVideo && sofaStainProject ? (
+        <section className={styles.resultFeature} aria-labelledby="sofa-stain-heading">
+          <div className={styles.resultFeatureCopy}>
+            <span className={styles.resultFeatureRule} aria-hidden="true" />
+            <SectionHeading id="sofa-stain-heading">
+              <span>Stains hide</span>
+              <span>deep in the fabric.</span>
+            </SectionHeading>
+            <p className={styles.resultFeatureDescription}>
+              Rubbing a stain spreads it and pushes it into the weave. On this dark grey sofa in {sofaStainProject.location},
+              we softened the stain with the right cleaner and lifted it out with professional extraction.
+            </p>
+            <p><Link href={workProjectHref(sofaStainProject)}>See the full project</Link> · <Link href="/blog/paint-stain-on-a-sofa-why-it-spreads-and-how-extraction-lifts-it/">Read why stains spread</Link></p>
+          </div>
+          <div className={styles.resultFeatureMedia} style={{ maxWidth: 420 }}>
+            <WorkVideo item={sofaStainVideo} showTitle={false} />
           </div>
         </section>
       ) : null}
