@@ -8,3 +8,4 @@ This is the Next.js static website for softnestcare.ca. Read the relevant instal
 - Shared public content contracts live in @softnest/content. Do not import another app's src/ tree.
 - Local environment values belong in this app's ignored .env.local; .env.example documents names and public defaults.
 - Build output is out/. The existing deploy-pages.yml workflow and Sanity webhook publish this app.
+- Our Work city rails list every project of the city; keep tests/e2e/work-and-card.spec.ts in step with that.
