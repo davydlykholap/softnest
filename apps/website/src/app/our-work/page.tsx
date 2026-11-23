@@ -17,7 +17,7 @@ export const metadata = pageMetadata({ title:"Sofa, Upholstery & Carpet Cleaning
 
 export default function OurWorkPage() {
   const projects = getWorkProjects();
-  const groups = workLocations.map(city => ({ city, projects: projects.filter(project => project.locations.includes(city.slug)).slice(0, 6) }))
+  const groups = workLocations.map(city => ({ city, projects: projects.filter(project => project.locations.includes(city.slug)) }))
     .sort((a,b) => Number(b.projects.length > 0) - Number(a.projects.length > 0));
   const schema = { "@context":"https://schema.org", "@type":"CollectionPage", "@id":absoluteUrl("/our-work/#collection"), name:"SoftNest cleaning projects by city", url:absoluteUrl("/our-work/"), about:{ "@id":organizationId }, mainEntity:{ "@type":"ItemList", itemListElement:groups.flatMap(group => group.projects).map((project,index) => ({ "@type":"ListItem", position:index+1, url:absoluteUrl(workProjectHref(project)), name:project.title })) } };
   return <>

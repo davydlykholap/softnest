@@ -19,7 +19,9 @@ export default function WorkCityRail({ children, city, count }: { children: Reac
   function move(direction: number) {
     const element = track.current;
     if (!element) return;
-    element.scrollBy({ left: direction * element.clientWidth, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+    const card = element.firstElementChild as HTMLElement | null;
+    const step = card ? card.getBoundingClientRect().width + (parseFloat(getComputedStyle(element).columnGap) || 0) : element.clientWidth;
+    element.scrollBy({ left: direction * step, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   }
   return <div className={styles.rail}>
     <div id={`work-${city}-track`} ref={track} className={styles.track} data-city-track={city} role="group" aria-label={`${city} projects`}>
