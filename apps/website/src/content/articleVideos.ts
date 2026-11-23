@@ -21,12 +21,17 @@ const articleProjects: Record<string, string> = {
   "paint-stain-on-a-sofa-why-it-spreads-and-how-extraction-lifts-it": "paint-stain-removal-dark-grey-sofa-brampton",
 };
 
+// Articles that also show the project's other videos, one after the other, under the lead video.
+const articlesWithAllVideos = new Set(["paint-stain-on-a-sofa-why-it-spreads-and-how-extraction-lifts-it"]);
+
 export function getArticleVideo(articleSlug: string) {
   const projectSlug = articleProjects[articleSlug];
   if (!projectSlug) return undefined;
   const project = getWorkProjects().find((item) => item.slug === projectSlug);
   const video = project?.media[0];
-  return project && video?.type === "video" && video.video ? { project, video } : undefined;
+  if (!project || video?.type !== "video" || !video.video) return undefined;
+  const more = articlesWithAllVideos.has(articleSlug) ? project.media.slice(1).flatMap((item) => (item.type === "video" && item.video ? [item] : [])) : [];
+  return { project, video, more };
 }
 
 // Articles built around this project's video; the project page lists them first.

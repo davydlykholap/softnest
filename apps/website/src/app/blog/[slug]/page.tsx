@@ -107,6 +107,7 @@ export default async function BlogArticlePage({ params }: Props) {
           {articleVideo ? (
             <figure className={styles.videoFigure}>
               <WorkVideo item={articleVideo.video} showTitle={false} />
+              {articleVideo.more.map((item) => <WorkVideo key={item.id} item={item} showTitle={false} />)}
               <figcaption>
                 A SoftNest appointment in {articleVideo.project.location}. <Link href={workProjectHref(articleVideo.project)}>See the full project →</Link>
               </figcaption>
