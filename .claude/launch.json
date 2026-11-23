@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "website",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev:website"],
+      "port": 3000
+    },
+    {
+      "name": "website-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--prefix", "apps/website", "next", "dev", "apps/website", "-p", "3100"],
+      "port": 3100
+    }
+  ]
+}
