@@ -110,7 +110,7 @@ export default async function BlogArticlePage({ params }: Props) {
               {articleVideo.more.map((item) => <WorkVideo key={item.id} item={item} showTitle={false} />)}
               <figcaption>
                 {articleVideo.extraProjects.length
-                  ? <>Real videos from our customers. {[articleVideo.project, ...articleVideo.extraProjects].map((project, index) => <span key={project.slug}>{index ? " · " : ""}<Link href={workProjectHref(project)}>See the {project.location} project →</Link></span>)}</>
+                  ? <>A SoftNest appointment in {[articleVideo.project, ...articleVideo.extraProjects].map((project) => project.location).join(" and ")}, filmed by our customers. {[articleVideo.project, ...articleVideo.extraProjects].map((project, index) => <span key={project.slug}>{index ? " · " : ""}<Link href={workProjectHref(project)}>See the {project.location} project →</Link></span>)}</>
                   : <>A SoftNest appointment in {articleVideo.project.location}. <Link href={workProjectHref(articleVideo.project)}>See the full project →</Link></>}
               </figcaption>
             </figure>
