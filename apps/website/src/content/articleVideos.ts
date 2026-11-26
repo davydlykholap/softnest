@@ -19,19 +19,31 @@ const articleProjects: Record<string, string> = {
   "how-often-to-deep-clean-carpet-at-home": "grey-carpet-cleaning-hallway-burlington",
   "milky-foam-from-sofa-diy-cleaning-residue-hamilton": "sofa-cleaning-after-diy-products-hamilton",
   "paint-stain-on-a-sofa-why-it-spreads-and-how-extraction-lifts-it": "paint-stain-removal-dark-grey-sofa-brampton",
+  "happy-customer-videos-milton-toronto-carpets-stairs-sofa": "carpets-stairs-sofa-cleaning-milton-customer-video",
 };
 
 // Articles that also show the project's other videos, one after the other, under the lead video.
 const articlesWithAllVideos = new Set(["paint-stain-on-a-sofa-why-it-spreads-and-how-extraction-lifts-it"]);
 
+// Articles that also show every video of other projects, after the lead project's video.
+const articleExtraProjects: Record<string, string[]> = {
+  "happy-customer-videos-milton-toronto-carpets-stairs-sofa": ["sofa-deep-cleaning-stain-removal-toronto-customer-video"],
+};
+
 export function getArticleVideo(articleSlug: string) {
   const projectSlug = articleProjects[articleSlug];
   if (!projectSlug) return undefined;
-  const project = getWorkProjects().find((item) => item.slug === projectSlug);
+  const projects = getWorkProjects();
+  const project = projects.find((item) => item.slug === projectSlug);
   const video = project?.media[0];
   if (!project || video?.type !== "video" || !video.video) return undefined;
-  const more = articlesWithAllVideos.has(articleSlug) ? project.media.slice(1).flatMap((item) => (item.type === "video" && item.video ? [item] : [])) : [];
-  return { project, video, more };
+  const videosOf = (item: typeof project) => item.media.flatMap((media) => (media.type === "video" && media.video ? [media] : []));
+  const extraProjects = (articleExtraProjects[articleSlug] || []).flatMap((slug) => projects.find((item) => item.slug === slug) || []);
+  const more = [
+    ...(articlesWithAllVideos.has(articleSlug) ? videosOf(project).slice(1) : []),
+    ...extraProjects.flatMap(videosOf),
+  ];
+  return { project, video, more, extraProjects };
 }
 
 // Articles built around this project's video; the project page lists them first.
