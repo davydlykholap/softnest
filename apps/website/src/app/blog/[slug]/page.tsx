@@ -16,6 +16,8 @@ import { getArticleVideo } from "@/content/articleVideos";
 import { workProjectHref } from "@softnest/content/work-urls";
 import { blogUrl, serviceUrl, absoluteUrl } from "@/seo/urls";
 import { jsonLd, breadcrumbs } from "@/seo/structuredData";
+import { indexableVideos, videoSchema } from "@/seo/work";
+import { fitDescription, socialImageUrl } from "@/seo/metadata";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,15 +30,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost(slug);
   if (!post) notFound();
 
-  const image = blogImageUrl(post.coverImage, 1200, post.slug);
+  const cover = blogImageUrl(post.coverImage, 1200, post.slug);
+  const image = cover ? socialImageUrl(cover) : cover;
+  const description = fitDescription(post.seoDescription || post.excerpt);
   return {
     title: post.seoTitle || `${post.title} | ${siteConfig.alternateName}`,
-    description: post.seoDescription || post.excerpt,
+    description,
     alternates: { canonical: blogUrl(post.slug) },
     openGraph: {
       type: "article",
       title: post.title,
-      description: post.seoDescription || post.excerpt,
+      description,
       url: blogUrl(post.slug),
       publishedTime: post.publishedAt,
       ...(image
@@ -46,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: post.seoDescription || post.excerpt,
+      description,
       ...(image ? { images: [image] } : {}),
     },
   };
@@ -66,6 +70,14 @@ export default async function BlogArticlePage({ params }: Props) {
 
   const articleVideo = getArticleVideo(post.slug);
   const cover = blogImageUrl(post.coverImage, 1200, post.slug);
+  // Describe the videos the article shows, so search engines can list the article as a video result.
+  const shownVideoIds = articleVideo ? new Set([articleVideo.video, ...articleVideo.more].map((item) => item.id)) : new Set<string>();
+  const videoObjects = articleVideo
+    ? [articleVideo.project, ...articleVideo.extraProjects]
+        .flatMap((project) => indexableVideos(project))
+        .filter((video) => shownVideoIds.has(video.item.id))
+        .map((video) => ({ "@context": "https://schema.org", ...videoSchema(video) }))
+    : [];
   const related =
     post.relatedServices
       ?.map(getService)
@@ -186,6 +198,13 @@ export default async function BlogArticlePage({ params }: Props) {
               }),
             }}
           />
+          {videoObjects.map((videoObject) => (
+            <script
+              key={videoObject.contentUrl || videoObject.name}
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: jsonLd(videoObject) }}
+            />
+          ))}
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

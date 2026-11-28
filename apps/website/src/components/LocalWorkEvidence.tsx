@@ -3,6 +3,8 @@ import Link from "next/link";
 import { getCityWorkPreview, getWorkProjects } from "@/content/work";
 import styles from "./LocalWorkEvidence.module.css";
 import { workProjectHref } from "@softnest/content/work-urls";
+import { getArticleSlugsForProject } from "@/content/articleVideos";
+import { getPost } from "@/content/posts";
 
 export default function LocalWorkEvidence({ city, cityName, service, showPreview = false }: {
   city: string; cityName: string; service?: string; showPreview?: boolean;
@@ -11,6 +13,13 @@ export default function LocalWorkEvidence({ city, cityName, service, showPreview
   const projects = selection.projects.slice(0, 2);
   const galleryHref = `/our-work/${city}/${service ? `?service=${encodeURIComponent(service)}` : ""}`;
   if (!projects.length && !showPreview) return null;
+  // Newest articles built around this city's own appointments, so the city page links to them.
+  const localArticles = showPreview && !selection.isPreview
+    ? [...new Set(selection.projects.flatMap(project => getArticleSlugsForProject(project.slug)))]
+        .flatMap(slug => getPost(slug) || [])
+        .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+        .slice(0, 3)
+    : [];
 
   return <section id="local-work" className={`${styles.section} ${!projects.length ? styles.empty : ""}`} aria-labelledby="local-work-heading" data-local-evidence={city} data-work-preview={selection.isPreview || undefined}>
     <div className={styles.heading}>
@@ -36,6 +45,11 @@ export default function LocalWorkEvidence({ city, cityName, service, showPreview
         </div>
       </article>)}
     </div> : <p>Local appointment photos are coming. You can <Link href="/our-work/">browse our work across the service area</Link> while we add results from {cityName}.</p>}
+    {localArticles.length ? (
+      <ul className={styles.moreProjects} aria-label={`Articles from ${cityName} appointments`}>
+        {localArticles.map(post => <li key={post.slug}><Link prefetch={false} href={`/blog/${post.slug}/`}>{post.title}</Link></li>)}
+      </ul>
+    ) : null}
     {service && selection.projects.length > projects.length ? (
       <ul className={styles.moreProjects} aria-label={`More cleaning projects in ${cityName}`}>
         {selection.projects.slice(projects.length).map(project => (

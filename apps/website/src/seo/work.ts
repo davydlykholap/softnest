@@ -2,6 +2,7 @@ import type { WorkProject } from "@/content/work";
 import { getLocation } from "@/content/locations";
 import { absoluteUrl, organizationId } from "@/lib/site";
 import { workProjectHref } from "@softnest/content/work-urls";
+import { fitDescription } from "@/seo/metadata";
 
 function trimText(value: string, limit: number) {
   const text = value.replace(/\s+/g, " ").trim();
@@ -13,12 +14,18 @@ function trimText(value: string, limit: number) {
 // The city belongs in the title so the page can match "<service> in <city>" searches.
 export function projectTitle(project: WorkProject) {
   const hasCity = project.title.toLowerCase().includes(project.location.toLowerCase());
-  return `${hasCity ? project.title : `${project.title} in ${project.location}`} | SoftNest`;
+  const full = `${hasCity ? project.title : `${project.title} in ${project.location}`} | SoftNest`;
+  if (full.length <= 62) return full;
+  // Search results cut titles at about 60 characters: fall back to a short title with the same city and subject.
+  const short = `${project.category} cleaning in ${project.location} | SoftNest`;
+  if (short.length <= 62) return short;
+  const bare = hasCity ? project.title : `${project.title} in ${project.location}`;
+  return bare.length <= 62 ? bare : short;
 }
 
 export function projectDescription(project: WorkProject) {
   const custom = project.metaDescription?.replace(/\s+/g, " ").trim();
-  if (custom) return custom;
+  if (custom) return fitDescription(custom);
   const text = project.introduction || project.result || "";
   return text
     ? trimText(text, 160)
