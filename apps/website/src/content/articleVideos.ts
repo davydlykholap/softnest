@@ -1,7 +1,7 @@
 import "server-only";
 import { getWorkProjects } from "@/content/work";
 
-// Articles that show the lead video of one of our own appointments instead of a still cover.
+// Articles that show the lead video of one of our own appointments instead of a still cover (the article page shows it above the text).
 // Maps an article slug to the slug of the project whose first video it uses.
 const articleProjects: Record<string, string> = {
   "stair-carpet-cleaning-milton-why-regular-cleaning-matters": "stair-carpet-regular-cleaning-milton",
