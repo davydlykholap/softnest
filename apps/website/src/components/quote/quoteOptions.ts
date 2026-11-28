@@ -145,6 +145,12 @@ const optionPresentation: Record<string, OptionPresentation> = {
         showWhen: { name: "carpet_type", values: ["Area rug"] },
       },
       {
+        name: "wall_rooms",
+        label: "How many rooms?",
+        choices: ["1 room", "2 rooms", "3 rooms", "4 rooms", "5 rooms", "6 or more rooms"],
+        showWhen: { name: "carpet_type", values: ["Wall-to-wall carpet"] },
+      },
+      {
         name: "wall_size_method",
         label: "Size details",
         choices: ["Length × width", "Total square feet", "Not sure"],
