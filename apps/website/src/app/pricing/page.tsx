@@ -29,9 +29,8 @@ const includedItems = [
   { title: "The whole piece, not only the seats", text: "We clean both sides of removable cushions, and also the sides, the lower parts and, wherever we can reach, the back. We gently move the furniture a little away from the wall to get there. A special narrow tool lets us work along the seams, and we pay special attention to corners, cushion edges and armrests." },
   { title: "Deodorizing and sanitizing", text: "We treat the source of an odour, not just the surface, so we are not simply covering it with a fragrance. Sanitizing leaves your furniture fresh as well as clean." },
   { title: "Extra attention to dirty areas", text: "Armrests, headrests and other high-contact or delicate areas get extra care. If an area is especially dirty, we clean it again from the start, the whole cycle, and this is included. Sometimes it needs a third pass, though two are usually enough. The first extra hour is on us: it is built into our schedule and price in case the job needs it. If it is needed, we take it, because the result matters more to us than keeping to the schedule. If it is not needed, we simply do not use it." },
-  { title: "Complimentary drying while we work", text: "Our air movers run the whole time we are in your home, as a small gift from us. The parts we clean first are almost dry by the time we finish. We switch them off when we leave, so the last area we clean is still damp. Full drying usually takes 6–8 hours." },
+  { title: "Complimentary drying while we work", text: "We bring three air movers, and they run the whole time we are in your home, as a small gift from us. Drying on site lets us see the result, and treat any older stain that rises, before we leave. The parts we clean first are almost dry by the time we finish. We switch them off when we leave, so the last area we clean is still damp. Full drying usually takes 6–8 hours." },
   { title: "Care for your home", text: "We lay waterproof drop cloths on the floor to protect the area where we work. Our equipment, including the extractor, stands on a soft blanket, so your floor does not get scratched. We change into clean shoes before we come in, and we keep an eye on this every time." },
-  { title: "A repeat visit if stains come back", text: "If deep stains reappear within 48 hours, we come back to treat them. It is included, and you do not pay again." },
   { title: "An honest price, confirmed first", text: "We confirm the work and the final price in writing before we start, tax included, and you pay only after the service." },
 ];
 const includedChips = ["Fabric inspection", "Vacuuming", "UV check for hidden stains", "Deep cleaning", "The whole piece, even the seams", "Dirtiest areas cleaned twice", "Stain removal", "Deodorizing and sanitizing", "Free drying while we work", "Floor protection"];
@@ -76,10 +75,6 @@ const faqs = [
   {
     q: "Do you travel outside the GTA?",
     a: "Yes, and we are happy to. We clean across the GTA, and we also travel farther, up to about 150 km beyond it, depending on the job: the order should be large enough to make the trip worthwhile. Depending on the order, a travel fee may or may not apply. We tell you before we book.",
-  },
-  {
-    q: "What if a stain comes back?",
-    a: "If deep stains reappear within 48 hours, a repeat visit to treat them is included.",
   },
   {
     q: "Will every stain come out?",
