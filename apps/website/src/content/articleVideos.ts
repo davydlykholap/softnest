@@ -20,6 +20,7 @@ const articleProjects: Record<string, string> = {
   "milky-foam-from-sofa-diy-cleaning-residue-hamilton": "sofa-cleaning-after-diy-products-hamilton",
   "paint-stain-on-a-sofa-why-it-spreads-and-how-extraction-lifts-it": "paint-stain-removal-dark-grey-sofa-brampton",
   "happy-customer-videos-milton-toronto-carpets-stairs-sofa": "carpets-stairs-sofa-cleaning-milton-customer-video",
+  "rainy-day-sofa-cleaning-free-drying-thick-fabric-hamilton": "grey-sofa-deep-cleaning-rainy-day-drying-hamilton",
   "why-softnest-brings-air-movers-dry-sofa-on-site": "sofa-cleaning-visit-what-to-expect-milton",
   "home-extractor-sofa-cleaning-pushes-dirt-deeper-mississauga": "grey-sectional-sofa-deep-cleaning-after-diy-extractor-port-credit-mississauga",
 };
